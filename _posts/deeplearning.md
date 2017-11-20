@@ -18,3 +18,6 @@ java |是|否
 javascript |否|是 
 python |是|是 
 lisp |否|否 
+
+[普通程序员如何转向AI方向](https://www.cnblogs.com/skying555/p/6245907.html)
+[从机器学习谈起](http://www.cnblogs.com/subconscious/p/4107357.html)
