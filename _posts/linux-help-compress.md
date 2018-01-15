@@ -12,91 +12,91 @@ Linux下的压缩解压缩命令详解及实例
 
 zip -r xxx.zip ./*
 
-                   解压zip文件到当前目录
+### 解压zip文件到当前目录
 
-                   unzip filename.zip
+unzip filename.zip
 
-                   ============================
+============================
 
-                   另：有些服务器没有安装zip包执行不了zip命令，但基本上都可以用tar命令的，实例如下：
+另：有些服务器没有安装zip包执行不了zip命令，但基本上都可以用tar命令的，实例如下：
 
-                    
-                   tar -zcvf /home/zdzlibs.tar.gz /home/zdz/java/zdzlibs/
 
-                   ============================
+tar -zcvf /home/zdzlibs.tar.gz /home/zdz/java/zdzlibs/
 
-                   linux zip命令
+============================
 
-                   zip -r myfile.zip ./*
-                   将当前目录下的所有文件和文件夹全部压缩成myfile.zip文件,－r表示递归压缩子目录下所有文件.
+linux zip命令
 
-                   2.unzip
-                   unzip -o -d /home/sunny myfile.zip
-                   把myfile.zip文件解压到 /home/sunny/
-                   -o:不提示的情况下覆盖文件；
-                   -d:-d /home/sunny 指明将文件解压缩到/home/sunny目录下；
+zip -r myfile.zip ./*
+将当前目录下的所有文件和文件夹全部压缩成myfile.zip文件,－r表示递归压缩子目录下所有文件.
 
-                   3.其他
-                   zip -d myfile.zip smart.txt
-                   删除压缩文件中smart.txt文件
-                   zip -m myfile.zip ./rpm_info.txt
-                   向压缩文件中myfile.zip中添加rpm_info.txt文件
-                   -------------------------------------------------------------------------------
+2.unzip
+unzip -o -d /home/sunny myfile.zip
+把myfile.zip文件解压到 /home/sunny/
+-o:不提示的情况下覆盖文件；
+-d:-d /home/sunny 指明将文件解压缩到/home/sunny目录下；
 
-                   要使用 zip 来压缩文件，在 shell 提示下键入下面的命令：
+3.其他
+zip -d myfile.zip smart.txt
+删除压缩文件中smart.txt文件
+zip -m myfile.zip ./rpm_info.txt
+向压缩文件中myfile.zip中添加rpm_info.txt文件
+-------------------------------------------------------------------------------
 
-                   zip -r filename.zip filesdir
-                    
+要使用 zip 来压缩文件，在 shell 提示下键入下面的命令：
 
-                   在这个例子里，filename.zip 代表你创建的文件，filesdir 代表你想放置新 zip 文件的目录。-r 选项指定你想递归地（recursively）包括所有包括在 filesdir 目录中的文件。
+zip -r filename.zip filesdir
 
-                   要抽取 zip 文件的内容，键入以下命令：
 
-                   unzip filename.zip
-                    
+在这个例子里，filename.zip 代表你创建的文件，filesdir 代表你想放置新 zip 文件的目录。-r 选项指定你想递归地（recursively）包括所有包括在 filesdir 目录中的文件。
 
-                   你可以使用 zip 命令同时处理多个文件和目录，方法是将它们逐一列出，并用空格间隔：
+要抽取 zip 文件的内容，键入以下命令：
 
-                   zip -r filename.zip file1 file2 file3 /usr/work/school
-                    
+unzip filename.zip
 
-                   上面的命令把 file1、file2、 file3、以及 /usr/work/school 目录的内容（假设这个目录存在）压缩起来，然后放入 filename.zip 文件中。
 
-                    
+你可以使用 zip 命令同时处理多个文件和目录，方法是将它们逐一列出，并用空格间隔：
 
-                   tar 命令详解
+zip -r filename.zip file1 file2 file3 /usr/work/school
 
-                   　　-c: 建立压缩档案
 
-                   　　-x：解压
+上面的命令把 file1、file2、 file3、以及 /usr/work/school 目录的内容（假设这个目录存在）压缩起来，然后放入 filename.zip 文件中。
 
-                   　　-t：查看内容
 
-                   　　-r：向压缩归档文件末尾追加文件
 
-                   　　-u：更新原压缩包中的文件
+tar 命令详解
 
-                   　　这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。
+　　-c: 建立压缩档案
 
-                   　　-c: 建立压缩档案
+　　-x：解压
 
-                   　　-x：解压
+　　-t：查看内容
 
-                   　　-t：查看内容
+　　-r：向压缩归档文件末尾追加文件
 
-                   　　-r：向压缩归档文件末尾追加文件
+　　-u：更新原压缩包中的文件
 
-                   　　-u：更新原压缩包中的文件
+　　这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。
 
-                   　　下面的参数-f是必须的
+　　-c: 建立压缩档案
 
-                   　　-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。
+　　-x：解压
 
-                   　　# tar -cf all.tar *.jpg
+　　-t：查看内容
 
-                   　　这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。
+　　-r：向压缩归档文件末尾追加文件
 
-                   　　# tar -rf all.tar *.gif
+　　-u：更新原压缩包中的文件
+
+　　下面的参数-f是必须的
+
+　　-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。
+
+　　# tar -cf all.tar *.jpg
+
+　　这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。
+
+　　# tar -rf all.tar *.gif
 
 　　这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。
 
@@ -162,7 +162,7 @@ zip -r xxx.zip ./*
 
 　　Linux中tar命令详解(转载的资料)
 
-    　　2008年04月17日 星期四 15:37
+ 　2008年04月17日 星期四 15:37
 
     　　tar命令
 
@@ -208,7 +208,7 @@ zip -r xxx.zip ./*
 
     　　在具体总结各类压缩文件之前呢，首先要弄清两个概念：打包和压缩。打包是指将一大堆文件或目录什么的变成一个总的文件，压缩则是将一个大的文件通过一些压 缩算法变成一个小文件。为什么要区分这两个概念呢?其实这源于Linux中的很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你就 得先借助另它的工具将这一大堆文件先打成一个包，然后再就原来的压缩程序进行压缩。
 
-    　　Linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩了，所以首先就来讲讲tar命令的基本用法：
+    Linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩了，所以首先就来讲讲tar命令的基本用法：
 
     　　tar命令的选项有很多(用man tar可以查看到)，但常用的就那么几个选项，下面来举例说明一下：
 
@@ -342,6 +342,6 @@ zip -r xxx.zip ./*
 
     　　这条命令是将all.rar中的所有文件解压出来
 
-    　　到此为至，我们已经介绍过linux下的tar、gzip、gunzip、bzip2、bunzip2、compress、uncompress、 zip、unzip、rar、unrar等程式，你应该已经能够使用它们对.tar、.gz、.tar.gz、.tgz、.bz2、.tar.bz2、. Z、.tar.Z、.zip、.rar这10种压缩文件进行解压了，以后应该不需要为下载了一个软件而不知道如何在Linux下解开而烦恼了。而且以上方 法对于Unix也基本有效。
+    　到此为至，我们已经介绍过linux下的tar、gzip、gunzip、bzip2、bunzip2、compress、uncompress、 zip、unzip、rar、unrar等程式，你应该已经能够使用它们对.tar、.gz、.tar.gz、.tgz、.bz2、.tar.bz2、. Z、.tar.Z、.zip、.rar这10种压缩文件进行解压了，以后应该不需要为下载了一个软件而不知道如何在Linux下解开而烦恼了。而且以上方 法对于Unix也基本有效。
 
-    　　本文介绍了linux下的压缩程式tar、gzip、gunzip、bzip2、bunzip2、 compress、uncompress、zip、unzip、rar、unrar等程式，以及如何使用它们对.tar、.gz、.tar.gz、. tgz、.bz2、.tar.bz2、.Z、.tar.Z、.zip、.rar这10种压缩文件进行操作
+    本文介绍了linux下的压缩程式tar、gzip、gunzip、bzip2、bunzip2、 compress、uncompress、zip、unzip、rar、unrar等程式，以及如何使用它们对.tar、.gz、.tar.gz、. tgz、.bz2、.tar.bz2、.Z、.tar.Z、.zip、.rar这10种压缩文件进行操作

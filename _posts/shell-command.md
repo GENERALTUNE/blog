@@ -57,6 +57,7 @@ ip命令可以查看网卡接口信息，　netstat 命令查看服务器开启�
 1. ps命令
 　描述：　查看当前进程信息
 　用法：　ps命令版本众多，有多种语法种类，如UNIX、BSD、以及GNU linux
+
 ```
 [root@centos7 ~]# ps -e  #查看所有的进程信息
 [root@centos7 ~]# ps -ef #全格式显示进程信息
@@ -101,14 +102,17 @@ ip命令可以查看网卡接口信息，　netstat 命令查看服务器开启�
 3. nslookup
 4. dig
 5. netstat
+
 ```
 [root@centos7 ~]# ping 127.0.0.1
 [root@centos7 ~]# traceroute -I www.google.com
 [root@centos7 ~]# nslookup www.google.com
 [root@centos7 ~]# dig www.google.com
 
+```
 ## 内核模块
 ### 查看已加载的内核模块
+
 ```
 [root@centos7 ~]# lsmod 
 
@@ -116,8 +120,8 @@ ip命令可以查看网卡接口信息，　netstat 命令查看服务器开启�
 
 ## Bash 技巧
 
-|快捷键|功能描述|
-|:-:|:-:|
+| 快捷键 | 功能描述 |
+| :-: | :-: |
 | Ctrl + a | 光标移动到行首|
 | Ctrl + e | 光标移动到行尾|
 | Ctrl + f | 光标右移动一个字符|
@@ -142,6 +146,7 @@ ip命令可以查看网卡接口信息，　netstat 命令查看服务器开启�
 
 ```
 ### 花括号{}的使用技巧
+
 ```
 [root@centos7 ~]# echo {a, b, c}
 a b c
@@ -177,7 +182,7 @@ name=[value]
 
 ```
 |变量名称|含义|
-|:-:|:-:|
+| :-: | :-: |
 | BASHPID| 当前bash 进程的进程号 |
 | GROUPS | 当前用户所属的组的组ID号 |
 | HOSTNAME | 当前主机的主机名称 |
