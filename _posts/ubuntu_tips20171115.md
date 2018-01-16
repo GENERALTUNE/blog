@@ -182,3 +182,60 @@ R语言作为统计学习中重要的编程语言。最近装着用着试试。�
 最近需要做实验需要用到Windows和Kali，于是找了一个虚拟机软件。Linux下VirtualBox和VmWare都可以使用，但是本人觉得轻量级的VirtualBox还是好用一点。但是被其中的界面全屏折腾了一下，后来解决了。
 
 
+注意：在Linux下Win键就是Super键
+
+启动器
+
+Win(长按) 打开启动器，显示快捷键
+Win + Tab 通过启动器切换应用程序
+Win + 1到9 与点击启动器上的图标效果一样
+Win + Shift + 1到9 在应用中打开一个新窗口
+Win + T 打开垃圾桶
+面板
+
+Win(轻触点击) 打开dash主页
+Win + A 打开dash应用栏目
+Win + F 打开dash文件栏目
+Win + M 打开dash音乐栏目
+Win + C 打开dash图片栏目
+Win + V 打开dash视频栏目
+Ctrl + Tab 在栏目或者标签间切换
+切换中
+
+Alt + Tab 切换应用程序
+Ctrl + Alt +Tab 切换所有工作区的应用程序
+Alt + ` 切换当前运行的应用程序窗口
+Alt + Q 关闭选中的应用程序或窗口
+工作区
+
+Win + S 切换工作区
+Ctrl + Alt +方向键 切换工作区
+Ctrl + Shift + Alt + 方向键 移动当前窗口到另一个工作区
+窗口
+
+Win + W 展开当前工作区的所有窗口
+Shift + Win + W 展开所有工作区的窗口
+Ctrl + Win + W 平展当前工作区中焦点应用的所有窗口
+Shift + Ctrl + Win + W 平展当前焦点应用在所有工作区中的窗口
+Ctrl + Win +D 最小化所有窗口(显示桌面）也可以用 Win + D
+ Ctrl + Win + 上 最大化当前窗口
+ Ctrl + Win + 下 还原或最小化当前窗口
+ Ctrl + Win + 左或右 半最大化当前窗口
+ Alt + F4 关闭当前窗口 或者 Ctrl + Q
+ Alt + 空格 打开窗口通用访问菜单
+ Alt + 鼠标左键拖拽 移动当前窗口
+ Alt + 鼠标中键拖拽 调整当前窗口大小
+ Ctrl + L 资源管理器中显示当前目录的路径
+ Ctrl + H 资源管理器中显示所有文件和文件夹（显示隐藏的文件夹）
+ Alt + Enter 显示所选文件或者文件夹的属性信息
+ Alt + Home 直接移到你的主目录
+ 其他
+
+ Ctrl + Alt + T 打开终端
+ Ctrl + Q 退出当前程序
+ Alt + F1 + Enter 搜索计算机
+ Alt + F2 搜索计算机
+ Ctrl + Alt + L 锁屏，如果你想走开一会而不想让别人看到你的屏幕，相当于 Win + L
+ Ctrl + Alt + F1 切换到首个虚拟终端
+ Ctrl + Alt + F2(F3)(F4)(F5)(F6) 选择不同的虚拟终端
+Ctrl + Alt + F7 切换到当前登录会话

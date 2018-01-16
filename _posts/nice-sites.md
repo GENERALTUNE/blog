@@ -17,6 +17,7 @@ tags:
 | 设计模式 |https://sourcemaking.com/| 设计模式 | [链接](https://sourcemaking.com) |
 |web performance|http://www.perfplanet.com/| News and views from the web performance blogosphere | [链接](http://www.perfplanet.com/) |
 |qt 官网 |http://download.qt.io/archive/qt/| qt的官方网站 | [链接](http://download.qt.io/archive/qt/) |
+|design |http://bradfrost.com/blog/post/atomic-web-design/| 设计design网站 atom | [链接](http://bradfrost.com/blog/post/atomic-web-design/) |
 
 
 

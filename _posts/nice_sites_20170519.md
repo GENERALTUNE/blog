@@ -5,5 +5,6 @@ tags:
 ---
 
 http://blog.hotoo.me/
+http://bradfrost.com/blog/post/atomic-web-design/
 
 https://www.gnupg.org/
