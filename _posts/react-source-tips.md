@@ -24,3 +24,25 @@ react git 地址　https://github.com/facebook/react.git
 将属性或方法添加到 Constructor.prototype 上。
 调用 getDefaultProps 初始化 Constructor.defaultProps 属性。
 以上3点通过 class xxx extends React.Component 写法都能办到。
+
+
+## 源码分析笔记
+
+
+分析入口：　ReactDOM.render   Component.prototype.setState  这两个函数是react应用开发中经常用到的触发页面渲染函数.
+
+
+###  ReactDOM.render 
+
+ReactDOM.render --> legacyRenderSubtreeIntoContainer --> legacyCreateRootFromDOMContainer --> legacyCreateRootFromDOMContainer --> new ReactRoot /
+--> DOMRenderer.createContainer(container, isAsync, hydrate) --> DOMRenderer.updateContainer
+                                                     --> DOMRenderer.unbatchedUpdates  
+                                                     --> root.legacy_renderSubtreeIntoContainer
+                                                     --> root.render
+                                                     --> DOMRenderer.getPublicRootInstance(root._internalRoot)
+
+
+
+
+
+

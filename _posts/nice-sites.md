@@ -18,6 +18,7 @@ tags:
 |web performance|http://www.perfplanet.com/| News and views from the web performance blogosphere | [链接](http://www.perfplanet.com/) |
 |qt 官网 |http://download.qt.io/archive/qt/| qt的官方网站 | [链接](http://download.qt.io/archive/qt/) |
 |design |http://bradfrost.com/blog/post/atomic-web-design/| 设计design网站 atom | [链接](http://bradfrost.com/blog/post/atomic-web-design/) |
+|掘金 |https://juejin.im/|程序员社区 | [链接](https://juejin.im/) |
 
 
 
