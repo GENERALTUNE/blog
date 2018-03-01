@@ -1,5 +1,5 @@
 ---
-title: git_tips
+title: git使用笔记
 date: 2018-01-10 13:23:02
 tags:
 ---

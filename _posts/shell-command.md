@@ -1,5 +1,5 @@
 ---
-title: shell_command
+title: shell编程笔记
 date: 2018-01-13 14:30:07
 tags:
 ---

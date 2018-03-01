@@ -1,5 +1,5 @@
 ---
-title: algorithm-tips
+title: 算法笔记
 date: 2018-01-11 13:36:32
 tags:
 ---

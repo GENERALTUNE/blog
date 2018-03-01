@@ -1,5 +1,5 @@
 ---
-title: w3c_tips
+title: w3c标准学习
 date: 2018-01-11 11:12:04
 tags:
 ---
