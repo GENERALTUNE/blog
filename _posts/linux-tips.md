@@ -1,5 +1,5 @@
 ---
-title: linux-tips 
+title: linux 学习笔记
 date: 2018-01-09 15:39:18
 tags:
 ---
