@@ -68,3 +68,16 @@ const root = {
 ```
 
 
+function call stack 
+
+scheduleWork
+scheduleWorkImpl
+requestWork
+performWork
+performWorkOnRoot
+renderRoot 
+workLoop
+performUnitOfWork
+beginWork
+updateHostRoot
+
