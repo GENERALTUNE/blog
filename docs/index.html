@@ -1,10 +1,970 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>generaltune's blog site</title>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>generaltune&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="generaltune&#39;s blog">
+<meta property="og:url" content="https://generaltune.github.io/blog/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="generaltune&#39;s blog">
+  
+    <link rel="alternate" href="/atom.xml" title="generaltune&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
 </head>
+</html>
 <body>
-		welcome guys!
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">generaltune&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://generaltune.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-summitmeeting" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/08/summitmeeting/" class="article-date">
+  <time datetime="2018-03-08T02:09:43.000Z" itemprop="datePublished">2018-03-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/08/summitmeeting/">行业会议</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>QCon(全球软件开发大会)<br>QCon是由InfoQ主办的全球顶级技术盛会，每年在伦敦、北京、东京、纽约、圣保罗、上海、旧金山召开。自2007年3月份首次举办以来，已经有超万名高级技术人员参加过QCon大会。QCon内容源于实践并面向社区，演讲嘉宾依据热点话题，面向5年以上工作经验的技术团队负责人、架构师、工程总监、高级开发人员分享技术创新和最佳实践。</p>
+</li>
+<li><p>D2开发者大会<br>阿里举办前端开发分享会</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://generaltune.github.io/blog/2018/03/08/summitmeeting/" data-id="cjxmpy61r00124mi8nxpccfdi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-docker-user-tips" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/01/docker-user-tips/" class="article-date">
+  <time datetime="2018-03-01T05:59:47.000Z" itemprop="datePublished">2018-03-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/01/docker-user-tips/">docker学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>docker 官网地址：　<a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/#set-up-the-repository" target="_blank" rel="noopener">https://docs.docker.com/install/linux/docker-ce/ubuntu/#set-up-the-repository</a></p>
+<p>增加docker用户组</p>
+<ol>
+<li>Create the docker group.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo groupadd docker</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Add your user to the docker group.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo usermod -aG docker $USER</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://generaltune.github.io/blog/2018/03/01/docker-user-tips/" data-id="cjxmpy61e000k4mi85bj5xh6f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-csslayout" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/01/csslayout/" class="article-date">
+  <time datetime="2018-03-01T02:35:43.000Z" itemprop="datePublished">2018-03-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/01/csslayout/">css 布局整理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>css 由于历史原因布局的方法众多</p>
+<ol>
+<li>display: inline-block<br>需要注意元素间隙问题</li>
+<li>浮动float<br>需要注意清楚浮动</li>
+<li>flexbox  box flexbox flex<br>需要注意浏览器兼容性　支持的问题</li>
+<li>grid<br>网格布局　也需要考虑浏览器兼容性问题</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://generaltune.github.io/blog/2018/03/01/csslayout/" data-id="cjxmpy61d000i4mi890fe4ulw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-pageoptimization" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/25/pageoptimization/" class="article-date">
+  <time datetime="2018-02-25T08:12:01.000Z" itemprop="datePublished">2018-02-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/25/pageoptimization/">页面卡顿优化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近做项目时遇到了页面加载卡顿问题，一时没有头绪，感到无从下手，看到这篇文章，所以整体梳理了一下，在此记录。</p>
+<p>在富客户端网页应用中，界面上的UI的更改是通过DOM操作实现的。</p>
+<p>尽管DOM提供了丰富接口供外部调用，但是dom操作的代价很高，</p>
+<p>页面前端代码的性能瓶颈大多集中在DOM操作上，因此，前端性能优化的</p>
+<p>一个主要的关注点是dom操作的优化，因此我们可以想办法通过尽量减少</p>
+<p>DOM操作来优化性能。</p>
+<p>首先，DOM操作为什么会影响性能。在浏览器中，DOM的实现和ECMAScript</p>
+<p>的实现是分离的。例如，在IE中，ECMAScript的实现在jscript.dll中，而DOM的</p>
+<p>实现在mshtml.dll中；在chrome中使用webkit的WebCore处理DOM和渲染，但</p>
+<p>ECMAScript是在V8引擎中实现的，其他浏览器的情况类似，所以通过Javascript</p>
+<p>调用dom接口，是相当于两个模块的交互。相比较在同一模块中的调用，这种跨模块的</p>
+<p>调用其性能损耗是很高的，但DOM操作对性能影响最大是因为它导致了浏览器的重绘</p>
+<p>和重排。</p>
+<p>浏览器渲染原理的简单说明</p>
+<p>从下载文档到渲染页面的过程中，浏览器会通过解析HTML文档来构建DOM树，解析</p>
+<p>CSS产生CSS规则树。javascript在代码解析的过程中，可能会修改生成的dom树</p>
+<p>和css规则树，之后根据dom树和css规则树构建渲染树，在这个过程中css会根据</p>
+<p>选择器匹配HTML元素。渲染树包括了每个元素的大小，边距等样式属性。渲染树</p>
+<p>中不包含隐藏元素及head元素等不可见元素。最后浏览器根据元素的坐标和大小</p>
+<p>来计算每个元素的位置，并绘制这些元素到页面上。重绘指的是元素的位置或尺寸</p>
+<p>发生了改变，浏览器会重新绘制页面上受影响的元素，重排的代价高于重绘。</p>
+<p>之下的DOM操作会导致重绘或重排：</p>
+<p>1.增加，删除和修改可见DOM元素</p>
+<ol start="2">
+<li>页面初始化的渲染</li>
+</ol>
+<p>3.移动dom元素</p>
+<p>4.修改css样式，改变dom元素的尺寸</p>
+<p>5.dom元素内容改变，使得尺寸被撑大</p>
+<p>6.浏览器窗口尺寸改变</p>
+<p>7.浏览器窗口滚动</p>
+<p>现代浏览器会针对重排或重绘做性能优化，例如，把DOM操作积累一批后统一</p>
+<p>做一次重排或重绘，但在有些情况下，浏览器会立即进行重排或重绘，比如请求如下的</p>
+<p>dom元素布局信息</p>
+<p>offsetTop/Left/Width/Height</p>
+<p>scrollTop/Left/Width/Height</p>
+<p>clientTop/Left/Width/Height</p>
+<p>getComputeStyle()或currentStyle</p>
+<p>因为这些值都是动态计算的，所以浏览器需尽快完成页面绘制，计算返回值，打乱了重绘或</p>
+<p>重排优化。</p>
+<p>可以遵循一些最佳实践来降低影响–&gt;</p>
+<p>方法一：合并多此dom操作为单次dom操作</p>
+<p>通过class类名来元素的大量样式更改，代码维护性较好。</p>
+<p>通过innerHTML接口来修改DOM元素的内容时，以字符串方式拼接好代码后，一次性赋值给</p>
+<p>DOM元素的innerHTML接口。</p>
+<p>方法二： 把DOM元素离线或隐藏后修改</p>
+<p>把元素从页面流中脱离或隐藏，这样处理后，只会在DOM元素脱离或添加时，或者是隐藏或显示时才会造成页面的重绘会重排，对脱离了页面布局的DOM元素操作就不会导致页面的性能问题。</p>
+<p>这种方式适合需要大批量修改dom元素的情况。具体方式由三种：</p>
+<p>(1) 使用文档片段</p>
+<p>文档片段是一个轻量级的document对象，并不会和特定的页面关联，通过在文档片段上进行DOM操作，可以降低DOM操作对页面性能的影响，这种方式是创建一个文档片段，并在此片段上</p>
+<p>进行必要的DOM操作，操作完成后将它附加在页面中，对页面的影响只存在于最后把文档片段附加到页面的这一步操作上。</p>
+<p>var fragment=document.createDocumentFragment();</p>
+<p>//一些基于fragment的大量dom操作</p>
+<p>…</p>
+<p>document.getElementById(‘myElement’).appendChild(fragment);</p>
+<p>(2)隐藏元素</p>
+<p>通过隐藏元素，达到在页面上移除元素的效果，经过大量的DOM操作后恢复元素原来的display样式，只有隐藏和显示元素时会引起页面重绘或重排操作。</p>
+<p>var myElement=document.getElementById(‘myElement’)；<br>myElement.style.display=’none’;</p>
+<p>//dom操作</p>
+<p>myElement.style.display=’block’;</p>
+<p>(3)克隆DOM元素到内存中</p>
+<p>把页面上的DOM元素克隆一份到内存中，然后在内存中操作克隆的元素，操作完成后使用此克隆元素替换页面中原来的DOM元素，只有替换元素时会影响性能,在内存中操作克隆元素不会引起页面上的性能损耗。</p>
+<p>var old=document.getElementById(‘myElement’);</p>
+<p>var clone=old.cloneNode(true);</p>
+<p>//dom操作</p>
+<p>old.parentNode.replaceChild(clone,old);</p>
+<p>3.设置具有动画效果的DOM元素的position属性为fixed或absolute</p>
+<p>把页面中具有动画效果的元素设置为绝对定位，使得元素脱离页面布局流，从未避免了页面频繁的重排，只涉及动画元素自身的重排。这种做法可以提高动画效果的展示性能。(在动画开始时将其设置为绝对定位，等动画结束后恢复原始的定位设置)。</p>
+<p>4.谨慎获得dom元素的布局信息，变量本地化。</p>
+<p>把获取到的元素的布局信息值缓存在局部变量中。在有大量的DOM操作时，避免获取dom元素的布局信息，如果需要布局信息，最好在DOM操作之前就取好存放。</p>
+<p>5.使用事件托管方式绑定事件</p>
+<p>在DOM元素上绑定事件或影响页面的性能，一方面，绑定事件本身会占用处理时间，另一方面，浏览器保存事件绑定也会占用内存。使用事件托管方式，即利用事件冒泡机制，只在父元素上绑定事件处理，用于处理所有子元素的事件，在事件处理函数中根据传入的参数判断事件源元素，针对不同的元素做不同的处理。这种方式有很大的灵活性，可以方便的添加或删除子元素，不需要考虑因元素移除或添加需要修改事件绑定。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://generaltune.github.io/blog/2018/02/25/pageoptimization/" data-id="cjxmpy61n000x4mi8esdmczem" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-interview-tips" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/07/interview-tips/" class="article-date">
+  <time datetime="2018-02-07T03:25:31.000Z" itemprop="datePublished">2018-02-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/07/interview-tips/">面试合集</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>java合集：　<a href="http://blog.csdn.net/longyajidi/article/details/73456675" target="_blank" rel="noopener">http://blog.csdn.net/longyajidi/article/details/73456675</a><br>博客文章：　<a href="http://www.cnblogs.com/luyucheng/" target="_blank" rel="noopener">http://www.cnblogs.com/luyucheng/</a><br>java合集:   <a href="http://blog.csdn.net/moneyshi/article/details/50786786" target="_blank" rel="noopener">http://blog.csdn.net/moneyshi/article/details/50786786</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://generaltune.github.io/blog/2018/02/07/interview-tips/" data-id="cjxmpy61g000n4mi8iooybvo2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-react-source-tips" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/19/react-source-tips/" class="article-date">
+  <time datetime="2018-01-19T11:41:55.000Z" itemprop="datePublished">2018-01-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/19/react-source-tips/">react源码分析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="相关文档资源"><a href="#相关文档资源" class="headerlink" title="相关文档资源"></a>相关文档资源</h2><p>react IRC <a href="https://webchat.freenode.net/?channels=reactjs" target="_blank" rel="noopener">https://webchat.freenode.net/?channels=reactjs</a><br>react git 地址　<a href="https://github.com/facebook/react.git" target="_blank" rel="noopener">https://github.com/facebook/react.git</a><br>使用flow进行数据校验　 地址：<a href="https://flow.org/en/docs/install/" target="_blank" rel="noopener">https://flow.org/en/docs/install/</a></p>
+<h2 id="好的源码分析文章"><a href="#好的源码分析文章" class="headerlink" title="好的源码分析文章"></a>好的源码分析文章</h2><p>官网说明文档：　 <a href="https://github.com/facebook/react/issues/10294" target="_blank" rel="noopener">https://github.com/facebook/react/issues/10294</a><br>16.x 源码解析：　<a href="http://zxc0328.github.io/2017/09/28/react-16-source/" target="_blank" rel="noopener">http://zxc0328.github.io/2017/09/28/react-16-source/</a><br>                 <a href="http://blog.codingplayboy.com/2017/12/02/react_fiber/" target="_blank" rel="noopener">http://blog.codingplayboy.com/2017/12/02/react_fiber/</a><br>                 <a href="https://zhuanlan.zhihu.com/p/28697362" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/28697362</a><br>                 <a href="https://juejin.im/post/5a2276d5518825619a027f57" target="_blank" rel="noopener">https://juejin.im/post/5a2276d5518825619a027f57</a><br>15.x 源码解析：　<a href="https://www.cnblogs.com/JhoneLee/p/5886759.html" target="_blank" rel="noopener">https://www.cnblogs.com/JhoneLee/p/5886759.html</a><br>15.x 源码解析：　<a href="https://zhuanlan.zhihu.com/p/28697362" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/28697362</a><br>                 <a href="https://zhuanlan.zhihu.com/p/33833594" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/33833594</a><br>15.x 源码解析：　<a href="http://blog.csdn.net/p77ll9l53x/article/details/72675590" target="_blank" rel="noopener">http://blog.csdn.net/p77ll9l53x/article/details/72675590</a><br>15.x react diff算法解析　<a href="http://blog.csdn.net/yczz/article/details/49886061" target="_blank" rel="noopener">http://blog.csdn.net/yczz/article/details/49886061</a><br><a href="https://segmentfault.com/a/1190000011235844" target="_blank" rel="noopener">https://segmentfault.com/a/1190000011235844</a> 司徒正美谈　react diff 算法<br>重新实现一个react 的难点与思路　<a href="https://www.cnblogs.com/sven36/p/6486860.html" target="_blank" rel="noopener">https://www.cnblogs.com/sven36/p/6486860.html</a></p>
+<p>对比es6 extends写法<br>说了一堆，其实 createClass 主要就做了这么几件事。</p>
+<p>生成并返回一个Constructor构造函数，该函数有props，context，refs，updater和state5个属性。<br>绑定了作用域。<br>将属性或方法添加到 Constructor.prototype 上。<br>调用 getDefaultProps 初始化 Constructor.defaultProps 属性。<br>以上3点通过 class xxx extends React.Component 写法都能办到。</p>
+<h2 id="源码分析笔记"><a href="#源码分析笔记" class="headerlink" title="源码分析笔记"></a>源码分析笔记</h2><p>分析入口：　ReactDOM.render   Component.prototype.setState  这两个函数是react应用开发中经常用到的触发页面渲染函数.</p>
+<h3 id="ReactDOM-render"><a href="#ReactDOM-render" class="headerlink" title="ReactDOM.render"></a>ReactDOM.render</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ReactDOM.render --&gt; legacyRenderSubtreeIntoContainer --&gt; legacyCreateRootFromDOMContainer --&gt; legacyCreateRootFromDOMContainer --&gt; new ReactRoot /</span><br><span class="line">--&gt; DOMRenderer.createContainer(container, isAsync, hydrate) --&gt; DOMRenderer.updateContainer</span><br><span class="line">                                                     --&gt; DOMRenderer.unbatchedUpdates  </span><br><span class="line">                                                     --&gt; root.legacy_renderSubtreeIntoContainer</span><br><span class="line">                                                     --&gt; root.render</span><br><span class="line">                                                     --&gt; DOMRenderer.getPublicRootInstance(root._internalRoot)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const root = &#123;</span><br><span class="line">      current: uninitializedFiber,</span><br><span class="line">      containerInfo: containerInfo,</span><br><span class="line">      pendingChildren: null,</span><br><span class="line">      remainingExpirationTime: NoWork,</span><br><span class="line">      isReadyForCommit: false,</span><br><span class="line">      finishedWork: null,</span><br><span class="line">      context: null,</span><br><span class="line">      pendingContext: null,</span><br><span class="line">      hydrate,</span><br><span class="line">      firstBatch: null,</span><br><span class="line">      nextScheduledRoot: null,</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+
+<p>function call stack </p>
+<p>scheduleWork<br>scheduleWorkImpl<br>requestWork<br>performWork<br>performWorkOnRoot<br>renderRoot<br>workLoop<br>performUnitOfWork<br>beginWork<br>updateHostRoot</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://generaltune.github.io/blog/2018/01/19/react-source-tips/" data-id="cjxmpy61n000y4mi8s8b1neqk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/15/hello-world/" class="article-date">
+  <time datetime="2018-01-15T10:06:00.000Z" itemprop="datePublished">2018-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/15/hello-world/">前端流行框架和缓存运用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="框架相关"><a href="#框架相关" class="headerlink" title="框架相关"></a>框架相关</h2><p>1、数据双向绑定原理：常见数据绑定的方案</p>
+<p>Object.defineProperty（vue）：劫持数据的 getter 和 setter<br>脏值检测（angularjs）：通过特定事件进行轮循<br>发布/订阅模式：通过消息发布并将消息进行订阅<br>详细细节参考 实现一个属于我们自己的简易MVVM库</p>
+<p>扩充：如何监听数组变化</p>
+<p>2、VDOM：三个 part，</p>
+<p>虚拟节点类，将真实 DOM 节点用 js 对象的形式进行展示，并提供 render 方法，将虚拟节点渲染成真实 DOM<br>节点 diff 比较：对虚拟节点进行 js 层面的计算，并将不同的操作都记录到 patch 对象<br>re-render：解析 patch 对象，进行 re-render<br>详细请参考 实现Virtual Dom &amp;&amp; Diff</p>
+<p>补充1：VDOM 的必要性？<br>创建真实DOM的代价高：真实的 DOM 节点 node 实现的属性很多，而 vnode 仅仅实现一些必要的属性，相比起来，创建一个 vnode 的成本比较低。<br>触发多次浏览器重绘及回流：使用 vnode ，相当于加了一个缓冲，让一次数据变动所带来的所有 node 变化，先在 vnode 中进行修改，然后 diff 之后对所有产生差异的节点集中一次对 DOM tree 进行修改，以减少浏览器的重绘及回流。<br>补充2：vue 为什么采用 vdom？<br>引入 Virtual DOM 在性能方面的考量仅仅是一方面。</p>
+<p>性能受场景的影响是非常大的，不同的场景可能造成不同实现方案之间成倍的性能差距，所以依赖细粒度绑定及 Virtual DOM 哪个的性能更好还真不是一个容易下定论的问题。</p>
+<p>Vue 之所以引入了 Virtual DOM，更重要的原因是为了解耦 HTML 依赖，这带来两个非常重要的好处是：</p>
+<p>不再依赖 HTML 解析器进行模版解析，可以进行更多的 AOT 工作提高运行时效率：通过模版 AOT 编译，Vue 的运行时体积可以进一步压缩，运行时效率可以进一步提升；<br>可以渲染到 DOM 以外的平台，实现 SSR、同构渲染这些高级特性，Weex 等框架应用的就是这一特性。<br>综上，Virtual DOM 在性能上的收益并不是最主要的，更重要的是它使得 Vue 具备了现代框架应有的高级特性。</p>
+<p>3、vue 和 react 区别</p>
+<p>相同点：都支持 ssr，都有 vdom，组件化开发，实现 webComponents 规范，数据驱动等<br>不同点：vue 是双向数据流（当然为了实现单数据流方便管理组件状态，vuex 便出现了），react 是单向数据流。vue 的 vdom 是追踪每个组件的依赖关系，不会渲染整个组件树，react 每当应该状态被改变时，全部子组件都会 re-render。<br>上面提到的每个点，具体细节还得看自己的理解</p>
+<p>4、为什么用 vue ：简洁、轻快、舒服、没了</p>
+<p>网络基础类</p>
+<p>1、跨域：很多种方法，但万变不离其宗，都是为了搞定同源策略。重用的有 jsonp、iframe、cors、img、HTML5 postMessage等等。其中用到 html 标签进行跨域的原理就是 html 不受同源策略影响。但只是接受 Get 的请求方式，这个得清楚。</p>
+<p>详细传送门</p>
+<p>延伸1：img iframe script 来发送跨域请求有什么优缺点？<br>iframe<br>优点：跨域完毕之后DOM操作和互相之间的JavaScript调用都是没有问题的<br>缺点：1.若结果要以URL参数传递，这就意味着在结果数据量很大的时候需要分割传递，巨烦。2.还有一个是iframe本身带来的，母页面和iframe本身的交互本身就有安全性限制。<br>script<br>优点：可以直接返回json格式的数据，方便处理<br>缺点：只接受GET请求方式<br>图片ping<br>优点：可以访问任何url，一般用来进行点击追踪，做页面分析常用的方法<br>缺点：不能访问响应文本，只能监听是否响应<br>延伸2：配合 webpack 进行反向代理？<br>webpack 在 devServer 选项里面提供了一个 proxy 的参数供开发人员进行反向代理</p>
+<p>‘/api’: {<br>target: ‘<a href="http://www.example.com&#39;" target="_blank" rel="noopener">http://www.example.com&#39;</a>, // your target host<br>            changeOrigin: true, // needed for virtual hosted sites<br>            pathRewrite: {<br>                ‘^/api’: ‘’  // rewrite path<br>            }<br>},<br>    然后再配合 http-proxy-middleware 插件对 api 请求地址进行代理</p>
+<pre><code>const express = require(&apos;express&apos;);
+const proxy = require(&apos;http-proxy-middleware&apos;);
+// proxy api requests
+const exampleProxy = proxy(options); // 这里的 options 就是 webpack 里面的 proxy 选项对应的每个选项
+
+// mount `exampleProxy` in web server
+const app = express();
+app.use(&apos;/api&apos;, exampleProxy);
+app.listen(3000);
+然后再用 nginx 把允许跨域的源地址添加到报头里面即可
+
+说到 nginx ，可以再谈谈 CORS 配置，大致如下
+
+location / {
+    if ($request_method = &apos;OPTIONS&apos;) {
+        add_header &apos;Access-Control-Allow-Origin&apos; &apos;*&apos;;  
+        add_header &apos;Access-Control-Allow-Methods&apos; &apos;GET, POST, OPTIONS&apos;; 
+        add_header &apos;Access-Control-Allow-Credentials&apos; &apos;true&apos;;
+        add_header &apos;Access-Control-Allow-Headers&apos; &apos;DNT, X-Mx-ReqToken, Keep-Alive, User-Agent, X-Requested-With, If-Modified-Since, Cache-Control, Content-Type&apos;;  
+        add_header &apos;Access-Control-Max-Age&apos; 86400;  
+        add_header &apos;Content-Type&apos; &apos;text/plain charset=UTF-8&apos;;  
+        add_header &apos;Content-Length&apos; 0;  
+        return 200;  
+    }
+}</code></pre><p>2、http 无状态无连接</p>
+<p>http 协议对于事务处理没有记忆能力<br>对同一个url请求没有上下文关系<br>每次的请求都是独立的，它的执行情况和结果与前面的请求和之后的请求是无直接关系的，它不会受前面的请求应答情况直接影响，也不会直接影响后面的请求应答情况<br>服务器中没有保存客户端的状态，客户端必须每次带上自己的状态去请求服务器<br>人生若只如初见，请求过的资源下一次会继续进行请求<br>http协议无状态中的 状态 到底指的是什么？！</p>
+<p>【状态】的含义就是：客户端和服务器在某次会话中产生的数据</p>
+<p>那么对应的【无状态】就意味着：这些数据不会被保留</p>
+<p>but</p>
+<p>通过增加cookie和session机制，现在的网络请求其实是有状态的<br>在没有状态的http协议下，服务器也一定会保留你每次网络请求对数据的修改，但这跟保留每次访问的数据是不一样的，保留的只是会话产生的结果，而没有保留会话<br>详细参考 HTTP是一个无状态的协议。这句话里的无状态是什么意思？</p>
+<p>3、http-cache：就是 http 缓存咯</p>
+<p>首先得明确 http 缓存的好处</p>
+<p>减少了冗余的数据传输，减少网费<br>减少服务器端的压力<br>Web 缓存能够减少延迟与网络阻塞，进而减少显示某个资源所用的时间<br>加快客户端加载网页的速度<br>常见 http 缓存的类型</p>
+<p>私有缓存（一般为本地浏览器缓存）<br>代理缓存<br>然后谈谈本地缓存</p>
+<p>本地缓存是指浏览器请求资源时命中了浏览器本地的缓存资源，浏览器并不会发送真正的请求给服务器了。它的执行过程是：</p>
+<p>第一次浏览器发送请求给服务器时，此时浏览器还没有本地缓存副本，服务器返回资源给浏览器，响应码是200 OK，浏览器收到资源后，把资源和对应的响应头一起缓存下来。<br>第二次浏览器准备发送请求给服务器时候，浏览器会先检查上一次服务端返回的响应头信息中的Cache-Control，它的值是一个相对值，单位为秒，表示资源在客户端缓存的最大有效期，过期时间为第一次请求的时间减去Cache-Control的值，过期时间跟当前的请求时间比较，如果本地缓存资源没过期，那么命中缓存，不再请求服务器。<br>如果没有命中，浏览器就会把请求发送给服务器，进入缓存协商阶段。<br>与本地缓存相关的头有：Cache-Control、Expires，Cache-Control有多个可选值代表不同的意义，而Expires就是一个日期格式的绝对值。</p>
+<p>Cache-Control</p>
+<p>Cache-Control是HTPP缓存策略中最重要的头，它是HTTP/1.1中出现的，它由如下几个值</p>
+<p>no-cache：不使用本地缓存。需要使用缓存协商，先与服务器确认返回的响应是否被更改，如果之前的响应中存在ETag，那么请求的时候会与服务端验证，如果资源未被更改，则可以避免重新下载。<br>no-store：直接禁止游览器缓存数据，每次用户请求该资源，都会向服务器发送一个请求，每次都会下载完整的资源。<br>public：可以被所有的用户缓存，包括终端用户和CDN等中间代理服务器。<br>private：只能被终端用户的浏览器缓存，不允许CDN等中继缓存服务器对其缓存。<br>max-age：从当前请求开始，允许获取的响应被重用的最长时间（秒）。<br>例如：</p>
+<p>Cache-Control: public, max-age=1000 </p>
+<h1 id="表示资源可以被所有用户以及代理服务器缓存，最长时间为1000秒。"><a href="#表示资源可以被所有用户以及代理服务器缓存，最长时间为1000秒。" class="headerlink" title="表示资源可以被所有用户以及代理服务器缓存，最长时间为1000秒。"></a>表示资源可以被所有用户以及代理服务器缓存，最长时间为1000秒。</h1><p>Expires</p>
+<p>Expires是HTTP/1.0出现的头信息，同样是用于决定本地缓存策略的头，它是一个绝对时间，时间格式是如Mon, 10 Jun 2015 21:31:12 GMT，只要发送请求时间是在Expires之前，那么本地缓存始终有效，否则就会去服务器发送请求获取新的资源。如果同时出现Cache-Control：max-age和Expires，那么max-age优先级更高。他们可以这样组合使用</p>
+<p>Cache-Control: public<br>Expires: Wed, Jan 10 2018 00:27:04 GMT<br>所谓的缓存协商</p>
+<p>当第一次请求时服务器返回的响应头中存在以下情况时</p>
+<p>没有 Cache-Control 和 Expires<br>Cache-Control 和 Expires 过期了<br>Cache-Control 的属性设置为 no-cache 时<br>那么浏览器第二次请求时就会与服务器进行协商，询问浏览器中的缓存资源是不是旧版本，需不需要更新，此时，服务器就会做出判断，如果缓存和服务端资源的最新版本是一致的，那么就无需再次下载该资源，服务端直接返回304 Not Modified 状态码，如果服务器发现浏览器中的缓存已经是旧版本了，那么服务器就会把最新资源的完整内容返回给浏览器，状态码就是200 Ok，那么服务端是根据什么来判断浏览器的缓存是不是最新的呢？其实是根据HTTP的另外两组头信息，分别是：Last-Modified/If-Modified-Since 与 ETag/If-None-Match。</p>
+<p>Last-Modified 与 If-Modified-Since</p>
+<p>浏览器第一次请求资源时，服务器会把资源的最新修改时间Last-Modified:Thu, 29 Dec 2011 18:23:55 GMT放在响应头中返回给浏览器<br>第二次请求时，浏览器就会把上一次服务器返回的修改时间放在请求头If-Modified-Since:Thu, 29 Dec 2011 18:23:55发送给服务器，服务器就会拿这个时间跟服务器上的资源的最新修改时间进行对比<br>如果两者相等或者大于服务器上的最新修改时间，那么表示浏览器的缓存是有效的，此时缓存会命中，服务器就不再返回内容给浏览器了，同时Last-Modified头也不会返回，因为资源没被修改，返回了也没什么意义。如果没命中缓存则最新修改的资源连同Last-Modified头一起返回。</p>
+<p>第一次请求返回的响应头：</p>
+<p>Cache-Control:max-age=3600<br>Expires: Fri, Jan 12 2018 00:27:04 GMT<br>Last-Modified: Wed, Jan 10 2018 00:27:04 GMT<br>第二次请求的请求头信息：</p>
+<p>If-Modified-Since: Wed, Jan 10 2018 00:27:04 GMT<br>这组头信息是基于资源的修改时间来判断资源有没有更新，另一种方式就是根据资源的内容来判断，就是接下来要讨论的 ETag 与 If-None-Match</p>
+<p>ETag与If-None-Match</p>
+<p>ETag/If-None-Match与Last-Modified/If-Modified-Since的流程其实是类似的，唯一的区别是它基于资源的内容的摘要信息（比如MD5 hash）来判断</p>
+<p>浏览器发送第二次请求时，会把第一次的响应头信息ETag的值放在If-None-Match的请求头中发送到服务器，与最新的资源的摘要信息对比，如果相等，取浏览器缓存，否则内容有更新，最新的资源连同最新的摘要信息返回。用ETag的好处是如果因为某种原因到时资源的修改时间没改变，那么用ETag就能区分资源是不是有被更新。</p>
+<p>第一次请求返回的响应头：</p>
+<p>Cache-Control: public, max-age=31536000<br>ETag: “15f0fff99ed5aae4edffdd6496d7131f”<br>第二次请求的请求头信息：</p>
+<p>If-None-Match: “15f0fff99ed5aae4edffdd6496d7131f”<br>4、cookie 和 session</p>
+<p>session： 是一个抽象概念，开发者为了实现中断和继续等操作，将 user agent 和 server 之间一对一的交互，抽象为“会话”，进而衍生出“会话状态”，也就是 session 的概念<br>cookie：它是一个世纪存在的东西，http 协议中定义在 header 中的字段，可以认为是 session 的一种后端无状态实现<br>现在我们常说的 “session”，是为了绕开 cookie 的各种限制，通常借助 cookie 本身和后端存储实现的，一种更高级的会话状态实现</p>
+<p>session 的常见实现要借助cookie来发送 sessionID</p>
+<p>5、安全问题，如 XSS 和 CSRF</p>
+<p>XSS：跨站脚本攻击，是一种网站应用程序的安全漏洞攻击，是代码注入的一种。常见方式是将恶意代码注入合法代码里隐藏起来，再诱发恶意代码，从而进行各种各样的非法活动。<br>防范：记住一点 “所有用户输入都是不可信的”，所以得做输入过滤和转义</p>
+<p>详细点击 <a href="http://www.imooc.com/article/13553" target="_blank" rel="noopener">对于跨站脚本攻击（XSS攻击）的理解和总结</a></p>
+<p>CSRF：跨站请求伪造，也称 XSRF，是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法。与 XSS 相比，XSS利用的是用户对指定网站的信任，CSRF利用的是网站对用户网页浏览器的信任。<br>防范：用户操作验证（验证码），额外验证机制（token使用）等</p>
+<p>详细点击 <a href="http://www.imooc.com/article/13552" target="_blank" rel="noopener">对于跨站伪造请求（CSRF）的理解和总结</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://generaltune.github.io/blog/2018/01/15/hello-world/" data-id="cjxmpy61i000p4mi8cnqlsenc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-shell-command" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/13/shell-command/" class="article-date">
+  <time datetime="2018-01-13T06:30:07.000Z" itemprop="datePublished">2018-01-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/13/shell-command/">shell编程笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="监控CPU使用情况-uptime-命令"><a href="#监控CPU使用情况-uptime-命令" class="headerlink" title="监控CPU使用情况　uptime 命令"></a>监控CPU使用情况　uptime 命令</h3><p>该命令的描述为：　打印当前时间，系统已经运行了多久，当前登录用户数以及系统平均负载．</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# uptime</span><br></pre></td></tr></table></figure>
+
+<h3 id="监控内存及交换分区使用情况－－-free-命令"><a href="#监控内存及交换分区使用情况－－-free-命令" class="headerlink" title="监控内存及交换分区使用情况－－　free 命令"></a>监控内存及交换分区使用情况－－　free 命令</h3><p>该命令的描述为：　显示系统内存及交换分区信息<br>用法：　feee [-b |-k | -m]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# free -b</span><br></pre></td></tr></table></figure>
+
+<h3 id="监控磁盘使用情况-－－-df"><a href="#监控磁盘使用情况-－－-df" class="headerlink" title="监控磁盘使用情况　－－　df"></a>监控磁盘使用情况　－－　df</h3><p>该命令的描述为：　生成系统磁盘空间的使用量信息．<br>用法：　df[选项]…<br>选项：　-h 人性化方式显示容量信息<br>        -i 显示磁盘inode使用量信息<br>        -T 显示文件系统类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# df -hT</span><br><span class="line"></span><br><span class="line">[root@centos7 ~]# df -i</span><br></pre></td></tr></table></figure>
+
+<h3 id="监控网络使用情况-－－-ip-和-netstat命令"><a href="#监控网络使用情况-－－-ip-和-netstat命令" class="headerlink" title="监控网络使用情况　－－　ip 和 netstat命令"></a>监控网络使用情况　－－　ip 和 netstat命令</h3><p>ip命令可以查看网卡接口信息，　netstat 命令查看服务器开启的端口信息以及网络连接状态</p>
+<p>描述：　netstat 打印网络连接、路由表、网络接口统计等信息．<br>用法：　netstat[选项]<br>选项：　-s 显示各种协议数据统计信息<br>　　　　-n 使用数字形式的IP、端口号、用户ID替代主机、协议、用户等名称信息<br>　　　　-p 显示今晨该名称及对应进程ID号<br>　　　　-l 仅显示正在监听的sockets 接口信息<br>　　　　-u 查看udp连接信息<br>　　　　-t 查看tcp连接信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# ip a s</span><br><span class="line">[root@centos7 ~]# ip -s link show enol17773</span><br><span class="line">[root@centos7 ~]# netstat -nutlp</span><br><span class="line">[root@centos7 ~]# netstat -s</span><br></pre></td></tr></table></figure>
+
+<h3 id="监控进程使用情况-－－-ps-和-top命令"><a href="#监控进程使用情况-－－-ps-和-top命令" class="headerlink" title="监控进程使用情况　－－　ps 和　top命令"></a>监控进程使用情况　－－　ps 和　top命令</h3><ol>
+<li>ps命令<br>　描述：　查看当前进程信息<br>　用法：　ps命令版本众多，有多种语法种类，如UNIX、BSD、以及GNU linux</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# ps -e  #查看所有的进程信息</span><br><span class="line">[root@centos7 ~]# ps -ef #全格式显示进程信息</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>top命令<br>描述：　动态查看进程信息<br>选项：　-d #top刷新间隔　，默认为3秒<pre><code>-p #查看指定PID的进程信息</code></pre></li>
+</ol>
+<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><h3 id="网络接口参数-－－-ifconfig-命令"><a href="#网络接口参数-－－-ifconfig-命令" class="headerlink" title="网络接口参数 －－ ifconfig 命令"></a>网络接口参数 －－ ifconfig 命令</h3><p>描述：　显示或设置网络接口信息<br>用法：　ifconfig interface 选项 | 地址</p>
+<h3 id="主机名参数-－－-hostnamectl命令"><a href="#主机名参数-－－-hostnamectl命令" class="headerlink" title="主机名参数　－－　hostnamectl命令"></a>主机名参数　－－　hostnamectl命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# hostnamectl status #查看主机名称和主机信息</span><br><span class="line">[root@centos7 ~]# hostnamectl</span><br></pre></td></tr></table></figure>
+
+<h3 id="路由参数－－-route-命令"><a href="#路由参数－－-route-命令" class="headerlink" title="路由参数－－　route 命令"></a>路由参数－－　route 命令</h3><p>描述：　显示或设置静态IP路由表．<br>用法：　route[选项]      #查看路由信息<br>        route add 目标网络　gw 网关地址　<br>        route del 目标网络</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# route   </span><br><span class="line">[root@centos7 ~]# route -n #使用数字地址替代主机名称</span><br><span class="line">[root@centos7 ~]# route add default gw 192.168.0.254  #添加默认网关为192.168.0.254</span><br><span class="line">[root@centos7 ~]# route add -net 172.16.0.0/16 gw 192.168.0.254  #添加指定网段的网关</span><br><span class="line">[root@centos7 ~]# route add -net 192.56.76.0 netmask 255.255.255.0 dev eno16777736   # 添加路由记录，指定通过eno16777736 网卡传输到192.56.76.0网段的数据</span><br><span class="line">[root@centos7 ~]# route del default gw 192.168.0.254 #删除默认网关</span><br><span class="line">[root@centos7 ~]# route del -net 172,16,0.0/16 #删除指定网段的网关记录</span><br></pre></td></tr></table></figure>
+
+<h3 id="网络故障排错"><a href="#网络故障排错" class="headerlink" title="网络故障排错"></a>网络故障排错</h3><ol>
+<li>ping</li>
+<li>traceroute </li>
+<li>nslookup</li>
+<li>dig</li>
+<li>netstat</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# ping 127.0.0.1</span><br><span class="line">[root@centos7 ~]# traceroute -I www.google.com</span><br><span class="line">[root@centos7 ~]# nslookup www.google.com</span><br><span class="line">[root@centos7 ~]# dig www.google.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="内核模块"><a href="#内核模块" class="headerlink" title="内核模块"></a>内核模块</h2><h3 id="查看已加载的内核模块"><a href="#查看已加载的内核模块" class="headerlink" title="查看已加载的内核模块"></a>查看已加载的内核模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# lsmod</span><br></pre></td></tr></table></figure>
+
+<h2 id="Bash-技巧"><a href="#Bash-技巧" class="headerlink" title="Bash 技巧"></a>Bash 技巧</h2><table>
+<thead>
+<tr>
+<th align="center">快捷键</th>
+<th align="center">功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Ctrl + a</td>
+<td align="center">光标移动到行首</td>
+</tr>
+<tr>
+<td align="center">Ctrl + e</td>
+<td align="center">光标移动到行尾</td>
+</tr>
+<tr>
+<td align="center">Ctrl + f</td>
+<td align="center">光标右移动一个字符</td>
+</tr>
+<tr>
+<td align="center">Ctrl + b</td>
+<td align="center">光标左移动一个字符</td>
+</tr>
+<tr>
+<td align="center">Ctrl + l</td>
+<td align="center">清屏 等同与　clear命令</td>
+</tr>
+<tr>
+<td align="center">Ctrl + u</td>
+<td align="center">删除光标至行首的字符</td>
+</tr>
+<tr>
+<td align="center">Ctrl + k</td>
+<td align="center">删除光标至行尾的字符</td>
+</tr>
+<tr>
+<td align="center">Ctrl + c</td>
+<td align="center">终止进程</td>
+</tr>
+<tr>
+<td align="center">Ctrl + z</td>
+<td align="center">挂起进程(jobs命令查看挂起的进程)</td>
+</tr>
+<tr>
+<td align="center">Ctrl + w</td>
+<td align="center">删除光标前一个单词(以空格为分隔符)</td>
+</tr>
+<tr>
+<td align="center">Alt  + d</td>
+<td align="center">删除光标后一个单词</td>
+</tr>
+<tr>
+<td align="center">Tab</td>
+<td align="center">自动补齐</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# id tom &gt;&gt; user 2&gt;&gt; error</span><br><span class="line">[root@centos7 ~]# firefox   # 火狐浏览器通过前端启动，　使当前Shell将暂时无法使用</span><br><span class="line">[root@centos7 ~]# firefox &amp;  # 后台运行浏览器，不影响当前Shell的使用  jobs查看后台运行的程序  fg 调用后台的程序 </span><br><span class="line">[root@centos7 ~]# ls /tmp; ls /root ; ls /home 所有的命令按顺序执行(不管前面的命令是否成功,后面的命令一定正常执行)</span><br><span class="line">[root@centos7 ~]# ls test.txt &amp;&amp; cat test.txt #仅当ls执行成功才会执行cat</span><br><span class="line">[root@centos7 ~]# gedit || vim  # 如果有gedit编辑器,则打开该程序,否则打开vim编辑器</span><br><span class="line">[root@centos7 ~]# id tom &amp;&gt;/dev/null &amp;&amp; echo &quot;Hi, tom&quot; || echo &quot;No Such user&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="花括号-的使用技巧"><a href="#花括号-的使用技巧" class="headerlink" title="花括号{}的使用技巧"></a>花括号{}的使用技巧</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# echo &#123;a, b, c&#125;</span><br><span class="line">a b c</span><br><span class="line"></span><br><span class="line">[root@centos7 ~]# echo user&#123;1, 5, 8&#125;</span><br><span class="line">user1 user5 user8</span><br><span class="line"></span><br><span class="line">[root@centos7 ~]# echo &#123;1..10&#125;</span><br><span class="line">0 1 2 3 4 5 6 7 8 9 </span><br><span class="line"></span><br><span class="line">[root@centos7 ~]# mkdir  /tmp/&#123;dir1, dir2, dir3&#125;</span><br><span class="line">[root@centos7 ~]# chmod  tmp/&#123;dir1, dir2, dir3&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>name=[value]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# NAME=tomcat</span><br><span class="line">[root@centos7 ~]# echo $NAME</span><br><span class="line">[root@centos7 ~]# typeset -r NAME #添加readonly 只读属性</span><br><span class="line">[root@centos7 ~]# set   #查看当前环境下的变量</span><br></pre></td></tr></table></figure>
+
+<p>使用name=[value]的形式定义的变量默认值仅在当前的Shell中有效, 子进程不会继承这样的变量,使用export命令会将变量放入环境中,这样新的进程会从父进程哪里继承环境,export 可以直接定义环境变量并赋值,也可以先定义一个普通的变量,再通过export 转换为环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# export TEST #将已有用户变量添加至环境</span><br><span class="line">[root@centos7 ~]# export NAME=tom #直接定义环境变量</span><br><span class="line">[root@centos7 ~]# chmod +x echo.sh #修改文件权限为可执行</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="center">变量名称</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">BASHPID</td>
+<td align="center">当前bash 进程的进程号</td>
+</tr>
+<tr>
+<td align="center">GROUPS</td>
+<td align="center">当前用户所属的组的组ID号</td>
+</tr>
+<tr>
+<td align="center">HOSTNAME</td>
+<td align="center">当前主机的主机名称</td>
+</tr>
+<tr>
+<td align="center">PWD</td>
+<td align="center">当前工作目录</td>
+</tr>
+<tr>
+<td align="center">OLDPWD</td>
+<td align="center">前一个工作目录</td>
+</tr>
+<tr>
+<td align="center">RANDOM</td>
+<td align="center">0~32767之间的一个随机数</td>
+</tr>
+<tr>
+<td align="center">UID</td>
+<td align="center">当前用户的ID号码</td>
+</tr>
+<tr>
+<td align="center">HISTSIZE</td>
+<td align="center">命令历史的记录条数</td>
+</tr>
+<tr>
+<td align="center">HOME</td>
+<td align="center">当前用户的家目录</td>
+</tr>
+<tr>
+<td align="center">PATH</td>
+<td align="center">命令搜索路径</td>
+</tr>
+<tr>
+<td align="center">PS1</td>
+<td align="center">主命令提示符</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://generaltune.github.io/blog/2018/01/13/shell-command/" data-id="cjxmpy61q00114mi8zxq0t5h2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-algorithm-tips" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/11/algorithm-tips/" class="article-date">
+  <time datetime="2018-01-11T05:36:32.000Z" itemprop="datePublished">2018-01-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/11/algorithm-tips/">算法笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="概述：R-B-Tree，又称为“红黑树”"><a href="#概述：R-B-Tree，又称为“红黑树”" class="headerlink" title="概述：R-B Tree，又称为“红黑树”"></a>概述：R-B Tree，又称为“红黑树”</h2><p>红黑树的特性:<br>（1）每个节点或者是黑色，或者是红色。<br>（2）根节点是黑色。<br>（3）每个叶子节点（NIL）是黑色。 [注意：这里叶子节点，是指为空(NIL或NULL)的叶子节点！]<br>（4）如果一个节点是红色的，则它的子节点必须是黑色的。<br>（5）从一个节点到该节点的子孙节点的所有路径上包含相同数目的黑节点。</p>
+<p>红黑树的操作：　左旋、右旋、添加、删除</p>
+<p>红黑树的应用比较广泛，主要是用它来存储有序的数据，它的时间复杂度是O(lgn)，效率非常之高。<br>例如，Java集合中的TreeSet和TreeMap，C++ STL中的set、map，以及Linux虚拟内存的管理，都是通过红黑树去实现的。</p>
+<p>红黑树的时间复杂度为: O(lgn)<br>下面通过“数学归纳法”对红黑树的时间复杂度进行证明。</p>
+<p><a href="http://blog.csdn.net/carson_ho/article/details/79373134" target="_blank" rel="noopener">java 中hashmap的实现</a></p>
+<h2 id="加密算法-DES-AES-RSA-MD5-SHA1-Base64-比较和项目应用"><a href="#加密算法-DES-AES-RSA-MD5-SHA1-Base64-比较和项目应用" class="headerlink" title="加密算法(DES,AES,RSA,MD5,SHA1,Base64)比较和项目应用"></a>加密算法(DES,AES,RSA,MD5,SHA1,Base64)比较和项目应用</h2><p>加密技术通常分为两大类:”对称式”和”非对称式”。</p>
+<h3 id="对称性加密算法：对称式加密就是加密和解密使用同一个密钥。信息接收双方都需事先知道密匙和加解密算法且其密匙是相同的，之后便是对数据进行加解密了。对称加密算法用来对敏感数据等信息进行加密。"><a href="#对称性加密算法：对称式加密就是加密和解密使用同一个密钥。信息接收双方都需事先知道密匙和加解密算法且其密匙是相同的，之后便是对数据进行加解密了。对称加密算法用来对敏感数据等信息进行加密。" class="headerlink" title="对称性加密算法：对称式加密就是加密和解密使用同一个密钥。信息接收双方都需事先知道密匙和加解密算法且其密匙是相同的，之后便是对数据进行加解密了。对称加密算法用来对敏感数据等信息进行加密。"></a>对称性加密算法：对称式加密就是加密和解密使用同一个密钥。信息接收双方都需事先知道密匙和加解密算法且其密匙是相同的，之后便是对数据进行加解密了。对称加密算法用来对敏感数据等信息进行加密。</h3><h3 id="非对称算法：非对称式加密就是加密和解密所使用的不是同一个密钥，通常有两个密钥，称为”公钥”和”私钥”，它们两个必需配对使用，否则不能打开加密文件。发送双方A-B事先均生成一堆密匙，然后A将自己的公有密匙发送给B，B将自己的公有密匙发送给A，如果A要给B发送消-息，则先需要用B的公有密匙进行消息加密，然后发送给B端，此时B端再用自己的私有密匙进行消息解密，B向A发送消息时为同样的道理。"><a href="#非对称算法：非对称式加密就是加密和解密所使用的不是同一个密钥，通常有两个密钥，称为”公钥”和”私钥”，它们两个必需配对使用，否则不能打开加密文件。发送双方A-B事先均生成一堆密匙，然后A将自己的公有密匙发送给B，B将自己的公有密匙发送给A，如果A要给B发送消-息，则先需要用B的公有密匙进行消息加密，然后发送给B端，此时B端再用自己的私有密匙进行消息解密，B向A发送消息时为同样的道理。" class="headerlink" title="非对称算法：非对称式加密就是加密和解密所使用的不是同一个密钥，通常有两个密钥，称为”公钥”和”私钥”，它们两个必需配对使用，否则不能打开加密文件。发送双方A,B事先均生成一堆密匙，然后A将自己的公有密匙发送给B，B将自己的公有密匙发送给A，如果A要给B发送消 息，则先需要用B的公有密匙进行消息加密，然后发送给B端，此时B端再用自己的私有密匙进行消息解密，B向A发送消息时为同样的道理。"></a>非对称算法：非对称式加密就是加密和解密所使用的不是同一个密钥，通常有两个密钥，称为”公钥”和”私钥”，它们两个必需配对使用，否则不能打开加密文件。发送双方A,B事先均生成一堆密匙，然后A将自己的公有密匙发送给B，B将自己的公有密匙发送给A，如果A要给B发送消 息，则先需要用B的公有密匙进行消息加密，然后发送给B端，此时B端再用自己的私有密匙进行消息解密，B向A发送消息时为同样的道理。</h3><h3 id="散列算法：散列算法，又称哈希函数，是一种单向加密算法。在信息安全技术中，经常需要验证消息的完整性，散列-Hash-函数提供了这一服务，它对不同长度的输入消息，产生固定长度的输出。这个固定长度的输出称为原输入消息的”散列”或”消息摘要”-Message-digest-。散列算法不算加密算法，因为其结果是不可逆的，既然是不可逆的，那么当然不是用来加密的，而是签名。"><a href="#散列算法：散列算法，又称哈希函数，是一种单向加密算法。在信息安全技术中，经常需要验证消息的完整性，散列-Hash-函数提供了这一服务，它对不同长度的输入消息，产生固定长度的输出。这个固定长度的输出称为原输入消息的”散列”或”消息摘要”-Message-digest-。散列算法不算加密算法，因为其结果是不可逆的，既然是不可逆的，那么当然不是用来加密的，而是签名。" class="headerlink" title="散列算法：散列算法，又称哈希函数，是一种单向加密算法。在信息安全技术中，经常需要验证消息的完整性，散列(Hash)函数提供了这一服务，它对不同长度的输入消息，产生固定长度的输出。这个固定长度的输出称为原输入消息的”散列”或”消息摘要”(Message digest)。散列算法不算加密算法，因为其结果是不可逆的，既然是不可逆的，那么当然不是用来加密的，而是签名。"></a>散列算法：散列算法，又称哈希函数，是一种单向加密算法。在信息安全技术中，经常需要验证消息的完整性，散列(Hash)函数提供了这一服务，它对不同长度的输入消息，产生固定长度的输出。这个固定长度的输出称为原输入消息的”散列”或”消息摘要”(Message digest)。散列算法不算加密算法，因为其结果是不可逆的，既然是不可逆的，那么当然不是用来加密的，而是签名。</h3><h3 id="对称性加密算法有：AES、DES、3DES"><a href="#对称性加密算法有：AES、DES、3DES" class="headerlink" title="对称性加密算法有：AES、DES、3DES"></a>对称性加密算法有：AES、DES、3DES</h3><p>用途：对称加密算法用来对敏感数据等信息进行加密</p>
+<p>DES（Data Encryption Standard）：数据加密标准，速度较快，适用于加密大量数据的场合。</p>
+<p>3DES（Triple DES）：是基于DES，对一块数据用三个不同的密钥进行三次加密，强度更高。</p>
+<p>AES（Advanced Encryption Standard）：高级加密标准，是下一代的加密算法标准，速度快，安全级别高；AES是一个使用128为分组块的分组加密算法，分组块和128、192或256位的密钥一起作为输入，对4×4的字节数组上进行操作。众所周之AES是种十分高效的算法，尤其在8位架构中，这源于它面向字节的设计。AES 适用于8位的小型单片机或者普通的32位微处理器,并且适合用专门的硬件实现，硬件实现能够使其吞吐量（每秒可以到达的加密/解密bit数）达到十亿量级。同样，其也适用于RFID系统。</p>
+<h3 id="非对称性算法有：RSA、DSA、ECC"><a href="#非对称性算法有：RSA、DSA、ECC" class="headerlink" title="非对称性算法有：RSA、DSA、ECC"></a>非对称性算法有：RSA、DSA、ECC</h3><p>RSA：由 RSA 公司发明，是一个支持变长密钥的公共密钥算法，需要加密的文件块的长度也是可变的。RSA在国外早已进入实用阶段，已研制出多种高速的RSA的专用芯片。</p>
+<p>DSA（Digital Signature Algorithm）：数字签名算法，是一种标准的 DSS（数字签名标准），严格来说不算加密算法。</p>
+<p>ECC（Elliptic Curves Cryptography）：椭圆曲线密码编码学。ECC和RSA相比，具有多方面的绝对优势，主要有：抗攻击性强。相同的密钥长度，其抗攻击性要强很多倍。计算量小，处理速度快。ECC总的速度比RSA、DSA要快得多。存储空间占用小。ECC的密钥尺寸和系统参数与RSA、DSA相比要小得多，意味着它所占的存贮空间要小得多。这对于加密算法在IC卡上的应用具有特别重要的意义。带宽要求低。当对长消息进行加解密时，三类密码系统有相同的带宽要求，但应用于短消息时ECC带宽要求却低得多。带宽要求低使ECC在无线网络领域具有广泛的应用前景。</p>
+<p>散列算法（签名算法）有：MD5、SHA1、HMAC<br>用途：主要用于验证，防止信息被修。具体用途如：文件校验、数字签名、鉴权协议</p>
+<p>MD5：MD5是一种不可逆的加密算法，目前是最牢靠的加密算法之一，尚没有能够逆运算的程序被开发出来，它对应任何字符串都可以加密成一段唯一的固定长度的代码。</p>
+<p>SHA1：是由NISTNSA设计为同DSA一起使用的，它对长度小于264的输入，产生长度为160bit的散列值，因此抗穷举(brute-force)性更好。SHA-1设计时基于和MD4相同原理,并且模仿了该算法。SHA-1是由美国标准技术局（NIST）颁布的国家标准，是一种应用最为广泛的Hash函数算法，也是目前最先进的加密技术，被政府部门和私营业主用来处理敏感的信息。而SHA-1基于MD5，MD5又基于MD4。</p>
+<p>HMAC：是密钥相关的哈希运算消息认证码（Hash-based Message Authentication Code）,HMAC运算利用哈希算法，以一个密钥和一个消息为输入，生成一个消息摘要作为输出。也就是说HMAC是需要一个密钥的。所以，HMAC_SHA1也是需要一个密钥的，而SHA1不需要。</p>
+<h3 id="其他常用算法："><a href="#其他常用算法：" class="headerlink" title="其他常用算法："></a>其他常用算法：</h3><p>Base64：其实不是安全领域下的加密解密算法，只能算是一个编码算法，通常用于把二进制数据编码为可写的字符形式的数据，对数据内容进行编码来适合传输(可以对img图像编码用于传输)。这是一种可逆的编码方式。编码后的数据是一个字符串，其中包含的字符为：A-Z、a-z、0-9、+、/，共64个字符(26 + 26 + 10 + 1 + 1 = 64，其实是65个字符，“=”是填充字符。Base64要求把每三个8Bit的字节转换为四个6Bit的字节(3<em>8 = 4</em>6 = 24)，然后把6Bit再添两位高位0，组成四个8Bit的字节，也就是说，转换后的字符串理论上将要比原来的长1/3。原文的字节最后不够3个的地方用0来补足，转换时Base64编码用=号来代替。这就是为什么有些Base64编码会以一个或两个等号结束的原因，中间是不可能出现等号的，但等号最多只有两个。其实不用”=”也不耽误解码，之所以用”=”，可能是考虑到多段编码后的Base64字符串拼起来也不会引起混淆。)<br>Base64编码是从二进制到字符的过程，像一些中文字符用不同的编码转为二进制时，产生的二进制是不一样的，所以最终产生的Base64字符也不一样。例如”上网”对应utf-8格式的Base64编码是”5LiK572R”， 对应GB2312格式的Base64编码是”yc/N+A==”。<br>标准的Base64并不适合直接放在URL里传输，因为URL编码器会把标准Base64中的“/”和“+”字符变为形如“%XX”的形式，而这些“%”号在存入数据库时还需要再进行转换，因为ANSI SQL中已将“%”号用作通配符。<br>为解决此问题，可采用一种用于URL的改进Base64编码，它不在末尾填充’=’号，并将标准Base64中的“+”和“/”分别改成了“-”和“<em>”，这样就免去了在URL编解码和数据库存储时所要作的转换，避免了编码信息长度在此过程中的增加，并统一了数据库、表单等处对象标识符的格式。<br>另有一种用于正则表达式的改进Base64变种，它将“+”和“/”改成了“!”和“-”，因为“+”，“*”以及前面在IRCu中用到的“[”和“]”在正则表达式中都可能具有特殊含义。<br>此外还有一些变种，它们将“+/”改为“</em>-”或“.<em>”（用作编程语言中的标识符名称）或“.-”（用于XML中的Nmtoken）甚至“</em>:”（用于XML中的Name）。</p>
+<p>​HTTPS（全称：Hypertext Transfer Protocol over Secure Socket Layer），是以安全为目标的HTTP通道，简单讲是HTTP的安全版。即HTTP下加入SSL层，HTTPS的安全基础是SSL(SSL使用40 位关键字作为RC4流加密算法，这对于商业信息的加密是合适的。)，因此加密的详细内容就需要SSL。https:URL表明它使用了HTTP，但HTTPS存在不同于HTTP的默认端口及一个加密/身份验证层（在HTTP与TCP之间），提供了身份验证与加密通讯方法，现在它被广泛用于万维网上安全敏感的通讯，例如交易支付方面。它的主要作用可以分为两种：一种是建立一个信息安全通道，来保证数据传输的安全；另一种就是确认网站的真实性。</p>
+<h2 id="项目应用总结："><a href="#项目应用总结：" class="headerlink" title="项目应用总结："></a>项目应用总结：</h2><ol>
+<li>加密算法是可逆的，用来对敏感数据进行保护。散列算法(签名算法、哈希算法)是不可逆的，主要用于身份验证。</li>
+<li>对称加密算法使用同一个密匙加密和解密，速度快，适合给大量数据加密。对称加密客户端和服务端使用同一个密匙，存在被抓包破解的风险。</li>
+<li>非对称加密算法使用公钥加密，私钥解密，私钥签名，公钥验签。安全性比对称加密高，但速度较慢。非对称加密使用两个密匙，服务端和客户端密匙不一样，私钥放在服务端，黑客一般是拿不到的，安全性高。</li>
+<li>Base64不是安全领域下的加解密算法，只是一个编码算法，通常用于把二进制数据编码为可写的字符形式的数据，特别适合在http，mime协议下的网络快速传输数据。UTF-8和GBK中文的Base64编码结果是不同的。采用Base64编码不仅比较简短，同时也具有不可读性，即所编码的数据不会被人用肉眼所直接看到，但这种方式很初级，很简单。Base64可以对图片文件进行编码传输。</li>
+<li>https协议广泛用于万维网上安全敏感的通讯，例如交易支付方面。它的主要作用可以分为两种：一种是建立一个信息安全通道，来保证数据传输的安全；另一种就是确认网站的真实性。</li>
+<li>大量数据加密建议采用对称加密算法，提高加解密速度；小量的机密数据，可以采用非对称加密算法。在实际的操作过程中，我们通常采用的方式是：采用非对称加密算法管理对称算法的密钥，然后用对称加密算法加密数据，这样我们就集成了两类加密算法的优点，既实现了加密速度快的优点，又实现了安全方便管理密钥的优点。</li>
+<li>MD5标准密钥长度128位（128位是指二进制位。二进制太长，所以一般都改写成16进制，每一位16进制数可以代替4位二进制数，所以128位二进制数写成16进制就变成了128/4=32位。16位加密就是从32位MD5散列中把中间16位提取出来）；sha1标准密钥长度160位(比MD5摘要长32位)，Base64转换后的字符串理论上将要比原来的长1/3。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://generaltune.github.io/blog/2018/01/11/algorithm-tips/" data-id="cjxmpy619000e4mi8x3l1baud" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-w3c-tips" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/11/w3c-tips/" class="article-date">
+  <time datetime="2018-01-11T03:12:04.000Z" itemprop="datePublished">2018-01-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/11/w3c-tips/">w3c标准学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>A list of current W3C publications and the latest revision of this technical report can be found in the W3C technical reports index at <a href="https://www.w3.org/TR/" target="_blank" rel="noopener">https://www.w3.org/TR/</a>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">网址</th>
+<th align="center">描述</th>
+<th align="center">链接</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">w3c</td>
+<td align="center"><a href="https://www.w3.org/" target="_blank" rel="noopener">https://www.w3.org/</a></td>
+<td align="center">w3c官网</td>
+<td align="center"><a href="https://www.w3.org/" target="_blank" rel="noopener">链接</a></td>
+</tr>
+<tr>
+<td align="center">whatwg</td>
+<td align="center"><a href="https://whatwg.org/" target="_blank" rel="noopener">https://whatwg.org/</a></td>
+<td align="center">whatwg官网</td>
+<td align="center"><a href="https://whatwg.org/" target="_blank" rel="noopener">链接</a></td>
+</tr>
+<tr>
+<td align="center">webdesign</td>
+<td align="center"><a href="https://www.w3.org/standards/webdesign/" target="_blank" rel="noopener">https://www.w3.org/standards/webdesign/</a></td>
+<td align="center">w3c标准web设计相关标准</td>
+<td align="center"><a href="https://www.w3.org/standards/webdesign/" target="_blank" rel="noopener">链接</a></td>
+</tr>
+<tr>
+<td align="center">html52</td>
+<td align="center"><a href="https://www.w3.org/TR/html52/" target="_blank" rel="noopener">https://www.w3.org/TR/html52/</a></td>
+<td align="center">html 5.2 标准文档</td>
+<td align="center"><a href="https://www.w3.org/TR/html52/" target="_blank" rel="noopener">链接</a></td>
+</tr>
+<tr>
+<td align="center">ui events</td>
+<td align="center"><a href="https://www.w3.org/TR/DOM-Level-3-Events/" target="_blank" rel="noopener">https://www.w3.org/TR/DOM-Level-3-Events/</a></td>
+<td align="center">ui events 标准文档</td>
+<td align="center"><a href="https://www.w3.org/TR/DOM-Level-3-Events/" target="_blank" rel="noopener">链接</a></td>
+</tr>
+<tr>
+<td align="center">css标准</td>
+<td align="center"><a href="https://www.w3.org/Style/CSS/" target="_blank" rel="noopener">https://www.w3.org/Style/CSS/</a></td>
+<td align="center">w3c的css标准</td>
+<td align="center"><a href="https://www.w3.org/Style/CSS/" target="_blank" rel="noopener">链接</a></td>
+</tr>
+<tr>
+<td align="center">w3c所有的标准</td>
+<td align="center"><a href="https://www.w3.org/TR/" target="_blank" rel="noopener">https://www.w3.org/TR/</a></td>
+<td align="center">w3c所有的 标准文档和草稿</td>
+<td align="center"><a href="https://www.w3.org/TR/" target="_blank" rel="noopener">链接</a></td>
+</tr>
+<tr>
+<td align="center">RFC文档目录</td>
+<td align="center"><a href="http://man.chinaunix.net/develop/rfc/default.htm" target="_blank" rel="noopener">http://man.chinaunix.net/develop/rfc/default.htm</a></td>
+<td align="center">RFC文档目录</td>
+<td align="center"><a href="http://man.chinaunix.net/develop/rfc/default.htm" target="_blank" rel="noopener">链接</a></td>
+</tr>
+<tr>
+<td align="center">RFC 文档</td>
+<td align="center"><a href="https://www.rfc-editor.org/" target="_blank" rel="noopener">https://www.rfc-editor.org/</a></td>
+<td align="center">RFC文档</td>
+<td align="center"><a href="https://www.rfc-editor.org/" target="_blank" rel="noopener">链接</a></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://generaltune.github.io/blog/2018/01/11/w3c-tips/" data-id="cjxmpy61v00174mi8gk679t3a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志-感悟-生活/">日志  感悟 生活</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/日志-感悟-生活/" style="font-size: 10px;">日志  感悟 生活</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/08/summitmeeting/">行业会议</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/01/docker-user-tips/">docker学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/01/csslayout/">css 布局整理</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/25/pageoptimization/">页面卡顿优化</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/07/interview-tips/">面试合集</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 generaltune<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
 </body>
 </html>

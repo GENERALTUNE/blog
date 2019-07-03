@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>页面卡顿优化 | generaltune&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近做项目时遇到了页面加载卡顿问题，一时没有头绪，感到无从下手，看到这篇文章，所以整体梳理了一下，在此记录。 在富客户端网页应用中，界面上的UI的更改是通过DOM操作实现的。 尽管DOM提供了丰富接口供外部调用，但是dom操作的代价很高， 页面前端代码的性能瓶颈大多集中在DOM操作上，因此，前端性能优化的 一个主要的关注点是dom操作的优化，因此我们可以想办法通过尽量减少 DOM操作来优化性能。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="页面卡顿优化">
+<meta property="og:url" content="https://generaltune.github.io/blog/2018/02/25/pageoptimization/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="最近做项目时遇到了页面加载卡顿问题，一时没有头绪，感到无从下手，看到这篇文章，所以整体梳理了一下，在此记录。 在富客户端网页应用中，界面上的UI的更改是通过DOM操作实现的。 尽管DOM提供了丰富接口供外部调用，但是dom操作的代价很高， 页面前端代码的性能瓶颈大多集中在DOM操作上，因此，前端性能优化的 一个主要的关注点是dom操作的优化，因此我们可以想办法通过尽量减少 DOM操作来优化性能。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T03:52:29.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="页面卡顿优化">
+<meta name="twitter:description" content="最近做项目时遇到了页面加载卡顿问题，一时没有头绪，感到无从下手，看到这篇文章，所以整体梳理了一下，在此记录。 在富客户端网页应用中，界面上的UI的更改是通过DOM操作实现的。 尽管DOM提供了丰富接口供外部调用，但是dom操作的代价很高， 页面前端代码的性能瓶颈大多集中在DOM操作上，因此，前端性能优化的 一个主要的关注点是dom操作的优化，因此我们可以想办法通过尽量减少 DOM操作来优化性能。">
+  
+    <link rel="alternate" href="/atom.xml" title="generaltune&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">generaltune&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://generaltune.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pageoptimization" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/25/pageoptimization/" class="article-date">
+  <time datetime="2018-02-25T08:12:01.000Z" itemprop="datePublished">2018-02-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      页面卡顿优化
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近做项目时遇到了页面加载卡顿问题，一时没有头绪，感到无从下手，看到这篇文章，所以整体梳理了一下，在此记录。</p>
+<p>在富客户端网页应用中，界面上的UI的更改是通过DOM操作实现的。</p>
+<p>尽管DOM提供了丰富接口供外部调用，但是dom操作的代价很高，</p>
+<p>页面前端代码的性能瓶颈大多集中在DOM操作上，因此，前端性能优化的</p>
+<p>一个主要的关注点是dom操作的优化，因此我们可以想办法通过尽量减少</p>
+<p>DOM操作来优化性能。</p>
+<p>首先，DOM操作为什么会影响性能。在浏览器中，DOM的实现和ECMAScript</p>
+<p>的实现是分离的。例如，在IE中，ECMAScript的实现在jscript.dll中，而DOM的</p>
+<p>实现在mshtml.dll中；在chrome中使用webkit的WebCore处理DOM和渲染，但</p>
+<p>ECMAScript是在V8引擎中实现的，其他浏览器的情况类似，所以通过Javascript</p>
+<p>调用dom接口，是相当于两个模块的交互。相比较在同一模块中的调用，这种跨模块的</p>
+<p>调用其性能损耗是很高的，但DOM操作对性能影响最大是因为它导致了浏览器的重绘</p>
+<p>和重排。</p>
+<p>浏览器渲染原理的简单说明</p>
+<p>从下载文档到渲染页面的过程中，浏览器会通过解析HTML文档来构建DOM树，解析</p>
+<p>CSS产生CSS规则树。javascript在代码解析的过程中，可能会修改生成的dom树</p>
+<p>和css规则树，之后根据dom树和css规则树构建渲染树，在这个过程中css会根据</p>
+<p>选择器匹配HTML元素。渲染树包括了每个元素的大小，边距等样式属性。渲染树</p>
+<p>中不包含隐藏元素及head元素等不可见元素。最后浏览器根据元素的坐标和大小</p>
+<p>来计算每个元素的位置，并绘制这些元素到页面上。重绘指的是元素的位置或尺寸</p>
+<p>发生了改变，浏览器会重新绘制页面上受影响的元素，重排的代价高于重绘。</p>
+<p>之下的DOM操作会导致重绘或重排：</p>
+<p>1.增加，删除和修改可见DOM元素</p>
+<ol start="2">
+<li>页面初始化的渲染</li>
+</ol>
+<p>3.移动dom元素</p>
+<p>4.修改css样式，改变dom元素的尺寸</p>
+<p>5.dom元素内容改变，使得尺寸被撑大</p>
+<p>6.浏览器窗口尺寸改变</p>
+<p>7.浏览器窗口滚动</p>
+<p>现代浏览器会针对重排或重绘做性能优化，例如，把DOM操作积累一批后统一</p>
+<p>做一次重排或重绘，但在有些情况下，浏览器会立即进行重排或重绘，比如请求如下的</p>
+<p>dom元素布局信息</p>
+<p>offsetTop/Left/Width/Height</p>
+<p>scrollTop/Left/Width/Height</p>
+<p>clientTop/Left/Width/Height</p>
+<p>getComputeStyle()或currentStyle</p>
+<p>因为这些值都是动态计算的，所以浏览器需尽快完成页面绘制，计算返回值，打乱了重绘或</p>
+<p>重排优化。</p>
+<p>可以遵循一些最佳实践来降低影响–&gt;</p>
+<p>方法一：合并多此dom操作为单次dom操作</p>
+<p>通过class类名来元素的大量样式更改，代码维护性较好。</p>
+<p>通过innerHTML接口来修改DOM元素的内容时，以字符串方式拼接好代码后，一次性赋值给</p>
+<p>DOM元素的innerHTML接口。</p>
+<p>方法二： 把DOM元素离线或隐藏后修改</p>
+<p>把元素从页面流中脱离或隐藏，这样处理后，只会在DOM元素脱离或添加时，或者是隐藏或显示时才会造成页面的重绘会重排，对脱离了页面布局的DOM元素操作就不会导致页面的性能问题。</p>
+<p>这种方式适合需要大批量修改dom元素的情况。具体方式由三种：</p>
+<p>(1) 使用文档片段</p>
+<p>文档片段是一个轻量级的document对象，并不会和特定的页面关联，通过在文档片段上进行DOM操作，可以降低DOM操作对页面性能的影响，这种方式是创建一个文档片段，并在此片段上</p>
+<p>进行必要的DOM操作，操作完成后将它附加在页面中，对页面的影响只存在于最后把文档片段附加到页面的这一步操作上。</p>
+<p>var fragment=document.createDocumentFragment();</p>
+<p>//一些基于fragment的大量dom操作</p>
+<p>…</p>
+<p>document.getElementById(‘myElement’).appendChild(fragment);</p>
+<p>(2)隐藏元素</p>
+<p>通过隐藏元素，达到在页面上移除元素的效果，经过大量的DOM操作后恢复元素原来的display样式，只有隐藏和显示元素时会引起页面重绘或重排操作。</p>
+<p>var myElement=document.getElementById(‘myElement’)；<br>myElement.style.display=’none’;</p>
+<p>//dom操作</p>
+<p>myElement.style.display=’block’;</p>
+<p>(3)克隆DOM元素到内存中</p>
+<p>把页面上的DOM元素克隆一份到内存中，然后在内存中操作克隆的元素，操作完成后使用此克隆元素替换页面中原来的DOM元素，只有替换元素时会影响性能,在内存中操作克隆元素不会引起页面上的性能损耗。</p>
+<p>var old=document.getElementById(‘myElement’);</p>
+<p>var clone=old.cloneNode(true);</p>
+<p>//dom操作</p>
+<p>old.parentNode.replaceChild(clone,old);</p>
+<p>3.设置具有动画效果的DOM元素的position属性为fixed或absolute</p>
+<p>把页面中具有动画效果的元素设置为绝对定位，使得元素脱离页面布局流，从未避免了页面频繁的重排，只涉及动画元素自身的重排。这种做法可以提高动画效果的展示性能。(在动画开始时将其设置为绝对定位，等动画结束后恢复原始的定位设置)。</p>
+<p>4.谨慎获得dom元素的布局信息，变量本地化。</p>
+<p>把获取到的元素的布局信息值缓存在局部变量中。在有大量的DOM操作时，避免获取dom元素的布局信息，如果需要布局信息，最好在DOM操作之前就取好存放。</p>
+<p>5.使用事件托管方式绑定事件</p>
+<p>在DOM元素上绑定事件或影响页面的性能，一方面，绑定事件本身会占用处理时间，另一方面，浏览器保存事件绑定也会占用内存。使用事件托管方式，即利用事件冒泡机制，只在父元素上绑定事件处理，用于处理所有子元素的事件，在事件处理函数中根据传入的参数判断事件源元素，针对不同的元素做不同的处理。这种方式有很大的灵活性，可以方便的添加或删除子元素，不需要考虑因元素移除或添加需要修改事件绑定。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://generaltune.github.io/blog/2018/02/25/pageoptimization/" data-id="cjxmpy61n000x4mi8esdmczem" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/01/csslayout/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          css 布局整理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/07/interview-tips/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">面试合集</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志-感悟-生活/">日志  感悟 生活</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/日志-感悟-生活/" style="font-size: 10px;">日志  感悟 生活</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/08/summitmeeting/">行业会议</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/01/docker-user-tips/">docker学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/01/csslayout/">css 布局整理</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/25/pageoptimization/">页面卡顿优化</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/07/interview-tips/">面试合集</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 generaltune<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

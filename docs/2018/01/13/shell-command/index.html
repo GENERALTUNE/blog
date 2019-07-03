@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>shell编程笔记 | generaltune&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="监控CPU使用情况　uptime 命令该命令的描述为：　打印当前时间，系统已经运行了多久，当前登录用户数以及系统平均负载． 1[root@centos7 ~]# uptime  监控内存及交换分区使用情况－－　free 命令该命令的描述为：　显示系统内存及交换分区信息用法：　feee [-b |-k | -m] 1[root@centos7 ~]# free -b  监控磁盘使用情况　－－　df该">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell编程笔记">
+<meta property="og:url" content="https://generaltune.github.io/blog/2018/01/13/shell-command/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="监控CPU使用情况　uptime 命令该命令的描述为：　打印当前时间，系统已经运行了多久，当前登录用户数以及系统平均负载． 1[root@centos7 ~]# uptime  监控内存及交换分区使用情况－－　free 命令该命令的描述为：　显示系统内存及交换分区信息用法：　feee [-b |-k | -m] 1[root@centos7 ~]# free -b  监控磁盘使用情况　－－　df该">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T03:52:29.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="shell编程笔记">
+<meta name="twitter:description" content="监控CPU使用情况　uptime 命令该命令的描述为：　打印当前时间，系统已经运行了多久，当前登录用户数以及系统平均负载． 1[root@centos7 ~]# uptime  监控内存及交换分区使用情况－－　free 命令该命令的描述为：　显示系统内存及交换分区信息用法：　feee [-b |-k | -m] 1[root@centos7 ~]# free -b  监控磁盘使用情况　－－　df该">
+  
+    <link rel="alternate" href="/atom.xml" title="generaltune&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">generaltune&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://generaltune.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-shell-command" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/13/shell-command/" class="article-date">
+  <time datetime="2018-01-13T06:30:07.000Z" itemprop="datePublished">2018-01-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      shell编程笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="监控CPU使用情况-uptime-命令"><a href="#监控CPU使用情况-uptime-命令" class="headerlink" title="监控CPU使用情况　uptime 命令"></a>监控CPU使用情况　uptime 命令</h3><p>该命令的描述为：　打印当前时间，系统已经运行了多久，当前登录用户数以及系统平均负载．</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# uptime</span><br></pre></td></tr></table></figure>
+
+<h3 id="监控内存及交换分区使用情况－－-free-命令"><a href="#监控内存及交换分区使用情况－－-free-命令" class="headerlink" title="监控内存及交换分区使用情况－－　free 命令"></a>监控内存及交换分区使用情况－－　free 命令</h3><p>该命令的描述为：　显示系统内存及交换分区信息<br>用法：　feee [-b |-k | -m]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# free -b</span><br></pre></td></tr></table></figure>
+
+<h3 id="监控磁盘使用情况-－－-df"><a href="#监控磁盘使用情况-－－-df" class="headerlink" title="监控磁盘使用情况　－－　df"></a>监控磁盘使用情况　－－　df</h3><p>该命令的描述为：　生成系统磁盘空间的使用量信息．<br>用法：　df[选项]…<br>选项：　-h 人性化方式显示容量信息<br>        -i 显示磁盘inode使用量信息<br>        -T 显示文件系统类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# df -hT</span><br><span class="line"></span><br><span class="line">[root@centos7 ~]# df -i</span><br></pre></td></tr></table></figure>
+
+<h3 id="监控网络使用情况-－－-ip-和-netstat命令"><a href="#监控网络使用情况-－－-ip-和-netstat命令" class="headerlink" title="监控网络使用情况　－－　ip 和 netstat命令"></a>监控网络使用情况　－－　ip 和 netstat命令</h3><p>ip命令可以查看网卡接口信息，　netstat 命令查看服务器开启的端口信息以及网络连接状态</p>
+<p>描述：　netstat 打印网络连接、路由表、网络接口统计等信息．<br>用法：　netstat[选项]<br>选项：　-s 显示各种协议数据统计信息<br>　　　　-n 使用数字形式的IP、端口号、用户ID替代主机、协议、用户等名称信息<br>　　　　-p 显示今晨该名称及对应进程ID号<br>　　　　-l 仅显示正在监听的sockets 接口信息<br>　　　　-u 查看udp连接信息<br>　　　　-t 查看tcp连接信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# ip a s</span><br><span class="line">[root@centos7 ~]# ip -s link show enol17773</span><br><span class="line">[root@centos7 ~]# netstat -nutlp</span><br><span class="line">[root@centos7 ~]# netstat -s</span><br></pre></td></tr></table></figure>
+
+<h3 id="监控进程使用情况-－－-ps-和-top命令"><a href="#监控进程使用情况-－－-ps-和-top命令" class="headerlink" title="监控进程使用情况　－－　ps 和　top命令"></a>监控进程使用情况　－－　ps 和　top命令</h3><ol>
+<li>ps命令<br>　描述：　查看当前进程信息<br>　用法：　ps命令版本众多，有多种语法种类，如UNIX、BSD、以及GNU linux</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# ps -e  #查看所有的进程信息</span><br><span class="line">[root@centos7 ~]# ps -ef #全格式显示进程信息</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>top命令<br>描述：　动态查看进程信息<br>选项：　-d #top刷新间隔　，默认为3秒<pre><code>-p #查看指定PID的进程信息</code></pre></li>
+</ol>
+<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><h3 id="网络接口参数-－－-ifconfig-命令"><a href="#网络接口参数-－－-ifconfig-命令" class="headerlink" title="网络接口参数 －－ ifconfig 命令"></a>网络接口参数 －－ ifconfig 命令</h3><p>描述：　显示或设置网络接口信息<br>用法：　ifconfig interface 选项 | 地址</p>
+<h3 id="主机名参数-－－-hostnamectl命令"><a href="#主机名参数-－－-hostnamectl命令" class="headerlink" title="主机名参数　－－　hostnamectl命令"></a>主机名参数　－－　hostnamectl命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# hostnamectl status #查看主机名称和主机信息</span><br><span class="line">[root@centos7 ~]# hostnamectl</span><br></pre></td></tr></table></figure>
+
+<h3 id="路由参数－－-route-命令"><a href="#路由参数－－-route-命令" class="headerlink" title="路由参数－－　route 命令"></a>路由参数－－　route 命令</h3><p>描述：　显示或设置静态IP路由表．<br>用法：　route[选项]      #查看路由信息<br>        route add 目标网络　gw 网关地址　<br>        route del 目标网络</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# route   </span><br><span class="line">[root@centos7 ~]# route -n #使用数字地址替代主机名称</span><br><span class="line">[root@centos7 ~]# route add default gw 192.168.0.254  #添加默认网关为192.168.0.254</span><br><span class="line">[root@centos7 ~]# route add -net 172.16.0.0/16 gw 192.168.0.254  #添加指定网段的网关</span><br><span class="line">[root@centos7 ~]# route add -net 192.56.76.0 netmask 255.255.255.0 dev eno16777736   # 添加路由记录，指定通过eno16777736 网卡传输到192.56.76.0网段的数据</span><br><span class="line">[root@centos7 ~]# route del default gw 192.168.0.254 #删除默认网关</span><br><span class="line">[root@centos7 ~]# route del -net 172,16,0.0/16 #删除指定网段的网关记录</span><br></pre></td></tr></table></figure>
+
+<h3 id="网络故障排错"><a href="#网络故障排错" class="headerlink" title="网络故障排错"></a>网络故障排错</h3><ol>
+<li>ping</li>
+<li>traceroute </li>
+<li>nslookup</li>
+<li>dig</li>
+<li>netstat</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# ping 127.0.0.1</span><br><span class="line">[root@centos7 ~]# traceroute -I www.google.com</span><br><span class="line">[root@centos7 ~]# nslookup www.google.com</span><br><span class="line">[root@centos7 ~]# dig www.google.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="内核模块"><a href="#内核模块" class="headerlink" title="内核模块"></a>内核模块</h2><h3 id="查看已加载的内核模块"><a href="#查看已加载的内核模块" class="headerlink" title="查看已加载的内核模块"></a>查看已加载的内核模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# lsmod</span><br></pre></td></tr></table></figure>
+
+<h2 id="Bash-技巧"><a href="#Bash-技巧" class="headerlink" title="Bash 技巧"></a>Bash 技巧</h2><table>
+<thead>
+<tr>
+<th align="center">快捷键</th>
+<th align="center">功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Ctrl + a</td>
+<td align="center">光标移动到行首</td>
+</tr>
+<tr>
+<td align="center">Ctrl + e</td>
+<td align="center">光标移动到行尾</td>
+</tr>
+<tr>
+<td align="center">Ctrl + f</td>
+<td align="center">光标右移动一个字符</td>
+</tr>
+<tr>
+<td align="center">Ctrl + b</td>
+<td align="center">光标左移动一个字符</td>
+</tr>
+<tr>
+<td align="center">Ctrl + l</td>
+<td align="center">清屏 等同与　clear命令</td>
+</tr>
+<tr>
+<td align="center">Ctrl + u</td>
+<td align="center">删除光标至行首的字符</td>
+</tr>
+<tr>
+<td align="center">Ctrl + k</td>
+<td align="center">删除光标至行尾的字符</td>
+</tr>
+<tr>
+<td align="center">Ctrl + c</td>
+<td align="center">终止进程</td>
+</tr>
+<tr>
+<td align="center">Ctrl + z</td>
+<td align="center">挂起进程(jobs命令查看挂起的进程)</td>
+</tr>
+<tr>
+<td align="center">Ctrl + w</td>
+<td align="center">删除光标前一个单词(以空格为分隔符)</td>
+</tr>
+<tr>
+<td align="center">Alt  + d</td>
+<td align="center">删除光标后一个单词</td>
+</tr>
+<tr>
+<td align="center">Tab</td>
+<td align="center">自动补齐</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# id tom &gt;&gt; user 2&gt;&gt; error</span><br><span class="line">[root@centos7 ~]# firefox   # 火狐浏览器通过前端启动，　使当前Shell将暂时无法使用</span><br><span class="line">[root@centos7 ~]# firefox &amp;  # 后台运行浏览器，不影响当前Shell的使用  jobs查看后台运行的程序  fg 调用后台的程序 </span><br><span class="line">[root@centos7 ~]# ls /tmp; ls /root ; ls /home 所有的命令按顺序执行(不管前面的命令是否成功,后面的命令一定正常执行)</span><br><span class="line">[root@centos7 ~]# ls test.txt &amp;&amp; cat test.txt #仅当ls执行成功才会执行cat</span><br><span class="line">[root@centos7 ~]# gedit || vim  # 如果有gedit编辑器,则打开该程序,否则打开vim编辑器</span><br><span class="line">[root@centos7 ~]# id tom &amp;&gt;/dev/null &amp;&amp; echo &quot;Hi, tom&quot; || echo &quot;No Such user&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="花括号-的使用技巧"><a href="#花括号-的使用技巧" class="headerlink" title="花括号{}的使用技巧"></a>花括号{}的使用技巧</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# echo &#123;a, b, c&#125;</span><br><span class="line">a b c</span><br><span class="line"></span><br><span class="line">[root@centos7 ~]# echo user&#123;1, 5, 8&#125;</span><br><span class="line">user1 user5 user8</span><br><span class="line"></span><br><span class="line">[root@centos7 ~]# echo &#123;1..10&#125;</span><br><span class="line">0 1 2 3 4 5 6 7 8 9 </span><br><span class="line"></span><br><span class="line">[root@centos7 ~]# mkdir  /tmp/&#123;dir1, dir2, dir3&#125;</span><br><span class="line">[root@centos7 ~]# chmod  tmp/&#123;dir1, dir2, dir3&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>name=[value]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# NAME=tomcat</span><br><span class="line">[root@centos7 ~]# echo $NAME</span><br><span class="line">[root@centos7 ~]# typeset -r NAME #添加readonly 只读属性</span><br><span class="line">[root@centos7 ~]# set   #查看当前环境下的变量</span><br></pre></td></tr></table></figure>
+
+<p>使用name=[value]的形式定义的变量默认值仅在当前的Shell中有效, 子进程不会继承这样的变量,使用export命令会将变量放入环境中,这样新的进程会从父进程哪里继承环境,export 可以直接定义环境变量并赋值,也可以先定义一个普通的变量,再通过export 转换为环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# export TEST #将已有用户变量添加至环境</span><br><span class="line">[root@centos7 ~]# export NAME=tom #直接定义环境变量</span><br><span class="line">[root@centos7 ~]# chmod +x echo.sh #修改文件权限为可执行</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="center">变量名称</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">BASHPID</td>
+<td align="center">当前bash 进程的进程号</td>
+</tr>
+<tr>
+<td align="center">GROUPS</td>
+<td align="center">当前用户所属的组的组ID号</td>
+</tr>
+<tr>
+<td align="center">HOSTNAME</td>
+<td align="center">当前主机的主机名称</td>
+</tr>
+<tr>
+<td align="center">PWD</td>
+<td align="center">当前工作目录</td>
+</tr>
+<tr>
+<td align="center">OLDPWD</td>
+<td align="center">前一个工作目录</td>
+</tr>
+<tr>
+<td align="center">RANDOM</td>
+<td align="center">0~32767之间的一个随机数</td>
+</tr>
+<tr>
+<td align="center">UID</td>
+<td align="center">当前用户的ID号码</td>
+</tr>
+<tr>
+<td align="center">HISTSIZE</td>
+<td align="center">命令历史的记录条数</td>
+</tr>
+<tr>
+<td align="center">HOME</td>
+<td align="center">当前用户的家目录</td>
+</tr>
+<tr>
+<td align="center">PATH</td>
+<td align="center">命令搜索路径</td>
+</tr>
+<tr>
+<td align="center">PS1</td>
+<td align="center">主命令提示符</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://generaltune.github.io/blog/2018/01/13/shell-command/" data-id="cjxmpy61q00114mi8zxq0t5h2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/01/15/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          前端流行框架和缓存运用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/11/algorithm-tips/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">算法笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志-感悟-生活/">日志  感悟 生活</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/日志-感悟-生活/" style="font-size: 10px;">日志  感悟 生活</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/08/summitmeeting/">行业会议</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/01/docker-user-tips/">docker学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/01/csslayout/">css 布局整理</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/25/pageoptimization/">页面卡顿优化</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/07/interview-tips/">面试合集</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 generaltune<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

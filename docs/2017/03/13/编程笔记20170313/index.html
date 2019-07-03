@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>编程笔记 | generaltune&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="resin 的启动service resin startservice resin status  CENTOS  开放端口号firewall-cmd –permanent –add-port=6600/tcp firewall-cmd –permanent –query-port=6800/tcp firewall-cmd –list-ports firewall-cmd –reload Mon">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编程笔记">
+<meta property="og:url" content="https://generaltune.github.io/blog/2017/03/13/编程笔记20170313/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="resin 的启动service resin startservice resin status  CENTOS  开放端口号firewall-cmd –permanent –add-port=6600/tcp firewall-cmd –permanent –query-port=6800/tcp firewall-cmd –list-ports firewall-cmd –reload Mon">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T03:52:29.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="编程笔记">
+<meta name="twitter:description" content="resin 的启动service resin startservice resin status  CENTOS  开放端口号firewall-cmd –permanent –add-port=6600/tcp firewall-cmd –permanent –query-port=6800/tcp firewall-cmd –list-ports firewall-cmd –reload Mon">
+  
+    <link rel="alternate" href="/atom.xml" title="generaltune&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">generaltune&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://generaltune.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-编程笔记20170313" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/13/编程笔记20170313/" class="article-date">
+  <time datetime="2017-03-13T02:28:22.000Z" itemprop="datePublished">2017-03-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      编程笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>resin 的启动<br>service resin start<br>service resin status </p>
+<p>CENTOS  开放端口号<br>firewall-cmd –permanent –add-port=6600/tcp</p>
+<p>firewall-cmd –permanent –query-port=6800/tcp</p>
+<p>firewall-cmd –list-ports</p>
+<p>firewall-cmd –reload</p>
+<p>Mongodb  安装启动 配置<br>设置mongodb的yum安装源<br>Create a /etc/yum.repos.d/mongodb-org-3.2.repo file so that you can install MongoDB directly, using yum.</p>
+<p>[mongodb-org-3.2]<br>name=MongoDB Repository<br>baseurl=<a href="https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.2/x86_64/" target="_blank" rel="noopener">https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.2/x86_64/</a><br>gpgcheck=1<br>enabled=1<br>gpgkey=<a href="https://www.mongodb.org/static/pgp/server-3.2.asc" target="_blank" rel="noopener">https://www.mongodb.org/static/pgp/server-3.2.asc</a></p>
+<p>sudo yum install -y mongodb-org  yum 方法安装<br>/etc/mongod.conf   配置文件地址<br>默认端口：27017 by default.<br>sudo service mongod start<br>sudo service mongod restart<br>日志<br>/var/log/mongodb/mongod.log<br>数据<br>/var/lib/mongo</p>
+<p>sudo chkconfig mongod on 设置开机启动</p>
+<p>sudo yum erase $(rpm -qa | grep mongodb-org)</p>
+<p>sudo rm -r /var/log/mongodb<br>sudo rm -r /var/lib/mongo</p>
+<p>Mongodb  数据库操作</p>
+<p>导入数据<br>移除数据先<br>mongoimport –db test –collection restaurants –drop –file primer-dataset.json</p>
+<p>设置登录口令后登录命令<br>mongo -port 27017 -u “myadmin” -p “zhumin”   –authenticationDatabase “admin”</p>
+<p>最小化安装完centos 7 之后 需要做的事情</p>
+<ol>
+<li><p>配置静态 ip  /etc/sysconfig/network-scripts/ 目录下 ipcfg-enXX 文件 查看ip 命令  ip addr show</p>
+<p>一个静态ip 配置案例<br>TYPE=”Ethernet”<br>BOOTPROTO=”static”<br>IPADDR=10.0.0.10<br>NETWORKING=yes<br>GATEWAY=192.168.1.1<br>NETMASK=255.255.255.0<br>NM_CONTROLLED=noa<br>DEFROUTE=”yes”<br>PEERDNS=”yes”<br>PEERROUTES=”yes”<br>IPV4_FAILURE_FATAL=”no”<br>IPV6INIT=”yes”<br>IPV6_AUTOCONF=”yes”<br>IPV6_DEFROUTE=”yes”<br>IPV6_PEERDNS=”yes”<br>IPV6_PEERROUTES=”yes”<br>IPV6_FAILURE_FATAL=”no”<br>NAME=”enp0s3”<br>UUID=”17eeb7fe-f11c-4b8b-83be-a9dd2281dda2”<br>DEVICE=”enp0s3”<br>ONBOOT=”yes”</p>
+</li>
+<li><p>安装软件<br>   1). 安装 links  浏览工具  yum install links<br>   2). 安装 Apache HTTP 服务器 yum istall httpd 如果你想更改 Apache HTTP 服务器的默认端口号(80)为其它端口，你需要编辑配置文件 ‘/etc/httpd/conf/httpd.conf’ 并查找以下面开始的行：</p>
+<pre><code>1.LISTEN 80</code></pre><p>  把端口号 ‘80’ 改为其它任何端口(例如 3221)，保存并退出。<br>  增加刚才分配给 Apache 的端口通过防火墙，然后重新加载防火墙。</p>
+<p> 允许 http 服务通过防火墙(永久)。<br>  1.# firewall-cmd –add-service=http</p>
+<pre><code>允许 3221 号端口通过防火墙(永久)。</code></pre><p> 1.# firewall-cmd –permanent –add-port=3221/tcp</p>
+<p>  重新加载防火墙。</p>
+<pre><code>1.# firewall-cmd –reload
+完成上面的所有事情之后，是时候重启 Apache HTTP 服务器了，然后新的端口号才能生效。</code></pre><p>  1.# systemctl restart httpd.service</p>
+<pre><code>3). yum install lrzsz  </code></pre><p>4). export JAVA_HOME=/usr/local/java/jdk1.8.0_11 </p>
+<pre><code>   export JRE_HOME=/usr/local/java/jdk1.8.0_11/jre 
+         export PATH=$PATH:/usr/local/java/jdk1.8.0_11/bin 
+     export CLASSPATH=./:/usr/local/java/jdk1.8.0_11/lib:/usr/local/java/jdk1.8.0_11/jre/lib
+5). 安装编译环境  $ yum install ncurses-devel  $ yum install gcc</code></pre><p>   3.新增用户  useradd  xxxxx  设置密码  passwd xxxxx</p>
+<ol start="4">
+<li>防火墙   开启80 端口 firewall-cmd –zone=public –add-port=80/tcp –permanent<br>重启防火墙生效：firewall-cmd –reload<ol start="5">
+<li>更新或升级最小化安装的 CentOS  yum update &amp;&amp; yum upgrade</li>
+</ol>
+</li>
+</ol>
+<p>jdk1.8.0_111</p>
+</li>
+</ol>
+<pre><code>修改系统环境变量文件
+vi + /etc/profile
+
+
+向文件里面追加以下内容：
+JAVA_HOME=/usr/java/jdk1.8.0_25
+ JRE_HOME=/usr/java/jdk1.8.0_25/jre
+ PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin</code></pre><p> CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib<br>  export JAVA_HOME JRE_HOME PATH CLASSPATH</p>
+<p> 192.168.1.129<br>  安装nginx</p>
+<p>  首先由于nginx的一些模块依赖一些lib库，所以在安装nginx之前，必须先安装这些lib库，这些依赖库主要有g++、gcc、openssl-devel、pcre-devel和zlib-devel 所以执行如下命令安装</p>
+<p>  yum install gcc-c++<br> yum install pcre pcre-devel<br> yum install zlib zlib-devel<br>  yum install openssl openssl–devel</p>
+<pre><code>二、安装Nginx</code></pre><p>  安装之前，最好检查一下是否已经安装有 nginx<br>  find -name nginx</p>
+<pre><code>如果系统已经安装了nginx，那么就先卸载
+yum remove nginx</code></pre><p>  首先进入 /usr/local 目录<br> cd /usr/local<br>  从官网下载最新版的nginx<br> wget <a href="http://nginx.org/download/nginx-1.9.6.tar.gz" target="_blank" rel="noopener">http://nginx.org/download/nginx-1.9.6.tar.gz</a><br>  tar -zxvf nginx-1.9.6.tar.gz<br> cd nginx-1.9.6</p>
+<p> 接下来安装，使用–prefix参数指定nginx安装的目录,make、make install安装</p>
+<p> ./configure  $默认安装在/usr/local/nginx<br> make<br>  make install</p>
+<p>  如果没有报错，顺利完成后，最好看一下 nginx 的安装目录<br>  whereis nginx</p>
+<p> 安装完毕后，进入安装后目录（/usr/local/nginx）便可以启动或停止它了</p>
+<p> 使用命令编译nginx</p>
+<p> ./configure –sbin-path=/usr/local/nginx/nginx –conf-path=/usr/local/nginx/nginx.conf –pid-path=/usr/local/nginx/nginx.pid –with-http_ssl_module –with-pcre=/usr/local/src/pcre-8.38 –with-zlib=/usr/local/src/zlib-1.2.8 –with-openssl=/usr/local/src/openssl-1.0.1q<br>  make<br> make install</p>
+<p>  configure命令是用来检测你的安装平台的目标特征的。它定义了系统的各个方面，包括nginx的被允许使用的连接处理的方法，比如它会检测你是不是有CC或GCC，并不是需要CC或GCC，它是个shell脚本，执行结束时，它会创建一个Makefile文件。nginx的configure命令支持以下参数：<br>  –prefix=path    定义一个目录，存放服务器上的文件 ，也就是nginx的安装目录。默认使用 /usr/local/nginx。<br> –sbin-path=path 设置nginx的可执行文件的路径，默认为  prefix/sbin/nginx.<br>  –conf-path=path  设置在nginx.conf配置文件的路径。nginx允许使用不同的配置文件启动，通过命令行中的-c选项。默认为prefix/conf/nginx.conf.<br>  –pid-path=path  设置nginx.pid文件，将存储的主进程的进程号。安装完成后，可以随时改变的文件名 ， 在nginx.conf配置文件中使用 PID指令。默认情况下，文件名 为prefix/logs/nginx.pid.<br>  –error-log-path=path 设置主错误，警告，和诊断文件的名称。安装完成后，可以随时改变的文件名 ，在nginx.conf配置文件中 使用 的error_log指令。默认情况下，文件名 为prefix/logs/error.log.<br>  –http-log-path=path  设置主请求的HTTP服务器的日志文件的名称。安装完成后，可以随时改变的文件名 ，在nginx.conf配置文件中 使用 的access_log指令。默认情况下，文件名 为prefix/logs/access.log.<br> –user=name  设置nginx工作进程的用户。安装完成后，可以随时更改的名称在nginx.conf配置文件中 使用的 user指令。默认的用户名是nobody。<br> –group=name  设置nginx工作进程的用户组。安装完成后，可以随时更改的名称在nginx.conf配置文件中 使用的 user指令。默认的为非特权用户。<br>  –with-select_module –without-select_module 启用或禁用构建一个模块来允许服务器使用select()方法。该模块将自动建立，如果平台不支持的kqueue，epoll，rtsig或/dev/poll。<br>  –with-poll_module –without-poll_module 启用或禁用构建一个模块来允许服务器使用poll()方法。该模块将自动建立，如果平台不支持的kqueue，epoll，rtsig或/dev/poll。<br> –without-http_gzip_module — 不编译压缩的HTTP服务器的响应模块。编译并运行此模块需要zlib库。<br>  –without-http_rewrite_module  不编译重写模块。编译并运行此模块需要PCRE库支持。<br> –without-http_proxy_module — 不编译http_proxy模块。<br>  –with-http_ssl_module — 使用https协议模块。默认情况下，该模块没有被构建。建立并运行此模块的OpenSSL库是必需的。<br>  –with-pcre=path — 设置PCRE库的源码路径。PCRE库的源码（版本4.4 – 8.30）需要从PCRE网站下载并解压。其余的工作是Nginx的./ configure和make来完成。正则表达式使用在location指令和 ngx_http_rewrite_module 模块中。<br>  –with-pcre-jit —编译PCRE包含“just-in-time compilation”（1.1.12中， pcre_jit指令）。<br>  –with-zlib=path —设置的zlib库的源码路径。要下载从 zlib（版本1.1.3 – 1.2.5）的并解压。其余的工作是Nginx的./ configure和make完成。ngx_http_gzip_module模块需要使用zlib 。<br>  –with-cc-opt=parameters — 设置额外的参数将被添加到CFLAGS变量。例如,当你在FreeBSD上使用PCRE库时需要使用:–with-cc-opt=”-I /usr/local/include。.如需要需要增加 select()支持的文件数量:–with-cc-opt=”-D FD_SETSIZE=2048″.<br> –with-ld-opt=parameters —设置附加的参数，将用于在链接期间。例如，当在FreeBSD下使用该系统的PCRE库,应指定:–with-ld-opt=”-L /usr/local/lib”.<br>  说明: 说明: 若安装时找不到上述依赖模块，使用–with-openssl=<openssl_dir>、–with-pcre=<pcre_dir>、–with-zlib=<zlib_dir>指定依赖的模块目录。如已安装过，此处的路径为安装目录；若未安装，则此路径为编译安装包路径，nginx将执行模块的默认编译安装。s</zlib_dir></pcre_dir></openssl_dir></p>
+<pre><code>db.createUser({
+    user: &quot;root&quot;,
+    pwd: &quot;zhumin&quot;,
+        roles: [{role:&quot;root&quot;, db: &quot;admin&quot;}]
+    });
+    db.createUser( 
+    { 
+    user: &quot;mongoRoot&quot;,
+    pwd: &quot;testMongoDB2016&quot;,
+    roles:[{role:&quot;userAdminAnyDatabase&quot;, db:&quot;admin&quot;}] 
+    } 
+    );
+    ]
+
+    rpm -e --nodeps mysql </code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://generaltune.github.io/blog/2017/03/13/编程笔记20170313/" data-id="cjxmpy620001f4mi8a8tg84w3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/16/unix_note_20170316/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          UNIX 编辑艺术 读书笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/20/20170220/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">今天真是点背了</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志-感悟-生活/">日志  感悟 生活</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/日志-感悟-生活/" style="font-size: 10px;">日志  感悟 生活</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/08/summitmeeting/">行业会议</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/01/docker-user-tips/">docker学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/01/csslayout/">css 布局整理</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/25/pageoptimization/">页面卡顿优化</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/07/interview-tips/">面试合集</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 generaltune<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
