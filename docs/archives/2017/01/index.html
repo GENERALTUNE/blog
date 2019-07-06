@@ -2,654 +2,1616 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta name="baidu-site-verification" content="L6Lm9d5Crl">
-  
-  
-  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>Archives: 2017/1 | generaltune&#39;s blog</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="generaltune&#39;s blog">
-<meta property="og:url" content="https://generaltune.github.io/blog/archives/2017/01/index.html">
-<meta property="og:site_name" content="generaltune&#39;s blog">
-<meta property="og:locale" content="default">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="generaltune&#39;s blog">
+  <!-- meta -->
   
-    <link rel="alternative" href="/docs//atom.xml" title="generaltune&#39;s blog" type="application/atom+xml">
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
   
-    <link rel="icon" href="/docs//docs/img/favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
   
+
   
-  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
   
-  <link rel="stylesheet" href="/docs/css/style.css">
-  <link rel="stylesheet" href="/docs/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/docs/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
   
-  
-      <link rel="stylesheet" href="/docs/fancybox/jquery.fancybox.css">
-  
-  <!-- 加载特效 -->
-    <script src="/docs/js/pace.js"></script>
-    <link href="/docs/css/pace/pace-theme-flash.css" rel="stylesheet">
+
   <script>
-      var yiliaConfig = {
-          fancybox: true,
-          animate: true,
-          isHome: false,
-          isPost: false,
-          isArchive: true,
-          isTag: false,
-          isCategory: false,
-          open_in_new: false
-      }
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
   </script>
-</head></html>
+
+  
+  
+</head>
+
 <body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover  half'>
+      
         
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+  <h1 class='title'>Material X</h1>
 
-        <a href="/" class="profilepic">
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/docs/"
             
-            <img lazy-src="/docs/img/avatar.png" class="js-avatar">
             
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/">GENERALTUNE</a></h1>
-        </hgroup>
-        
-        
-            <form>
-                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
-            </form>
-            <div id="local-search-result"></div>
-        
-        
-            <script type="text/javascript">
-                (function() {
-                    'use strict';
-                    function getMatchData(keyword, data) {
-                        var matchData = [];
-                        for(var i =0;i<data.length;i++){
-                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
-                                matchData.push(data[i])
-                        }
-                        return matchData;
-                    }
-                    var $input = $('#local-search-input');
-                    var $resultContent = $('#local-search-result');
-                    $input.keyup(function(){
-                        $.ajax({
-                            url: '/search.json',
-                            dataType: "json",
-                            success: function( json ) {
-                                var str='<ul class=\"search-result-list\">';                
-                                var keyword = $input.val().trim().toLowerCase();
-                                $resultContent.innerHTML = "";
-                                if ($input.val().trim().length <= 0) {
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                }
-                                var results = getMatchData(keyword, json);
-                                if(results.length === 0){
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                } 
-                                for(var i =0; i<results.length; i++){
-                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
-                                }
-                                str += "</ul>";
-                                $resultContent.empty();
-                                $resultContent.append(str);
-                                $('#switch-area').hide();
-                            }
-                        });
-                    });
-                })();
-            </script>
-        
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a  href="/docs/archives/">所有文章</a></li>
-                        
-                            <li><a  href="/docs/categories/开发工具/">玩转开发工具</a></li>
-                        
-                            <li><a  href="/docs/categories/digital">玩转数码</a></li>
-                        
-                            <li><a  href="/docs/categories/algorithm">算法学习</a></li>
-                        
-                            <li><a  href="/docs/about/">关于我</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fl github"  target="_blank" href="/docs/xxxxx" title="github">github</a>
-                            
-                                <a class="fl weibo"  target="_blank" href="/docs/xxxxxxxx" title="weibo">weibo</a>
-                            
-                                <a class="fl rss"  target="_blank" href="/docs/atom.xml" title="rss">rss</a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/docs/tags/日志-感悟-生活/" style="font-size: 10px;">日志  感悟 生活</a>
-                    </div>
-                </section>
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.csdn.net/baidu_21483933">csdn</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/blog/maocg_web">segmentfault</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/eb37ef89c746/latest_articles">简书</a>
-                    
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">爱动漫,爱游戏,爱编程,爱运动,爱的太多了!</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>
+            id="docs">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/docs/projects/"
+            
+            
+            id="docsprojects">
+            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/docs/friends/"
+            
+              rel="nofollow"
+            
+            
+            id="docsfriends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/docs/about/"
+            
+              rel="nofollow"
+            
+            
+            id="docsabout">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+          </a>
+        </li>
+      
+    
+  </ul>
 </div>
 
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">GENERALTUNE</a></h1>
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/docs/' >
+        
+          generaltune's blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/docs/"
+                  
+                  
+                  id="docs">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;示例
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/docs/blog/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="docsblogcategories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/docs/blog/tags/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="docsblogtags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/docs/blog/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="docsblogarchives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/docs/"
+                
+                
+                id="docs">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/docs/blog/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="docsblogarchives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/docs/projects/"
+                
+                
+                id="docsprojects">
+								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/docs/friends/"
+                
+                  rel="nofollow"
+                
+                
+                id="docsfriends">
+								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
+                
+                  rel="nofollow"
+                
+                
+                id="https:xaoxuu.comwikimaterial-x">
+								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/docs/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="docsabout">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+	
+		
+  <section class="post-list">
+    
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/docs/2017/01/24/20170124/">
+      2016年结束了，今晚坐上火车回去了
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://generaltune.github.io/blog" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>GENERALTUNE</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2017-01-24</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
       </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                
-                    <img lazy-src="/docs/img/avatar.png" class="js-avatar">
-                
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">GENERALTUNE</a></h1>
-            </hgroup>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="2016年是积淀的一年-2017或许也将是继续积淀的一年"><a href="#2016年是积淀的一年-2017或许也将是继续积淀的一年" class="headerlink" title="2016年是积淀的一年  2017或许也将是继续积淀的一年"></a>2016年是积淀的一年  2017或许也将是继续积淀的一年</h2><p><em>希望2018年会是一个产出的年份</em></p>
+<ol>
+<li>…………………………..</li>
+<li>…………………………..</li>
+<li>………………………….</li>
+</ol>
+
+      
+    </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/docs/2017/01/22/20170122/">
+      影子
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
             
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/docs/archives/">所有文章</a></li>
-                
-                    <li><a href="/docs/categories/开发工具/">玩转开发工具</a></li>
-                
-                    <li><a href="/docs/categories/digital">玩转数码</a></li>
-                
-                    <li><a href="/docs/categories/algorithm">算法学习</a></li>
-                
-                    <li><a href="/docs/about/">关于我</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a class="github" target="_blank" href="/docs/xxxxx" title="github">github</a>
-                    
-                        <a class="weibo" target="_blank" href="/docs/xxxxxxxx" title="weibo">weibo</a>
-                    
-                        <a class="rss" target="_blank" href="/docs/atom.xml" title="rss">rss</a>
-                    
-                </div>
-            </nav>
-        </header>
-    </div>
-</nav>
-      <div class="body-wrap">
-  
-  
-    
-    
+  <div class='new-meta-item author'>
+    <a href="https://generaltune.github.io/blog" rel="nofollow">
       
+        <i class="fas fa-user" aria-hidden="true"></i>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a  href="/docs/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/docs/2017/01/24/20170124/" class="archive-article-date">
-      <time datetime="2017-01-24T09:16:40.000Z" itemprop="datePublished">01-24</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/docs/2017/01/24/20170124/">2016年结束了，今晚坐上火车回去了</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <p>GENERALTUNE</p>
+    </a>
   </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/docs/2017/01/22/20170122/" class="archive-article-date">
-      <time datetime="2017-01-22T13:49:53.000Z" itemprop="datePublished">01-22</time>
-</a>
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/docs/2017/01/22/20170122/">影子</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
-          
 
           
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/docs/2017/01/19/20170119/" class="archive-article-date">
-      <time datetime="2017-01-19T09:17:31.000Z" itemprop="datePublished">01-19</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/docs/2017/01/19/20170119/">互联网名人汇</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
+        
           
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/docs/2017/01/17/20170117/" class="archive-article-date">
-      <time datetime="2017-01-17T09:26:11.000Z" itemprop="datePublished">01-17</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/docs/2017/01/17/20170117/">人工智能</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/docs/2017/01/16/20170116/" class="archive-article-date">
-      <time datetime="2017-01-16T13:19:54.000Z" itemprop="datePublished">01-16</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/docs/2017/01/16/20170116/">未雪</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/docs/2017/01/15/20170115/" class="archive-article-date">
-      <time datetime="2017-01-15T12:39:13.000Z" itemprop="datePublished">01-15</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/docs/2017/01/15/20170115/">离歌</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/docs/2017/01/04/20170104/" class="archive-article-date">
-      <time datetime="2017-01-04T02:53:46.000Z" itemprop="datePublished">01-04</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/docs/2017/01/04/20170104/">无题</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/docs/2017/01/03/20170103/" class="archive-article-date">
-      <time datetime="2017-01-03T02:03:41.000Z" itemprop="datePublished">01-03</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/docs/2017/01/03/20170103/">2017年的第三天</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
-
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2017-01-22</p>
+  </a>
 </div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2019 GENERALTUNE
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
-            </div>
-        </div>
+
+          
         
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >极客到访数: 
-                            <span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>, </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
+          
+            
+
+          
         
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
     </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="昨天照了一张我的影子"><a href="#昨天照了一张我的影子" class="headerlink" title="昨天照了一张我的影子"></a>昨天照了一张我的影子</h2><p><img src="/myblog/img/shadow.jpg" alt="影子"></p>
+
+      
+    </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/docs/2017/01/19/20170119/">
+      互联网名人汇
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://generaltune.github.io/blog" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>GENERALTUNE</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2017-01-19</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="“互联网之父”"><a href="#“互联网之父”" class="headerlink" title="“互联网之父”"></a>“互联网之父”</h2><ol>
+<li><p>Google 全球副总裁 Vint Cerf    TCP/IP 协议和互联网架构的联合设计者之一</p>
+</li>
+<li><p><em>理查德·马修·斯托曼（Richard Matthew Stallman, RMS，生于1953年），自由软件运动的精神领袖、GNU计划以及自由软件基金会（Free Software Foundation）的创立者、著名黑客。他的主要成就包括Emacs及后来的GNU Emacs，GNU C 编译器及GNU 调试器。 他所写作的GNU通用公共许可证（GNU GPL）是世上最广为采用的自由软件许可证，为copyleft观念开拓出一条崭新的道路。</em></p>
+</li>
+<li><p>Jon Skeet 个人名望：程序技术问答网站Stack Overflow总排名第一的大神，每月的问答量保持在425个左右。  个人简介/主要荣誉：谷歌软件工程师，代表作有《深入理解C#(C# In Depth)》。</p>
+</li>
+<li><p>Jeff Dean 个人名望：谷歌搜索索引技术的幕后大脑。</p>
+</li>
+<li><p>Doug Cutting 个人名望：开发出开源全文检索引擎工具包Lucene</p>
+</li>
+<li><p>Anders Hejlsberg 个人名望：创造了Turbo Pascal。</p>
+</li>
+<li><p>Adam D’Angelo 个人名望：问答SNS网站Quora的创办人之一。</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/docs/2017/01/17/20170117/">
+      人工智能
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://generaltune.github.io/blog" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>GENERALTUNE</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2017-01-17</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>考虑到人工智能如此受关注，斯坦福大学的专家最近撰写的一份智能研究报告得出结论：“现在到2030年人工智能可能会出现越来越有用的应用，有可能给我们的社会和经济带来深远的积极影响，”也就不足为奇了。此文着重介绍15个知名度最大的开源人工智能项目。</p>
+<ol>
+<li>Caffe</li>
+</ol>
+<p>Caffe是加州大学伯克利分校攻读博士学位者的杰作，这是一种深度学习框架，基于表达式架构和可扩展代码。速度快是它赖以成名的特点，因而在研究人员和企业用户当中都备受欢迎。据官方网站声称，仅仅使用一个英伟达K40 GPU，它在短短一天内就能够处理6000多万个图像。它由伯克利视觉和学习中心(BVLC)管理，英伟达和亚马逊等公司提供了拨款，支持它的发展。</p>
+<p>相关链接：<a href="http://caffe.berkeleyvision.org" target="_blank" rel="noopener">http://caffe.berkeleyvision.org</a></p>
+<ol start="2">
+<li>CNTK</li>
+</ol>
+<p>CNTK的全称是计算网络工具包，它是微软的开源人工智能工具之一。它声称拥有出众的性能，无论在只有一个CPU的系统上运行，还是在拥有多个GPU的多台机器上运行，都是如此。微软主要用它来研究语音识别，但是它同样适用于其他应用领域，比如机器翻译、图像识别、图像字幕、文本处理、语言理解和语言建模。</p>
+<p>相关链接：<a href="https://www.cntk.ai" target="_blank" rel="noopener">https://www.cntk.ai</a></p>
+<ol start="3">
+<li>Deeplearning4j</li>
+</ol>
+<p>Deeplearning4j是一种面向Java虚拟机(JVM)的开源深度学习库。它在分布式环境中运行，可与Hadoop和Apache Spark整合起来。它让用户可以配置深度神经网络，与Java、Scala及其他JVM语言兼容。</p>
+<p>该项目由一家名为Skymind的商业公司管理，该公司提供收费的支持、培训和Deeplearning4j的企业发行版。</p>
+<p>相关链接：<a href="http://deeplearning4j.org" target="_blank" rel="noopener">http://deeplearning4j.org</a></p>
+<ol start="4">
+<li>分布式机器学习工具包</li>
+</ol>
+<p>与CNTK一样，分布式机器学习工具包(DMTK)是微软的开源人工智能工具之一。它是为大数据应用领域设计，旨在更快地训练人工智能系统。它包括三大部分：DMTK框架、LightLDA主题模型算法以及分布式(Multisense)单词嵌入算法。微软声称，在8个集群机器上，它能够“针对拥有1000多亿个权标的文档集合，训练拥有100万个主题和1000万个单词词汇表(共有10万亿个参数)的主题模型，”这个成绩是其他工具无法比拟的，这也证明了DMTK的速度有多快。</p>
+<p>相关链接：<a href="http://www.dmtk.io" target="_blank" rel="noopener">http://www.dmtk.io</a></p>
+<ol start="5">
+<li>H2O</li>
+</ol>
+<p>H2O更加专注于人工智能在企业领域的应用，而不是在研究领域的应用，它的用户包括诸多大公司：第一资本、思科、尼尔森Catalina、贝宝及Transamerica。它声称让任何人都可以使用机器学习和预测分析的强大功能，解决业务问题。它可用于预测建模、风险及欺诈分析、保险分析、广告技术、医疗保健和客户情报。</p>
+<p>它有两种开源版本：标准的H2O和Sparkling Water，后者与Apache Spark集成起来。它还提供收费的企业支持。</p>
+<p>相关链接：<a href="http://www.h2o.ai" target="_blank" rel="noopener">http://www.h2o.ai</a></p>
+<ol start="6">
+<li>Mahout</li>
+</ol>
+<p>Mahout是Apache基金会下面的一个项目，是一种开源机器学习框架。据官方网站声称，它提供三种主要的特性：用于构建可扩展算法的编程环境、面向Spark和H2O等工具的预制算法，以及名为Samsara的向量数学试验环境。使用Mahout的公司包括：Adobe、埃森哲、Foursquare、英特尔、领英、推特、雅虎及其他许多公司。可通过官方网站上所列的第三方获得专业支持。</p>
+<p>相关链接：<a href="http://mahout.apache.org" target="_blank" rel="noopener">http://mahout.apache.org</a></p>
+<ol start="7">
+<li>MLlib</li>
+</ol>
+<p>Apache Spark以速度快著称，它已成为最流行的大数据处理工具之一。MLlib是Spark的可扩展机器学习库。它与Hadoop整合起来，可与NumPy和R协同操作。它包括一大批机器学习算法，可用于分类、回归、决策树、推荐、聚类、主题建模、特性转换、模型评估、机器学习管道构建、机器学习持久性、生存分析、频繁项集、顺序模式挖掘、分布式线性代数和统计。</p>
+<p>相关链接：<a href="https://spark.apache.org/mllib/" target="_blank" rel="noopener">https://spark.apache.org/mllib/</a></p>
+<ol start="8">
+<li>NuPIC</li>
+</ol>
+<p>NuPIC由一家名为Numenta的公司管理，这是一种开源人工智能项目，基于一种名为分层式即时记忆(即HTM)的理论。实际上，HTM试图建立一种模仿人类大脑新皮层而建的计算机系统。目的在于制造“处理许多认知任务时接近或胜过人类表现”的机器。</p>
+<p>除了开源许可证外，Numenta还提供采用商业许可证的NuPic，它还提供作为它技术底层的专利方面的许可证。</p>
+<p>相关链接：<a href="http://numenta.org" target="_blank" rel="noopener">http://numenta.org</a></p>
+<ol start="9">
+<li>OpenNN</li>
+</ol>
+<p>OpenNN为深入了解人工智能的研究人员和开发人员而设计，这是一种用于实现神经网络的C++编程库。主要特性包括：深度架构和卓越性能。官方网站上有全面的说明文档，包括解释神经网络基础知识的入门教程。可通过Artelnics获得OpenNN的收费支持，总部位于西班牙的这家公司主攻预测分析。</p>
+<p>相关链接：<a href="http://www.opennn.net" target="_blank" rel="noopener">http://www.opennn.net</a></p>
+<ol start="10">
+<li>OpenCyc</li>
+</ol>
+<p>OpenCyc由一家名为Cycorp的公司开发，它让用户可以访问Cyc知识库和常识推理引擎。它包括239000多个术语、约2093000个三元组以及大约69000个owl:sameAs链接(指向外部语义数据命名空间)。它用于丰富域名建模、语义数据整合、文本理解、特定领域专家系统和游戏人工智能。这家公司还提供Cyc的另外两个版本：一个是非开源免费版本，面向研究人员;另一个面向企业用户，需要收费。</p>
+<p>相关链接：<a href="http://www.cyc.com/platform/opencyc/" target="_blank" rel="noopener">http://www.cyc.com/platform/opencyc/</a></p>
+<ol start="11">
+<li>Oryx 2</li>
+</ol>
+<p>Oryx 2建立在Apache Spark和Kafka上，这是一种专门的应用开发框架，面向大规模的机器学习。它使用了一种独特的lambda架构，有三个层次。开发人员可使用Oryx 2来构建新的应用程序，它还包括一些预制应用程序，处理常见的大数据任务，比如协作过滤、分类、回归和聚类。大数据工具厂商Cloudera建立了最初的Oryx 1项目，一直大力参与持续开发工作。</p>
+<p>相关链接：<a href="http://oryx.io" target="_blank" rel="noopener">http://oryx.io</a></p>
+<ol start="12">
+<li>PredictionIO</li>
+</ol>
+<p>今年2月份，Salesforce收购了PredictionIO，后来在7月份， 它把该平台连同商标一起捐献给了Apache基金会，该基金会将它列为孵化器项目。所以，虽然Salesforce使用PredictionIO技术来完善自己的机器学习功能，但是开源版本方面的工作也会继续下去。它可以帮助用户构建拥有机器学习功能的预测引擎，这些功能可用来部署实时响应动态查询的Web服务。</p>
+<p>相关链接：<a href="https://prediction.io" target="_blank" rel="noopener">https://prediction.io</a></p>
+<ol start="13">
+<li>SystemML</li>
+</ol>
+<p>SystemML最初由IBM开发，现在它是Apache旗下的一个大数据项目。它提供了一种高度可扩展的平台，可以实施用R或类似Python的语法编写的高级运算和算法。企业已经在用它来跟踪汽车维修方面的客户服务，引导机场客流量，或者将社交媒体数据与银行客户联系起来。它可以在Spark或Hadoop上运行。</p>
+<p>相关链接：<a href="http://systemml.apache.org" target="_blank" rel="noopener">http://systemml.apache.org</a></p>
+<ol start="14">
+<li>TensorFlow</li>
+</ol>
+<p>TensorFlow是谷歌的开源人工智能工具之一。它提供了用于数字计算的库，使用数据流图。它可以在众多不同的搭载单一或多个CPU和GPU的系统上运行，甚至可以在移动设备上运行。它拥有深度灵活性、真正的可移植性、自动差分功能，并支持Python和C++。官方网站上列有非常丰富的教程和实用文章，可供有兴趣使用或扩展其功能的开发人员或研究人员使用。</p>
+<p>相关链接：<a href="https://www.tensorflow.org" target="_blank" rel="noopener">https://www.tensorflow.org</a></p>
+<ol start="15">
+<li>Torch</li>
+</ol>
+<p>Torch自称是“一种科学计算框架，广泛支持把GPU放在首位的机器学习算法。”这里的重点在于灵活性和速度。此外，很容易与众多方面的软件包结合使用：机器学习、计算机视觉、信号处理、并行处理、图像、视频、音频和网络。它依赖一种名为LuaJIT的脚本语言，这种语言基于Lua。</p>
+<p>相关链接：<a href="http://torch.ch" target="_blank" rel="noopener">http://torch.ch</a></p>
+
+      
+    </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/docs/2017/01/16/20170116/">
+      未雪
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://generaltune.github.io/blog" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>GENERALTUNE</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2017-01-16</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="今天早上貌似要下雪-结果没有下大就停了"><a href="#今天早上貌似要下雪-结果没有下大就停了" class="headerlink" title="今天早上貌似要下雪  结果没有下大就停了"></a>今天早上貌似要下雪  结果没有下大就停了</h2><ol>
+<li>最近看了下微信小程序的开发  以后可以做一个小demo出来</li>
+<li>周末看了一本  叫做 《Linux 就是这个范儿》的书觉得很不错  以后需要多多研究一下Linux</li>
+<li>神经网络也需要多看看</li>
+</ol>
+
+      
+    </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/docs/2017/01/15/20170115/">
+      离歌
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://generaltune.github.io/blog" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>GENERALTUNE</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2017-01-15</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="离歌"><a href="#离歌" class="headerlink" title="离歌"></a>离歌</h2><p>一开始我只相信   伟大的是感情<br>最后我无力的看清  强悍的是命运</p>
+<p>周末突然发现信乐团的歌都很有张力</p>
+<ol>
+<li>One Night in BeiJIng</li>
+<li>离歌</li>
+<li>死了都要爱</li>
+</ol>
+
+      
+    </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/docs/2017/01/04/20170104/">
+      无题
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://generaltune.github.io/blog" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>GENERALTUNE</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2017-01-04</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+    </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/docs/2017/01/03/20170103/">
+      2017年的第三天
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://generaltune.github.io/blog" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>GENERALTUNE</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2017-01-03</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="2016年是生命中感觉过得最快的一年"><a href="#2016年是生命中感觉过得最快的一年" class="headerlink" title="2016年是生命中感觉过得最快的一年"></a>2016年是生命中感觉过得最快的一年</h2><p><em>今年休闲时间有很多是在国图度过</em><br><img src="/myblog/img/guotu.jpg" alt="国图"><br><em>今年又滑了一次雪</em><br><img src="/myblog/img/huaxue1.jpg" alt="滑雪一"><br><img src="/myblog/img/huaxue2.jpg" alt="滑雪二"><br><img src="/myblog/img/huaxue3.jpg" alt="滑雪三"><br><img src="/myblog/img/huaxue4.jpg" alt="滑雪四"></p>
+
+      
+    </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+    
+  </section>
+  
+    
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
+
+  
+
+
+	
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/docs/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:me@xaoxuu.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/xaoxuu"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=63035382"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+
+          
+        
+      
+        
+          
+          
+            <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/docs/" href="/docs/"
+          
+          
+          id="docs">
+          
+            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+          
+          近期文章
+        </a></li>
+      
+        <li><a class="flat-box" title="/docs/blog/archives/" href="/docs/blog/archives/"
+          
+            rel="nofollow"
+          
+          
+          id="docsblogarchives">
+          
+            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
+          
+          文章归档
+        </a></li>
+      
+        <li><a class="flat-box" title="/docs/projects/" href="/docs/projects/"
+          
+          
+          id="docsprojects">
+          
+            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
+          
+          开源项目
+        </a></li>
+      
+        <li><a class="flat-box" title="/docs/friends/" href="/docs/friends/"
+          
+            rel="nofollow"
+          
+          
+          id="docsfriends">
+          
+            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
+          
+          我的友链
+        </a></li>
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
+          
+            rel="nofollow"
+          
+          
+          id="https:xaoxuu.comwikimaterial-x">
+          
+            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
+          
+          主题文档
+        </a></li>
+      
+        <li><a class="flat-box" title="/docs/about/" href="/docs/about/"
+          
+            rel="nofollow"
+          
+          
+          id="docsabout">
+          
+            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
+          
+          关于小站
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/docs/blog/tags/"
+    title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/docs/tags/日志-感悟-生活/" style="font-size: 14px; color: #999">日志  感悟 生活</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+
+  <section class='widget music'>
+    
+<header class='pure'>
+  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_blank"
+    
+    href="https://music.163.com/#/user/home?id=63035382"
+    title="https://music.163.com/#/user/home?id=63035382">
+    <i class="far fa-heart fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer"
+    data-theme="#1BCDFC"
+    
+    
+    data-mode="circulation"
+    data-server="netease"
+    data-type="playlist"
+    data-id="2615636388"
+    data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/docs/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:me@xaoxuu.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/xaoxuu"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=63035382"
+            class="social fas fa-headphones-alt flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
 </footer>
+<script>setLoadingBarProgress(80);</script>
 
+
+
+
+	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+	
+
+	
+
+
+      <script>setLoadingBarProgress(60);</script>
     </div>
-    
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-<script src="/docs/js/main.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var backgroundnum = 1;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-        })
-    </script>
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'xxxxx', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-
-
-
-	<script>
-	var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();
-	</script>
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
-</div>
-<script>
-    $(document).ready(function() {
-        if ($("#comments").length < 1) {
-            $("#scroll > a:nth-child(2)").hide();
-        };
-    })
-</script>
-
-    <button class="hide-labels">TAG 开关</button>
-    
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                $(".article-info").toggle(200);
-            });
-        });
-    </script>
-
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-  <script language="javascript">
-    $(function() {
-        $("a[title]").each(function() {
-            var a = $(this);
-            var title = a.attr('title');
-            if (title == undefined || title == "") return;
-            a.data('title', title).removeAttr('title').hover(
-            function() {
-                var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
-                    left: offset.left + a.outerWidth()/2 + 1
-                }).fadeIn(function() {
-                    var pop = $(this);
-                    setTimeout(function() {
-                        pop.remove();
-                    }, pop.text().length * 800);
-                });
-            }, function() {
-                $("#anchortitlecontainer").remove();
-            });
-        });
-    });
-</script>
-
-
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/docs/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>

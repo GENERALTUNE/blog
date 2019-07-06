@@ -2,451 +2,933 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta name="baidu-site-verification" content="L6Lm9d5Crl">
-  
-  
-  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>Archives: 2017/10 | generaltune&#39;s blog</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="generaltune&#39;s blog">
-<meta property="og:url" content="https://generaltune.github.io/blog/archives/2017/10/index.html">
-<meta property="og:site_name" content="generaltune&#39;s blog">
-<meta property="og:locale" content="default">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="generaltune&#39;s blog">
+  <!-- meta -->
   
-    <link rel="alternative" href="/docs//atom.xml" title="generaltune&#39;s blog" type="application/atom+xml">
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
   
-    <link rel="icon" href="/docs//docs/img/favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
   
+
   
-  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
   
-  <link rel="stylesheet" href="/docs/css/style.css">
-  <link rel="stylesheet" href="/docs/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/docs/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
   
-  
-      <link rel="stylesheet" href="/docs/fancybox/jquery.fancybox.css">
-  
-  <!-- 加载特效 -->
-    <script src="/docs/js/pace.js"></script>
-    <link href="/docs/css/pace/pace-theme-flash.css" rel="stylesheet">
+
   <script>
-      var yiliaConfig = {
-          fancybox: true,
-          animate: true,
-          isHome: false,
-          isPost: false,
-          isArchive: true,
-          isTag: false,
-          isCategory: false,
-          open_in_new: false
-      }
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
   </script>
-</head></html>
+
+  
+  
+</head>
+
 <body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover  half'>
+      
         
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+  <h1 class='title'>Material X</h1>
 
-        <a href="/" class="profilepic">
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/docs/"
             
-            <img lazy-src="/docs/img/avatar.png" class="js-avatar">
             
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/">GENERALTUNE</a></h1>
-        </hgroup>
-        
-        
-            <form>
-                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
-            </form>
-            <div id="local-search-result"></div>
-        
-        
-            <script type="text/javascript">
-                (function() {
-                    'use strict';
-                    function getMatchData(keyword, data) {
-                        var matchData = [];
-                        for(var i =0;i<data.length;i++){
-                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
-                                matchData.push(data[i])
-                        }
-                        return matchData;
-                    }
-                    var $input = $('#local-search-input');
-                    var $resultContent = $('#local-search-result');
-                    $input.keyup(function(){
-                        $.ajax({
-                            url: '/search.json',
-                            dataType: "json",
-                            success: function( json ) {
-                                var str='<ul class=\"search-result-list\">';                
-                                var keyword = $input.val().trim().toLowerCase();
-                                $resultContent.innerHTML = "";
-                                if ($input.val().trim().length <= 0) {
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                }
-                                var results = getMatchData(keyword, json);
-                                if(results.length === 0){
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                } 
-                                for(var i =0; i<results.length; i++){
-                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
-                                }
-                                str += "</ul>";
-                                $resultContent.empty();
-                                $resultContent.append(str);
-                                $('#switch-area').hide();
-                            }
-                        });
-                    });
-                })();
-            </script>
-        
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a  href="/docs/archives/">所有文章</a></li>
-                        
-                            <li><a  href="/docs/categories/开发工具/">玩转开发工具</a></li>
-                        
-                            <li><a  href="/docs/categories/digital">玩转数码</a></li>
-                        
-                            <li><a  href="/docs/categories/algorithm">算法学习</a></li>
-                        
-                            <li><a  href="/docs/about/">关于我</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fl github"  target="_blank" href="/docs/xxxxx" title="github">github</a>
-                            
-                                <a class="fl weibo"  target="_blank" href="/docs/xxxxxxxx" title="weibo">weibo</a>
-                            
-                                <a class="fl rss"  target="_blank" href="/docs/atom.xml" title="rss">rss</a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/docs/tags/日志-感悟-生活/" style="font-size: 10px;">日志  感悟 生活</a>
-                    </div>
-                </section>
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.csdn.net/baidu_21483933">csdn</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/blog/maocg_web">segmentfault</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/eb37ef89c746/latest_articles">简书</a>
-                    
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">爱动漫,爱游戏,爱编程,爱运动,爱的太多了!</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>
+            id="docs">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/docs/projects/"
+            
+            
+            id="docsprojects">
+            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/docs/friends/"
+            
+              rel="nofollow"
+            
+            
+            id="docsfriends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/docs/about/"
+            
+              rel="nofollow"
+            
+            
+            id="docsabout">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+          </a>
+        </li>
+      
+    
+  </ul>
 </div>
 
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">GENERALTUNE</a></h1>
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/docs/' >
+        
+          generaltune's blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/docs/"
+                  
+                  
+                  id="docs">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;示例
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/docs/blog/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="docsblogcategories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/docs/blog/tags/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="docsblogtags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/docs/blog/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="docsblogarchives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/docs/"
+                
+                
+                id="docs">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/docs/blog/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="docsblogarchives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/docs/projects/"
+                
+                
+                id="docsprojects">
+								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/docs/friends/"
+                
+                  rel="nofollow"
+                
+                
+                id="docsfriends">
+								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
+                
+                  rel="nofollow"
+                
+                
+                id="https:xaoxuu.comwikimaterial-x">
+								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/docs/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="docsabout">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+	
+		
+  <section class="post-list">
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/docs/2017/10/30/css总结/">
+      20171030
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://generaltune.github.io/blog" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>GENERALTUNE</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2017-10-30</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
       </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                
-                    <img lazy-src="/docs/img/avatar.png" class="js-avatar">
-                
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">GENERALTUNE</a></h1>
-            </hgroup>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/docs/archives/">所有文章</a></li>
-                
-                    <li><a href="/docs/categories/开发工具/">玩转开发工具</a></li>
-                
-                    <li><a href="/docs/categories/digital">玩转数码</a></li>
-                
-                    <li><a href="/docs/categories/algorithm">算法学习</a></li>
-                
-                    <li><a href="/docs/about/">关于我</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a class="github" target="_blank" href="/docs/xxxxx" title="github">github</a>
-                    
-                        <a class="weibo" target="_blank" href="/docs/xxxxxxxx" title="weibo">weibo</a>
-                    
-                        <a class="rss" target="_blank" href="/docs/atom.xml" title="rss">rss</a>
-                    
-                </div>
-            </nav>
-        </header>
+      
+        <hr>
+      
     </div>
-</nav>
-      <div class="body-wrap">
-  
-  
-    
-    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>未来的CSS太让人兴奋了：一方面，是全新的页面布局方式；另一方面，是酷炫的滤镜、颜色等视觉效果。这些CSS，受开发者追捧，被杂志和博客文章铺天盖地地介绍。<br>　　如果说这些特性是CSS华丽的一面，那我们来看看它朴实的一面：很不起眼的东西，如选择器、单位、函数（方法）。我经常说这是繁琐的东西，但我意思是它们能干漂亮的活，这就是我要分享的。<br>　　怎么说呢，让我们看看这些效果最好的朴实的CSS细节——这些细节远远没有那些酷炫的CSS效果那么引人注目。它们有些已经存在一段时间了，但值得我们更好地认识，而有些则刚刚面世。虽然不起眼，但是它们可以提高我们的工作效率——以谦虚的姿态。<br>相对单位<br>　　聪明又有前瞻头脑的开发者们已经使用相对单位了——如em或者百分比——所以，开发者们了解这个问题：往往因为元素的继承性而需要使用计算器作为辅助工具来计算大小。例如，现在普遍的做法是给页面的字体设置全局尺寸，然后用相对单位来定义页面中其它的元素。CSS大概会这样写：<br>html { font-size: 10px; } p { font-size: 1.4em; }</p>
+<p>　　这样写是没问题，直到有个子元素需要设置一个不同的字体大小，比如，在这样的标签当中：<br>The cat sat on the mat.</p>
+<p>　　如果你要设置span的字体大小为1.2em，你需要做什么？拿出计算器，算算1.2除以1.4是多少，结果如下：<br>p span { font-size: 0.85714em; }</p>
+<p>　　这个问题不局限于em。如果用百分比来创建响应式的流式布局网站，而百分比是与容器相关的，所以，如果要定义一个元素为它的容器的40%，它的高是75%，宽则需要设置为53.33333%。<br>　　很明显，这很不方便。<br>根相关的长度单位<br>　　为了修复字体大小定义的问题，现在可以使用单位rem（root em）。rem同样是相对单位，但是它所对应的是固定的基本值，这个固定的基本值也就是文档的根元素的字体大小（在HTML文件中，就是html元素）。假设和上个例子一样，同样设定10px的字体大小为根元素的大小，那么CSS这样写就OK了：<br>p { font-size: 1.4rem; } p span { font-size: 1.2rem; }</p>
+<p>　　这两个CSS规则都是相对于根元素的字体大小，这样的代码更加优雅和简便，特别是在设置简单的数值如10px或者12px的时候。这样和使用px值很相似，不同点在于rem是可扩展的。<br>　　在整篇文章介绍的特性中，rem特性相对来说是兼容性比较好，高级浏览器都能支持，包括IE9在内，除了Opera Mobile。<br>窗口相关的长度单位<br>　　觉得rem单位很酷吧，如果还有另外一组单位能解决百分比的问题，那就更酷了。它和rem的道理相似，不同点在于，它相对的不是文档的根元素，而是相对于设备窗口本身的大小。<br>　　这两个单位就是vh和vw，即是相对于窗口大小的高和宽。每个单位在前面加上数字，代表的是多少个百分比。<br>div { height: 50vh; }</p>
+<p>　　在上面的例子，高度被设定为窗口高度的一半。1vh相当于一个百分比的窗口高度，所以50vh即是50%的窗口高度。<br>　　如果窗口大小变了，那么这个值也随之改变。这相对百分比来说，好处是不需要担心父容器，不管它的父容器如何，10vw的元素会一直是10%的窗口大小。<br>　　相应地，有vmin单位，相当于vh或者vw的最小值，最近还宣布有vmax单位会被加到规范文档里面（虽然在这篇文章发布的时候还没有）。<br>　　现在支持这个特性的有IE9+、Chrome和Safari 6。<br>运算式的值<br>　　如果你在做响应式的流式布局网站，经常会遇到混合单位的问题——用百分比设置栅格，但是又用固定像素宽度设置margin。如：<br>div { margin: 0 20px; width: 33%;}</p>
+<p>　　如果布局只用到padding和border，你可以使用box-sizing来解决，但是对于margin就无能为力了。更好、更灵活的方法是使用calc()函数，设置不同单位之间的数学方程式，如：<br>div { margin: 0 20px; width: calc(33% - 40px);}</p>
+<p>　　它不仅可以用来计算宽，还可以用来计算长度——如果有必要，还可以在calc()里面再加calc()。<br>　　这个特性IE9+和Firefox都支持，Firefox需要加上 -moz- 前缀（在版本16或17可能不用加前缀），Chrome和Safari也支持，但需要加上 -webkit- 前缀。然而，移动Webkit还不支持。<br>加载字体库的部分字体<br>　　优越的性能往往很重要，尤其是市场上各种各样的移动设备——导致连接速度的差异和不确定性——更加体现了这个重要性。其中一个加快页面加载速度的方法，就是减少外部文件个数，@font-face的一个新属性unicode-range就是为此而生。<br>　　这个属性就是unicode-range（编码范围），代表的是编码字体的参数范围。在加载外部文件的时候，只有那些被使用的字体才会被加载，而不是整套字体库。下面的代码演示了如何从foo.ttf字体库中仅加载三个字体：<br>@font-face {font-family: foo;src: url(‘foo.ttf’);unicode-range: U+31-33;}</p>
+<p>　　这点对于使用字体图标的页面尤其有用。我测试过，使用unicode-range，加载字体文件的时间平均减少了0.85秒，也不是小数目了。当然，你可能不会这么想。<br>　　这个属性，目前可以在IE9+、Webkit浏览器（如Chrome和Safari）中运行。<br>新的伪类<br>　　单位和值都应该好好利用，但是，让我更兴奋的是选择器和伪类。完善的选择器模式，即使只有少数浏览器支持，都让我兴奋不已。引用乔布斯的话：你要把栅栏的里面修得和外面一样漂亮，即使别人看不到里面——因为你自己知道。<br>　　我第一次使用:nth-of-type()的时候，简直是一次突破，就像我冲出了思想的桎梏。好吧，我有些夸张了。但有些新的CSS伪类，确实值得狂热一番。<br>否定伪类<br>　　你大概不知道 :not() 伪类的好，除非你亲自实践一番。带有参数的 :not() 其实就是普通的选择器——不是复合选择器。一组元素加上选择器 :not()，表示满足这个参数的元素会被排除出去。听起来有些复杂吧？但是实际上非常简单。<br>　　假设：要对项目列表的奇数行进行选择，但是最后一行除外。如果是以前，需要这样写：<br>li { color: #00F; } li:nth-child(odd) { color: #F00; } li:last-child { color: #00F; }</p>
+<p>　　现在，通过设定:last-child作为否定伪类的参数，就可以把最后一个元素排除，这样少了一行代码，从而更加的简洁和易维护。<br>li { color: #00F; } li:nth-child(odd):not(:last-child) { color: #F00; }</p>
+<p>　　否定伪类看起来并没有什么惊人之处，你可以不用它，但是它还是挺实用的。我曾经把它用在基于Webkit的项目当中，优势还是挺明显的。说实话，它是我最喜欢的伪类之一。<br>　　是的，我有最喜欢的伪类。<br>　　在本文提到的特性当中，否定伪类是兼容性最好的，它被IE9+和高级浏览器支持（不需要加浏览器产商前缀）。如果你熟悉jQuery，你可能习惯用它——版本1.0开始就有了，以及相似的not()方法。<br>“适用于”伪类<br>　　:matches() 伪类可以用普通的选择器、复合选择器、逗号隔开的列表或任何的选择器组合作为参数。太棒了！但是，它能做什么？<br>　　:matches() 伪类最强大的地方就是聚合多行选择器。例如，要选择父容器里面其中几个不同子容器里面的p元素，在这之前，代码或许会写成这样：<br>.home header p,.home footer p,.home aside p {color: #F00;}</p>
+<p>　　有了:matches()伪类，就可以把共同点提取出来，缩减代码量。该例子里面，选择器的共同点是以home为起点、以p为终点，所以可以用:matches()把中间的所有元素集合起来。是不是有些困惑？看看代码就明白了：<br>.home :matches(header,footer,aside) p { color: #F00; }</p>
+<p>　　这其实是CSS4的一部分（确切地说，是CSS选择器第四等级），这份规范文档还提到将会有类似的语法（以逗号隔开的复合选择器）应用于:not()伪类。兴奋ing！<br>　　目前，:matches()可以在Chrome和Safari浏览器中运行，但是要加上前缀-webkit-，Firefox也支持，但是要按照旧的写法:any()，同时要加上-moz-前缀。<br>你爱上这些朴实的CSS细节了吗？<br>　　这篇文章讲到的特性，最赞的一点是它们解决了现实的问题，从琐碎而繁复的选择器到建立响应式网站的新挑战。实际上，我期待每一个特性被使用到最普通的项目当中。（web前端学习交流群：328058344 禁止闲聊，非喜勿进！）</p>
+<p>　　新特性如滤镜可能很直观很华丽，但是我更愿意发现隐藏在深处的实用小技巧。<br>　　在积极探索的过程中，每一个特性可以让你的职业生涯更顺利——想到这里，就不会觉得繁琐了ted below are all the plug</p>
+<h2 id="CSS相关"><a href="#CSS相关" class="headerlink" title="CSS相关"></a>CSS相关</h2><p>1、左边定宽，右边自适应方案：float + margin，float + calc</p>
+<p>/* 方案1 <em>/<br>.left {<br>    width: 120px;<br>    float: left;<br>}<br>.right {<br>    margin-left: 120px;<br>}<br>/</em> 方案2 */<br>.left {<br>    width: 120px;<br>    float: left;<br>}<br>.right {<br>    width: calc(100% - 120px);<br>    float: left;<br>}<br>2、左右两边定宽，中间自适应：float，float + calc, 圣杯布局（设置BFC，margin负值法），flex</p>
+<p>.wrap {<br>    width: 100%;<br>    height: 200px;<br>}<br>.wrap &gt; div {<br>    height: 100%;<br>}<br>/* 方案1 <em>/<br>.left {<br>    width: 120px;<br>    float: left;<br>}<br>.right {<br>    float: right;<br>    width: 120px;<br>}<br>.center {<br>    margin: 0 120px;<br>}<br>/</em> 方案2 <em>/<br>.left {<br>    width: 120px;<br>    float: left;<br>}<br>.right {<br>  float: right;<br>  width: 120px;<br>}<br>.center {<br>       width: calc(100% - 240px);<br>       margin-left: 120px;<br>}<br>/</em> 方案3 */<br>.wrap {<br>    display: flex;<br>}<br>.left {<br>    width: 120px;<br>}<br>.right {<br>    width: 120px;<br>}<br>.center {<br>    flex: 1;<br>}<br>3、左右居中</p>
+<p>行内元素: text-align: center<br>定宽块状元素: 左右 margin 值为 auto<br>不定宽块状元素: table布局，position + transform<br>/* 方案1 <em>/<br>.wrap {<br>    text-align: center<br>}<br>.center {<br>     display: inline;<br>         /</em> or <em>/<br>         /</em> display: inline-block; <em>/<br>}<br>/</em> 方案2 <em>/<br>.center {<br>    width: 100px;<br>    margin: 0 auto;<br>}<br>/</em> 方案2 */<br>.wrap {<br>    position: relative;<br>}<br>.center {<br>position: absulote;<br>    left: 50%;<br>    transform: translateX(-50%);<br>}<br>4、上下垂直居中：</p>
+<p>定高：margin，position + margin(负值)<br>    不定高：position + transform，flex，IFC + vertical-align:middle<br>    /* 定高方案1 <em>/<br>.center {<br>    height: 100px;<br>    margin: 50px 0;<br>    }<br>/</em> 定高方案2 <em>/<br>.center {<br>    height: 100px;<br>    position: absolute;<br>    top: 50%;<br>    margin-top: -25px;<br>}<br>/</em> 不定高方案1 <em>/<br>.center {<br>    position: absolute;<br>    top: 50%;<br>    transform: translateY(-50%);<br>}<br>/</em> 不定高方案2 <em>/<br>.wrap {<br>     display: flex;<br>     align-items: center;<br>}<br>.center {<br>width: 100%;<br>}<br>/</em> 不定高方案3 <em>/<br>/</em> 设置 inline-block 则会在外层产生 IFC，高度设为 100% 撑开 wrap 的高度 */<br>.wrap::before {<br>content: ‘’;<br>height: 100%;<br>display: inline-block;<br>         vertical-align: middle;<br>}<br>.wrap {<br>    text-align: center;<br>}<br>.center {<br>display: inline-block;<br>         vertical-align: middle;<br>}<br>5、盒模型：content（元素内容） + padding（内边距） + border（边框） + margin（外边距）</p>
+<p>延伸： box-sizing</p>
+<p>content-box：默认值，总宽度 = margin + border + padding + width<br>border-box：盒子宽度包含 padding 和 border，总宽度 = margin + width<br>inherit：从父元素继承 box-sizing 属性<br>6、BFC、IFC、GFC、FFC：FC（Formatting Contexts），格式化上下文</p>
+<p>BFC：块级格式化上下文，容器里面的子元素不会在布局上影响到外面的元素，反之也是如此(按照这个理念来想，只要脱离文档流，肯定就能产生 BFC)。产生 BFC 方式如下<br>float 的值不为 none。<br>overflow 的值不为 visible。<br>position 的值不为 relative 和 static。<br>display 的值为 table-cell, table-caption, inline-block中的任何一个。<br>用处？常见的多栏布局，结合块级别元素浮动，里面的元素则是在一个相对隔离的环境里运行。</p>
+<p>IFC：内联格式化上下文，IFC 的 line box（线框）高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的 padding/margin 影响)。<br>IFC中的line box一般左右都贴紧整个 IFC，但是会因为 float 元素而扰乱。float 元素会位于 IFC 与 line box 之间，使得 line box 宽度缩短。 同个 ifc 下的多个 line box 高度会不同。 IFC 中时不可能有块级元素的，当插入块级元素时（如 p 中插入 div ）会产生两个匿名块与 div 分隔开，即产生两个 IFC ，每个 IFC 对外表现为块级元素，与 div 垂直排列。</p>
+<p>用处？</p>
+<p>水平居中：当一个块要在环境中水平居中时，设置其为 inline-block 则会在外层产生IFC，通过 text-align 则可以使其水平居中。<br>垂直居中：创建一个 IFC，用其中一个元素撑开父元素的高度，然后设置其 vertical-align: middle，其他行内元素则可以在此父元素下垂直居中</p>
+<p>GFC：网格布局格式化上下文（display: grid）<br>FFC：自适应格式化上下文（display: flex）<br>CSS2.1中只有BFC和IFC, CSS3中才有GFC和FFC。<br>到底什么是BFC、IFC、GFC和FFC，次奥</p>
+<p>What’s FC？<br>一定不是KFC，FC的全称是：Formatting Contexts，是W3C CSS2.1规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。<br>BFC<br>BFC(Block Formatting Contexts)直译为”块级格式化上下文”。Block Formatting Contexts就是页面上的一个隔离的渲染区域，容器里面的子元素不会在布局上影响到外面的元素，反之也是如此。如何产生BFC？<br>float的值不为none。<br>overflow的值不为visible。<br>position的值不为relative和static。<br>display的值为table-cell, table-caption, inline-block中的任何一个。<br>那BFC一般有什么用呢？比如常见的多栏布局，结合块级别元素浮动，里面的元素则是在一个相对隔离的环境里运行。<br>IFC<br>IFC(Inline Formatting Contexts)直译为”内联格式化上下文”，IFC的line box（线框）高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的padding/margin影响)<br>IFC中的line box一般左右都贴紧整个IFC，但是会因为float元素而扰乱。float元素会位于IFC与与line box之间，使得line box宽度缩短。 同个ifc下的多个line box高度会不同。 IFC中时不可能有块级元素的，当插入块级元素时（如p中插入div）会产生两个匿名块与div分隔开，即产生两个IFC，每个IFC对外表现为块级元素，与div垂直排列。<br>那么IFC一般有什么用呢？<br>水平居中：当一个块要在环境中水平居中时，设置其为inline-block则会在外层产生IFC，通过text-align则可以使其水平居中。<br>垂直居中：创建一个IFC，用其中一个元素撑开父元素的高度，然后设置其vertical-align:middle，其他行内元素则可以在此父元素下垂直居中。<br>GFC<br>GFC(GridLayout Formatting Contexts)直译为”网格布局格式化上下文”，当为一个元素设置display值为grid的时候，此元素将会获得一个独立的渲染区域，我们可以通过在网格容器（grid container）上定义网格定义行（grid definition rows）和网格定义列（grid definition columns）属性各在网格项目（grid item）上定义网格行（grid row）和网格列（grid columns）为每一个网格项目（grid item）定义位置和空间。<br>那么GFC有什么用呢，和table又有什么区别呢？首先同样是一个二维的表格，但GridLayout会有更加丰富的属性来控制行列，控制对齐以及更为精细的渲染语义和控制。<br>FFC<br>FFC(Flex Formatting Contexts)直译为”自适应格式化上下文”，display值为flex或者inline-flex的元素将会生成自适应容器（flex container），可惜这个牛逼的属性只有谷歌和火狐支持，不过在移动端也足够了，至少safari和chrome还是OK的，毕竟这俩在移动端才是王道。<br>Flex Box 由伸缩容器和伸缩项目组成。通过设置元素的 display 属性为 flex 或 inline-flex 可以得到一个伸缩容器。设置为 flex 的容器被渲染为一个块级元素，而设置为 inline-flex 的容器则渲染为一个行内元素。<br>伸缩容器中的每一个子元素都是一个伸缩项目。伸缩项目可以是任意数量的。伸缩容器外和伸缩项目内的一切元素都不受影响。简单地说，Flexbox 定义了伸缩容器内伸缩项目该如何布局。<br>醉饮山林，自是闲暇白云间。笑红尘，总是爱恨贪嗔痴。若问人间逍遥在，风生之谷，莲开其中。<br>详细参考:<a href="https://www.jianshu.com/p/e75f351e11f8" target="_blank" rel="noopener">css3中的BFC,IFC,GFC和FFC </a></p>
+
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a  href="/docs/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
+    </div>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/docs/2017/10/30/css总结/" class="archive-article-date">
-      <time datetime="2017-10-30T01:24:17.000Z" itemprop="datePublished">10-30</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/docs/2017/10/30/css总结/">20171030</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+  </section>
 </article>
-  
-  
-    </div></section>
-  
 
-    
-
-
-</div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2019 GENERALTUNE
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
-            </div>
-        </div>
+          </div>
         
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >极客到访数: 
-                            <span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>, </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
-    </div>
-</footer>
-
-    </div>
+      
     
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+  </section>
+  
+    
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
 
-<script src="/docs/js/main.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var backgroundnum = 1;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-        })
-    </script>
+  
 
 
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'xxxxx', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-
-
-
-	<script>
-	var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();
-	</script>
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+	
 </div>
-<script>
-    $(document).ready(function() {
-        if ($("#comments").length < 1) {
-            $("#scroll > a:nth-child(2)").hide();
-        };
-    })
-</script>
-
-    <button class="hide-labels">TAG 开关</button>
+<aside class='l_side'>
+  
     
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                $(".article-info").toggle(200);
-            });
-        });
-    </script>
-
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-  <script language="javascript">
-    $(function() {
-        $("a[title]").each(function() {
-            var a = $(this);
-            var title = a.attr('title');
-            if (title == undefined || title == "") return;
-            a.data('title', title).removeAttr('title').hover(
-            function() {
-                var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
-                    left: offset.left + a.outerWidth()/2 + 1
-                }).fadeIn(function() {
-                    var pop = $(this);
-                    setTimeout(function() {
-                        pop.remove();
-                    }, pop.text().length * 800);
-                });
-            }, function() {
-                $("#anchortitlecontainer").remove();
-            });
-        });
-    });
-</script>
-
-
+    
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/docs/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:me@xaoxuu.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/xaoxuu"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=63035382"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
   </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+
+          
+        
+      
+        
+          
+          
+            <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/docs/" href="/docs/"
+          
+          
+          id="docs">
+          
+            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+          
+          近期文章
+        </a></li>
+      
+        <li><a class="flat-box" title="/docs/blog/archives/" href="/docs/blog/archives/"
+          
+            rel="nofollow"
+          
+          
+          id="docsblogarchives">
+          
+            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
+          
+          文章归档
+        </a></li>
+      
+        <li><a class="flat-box" title="/docs/projects/" href="/docs/projects/"
+          
+          
+          id="docsprojects">
+          
+            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
+          
+          开源项目
+        </a></li>
+      
+        <li><a class="flat-box" title="/docs/friends/" href="/docs/friends/"
+          
+            rel="nofollow"
+          
+          
+          id="docsfriends">
+          
+            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
+          
+          我的友链
+        </a></li>
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
+          
+            rel="nofollow"
+          
+          
+          id="https:xaoxuu.comwikimaterial-x">
+          
+            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
+          
+          主题文档
+        </a></li>
+      
+        <li><a class="flat-box" title="/docs/about/" href="/docs/about/"
+          
+            rel="nofollow"
+          
+          
+          id="docsabout">
+          
+            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
+          
+          关于小站
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/docs/blog/tags/"
+    title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/docs/tags/日志-感悟-生活/" style="font-size: 14px; color: #999">日志  感悟 生活</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+
+  <section class='widget music'>
+    
+<header class='pure'>
+  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_blank"
+    
+    href="https://music.163.com/#/user/home?id=63035382"
+    title="https://music.163.com/#/user/home?id=63035382">
+    <i class="far fa-heart fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer"
+    data-theme="#1BCDFC"
+    
+    
+    data-mode="circulation"
+    data-server="netease"
+    data-type="playlist"
+    data-id="2615636388"
+    data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/docs/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:me@xaoxuu.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/xaoxuu"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=63035382"
+            class="social fas fa-headphones-alt flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+
+
+	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+	
+
+	
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/docs/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>
