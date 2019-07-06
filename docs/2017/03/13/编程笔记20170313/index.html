@@ -1,432 +1,207 @@
+
+
 <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <title>编程笔记 | generaltune&#39;s blog</title>
-  
-  
+<html lang>
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content>
+    <title>编程笔记 | generaltune&#39;s blog</title>
 
-  
+    <!-- Open Graph -->
+    <meta name="description" content="resin &amp;#x7684;&amp;#x542F;&amp;#x52A8;service resin startservice resin status  CENTOS  &amp;#x5F00;&amp;#x653E;&amp;#x7AEF;&amp;#x53E3;&amp;#x53F7;firewall-cmd &amp;#x2013;permanent &amp;#x2013;add-port=6600/tcp firewall-cmd &amp;#x2013;per">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编程笔记">
+<meta property="og:url" content="https://generaltune.github.io/blog/2017/03/13/编程笔记20170313/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="resin &amp;#x7684;&amp;#x542F;&amp;#x52A8;service resin startservice resin status  CENTOS  &amp;#x5F00;&amp;#x653E;&amp;#x7AEF;&amp;#x53E3;&amp;#x53F7;firewall-cmd &amp;#x2013;permanent &amp;#x2013;add-port=6600/tcp firewall-cmd &amp;#x2013;per">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T03:52:29.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="编程笔记">
+<meta name="twitter:description" content="resin &amp;#x7684;&amp;#x542F;&amp;#x52A8;service resin startservice resin status  CENTOS  &amp;#x5F00;&amp;#x653E;&amp;#x7AEF;&amp;#x53E3;&amp;#x53F7;firewall-cmd &amp;#x2013;permanent &amp;#x2013;add-port=6600/tcp firewall-cmd &amp;#x2013;per">
 
-  <meta name="HandheldFriendly" content="True">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
-  
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "GENERALTUNE",
+  "url": "https://generaltune.github.io/blog"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
 
-  <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
-  
+    
 
-  
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/blog/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
-  
-
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width=num+"%";
-    }
-  </script>
-
-  
-  
 </head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
 
-<body>
-  
-  
-  <div class="cover-wrapper">
-    <cover class='cover post half'>
-      
-        
-  <h1 class='title'>Material X</h1>
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>generaltune&#39;s blog</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/blog/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">GENERALTUNE</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class='menu navgation'>
-  <ul class='h-list'>
-    
-      
-        <li>
-          <a class="nav home" href="/blog/"
-            
-            
-            id="blog">
-            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/projects/"
-            
-            
-            id="blogprojects">
-            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/friends/"
-            
-              rel="nofollow"
-            
-            
-            id="blogfriends">
-            <i class='fas fa-link fa-fw'></i>&nbsp;友链
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/about/"
-            
-              rel="nofollow"
-            
-            
-            id="blogabout">
-            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
-          </a>
-        </li>
-      
-    
-  </ul>
 </div>
 
-      
-    </cover>
-    <header class="l_header pure">
-  <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
-  </div>
-
-	<div class='wrapper'>
-		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href='/blog/' >
-        
-          generaltune's blog
-        
-      </a>
-			<div class='menu navgation'>
-				<ul class='h-list'>
-          
-  					
-  						<li>
-								<a class="nav flat-box" href="/blog/"
-                  
-                  
-                  id="blog">
-									<i class='fas fa-grin fa-fw'></i>&nbsp;示例
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/categories/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogcategories">
-									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/tags/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogtags">
-									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/archives/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogarchives">
-									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
-								</a>
-							</li>
-      			
-      		
-				</ul>
-			</div>
-
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="Search" />
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
-			<ul class='switcher h-list'>
-				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
-				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
-			</ul>
-		</div>
-
-		<div class='nav-sub container container--flex'>
-			<a class="logo flat-box"></a>
-			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
-        
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
-        
-			</ul>
-		</div>
-	</div>
-</header>
-	<aside class="menu-phone">
-    <header>
-		<nav class="menu navgation">
-      <ul>
-        
-          
-            <li>
-							<a class="nav flat-box" href="/blog/"
-                
-                
-                id="blog">
-								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/blog/archives/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogblogarchives">
-								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/projects/"
-                
-                
-                id="blogprojects">
-								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/friends/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogfriends">
-								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
-                
-                  rel="nofollow"
-                
-                
-                id="https:xaoxuu.comwikimaterial-x">
-								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/about/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogabout">
-								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
-							</a>
-            </li>
-          
-       
-      </ul>
-		</nav>
-    </header>
-	</aside>
-<script>setLoadingBarProgress(40);</script>
-
-  </div>
-
-
-  <div class="l_body">
-    <div class='body-wrapper'>
-      <div class='l_main'>
-  
-
-  
-    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-      
-
-
-  <section class='meta'>
     
     
-    <div class="meta" id="header-meta">
-      
-        
-  
-    <h1 class="title">
-      <a href="/blog/2017/03/13/编程笔记20170313/">
-        编程笔记
-      </a>
-    </h1>
-  
 
+    
 
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://generaltune.github.io/blog" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>GENERALTUNE</p>
+    
+    <a href="/index.html" class="item">
+        <i class="home icon"></i>
+        HOME
     </a>
-  </div>
 
+    
 
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2017-03-13</p>
-  </a>
+    
 </div>
 
-          
-        
-          
-            
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-编程笔记20170313" class="ui main container article-type-post">
 
-          
-        
-          
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
+    
 
+    <div class="ui divided grid">
 
-          
-        
-          
-            
+        <div class="two column row" id="article-content">
 
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    编程笔记
+</h1>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          <p>resin 的启动<br>service resin start<br>service resin status </p>
-<p>CENTOS  开放端口号<br>firewall-cmd –permanent –add-port=6600/tcp</p>
-<p>firewall-cmd –permanent –query-port=6800/tcp</p>
-<p>firewall-cmd –list-ports</p>
-<p>firewall-cmd –reload</p>
-<p>Mongodb  安装启动 配置<br>设置mongodb的yum安装源<br>Create a /etc/yum.repos.d/mongodb-org-3.2.repo file so that you can install MongoDB directly, using yum.</p>
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <p>resin &#x7684;&#x542F;&#x52A8;<br>service resin start<br>service resin status </p>
+<p>CENTOS  &#x5F00;&#x653E;&#x7AEF;&#x53E3;&#x53F7;<br>firewall-cmd &#x2013;permanent &#x2013;add-port=6600/tcp</p>
+<p>firewall-cmd &#x2013;permanent &#x2013;query-port=6800/tcp</p>
+<p>firewall-cmd &#x2013;list-ports</p>
+<p>firewall-cmd &#x2013;reload</p>
+<p>Mongodb  &#x5B89;&#x88C5;&#x542F;&#x52A8; &#x914D;&#x7F6E;<br>&#x8BBE;&#x7F6E;mongodb&#x7684;yum&#x5B89;&#x88C5;&#x6E90;<br>Create a /etc/yum.repos.d/mongodb-org-3.2.repo file so that you can install MongoDB directly, using yum.</p>
 <p>[mongodb-org-3.2]<br>name=MongoDB Repository<br>baseurl=<a href="https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.2/x86_64/" target="_blank" rel="noopener">https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.2/x86_64/</a><br>gpgcheck=1<br>enabled=1<br>gpgkey=<a href="https://www.mongodb.org/static/pgp/server-3.2.asc" target="_blank" rel="noopener">https://www.mongodb.org/static/pgp/server-3.2.asc</a></p>
-<p>sudo yum install -y mongodb-org  yum 方法安装<br>/etc/mongod.conf   配置文件地址<br>默认端口：27017 by default.<br>sudo service mongod start<br>sudo service mongod restart<br>日志<br>/var/log/mongodb/mongod.log<br>数据<br>/var/lib/mongo</p>
-<p>sudo chkconfig mongod on 设置开机启动</p>
+<p>sudo yum install -y mongodb-org  yum &#x65B9;&#x6CD5;&#x5B89;&#x88C5;<br>/etc/mongod.conf   &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5730;&#x5740;<br>&#x9ED8;&#x8BA4;&#x7AEF;&#x53E3;&#xFF1A;27017 by default.<br>sudo service mongod start<br>sudo service mongod restart<br>&#x65E5;&#x5FD7;<br>/var/log/mongodb/mongod.log<br>&#x6570;&#x636E;<br>/var/lib/mongo</p>
+<p>sudo chkconfig mongod on &#x8BBE;&#x7F6E;&#x5F00;&#x673A;&#x542F;&#x52A8;</p>
 <p>sudo yum erase $(rpm -qa | grep mongodb-org)</p>
 <p>sudo rm -r /var/log/mongodb<br>sudo rm -r /var/lib/mongo</p>
-<p>Mongodb  数据库操作</p>
-<p>导入数据<br>移除数据先<br>mongoimport –db test –collection restaurants –drop –file primer-dataset.json</p>
-<p>设置登录口令后登录命令<br>mongo -port 27017 -u “myadmin” -p “zhumin”   –authenticationDatabase “admin”</p>
-<p>最小化安装完centos 7 之后 需要做的事情</p>
-<ol>
-<li><p>配置静态 ip  /etc/sysconfig/network-scripts/ 目录下 ipcfg-enXX 文件 查看ip 命令  ip addr show</p>
-<p>一个静态ip 配置案例<br>TYPE=”Ethernet”<br>BOOTPROTO=”static”<br>IPADDR=10.0.0.10<br>NETWORKING=yes<br>GATEWAY=192.168.1.1<br>NETMASK=255.255.255.0<br>NM_CONTROLLED=noa<br>DEFROUTE=”yes”<br>PEERDNS=”yes”<br>PEERROUTES=”yes”<br>IPV4_FAILURE_FATAL=”no”<br>IPV6INIT=”yes”<br>IPV6_AUTOCONF=”yes”<br>IPV6_DEFROUTE=”yes”<br>IPV6_PEERDNS=”yes”<br>IPV6_PEERROUTES=”yes”<br>IPV6_FAILURE_FATAL=”no”<br>NAME=”enp0s3”<br>UUID=”17eeb7fe-f11c-4b8b-83be-a9dd2281dda2”<br>DEVICE=”enp0s3”<br>ONBOOT=”yes”</p>
+<p>Mongodb  &#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;</p>
+<p>&#x5BFC;&#x5165;&#x6570;&#x636E;<br>&#x79FB;&#x9664;&#x6570;&#x636E;&#x5148;<br>mongoimport &#x2013;db test &#x2013;collection restaurants &#x2013;drop &#x2013;file primer-dataset.json</p>
+<p>&#x8BBE;&#x7F6E;&#x767B;&#x5F55;&#x53E3;&#x4EE4;&#x540E;&#x767B;&#x5F55;&#x547D;&#x4EE4;<br>mongo -port 27017 -u &#x201C;myadmin&#x201D; -p &#x201C;zhumin&#x201D;   &#x2013;authenticationDatabase &#x201C;admin&#x201D;</p>
+<p>&#x6700;&#x5C0F;&#x5316;&#x5B89;&#x88C5;&#x5B8C;centos 7 &#x4E4B;&#x540E; &#x9700;&#x8981;&#x505A;&#x7684;&#x4E8B;&#x60C5;</p>
+<ol class="ui list">
+<li><p>&#x914D;&#x7F6E;&#x9759;&#x6001; ip  /etc/sysconfig/network-scripts/ &#x76EE;&#x5F55;&#x4E0B; ipcfg-enXX &#x6587;&#x4EF6; &#x67E5;&#x770B;ip &#x547D;&#x4EE4;  ip addr show</p>
+<p>&#x4E00;&#x4E2A;&#x9759;&#x6001;ip &#x914D;&#x7F6E;&#x6848;&#x4F8B;<br>TYPE=&#x201D;Ethernet&#x201D;<br>BOOTPROTO=&#x201D;static&#x201D;<br>IPADDR=10.0.0.10<br>NETWORKING=yes<br>GATEWAY=192.168.1.1<br>NETMASK=255.255.255.0<br>NM_CONTROLLED=noa<br>DEFROUTE=&#x201D;yes&#x201D;<br>PEERDNS=&#x201D;yes&#x201D;<br>PEERROUTES=&#x201D;yes&#x201D;<br>IPV4_FAILURE_FATAL=&#x201D;no&#x201D;<br>IPV6INIT=&#x201D;yes&#x201D;<br>IPV6_AUTOCONF=&#x201D;yes&#x201D;<br>IPV6_DEFROUTE=&#x201D;yes&#x201D;<br>IPV6_PEERDNS=&#x201D;yes&#x201D;<br>IPV6_PEERROUTES=&#x201D;yes&#x201D;<br>IPV6_FAILURE_FATAL=&#x201D;no&#x201D;<br>NAME=&#x201D;enp0s3&#x201D;<br>UUID=&#x201D;17eeb7fe-f11c-4b8b-83be-a9dd2281dda2&#x201D;<br>DEVICE=&#x201D;enp0s3&#x201D;<br>ONBOOT=&#x201D;yes&#x201D;</p>
 </li>
-<li><p>安装软件<br>   1). 安装 links  浏览工具  yum install links<br>   2). 安装 Apache HTTP 服务器 yum istall httpd 如果你想更改 Apache HTTP 服务器的默认端口号(80)为其它端口，你需要编辑配置文件 ‘/etc/httpd/conf/httpd.conf’ 并查找以下面开始的行：</p>
-<pre><code>1.LISTEN 80</code></pre><p>  把端口号 ‘80’ 改为其它任何端口(例如 3221)，保存并退出。<br>  增加刚才分配给 Apache 的端口通过防火墙，然后重新加载防火墙。</p>
-<p> 允许 http 服务通过防火墙(永久)。<br>  1.# firewall-cmd –add-service=http</p>
-<pre><code>允许 3221 号端口通过防火墙(永久)。</code></pre><p> 1.# firewall-cmd –permanent –add-port=3221/tcp</p>
-<p>  重新加载防火墙。</p>
-<pre><code>1.# firewall-cmd –reload
-完成上面的所有事情之后，是时候重启 Apache HTTP 服务器了，然后新的端口号才能生效。</code></pre><p>  1.# systemctl restart httpd.service</p>
+<li><p>&#x5B89;&#x88C5;&#x8F6F;&#x4EF6;<br>   1). &#x5B89;&#x88C5; links  &#x6D4F;&#x89C8;&#x5DE5;&#x5177;  yum install links<br>   2). &#x5B89;&#x88C5; Apache HTTP &#x670D;&#x52A1;&#x5668; yum istall httpd &#x5982;&#x679C;&#x4F60;&#x60F3;&#x66F4;&#x6539; Apache HTTP &#x670D;&#x52A1;&#x5668;&#x7684;&#x9ED8;&#x8BA4;&#x7AEF;&#x53E3;&#x53F7;(80)&#x4E3A;&#x5176;&#x5B83;&#x7AEF;&#x53E3;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x7F16;&#x8F91;&#x914D;&#x7F6E;&#x6587;&#x4EF6; &#x2018;/etc/httpd/conf/httpd.conf&#x2019; &#x5E76;&#x67E5;&#x627E;&#x4EE5;&#x4E0B;&#x9762;&#x5F00;&#x59CB;&#x7684;&#x884C;&#xFF1A;</p>
+<pre><code>1.LISTEN 80</code></pre><p>  &#x628A;&#x7AEF;&#x53E3;&#x53F7; &#x2018;80&#x2019; &#x6539;&#x4E3A;&#x5176;&#x5B83;&#x4EFB;&#x4F55;&#x7AEF;&#x53E3;(&#x4F8B;&#x5982; 3221)&#xFF0C;&#x4FDD;&#x5B58;&#x5E76;&#x9000;&#x51FA;&#x3002;<br>  &#x589E;&#x52A0;&#x521A;&#x624D;&#x5206;&#x914D;&#x7ED9; Apache &#x7684;&#x7AEF;&#x53E3;&#x901A;&#x8FC7;&#x9632;&#x706B;&#x5899;&#xFF0C;&#x7136;&#x540E;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x9632;&#x706B;&#x5899;&#x3002;</p>
+<p> &#x5141;&#x8BB8; http &#x670D;&#x52A1;&#x901A;&#x8FC7;&#x9632;&#x706B;&#x5899;(&#x6C38;&#x4E45;)&#x3002;<br>  1.# firewall-cmd &#x2013;add-service=http</p>
+<pre><code>&#x5141;&#x8BB8; 3221 &#x53F7;&#x7AEF;&#x53E3;&#x901A;&#x8FC7;&#x9632;&#x706B;&#x5899;(&#x6C38;&#x4E45;)&#x3002;</code></pre><p> 1.# firewall-cmd &#x2013;permanent &#x2013;add-port=3221/tcp</p>
+<p>  &#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x9632;&#x706B;&#x5899;&#x3002;</p>
+<pre><code>1.# firewall-cmd &#x2013;reload
+&#x5B8C;&#x6210;&#x4E0A;&#x9762;&#x7684;&#x6240;&#x6709;&#x4E8B;&#x60C5;&#x4E4B;&#x540E;&#xFF0C;&#x662F;&#x65F6;&#x5019;&#x91CD;&#x542F; Apache HTTP &#x670D;&#x52A1;&#x5668;&#x4E86;&#xFF0C;&#x7136;&#x540E;&#x65B0;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x624D;&#x80FD;&#x751F;&#x6548;&#x3002;</code></pre><p>  1.# systemctl restart httpd.service</p>
 <pre><code>3). yum install lrzsz  </code></pre><p>4). export JAVA_HOME=/usr/local/java/jdk1.8.0_11 </p>
 <pre><code>   export JRE_HOME=/usr/local/java/jdk1.8.0_11/jre 
          export PATH=$PATH:/usr/local/java/jdk1.8.0_11/bin 
      export CLASSPATH=./:/usr/local/java/jdk1.8.0_11/lib:/usr/local/java/jdk1.8.0_11/jre/lib
-5). 安装编译环境  $ yum install ncurses-devel  $ yum install gcc</code></pre><p>   3.新增用户  useradd  xxxxx  设置密码  passwd xxxxx</p>
+5). &#x5B89;&#x88C5;&#x7F16;&#x8BD1;&#x73AF;&#x5883;  $ yum install ncurses-devel  $ yum install gcc</code></pre><p>   3.&#x65B0;&#x589E;&#x7528;&#x6237;  useradd  xxxxx  &#x8BBE;&#x7F6E;&#x5BC6;&#x7801;  passwd xxxxx</p>
 <ol start="4">
-<li>防火墙   开启80 端口 firewall-cmd –zone=public –add-port=80/tcp –permanent<br>重启防火墙生效：firewall-cmd –reload<ol start="5">
-<li>更新或升级最小化安装的 CentOS  yum update &amp;&amp; yum upgrade</li>
+<li>&#x9632;&#x706B;&#x5899;   &#x5F00;&#x542F;80 &#x7AEF;&#x53E3; firewall-cmd &#x2013;zone=public &#x2013;add-port=80/tcp &#x2013;permanent<br>&#x91CD;&#x542F;&#x9632;&#x706B;&#x5899;&#x751F;&#x6548;&#xFF1A;firewall-cmd &#x2013;reload<ol start="5">
+<li>&#x66F4;&#x65B0;&#x6216;&#x5347;&#x7EA7;&#x6700;&#x5C0F;&#x5316;&#x5B89;&#x88C5;&#x7684; CentOS  yum update &amp;&amp; yum upgrade</li>
 </ol>
 </li>
 </ol>
 <p>jdk1.8.0_111</p>
 </li>
 </ol>
-<pre><code>修改系统环境变量文件
+<pre><code>&#x4FEE;&#x6539;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x6587;&#x4EF6;
 vi + /etc/profile
 
 
-向文件里面追加以下内容：
+&#x5411;&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x8FFD;&#x52A0;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;
 JAVA_HOME=/usr/java/jdk1.8.0_25
  JRE_HOME=/usr/java/jdk1.8.0_25/jre
  PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin</code></pre><p> CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib<br>  export JAVA_HOME JRE_HOME PATH CLASSPATH</p>
-<p> 192.168.1.129<br>  安装nginx</p>
-<p>  首先由于nginx的一些模块依赖一些lib库，所以在安装nginx之前，必须先安装这些lib库，这些依赖库主要有g++、gcc、openssl-devel、pcre-devel和zlib-devel 所以执行如下命令安装</p>
-<p>  yum install gcc-c++<br> yum install pcre pcre-devel<br> yum install zlib zlib-devel<br>  yum install openssl openssl–devel</p>
-<pre><code>二、安装Nginx</code></pre><p>  安装之前，最好检查一下是否已经安装有 nginx<br>  find -name nginx</p>
-<pre><code>如果系统已经安装了nginx，那么就先卸载
-yum remove nginx</code></pre><p>  首先进入 /usr/local 目录<br> cd /usr/local<br>  从官网下载最新版的nginx<br> wget <a href="http://nginx.org/download/nginx-1.9.6.tar.gz" target="_blank" rel="noopener">http://nginx.org/download/nginx-1.9.6.tar.gz</a><br>  tar -zxvf nginx-1.9.6.tar.gz<br> cd nginx-1.9.6</p>
-<p> 接下来安装，使用–prefix参数指定nginx安装的目录,make、make install安装</p>
-<p> ./configure  $默认安装在/usr/local/nginx<br> make<br>  make install</p>
-<p>  如果没有报错，顺利完成后，最好看一下 nginx 的安装目录<br>  whereis nginx</p>
-<p> 安装完毕后，进入安装后目录（/usr/local/nginx）便可以启动或停止它了</p>
-<p> 使用命令编译nginx</p>
-<p> ./configure –sbin-path=/usr/local/nginx/nginx –conf-path=/usr/local/nginx/nginx.conf –pid-path=/usr/local/nginx/nginx.pid –with-http_ssl_module –with-pcre=/usr/local/src/pcre-8.38 –with-zlib=/usr/local/src/zlib-1.2.8 –with-openssl=/usr/local/src/openssl-1.0.1q<br>  make<br> make install</p>
-<p>  configure命令是用来检测你的安装平台的目标特征的。它定义了系统的各个方面，包括nginx的被允许使用的连接处理的方法，比如它会检测你是不是有CC或GCC，并不是需要CC或GCC，它是个shell脚本，执行结束时，它会创建一个Makefile文件。nginx的configure命令支持以下参数：<br>  –prefix=path    定义一个目录，存放服务器上的文件 ，也就是nginx的安装目录。默认使用 /usr/local/nginx。<br> –sbin-path=path 设置nginx的可执行文件的路径，默认为  prefix/sbin/nginx.<br>  –conf-path=path  设置在nginx.conf配置文件的路径。nginx允许使用不同的配置文件启动，通过命令行中的-c选项。默认为prefix/conf/nginx.conf.<br>  –pid-path=path  设置nginx.pid文件，将存储的主进程的进程号。安装完成后，可以随时改变的文件名 ， 在nginx.conf配置文件中使用 PID指令。默认情况下，文件名 为prefix/logs/nginx.pid.<br>  –error-log-path=path 设置主错误，警告，和诊断文件的名称。安装完成后，可以随时改变的文件名 ，在nginx.conf配置文件中 使用 的error_log指令。默认情况下，文件名 为prefix/logs/error.log.<br>  –http-log-path=path  设置主请求的HTTP服务器的日志文件的名称。安装完成后，可以随时改变的文件名 ，在nginx.conf配置文件中 使用 的access_log指令。默认情况下，文件名 为prefix/logs/access.log.<br> –user=name  设置nginx工作进程的用户。安装完成后，可以随时更改的名称在nginx.conf配置文件中 使用的 user指令。默认的用户名是nobody。<br> –group=name  设置nginx工作进程的用户组。安装完成后，可以随时更改的名称在nginx.conf配置文件中 使用的 user指令。默认的为非特权用户。<br>  –with-select_module –without-select_module 启用或禁用构建一个模块来允许服务器使用select()方法。该模块将自动建立，如果平台不支持的kqueue，epoll，rtsig或/dev/poll。<br>  –with-poll_module –without-poll_module 启用或禁用构建一个模块来允许服务器使用poll()方法。该模块将自动建立，如果平台不支持的kqueue，epoll，rtsig或/dev/poll。<br> –without-http_gzip_module — 不编译压缩的HTTP服务器的响应模块。编译并运行此模块需要zlib库。<br>  –without-http_rewrite_module  不编译重写模块。编译并运行此模块需要PCRE库支持。<br> –without-http_proxy_module — 不编译http_proxy模块。<br>  –with-http_ssl_module — 使用https协议模块。默认情况下，该模块没有被构建。建立并运行此模块的OpenSSL库是必需的。<br>  –with-pcre=path — 设置PCRE库的源码路径。PCRE库的源码（版本4.4 – 8.30）需要从PCRE网站下载并解压。其余的工作是Nginx的./ configure和make来完成。正则表达式使用在location指令和 ngx_http_rewrite_module 模块中。<br>  –with-pcre-jit —编译PCRE包含“just-in-time compilation”（1.1.12中， pcre_jit指令）。<br>  –with-zlib=path —设置的zlib库的源码路径。要下载从 zlib（版本1.1.3 – 1.2.5）的并解压。其余的工作是Nginx的./ configure和make完成。ngx_http_gzip_module模块需要使用zlib 。<br>  –with-cc-opt=parameters — 设置额外的参数将被添加到CFLAGS变量。例如,当你在FreeBSD上使用PCRE库时需要使用:–with-cc-opt=”-I /usr/local/include。.如需要需要增加 select()支持的文件数量:–with-cc-opt=”-D FD_SETSIZE=2048″.<br> –with-ld-opt=parameters —设置附加的参数，将用于在链接期间。例如，当在FreeBSD下使用该系统的PCRE库,应指定:–with-ld-opt=”-L /usr/local/lib”.<br>  说明: 说明: 若安装时找不到上述依赖模块，使用–with-openssl=<openssl_dir>、–with-pcre=<pcre_dir>、–with-zlib=<zlib_dir>指定依赖的模块目录。如已安装过，此处的路径为安装目录；若未安装，则此路径为编译安装包路径，nginx将执行模块的默认编译安装。s</zlib_dir></pcre_dir></openssl_dir></p>
+<p> 192.168.1.129<br>  &#x5B89;&#x88C5;nginx</p>
+<p>  &#x9996;&#x5148;&#x7531;&#x4E8E;nginx&#x7684;&#x4E00;&#x4E9B;&#x6A21;&#x5757;&#x4F9D;&#x8D56;&#x4E00;&#x4E9B;lib&#x5E93;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x5B89;&#x88C5;nginx&#x4E4B;&#x524D;&#xFF0C;&#x5FC5;&#x987B;&#x5148;&#x5B89;&#x88C5;&#x8FD9;&#x4E9B;lib&#x5E93;&#xFF0C;&#x8FD9;&#x4E9B;&#x4F9D;&#x8D56;&#x5E93;&#x4E3B;&#x8981;&#x6709;g++&#x3001;gcc&#x3001;openssl-devel&#x3001;pcre-devel&#x548C;zlib-devel &#x6240;&#x4EE5;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x5B89;&#x88C5;</p>
+<p>  yum install gcc-c++<br> yum install pcre pcre-devel<br> yum install zlib zlib-devel<br>  yum install openssl openssl&#x2013;devel</p>
+<pre><code>&#x4E8C;&#x3001;&#x5B89;&#x88C5;Nginx</code></pre><p>  &#x5B89;&#x88C5;&#x4E4B;&#x524D;&#xFF0C;&#x6700;&#x597D;&#x68C0;&#x67E5;&#x4E00;&#x4E0B;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x6709; nginx<br>  find -name nginx</p>
+<pre><code>&#x5982;&#x679C;&#x7CFB;&#x7EDF;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x4E86;nginx&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x5148;&#x5378;&#x8F7D;
+yum remove nginx</code></pre><p>  &#x9996;&#x5148;&#x8FDB;&#x5165; /usr/local &#x76EE;&#x5F55;<br> cd /usr/local<br>  &#x4ECE;&#x5B98;&#x7F51;&#x4E0B;&#x8F7D;&#x6700;&#x65B0;&#x7248;&#x7684;nginx<br> wget <a href="http://nginx.org/download/nginx-1.9.6.tar.gz" target="_blank" rel="noopener">http://nginx.org/download/nginx-1.9.6.tar.gz</a><br>  tar -zxvf nginx-1.9.6.tar.gz<br> cd nginx-1.9.6</p>
+<p> &#x63A5;&#x4E0B;&#x6765;&#x5B89;&#x88C5;&#xFF0C;&#x4F7F;&#x7528;&#x2013;prefix&#x53C2;&#x6570;&#x6307;&#x5B9A;nginx&#x5B89;&#x88C5;&#x7684;&#x76EE;&#x5F55;,make&#x3001;make install&#x5B89;&#x88C5;</p>
+<p> ./configure  $&#x9ED8;&#x8BA4;&#x5B89;&#x88C5;&#x5728;/usr/local/nginx<br> make<br>  make install</p>
+<p>  &#x5982;&#x679C;&#x6CA1;&#x6709;&#x62A5;&#x9519;&#xFF0C;&#x987A;&#x5229;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x6700;&#x597D;&#x770B;&#x4E00;&#x4E0B; nginx &#x7684;&#x5B89;&#x88C5;&#x76EE;&#x5F55;<br>  whereis nginx</p>
+<p> &#x5B89;&#x88C5;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x8FDB;&#x5165;&#x5B89;&#x88C5;&#x540E;&#x76EE;&#x5F55;&#xFF08;/usr/local/nginx&#xFF09;&#x4FBF;&#x53EF;&#x4EE5;&#x542F;&#x52A8;&#x6216;&#x505C;&#x6B62;&#x5B83;&#x4E86;</p>
+<p> &#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x7F16;&#x8BD1;nginx</p>
+<p> ./configure &#x2013;sbin-path=/usr/local/nginx/nginx &#x2013;conf-path=/usr/local/nginx/nginx.conf &#x2013;pid-path=/usr/local/nginx/nginx.pid &#x2013;with-http_ssl_module &#x2013;with-pcre=/usr/local/src/pcre-8.38 &#x2013;with-zlib=/usr/local/src/zlib-1.2.8 &#x2013;with-openssl=/usr/local/src/openssl-1.0.1q<br>  make<br> make install</p>
+<p>  configure&#x547D;&#x4EE4;&#x662F;&#x7528;&#x6765;&#x68C0;&#x6D4B;&#x4F60;&#x7684;&#x5B89;&#x88C5;&#x5E73;&#x53F0;&#x7684;&#x76EE;&#x6807;&#x7279;&#x5F81;&#x7684;&#x3002;&#x5B83;&#x5B9A;&#x4E49;&#x4E86;&#x7CFB;&#x7EDF;&#x7684;&#x5404;&#x4E2A;&#x65B9;&#x9762;&#xFF0C;&#x5305;&#x62EC;nginx&#x7684;&#x88AB;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x7684;&#x8FDE;&#x63A5;&#x5904;&#x7406;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6BD4;&#x5982;&#x5B83;&#x4F1A;&#x68C0;&#x6D4B;&#x4F60;&#x662F;&#x4E0D;&#x662F;&#x6709;CC&#x6216;GCC&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x9700;&#x8981;CC&#x6216;GCC&#xFF0C;&#x5B83;&#x662F;&#x4E2A;shell&#x811A;&#x672C;&#xFF0C;&#x6267;&#x884C;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Makefile&#x6587;&#x4EF6;&#x3002;nginx&#x7684;configure&#x547D;&#x4EE4;&#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;&#xFF1A;<br>  &#x2013;prefix=path    &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x5B58;&#x653E;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x6587;&#x4EF6; &#xFF0C;&#x4E5F;&#x5C31;&#x662F;nginx&#x7684;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x3002;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528; /usr/local/nginx&#x3002;<br> &#x2013;sbin-path=path &#x8BBE;&#x7F6E;nginx&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;  prefix/sbin/nginx.<br>  &#x2013;conf-path=path  &#x8BBE;&#x7F6E;&#x5728;nginx.conf&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x3002;nginx&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x542F;&#x52A8;&#xFF0C;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x7684;-c&#x9009;&#x9879;&#x3002;&#x9ED8;&#x8BA4;&#x4E3A;prefix/conf/nginx.conf.<br>  &#x2013;pid-path=path  &#x8BBE;&#x7F6E;nginx.pid&#x6587;&#x4EF6;&#xFF0C;&#x5C06;&#x5B58;&#x50A8;&#x7684;&#x4E3B;&#x8FDB;&#x7A0B;&#x7684;&#x8FDB;&#x7A0B;&#x53F7;&#x3002;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x6539;&#x53D8;&#x7684;&#x6587;&#x4EF6;&#x540D; &#xFF0C; &#x5728;nginx.conf&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528; PID&#x6307;&#x4EE4;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6587;&#x4EF6;&#x540D; &#x4E3A;prefix/logs/nginx.pid.<br>  &#x2013;error-log-path=path &#x8BBE;&#x7F6E;&#x4E3B;&#x9519;&#x8BEF;&#xFF0C;&#x8B66;&#x544A;&#xFF0C;&#x548C;&#x8BCA;&#x65AD;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x3002;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x6539;&#x53D8;&#x7684;&#x6587;&#x4EF6;&#x540D; &#xFF0C;&#x5728;nginx.conf&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D; &#x4F7F;&#x7528; &#x7684;error_log&#x6307;&#x4EE4;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6587;&#x4EF6;&#x540D; &#x4E3A;prefix/logs/error.log.<br>  &#x2013;http-log-path=path  &#x8BBE;&#x7F6E;&#x4E3B;&#x8BF7;&#x6C42;&#x7684;HTTP&#x670D;&#x52A1;&#x5668;&#x7684;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x3002;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x6539;&#x53D8;&#x7684;&#x6587;&#x4EF6;&#x540D; &#xFF0C;&#x5728;nginx.conf&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D; &#x4F7F;&#x7528; &#x7684;access_log&#x6307;&#x4EE4;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6587;&#x4EF6;&#x540D; &#x4E3A;prefix/logs/access.log.<br> &#x2013;user=name  &#x8BBE;&#x7F6E;nginx&#x5DE5;&#x4F5C;&#x8FDB;&#x7A0B;&#x7684;&#x7528;&#x6237;&#x3002;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x66F4;&#x6539;&#x7684;&#x540D;&#x79F0;&#x5728;nginx.conf&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D; &#x4F7F;&#x7528;&#x7684; user&#x6307;&#x4EE4;&#x3002;&#x9ED8;&#x8BA4;&#x7684;&#x7528;&#x6237;&#x540D;&#x662F;nobody&#x3002;<br> &#x2013;group=name  &#x8BBE;&#x7F6E;nginx&#x5DE5;&#x4F5C;&#x8FDB;&#x7A0B;&#x7684;&#x7528;&#x6237;&#x7EC4;&#x3002;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x66F4;&#x6539;&#x7684;&#x540D;&#x79F0;&#x5728;nginx.conf&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D; &#x4F7F;&#x7528;&#x7684; user&#x6307;&#x4EE4;&#x3002;&#x9ED8;&#x8BA4;&#x7684;&#x4E3A;&#x975E;&#x7279;&#x6743;&#x7528;&#x6237;&#x3002;<br>  &#x2013;with-select_module &#x2013;without-select_module &#x542F;&#x7528;&#x6216;&#x7981;&#x7528;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x6765;&#x5141;&#x8BB8;&#x670D;&#x52A1;&#x5668;&#x4F7F;&#x7528;select()&#x65B9;&#x6CD5;&#x3002;&#x8BE5;&#x6A21;&#x5757;&#x5C06;&#x81EA;&#x52A8;&#x5EFA;&#x7ACB;&#xFF0C;&#x5982;&#x679C;&#x5E73;&#x53F0;&#x4E0D;&#x652F;&#x6301;&#x7684;kqueue&#xFF0C;epoll&#xFF0C;rtsig&#x6216;/dev/poll&#x3002;<br>  &#x2013;with-poll_module &#x2013;without-poll_module &#x542F;&#x7528;&#x6216;&#x7981;&#x7528;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x6765;&#x5141;&#x8BB8;&#x670D;&#x52A1;&#x5668;&#x4F7F;&#x7528;poll()&#x65B9;&#x6CD5;&#x3002;&#x8BE5;&#x6A21;&#x5757;&#x5C06;&#x81EA;&#x52A8;&#x5EFA;&#x7ACB;&#xFF0C;&#x5982;&#x679C;&#x5E73;&#x53F0;&#x4E0D;&#x652F;&#x6301;&#x7684;kqueue&#xFF0C;epoll&#xFF0C;rtsig&#x6216;/dev/poll&#x3002;<br> &#x2013;without-http_gzip_module &#x2014; &#x4E0D;&#x7F16;&#x8BD1;&#x538B;&#x7F29;&#x7684;HTTP&#x670D;&#x52A1;&#x5668;&#x7684;&#x54CD;&#x5E94;&#x6A21;&#x5757;&#x3002;&#x7F16;&#x8BD1;&#x5E76;&#x8FD0;&#x884C;&#x6B64;&#x6A21;&#x5757;&#x9700;&#x8981;zlib&#x5E93;&#x3002;<br>  &#x2013;without-http_rewrite_module  &#x4E0D;&#x7F16;&#x8BD1;&#x91CD;&#x5199;&#x6A21;&#x5757;&#x3002;&#x7F16;&#x8BD1;&#x5E76;&#x8FD0;&#x884C;&#x6B64;&#x6A21;&#x5757;&#x9700;&#x8981;PCRE&#x5E93;&#x652F;&#x6301;&#x3002;<br> &#x2013;without-http_proxy_module &#x2014; &#x4E0D;&#x7F16;&#x8BD1;http_proxy&#x6A21;&#x5757;&#x3002;<br>  &#x2013;with-http_ssl_module &#x2014; &#x4F7F;&#x7528;https&#x534F;&#x8BAE;&#x6A21;&#x5757;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BE5;&#x6A21;&#x5757;&#x6CA1;&#x6709;&#x88AB;&#x6784;&#x5EFA;&#x3002;&#x5EFA;&#x7ACB;&#x5E76;&#x8FD0;&#x884C;&#x6B64;&#x6A21;&#x5757;&#x7684;OpenSSL&#x5E93;&#x662F;&#x5FC5;&#x9700;&#x7684;&#x3002;<br>  &#x2013;with-pcre=path &#x2014; &#x8BBE;&#x7F6E;PCRE&#x5E93;&#x7684;&#x6E90;&#x7801;&#x8DEF;&#x5F84;&#x3002;PCRE&#x5E93;&#x7684;&#x6E90;&#x7801;&#xFF08;&#x7248;&#x672C;4.4 &#x2013; 8.30&#xFF09;&#x9700;&#x8981;&#x4ECE;PCRE&#x7F51;&#x7AD9;&#x4E0B;&#x8F7D;&#x5E76;&#x89E3;&#x538B;&#x3002;&#x5176;&#x4F59;&#x7684;&#x5DE5;&#x4F5C;&#x662F;Nginx&#x7684;./ configure&#x548C;make&#x6765;&#x5B8C;&#x6210;&#x3002;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4F7F;&#x7528;&#x5728;location&#x6307;&#x4EE4;&#x548C; ngx_http_rewrite_module &#x6A21;&#x5757;&#x4E2D;&#x3002;<br>  &#x2013;with-pcre-jit &#x2014;&#x7F16;&#x8BD1;PCRE&#x5305;&#x542B;&#x201C;just-in-time compilation&#x201D;&#xFF08;1.1.12&#x4E2D;&#xFF0C; pcre_jit&#x6307;&#x4EE4;&#xFF09;&#x3002;<br>  &#x2013;with-zlib=path &#x2014;&#x8BBE;&#x7F6E;&#x7684;zlib&#x5E93;&#x7684;&#x6E90;&#x7801;&#x8DEF;&#x5F84;&#x3002;&#x8981;&#x4E0B;&#x8F7D;&#x4ECE; zlib&#xFF08;&#x7248;&#x672C;1.1.3 &#x2013; 1.2.5&#xFF09;&#x7684;&#x5E76;&#x89E3;&#x538B;&#x3002;&#x5176;&#x4F59;&#x7684;&#x5DE5;&#x4F5C;&#x662F;Nginx&#x7684;./ configure&#x548C;make&#x5B8C;&#x6210;&#x3002;ngx_http_gzip_module&#x6A21;&#x5757;&#x9700;&#x8981;&#x4F7F;&#x7528;zlib &#x3002;<br>  &#x2013;with-cc-opt=parameters &#x2014; &#x8BBE;&#x7F6E;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#x5C06;&#x88AB;&#x6DFB;&#x52A0;&#x5230;CFLAGS&#x53D8;&#x91CF;&#x3002;&#x4F8B;&#x5982;,&#x5F53;&#x4F60;&#x5728;FreeBSD&#x4E0A;&#x4F7F;&#x7528;PCRE&#x5E93;&#x65F6;&#x9700;&#x8981;&#x4F7F;&#x7528;:&#x2013;with-cc-opt=&#x201D;-I /usr/local/include&#x3002;.&#x5982;&#x9700;&#x8981;&#x9700;&#x8981;&#x589E;&#x52A0; select()&#x652F;&#x6301;&#x7684;&#x6587;&#x4EF6;&#x6570;&#x91CF;:&#x2013;with-cc-opt=&#x201D;-D FD_SETSIZE=2048&#x2033;.<br> &#x2013;with-ld-opt=parameters &#x2014;&#x8BBE;&#x7F6E;&#x9644;&#x52A0;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5C06;&#x7528;&#x4E8E;&#x5728;&#x94FE;&#x63A5;&#x671F;&#x95F4;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5F53;&#x5728;FreeBSD&#x4E0B;&#x4F7F;&#x7528;&#x8BE5;&#x7CFB;&#x7EDF;&#x7684;PCRE&#x5E93;,&#x5E94;&#x6307;&#x5B9A;:&#x2013;with-ld-opt=&#x201D;-L /usr/local/lib&#x201D;.<br>  &#x8BF4;&#x660E;: &#x8BF4;&#x660E;: &#x82E5;&#x5B89;&#x88C5;&#x65F6;&#x627E;&#x4E0D;&#x5230;&#x4E0A;&#x8FF0;&#x4F9D;&#x8D56;&#x6A21;&#x5757;&#xFF0C;&#x4F7F;&#x7528;&#x2013;with-openssl=<openssl_dir>&#x3001;&#x2013;with-pcre=<pcre_dir>&#x3001;&#x2013;with-zlib=<zlib_dir>&#x6307;&#x5B9A;&#x4F9D;&#x8D56;&#x7684;&#x6A21;&#x5757;&#x76EE;&#x5F55;&#x3002;&#x5982;&#x5DF2;&#x5B89;&#x88C5;&#x8FC7;&#xFF0C;&#x6B64;&#x5904;&#x7684;&#x8DEF;&#x5F84;&#x4E3A;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#xFF1B;&#x82E5;&#x672A;&#x5B89;&#x88C5;&#xFF0C;&#x5219;&#x6B64;&#x8DEF;&#x5F84;&#x4E3A;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;&#x5305;&#x8DEF;&#x5F84;&#xFF0C;nginx&#x5C06;&#x6267;&#x884C;&#x6A21;&#x5757;&#x7684;&#x9ED8;&#x8BA4;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;&#x3002;s</zlib_dir></pcre_dir></openssl_dir></p>
 <pre><code>db.createUser({
     user: &quot;root&quot;,
     pwd: &quot;zhumin&quot;,
@@ -442,656 +217,108 @@ yum remove nginx</code></pre><p>  首先进入 /usr/local 目录<br> cd /usr/loc
     ]
 
     rpm -e --nodeps mysql </code></pre>
-        </div>
-        
-          
+                        
+                    </div>
 
+                    
+                    
+                    
 
-  <section class='meta' id="footer-meta">
-    <hr>
-    <div class='new-meta-box'>
-      
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-03-13T02:28:22.000Z" itemprop="datePublished">2017-03-13</time>
+
+    </span>
+    <span class="post-description-item">
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-03T11:52:29+08:00">
-  <a class='notlink'>
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 3, 2019</p>
-  </a>
+    </span>
 </div>
 
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://generaltune.github.io/blog/2017/03/13/编程笔记20170313/&title=编程笔记 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://generaltune.github.io/blog/2017/03/13/编程笔记20170313/&title=编程笔记 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://generaltune.github.io/blog/2017/03/13/编程笔记20170313/&title=编程笔记 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </section>
-
-
-        
-        
-            <div class="prev-next">
+                </div>
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
-                            <h4>
-                                <a href="/blog/2017/03/16/unix_note_20170316/" rel="prev" title="UNIX 编辑艺术 读书笔记">
-                                  
-                                      UNIX 编辑艺术 读书笔记
-                                  
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
                 
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/blog/2017/02/20/20170220/" rel="prev" title="今天真是点背了">
-                                    
-                                        今天真是点背了
-                                    
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+
+                <a href="/blog/2017/03/16/unix_note_20170316/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    UNIX 编辑艺术 读书笔记
+                    
+
+                </a>
+
                 
             </div>
-        
-      </section>
-    </article>
-  
+            <div class="column nav-right">
+                
 
-  
-    <!-- 显示推荐文章和评论 -->
-
-
-
-  
-
-
-  
-
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: '编程笔记',
-      tools: true
-    }
-  </script>
-
+                <a href="/blog/2017/02/20/20170220/" class="ui tiny button">
+                    
+                    今天真是点背了
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
 
 </div>
-<aside class='l_side'>
-  
-    
-    
-      
-        
-          
-          
-            <section class='widget author'>
-  <div class='content pure'>
-    
-      <div class='avatar'>
-        <img class='avatar' src='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png'/>
-      </div>
-    
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/blog/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:generaltune@126.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/generaltune"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
+                
+            </div>
 
-          
-        
-      
-        
-          
-          
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    
+                </div>
+
+            </div>
             
 
-          
-        
-      
-        
-          
-          
-            <section class='widget grid'>
-  
-<header class='pure'>
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="grid navgation">
-      
-        <li><a class="flat-box" title="/blog/" href="/blog/"
-          
-          
-          id="blog">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          近期文章
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/blog/archives/" href="/blog/blog/archives/"
-          
-            rel="nofollow"
-          
-          
-          id="blogblogarchives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/projects/" href="/blog/projects/"
-          
-          
-          id="blogprojects">
-          
-            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
-          
-          开源项目
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/friends/" href="/blog/friends/"
-          
-            rel="nofollow"
-          
-          
-          id="blogfriends">
-          
-            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
-          
-          我的友链
-        </a></li>
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
-          
-            rel="nofollow"
-          
-          
-          id="https:xaoxuu.comwikimaterial-x">
-          
-            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
-          
-          主题文档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/about/" href="/blog/about/"
-          
-            rel="nofollow"
-          
-          
-          id="blogabout">
-          
-            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
-          
-          关于小站
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-          
-        
-      
-        
-          
-          
-            
-
-          
-        
-      
-        
-          
-          
-            
-  <section class='widget tagcloud'>
-    
-<header class='pure'>
-  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/blog/blog/tags/"
-    title="blog/tags/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      <a href="/blog/tags/日志-感悟-生活/" style="font-size: 14px; color: #999">日志  感悟 生活</a>
+        </div>
     </div>
-  </section>
-
-
-          
-        
-      
-        
-          
-          
-            
-
-
-  <section class='widget music'>
-    
-<header class='pure'>
-  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
-  
-    <a class="rightBtn"
-    
-      rel="external nofollow noopener noreferrer"
-    
-    
-      target="_blank"
-    
-    href="https://music.163.com/#/user/home?id=63035382"
-    title="https://music.163.com/#/user/home?id=63035382">
-    <i class="far fa-heart fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
-  <div class="aplayer"
-    data-theme="#1BCDFC"
-    
-    
-    data-mode="circulation"
-    data-server="netease"
-    data-type="playlist"
-    data-id="2615636388"
-    data-volume="0.7">
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
-
-
-    </div>
-  </section>
-
-
-          
-        
-      
-    
-
-  
-</aside>
-
-<footer id="footer" class="clearfix">
-  
-  
-    <div class="social-wrapper">
-      
-        
-          <a href="/blog/atom.xml"
-            class="social fas fa-rss flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="mailto:generaltune@126.com"
-            class="social fas fa-envelope flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://github.com/generaltune"
-            class="social fab fa-github flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://music.163.com/#/user/home?id=63035382"
-            class="social fas fa-headphones-alt flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-    </div>
-  
-  <br>
-  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
-  <div>
-    Use
-    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
-    
-      , 
-      total visits
-      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      times
-    
-    . 
-  </div>
-</footer>
-<script>setLoadingBarProgress(80);</script>
 
 
-      <script>setLoadingBarProgress(60);</script>
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2019 <a href="/">GENERALTUNE</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a href="http://hexo.io/" target="_blank">Hexo</a>.
     </div>
-    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+</div>
 
-  <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
-    var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/blog/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
-  </script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      Waves.attach('.flat-btn', ['waves-button']);
-      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-      Waves.attach('.flat-box', ['waves-block']);
-      Waves.attach('.float-box', ['waves-block', 'waves-float']);
-      Waves.attach('.waves-image');
-      Waves.init();
-    });
-  </script>
-
-
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+    </div>
 
 
 
 
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/blog/js/semantic-ui-algolia.js"></script>
+
+<script src="/blog/js/aloha-events.js"></script>
 
 
 
-
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
-
-
-
-
-<!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  let COPY_SUCCESS = "Copied";
-  let COPY_FAILURE = "Copy failed";
-  /*页面载入完成后，创建复制按钮*/
-  !function (e, t, a) {
-    /* code */
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-
-      clipboard.on('success', function(e) {
-        //您可以加入成功提示
-        console.info('Action:', e.action);
-        console.info('Text:', e.text);
-        console.info('Trigger:', e.trigger);
-        success_prompt(COPY_SUCCESS);
-        e.clearSelection();
-      });
-      clipboard.on('error', function(e) {
-        //您可以加入失败提示
-        console.error('Action:', e.action);
-        console.error('Trigger:', e.trigger);
-        fail_prompt(COPY_FAILURE);
-      });
-    }
-    initCopyCode();
-
-  }(window, document);
-
-  /**
-   * 弹出式提示框，默认1.5秒自动消失
-   * @param message 提示信息
-   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
-   * @param time 消失时间
-   */
-  var prompt = function (message, style, time)
-  {
-      style = (style === undefined) ? 'alert-success' : style;
-      time = (time === undefined) ? 1500 : time*1000;
-      $('<div>')
-          .appendTo('body')
-          .addClass('alert ' + style)
-          .html(message)
-          .show()
-          .delay(time)
-          .fadeOut();
-  };
-
-  // 成功提示
-  var success_prompt = function(message, time)
-  {
-      prompt(message, 'alert-success', time);
-  };
-
-  // 失败提示
-  var fail_prompt = function(message, time)
-  {
-      prompt(message, 'alert-danger', time);
-  };
-
-  // 提醒
-  var warning_prompt = function(message, time)
-  {
-      prompt(message, 'alert-warning', time);
-  };
-
-  // 信息提示
-  var info_prompt = function(message, time)
-  {
-      prompt(message, 'alert-info', time);
-  };
-
-</script>
-
-
-<!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
-      $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
-  });
-</script>
-
-
-
-
-
-  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>

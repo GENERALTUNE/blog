@@ -1,1063 +1,276 @@
+
+
 <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <title>20171030 | generaltune&#39;s blog</title>
-  
-  
+<html lang>
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content>
+    <title>20171030 | generaltune&#39;s blog</title>
 
-  
+    <!-- Open Graph -->
+    <meta name="description" content="&amp;#x672A;&amp;#x6765;&amp;#x7684;CSS&amp;#x592A;&amp;#x8BA9;&amp;#x4EBA;&amp;#x5174;&amp;#x594B;&amp;#x4E86;&amp;#xFF1A;&amp;#x4E00;&amp;#x65B9;&amp;#x9762;&amp;#xFF0C;&amp;#x662F;&amp;#x5168;&amp;#x65B0;&amp;#x7684;&amp;#x9875;&amp;#x9762;&amp;#x5E03;&amp;#x5C40;&amp;#x65B9;&amp;#x5F0F;&amp;#xFF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20171030">
+<meta property="og:url" content="https://generaltune.github.io/blog/2017/10/30/css总结/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="&amp;#x672A;&amp;#x6765;&amp;#x7684;CSS&amp;#x592A;&amp;#x8BA9;&amp;#x4EBA;&amp;#x5174;&amp;#x594B;&amp;#x4E86;&amp;#xFF1A;&amp;#x4E00;&amp;#x65B9;&amp;#x9762;&amp;#xFF0C;&amp;#x662F;&amp;#x5168;&amp;#x65B0;&amp;#x7684;&amp;#x9875;&amp;#x9762;&amp;#x5E03;&amp;#x5C40;&amp;#x65B9;&amp;#x5F0F;&amp;#xFF">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T03:52:29.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="20171030">
+<meta name="twitter:description" content="&amp;#x672A;&amp;#x6765;&amp;#x7684;CSS&amp;#x592A;&amp;#x8BA9;&amp;#x4EBA;&amp;#x5174;&amp;#x594B;&amp;#x4E86;&amp;#xFF1A;&amp;#x4E00;&amp;#x65B9;&amp;#x9762;&amp;#xFF0C;&amp;#x662F;&amp;#x5168;&amp;#x65B0;&amp;#x7684;&amp;#x9875;&amp;#x9762;&amp;#x5E03;&amp;#x5C40;&amp;#x65B9;&amp;#x5F0F;&amp;#xFF">
 
-  <meta name="HandheldFriendly" content="True">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
-  
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "GENERALTUNE",
+  "url": "https://generaltune.github.io/blog"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
 
-  <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
-  
+    
 
-  
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/blog/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
-  
-
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width=num+"%";
-    }
-  </script>
-
-  
-  
 </head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
 
-<body>
-  
-  
-  <div class="cover-wrapper">
-    <cover class='cover post half'>
-      
-        
-  <h1 class='title'>Material X</h1>
-
-
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class='menu navgation'>
-  <ul class='h-list'>
-    
-      
-        <li>
-          <a class="nav home" href="/blog/"
-            
-            
-            id="blog">
-            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/projects/"
-            
-            
-            id="blogprojects">
-            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/friends/"
-            
-              rel="nofollow"
-            
-            
-            id="blogfriends">
-            <i class='fas fa-link fa-fw'></i>&nbsp;友链
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/about/"
-            
-              rel="nofollow"
-            
-            
-            id="blogabout">
-            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
-          </a>
-        </li>
-      
-    
-  </ul>
-</div>
-
-      
-    </cover>
-    <header class="l_header pure">
-  <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
-  </div>
-
-	<div class='wrapper'>
-		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href='/blog/' >
-        
-          generaltune's blog
-        
-      </a>
-			<div class='menu navgation'>
-				<ul class='h-list'>
-          
-  					
-  						<li>
-								<a class="nav flat-box" href="/blog/"
-                  
-                  
-                  id="blog">
-									<i class='fas fa-grin fa-fw'></i>&nbsp;示例
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/categories/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogcategories">
-									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/tags/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogtags">
-									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/archives/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogarchives">
-									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
-								</a>
-							</li>
-      			
-      		
-				</ul>
-			</div>
-
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="Search" />
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
-			<ul class='switcher h-list'>
-				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
-				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
-			</ul>
-		</div>
-
-		<div class='nav-sub container container--flex'>
-			<a class="logo flat-box"></a>
-			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
-        
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
-        
-			</ul>
-		</div>
-	</div>
-</header>
-	<aside class="menu-phone">
-    <header>
-		<nav class="menu navgation">
-      <ul>
-        
-          
-            <li>
-							<a class="nav flat-box" href="/blog/"
-                
-                
-                id="blog">
-								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/blog/archives/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogblogarchives">
-								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/projects/"
-                
-                
-                id="blogprojects">
-								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/friends/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogfriends">
-								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
-                
-                  rel="nofollow"
-                
-                
-                id="https:xaoxuu.comwikimaterial-x">
-								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/about/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogabout">
-								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
-							</a>
-            </li>
-          
-       
-      </ul>
-		</nav>
-    </header>
-	</aside>
-<script>setLoadingBarProgress(40);</script>
-
-  </div>
-
-
-  <div class="l_body">
-    <div class='body-wrapper'>
-      <div class='l_main'>
-  
-
-  
-    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-      
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  
-    <h1 class="title">
-      <a href="/blog/2017/10/30/css总结/">
-        20171030
-      </a>
-    </h1>
-  
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://generaltune.github.io/blog" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>GENERALTUNE</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2017-10-30</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
     </div>
-  
 
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
 
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          <p>未来的CSS太让人兴奋了：一方面，是全新的页面布局方式；另一方面，是酷炫的滤镜、颜色等视觉效果。这些CSS，受开发者追捧，被杂志和博客文章铺天盖地地介绍。<br>　　如果说这些特性是CSS华丽的一面，那我们来看看它朴实的一面：很不起眼的东西，如选择器、单位、函数（方法）。我经常说这是繁琐的东西，但我意思是它们能干漂亮的活，这就是我要分享的。<br>　　怎么说呢，让我们看看这些效果最好的朴实的CSS细节——这些细节远远没有那些酷炫的CSS效果那么引人注目。它们有些已经存在一段时间了，但值得我们更好地认识，而有些则刚刚面世。虽然不起眼，但是它们可以提高我们的工作效率——以谦虚的姿态。<br>相对单位<br>　　聪明又有前瞻头脑的开发者们已经使用相对单位了——如em或者百分比——所以，开发者们了解这个问题：往往因为元素的继承性而需要使用计算器作为辅助工具来计算大小。例如，现在普遍的做法是给页面的字体设置全局尺寸，然后用相对单位来定义页面中其它的元素。CSS大概会这样写：<br>html { font-size: 10px; } p { font-size: 1.4em; }</p>
-<p>　　这样写是没问题，直到有个子元素需要设置一个不同的字体大小，比如，在这样的标签当中：<br>The cat sat on the mat.</p>
-<p>　　如果你要设置span的字体大小为1.2em，你需要做什么？拿出计算器，算算1.2除以1.4是多少，结果如下：<br>p span { font-size: 0.85714em; }</p>
-<p>　　这个问题不局限于em。如果用百分比来创建响应式的流式布局网站，而百分比是与容器相关的，所以，如果要定义一个元素为它的容器的40%，它的高是75%，宽则需要设置为53.33333%。<br>　　很明显，这很不方便。<br>根相关的长度单位<br>　　为了修复字体大小定义的问题，现在可以使用单位rem（root em）。rem同样是相对单位，但是它所对应的是固定的基本值，这个固定的基本值也就是文档的根元素的字体大小（在HTML文件中，就是html元素）。假设和上个例子一样，同样设定10px的字体大小为根元素的大小，那么CSS这样写就OK了：<br>p { font-size: 1.4rem; } p span { font-size: 1.2rem; }</p>
-<p>　　这两个CSS规则都是相对于根元素的字体大小，这样的代码更加优雅和简便，特别是在设置简单的数值如10px或者12px的时候。这样和使用px值很相似，不同点在于rem是可扩展的。<br>　　在整篇文章介绍的特性中，rem特性相对来说是兼容性比较好，高级浏览器都能支持，包括IE9在内，除了Opera Mobile。<br>窗口相关的长度单位<br>　　觉得rem单位很酷吧，如果还有另外一组单位能解决百分比的问题，那就更酷了。它和rem的道理相似，不同点在于，它相对的不是文档的根元素，而是相对于设备窗口本身的大小。<br>　　这两个单位就是vh和vw，即是相对于窗口大小的高和宽。每个单位在前面加上数字，代表的是多少个百分比。<br>div { height: 50vh; }</p>
-<p>　　在上面的例子，高度被设定为窗口高度的一半。1vh相当于一个百分比的窗口高度，所以50vh即是50%的窗口高度。<br>　　如果窗口大小变了，那么这个值也随之改变。这相对百分比来说，好处是不需要担心父容器，不管它的父容器如何，10vw的元素会一直是10%的窗口大小。<br>　　相应地，有vmin单位，相当于vh或者vw的最小值，最近还宣布有vmax单位会被加到规范文档里面（虽然在这篇文章发布的时候还没有）。<br>　　现在支持这个特性的有IE9+、Chrome和Safari 6。<br>运算式的值<br>　　如果你在做响应式的流式布局网站，经常会遇到混合单位的问题——用百分比设置栅格，但是又用固定像素宽度设置margin。如：<br>div { margin: 0 20px; width: 33%;}</p>
-<p>　　如果布局只用到padding和border，你可以使用box-sizing来解决，但是对于margin就无能为力了。更好、更灵活的方法是使用calc()函数，设置不同单位之间的数学方程式，如：<br>div { margin: 0 20px; width: calc(33% - 40px);}</p>
-<p>　　它不仅可以用来计算宽，还可以用来计算长度——如果有必要，还可以在calc()里面再加calc()。<br>　　这个特性IE9+和Firefox都支持，Firefox需要加上 -moz- 前缀（在版本16或17可能不用加前缀），Chrome和Safari也支持，但需要加上 -webkit- 前缀。然而，移动Webkit还不支持。<br>加载字体库的部分字体<br>　　优越的性能往往很重要，尤其是市场上各种各样的移动设备——导致连接速度的差异和不确定性——更加体现了这个重要性。其中一个加快页面加载速度的方法，就是减少外部文件个数，@font-face的一个新属性unicode-range就是为此而生。<br>　　这个属性就是unicode-range（编码范围），代表的是编码字体的参数范围。在加载外部文件的时候，只有那些被使用的字体才会被加载，而不是整套字体库。下面的代码演示了如何从foo.ttf字体库中仅加载三个字体：<br>@font-face {font-family: foo;src: url(‘foo.ttf’);unicode-range: U+31-33;}</p>
-<p>　　这点对于使用字体图标的页面尤其有用。我测试过，使用unicode-range，加载字体文件的时间平均减少了0.85秒，也不是小数目了。当然，你可能不会这么想。<br>　　这个属性，目前可以在IE9+、Webkit浏览器（如Chrome和Safari）中运行。<br>新的伪类<br>　　单位和值都应该好好利用，但是，让我更兴奋的是选择器和伪类。完善的选择器模式，即使只有少数浏览器支持，都让我兴奋不已。引用乔布斯的话：你要把栅栏的里面修得和外面一样漂亮，即使别人看不到里面——因为你自己知道。<br>　　我第一次使用:nth-of-type()的时候，简直是一次突破，就像我冲出了思想的桎梏。好吧，我有些夸张了。但有些新的CSS伪类，确实值得狂热一番。<br>否定伪类<br>　　你大概不知道 :not() 伪类的好，除非你亲自实践一番。带有参数的 :not() 其实就是普通的选择器——不是复合选择器。一组元素加上选择器 :not()，表示满足这个参数的元素会被排除出去。听起来有些复杂吧？但是实际上非常简单。<br>　　假设：要对项目列表的奇数行进行选择，但是最后一行除外。如果是以前，需要这样写：<br>li { color: #00F; } li:nth-child(odd) { color: #F00; } li:last-child { color: #00F; }</p>
-<p>　　现在，通过设定:last-child作为否定伪类的参数，就可以把最后一个元素排除，这样少了一行代码，从而更加的简洁和易维护。<br>li { color: #00F; } li:nth-child(odd):not(:last-child) { color: #F00; }</p>
-<p>　　否定伪类看起来并没有什么惊人之处，你可以不用它，但是它还是挺实用的。我曾经把它用在基于Webkit的项目当中，优势还是挺明显的。说实话，它是我最喜欢的伪类之一。<br>　　是的，我有最喜欢的伪类。<br>　　在本文提到的特性当中，否定伪类是兼容性最好的，它被IE9+和高级浏览器支持（不需要加浏览器产商前缀）。如果你熟悉jQuery，你可能习惯用它——版本1.0开始就有了，以及相似的not()方法。<br>“适用于”伪类<br>　　:matches() 伪类可以用普通的选择器、复合选择器、逗号隔开的列表或任何的选择器组合作为参数。太棒了！但是，它能做什么？<br>　　:matches() 伪类最强大的地方就是聚合多行选择器。例如，要选择父容器里面其中几个不同子容器里面的p元素，在这之前，代码或许会写成这样：<br>.home header p,.home footer p,.home aside p {color: #F00;}</p>
-<p>　　有了:matches()伪类，就可以把共同点提取出来，缩减代码量。该例子里面，选择器的共同点是以home为起点、以p为终点，所以可以用:matches()把中间的所有元素集合起来。是不是有些困惑？看看代码就明白了：<br>.home :matches(header,footer,aside) p { color: #F00; }</p>
-<p>　　这其实是CSS4的一部分（确切地说，是CSS选择器第四等级），这份规范文档还提到将会有类似的语法（以逗号隔开的复合选择器）应用于:not()伪类。兴奋ing！<br>　　目前，:matches()可以在Chrome和Safari浏览器中运行，但是要加上前缀-webkit-，Firefox也支持，但是要按照旧的写法:any()，同时要加上-moz-前缀。<br>你爱上这些朴实的CSS细节了吗？<br>　　这篇文章讲到的特性，最赞的一点是它们解决了现实的问题，从琐碎而繁复的选择器到建立响应式网站的新挑战。实际上，我期待每一个特性被使用到最普通的项目当中。（web前端学习交流群：328058344 禁止闲聊，非喜勿进！）</p>
-<p>　　新特性如滤镜可能很直观很华丽，但是我更愿意发现隐藏在深处的实用小技巧。<br>　　在积极探索的过程中，每一个特性可以让你的职业生涯更顺利——想到这里，就不会觉得繁琐了ted below are all the plug</p>
-<h2 id="CSS相关"><a href="#CSS相关" class="headerlink" title="CSS相关"></a>CSS相关</h2><p>1、左边定宽，右边自适应方案：float + margin，float + calc</p>
-<p>/* 方案1 <em>/<br>.left {<br>    width: 120px;<br>    float: left;<br>}<br>.right {<br>    margin-left: 120px;<br>}<br>/</em> 方案2 */<br>.left {<br>    width: 120px;<br>    float: left;<br>}<br>.right {<br>    width: calc(100% - 120px);<br>    float: left;<br>}<br>2、左右两边定宽，中间自适应：float，float + calc, 圣杯布局（设置BFC，margin负值法），flex</p>
-<p>.wrap {<br>    width: 100%;<br>    height: 200px;<br>}<br>.wrap &gt; div {<br>    height: 100%;<br>}<br>/* 方案1 <em>/<br>.left {<br>    width: 120px;<br>    float: left;<br>}<br>.right {<br>    float: right;<br>    width: 120px;<br>}<br>.center {<br>    margin: 0 120px;<br>}<br>/</em> 方案2 <em>/<br>.left {<br>    width: 120px;<br>    float: left;<br>}<br>.right {<br>  float: right;<br>  width: 120px;<br>}<br>.center {<br>       width: calc(100% - 240px);<br>       margin-left: 120px;<br>}<br>/</em> 方案3 */<br>.wrap {<br>    display: flex;<br>}<br>.left {<br>    width: 120px;<br>}<br>.right {<br>    width: 120px;<br>}<br>.center {<br>    flex: 1;<br>}<br>3、左右居中</p>
-<p>行内元素: text-align: center<br>定宽块状元素: 左右 margin 值为 auto<br>不定宽块状元素: table布局，position + transform<br>/* 方案1 <em>/<br>.wrap {<br>    text-align: center<br>}<br>.center {<br>     display: inline;<br>         /</em> or <em>/<br>         /</em> display: inline-block; <em>/<br>}<br>/</em> 方案2 <em>/<br>.center {<br>    width: 100px;<br>    margin: 0 auto;<br>}<br>/</em> 方案2 */<br>.wrap {<br>    position: relative;<br>}<br>.center {<br>position: absulote;<br>    left: 50%;<br>    transform: translateX(-50%);<br>}<br>4、上下垂直居中：</p>
-<p>定高：margin，position + margin(负值)<br>    不定高：position + transform，flex，IFC + vertical-align:middle<br>    /* 定高方案1 <em>/<br>.center {<br>    height: 100px;<br>    margin: 50px 0;<br>    }<br>/</em> 定高方案2 <em>/<br>.center {<br>    height: 100px;<br>    position: absolute;<br>    top: 50%;<br>    margin-top: -25px;<br>}<br>/</em> 不定高方案1 <em>/<br>.center {<br>    position: absolute;<br>    top: 50%;<br>    transform: translateY(-50%);<br>}<br>/</em> 不定高方案2 <em>/<br>.wrap {<br>     display: flex;<br>     align-items: center;<br>}<br>.center {<br>width: 100%;<br>}<br>/</em> 不定高方案3 <em>/<br>/</em> 设置 inline-block 则会在外层产生 IFC，高度设为 100% 撑开 wrap 的高度 */<br>.wrap::before {<br>content: ‘’;<br>height: 100%;<br>display: inline-block;<br>         vertical-align: middle;<br>}<br>.wrap {<br>    text-align: center;<br>}<br>.center {<br>display: inline-block;<br>         vertical-align: middle;<br>}<br>5、盒模型：content（元素内容） + padding（内边距） + border（边框） + margin（外边距）</p>
-<p>延伸： box-sizing</p>
-<p>content-box：默认值，总宽度 = margin + border + padding + width<br>border-box：盒子宽度包含 padding 和 border，总宽度 = margin + width<br>inherit：从父元素继承 box-sizing 属性<br>6、BFC、IFC、GFC、FFC：FC（Formatting Contexts），格式化上下文</p>
-<p>BFC：块级格式化上下文，容器里面的子元素不会在布局上影响到外面的元素，反之也是如此(按照这个理念来想，只要脱离文档流，肯定就能产生 BFC)。产生 BFC 方式如下<br>float 的值不为 none。<br>overflow 的值不为 visible。<br>position 的值不为 relative 和 static。<br>display 的值为 table-cell, table-caption, inline-block中的任何一个。<br>用处？常见的多栏布局，结合块级别元素浮动，里面的元素则是在一个相对隔离的环境里运行。</p>
-<p>IFC：内联格式化上下文，IFC 的 line box（线框）高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的 padding/margin 影响)。<br>IFC中的line box一般左右都贴紧整个 IFC，但是会因为 float 元素而扰乱。float 元素会位于 IFC 与 line box 之间，使得 line box 宽度缩短。 同个 ifc 下的多个 line box 高度会不同。 IFC 中时不可能有块级元素的，当插入块级元素时（如 p 中插入 div ）会产生两个匿名块与 div 分隔开，即产生两个 IFC ，每个 IFC 对外表现为块级元素，与 div 垂直排列。</p>
-<p>用处？</p>
-<p>水平居中：当一个块要在环境中水平居中时，设置其为 inline-block 则会在外层产生IFC，通过 text-align 则可以使其水平居中。<br>垂直居中：创建一个 IFC，用其中一个元素撑开父元素的高度，然后设置其 vertical-align: middle，其他行内元素则可以在此父元素下垂直居中</p>
-<p>GFC：网格布局格式化上下文（display: grid）<br>FFC：自适应格式化上下文（display: flex）<br>CSS2.1中只有BFC和IFC, CSS3中才有GFC和FFC。<br>到底什么是BFC、IFC、GFC和FFC，次奥</p>
-<p>What’s FC？<br>一定不是KFC，FC的全称是：Formatting Contexts，是W3C CSS2.1规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。<br>BFC<br>BFC(Block Formatting Contexts)直译为”块级格式化上下文”。Block Formatting Contexts就是页面上的一个隔离的渲染区域，容器里面的子元素不会在布局上影响到外面的元素，反之也是如此。如何产生BFC？<br>float的值不为none。<br>overflow的值不为visible。<br>position的值不为relative和static。<br>display的值为table-cell, table-caption, inline-block中的任何一个。<br>那BFC一般有什么用呢？比如常见的多栏布局，结合块级别元素浮动，里面的元素则是在一个相对隔离的环境里运行。<br>IFC<br>IFC(Inline Formatting Contexts)直译为”内联格式化上下文”，IFC的line box（线框）高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的padding/margin影响)<br>IFC中的line box一般左右都贴紧整个IFC，但是会因为float元素而扰乱。float元素会位于IFC与与line box之间，使得line box宽度缩短。 同个ifc下的多个line box高度会不同。 IFC中时不可能有块级元素的，当插入块级元素时（如p中插入div）会产生两个匿名块与div分隔开，即产生两个IFC，每个IFC对外表现为块级元素，与div垂直排列。<br>那么IFC一般有什么用呢？<br>水平居中：当一个块要在环境中水平居中时，设置其为inline-block则会在外层产生IFC，通过text-align则可以使其水平居中。<br>垂直居中：创建一个IFC，用其中一个元素撑开父元素的高度，然后设置其vertical-align:middle，其他行内元素则可以在此父元素下垂直居中。<br>GFC<br>GFC(GridLayout Formatting Contexts)直译为”网格布局格式化上下文”，当为一个元素设置display值为grid的时候，此元素将会获得一个独立的渲染区域，我们可以通过在网格容器（grid container）上定义网格定义行（grid definition rows）和网格定义列（grid definition columns）属性各在网格项目（grid item）上定义网格行（grid row）和网格列（grid columns）为每一个网格项目（grid item）定义位置和空间。<br>那么GFC有什么用呢，和table又有什么区别呢？首先同样是一个二维的表格，但GridLayout会有更加丰富的属性来控制行列，控制对齐以及更为精细的渲染语义和控制。<br>FFC<br>FFC(Flex Formatting Contexts)直译为”自适应格式化上下文”，display值为flex或者inline-flex的元素将会生成自适应容器（flex container），可惜这个牛逼的属性只有谷歌和火狐支持，不过在移动端也足够了，至少safari和chrome还是OK的，毕竟这俩在移动端才是王道。<br>Flex Box 由伸缩容器和伸缩项目组成。通过设置元素的 display 属性为 flex 或 inline-flex 可以得到一个伸缩容器。设置为 flex 的容器被渲染为一个块级元素，而设置为 inline-flex 的容器则渲染为一个行内元素。<br>伸缩容器中的每一个子元素都是一个伸缩项目。伸缩项目可以是任意数量的。伸缩容器外和伸缩项目内的一切元素都不受影响。简单地说，Flexbox 定义了伸缩容器内伸缩项目该如何布局。<br>醉饮山林，自是闲暇白云间。笑红尘，总是爱恨贪嗔痴。若问人间逍遥在，风生之谷，莲开其中。<br>详细参考:<a href="https://www.jianshu.com/p/e75f351e11f8" target="_blank" rel="noopener">css3中的BFC,IFC,GFC和FFC </a></p>
-
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>generaltune&#39;s blog</h3>
         </div>
-        
-          
-
-
-  <section class='meta' id="footer-meta">
-    <hr>
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-03T11:52:29+08:00">
-  <a class='notlink'>
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 3, 2019</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://generaltune.github.io/blog/2017/10/30/css总结/&title=20171030 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://generaltune.github.io/blog/2017/10/30/css总结/&title=20171030 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://generaltune.github.io/blog/2017/10/30/css总结/&title=20171030 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
     </div>
-  </section>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/blog/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">GENERALTUNE</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item">
+        <i class="home icon"></i>
+        HOME
+    </a>
+
+    
+
+    
+</div>
+
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-css总结" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    20171030
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <p>&#x672A;&#x6765;&#x7684;CSS&#x592A;&#x8BA9;&#x4EBA;&#x5174;&#x594B;&#x4E86;&#xFF1A;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x662F;&#x5168;&#x65B0;&#x7684;&#x9875;&#x9762;&#x5E03;&#x5C40;&#x65B9;&#x5F0F;&#xFF1B;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x662F;&#x9177;&#x70AB;&#x7684;&#x6EE4;&#x955C;&#x3001;&#x989C;&#x8272;&#x7B49;&#x89C6;&#x89C9;&#x6548;&#x679C;&#x3002;&#x8FD9;&#x4E9B;CSS&#xFF0C;&#x53D7;&#x5F00;&#x53D1;&#x8005;&#x8FFD;&#x6367;&#xFF0C;&#x88AB;&#x6742;&#x5FD7;&#x548C;&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#x94FA;&#x5929;&#x76D6;&#x5730;&#x5730;&#x4ECB;&#x7ECD;&#x3002;<br>&#x3000;&#x3000;&#x5982;&#x679C;&#x8BF4;&#x8FD9;&#x4E9B;&#x7279;&#x6027;&#x662F;CSS&#x534E;&#x4E3D;&#x7684;&#x4E00;&#x9762;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#x5B83;&#x6734;&#x5B9E;&#x7684;&#x4E00;&#x9762;&#xFF1A;&#x5F88;&#x4E0D;&#x8D77;&#x773C;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x5982;&#x9009;&#x62E9;&#x5668;&#x3001;&#x5355;&#x4F4D;&#x3001;&#x51FD;&#x6570;&#xFF08;&#x65B9;&#x6CD5;&#xFF09;&#x3002;&#x6211;&#x7ECF;&#x5E38;&#x8BF4;&#x8FD9;&#x662F;&#x7E41;&#x7410;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x4F46;&#x6211;&#x610F;&#x601D;&#x662F;&#x5B83;&#x4EEC;&#x80FD;&#x5E72;&#x6F02;&#x4EAE;&#x7684;&#x6D3B;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x6211;&#x8981;&#x5206;&#x4EAB;&#x7684;&#x3002;<br>&#x3000;&#x3000;&#x600E;&#x4E48;&#x8BF4;&#x5462;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x8FD9;&#x4E9B;&#x6548;&#x679C;&#x6700;&#x597D;&#x7684;&#x6734;&#x5B9E;&#x7684;CSS&#x7EC6;&#x8282;&#x2014;&#x2014;&#x8FD9;&#x4E9B;&#x7EC6;&#x8282;&#x8FDC;&#x8FDC;&#x6CA1;&#x6709;&#x90A3;&#x4E9B;&#x9177;&#x70AB;&#x7684;CSS&#x6548;&#x679C;&#x90A3;&#x4E48;&#x5F15;&#x4EBA;&#x6CE8;&#x76EE;&#x3002;&#x5B83;&#x4EEC;&#x6709;&#x4E9B;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x4E86;&#xFF0C;&#x4F46;&#x503C;&#x5F97;&#x6211;&#x4EEC;&#x66F4;&#x597D;&#x5730;&#x8BA4;&#x8BC6;&#xFF0C;&#x800C;&#x6709;&#x4E9B;&#x5219;&#x521A;&#x521A;&#x9762;&#x4E16;&#x3002;&#x867D;&#x7136;&#x4E0D;&#x8D77;&#x773C;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x6211;&#x4EEC;&#x7684;&#x5DE5;&#x4F5C;&#x6548;&#x7387;&#x2014;&#x2014;&#x4EE5;&#x8C26;&#x865A;&#x7684;&#x59FF;&#x6001;&#x3002;<br>&#x76F8;&#x5BF9;&#x5355;&#x4F4D;<br>&#x3000;&#x3000;&#x806A;&#x660E;&#x53C8;&#x6709;&#x524D;&#x77BB;&#x5934;&#x8111;&#x7684;&#x5F00;&#x53D1;&#x8005;&#x4EEC;&#x5DF2;&#x7ECF;&#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x5355;&#x4F4D;&#x4E86;&#x2014;&#x2014;&#x5982;em&#x6216;&#x8005;&#x767E;&#x5206;&#x6BD4;&#x2014;&#x2014;&#x6240;&#x4EE5;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x4EEC;&#x4E86;&#x89E3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;&#x5F80;&#x5F80;&#x56E0;&#x4E3A;&#x5143;&#x7D20;&#x7684;&#x7EE7;&#x627F;&#x6027;&#x800C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x5668;&#x4F5C;&#x4E3A;&#x8F85;&#x52A9;&#x5DE5;&#x5177;&#x6765;&#x8BA1;&#x7B97;&#x5927;&#x5C0F;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x73B0;&#x5728;&#x666E;&#x904D;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x7ED9;&#x9875;&#x9762;&#x7684;&#x5B57;&#x4F53;&#x8BBE;&#x7F6E;&#x5168;&#x5C40;&#x5C3A;&#x5BF8;&#xFF0C;&#x7136;&#x540E;&#x7528;&#x76F8;&#x5BF9;&#x5355;&#x4F4D;&#x6765;&#x5B9A;&#x4E49;&#x9875;&#x9762;&#x4E2D;&#x5176;&#x5B83;&#x7684;&#x5143;&#x7D20;&#x3002;CSS&#x5927;&#x6982;&#x4F1A;&#x8FD9;&#x6837;&#x5199;&#xFF1A;<br>html { font-size: 10px; } p { font-size: 1.4em; }</p>
+<p>&#x3000;&#x3000;&#x8FD9;&#x6837;&#x5199;&#x662F;&#x6CA1;&#x95EE;&#x9898;&#xFF0C;&#x76F4;&#x5230;&#x6709;&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#xFF0C;&#x6BD4;&#x5982;&#xFF0C;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x6807;&#x7B7E;&#x5F53;&#x4E2D;&#xFF1A;<br>The cat sat on the mat.</p>
+<p>&#x3000;&#x3000;&#x5982;&#x679C;&#x4F60;&#x8981;&#x8BBE;&#x7F6E;span&#x7684;&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#x4E3A;1.2em&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x505A;&#x4EC0;&#x4E48;&#xFF1F;&#x62FF;&#x51FA;&#x8BA1;&#x7B97;&#x5668;&#xFF0C;&#x7B97;&#x7B97;1.2&#x9664;&#x4EE5;1.4&#x662F;&#x591A;&#x5C11;&#xFF0C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;<br>p span { font-size: 0.85714em; }</p>
+<p>&#x3000;&#x3000;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x4E0D;&#x5C40;&#x9650;&#x4E8E;em&#x3002;&#x5982;&#x679C;&#x7528;&#x767E;&#x5206;&#x6BD4;&#x6765;&#x521B;&#x5EFA;&#x54CD;&#x5E94;&#x5F0F;&#x7684;&#x6D41;&#x5F0F;&#x5E03;&#x5C40;&#x7F51;&#x7AD9;&#xFF0C;&#x800C;&#x767E;&#x5206;&#x6BD4;&#x662F;&#x4E0E;&#x5BB9;&#x5668;&#x76F8;&#x5173;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x4E3A;&#x5B83;&#x7684;&#x5BB9;&#x5668;&#x7684;40%&#xFF0C;&#x5B83;&#x7684;&#x9AD8;&#x662F;75%&#xFF0C;&#x5BBD;&#x5219;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x4E3A;53.33333%&#x3002;<br>&#x3000;&#x3000;&#x5F88;&#x660E;&#x663E;&#xFF0C;&#x8FD9;&#x5F88;&#x4E0D;&#x65B9;&#x4FBF;&#x3002;<br>&#x6839;&#x76F8;&#x5173;&#x7684;&#x957F;&#x5EA6;&#x5355;&#x4F4D;<br>&#x3000;&#x3000;&#x4E3A;&#x4E86;&#x4FEE;&#x590D;&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#x5B9A;&#x4E49;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5355;&#x4F4D;rem&#xFF08;root em&#xFF09;&#x3002;rem&#x540C;&#x6837;&#x662F;&#x76F8;&#x5BF9;&#x5355;&#x4F4D;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#x57FA;&#x672C;&#x503C;&#xFF0C;&#x8FD9;&#x4E2A;&#x56FA;&#x5B9A;&#x7684;&#x57FA;&#x672C;&#x503C;&#x4E5F;&#x5C31;&#x662F;&#x6587;&#x6863;&#x7684;&#x6839;&#x5143;&#x7D20;&#x7684;&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#xFF08;&#x5728;HTML&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5C31;&#x662F;html&#x5143;&#x7D20;&#xFF09;&#x3002;&#x5047;&#x8BBE;&#x548C;&#x4E0A;&#x4E2A;&#x4F8B;&#x5B50;&#x4E00;&#x6837;&#xFF0C;&#x540C;&#x6837;&#x8BBE;&#x5B9A;10px&#x7684;&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#x4E3A;&#x6839;&#x5143;&#x7D20;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x90A3;&#x4E48;CSS&#x8FD9;&#x6837;&#x5199;&#x5C31;OK&#x4E86;&#xFF1A;<br>p { font-size: 1.4rem; } p span { font-size: 1.2rem; }</p>
+<p>&#x3000;&#x3000;&#x8FD9;&#x4E24;&#x4E2A;CSS&#x89C4;&#x5219;&#x90FD;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x6839;&#x5143;&#x7D20;&#x7684;&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x4F18;&#x96C5;&#x548C;&#x7B80;&#x4FBF;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5728;&#x8BBE;&#x7F6E;&#x7B80;&#x5355;&#x7684;&#x6570;&#x503C;&#x5982;10px&#x6216;&#x8005;12px&#x7684;&#x65F6;&#x5019;&#x3002;&#x8FD9;&#x6837;&#x548C;&#x4F7F;&#x7528;px&#x503C;&#x5F88;&#x76F8;&#x4F3C;&#xFF0C;&#x4E0D;&#x540C;&#x70B9;&#x5728;&#x4E8E;rem&#x662F;&#x53EF;&#x6269;&#x5C55;&#x7684;&#x3002;<br>&#x3000;&#x3000;&#x5728;&#x6574;&#x7BC7;&#x6587;&#x7AE0;&#x4ECB;&#x7ECD;&#x7684;&#x7279;&#x6027;&#x4E2D;&#xFF0C;rem&#x7279;&#x6027;&#x76F8;&#x5BF9;&#x6765;&#x8BF4;&#x662F;&#x517C;&#x5BB9;&#x6027;&#x6BD4;&#x8F83;&#x597D;&#xFF0C;&#x9AD8;&#x7EA7;&#x6D4F;&#x89C8;&#x5668;&#x90FD;&#x80FD;&#x652F;&#x6301;&#xFF0C;&#x5305;&#x62EC;IE9&#x5728;&#x5185;&#xFF0C;&#x9664;&#x4E86;Opera Mobile&#x3002;<br>&#x7A97;&#x53E3;&#x76F8;&#x5173;&#x7684;&#x957F;&#x5EA6;&#x5355;&#x4F4D;<br>&#x3000;&#x3000;&#x89C9;&#x5F97;rem&#x5355;&#x4F4D;&#x5F88;&#x9177;&#x5427;&#xFF0C;&#x5982;&#x679C;&#x8FD8;&#x6709;&#x53E6;&#x5916;&#x4E00;&#x7EC4;&#x5355;&#x4F4D;&#x80FD;&#x89E3;&#x51B3;&#x767E;&#x5206;&#x6BD4;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x90A3;&#x5C31;&#x66F4;&#x9177;&#x4E86;&#x3002;&#x5B83;&#x548C;rem&#x7684;&#x9053;&#x7406;&#x76F8;&#x4F3C;&#xFF0C;&#x4E0D;&#x540C;&#x70B9;&#x5728;&#x4E8E;&#xFF0C;&#x5B83;&#x76F8;&#x5BF9;&#x7684;&#x4E0D;&#x662F;&#x6587;&#x6863;&#x7684;&#x6839;&#x5143;&#x7D20;&#xFF0C;&#x800C;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x8BBE;&#x5907;&#x7A97;&#x53E3;&#x672C;&#x8EAB;&#x7684;&#x5927;&#x5C0F;&#x3002;<br>&#x3000;&#x3000;&#x8FD9;&#x4E24;&#x4E2A;&#x5355;&#x4F4D;&#x5C31;&#x662F;vh&#x548C;vw&#xFF0C;&#x5373;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x7A97;&#x53E3;&#x5927;&#x5C0F;&#x7684;&#x9AD8;&#x548C;&#x5BBD;&#x3002;&#x6BCF;&#x4E2A;&#x5355;&#x4F4D;&#x5728;&#x524D;&#x9762;&#x52A0;&#x4E0A;&#x6570;&#x5B57;&#xFF0C;&#x4EE3;&#x8868;&#x7684;&#x662F;&#x591A;&#x5C11;&#x4E2A;&#x767E;&#x5206;&#x6BD4;&#x3002;<br>div { height: 50vh; }</p>
+<p>&#x3000;&#x3000;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x9AD8;&#x5EA6;&#x88AB;&#x8BBE;&#x5B9A;&#x4E3A;&#x7A97;&#x53E3;&#x9AD8;&#x5EA6;&#x7684;&#x4E00;&#x534A;&#x3002;1vh&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x4E2A;&#x767E;&#x5206;&#x6BD4;&#x7684;&#x7A97;&#x53E3;&#x9AD8;&#x5EA6;&#xFF0C;&#x6240;&#x4EE5;50vh&#x5373;&#x662F;50%&#x7684;&#x7A97;&#x53E3;&#x9AD8;&#x5EA6;&#x3002;<br>&#x3000;&#x3000;&#x5982;&#x679C;&#x7A97;&#x53E3;&#x5927;&#x5C0F;&#x53D8;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x503C;&#x4E5F;&#x968F;&#x4E4B;&#x6539;&#x53D8;&#x3002;&#x8FD9;&#x76F8;&#x5BF9;&#x767E;&#x5206;&#x6BD4;&#x6765;&#x8BF4;&#xFF0C;&#x597D;&#x5904;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x62C5;&#x5FC3;&#x7236;&#x5BB9;&#x5668;&#xFF0C;&#x4E0D;&#x7BA1;&#x5B83;&#x7684;&#x7236;&#x5BB9;&#x5668;&#x5982;&#x4F55;&#xFF0C;10vw&#x7684;&#x5143;&#x7D20;&#x4F1A;&#x4E00;&#x76F4;&#x662F;10%&#x7684;&#x7A97;&#x53E3;&#x5927;&#x5C0F;&#x3002;<br>&#x3000;&#x3000;&#x76F8;&#x5E94;&#x5730;&#xFF0C;&#x6709;vmin&#x5355;&#x4F4D;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;vh&#x6216;&#x8005;vw&#x7684;&#x6700;&#x5C0F;&#x503C;&#xFF0C;&#x6700;&#x8FD1;&#x8FD8;&#x5BA3;&#x5E03;&#x6709;vmax&#x5355;&#x4F4D;&#x4F1A;&#x88AB;&#x52A0;&#x5230;&#x89C4;&#x8303;&#x6587;&#x6863;&#x91CC;&#x9762;&#xFF08;&#x867D;&#x7136;&#x5728;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x53D1;&#x5E03;&#x7684;&#x65F6;&#x5019;&#x8FD8;&#x6CA1;&#x6709;&#xFF09;&#x3002;<br>&#x3000;&#x3000;&#x73B0;&#x5728;&#x652F;&#x6301;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x7684;&#x6709;IE9+&#x3001;Chrome&#x548C;Safari 6&#x3002;<br>&#x8FD0;&#x7B97;&#x5F0F;&#x7684;&#x503C;<br>&#x3000;&#x3000;&#x5982;&#x679C;&#x4F60;&#x5728;&#x505A;&#x54CD;&#x5E94;&#x5F0F;&#x7684;&#x6D41;&#x5F0F;&#x5E03;&#x5C40;&#x7F51;&#x7AD9;&#xFF0C;&#x7ECF;&#x5E38;&#x4F1A;&#x9047;&#x5230;&#x6DF7;&#x5408;&#x5355;&#x4F4D;&#x7684;&#x95EE;&#x9898;&#x2014;&#x2014;&#x7528;&#x767E;&#x5206;&#x6BD4;&#x8BBE;&#x7F6E;&#x6805;&#x683C;&#xFF0C;&#x4F46;&#x662F;&#x53C8;&#x7528;&#x56FA;&#x5B9A;&#x50CF;&#x7D20;&#x5BBD;&#x5EA6;&#x8BBE;&#x7F6E;margin&#x3002;&#x5982;&#xFF1A;<br>div { margin: 0 20px; width: 33%;}</p>
+<p>&#x3000;&#x3000;&#x5982;&#x679C;&#x5E03;&#x5C40;&#x53EA;&#x7528;&#x5230;padding&#x548C;border&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;box-sizing&#x6765;&#x89E3;&#x51B3;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;margin&#x5C31;&#x65E0;&#x80FD;&#x4E3A;&#x529B;&#x4E86;&#x3002;&#x66F4;&#x597D;&#x3001;&#x66F4;&#x7075;&#x6D3B;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;calc()&#x51FD;&#x6570;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x5355;&#x4F4D;&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x5B66;&#x65B9;&#x7A0B;&#x5F0F;&#xFF0C;&#x5982;&#xFF1A;<br>div { margin: 0 20px; width: calc(33% - 40px);}</p>
+<p>&#x3000;&#x3000;&#x5B83;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8BA1;&#x7B97;&#x5BBD;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8BA1;&#x7B97;&#x957F;&#x5EA6;&#x2014;&#x2014;&#x5982;&#x679C;&#x6709;&#x5FC5;&#x8981;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;calc()&#x91CC;&#x9762;&#x518D;&#x52A0;calc()&#x3002;<br>&#x3000;&#x3000;&#x8FD9;&#x4E2A;&#x7279;&#x6027;IE9+&#x548C;Firefox&#x90FD;&#x652F;&#x6301;&#xFF0C;Firefox&#x9700;&#x8981;&#x52A0;&#x4E0A; -moz- &#x524D;&#x7F00;&#xFF08;&#x5728;&#x7248;&#x672C;16&#x6216;17&#x53EF;&#x80FD;&#x4E0D;&#x7528;&#x52A0;&#x524D;&#x7F00;&#xFF09;&#xFF0C;Chrome&#x548C;Safari&#x4E5F;&#x652F;&#x6301;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x52A0;&#x4E0A; -webkit- &#x524D;&#x7F00;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x79FB;&#x52A8;Webkit&#x8FD8;&#x4E0D;&#x652F;&#x6301;&#x3002;<br>&#x52A0;&#x8F7D;&#x5B57;&#x4F53;&#x5E93;&#x7684;&#x90E8;&#x5206;&#x5B57;&#x4F53;<br>&#x3000;&#x3000;&#x4F18;&#x8D8A;&#x7684;&#x6027;&#x80FD;&#x5F80;&#x5F80;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5E02;&#x573A;&#x4E0A;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x2014;&#x2014;&#x5BFC;&#x81F4;&#x8FDE;&#x63A5;&#x901F;&#x5EA6;&#x7684;&#x5DEE;&#x5F02;&#x548C;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#x2014;&#x2014;&#x66F4;&#x52A0;&#x4F53;&#x73B0;&#x4E86;&#x8FD9;&#x4E2A;&#x91CD;&#x8981;&#x6027;&#x3002;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x52A0;&#x5FEB;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x901F;&#x5EA6;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;&#x51CF;&#x5C11;&#x5916;&#x90E8;&#x6587;&#x4EF6;&#x4E2A;&#x6570;&#xFF0C;@font-face&#x7684;&#x4E00;&#x4E2A;&#x65B0;&#x5C5E;&#x6027;unicode-range&#x5C31;&#x662F;&#x4E3A;&#x6B64;&#x800C;&#x751F;&#x3002;<br>&#x3000;&#x3000;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x5C31;&#x662F;unicode-range&#xFF08;&#x7F16;&#x7801;&#x8303;&#x56F4;&#xFF09;&#xFF0C;&#x4EE3;&#x8868;&#x7684;&#x662F;&#x7F16;&#x7801;&#x5B57;&#x4F53;&#x7684;&#x53C2;&#x6570;&#x8303;&#x56F4;&#x3002;&#x5728;&#x52A0;&#x8F7D;&#x5916;&#x90E8;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EA;&#x6709;&#x90A3;&#x4E9B;&#x88AB;&#x4F7F;&#x7528;&#x7684;&#x5B57;&#x4F53;&#x624D;&#x4F1A;&#x88AB;&#x52A0;&#x8F7D;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6574;&#x5957;&#x5B57;&#x4F53;&#x5E93;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x4ECE;foo.ttf&#x5B57;&#x4F53;&#x5E93;&#x4E2D;&#x4EC5;&#x52A0;&#x8F7D;&#x4E09;&#x4E2A;&#x5B57;&#x4F53;&#xFF1A;<br>@font-face {font-family: foo;src: url(&#x2018;foo.ttf&#x2019;);unicode-range: U+31-33;}</p>
+<p>&#x3000;&#x3000;&#x8FD9;&#x70B9;&#x5BF9;&#x4E8E;&#x4F7F;&#x7528;&#x5B57;&#x4F53;&#x56FE;&#x6807;&#x7684;&#x9875;&#x9762;&#x5C24;&#x5176;&#x6709;&#x7528;&#x3002;&#x6211;&#x6D4B;&#x8BD5;&#x8FC7;&#xFF0C;&#x4F7F;&#x7528;unicode-range&#xFF0C;&#x52A0;&#x8F7D;&#x5B57;&#x4F53;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x95F4;&#x5E73;&#x5747;&#x51CF;&#x5C11;&#x4E86;0.85&#x79D2;&#xFF0C;&#x4E5F;&#x4E0D;&#x662F;&#x5C0F;&#x6570;&#x76EE;&#x4E86;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x4E0D;&#x4F1A;&#x8FD9;&#x4E48;&#x60F3;&#x3002;<br>&#x3000;&#x3000;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x76EE;&#x524D;&#x53EF;&#x4EE5;&#x5728;IE9+&#x3001;Webkit&#x6D4F;&#x89C8;&#x5668;&#xFF08;&#x5982;Chrome&#x548C;Safari&#xFF09;&#x4E2D;&#x8FD0;&#x884C;&#x3002;<br>&#x65B0;&#x7684;&#x4F2A;&#x7C7B;<br>&#x3000;&#x3000;&#x5355;&#x4F4D;&#x548C;&#x503C;&#x90FD;&#x5E94;&#x8BE5;&#x597D;&#x597D;&#x5229;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x8BA9;&#x6211;&#x66F4;&#x5174;&#x594B;&#x7684;&#x662F;&#x9009;&#x62E9;&#x5668;&#x548C;&#x4F2A;&#x7C7B;&#x3002;&#x5B8C;&#x5584;&#x7684;&#x9009;&#x62E9;&#x5668;&#x6A21;&#x5F0F;&#xFF0C;&#x5373;&#x4F7F;&#x53EA;&#x6709;&#x5C11;&#x6570;&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#xFF0C;&#x90FD;&#x8BA9;&#x6211;&#x5174;&#x594B;&#x4E0D;&#x5DF2;&#x3002;&#x5F15;&#x7528;&#x4E54;&#x5E03;&#x65AF;&#x7684;&#x8BDD;&#xFF1A;&#x4F60;&#x8981;&#x628A;&#x6805;&#x680F;&#x7684;&#x91CC;&#x9762;&#x4FEE;&#x5F97;&#x548C;&#x5916;&#x9762;&#x4E00;&#x6837;&#x6F02;&#x4EAE;&#xFF0C;&#x5373;&#x4F7F;&#x522B;&#x4EBA;&#x770B;&#x4E0D;&#x5230;&#x91CC;&#x9762;&#x2014;&#x2014;&#x56E0;&#x4E3A;&#x4F60;&#x81EA;&#x5DF1;&#x77E5;&#x9053;&#x3002;<br>&#x3000;&#x3000;&#x6211;&#x7B2C;&#x4E00;&#x6B21;&#x4F7F;&#x7528;:nth-of-type()&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7B80;&#x76F4;&#x662F;&#x4E00;&#x6B21;&#x7A81;&#x7834;&#xFF0C;&#x5C31;&#x50CF;&#x6211;&#x51B2;&#x51FA;&#x4E86;&#x601D;&#x60F3;&#x7684;&#x684E;&#x688F;&#x3002;&#x597D;&#x5427;&#xFF0C;&#x6211;&#x6709;&#x4E9B;&#x5938;&#x5F20;&#x4E86;&#x3002;&#x4F46;&#x6709;&#x4E9B;&#x65B0;&#x7684;CSS&#x4F2A;&#x7C7B;&#xFF0C;&#x786E;&#x5B9E;&#x503C;&#x5F97;&#x72C2;&#x70ED;&#x4E00;&#x756A;&#x3002;<br>&#x5426;&#x5B9A;&#x4F2A;&#x7C7B;<br>&#x3000;&#x3000;&#x4F60;&#x5927;&#x6982;&#x4E0D;&#x77E5;&#x9053; :not() &#x4F2A;&#x7C7B;&#x7684;&#x597D;&#xFF0C;&#x9664;&#x975E;&#x4F60;&#x4EB2;&#x81EA;&#x5B9E;&#x8DF5;&#x4E00;&#x756A;&#x3002;&#x5E26;&#x6709;&#x53C2;&#x6570;&#x7684; :not() &#x5176;&#x5B9E;&#x5C31;&#x662F;&#x666E;&#x901A;&#x7684;&#x9009;&#x62E9;&#x5668;&#x2014;&#x2014;&#x4E0D;&#x662F;&#x590D;&#x5408;&#x9009;&#x62E9;&#x5668;&#x3002;&#x4E00;&#x7EC4;&#x5143;&#x7D20;&#x52A0;&#x4E0A;&#x9009;&#x62E9;&#x5668; :not()&#xFF0C;&#x8868;&#x793A;&#x6EE1;&#x8DB3;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x5143;&#x7D20;&#x4F1A;&#x88AB;&#x6392;&#x9664;&#x51FA;&#x53BB;&#x3002;&#x542C;&#x8D77;&#x6765;&#x6709;&#x4E9B;&#x590D;&#x6742;&#x5427;&#xFF1F;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x4E0A;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x3002;<br>&#x3000;&#x3000;&#x5047;&#x8BBE;&#xFF1A;&#x8981;&#x5BF9;&#x9879;&#x76EE;&#x5217;&#x8868;&#x7684;&#x5947;&#x6570;&#x884C;&#x8FDB;&#x884C;&#x9009;&#x62E9;&#xFF0C;&#x4F46;&#x662F;&#x6700;&#x540E;&#x4E00;&#x884C;&#x9664;&#x5916;&#x3002;&#x5982;&#x679C;&#x662F;&#x4EE5;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x8FD9;&#x6837;&#x5199;&#xFF1A;<br>li { color: #00F; } li:nth-child(odd) { color: #F00; } li:last-child { color: #00F; }</p>
+<p>&#x3000;&#x3000;&#x73B0;&#x5728;&#xFF0C;&#x901A;&#x8FC7;&#x8BBE;&#x5B9A;:last-child&#x4F5C;&#x4E3A;&#x5426;&#x5B9A;&#x4F2A;&#x7C7B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x628A;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x6392;&#x9664;&#xFF0C;&#x8FD9;&#x6837;&#x5C11;&#x4E86;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#xFF0C;&#x4ECE;&#x800C;&#x66F4;&#x52A0;&#x7684;&#x7B80;&#x6D01;&#x548C;&#x6613;&#x7EF4;&#x62A4;&#x3002;<br>li { color: #00F; } li:nth-child(odd):not(:last-child) { color: #F00; }</p>
+<p>&#x3000;&#x3000;&#x5426;&#x5B9A;&#x4F2A;&#x7C7B;&#x770B;&#x8D77;&#x6765;&#x5E76;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x60CA;&#x4EBA;&#x4E4B;&#x5904;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x5B83;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x8FD8;&#x662F;&#x633A;&#x5B9E;&#x7528;&#x7684;&#x3002;&#x6211;&#x66FE;&#x7ECF;&#x628A;&#x5B83;&#x7528;&#x5728;&#x57FA;&#x4E8E;Webkit&#x7684;&#x9879;&#x76EE;&#x5F53;&#x4E2D;&#xFF0C;&#x4F18;&#x52BF;&#x8FD8;&#x662F;&#x633A;&#x660E;&#x663E;&#x7684;&#x3002;&#x8BF4;&#x5B9E;&#x8BDD;&#xFF0C;&#x5B83;&#x662F;&#x6211;&#x6700;&#x559C;&#x6B22;&#x7684;&#x4F2A;&#x7C7B;&#x4E4B;&#x4E00;&#x3002;<br>&#x3000;&#x3000;&#x662F;&#x7684;&#xFF0C;&#x6211;&#x6709;&#x6700;&#x559C;&#x6B22;&#x7684;&#x4F2A;&#x7C7B;&#x3002;<br>&#x3000;&#x3000;&#x5728;&#x672C;&#x6587;&#x63D0;&#x5230;&#x7684;&#x7279;&#x6027;&#x5F53;&#x4E2D;&#xFF0C;&#x5426;&#x5B9A;&#x4F2A;&#x7C7B;&#x662F;&#x517C;&#x5BB9;&#x6027;&#x6700;&#x597D;&#x7684;&#xFF0C;&#x5B83;&#x88AB;IE9+&#x548C;&#x9AD8;&#x7EA7;&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#xFF08;&#x4E0D;&#x9700;&#x8981;&#x52A0;&#x6D4F;&#x89C8;&#x5668;&#x4EA7;&#x5546;&#x524D;&#x7F00;&#xFF09;&#x3002;&#x5982;&#x679C;&#x4F60;&#x719F;&#x6089;jQuery&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x4E60;&#x60EF;&#x7528;&#x5B83;&#x2014;&#x2014;&#x7248;&#x672C;1.0&#x5F00;&#x59CB;&#x5C31;&#x6709;&#x4E86;&#xFF0C;&#x4EE5;&#x53CA;&#x76F8;&#x4F3C;&#x7684;not()&#x65B9;&#x6CD5;&#x3002;<br>&#x201C;&#x9002;&#x7528;&#x4E8E;&#x201D;&#x4F2A;&#x7C7B;<br>&#x3000;&#x3000;:matches() &#x4F2A;&#x7C7B;&#x53EF;&#x4EE5;&#x7528;&#x666E;&#x901A;&#x7684;&#x9009;&#x62E9;&#x5668;&#x3001;&#x590D;&#x5408;&#x9009;&#x62E9;&#x5668;&#x3001;&#x9017;&#x53F7;&#x9694;&#x5F00;&#x7684;&#x5217;&#x8868;&#x6216;&#x4EFB;&#x4F55;&#x7684;&#x9009;&#x62E9;&#x5668;&#x7EC4;&#x5408;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x3002;&#x592A;&#x68D2;&#x4E86;&#xFF01;&#x4F46;&#x662F;&#xFF0C;&#x5B83;&#x80FD;&#x505A;&#x4EC0;&#x4E48;&#xFF1F;<br>&#x3000;&#x3000;:matches() &#x4F2A;&#x7C7B;&#x6700;&#x5F3A;&#x5927;&#x7684;&#x5730;&#x65B9;&#x5C31;&#x662F;&#x805A;&#x5408;&#x591A;&#x884C;&#x9009;&#x62E9;&#x5668;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8981;&#x9009;&#x62E9;&#x7236;&#x5BB9;&#x5668;&#x91CC;&#x9762;&#x5176;&#x4E2D;&#x51E0;&#x4E2A;&#x4E0D;&#x540C;&#x5B50;&#x5BB9;&#x5668;&#x91CC;&#x9762;&#x7684;p&#x5143;&#x7D20;&#xFF0C;&#x5728;&#x8FD9;&#x4E4B;&#x524D;&#xFF0C;&#x4EE3;&#x7801;&#x6216;&#x8BB8;&#x4F1A;&#x5199;&#x6210;&#x8FD9;&#x6837;&#xFF1A;<br>.home header p,.home footer p,.home aside p {color: #F00;}</p>
+<p>&#x3000;&#x3000;&#x6709;&#x4E86;:matches()&#x4F2A;&#x7C7B;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x628A;&#x5171;&#x540C;&#x70B9;&#x63D0;&#x53D6;&#x51FA;&#x6765;&#xFF0C;&#x7F29;&#x51CF;&#x4EE3;&#x7801;&#x91CF;&#x3002;&#x8BE5;&#x4F8B;&#x5B50;&#x91CC;&#x9762;&#xFF0C;&#x9009;&#x62E9;&#x5668;&#x7684;&#x5171;&#x540C;&#x70B9;&#x662F;&#x4EE5;home&#x4E3A;&#x8D77;&#x70B9;&#x3001;&#x4EE5;p&#x4E3A;&#x7EC8;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x7528;:matches()&#x628A;&#x4E2D;&#x95F4;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x96C6;&#x5408;&#x8D77;&#x6765;&#x3002;&#x662F;&#x4E0D;&#x662F;&#x6709;&#x4E9B;&#x56F0;&#x60D1;&#xFF1F;&#x770B;&#x770B;&#x4EE3;&#x7801;&#x5C31;&#x660E;&#x767D;&#x4E86;&#xFF1A;<br>.home :matches(header,footer,aside) p { color: #F00; }</p>
+<p>&#x3000;&#x3000;&#x8FD9;&#x5176;&#x5B9E;&#x662F;CSS4&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF08;&#x786E;&#x5207;&#x5730;&#x8BF4;&#xFF0C;&#x662F;CSS&#x9009;&#x62E9;&#x5668;&#x7B2C;&#x56DB;&#x7B49;&#x7EA7;&#xFF09;&#xFF0C;&#x8FD9;&#x4EFD;&#x89C4;&#x8303;&#x6587;&#x6863;&#x8FD8;&#x63D0;&#x5230;&#x5C06;&#x4F1A;&#x6709;&#x7C7B;&#x4F3C;&#x7684;&#x8BED;&#x6CD5;&#xFF08;&#x4EE5;&#x9017;&#x53F7;&#x9694;&#x5F00;&#x7684;&#x590D;&#x5408;&#x9009;&#x62E9;&#x5668;&#xFF09;&#x5E94;&#x7528;&#x4E8E;:not()&#x4F2A;&#x7C7B;&#x3002;&#x5174;&#x594B;ing&#xFF01;<br>&#x3000;&#x3000;&#x76EE;&#x524D;&#xFF0C;:matches()&#x53EF;&#x4EE5;&#x5728;Chrome&#x548C;Safari&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;&#x4F46;&#x662F;&#x8981;&#x52A0;&#x4E0A;&#x524D;&#x7F00;-webkit-&#xFF0C;Firefox&#x4E5F;&#x652F;&#x6301;&#xFF0C;&#x4F46;&#x662F;&#x8981;&#x6309;&#x7167;&#x65E7;&#x7684;&#x5199;&#x6CD5;:any()&#xFF0C;&#x540C;&#x65F6;&#x8981;&#x52A0;&#x4E0A;-moz-&#x524D;&#x7F00;&#x3002;<br>&#x4F60;&#x7231;&#x4E0A;&#x8FD9;&#x4E9B;&#x6734;&#x5B9E;&#x7684;CSS&#x7EC6;&#x8282;&#x4E86;&#x5417;&#xFF1F;<br>&#x3000;&#x3000;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x8BB2;&#x5230;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x6700;&#x8D5E;&#x7684;&#x4E00;&#x70B9;&#x662F;&#x5B83;&#x4EEC;&#x89E3;&#x51B3;&#x4E86;&#x73B0;&#x5B9E;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4ECE;&#x7410;&#x788E;&#x800C;&#x7E41;&#x590D;&#x7684;&#x9009;&#x62E9;&#x5668;&#x5230;&#x5EFA;&#x7ACB;&#x54CD;&#x5E94;&#x5F0F;&#x7F51;&#x7AD9;&#x7684;&#x65B0;&#x6311;&#x6218;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x6211;&#x671F;&#x5F85;&#x6BCF;&#x4E00;&#x4E2A;&#x7279;&#x6027;&#x88AB;&#x4F7F;&#x7528;&#x5230;&#x6700;&#x666E;&#x901A;&#x7684;&#x9879;&#x76EE;&#x5F53;&#x4E2D;&#x3002;&#xFF08;web&#x524D;&#x7AEF;&#x5B66;&#x4E60;&#x4EA4;&#x6D41;&#x7FA4;&#xFF1A;328058344 &#x7981;&#x6B62;&#x95F2;&#x804A;&#xFF0C;&#x975E;&#x559C;&#x52FF;&#x8FDB;&#xFF01;&#xFF09;</p>
+<p>&#x3000;&#x3000;&#x65B0;&#x7279;&#x6027;&#x5982;&#x6EE4;&#x955C;&#x53EF;&#x80FD;&#x5F88;&#x76F4;&#x89C2;&#x5F88;&#x534E;&#x4E3D;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x66F4;&#x613F;&#x610F;&#x53D1;&#x73B0;&#x9690;&#x85CF;&#x5728;&#x6DF1;&#x5904;&#x7684;&#x5B9E;&#x7528;&#x5C0F;&#x6280;&#x5DE7;&#x3002;<br>&#x3000;&#x3000;&#x5728;&#x79EF;&#x6781;&#x63A2;&#x7D22;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x7279;&#x6027;&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x7684;&#x804C;&#x4E1A;&#x751F;&#x6DAF;&#x66F4;&#x987A;&#x5229;&#x2014;&#x2014;&#x60F3;&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x89C9;&#x5F97;&#x7E41;&#x7410;&#x4E86;ted below are all the plug</p>
+<h2 id="CSS&#x76F8;&#x5173;"><a href="#CSS&#x76F8;&#x5173;" class="headerlink" title="CSS&#x76F8;&#x5173;"></a>CSS&#x76F8;&#x5173;</h2><p>1&#x3001;&#x5DE6;&#x8FB9;&#x5B9A;&#x5BBD;&#xFF0C;&#x53F3;&#x8FB9;&#x81EA;&#x9002;&#x5E94;&#x65B9;&#x6848;&#xFF1A;float + margin&#xFF0C;float + calc</p>
+<p>/* &#x65B9;&#x6848;1 <em>/<br>.left {<br>    width: 120px;<br>    float: left;<br>}<br>.right {<br>    margin-left: 120px;<br>}<br>/</em> &#x65B9;&#x6848;2 */<br>.left {<br>    width: 120px;<br>    float: left;<br>}<br>.right {<br>    width: calc(100% - 120px);<br>    float: left;<br>}<br>2&#x3001;&#x5DE6;&#x53F3;&#x4E24;&#x8FB9;&#x5B9A;&#x5BBD;&#xFF0C;&#x4E2D;&#x95F4;&#x81EA;&#x9002;&#x5E94;&#xFF1A;float&#xFF0C;float + calc, &#x5723;&#x676F;&#x5E03;&#x5C40;&#xFF08;&#x8BBE;&#x7F6E;BFC&#xFF0C;margin&#x8D1F;&#x503C;&#x6CD5;&#xFF09;&#xFF0C;flex</p>
+<p>.wrap {<br>    width: 100%;<br>    height: 200px;<br>}<br>.wrap &gt; div {<br>    height: 100%;<br>}<br>/* &#x65B9;&#x6848;1 <em>/<br>.left {<br>    width: 120px;<br>    float: left;<br>}<br>.right {<br>    float: right;<br>    width: 120px;<br>}<br>.center {<br>    margin: 0 120px;<br>}<br>/</em> &#x65B9;&#x6848;2 <em>/<br>.left {<br>    width: 120px;<br>    float: left;<br>}<br>.right {<br>  float: right;<br>  width: 120px;<br>}<br>.center {<br>       width: calc(100% - 240px);<br>       margin-left: 120px;<br>}<br>/</em> &#x65B9;&#x6848;3 */<br>.wrap {<br>    display: flex;<br>}<br>.left {<br>    width: 120px;<br>}<br>.right {<br>    width: 120px;<br>}<br>.center {<br>    flex: 1;<br>}<br>3&#x3001;&#x5DE6;&#x53F3;&#x5C45;&#x4E2D;</p>
+<p>&#x884C;&#x5185;&#x5143;&#x7D20;: text-align: center<br>&#x5B9A;&#x5BBD;&#x5757;&#x72B6;&#x5143;&#x7D20;: &#x5DE6;&#x53F3; margin &#x503C;&#x4E3A; auto<br>&#x4E0D;&#x5B9A;&#x5BBD;&#x5757;&#x72B6;&#x5143;&#x7D20;: table&#x5E03;&#x5C40;&#xFF0C;position + transform<br>/* &#x65B9;&#x6848;1 <em>/<br>.wrap {<br>    text-align: center<br>}<br>.center {<br>     display: inline;<br>         /</em> or <em>/<br>         /</em> display: inline-block; <em>/<br>}<br>/</em> &#x65B9;&#x6848;2 <em>/<br>.center {<br>    width: 100px;<br>    margin: 0 auto;<br>}<br>/</em> &#x65B9;&#x6848;2 */<br>.wrap {<br>    position: relative;<br>}<br>.center {<br>position: absulote;<br>    left: 50%;<br>    transform: translateX(-50%);<br>}<br>4&#x3001;&#x4E0A;&#x4E0B;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#xFF1A;</p>
+<p>&#x5B9A;&#x9AD8;&#xFF1A;margin&#xFF0C;position + margin(&#x8D1F;&#x503C;)<br>    &#x4E0D;&#x5B9A;&#x9AD8;&#xFF1A;position + transform&#xFF0C;flex&#xFF0C;IFC + vertical-align:middle<br>    /* &#x5B9A;&#x9AD8;&#x65B9;&#x6848;1 <em>/<br>.center {<br>    height: 100px;<br>    margin: 50px 0;<br>    }<br>/</em> &#x5B9A;&#x9AD8;&#x65B9;&#x6848;2 <em>/<br>.center {<br>    height: 100px;<br>    position: absolute;<br>    top: 50%;<br>    margin-top: -25px;<br>}<br>/</em> &#x4E0D;&#x5B9A;&#x9AD8;&#x65B9;&#x6848;1 <em>/<br>.center {<br>    position: absolute;<br>    top: 50%;<br>    transform: translateY(-50%);<br>}<br>/</em> &#x4E0D;&#x5B9A;&#x9AD8;&#x65B9;&#x6848;2 <em>/<br>.wrap {<br>     display: flex;<br>     align-items: center;<br>}<br>.center {<br>width: 100%;<br>}<br>/</em> &#x4E0D;&#x5B9A;&#x9AD8;&#x65B9;&#x6848;3 <em>/<br>/</em> &#x8BBE;&#x7F6E; inline-block &#x5219;&#x4F1A;&#x5728;&#x5916;&#x5C42;&#x4EA7;&#x751F; IFC&#xFF0C;&#x9AD8;&#x5EA6;&#x8BBE;&#x4E3A; 100% &#x6491;&#x5F00; wrap &#x7684;&#x9AD8;&#x5EA6; */<br>.wrap::before {<br>content: &#x2018;&#x2019;;<br>height: 100%;<br>display: inline-block;<br>         vertical-align: middle;<br>}<br>.wrap {<br>    text-align: center;<br>}<br>.center {<br>display: inline-block;<br>         vertical-align: middle;<br>}<br>5&#x3001;&#x76D2;&#x6A21;&#x578B;&#xFF1A;content&#xFF08;&#x5143;&#x7D20;&#x5185;&#x5BB9;&#xFF09; + padding&#xFF08;&#x5185;&#x8FB9;&#x8DDD;&#xFF09; + border&#xFF08;&#x8FB9;&#x6846;&#xFF09; + margin&#xFF08;&#x5916;&#x8FB9;&#x8DDD;&#xFF09;</p>
+<p>&#x5EF6;&#x4F38;&#xFF1A; box-sizing</p>
+<p>content-box&#xFF1A;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x603B;&#x5BBD;&#x5EA6; = margin + border + padding + width<br>border-box&#xFF1A;&#x76D2;&#x5B50;&#x5BBD;&#x5EA6;&#x5305;&#x542B; padding &#x548C; border&#xFF0C;&#x603B;&#x5BBD;&#x5EA6; = margin + width<br>inherit&#xFF1A;&#x4ECE;&#x7236;&#x5143;&#x7D20;&#x7EE7;&#x627F; box-sizing &#x5C5E;&#x6027;<br>6&#x3001;BFC&#x3001;IFC&#x3001;GFC&#x3001;FFC&#xFF1A;FC&#xFF08;Formatting Contexts&#xFF09;&#xFF0C;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;</p>
+<p>BFC&#xFF1A;&#x5757;&#x7EA7;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x5BB9;&#x5668;&#x91CC;&#x9762;&#x7684;&#x5B50;&#x5143;&#x7D20;&#x4E0D;&#x4F1A;&#x5728;&#x5E03;&#x5C40;&#x4E0A;&#x5F71;&#x54CD;&#x5230;&#x5916;&#x9762;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x53CD;&#x4E4B;&#x4E5F;&#x662F;&#x5982;&#x6B64;(&#x6309;&#x7167;&#x8FD9;&#x4E2A;&#x7406;&#x5FF5;&#x6765;&#x60F3;&#xFF0C;&#x53EA;&#x8981;&#x8131;&#x79BB;&#x6587;&#x6863;&#x6D41;&#xFF0C;&#x80AF;&#x5B9A;&#x5C31;&#x80FD;&#x4EA7;&#x751F; BFC)&#x3002;&#x4EA7;&#x751F; BFC &#x65B9;&#x5F0F;&#x5982;&#x4E0B;<br>float &#x7684;&#x503C;&#x4E0D;&#x4E3A; none&#x3002;<br>overflow &#x7684;&#x503C;&#x4E0D;&#x4E3A; visible&#x3002;<br>position &#x7684;&#x503C;&#x4E0D;&#x4E3A; relative &#x548C; static&#x3002;<br>display &#x7684;&#x503C;&#x4E3A; table-cell, table-caption, inline-block&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x3002;<br>&#x7528;&#x5904;&#xFF1F;&#x5E38;&#x89C1;&#x7684;&#x591A;&#x680F;&#x5E03;&#x5C40;&#xFF0C;&#x7ED3;&#x5408;&#x5757;&#x7EA7;&#x522B;&#x5143;&#x7D20;&#x6D6E;&#x52A8;&#xFF0C;&#x91CC;&#x9762;&#x7684;&#x5143;&#x7D20;&#x5219;&#x662F;&#x5728;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x9694;&#x79BB;&#x7684;&#x73AF;&#x5883;&#x91CC;&#x8FD0;&#x884C;&#x3002;</p>
+<p>IFC&#xFF1A;&#x5185;&#x8054;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;IFC &#x7684; line box&#xFF08;&#x7EBF;&#x6846;&#xFF09;&#x9AD8;&#x5EA6;&#x7531;&#x5176;&#x5305;&#x542B;&#x884C;&#x5185;&#x5143;&#x7D20;&#x4E2D;&#x6700;&#x9AD8;&#x7684;&#x5B9E;&#x9645;&#x9AD8;&#x5EA6;&#x8BA1;&#x7B97;&#x800C;&#x6765;&#xFF08;&#x4E0D;&#x53D7;&#x5230;&#x7AD6;&#x76F4;&#x65B9;&#x5411;&#x7684; padding/margin &#x5F71;&#x54CD;)&#x3002;<br>IFC&#x4E2D;&#x7684;line box&#x4E00;&#x822C;&#x5DE6;&#x53F3;&#x90FD;&#x8D34;&#x7D27;&#x6574;&#x4E2A; IFC&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x56E0;&#x4E3A; float &#x5143;&#x7D20;&#x800C;&#x6270;&#x4E71;&#x3002;float &#x5143;&#x7D20;&#x4F1A;&#x4F4D;&#x4E8E; IFC &#x4E0E; line box &#x4E4B;&#x95F4;&#xFF0C;&#x4F7F;&#x5F97; line box &#x5BBD;&#x5EA6;&#x7F29;&#x77ED;&#x3002; &#x540C;&#x4E2A; ifc &#x4E0B;&#x7684;&#x591A;&#x4E2A; line box &#x9AD8;&#x5EA6;&#x4F1A;&#x4E0D;&#x540C;&#x3002; IFC &#x4E2D;&#x65F6;&#x4E0D;&#x53EF;&#x80FD;&#x6709;&#x5757;&#x7EA7;&#x5143;&#x7D20;&#x7684;&#xFF0C;&#x5F53;&#x63D2;&#x5165;&#x5757;&#x7EA7;&#x5143;&#x7D20;&#x65F6;&#xFF08;&#x5982; p &#x4E2D;&#x63D2;&#x5165; div &#xFF09;&#x4F1A;&#x4EA7;&#x751F;&#x4E24;&#x4E2A;&#x533F;&#x540D;&#x5757;&#x4E0E; div &#x5206;&#x9694;&#x5F00;&#xFF0C;&#x5373;&#x4EA7;&#x751F;&#x4E24;&#x4E2A; IFC &#xFF0C;&#x6BCF;&#x4E2A; IFC &#x5BF9;&#x5916;&#x8868;&#x73B0;&#x4E3A;&#x5757;&#x7EA7;&#x5143;&#x7D20;&#xFF0C;&#x4E0E; div &#x5782;&#x76F4;&#x6392;&#x5217;&#x3002;</p>
+<p>&#x7528;&#x5904;&#xFF1F;</p>
+<p>&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#xFF1A;&#x5F53;&#x4E00;&#x4E2A;&#x5757;&#x8981;&#x5728;&#x73AF;&#x5883;&#x4E2D;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#x65F6;&#xFF0C;&#x8BBE;&#x7F6E;&#x5176;&#x4E3A; inline-block &#x5219;&#x4F1A;&#x5728;&#x5916;&#x5C42;&#x4EA7;&#x751F;IFC&#xFF0C;&#x901A;&#x8FC7; text-align &#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x5176;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#x3002;<br>&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#xFF1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; IFC&#xFF0C;&#x7528;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x6491;&#x5F00;&#x7236;&#x5143;&#x7D20;&#x7684;&#x9AD8;&#x5EA6;&#xFF0C;&#x7136;&#x540E;&#x8BBE;&#x7F6E;&#x5176; vertical-align: middle&#xFF0C;&#x5176;&#x4ED6;&#x884C;&#x5185;&#x5143;&#x7D20;&#x5219;&#x53EF;&#x4EE5;&#x5728;&#x6B64;&#x7236;&#x5143;&#x7D20;&#x4E0B;&#x5782;&#x76F4;&#x5C45;&#x4E2D;</p>
+<p>GFC&#xFF1A;&#x7F51;&#x683C;&#x5E03;&#x5C40;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;&#xFF08;display: grid&#xFF09;<br>FFC&#xFF1A;&#x81EA;&#x9002;&#x5E94;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;&#xFF08;display: flex&#xFF09;<br>CSS2.1&#x4E2D;&#x53EA;&#x6709;BFC&#x548C;IFC, CSS3&#x4E2D;&#x624D;&#x6709;GFC&#x548C;FFC&#x3002;<br>&#x5230;&#x5E95;&#x4EC0;&#x4E48;&#x662F;BFC&#x3001;IFC&#x3001;GFC&#x548C;FFC&#xFF0C;&#x6B21;&#x5965;</p>
+<p>What&#x2019;s FC&#xFF1F;<br>&#x4E00;&#x5B9A;&#x4E0D;&#x662F;KFC&#xFF0C;FC&#x7684;&#x5168;&#x79F0;&#x662F;&#xFF1A;Formatting Contexts&#xFF0C;&#x662F;W3C CSS2.1&#x89C4;&#x8303;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x6982;&#x5FF5;&#x3002;&#x5B83;&#x662F;&#x9875;&#x9762;&#x4E2D;&#x7684;&#x4E00;&#x5757;&#x6E32;&#x67D3;&#x533A;&#x57DF;&#xFF0C;&#x5E76;&#x4E14;&#x6709;&#x4E00;&#x5957;&#x6E32;&#x67D3;&#x89C4;&#x5219;&#xFF0C;&#x5B83;&#x51B3;&#x5B9A;&#x4E86;&#x5176;&#x5B50;&#x5143;&#x7D20;&#x5C06;&#x5982;&#x4F55;&#x5B9A;&#x4F4D;&#xFF0C;&#x4EE5;&#x53CA;&#x548C;&#x5176;&#x4ED6;&#x5143;&#x7D20;&#x7684;&#x5173;&#x7CFB;&#x548C;&#x76F8;&#x4E92;&#x4F5C;&#x7528;&#x3002;<br>BFC<br>BFC(Block Formatting Contexts)&#x76F4;&#x8BD1;&#x4E3A;&#x201D;&#x5757;&#x7EA7;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;&#x201D;&#x3002;Block Formatting Contexts&#x5C31;&#x662F;&#x9875;&#x9762;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x9694;&#x79BB;&#x7684;&#x6E32;&#x67D3;&#x533A;&#x57DF;&#xFF0C;&#x5BB9;&#x5668;&#x91CC;&#x9762;&#x7684;&#x5B50;&#x5143;&#x7D20;&#x4E0D;&#x4F1A;&#x5728;&#x5E03;&#x5C40;&#x4E0A;&#x5F71;&#x54CD;&#x5230;&#x5916;&#x9762;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x53CD;&#x4E4B;&#x4E5F;&#x662F;&#x5982;&#x6B64;&#x3002;&#x5982;&#x4F55;&#x4EA7;&#x751F;BFC&#xFF1F;<br>float&#x7684;&#x503C;&#x4E0D;&#x4E3A;none&#x3002;<br>overflow&#x7684;&#x503C;&#x4E0D;&#x4E3A;visible&#x3002;<br>position&#x7684;&#x503C;&#x4E0D;&#x4E3A;relative&#x548C;static&#x3002;<br>display&#x7684;&#x503C;&#x4E3A;table-cell, table-caption, inline-block&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x3002;<br>&#x90A3;BFC&#x4E00;&#x822C;&#x6709;&#x4EC0;&#x4E48;&#x7528;&#x5462;&#xFF1F;&#x6BD4;&#x5982;&#x5E38;&#x89C1;&#x7684;&#x591A;&#x680F;&#x5E03;&#x5C40;&#xFF0C;&#x7ED3;&#x5408;&#x5757;&#x7EA7;&#x522B;&#x5143;&#x7D20;&#x6D6E;&#x52A8;&#xFF0C;&#x91CC;&#x9762;&#x7684;&#x5143;&#x7D20;&#x5219;&#x662F;&#x5728;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x9694;&#x79BB;&#x7684;&#x73AF;&#x5883;&#x91CC;&#x8FD0;&#x884C;&#x3002;<br>IFC<br>IFC(Inline Formatting Contexts)&#x76F4;&#x8BD1;&#x4E3A;&#x201D;&#x5185;&#x8054;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;&#x201D;&#xFF0C;IFC&#x7684;line box&#xFF08;&#x7EBF;&#x6846;&#xFF09;&#x9AD8;&#x5EA6;&#x7531;&#x5176;&#x5305;&#x542B;&#x884C;&#x5185;&#x5143;&#x7D20;&#x4E2D;&#x6700;&#x9AD8;&#x7684;&#x5B9E;&#x9645;&#x9AD8;&#x5EA6;&#x8BA1;&#x7B97;&#x800C;&#x6765;&#xFF08;&#x4E0D;&#x53D7;&#x5230;&#x7AD6;&#x76F4;&#x65B9;&#x5411;&#x7684;padding/margin&#x5F71;&#x54CD;)<br>IFC&#x4E2D;&#x7684;line box&#x4E00;&#x822C;&#x5DE6;&#x53F3;&#x90FD;&#x8D34;&#x7D27;&#x6574;&#x4E2A;IFC&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x56E0;&#x4E3A;float&#x5143;&#x7D20;&#x800C;&#x6270;&#x4E71;&#x3002;float&#x5143;&#x7D20;&#x4F1A;&#x4F4D;&#x4E8E;IFC&#x4E0E;&#x4E0E;line box&#x4E4B;&#x95F4;&#xFF0C;&#x4F7F;&#x5F97;line box&#x5BBD;&#x5EA6;&#x7F29;&#x77ED;&#x3002; &#x540C;&#x4E2A;ifc&#x4E0B;&#x7684;&#x591A;&#x4E2A;line box&#x9AD8;&#x5EA6;&#x4F1A;&#x4E0D;&#x540C;&#x3002; IFC&#x4E2D;&#x65F6;&#x4E0D;&#x53EF;&#x80FD;&#x6709;&#x5757;&#x7EA7;&#x5143;&#x7D20;&#x7684;&#xFF0C;&#x5F53;&#x63D2;&#x5165;&#x5757;&#x7EA7;&#x5143;&#x7D20;&#x65F6;&#xFF08;&#x5982;p&#x4E2D;&#x63D2;&#x5165;div&#xFF09;&#x4F1A;&#x4EA7;&#x751F;&#x4E24;&#x4E2A;&#x533F;&#x540D;&#x5757;&#x4E0E;div&#x5206;&#x9694;&#x5F00;&#xFF0C;&#x5373;&#x4EA7;&#x751F;&#x4E24;&#x4E2A;IFC&#xFF0C;&#x6BCF;&#x4E2A;IFC&#x5BF9;&#x5916;&#x8868;&#x73B0;&#x4E3A;&#x5757;&#x7EA7;&#x5143;&#x7D20;&#xFF0C;&#x4E0E;div&#x5782;&#x76F4;&#x6392;&#x5217;&#x3002;<br>&#x90A3;&#x4E48;IFC&#x4E00;&#x822C;&#x6709;&#x4EC0;&#x4E48;&#x7528;&#x5462;&#xFF1F;<br>&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#xFF1A;&#x5F53;&#x4E00;&#x4E2A;&#x5757;&#x8981;&#x5728;&#x73AF;&#x5883;&#x4E2D;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#x65F6;&#xFF0C;&#x8BBE;&#x7F6E;&#x5176;&#x4E3A;inline-block&#x5219;&#x4F1A;&#x5728;&#x5916;&#x5C42;&#x4EA7;&#x751F;IFC&#xFF0C;&#x901A;&#x8FC7;text-align&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x5176;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#x3002;<br>&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#xFF1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;IFC&#xFF0C;&#x7528;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x6491;&#x5F00;&#x7236;&#x5143;&#x7D20;&#x7684;&#x9AD8;&#x5EA6;&#xFF0C;&#x7136;&#x540E;&#x8BBE;&#x7F6E;&#x5176;vertical-align:middle&#xFF0C;&#x5176;&#x4ED6;&#x884C;&#x5185;&#x5143;&#x7D20;&#x5219;&#x53EF;&#x4EE5;&#x5728;&#x6B64;&#x7236;&#x5143;&#x7D20;&#x4E0B;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#x3002;<br>GFC<br>GFC(GridLayout Formatting Contexts)&#x76F4;&#x8BD1;&#x4E3A;&#x201D;&#x7F51;&#x683C;&#x5E03;&#x5C40;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;&#x201D;&#xFF0C;&#x5F53;&#x4E3A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;display&#x503C;&#x4E3A;grid&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6B64;&#x5143;&#x7D20;&#x5C06;&#x4F1A;&#x83B7;&#x5F97;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x6E32;&#x67D3;&#x533A;&#x57DF;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;&#x7F51;&#x683C;&#x5BB9;&#x5668;&#xFF08;grid container&#xFF09;&#x4E0A;&#x5B9A;&#x4E49;&#x7F51;&#x683C;&#x5B9A;&#x4E49;&#x884C;&#xFF08;grid definition rows&#xFF09;&#x548C;&#x7F51;&#x683C;&#x5B9A;&#x4E49;&#x5217;&#xFF08;grid definition columns&#xFF09;&#x5C5E;&#x6027;&#x5404;&#x5728;&#x7F51;&#x683C;&#x9879;&#x76EE;&#xFF08;grid item&#xFF09;&#x4E0A;&#x5B9A;&#x4E49;&#x7F51;&#x683C;&#x884C;&#xFF08;grid row&#xFF09;&#x548C;&#x7F51;&#x683C;&#x5217;&#xFF08;grid columns&#xFF09;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x7F51;&#x683C;&#x9879;&#x76EE;&#xFF08;grid item&#xFF09;&#x5B9A;&#x4E49;&#x4F4D;&#x7F6E;&#x548C;&#x7A7A;&#x95F4;&#x3002;<br>&#x90A3;&#x4E48;GFC&#x6709;&#x4EC0;&#x4E48;&#x7528;&#x5462;&#xFF0C;&#x548C;table&#x53C8;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#x5462;&#xFF1F;&#x9996;&#x5148;&#x540C;&#x6837;&#x662F;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x7684;&#x8868;&#x683C;&#xFF0C;&#x4F46;GridLayout&#x4F1A;&#x6709;&#x66F4;&#x52A0;&#x4E30;&#x5BCC;&#x7684;&#x5C5E;&#x6027;&#x6765;&#x63A7;&#x5236;&#x884C;&#x5217;&#xFF0C;&#x63A7;&#x5236;&#x5BF9;&#x9F50;&#x4EE5;&#x53CA;&#x66F4;&#x4E3A;&#x7CBE;&#x7EC6;&#x7684;&#x6E32;&#x67D3;&#x8BED;&#x4E49;&#x548C;&#x63A7;&#x5236;&#x3002;<br>FFC<br>FFC(Flex Formatting Contexts)&#x76F4;&#x8BD1;&#x4E3A;&#x201D;&#x81EA;&#x9002;&#x5E94;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;&#x201D;&#xFF0C;display&#x503C;&#x4E3A;flex&#x6216;&#x8005;inline-flex&#x7684;&#x5143;&#x7D20;&#x5C06;&#x4F1A;&#x751F;&#x6210;&#x81EA;&#x9002;&#x5E94;&#x5BB9;&#x5668;&#xFF08;flex container&#xFF09;&#xFF0C;&#x53EF;&#x60DC;&#x8FD9;&#x4E2A;&#x725B;&#x903C;&#x7684;&#x5C5E;&#x6027;&#x53EA;&#x6709;&#x8C37;&#x6B4C;&#x548C;&#x706B;&#x72D0;&#x652F;&#x6301;&#xFF0C;&#x4E0D;&#x8FC7;&#x5728;&#x79FB;&#x52A8;&#x7AEF;&#x4E5F;&#x8DB3;&#x591F;&#x4E86;&#xFF0C;&#x81F3;&#x5C11;safari&#x548C;chrome&#x8FD8;&#x662F;OK&#x7684;&#xFF0C;&#x6BD5;&#x7ADF;&#x8FD9;&#x4FE9;&#x5728;&#x79FB;&#x52A8;&#x7AEF;&#x624D;&#x662F;&#x738B;&#x9053;&#x3002;<br>Flex Box &#x7531;&#x4F38;&#x7F29;&#x5BB9;&#x5668;&#x548C;&#x4F38;&#x7F29;&#x9879;&#x76EE;&#x7EC4;&#x6210;&#x3002;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x7684; display &#x5C5E;&#x6027;&#x4E3A; flex &#x6216; inline-flex &#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x4F38;&#x7F29;&#x5BB9;&#x5668;&#x3002;&#x8BBE;&#x7F6E;&#x4E3A; flex &#x7684;&#x5BB9;&#x5668;&#x88AB;&#x6E32;&#x67D3;&#x4E3A;&#x4E00;&#x4E2A;&#x5757;&#x7EA7;&#x5143;&#x7D20;&#xFF0C;&#x800C;&#x8BBE;&#x7F6E;&#x4E3A; inline-flex &#x7684;&#x5BB9;&#x5668;&#x5219;&#x6E32;&#x67D3;&#x4E3A;&#x4E00;&#x4E2A;&#x884C;&#x5185;&#x5143;&#x7D20;&#x3002;<br>&#x4F38;&#x7F29;&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x4F38;&#x7F29;&#x9879;&#x76EE;&#x3002;&#x4F38;&#x7F29;&#x9879;&#x76EE;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x3002;&#x4F38;&#x7F29;&#x5BB9;&#x5668;&#x5916;&#x548C;&#x4F38;&#x7F29;&#x9879;&#x76EE;&#x5185;&#x7684;&#x4E00;&#x5207;&#x5143;&#x7D20;&#x90FD;&#x4E0D;&#x53D7;&#x5F71;&#x54CD;&#x3002;&#x7B80;&#x5355;&#x5730;&#x8BF4;&#xFF0C;Flexbox &#x5B9A;&#x4E49;&#x4E86;&#x4F38;&#x7F29;&#x5BB9;&#x5668;&#x5185;&#x4F38;&#x7F29;&#x9879;&#x76EE;&#x8BE5;&#x5982;&#x4F55;&#x5E03;&#x5C40;&#x3002;<br>&#x9189;&#x996E;&#x5C71;&#x6797;&#xFF0C;&#x81EA;&#x662F;&#x95F2;&#x6687;&#x767D;&#x4E91;&#x95F4;&#x3002;&#x7B11;&#x7EA2;&#x5C18;&#xFF0C;&#x603B;&#x662F;&#x7231;&#x6068;&#x8D2A;&#x55D4;&#x75F4;&#x3002;&#x82E5;&#x95EE;&#x4EBA;&#x95F4;&#x900D;&#x9065;&#x5728;&#xFF0C;&#x98CE;&#x751F;&#x4E4B;&#x8C37;&#xFF0C;&#x83B2;&#x5F00;&#x5176;&#x4E2D;&#x3002;<br>&#x8BE6;&#x7EC6;&#x53C2;&#x8003;:<a href="https://www.jianshu.com/p/e75f351e11f8" target="_blank" rel="noopener">css3&#x4E2D;&#x7684;BFC,IFC,GFC&#x548C;FFC </a></p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-10-30T01:24:17.000Z" itemprop="datePublished">2017-10-30</time>
+
+    </span>
+    <span class="post-description-item">
         
-        
-            <div class="prev-next">
+    </span>
+</div>
+
+                </div>
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
-                            <h4>
-                                <a href="/blog/2017/11/15/ubuntu_tips20171115/" rel="prev" title="ubuntu 16.04 装机攻略">
-                                  
-                                      ubuntu 16.04 装机攻略
-                                  
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
                 
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/blog/2017/08/01/css_学习笔记20170801/" rel="prev" title="css 学习笔记">
-                                    
-                                        css 学习笔记
-                                    
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+
+                <a href="/blog/2017/11/15/ubuntu_tips20171115/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    ubuntu 16.04 装机攻略
+                    
+
+                </a>
+
                 
             </div>
-        
-      </section>
-    </article>
-  
+            <div class="column nav-right">
+                
 
-  
-    <!-- 显示推荐文章和评论 -->
-
-
-
-  
-
-
-  
-
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: '20171030',
-      tools: true
-    }
-  </script>
-
+                <a href="/blog/2017/08/01/css_学习笔记20170801/" class="ui tiny button">
+                    
+                    css 学习笔记
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
 
 </div>
-<aside class='l_side'>
-  
-    
-    
-      
-        
-          
-          
-            <section class='widget author'>
-  <div class='content pure'>
-    
-      <div class='avatar'>
-        <img class='avatar' src='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png'/>
-      </div>
-    
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/blog/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:generaltune@126.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/generaltune"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
+                
+            </div>
 
-          
-        
-      
-        
-          
-          
             
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
-  
-    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
-  
-</header>
+            <div class="three wide computer three wide tablet column">
 
-    <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS相关"><span class="toc-text">CSS相关</span></a></li></ol>
-    </div>
-  </section>
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#CSS相关"><span>CSS相关</span></a></li></ol>
+                </div>
 
-
-          
-        
-      
-        
-          
-          
-            <section class='widget grid'>
-  
-<header class='pure'>
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="grid navgation">
-      
-        <li><a class="flat-box" title="/blog/" href="/blog/"
-          
-          
-          id="blog">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          近期文章
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/blog/archives/" href="/blog/blog/archives/"
-          
-            rel="nofollow"
-          
-          
-          id="blogblogarchives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/projects/" href="/blog/projects/"
-          
-          
-          id="blogprojects">
-          
-            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
-          
-          开源项目
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/friends/" href="/blog/friends/"
-          
-            rel="nofollow"
-          
-          
-          id="blogfriends">
-          
-            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
-          
-          我的友链
-        </a></li>
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
-          
-            rel="nofollow"
-          
-          
-          id="https:xaoxuu.comwikimaterial-x">
-          
-            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
-          
-          主题文档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/about/" href="/blog/about/"
-          
-            rel="nofollow"
-          
-          
-          id="blogabout">
-          
-            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
-          
-          关于小站
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-          
-        
-      
-        
-          
-          
+            </div>
             
 
-          
-        
-      
-        
-          
-          
-            
-  <section class='widget tagcloud'>
-    
-<header class='pure'>
-  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/blog/blog/tags/"
-    title="blog/tags/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      <a href="/blog/tags/日志-感悟-生活/" style="font-size: 14px; color: #999">日志  感悟 生活</a>
+        </div>
     </div>
-  </section>
-
-
-          
-        
-      
-        
-          
-          
-            
-
-
-  <section class='widget music'>
-    
-<header class='pure'>
-  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
-  
-    <a class="rightBtn"
-    
-      rel="external nofollow noopener noreferrer"
-    
-    
-      target="_blank"
-    
-    href="https://music.163.com/#/user/home?id=63035382"
-    title="https://music.163.com/#/user/home?id=63035382">
-    <i class="far fa-heart fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
-  <div class="aplayer"
-    data-theme="#1BCDFC"
-    
-    
-    data-mode="circulation"
-    data-server="netease"
-    data-type="playlist"
-    data-id="2615636388"
-    data-volume="0.7">
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
-
-
-    </div>
-  </section>
-
-
-          
-        
-      
-    
-
-  
-</aside>
-
-<footer id="footer" class="clearfix">
-  
-  
-    <div class="social-wrapper">
-      
-        
-          <a href="/blog/atom.xml"
-            class="social fas fa-rss flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="mailto:generaltune@126.com"
-            class="social fas fa-envelope flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://github.com/generaltune"
-            class="social fab fa-github flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://music.163.com/#/user/home?id=63035382"
-            class="social fas fa-headphones-alt flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-    </div>
-  
-  <br>
-  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
-  <div>
-    Use
-    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
-    
-      , 
-      total visits
-      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      times
-    
-    . 
-  </div>
-</footer>
-<script>setLoadingBarProgress(80);</script>
 
 
-      <script>setLoadingBarProgress(60);</script>
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2019 <a href="/">GENERALTUNE</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a href="http://hexo.io/" target="_blank">Hexo</a>.
     </div>
-    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+</div>
 
-  <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
-    var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/blog/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
-  </script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      Waves.attach('.flat-btn', ['waves-button']);
-      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-      Waves.attach('.flat-box', ['waves-block']);
-      Waves.attach('.float-box', ['waves-block', 'waves-float']);
-      Waves.attach('.waves-image');
-      Waves.init();
-    });
-  </script>
-
-
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+    </div>
 
 
 
 
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/blog/js/semantic-ui-algolia.js"></script>
+
+<script src="/blog/js/aloha-events.js"></script>
 
 
 
-
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
-
-
-
-
-<!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  let COPY_SUCCESS = "Copied";
-  let COPY_FAILURE = "Copy failed";
-  /*页面载入完成后，创建复制按钮*/
-  !function (e, t, a) {
-    /* code */
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-
-      clipboard.on('success', function(e) {
-        //您可以加入成功提示
-        console.info('Action:', e.action);
-        console.info('Text:', e.text);
-        console.info('Trigger:', e.trigger);
-        success_prompt(COPY_SUCCESS);
-        e.clearSelection();
-      });
-      clipboard.on('error', function(e) {
-        //您可以加入失败提示
-        console.error('Action:', e.action);
-        console.error('Trigger:', e.trigger);
-        fail_prompt(COPY_FAILURE);
-      });
-    }
-    initCopyCode();
-
-  }(window, document);
-
-  /**
-   * 弹出式提示框，默认1.5秒自动消失
-   * @param message 提示信息
-   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
-   * @param time 消失时间
-   */
-  var prompt = function (message, style, time)
-  {
-      style = (style === undefined) ? 'alert-success' : style;
-      time = (time === undefined) ? 1500 : time*1000;
-      $('<div>')
-          .appendTo('body')
-          .addClass('alert ' + style)
-          .html(message)
-          .show()
-          .delay(time)
-          .fadeOut();
-  };
-
-  // 成功提示
-  var success_prompt = function(message, time)
-  {
-      prompt(message, 'alert-success', time);
-  };
-
-  // 失败提示
-  var fail_prompt = function(message, time)
-  {
-      prompt(message, 'alert-danger', time);
-  };
-
-  // 提醒
-  var warning_prompt = function(message, time)
-  {
-      prompt(message, 'alert-warning', time);
-  };
-
-  // 信息提示
-  var info_prompt = function(message, time)
-  {
-      prompt(message, 'alert-info', time);
-  };
-
-</script>
-
-
-<!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
-      $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
-  });
-</script>
-
-
-
-
-
-  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>

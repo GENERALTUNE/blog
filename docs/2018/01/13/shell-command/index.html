@@ -1,399 +1,174 @@
+
+
 <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <title>shell编程笔记 | generaltune&#39;s blog</title>
-  
-  
+<html lang>
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content>
+    <title>shell编程笔记 | generaltune&#39;s blog</title>
 
-  
+    <!-- Open Graph -->
+    <meta name="description" content="&amp;#x76D1;&amp;#x63A7;CPU&amp;#x4F7F;&amp;#x7528;&amp;#x60C5;&amp;#x51B5;&amp;#x3000;uptime &amp;#x547D;&amp;#x4EE4;&amp;#x8BE5;&amp;#x547D;&amp;#x4EE4;&amp;#x7684;&amp;#x63CF;&amp;#x8FF0;&amp;#x4E3A;&amp;#xFF1A;&amp;#x3000;&amp;#x6253;&amp;#x5370;&amp;#x5F53;&amp;#x524D;&amp;#x65F6;&amp;#x95F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell编程笔记">
+<meta property="og:url" content="https://generaltune.github.io/blog/2018/01/13/shell-command/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="&amp;#x76D1;&amp;#x63A7;CPU&amp;#x4F7F;&amp;#x7528;&amp;#x60C5;&amp;#x51B5;&amp;#x3000;uptime &amp;#x547D;&amp;#x4EE4;&amp;#x8BE5;&amp;#x547D;&amp;#x4EE4;&amp;#x7684;&amp;#x63CF;&amp;#x8FF0;&amp;#x4E3A;&amp;#xFF1A;&amp;#x3000;&amp;#x6253;&amp;#x5370;&amp;#x5F53;&amp;#x524D;&amp;#x65F6;&amp;#x95F">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T03:52:29.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="shell编程笔记">
+<meta name="twitter:description" content="&amp;#x76D1;&amp;#x63A7;CPU&amp;#x4F7F;&amp;#x7528;&amp;#x60C5;&amp;#x51B5;&amp;#x3000;uptime &amp;#x547D;&amp;#x4EE4;&amp;#x8BE5;&amp;#x547D;&amp;#x4EE4;&amp;#x7684;&amp;#x63CF;&amp;#x8FF0;&amp;#x4E3A;&amp;#xFF1A;&amp;#x3000;&amp;#x6253;&amp;#x5370;&amp;#x5F53;&amp;#x524D;&amp;#x65F6;&amp;#x95F">
 
-  <meta name="HandheldFriendly" content="True">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
-  
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "GENERALTUNE",
+  "url": "https://generaltune.github.io/blog"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
 
-  <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
-  
+    
 
-  
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/blog/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
-  
-
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width=num+"%";
-    }
-  </script>
-
-  
-  
 </head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
 
-<body>
-  
-  
-  <div class="cover-wrapper">
-    <cover class='cover post half'>
-      
-        
-  <h1 class='title'>Material X</h1>
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>generaltune&#39;s blog</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/blog/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">GENERALTUNE</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class='menu navgation'>
-  <ul class='h-list'>
-    
-      
-        <li>
-          <a class="nav home" href="/blog/"
-            
-            
-            id="blog">
-            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/projects/"
-            
-            
-            id="blogprojects">
-            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/friends/"
-            
-              rel="nofollow"
-            
-            
-            id="blogfriends">
-            <i class='fas fa-link fa-fw'></i>&nbsp;友链
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/about/"
-            
-              rel="nofollow"
-            
-            
-            id="blogabout">
-            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
-          </a>
-        </li>
-      
-    
-  </ul>
 </div>
 
-      
-    </cover>
-    <header class="l_header pure">
-  <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
-  </div>
-
-	<div class='wrapper'>
-		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href='/blog/' >
-        
-          generaltune's blog
-        
-      </a>
-			<div class='menu navgation'>
-				<ul class='h-list'>
-          
-  					
-  						<li>
-								<a class="nav flat-box" href="/blog/"
-                  
-                  
-                  id="blog">
-									<i class='fas fa-grin fa-fw'></i>&nbsp;示例
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/categories/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogcategories">
-									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/tags/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogtags">
-									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/archives/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogarchives">
-									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
-								</a>
-							</li>
-      			
-      		
-				</ul>
-			</div>
-
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="Search" />
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
-			<ul class='switcher h-list'>
-				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
-				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
-			</ul>
-		</div>
-
-		<div class='nav-sub container container--flex'>
-			<a class="logo flat-box"></a>
-			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
-        
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
-        
-			</ul>
-		</div>
-	</div>
-</header>
-	<aside class="menu-phone">
-    <header>
-		<nav class="menu navgation">
-      <ul>
-        
-          
-            <li>
-							<a class="nav flat-box" href="/blog/"
-                
-                
-                id="blog">
-								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/blog/archives/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogblogarchives">
-								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/projects/"
-                
-                
-                id="blogprojects">
-								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/friends/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogfriends">
-								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
-                
-                  rel="nofollow"
-                
-                
-                id="https:xaoxuu.comwikimaterial-x">
-								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/about/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogabout">
-								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
-							</a>
-            </li>
-          
-       
-      </ul>
-		</nav>
-    </header>
-	</aside>
-<script>setLoadingBarProgress(40);</script>
-
-  </div>
-
-
-  <div class="l_body">
-    <div class='body-wrapper'>
-      <div class='l_main'>
-  
-
-  
-    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-      
-
-
-  <section class='meta'>
     
     
-    <div class="meta" id="header-meta">
-      
-        
-  
-    <h1 class="title">
-      <a href="/blog/2018/01/13/shell-command/">
-        shell编程笔记
-      </a>
-    </h1>
-  
 
+    
 
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://generaltune.github.io/blog" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>GENERALTUNE</p>
+    
+    <a href="/index.html" class="item">
+        <i class="home icon"></i>
+        HOME
     </a>
-  </div>
 
+    
 
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2018-01-13</p>
-  </a>
+    
 </div>
 
-          
-        
-          
-            
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-shell-command" class="ui main container article-type-post">
 
-          
-        
-          
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
+    
 
+    <div class="ui divided grid">
 
-          
-        
-          
-            
+        <div class="two column row" id="article-content">
 
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    shell编程笔记
+</h1>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          <h3 id="监控CPU使用情况-uptime-命令"><a href="#监控CPU使用情况-uptime-命令" class="headerlink" title="监控CPU使用情况　uptime 命令"></a>监控CPU使用情况　uptime 命令</h3><p>该命令的描述为：　打印当前时间，系统已经运行了多久，当前登录用户数以及系统平均负载．</p>
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h3 id="&#x76D1;&#x63A7;CPU&#x4F7F;&#x7528;&#x60C5;&#x51B5;-uptime-&#x547D;&#x4EE4;"><a href="#&#x76D1;&#x63A7;CPU&#x4F7F;&#x7528;&#x60C5;&#x51B5;-uptime-&#x547D;&#x4EE4;" class="headerlink" title="&#x76D1;&#x63A7;CPU&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x3000;uptime &#x547D;&#x4EE4;"></a>&#x76D1;&#x63A7;CPU&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x3000;uptime &#x547D;&#x4EE4;</h3><p>&#x8BE5;&#x547D;&#x4EE4;&#x7684;&#x63CF;&#x8FF0;&#x4E3A;&#xFF1A;&#x3000;&#x6253;&#x5370;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#xFF0C;&#x7CFB;&#x7EDF;&#x5DF2;&#x7ECF;&#x8FD0;&#x884C;&#x4E86;&#x591A;&#x4E45;&#xFF0C;&#x5F53;&#x524D;&#x767B;&#x5F55;&#x7528;&#x6237;&#x6570;&#x4EE5;&#x53CA;&#x7CFB;&#x7EDF;&#x5E73;&#x5747;&#x8D1F;&#x8F7D;&#xFF0E;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# uptime</span><br></pre></td></tr></table></figure>
 
-<h3 id="监控内存及交换分区使用情况－－-free-命令"><a href="#监控内存及交换分区使用情况－－-free-命令" class="headerlink" title="监控内存及交换分区使用情况－－　free 命令"></a>监控内存及交换分区使用情况－－　free 命令</h3><p>该命令的描述为：　显示系统内存及交换分区信息<br>用法：　feee [-b |-k | -m]</p>
+<h3 id="&#x76D1;&#x63A7;&#x5185;&#x5B58;&#x53CA;&#x4EA4;&#x6362;&#x5206;&#x533A;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#xFF0D;&#xFF0D;-free-&#x547D;&#x4EE4;"><a href="#&#x76D1;&#x63A7;&#x5185;&#x5B58;&#x53CA;&#x4EA4;&#x6362;&#x5206;&#x533A;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#xFF0D;&#xFF0D;-free-&#x547D;&#x4EE4;" class="headerlink" title="&#x76D1;&#x63A7;&#x5185;&#x5B58;&#x53CA;&#x4EA4;&#x6362;&#x5206;&#x533A;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#xFF0D;&#xFF0D;&#x3000;free &#x547D;&#x4EE4;"></a>&#x76D1;&#x63A7;&#x5185;&#x5B58;&#x53CA;&#x4EA4;&#x6362;&#x5206;&#x533A;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#xFF0D;&#xFF0D;&#x3000;free &#x547D;&#x4EE4;</h3><p>&#x8BE5;&#x547D;&#x4EE4;&#x7684;&#x63CF;&#x8FF0;&#x4E3A;&#xFF1A;&#x3000;&#x663E;&#x793A;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x53CA;&#x4EA4;&#x6362;&#x5206;&#x533A;&#x4FE1;&#x606F;<br>&#x7528;&#x6CD5;&#xFF1A;&#x3000;feee [-b |-k | -m]</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# free -b</span><br></pre></td></tr></table></figure>
 
-<h3 id="监控磁盘使用情况-－－-df"><a href="#监控磁盘使用情况-－－-df" class="headerlink" title="监控磁盘使用情况　－－　df"></a>监控磁盘使用情况　－－　df</h3><p>该命令的描述为：　生成系统磁盘空间的使用量信息．<br>用法：　df[选项]…<br>选项：　-h 人性化方式显示容量信息<br>        -i 显示磁盘inode使用量信息<br>        -T 显示文件系统类型</p>
+<h3 id="&#x76D1;&#x63A7;&#x78C1;&#x76D8;&#x4F7F;&#x7528;&#x60C5;&#x51B5;-&#xFF0D;&#xFF0D;-df"><a href="#&#x76D1;&#x63A7;&#x78C1;&#x76D8;&#x4F7F;&#x7528;&#x60C5;&#x51B5;-&#xFF0D;&#xFF0D;-df" class="headerlink" title="&#x76D1;&#x63A7;&#x78C1;&#x76D8;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x3000;&#xFF0D;&#xFF0D;&#x3000;df"></a>&#x76D1;&#x63A7;&#x78C1;&#x76D8;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x3000;&#xFF0D;&#xFF0D;&#x3000;df</h3><p>&#x8BE5;&#x547D;&#x4EE4;&#x7684;&#x63CF;&#x8FF0;&#x4E3A;&#xFF1A;&#x3000;&#x751F;&#x6210;&#x7CFB;&#x7EDF;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x7684;&#x4F7F;&#x7528;&#x91CF;&#x4FE1;&#x606F;&#xFF0E;<br>&#x7528;&#x6CD5;&#xFF1A;&#x3000;df[&#x9009;&#x9879;]&#x2026;<br>&#x9009;&#x9879;&#xFF1A;&#x3000;-h &#x4EBA;&#x6027;&#x5316;&#x65B9;&#x5F0F;&#x663E;&#x793A;&#x5BB9;&#x91CF;&#x4FE1;&#x606F;<br>        -i &#x663E;&#x793A;&#x78C1;&#x76D8;inode&#x4F7F;&#x7528;&#x91CF;&#x4FE1;&#x606F;<br>        -T &#x663E;&#x793A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7C7B;&#x578B;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# df -hT</span><br><span class="line"></span><br><span class="line">[root@centos7 ~]# df -i</span><br></pre></td></tr></table></figure>
 
-<h3 id="监控网络使用情况-－－-ip-和-netstat命令"><a href="#监控网络使用情况-－－-ip-和-netstat命令" class="headerlink" title="监控网络使用情况　－－　ip 和 netstat命令"></a>监控网络使用情况　－－　ip 和 netstat命令</h3><p>ip命令可以查看网卡接口信息，　netstat 命令查看服务器开启的端口信息以及网络连接状态</p>
-<p>描述：　netstat 打印网络连接、路由表、网络接口统计等信息．<br>用法：　netstat[选项]<br>选项：　-s 显示各种协议数据统计信息<br>　　　　-n 使用数字形式的IP、端口号、用户ID替代主机、协议、用户等名称信息<br>　　　　-p 显示今晨该名称及对应进程ID号<br>　　　　-l 仅显示正在监听的sockets 接口信息<br>　　　　-u 查看udp连接信息<br>　　　　-t 查看tcp连接信息</p>
+<h3 id="&#x76D1;&#x63A7;&#x7F51;&#x7EDC;&#x4F7F;&#x7528;&#x60C5;&#x51B5;-&#xFF0D;&#xFF0D;-ip-&#x548C;-netstat&#x547D;&#x4EE4;"><a href="#&#x76D1;&#x63A7;&#x7F51;&#x7EDC;&#x4F7F;&#x7528;&#x60C5;&#x51B5;-&#xFF0D;&#xFF0D;-ip-&#x548C;-netstat&#x547D;&#x4EE4;" class="headerlink" title="&#x76D1;&#x63A7;&#x7F51;&#x7EDC;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x3000;&#xFF0D;&#xFF0D;&#x3000;ip &#x548C; netstat&#x547D;&#x4EE4;"></a>&#x76D1;&#x63A7;&#x7F51;&#x7EDC;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x3000;&#xFF0D;&#xFF0D;&#x3000;ip &#x548C; netstat&#x547D;&#x4EE4;</h3><p>ip&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x4FE1;&#x606F;&#xFF0C;&#x3000;netstat &#x547D;&#x4EE4;&#x67E5;&#x770B;&#x670D;&#x52A1;&#x5668;&#x5F00;&#x542F;&#x7684;&#x7AEF;&#x53E3;&#x4FE1;&#x606F;&#x4EE5;&#x53CA;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x72B6;&#x6001;</p>
+<p>&#x63CF;&#x8FF0;&#xFF1A;&#x3000;netstat &#x6253;&#x5370;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x3001;&#x8DEF;&#x7531;&#x8868;&#x3001;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x7EDF;&#x8BA1;&#x7B49;&#x4FE1;&#x606F;&#xFF0E;<br>&#x7528;&#x6CD5;&#xFF1A;&#x3000;netstat[&#x9009;&#x9879;]<br>&#x9009;&#x9879;&#xFF1A;&#x3000;-s &#x663E;&#x793A;&#x5404;&#x79CD;&#x534F;&#x8BAE;&#x6570;&#x636E;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;<br>&#x3000;&#x3000;&#x3000;&#x3000;-n &#x4F7F;&#x7528;&#x6570;&#x5B57;&#x5F62;&#x5F0F;&#x7684;IP&#x3001;&#x7AEF;&#x53E3;&#x53F7;&#x3001;&#x7528;&#x6237;ID&#x66FF;&#x4EE3;&#x4E3B;&#x673A;&#x3001;&#x534F;&#x8BAE;&#x3001;&#x7528;&#x6237;&#x7B49;&#x540D;&#x79F0;&#x4FE1;&#x606F;<br>&#x3000;&#x3000;&#x3000;&#x3000;-p &#x663E;&#x793A;&#x4ECA;&#x6668;&#x8BE5;&#x540D;&#x79F0;&#x53CA;&#x5BF9;&#x5E94;&#x8FDB;&#x7A0B;ID&#x53F7;<br>&#x3000;&#x3000;&#x3000;&#x3000;-l &#x4EC5;&#x663E;&#x793A;&#x6B63;&#x5728;&#x76D1;&#x542C;&#x7684;sockets &#x63A5;&#x53E3;&#x4FE1;&#x606F;<br>&#x3000;&#x3000;&#x3000;&#x3000;-u &#x67E5;&#x770B;udp&#x8FDE;&#x63A5;&#x4FE1;&#x606F;<br>&#x3000;&#x3000;&#x3000;&#x3000;-t &#x67E5;&#x770B;tcp&#x8FDE;&#x63A5;&#x4FE1;&#x606F;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# ip a s</span><br><span class="line">[root@centos7 ~]# ip -s link show enol17773</span><br><span class="line">[root@centos7 ~]# netstat -nutlp</span><br><span class="line">[root@centos7 ~]# netstat -s</span><br></pre></td></tr></table></figure>
 
-<h3 id="监控进程使用情况-－－-ps-和-top命令"><a href="#监控进程使用情况-－－-ps-和-top命令" class="headerlink" title="监控进程使用情况　－－　ps 和　top命令"></a>监控进程使用情况　－－　ps 和　top命令</h3><ol>
-<li>ps命令<br>　描述：　查看当前进程信息<br>　用法：　ps命令版本众多，有多种语法种类，如UNIX、BSD、以及GNU linux</li>
+<h3 id="&#x76D1;&#x63A7;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x60C5;&#x51B5;-&#xFF0D;&#xFF0D;-ps-&#x548C;-top&#x547D;&#x4EE4;"><a href="#&#x76D1;&#x63A7;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x60C5;&#x51B5;-&#xFF0D;&#xFF0D;-ps-&#x548C;-top&#x547D;&#x4EE4;" class="headerlink" title="&#x76D1;&#x63A7;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x3000;&#xFF0D;&#xFF0D;&#x3000;ps &#x548C;&#x3000;top&#x547D;&#x4EE4;"></a>&#x76D1;&#x63A7;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x3000;&#xFF0D;&#xFF0D;&#x3000;ps &#x548C;&#x3000;top&#x547D;&#x4EE4;</h3><ol class="ui list">
+<li>ps&#x547D;&#x4EE4;<br>&#x3000;&#x63CF;&#x8FF0;&#xFF1A;&#x3000;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x8FDB;&#x7A0B;&#x4FE1;&#x606F;<br>&#x3000;&#x7528;&#x6CD5;&#xFF1A;&#x3000;ps&#x547D;&#x4EE4;&#x7248;&#x672C;&#x4F17;&#x591A;&#xFF0C;&#x6709;&#x591A;&#x79CD;&#x8BED;&#x6CD5;&#x79CD;&#x7C7B;&#xFF0C;&#x5982;UNIX&#x3001;BSD&#x3001;&#x4EE5;&#x53CA;GNU linux</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# ps -e  #查看所有的进程信息</span><br><span class="line">[root@centos7 ~]# ps -ef #全格式显示进程信息</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# ps -e  #&#x67E5;&#x770B;&#x6240;&#x6709;&#x7684;&#x8FDB;&#x7A0B;&#x4FE1;&#x606F;</span><br><span class="line">[root@centos7 ~]# ps -ef #&#x5168;&#x683C;&#x5F0F;&#x663E;&#x793A;&#x8FDB;&#x7A0B;&#x4FE1;&#x606F;</span><br></pre></td></tr></table></figure>
 
-<ol start="2">
-<li>top命令<br>描述：　动态查看进程信息<br>选项：　-d #top刷新间隔　，默认为3秒<pre><code>-p #查看指定PID的进程信息</code></pre></li>
+<ol start="2" class="ui list">
+<li>top&#x547D;&#x4EE4;<br>&#x63CF;&#x8FF0;&#xFF1A;&#x3000;&#x52A8;&#x6001;&#x67E5;&#x770B;&#x8FDB;&#x7A0B;&#x4FE1;&#x606F;<br>&#x9009;&#x9879;&#xFF1A;&#x3000;-d #top&#x5237;&#x65B0;&#x95F4;&#x9694;&#x3000;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;3&#x79D2;<pre><code>-p #&#x67E5;&#x770B;&#x6307;&#x5B9A;PID&#x7684;&#x8FDB;&#x7A0B;&#x4FE1;&#x606F;</code></pre></li>
 </ol>
-<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><h3 id="网络接口参数-－－-ifconfig-命令"><a href="#网络接口参数-－－-ifconfig-命令" class="headerlink" title="网络接口参数 －－ ifconfig 命令"></a>网络接口参数 －－ ifconfig 命令</h3><p>描述：　显示或设置网络接口信息<br>用法：　ifconfig interface 选项 | 地址</p>
-<h3 id="主机名参数-－－-hostnamectl命令"><a href="#主机名参数-－－-hostnamectl命令" class="headerlink" title="主机名参数　－－　hostnamectl命令"></a>主机名参数　－－　hostnamectl命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# hostnamectl status #查看主机名称和主机信息</span><br><span class="line">[root@centos7 ~]# hostnamectl</span><br></pre></td></tr></table></figure>
+<h2 id="&#x7F51;&#x7EDC;&#x914D;&#x7F6E;"><a href="#&#x7F51;&#x7EDC;&#x914D;&#x7F6E;" class="headerlink" title="&#x7F51;&#x7EDC;&#x914D;&#x7F6E;"></a>&#x7F51;&#x7EDC;&#x914D;&#x7F6E;</h2><h3 id="&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x53C2;&#x6570;-&#xFF0D;&#xFF0D;-ifconfig-&#x547D;&#x4EE4;"><a href="#&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x53C2;&#x6570;-&#xFF0D;&#xFF0D;-ifconfig-&#x547D;&#x4EE4;" class="headerlink" title="&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x53C2;&#x6570; &#xFF0D;&#xFF0D; ifconfig &#x547D;&#x4EE4;"></a>&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x53C2;&#x6570; &#xFF0D;&#xFF0D; ifconfig &#x547D;&#x4EE4;</h3><p>&#x63CF;&#x8FF0;&#xFF1A;&#x3000;&#x663E;&#x793A;&#x6216;&#x8BBE;&#x7F6E;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x4FE1;&#x606F;<br>&#x7528;&#x6CD5;&#xFF1A;&#x3000;ifconfig interface &#x9009;&#x9879; | &#x5730;&#x5740;</p>
+<h3 id="&#x4E3B;&#x673A;&#x540D;&#x53C2;&#x6570;-&#xFF0D;&#xFF0D;-hostnamectl&#x547D;&#x4EE4;"><a href="#&#x4E3B;&#x673A;&#x540D;&#x53C2;&#x6570;-&#xFF0D;&#xFF0D;-hostnamectl&#x547D;&#x4EE4;" class="headerlink" title="&#x4E3B;&#x673A;&#x540D;&#x53C2;&#x6570;&#x3000;&#xFF0D;&#xFF0D;&#x3000;hostnamectl&#x547D;&#x4EE4;"></a>&#x4E3B;&#x673A;&#x540D;&#x53C2;&#x6570;&#x3000;&#xFF0D;&#xFF0D;&#x3000;hostnamectl&#x547D;&#x4EE4;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# hostnamectl status #&#x67E5;&#x770B;&#x4E3B;&#x673A;&#x540D;&#x79F0;&#x548C;&#x4E3B;&#x673A;&#x4FE1;&#x606F;</span><br><span class="line">[root@centos7 ~]# hostnamectl</span><br></pre></td></tr></table></figure>
 
-<h3 id="路由参数－－-route-命令"><a href="#路由参数－－-route-命令" class="headerlink" title="路由参数－－　route 命令"></a>路由参数－－　route 命令</h3><p>描述：　显示或设置静态IP路由表．<br>用法：　route[选项]      #查看路由信息<br>        route add 目标网络　gw 网关地址　<br>        route del 目标网络</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# route   </span><br><span class="line">[root@centos7 ~]# route -n #使用数字地址替代主机名称</span><br><span class="line">[root@centos7 ~]# route add default gw 192.168.0.254  #添加默认网关为192.168.0.254</span><br><span class="line">[root@centos7 ~]# route add -net 172.16.0.0/16 gw 192.168.0.254  #添加指定网段的网关</span><br><span class="line">[root@centos7 ~]# route add -net 192.56.76.0 netmask 255.255.255.0 dev eno16777736   # 添加路由记录，指定通过eno16777736 网卡传输到192.56.76.0网段的数据</span><br><span class="line">[root@centos7 ~]# route del default gw 192.168.0.254 #删除默认网关</span><br><span class="line">[root@centos7 ~]# route del -net 172,16,0.0/16 #删除指定网段的网关记录</span><br></pre></td></tr></table></figure>
+<h3 id="&#x8DEF;&#x7531;&#x53C2;&#x6570;&#xFF0D;&#xFF0D;-route-&#x547D;&#x4EE4;"><a href="#&#x8DEF;&#x7531;&#x53C2;&#x6570;&#xFF0D;&#xFF0D;-route-&#x547D;&#x4EE4;" class="headerlink" title="&#x8DEF;&#x7531;&#x53C2;&#x6570;&#xFF0D;&#xFF0D;&#x3000;route &#x547D;&#x4EE4;"></a>&#x8DEF;&#x7531;&#x53C2;&#x6570;&#xFF0D;&#xFF0D;&#x3000;route &#x547D;&#x4EE4;</h3><p>&#x63CF;&#x8FF0;&#xFF1A;&#x3000;&#x663E;&#x793A;&#x6216;&#x8BBE;&#x7F6E;&#x9759;&#x6001;IP&#x8DEF;&#x7531;&#x8868;&#xFF0E;<br>&#x7528;&#x6CD5;&#xFF1A;&#x3000;route[&#x9009;&#x9879;]      #&#x67E5;&#x770B;&#x8DEF;&#x7531;&#x4FE1;&#x606F;<br>        route add &#x76EE;&#x6807;&#x7F51;&#x7EDC;&#x3000;gw &#x7F51;&#x5173;&#x5730;&#x5740;&#x3000;<br>        route del &#x76EE;&#x6807;&#x7F51;&#x7EDC;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# route   </span><br><span class="line">[root@centos7 ~]# route -n #&#x4F7F;&#x7528;&#x6570;&#x5B57;&#x5730;&#x5740;&#x66FF;&#x4EE3;&#x4E3B;&#x673A;&#x540D;&#x79F0;</span><br><span class="line">[root@centos7 ~]# route add default gw 192.168.0.254  #&#x6DFB;&#x52A0;&#x9ED8;&#x8BA4;&#x7F51;&#x5173;&#x4E3A;192.168.0.254</span><br><span class="line">[root@centos7 ~]# route add -net 172.16.0.0/16 gw 192.168.0.254  #&#x6DFB;&#x52A0;&#x6307;&#x5B9A;&#x7F51;&#x6BB5;&#x7684;&#x7F51;&#x5173;</span><br><span class="line">[root@centos7 ~]# route add -net 192.56.76.0 netmask 255.255.255.0 dev eno16777736   # &#x6DFB;&#x52A0;&#x8DEF;&#x7531;&#x8BB0;&#x5F55;&#xFF0C;&#x6307;&#x5B9A;&#x901A;&#x8FC7;eno16777736 &#x7F51;&#x5361;&#x4F20;&#x8F93;&#x5230;192.56.76.0&#x7F51;&#x6BB5;&#x7684;&#x6570;&#x636E;</span><br><span class="line">[root@centos7 ~]# route del default gw 192.168.0.254 #&#x5220;&#x9664;&#x9ED8;&#x8BA4;&#x7F51;&#x5173;</span><br><span class="line">[root@centos7 ~]# route del -net 172,16,0.0/16 #&#x5220;&#x9664;&#x6307;&#x5B9A;&#x7F51;&#x6BB5;&#x7684;&#x7F51;&#x5173;&#x8BB0;&#x5F55;</span><br></pre></td></tr></table></figure>
 
-<h3 id="网络故障排错"><a href="#网络故障排错" class="headerlink" title="网络故障排错"></a>网络故障排错</h3><ol>
+<h3 id="&#x7F51;&#x7EDC;&#x6545;&#x969C;&#x6392;&#x9519;"><a href="#&#x7F51;&#x7EDC;&#x6545;&#x969C;&#x6392;&#x9519;" class="headerlink" title="&#x7F51;&#x7EDC;&#x6545;&#x969C;&#x6392;&#x9519;"></a>&#x7F51;&#x7EDC;&#x6545;&#x969C;&#x6392;&#x9519;</h3><ol class="ui list">
 <li>ping</li>
 <li>traceroute </li>
 <li>nslookup</li>
@@ -402,791 +177,229 @@
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# ping 127.0.0.1</span><br><span class="line">[root@centos7 ~]# traceroute -I www.google.com</span><br><span class="line">[root@centos7 ~]# nslookup www.google.com</span><br><span class="line">[root@centos7 ~]# dig www.google.com</span><br></pre></td></tr></table></figure>
 
-<h2 id="内核模块"><a href="#内核模块" class="headerlink" title="内核模块"></a>内核模块</h2><h3 id="查看已加载的内核模块"><a href="#查看已加载的内核模块" class="headerlink" title="查看已加载的内核模块"></a>查看已加载的内核模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# lsmod</span><br></pre></td></tr></table></figure>
+<h2 id="&#x5185;&#x6838;&#x6A21;&#x5757;"><a href="#&#x5185;&#x6838;&#x6A21;&#x5757;" class="headerlink" title="&#x5185;&#x6838;&#x6A21;&#x5757;"></a>&#x5185;&#x6838;&#x6A21;&#x5757;</h2><h3 id="&#x67E5;&#x770B;&#x5DF2;&#x52A0;&#x8F7D;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;"><a href="#&#x67E5;&#x770B;&#x5DF2;&#x52A0;&#x8F7D;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;" class="headerlink" title="&#x67E5;&#x770B;&#x5DF2;&#x52A0;&#x8F7D;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;"></a>&#x67E5;&#x770B;&#x5DF2;&#x52A0;&#x8F7D;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# lsmod</span><br></pre></td></tr></table></figure>
 
-<h2 id="Bash-技巧"><a href="#Bash-技巧" class="headerlink" title="Bash 技巧"></a>Bash 技巧</h2><table>
+<h2 id="Bash-&#x6280;&#x5DE7;"><a href="#Bash-&#x6280;&#x5DE7;" class="headerlink" title="Bash &#x6280;&#x5DE7;"></a>Bash &#x6280;&#x5DE7;</h2><table>
 <thead>
 <tr>
-<th align="center">快捷键</th>
-<th align="center">功能描述</th>
+<th align="center">&#x5FEB;&#x6377;&#x952E;</th>
+<th align="center">&#x529F;&#x80FD;&#x63CF;&#x8FF0;</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="center">Ctrl + a</td>
-<td align="center">光标移动到行首</td>
+<td align="center">&#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x884C;&#x9996;</td>
 </tr>
 <tr>
 <td align="center">Ctrl + e</td>
-<td align="center">光标移动到行尾</td>
+<td align="center">&#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x884C;&#x5C3E;</td>
 </tr>
 <tr>
 <td align="center">Ctrl + f</td>
-<td align="center">光标右移动一个字符</td>
+<td align="center">&#x5149;&#x6807;&#x53F3;&#x79FB;&#x52A8;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;</td>
 </tr>
 <tr>
 <td align="center">Ctrl + b</td>
-<td align="center">光标左移动一个字符</td>
+<td align="center">&#x5149;&#x6807;&#x5DE6;&#x79FB;&#x52A8;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;</td>
 </tr>
 <tr>
 <td align="center">Ctrl + l</td>
-<td align="center">清屏 等同与　clear命令</td>
+<td align="center">&#x6E05;&#x5C4F; &#x7B49;&#x540C;&#x4E0E;&#x3000;clear&#x547D;&#x4EE4;</td>
 </tr>
 <tr>
 <td align="center">Ctrl + u</td>
-<td align="center">删除光标至行首的字符</td>
+<td align="center">&#x5220;&#x9664;&#x5149;&#x6807;&#x81F3;&#x884C;&#x9996;&#x7684;&#x5B57;&#x7B26;</td>
 </tr>
 <tr>
 <td align="center">Ctrl + k</td>
-<td align="center">删除光标至行尾的字符</td>
+<td align="center">&#x5220;&#x9664;&#x5149;&#x6807;&#x81F3;&#x884C;&#x5C3E;&#x7684;&#x5B57;&#x7B26;</td>
 </tr>
 <tr>
 <td align="center">Ctrl + c</td>
-<td align="center">终止进程</td>
+<td align="center">&#x7EC8;&#x6B62;&#x8FDB;&#x7A0B;</td>
 </tr>
 <tr>
 <td align="center">Ctrl + z</td>
-<td align="center">挂起进程(jobs命令查看挂起的进程)</td>
+<td align="center">&#x6302;&#x8D77;&#x8FDB;&#x7A0B;(jobs&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x6302;&#x8D77;&#x7684;&#x8FDB;&#x7A0B;)</td>
 </tr>
 <tr>
 <td align="center">Ctrl + w</td>
-<td align="center">删除光标前一个单词(以空格为分隔符)</td>
+<td align="center">&#x5220;&#x9664;&#x5149;&#x6807;&#x524D;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;(&#x4EE5;&#x7A7A;&#x683C;&#x4E3A;&#x5206;&#x9694;&#x7B26;)</td>
 </tr>
 <tr>
 <td align="center">Alt  + d</td>
-<td align="center">删除光标后一个单词</td>
+<td align="center">&#x5220;&#x9664;&#x5149;&#x6807;&#x540E;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;</td>
 </tr>
 <tr>
 <td align="center">Tab</td>
-<td align="center">自动补齐</td>
+<td align="center">&#x81EA;&#x52A8;&#x8865;&#x9F50;</td>
 </tr>
 </tbody></table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# id tom &gt;&gt; user 2&gt;&gt; error</span><br><span class="line">[root@centos7 ~]# firefox   # 火狐浏览器通过前端启动，　使当前Shell将暂时无法使用</span><br><span class="line">[root@centos7 ~]# firefox &amp;  # 后台运行浏览器，不影响当前Shell的使用  jobs查看后台运行的程序  fg 调用后台的程序 </span><br><span class="line">[root@centos7 ~]# ls /tmp; ls /root ; ls /home 所有的命令按顺序执行(不管前面的命令是否成功,后面的命令一定正常执行)</span><br><span class="line">[root@centos7 ~]# ls test.txt &amp;&amp; cat test.txt #仅当ls执行成功才会执行cat</span><br><span class="line">[root@centos7 ~]# gedit || vim  # 如果有gedit编辑器,则打开该程序,否则打开vim编辑器</span><br><span class="line">[root@centos7 ~]# id tom &amp;&gt;/dev/null &amp;&amp; echo &quot;Hi, tom&quot; || echo &quot;No Such user&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# id tom &gt;&gt; user 2&gt;&gt; error</span><br><span class="line">[root@centos7 ~]# firefox   # &#x706B;&#x72D0;&#x6D4F;&#x89C8;&#x5668;&#x901A;&#x8FC7;&#x524D;&#x7AEF;&#x542F;&#x52A8;&#xFF0C;&#x3000;&#x4F7F;&#x5F53;&#x524D;Shell&#x5C06;&#x6682;&#x65F6;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;</span><br><span class="line">[root@centos7 ~]# firefox &amp;  # &#x540E;&#x53F0;&#x8FD0;&#x884C;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x4E0D;&#x5F71;&#x54CD;&#x5F53;&#x524D;Shell&#x7684;&#x4F7F;&#x7528;  jobs&#x67E5;&#x770B;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#x7684;&#x7A0B;&#x5E8F;  fg &#x8C03;&#x7528;&#x540E;&#x53F0;&#x7684;&#x7A0B;&#x5E8F; </span><br><span class="line">[root@centos7 ~]# ls /tmp; ls /root ; ls /home &#x6240;&#x6709;&#x7684;&#x547D;&#x4EE4;&#x6309;&#x987A;&#x5E8F;&#x6267;&#x884C;(&#x4E0D;&#x7BA1;&#x524D;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x662F;&#x5426;&#x6210;&#x529F;,&#x540E;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x4E00;&#x5B9A;&#x6B63;&#x5E38;&#x6267;&#x884C;)</span><br><span class="line">[root@centos7 ~]# ls test.txt &amp;&amp; cat test.txt #&#x4EC5;&#x5F53;ls&#x6267;&#x884C;&#x6210;&#x529F;&#x624D;&#x4F1A;&#x6267;&#x884C;cat</span><br><span class="line">[root@centos7 ~]# gedit || vim  # &#x5982;&#x679C;&#x6709;gedit&#x7F16;&#x8F91;&#x5668;,&#x5219;&#x6253;&#x5F00;&#x8BE5;&#x7A0B;&#x5E8F;,&#x5426;&#x5219;&#x6253;&#x5F00;vim&#x7F16;&#x8F91;&#x5668;</span><br><span class="line">[root@centos7 ~]# id tom &amp;&gt;/dev/null &amp;&amp; echo &quot;Hi, tom&quot; || echo &quot;No Such user&quot;</span><br></pre></td></tr></table></figure>
 
-<h3 id="花括号-的使用技巧"><a href="#花括号-的使用技巧" class="headerlink" title="花括号{}的使用技巧"></a>花括号{}的使用技巧</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# echo &#123;a, b, c&#125;</span><br><span class="line">a b c</span><br><span class="line"></span><br><span class="line">[root@centos7 ~]# echo user&#123;1, 5, 8&#125;</span><br><span class="line">user1 user5 user8</span><br><span class="line"></span><br><span class="line">[root@centos7 ~]# echo &#123;1..10&#125;</span><br><span class="line">0 1 2 3 4 5 6 7 8 9 </span><br><span class="line"></span><br><span class="line">[root@centos7 ~]# mkdir  /tmp/&#123;dir1, dir2, dir3&#125;</span><br><span class="line">[root@centos7 ~]# chmod  tmp/&#123;dir1, dir2, dir3&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="&#x82B1;&#x62EC;&#x53F7;-&#x7684;&#x4F7F;&#x7528;&#x6280;&#x5DE7;"><a href="#&#x82B1;&#x62EC;&#x53F7;-&#x7684;&#x4F7F;&#x7528;&#x6280;&#x5DE7;" class="headerlink" title="&#x82B1;&#x62EC;&#x53F7;{}&#x7684;&#x4F7F;&#x7528;&#x6280;&#x5DE7;"></a>&#x82B1;&#x62EC;&#x53F7;{}&#x7684;&#x4F7F;&#x7528;&#x6280;&#x5DE7;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# echo {a, b, c}</span><br><span class="line">a b c</span><br><span class="line"></span><br><span class="line">[root@centos7 ~]# echo user{1, 5, 8}</span><br><span class="line">user1 user5 user8</span><br><span class="line"></span><br><span class="line">[root@centos7 ~]# echo {1..10}</span><br><span class="line">0 1 2 3 4 5 6 7 8 9 </span><br><span class="line"></span><br><span class="line">[root@centos7 ~]# mkdir  /tmp/{dir1, dir2, dir3}</span><br><span class="line">[root@centos7 ~]# chmod  tmp/{dir1, dir2, dir3}</span><br></pre></td></tr></table></figure>
 
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>name=[value]</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# NAME=tomcat</span><br><span class="line">[root@centos7 ~]# echo $NAME</span><br><span class="line">[root@centos7 ~]# typeset -r NAME #添加readonly 只读属性</span><br><span class="line">[root@centos7 ~]# set   #查看当前环境下的变量</span><br></pre></td></tr></table></figure>
+<h3 id="&#x53D8;&#x91CF;"><a href="#&#x53D8;&#x91CF;" class="headerlink" title="&#x53D8;&#x91CF;"></a>&#x53D8;&#x91CF;</h3><p>name=[value]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# NAME=tomcat</span><br><span class="line">[root@centos7 ~]# echo $NAME</span><br><span class="line">[root@centos7 ~]# typeset -r NAME #&#x6DFB;&#x52A0;readonly &#x53EA;&#x8BFB;&#x5C5E;&#x6027;</span><br><span class="line">[root@centos7 ~]# set   #&#x67E5;&#x770B;&#x5F53;&#x524D;&#x73AF;&#x5883;&#x4E0B;&#x7684;&#x53D8;&#x91CF;</span><br></pre></td></tr></table></figure>
 
-<p>使用name=[value]的形式定义的变量默认值仅在当前的Shell中有效, 子进程不会继承这样的变量,使用export命令会将变量放入环境中,这样新的进程会从父进程哪里继承环境,export 可以直接定义环境变量并赋值,也可以先定义一个普通的变量,再通过export 转换为环境变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# export TEST #将已有用户变量添加至环境</span><br><span class="line">[root@centos7 ~]# export NAME=tom #直接定义环境变量</span><br><span class="line">[root@centos7 ~]# chmod +x echo.sh #修改文件权限为可执行</span><br></pre></td></tr></table></figure>
+<p>&#x4F7F;&#x7528;name=[value]&#x7684;&#x5F62;&#x5F0F;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x9ED8;&#x8BA4;&#x503C;&#x4EC5;&#x5728;&#x5F53;&#x524D;&#x7684;Shell&#x4E2D;&#x6709;&#x6548;, &#x5B50;&#x8FDB;&#x7A0B;&#x4E0D;&#x4F1A;&#x7EE7;&#x627F;&#x8FD9;&#x6837;&#x7684;&#x53D8;&#x91CF;,&#x4F7F;&#x7528;export&#x547D;&#x4EE4;&#x4F1A;&#x5C06;&#x53D8;&#x91CF;&#x653E;&#x5165;&#x73AF;&#x5883;&#x4E2D;,&#x8FD9;&#x6837;&#x65B0;&#x7684;&#x8FDB;&#x7A0B;&#x4F1A;&#x4ECE;&#x7236;&#x8FDB;&#x7A0B;&#x54EA;&#x91CC;&#x7EE7;&#x627F;&#x73AF;&#x5883;,export &#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5B9A;&#x4E49;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x5E76;&#x8D4B;&#x503C;,&#x4E5F;&#x53EF;&#x4EE5;&#x5148;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x53D8;&#x91CF;,&#x518D;&#x901A;&#x8FC7;export &#x8F6C;&#x6362;&#x4E3A;&#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]# export TEST #&#x5C06;&#x5DF2;&#x6709;&#x7528;&#x6237;&#x53D8;&#x91CF;&#x6DFB;&#x52A0;&#x81F3;&#x73AF;&#x5883;</span><br><span class="line">[root@centos7 ~]# export NAME=tom #&#x76F4;&#x63A5;&#x5B9A;&#x4E49;&#x73AF;&#x5883;&#x53D8;&#x91CF;</span><br><span class="line">[root@centos7 ~]# chmod +x echo.sh #&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x6743;&#x9650;&#x4E3A;&#x53EF;&#x6267;&#x884C;</span><br></pre></td></tr></table></figure>
 
 <table>
 <thead>
 <tr>
-<th align="center">变量名称</th>
-<th align="center">含义</th>
+<th align="center">&#x53D8;&#x91CF;&#x540D;&#x79F0;</th>
+<th align="center">&#x542B;&#x4E49;</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="center">BASHPID</td>
-<td align="center">当前bash 进程的进程号</td>
+<td align="center">&#x5F53;&#x524D;bash &#x8FDB;&#x7A0B;&#x7684;&#x8FDB;&#x7A0B;&#x53F7;</td>
 </tr>
 <tr>
 <td align="center">GROUPS</td>
-<td align="center">当前用户所属的组的组ID号</td>
+<td align="center">&#x5F53;&#x524D;&#x7528;&#x6237;&#x6240;&#x5C5E;&#x7684;&#x7EC4;&#x7684;&#x7EC4;ID&#x53F7;</td>
 </tr>
 <tr>
 <td align="center">HOSTNAME</td>
-<td align="center">当前主机的主机名称</td>
+<td align="center">&#x5F53;&#x524D;&#x4E3B;&#x673A;&#x7684;&#x4E3B;&#x673A;&#x540D;&#x79F0;</td>
 </tr>
 <tr>
 <td align="center">PWD</td>
-<td align="center">当前工作目录</td>
+<td align="center">&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</td>
 </tr>
 <tr>
 <td align="center">OLDPWD</td>
-<td align="center">前一个工作目录</td>
+<td align="center">&#x524D;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</td>
 </tr>
 <tr>
 <td align="center">RANDOM</td>
-<td align="center">0~32767之间的一个随机数</td>
+<td align="center">0~32767&#x4E4B;&#x95F4;&#x7684;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x6570;</td>
 </tr>
 <tr>
 <td align="center">UID</td>
-<td align="center">当前用户的ID号码</td>
+<td align="center">&#x5F53;&#x524D;&#x7528;&#x6237;&#x7684;ID&#x53F7;&#x7801;</td>
 </tr>
 <tr>
 <td align="center">HISTSIZE</td>
-<td align="center">命令历史的记录条数</td>
+<td align="center">&#x547D;&#x4EE4;&#x5386;&#x53F2;&#x7684;&#x8BB0;&#x5F55;&#x6761;&#x6570;</td>
 </tr>
 <tr>
 <td align="center">HOME</td>
-<td align="center">当前用户的家目录</td>
+<td align="center">&#x5F53;&#x524D;&#x7528;&#x6237;&#x7684;&#x5BB6;&#x76EE;&#x5F55;</td>
 </tr>
 <tr>
 <td align="center">PATH</td>
-<td align="center">命令搜索路径</td>
+<td align="center">&#x547D;&#x4EE4;&#x641C;&#x7D22;&#x8DEF;&#x5F84;</td>
 </tr>
 <tr>
 <td align="center">PS1</td>
-<td align="center">主命令提示符</td>
+<td align="center">&#x4E3B;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;</td>
 </tr>
 </tbody></table>
 
-        </div>
-        
-          
+                        
+                    </div>
 
+                    
+                    
+                    
 
-  <section class='meta' id="footer-meta">
-    <hr>
-    <div class='new-meta-box'>
-      
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2018-01-13T06:30:07.000Z" itemprop="datePublished">2018-01-13</time>
+
+    </span>
+    <span class="post-description-item">
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-03T11:52:29+08:00">
-  <a class='notlink'>
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 3, 2019</p>
-  </a>
+    </span>
 </div>
 
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://generaltune.github.io/blog/2018/01/13/shell-command/&title=shell编程笔记 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://generaltune.github.io/blog/2018/01/13/shell-command/&title=shell编程笔记 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://generaltune.github.io/blog/2018/01/13/shell-command/&title=shell编程笔记 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </section>
-
-
-        
-        
-            <div class="prev-next">
+                </div>
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
-                            <h4>
-                                <a href="/blog/2018/01/15/hello-world/" rel="prev" title="前端流行框架和缓存运用">
-                                  
-                                      前端流行框架和缓存运用
-                                  
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
                 
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/blog/2018/01/11/algorithm-tips/" rel="prev" title="算法笔记">
-                                    
-                                        算法笔记
-                                    
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+
+                <a href="/blog/2018/01/15/hello-world/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    前端流行框架和缓存运用
+                    
+
+                </a>
+
                 
             </div>
-        
-      </section>
-    </article>
-  
+            <div class="column nav-right">
+                
 
-  
-    <!-- 显示推荐文章和评论 -->
-
-
-
-  
-
-
-  
-
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: 'shell编程笔记',
-      tools: true
-    }
-  </script>
-
+                <a href="/blog/2018/01/11/algorithm-tips/" class="ui tiny button">
+                    
+                    算法笔记
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
 
 </div>
-<aside class='l_side'>
-  
-    
-    
-      
-        
-          
-          
-            <section class='widget author'>
-  <div class='content pure'>
-    
-      <div class='avatar'>
-        <img class='avatar' src='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png'/>
-      </div>
-    
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/blog/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:generaltune@126.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/generaltune"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
+                
+            </div>
 
-          
-        
-      
-        
-          
-          
             
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
-  
-    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
-  
-</header>
+            <div class="three wide computer three wide tablet column">
 
-    <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#监控CPU使用情况-uptime-命令"><span class="toc-text">监控CPU使用情况　uptime 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#监控内存及交换分区使用情况－－-free-命令"><span class="toc-text">监控内存及交换分区使用情况－－　free 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#监控磁盘使用情况-－－-df"><span class="toc-text">监控磁盘使用情况　－－　df</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#监控网络使用情况-－－-ip-和-netstat命令"><span class="toc-text">监控网络使用情况　－－　ip 和 netstat命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#监控进程使用情况-－－-ps-和-top命令"><span class="toc-text">监控进程使用情况　－－　ps 和　top命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络配置"><span class="toc-text">网络配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#网络接口参数-－－-ifconfig-命令"><span class="toc-text">网络接口参数 －－ ifconfig 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主机名参数-－－-hostnamectl命令"><span class="toc-text">主机名参数　－－　hostnamectl命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由参数－－-route-命令"><span class="toc-text">路由参数－－　route 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络故障排错"><span class="toc-text">网络故障排错</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内核模块"><span class="toc-text">内核模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查看已加载的内核模块"><span class="toc-text">查看已加载的内核模块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bash-技巧"><span class="toc-text">Bash 技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#花括号-的使用技巧"><span class="toc-text">花括号{}的使用技巧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量"><span class="toc-text">变量</span></a></li></ol>
-    </div>
-  </section>
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#监控CPU使用情况-uptime-命令"><span>监控CPU使用情况　uptime 命令</span></a></li><li><a href="#监控内存及交换分区使用情况－－-free-命令"><span>监控内存及交换分区使用情况－－　free 命令</span></a></li><li><a href="#监控磁盘使用情况-－－-df"><span>监控磁盘使用情况　－－　df</span></a></li><li><a href="#监控网络使用情况-－－-ip-和-netstat命令"><span>监控网络使用情况　－－　ip 和 netstat命令</span></a></li><li><a href="#监控进程使用情况-－－-ps-和-top命令"><span>监控进程使用情况　－－　ps 和　top命令</span></a></li></ol><li><a href="#网络配置"><span>网络配置</span></a><ol><li><a href="#网络接口参数-－－-ifconfig-命令"><span>网络接口参数 －－ ifconfig 命令</span></a></li><li><a href="#主机名参数-－－-hostnamectl命令"><span>主机名参数　－－　hostnamectl命令</span></a></li><li><a href="#路由参数－－-route-命令"><span>路由参数－－　route 命令</span></a></li><li><a href="#网络故障排错"><span>网络故障排错</span></a></li></ol></li><li><a href="#内核模块"><span>内核模块</span></a><ol><li><a href="#查看已加载的内核模块"><span>查看已加载的内核模块</span></a></li></ol></li><li><a href="#Bash-技巧"><span>Bash 技巧</span></a><ol><li><a href="#花括号-的使用技巧"><span>花括号{}的使用技巧</span></a></li><li><a href="#变量"><span>变量</span></a></li></ol>
+                </li></div>
 
-
-          
-        
-      
-        
-          
-          
-            <section class='widget grid'>
-  
-<header class='pure'>
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="grid navgation">
-      
-        <li><a class="flat-box" title="/blog/" href="/blog/"
-          
-          
-          id="blog">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          近期文章
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/blog/archives/" href="/blog/blog/archives/"
-          
-            rel="nofollow"
-          
-          
-          id="blogblogarchives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/projects/" href="/blog/projects/"
-          
-          
-          id="blogprojects">
-          
-            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
-          
-          开源项目
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/friends/" href="/blog/friends/"
-          
-            rel="nofollow"
-          
-          
-          id="blogfriends">
-          
-            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
-          
-          我的友链
-        </a></li>
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
-          
-            rel="nofollow"
-          
-          
-          id="https:xaoxuu.comwikimaterial-x">
-          
-            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
-          
-          主题文档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/about/" href="/blog/about/"
-          
-            rel="nofollow"
-          
-          
-          id="blogabout">
-          
-            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
-          
-          关于小站
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-          
-        
-      
-        
-          
-          
+            </div>
             
 
-          
-        
-      
-        
-          
-          
-            
-  <section class='widget tagcloud'>
-    
-<header class='pure'>
-  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/blog/blog/tags/"
-    title="blog/tags/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      <a href="/blog/tags/日志-感悟-生活/" style="font-size: 14px; color: #999">日志  感悟 生活</a>
+        </div>
     </div>
-  </section>
-
-
-          
-        
-      
-        
-          
-          
-            
-
-
-  <section class='widget music'>
-    
-<header class='pure'>
-  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
-  
-    <a class="rightBtn"
-    
-      rel="external nofollow noopener noreferrer"
-    
-    
-      target="_blank"
-    
-    href="https://music.163.com/#/user/home?id=63035382"
-    title="https://music.163.com/#/user/home?id=63035382">
-    <i class="far fa-heart fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
-  <div class="aplayer"
-    data-theme="#1BCDFC"
-    
-    
-    data-mode="circulation"
-    data-server="netease"
-    data-type="playlist"
-    data-id="2615636388"
-    data-volume="0.7">
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
-
-
-    </div>
-  </section>
-
-
-          
-        
-      
-    
-
-  
-</aside>
-
-<footer id="footer" class="clearfix">
-  
-  
-    <div class="social-wrapper">
-      
-        
-          <a href="/blog/atom.xml"
-            class="social fas fa-rss flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="mailto:generaltune@126.com"
-            class="social fas fa-envelope flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://github.com/generaltune"
-            class="social fab fa-github flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://music.163.com/#/user/home?id=63035382"
-            class="social fas fa-headphones-alt flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-    </div>
-  
-  <br>
-  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
-  <div>
-    Use
-    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
-    
-      , 
-      total visits
-      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      times
-    
-    . 
-  </div>
-</footer>
-<script>setLoadingBarProgress(80);</script>
 
 
-      <script>setLoadingBarProgress(60);</script>
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2019 <a href="/">GENERALTUNE</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a href="http://hexo.io/" target="_blank">Hexo</a>.
     </div>
-    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+</div>
 
-  <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
-    var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/blog/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
-  </script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      Waves.attach('.flat-btn', ['waves-button']);
-      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-      Waves.attach('.flat-box', ['waves-block']);
-      Waves.attach('.float-box', ['waves-block', 'waves-float']);
-      Waves.attach('.waves-image');
-      Waves.init();
-    });
-  </script>
-
-
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+    </div>
 
 
 
 
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/blog/js/semantic-ui-algolia.js"></script>
+
+<script src="/blog/js/aloha-events.js"></script>
 
 
 
-
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
-
-
-
-
-<!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  let COPY_SUCCESS = "Copied";
-  let COPY_FAILURE = "Copy failed";
-  /*页面载入完成后，创建复制按钮*/
-  !function (e, t, a) {
-    /* code */
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-
-      clipboard.on('success', function(e) {
-        //您可以加入成功提示
-        console.info('Action:', e.action);
-        console.info('Text:', e.text);
-        console.info('Trigger:', e.trigger);
-        success_prompt(COPY_SUCCESS);
-        e.clearSelection();
-      });
-      clipboard.on('error', function(e) {
-        //您可以加入失败提示
-        console.error('Action:', e.action);
-        console.error('Trigger:', e.trigger);
-        fail_prompt(COPY_FAILURE);
-      });
-    }
-    initCopyCode();
-
-  }(window, document);
-
-  /**
-   * 弹出式提示框，默认1.5秒自动消失
-   * @param message 提示信息
-   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
-   * @param time 消失时间
-   */
-  var prompt = function (message, style, time)
-  {
-      style = (style === undefined) ? 'alert-success' : style;
-      time = (time === undefined) ? 1500 : time*1000;
-      $('<div>')
-          .appendTo('body')
-          .addClass('alert ' + style)
-          .html(message)
-          .show()
-          .delay(time)
-          .fadeOut();
-  };
-
-  // 成功提示
-  var success_prompt = function(message, time)
-  {
-      prompt(message, 'alert-success', time);
-  };
-
-  // 失败提示
-  var fail_prompt = function(message, time)
-  {
-      prompt(message, 'alert-danger', time);
-  };
-
-  // 提醒
-  var warning_prompt = function(message, time)
-  {
-      prompt(message, 'alert-warning', time);
-  };
-
-  // 信息提示
-  var info_prompt = function(message, time)
-  {
-      prompt(message, 'alert-info', time);
-  };
-
-</script>
-
-
-<!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
-      $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
-  });
-</script>
-
-
-
-
-
-  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>

@@ -1,400 +1,175 @@
+
+
 <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <title>前端流行框架和缓存运用 | generaltune&#39;s blog</title>
-  
-  
+<html lang>
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content>
+    <title>前端流行框架和缓存运用 | generaltune&#39;s blog</title>
 
-  
+    <!-- Open Graph -->
+    <meta name="description" content="&amp;#x6846;&amp;#x67B6;&amp;#x76F8;&amp;#x5173;1&amp;#x3001;&amp;#x6570;&amp;#x636E;&amp;#x53CC;&amp;#x5411;&amp;#x7ED1;&amp;#x5B9A;&amp;#x539F;&amp;#x7406;&amp;#xFF1A;&amp;#x5E38;&amp;#x89C1;&amp;#x6570;&amp;#x636E;&amp;#x7ED1;&amp;#x5B9A;&amp;#x7684;&amp;#x65B9;&amp;#x6848; Object.defineP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端流行框架和缓存运用">
+<meta property="og:url" content="https://generaltune.github.io/blog/2018/01/15/hello-world/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="&amp;#x6846;&amp;#x67B6;&amp;#x76F8;&amp;#x5173;1&amp;#x3001;&amp;#x6570;&amp;#x636E;&amp;#x53CC;&amp;#x5411;&amp;#x7ED1;&amp;#x5B9A;&amp;#x539F;&amp;#x7406;&amp;#xFF1A;&amp;#x5E38;&amp;#x89C1;&amp;#x6570;&amp;#x636E;&amp;#x7ED1;&amp;#x5B9A;&amp;#x7684;&amp;#x65B9;&amp;#x6848; Object.defineP">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T03:52:29.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端流行框架和缓存运用">
+<meta name="twitter:description" content="&amp;#x6846;&amp;#x67B6;&amp;#x76F8;&amp;#x5173;1&amp;#x3001;&amp;#x6570;&amp;#x636E;&amp;#x53CC;&amp;#x5411;&amp;#x7ED1;&amp;#x5B9A;&amp;#x539F;&amp;#x7406;&amp;#xFF1A;&amp;#x5E38;&amp;#x89C1;&amp;#x6570;&amp;#x636E;&amp;#x7ED1;&amp;#x5B9A;&amp;#x7684;&amp;#x65B9;&amp;#x6848; Object.defineP">
 
-  <meta name="HandheldFriendly" content="True">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
-  
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "GENERALTUNE",
+  "url": "https://generaltune.github.io/blog"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
 
-  <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
-  
+    
 
-  
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/blog/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
-  
-
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width=num+"%";
-    }
-  </script>
-
-  
-  
 </head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
 
-<body>
-  
-  
-  <div class="cover-wrapper">
-    <cover class='cover post half'>
-      
-        
-  <h1 class='title'>Material X</h1>
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>generaltune&#39;s blog</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/blog/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">GENERALTUNE</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class='menu navgation'>
-  <ul class='h-list'>
-    
-      
-        <li>
-          <a class="nav home" href="/blog/"
-            
-            
-            id="blog">
-            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/projects/"
-            
-            
-            id="blogprojects">
-            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/friends/"
-            
-              rel="nofollow"
-            
-            
-            id="blogfriends">
-            <i class='fas fa-link fa-fw'></i>&nbsp;友链
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/about/"
-            
-              rel="nofollow"
-            
-            
-            id="blogabout">
-            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
-          </a>
-        </li>
-      
-    
-  </ul>
 </div>
 
-      
-    </cover>
-    <header class="l_header pure">
-  <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
-  </div>
-
-	<div class='wrapper'>
-		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href='/blog/' >
-        
-          generaltune's blog
-        
-      </a>
-			<div class='menu navgation'>
-				<ul class='h-list'>
-          
-  					
-  						<li>
-								<a class="nav flat-box" href="/blog/"
-                  
-                  
-                  id="blog">
-									<i class='fas fa-grin fa-fw'></i>&nbsp;示例
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/categories/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogcategories">
-									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/tags/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogtags">
-									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/archives/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogarchives">
-									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
-								</a>
-							</li>
-      			
-      		
-				</ul>
-			</div>
-
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="Search" />
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
-			<ul class='switcher h-list'>
-				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
-				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
-			</ul>
-		</div>
-
-		<div class='nav-sub container container--flex'>
-			<a class="logo flat-box"></a>
-			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
-        
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
-        
-			</ul>
-		</div>
-	</div>
-</header>
-	<aside class="menu-phone">
-    <header>
-		<nav class="menu navgation">
-      <ul>
-        
-          
-            <li>
-							<a class="nav flat-box" href="/blog/"
-                
-                
-                id="blog">
-								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/blog/archives/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogblogarchives">
-								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/projects/"
-                
-                
-                id="blogprojects">
-								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/friends/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogfriends">
-								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
-                
-                  rel="nofollow"
-                
-                
-                id="https:xaoxuu.comwikimaterial-x">
-								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/about/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogabout">
-								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
-							</a>
-            </li>
-          
-       
-      </ul>
-		</nav>
-    </header>
-	</aside>
-<script>setLoadingBarProgress(40);</script>
-
-  </div>
-
-
-  <div class="l_body">
-    <div class='body-wrapper'>
-      <div class='l_main'>
-  
-
-  
-    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-      
-
-
-  <section class='meta'>
     
     
-    <div class="meta" id="header-meta">
-      
-        
-  
-    <h1 class="title">
-      <a href="/blog/2018/01/15/hello-world/">
-        前端流行框架和缓存运用
-      </a>
-    </h1>
-  
 
+    
 
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://generaltune.github.io/blog" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>GENERALTUNE</p>
+    
+    <a href="/index.html" class="item">
+        <i class="home icon"></i>
+        HOME
     </a>
-  </div>
 
+    
 
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2018-01-15</p>
-  </a>
+    
 </div>
 
-          
-        
-          
-            
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-hello-world" class="ui main container article-type-post">
 
-          
-        
-          
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
+    
 
+    <div class="ui divided grid">
 
-          
-        
-          
-            
+        <div class="two column row" id="article-content">
 
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    前端流行框架和缓存运用
+</h1>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          <h2 id="框架相关"><a href="#框架相关" class="headerlink" title="框架相关"></a>框架相关</h2><p>1、数据双向绑定原理：常见数据绑定的方案</p>
-<p>Object.defineProperty（vue）：劫持数据的 getter 和 setter<br>脏值检测（angularjs）：通过特定事件进行轮循<br>发布/订阅模式：通过消息发布并将消息进行订阅<br>详细细节参考 实现一个属于我们自己的简易MVVM库</p>
-<p>扩充：如何监听数组变化</p>
-<p>2、VDOM：三个 part，</p>
-<p>虚拟节点类，将真实 DOM 节点用 js 对象的形式进行展示，并提供 render 方法，将虚拟节点渲染成真实 DOM<br>节点 diff 比较：对虚拟节点进行 js 层面的计算，并将不同的操作都记录到 patch 对象<br>re-render：解析 patch 对象，进行 re-render<br>详细请参考 实现Virtual Dom &amp;&amp; Diff</p>
-<p>补充1：VDOM 的必要性？<br>创建真实DOM的代价高：真实的 DOM 节点 node 实现的属性很多，而 vnode 仅仅实现一些必要的属性，相比起来，创建一个 vnode 的成本比较低。<br>触发多次浏览器重绘及回流：使用 vnode ，相当于加了一个缓冲，让一次数据变动所带来的所有 node 变化，先在 vnode 中进行修改，然后 diff 之后对所有产生差异的节点集中一次对 DOM tree 进行修改，以减少浏览器的重绘及回流。<br>补充2：vue 为什么采用 vdom？<br>引入 Virtual DOM 在性能方面的考量仅仅是一方面。</p>
-<p>性能受场景的影响是非常大的，不同的场景可能造成不同实现方案之间成倍的性能差距，所以依赖细粒度绑定及 Virtual DOM 哪个的性能更好还真不是一个容易下定论的问题。</p>
-<p>Vue 之所以引入了 Virtual DOM，更重要的原因是为了解耦 HTML 依赖，这带来两个非常重要的好处是：</p>
-<p>不再依赖 HTML 解析器进行模版解析，可以进行更多的 AOT 工作提高运行时效率：通过模版 AOT 编译，Vue 的运行时体积可以进一步压缩，运行时效率可以进一步提升；<br>可以渲染到 DOM 以外的平台，实现 SSR、同构渲染这些高级特性，Weex 等框架应用的就是这一特性。<br>综上，Virtual DOM 在性能上的收益并不是最主要的，更重要的是它使得 Vue 具备了现代框架应有的高级特性。</p>
-<p>3、vue 和 react 区别</p>
-<p>相同点：都支持 ssr，都有 vdom，组件化开发，实现 webComponents 规范，数据驱动等<br>不同点：vue 是双向数据流（当然为了实现单数据流方便管理组件状态，vuex 便出现了），react 是单向数据流。vue 的 vdom 是追踪每个组件的依赖关系，不会渲染整个组件树，react 每当应该状态被改变时，全部子组件都会 re-render。<br>上面提到的每个点，具体细节还得看自己的理解</p>
-<p>4、为什么用 vue ：简洁、轻快、舒服、没了</p>
-<p>网络基础类</p>
-<p>1、跨域：很多种方法，但万变不离其宗，都是为了搞定同源策略。重用的有 jsonp、iframe、cors、img、HTML5 postMessage等等。其中用到 html 标签进行跨域的原理就是 html 不受同源策略影响。但只是接受 Get 的请求方式，这个得清楚。</p>
-<p>详细传送门</p>
-<p>延伸1：img iframe script 来发送跨域请求有什么优缺点？<br>iframe<br>优点：跨域完毕之后DOM操作和互相之间的JavaScript调用都是没有问题的<br>缺点：1.若结果要以URL参数传递，这就意味着在结果数据量很大的时候需要分割传递，巨烦。2.还有一个是iframe本身带来的，母页面和iframe本身的交互本身就有安全性限制。<br>script<br>优点：可以直接返回json格式的数据，方便处理<br>缺点：只接受GET请求方式<br>图片ping<br>优点：可以访问任何url，一般用来进行点击追踪，做页面分析常用的方法<br>缺点：不能访问响应文本，只能监听是否响应<br>延伸2：配合 webpack 进行反向代理？<br>webpack 在 devServer 选项里面提供了一个 proxy 的参数供开发人员进行反向代理</p>
-<p>‘/api’: {<br>target: ‘<a href="http://www.example.com&#39;" target="_blank" rel="noopener">http://www.example.com&#39;</a>, // your target host<br>            changeOrigin: true, // needed for virtual hosted sites<br>            pathRewrite: {<br>                ‘^/api’: ‘’  // rewrite path<br>            }<br>},<br>    然后再配合 http-proxy-middleware 插件对 api 请求地址进行代理</p>
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h2 id="&#x6846;&#x67B6;&#x76F8;&#x5173;"><a href="#&#x6846;&#x67B6;&#x76F8;&#x5173;" class="headerlink" title="&#x6846;&#x67B6;&#x76F8;&#x5173;"></a>&#x6846;&#x67B6;&#x76F8;&#x5173;</h2><p>1&#x3001;&#x6570;&#x636E;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x539F;&#x7406;&#xFF1A;&#x5E38;&#x89C1;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x7684;&#x65B9;&#x6848;</p>
+<p>Object.defineProperty&#xFF08;vue&#xFF09;&#xFF1A;&#x52AB;&#x6301;&#x6570;&#x636E;&#x7684; getter &#x548C; setter<br>&#x810F;&#x503C;&#x68C0;&#x6D4B;&#xFF08;angularjs&#xFF09;&#xFF1A;&#x901A;&#x8FC7;&#x7279;&#x5B9A;&#x4E8B;&#x4EF6;&#x8FDB;&#x884C;&#x8F6E;&#x5FAA;<br>&#x53D1;&#x5E03;/&#x8BA2;&#x9605;&#x6A21;&#x5F0F;&#xFF1A;&#x901A;&#x8FC7;&#x6D88;&#x606F;&#x53D1;&#x5E03;&#x5E76;&#x5C06;&#x6D88;&#x606F;&#x8FDB;&#x884C;&#x8BA2;&#x9605;<br>&#x8BE6;&#x7EC6;&#x7EC6;&#x8282;&#x53C2;&#x8003; &#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x5C5E;&#x4E8E;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x7B80;&#x6613;MVVM&#x5E93;</p>
+<p>&#x6269;&#x5145;&#xFF1A;&#x5982;&#x4F55;&#x76D1;&#x542C;&#x6570;&#x7EC4;&#x53D8;&#x5316;</p>
+<p>2&#x3001;VDOM&#xFF1A;&#x4E09;&#x4E2A; part&#xFF0C;</p>
+<p>&#x865A;&#x62DF;&#x8282;&#x70B9;&#x7C7B;&#xFF0C;&#x5C06;&#x771F;&#x5B9E; DOM &#x8282;&#x70B9;&#x7528; js &#x5BF9;&#x8C61;&#x7684;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x5C55;&#x793A;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B; render &#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x865A;&#x62DF;&#x8282;&#x70B9;&#x6E32;&#x67D3;&#x6210;&#x771F;&#x5B9E; DOM<br>&#x8282;&#x70B9; diff &#x6BD4;&#x8F83;&#xFF1A;&#x5BF9;&#x865A;&#x62DF;&#x8282;&#x70B9;&#x8FDB;&#x884C; js &#x5C42;&#x9762;&#x7684;&#x8BA1;&#x7B97;&#xFF0C;&#x5E76;&#x5C06;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x8BB0;&#x5F55;&#x5230; patch &#x5BF9;&#x8C61;<br>re-render&#xFF1A;&#x89E3;&#x6790; patch &#x5BF9;&#x8C61;&#xFF0C;&#x8FDB;&#x884C; re-render<br>&#x8BE6;&#x7EC6;&#x8BF7;&#x53C2;&#x8003; &#x5B9E;&#x73B0;Virtual Dom &amp;&amp; Diff</p>
+<p>&#x8865;&#x5145;1&#xFF1A;VDOM &#x7684;&#x5FC5;&#x8981;&#x6027;&#xFF1F;<br>&#x521B;&#x5EFA;&#x771F;&#x5B9E;DOM&#x7684;&#x4EE3;&#x4EF7;&#x9AD8;&#xFF1A;&#x771F;&#x5B9E;&#x7684; DOM &#x8282;&#x70B9; node &#x5B9E;&#x73B0;&#x7684;&#x5C5E;&#x6027;&#x5F88;&#x591A;&#xFF0C;&#x800C; vnode &#x4EC5;&#x4EC5;&#x5B9E;&#x73B0;&#x4E00;&#x4E9B;&#x5FC5;&#x8981;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x76F8;&#x6BD4;&#x8D77;&#x6765;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; vnode &#x7684;&#x6210;&#x672C;&#x6BD4;&#x8F83;&#x4F4E;&#x3002;<br>&#x89E6;&#x53D1;&#x591A;&#x6B21;&#x6D4F;&#x89C8;&#x5668;&#x91CD;&#x7ED8;&#x53CA;&#x56DE;&#x6D41;&#xFF1A;&#x4F7F;&#x7528; vnode &#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x7F13;&#x51B2;&#xFF0C;&#x8BA9;&#x4E00;&#x6B21;&#x6570;&#x636E;&#x53D8;&#x52A8;&#x6240;&#x5E26;&#x6765;&#x7684;&#x6240;&#x6709; node &#x53D8;&#x5316;&#xFF0C;&#x5148;&#x5728; vnode &#x4E2D;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x7136;&#x540E; diff &#x4E4B;&#x540E;&#x5BF9;&#x6240;&#x6709;&#x4EA7;&#x751F;&#x5DEE;&#x5F02;&#x7684;&#x8282;&#x70B9;&#x96C6;&#x4E2D;&#x4E00;&#x6B21;&#x5BF9; DOM tree &#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x4EE5;&#x51CF;&#x5C11;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x91CD;&#x7ED8;&#x53CA;&#x56DE;&#x6D41;&#x3002;<br>&#x8865;&#x5145;2&#xFF1A;vue &#x4E3A;&#x4EC0;&#x4E48;&#x91C7;&#x7528; vdom&#xFF1F;<br>&#x5F15;&#x5165; Virtual DOM &#x5728;&#x6027;&#x80FD;&#x65B9;&#x9762;&#x7684;&#x8003;&#x91CF;&#x4EC5;&#x4EC5;&#x662F;&#x4E00;&#x65B9;&#x9762;&#x3002;</p>
+<p>&#x6027;&#x80FD;&#x53D7;&#x573A;&#x666F;&#x7684;&#x5F71;&#x54CD;&#x662F;&#x975E;&#x5E38;&#x5927;&#x7684;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x573A;&#x666F;&#x53EF;&#x80FD;&#x9020;&#x6210;&#x4E0D;&#x540C;&#x5B9E;&#x73B0;&#x65B9;&#x6848;&#x4E4B;&#x95F4;&#x6210;&#x500D;&#x7684;&#x6027;&#x80FD;&#x5DEE;&#x8DDD;&#xFF0C;&#x6240;&#x4EE5;&#x4F9D;&#x8D56;&#x7EC6;&#x7C92;&#x5EA6;&#x7ED1;&#x5B9A;&#x53CA; Virtual DOM &#x54EA;&#x4E2A;&#x7684;&#x6027;&#x80FD;&#x66F4;&#x597D;&#x8FD8;&#x771F;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5BB9;&#x6613;&#x4E0B;&#x5B9A;&#x8BBA;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<p>Vue &#x4E4B;&#x6240;&#x4EE5;&#x5F15;&#x5165;&#x4E86; Virtual DOM&#xFF0C;&#x66F4;&#x91CD;&#x8981;&#x7684;&#x539F;&#x56E0;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x8026; HTML &#x4F9D;&#x8D56;&#xFF0C;&#x8FD9;&#x5E26;&#x6765;&#x4E24;&#x4E2A;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x597D;&#x5904;&#x662F;&#xFF1A;</p>
+<p>&#x4E0D;&#x518D;&#x4F9D;&#x8D56; HTML &#x89E3;&#x6790;&#x5668;&#x8FDB;&#x884C;&#x6A21;&#x7248;&#x89E3;&#x6790;&#xFF0C;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x66F4;&#x591A;&#x7684; AOT &#x5DE5;&#x4F5C;&#x63D0;&#x9AD8;&#x8FD0;&#x884C;&#x65F6;&#x6548;&#x7387;&#xFF1A;&#x901A;&#x8FC7;&#x6A21;&#x7248; AOT &#x7F16;&#x8BD1;&#xFF0C;Vue &#x7684;&#x8FD0;&#x884C;&#x65F6;&#x4F53;&#x79EF;&#x53EF;&#x4EE5;&#x8FDB;&#x4E00;&#x6B65;&#x538B;&#x7F29;&#xFF0C;&#x8FD0;&#x884C;&#x65F6;&#x6548;&#x7387;&#x53EF;&#x4EE5;&#x8FDB;&#x4E00;&#x6B65;&#x63D0;&#x5347;&#xFF1B;<br>&#x53EF;&#x4EE5;&#x6E32;&#x67D3;&#x5230; DOM &#x4EE5;&#x5916;&#x7684;&#x5E73;&#x53F0;&#xFF0C;&#x5B9E;&#x73B0; SSR&#x3001;&#x540C;&#x6784;&#x6E32;&#x67D3;&#x8FD9;&#x4E9B;&#x9AD8;&#x7EA7;&#x7279;&#x6027;&#xFF0C;Weex &#x7B49;&#x6846;&#x67B6;&#x5E94;&#x7528;&#x7684;&#x5C31;&#x662F;&#x8FD9;&#x4E00;&#x7279;&#x6027;&#x3002;<br>&#x7EFC;&#x4E0A;&#xFF0C;Virtual DOM &#x5728;&#x6027;&#x80FD;&#x4E0A;&#x7684;&#x6536;&#x76CA;&#x5E76;&#x4E0D;&#x662F;&#x6700;&#x4E3B;&#x8981;&#x7684;&#xFF0C;&#x66F4;&#x91CD;&#x8981;&#x7684;&#x662F;&#x5B83;&#x4F7F;&#x5F97; Vue &#x5177;&#x5907;&#x4E86;&#x73B0;&#x4EE3;&#x6846;&#x67B6;&#x5E94;&#x6709;&#x7684;&#x9AD8;&#x7EA7;&#x7279;&#x6027;&#x3002;</p>
+<p>3&#x3001;vue &#x548C; react &#x533A;&#x522B;</p>
+<p>&#x76F8;&#x540C;&#x70B9;&#xFF1A;&#x90FD;&#x652F;&#x6301; ssr&#xFF0C;&#x90FD;&#x6709; vdom&#xFF0C;&#x7EC4;&#x4EF6;&#x5316;&#x5F00;&#x53D1;&#xFF0C;&#x5B9E;&#x73B0; webComponents &#x89C4;&#x8303;&#xFF0C;&#x6570;&#x636E;&#x9A71;&#x52A8;&#x7B49;<br>&#x4E0D;&#x540C;&#x70B9;&#xFF1A;vue &#x662F;&#x53CC;&#x5411;&#x6570;&#x636E;&#x6D41;&#xFF08;&#x5F53;&#x7136;&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x5355;&#x6570;&#x636E;&#x6D41;&#x65B9;&#x4FBF;&#x7BA1;&#x7406;&#x7EC4;&#x4EF6;&#x72B6;&#x6001;&#xFF0C;vuex &#x4FBF;&#x51FA;&#x73B0;&#x4E86;&#xFF09;&#xFF0C;react &#x662F;&#x5355;&#x5411;&#x6570;&#x636E;&#x6D41;&#x3002;vue &#x7684; vdom &#x662F;&#x8FFD;&#x8E2A;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x4E0D;&#x4F1A;&#x6E32;&#x67D3;&#x6574;&#x4E2A;&#x7EC4;&#x4EF6;&#x6811;&#xFF0C;react &#x6BCF;&#x5F53;&#x5E94;&#x8BE5;&#x72B6;&#x6001;&#x88AB;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x5168;&#x90E8;&#x5B50;&#x7EC4;&#x4EF6;&#x90FD;&#x4F1A; re-render&#x3002;<br>&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;&#x6BCF;&#x4E2A;&#x70B9;&#xFF0C;&#x5177;&#x4F53;&#x7EC6;&#x8282;&#x8FD8;&#x5F97;&#x770B;&#x81EA;&#x5DF1;&#x7684;&#x7406;&#x89E3;</p>
+<p>4&#x3001;&#x4E3A;&#x4EC0;&#x4E48;&#x7528; vue &#xFF1A;&#x7B80;&#x6D01;&#x3001;&#x8F7B;&#x5FEB;&#x3001;&#x8212;&#x670D;&#x3001;&#x6CA1;&#x4E86;</p>
+<p>&#x7F51;&#x7EDC;&#x57FA;&#x7840;&#x7C7B;</p>
+<p>1&#x3001;&#x8DE8;&#x57DF;&#xFF1A;&#x5F88;&#x591A;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x4E07;&#x53D8;&#x4E0D;&#x79BB;&#x5176;&#x5B97;&#xFF0C;&#x90FD;&#x662F;&#x4E3A;&#x4E86;&#x641E;&#x5B9A;&#x540C;&#x6E90;&#x7B56;&#x7565;&#x3002;&#x91CD;&#x7528;&#x7684;&#x6709; jsonp&#x3001;iframe&#x3001;cors&#x3001;img&#x3001;HTML5 postMessage&#x7B49;&#x7B49;&#x3002;&#x5176;&#x4E2D;&#x7528;&#x5230; html &#x6807;&#x7B7E;&#x8FDB;&#x884C;&#x8DE8;&#x57DF;&#x7684;&#x539F;&#x7406;&#x5C31;&#x662F; html &#x4E0D;&#x53D7;&#x540C;&#x6E90;&#x7B56;&#x7565;&#x5F71;&#x54CD;&#x3002;&#x4F46;&#x53EA;&#x662F;&#x63A5;&#x53D7; Get &#x7684;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#xFF0C;&#x8FD9;&#x4E2A;&#x5F97;&#x6E05;&#x695A;&#x3002;</p>
+<p>&#x8BE6;&#x7EC6;&#x4F20;&#x9001;&#x95E8;</p>
+<p>&#x5EF6;&#x4F38;1&#xFF1A;img iframe script &#x6765;&#x53D1;&#x9001;&#x8DE8;&#x57DF;&#x8BF7;&#x6C42;&#x6709;&#x4EC0;&#x4E48;&#x4F18;&#x7F3A;&#x70B9;&#xFF1F;<br>iframe<br>&#x4F18;&#x70B9;&#xFF1A;&#x8DE8;&#x57DF;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;DOM&#x64CD;&#x4F5C;&#x548C;&#x4E92;&#x76F8;&#x4E4B;&#x95F4;&#x7684;JavaScript&#x8C03;&#x7528;&#x90FD;&#x662F;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#x7684;<br>&#x7F3A;&#x70B9;&#xFF1A;1.&#x82E5;&#x7ED3;&#x679C;&#x8981;&#x4EE5;URL&#x53C2;&#x6570;&#x4F20;&#x9012;&#xFF0C;&#x8FD9;&#x5C31;&#x610F;&#x5473;&#x7740;&#x5728;&#x7ED3;&#x679C;&#x6570;&#x636E;&#x91CF;&#x5F88;&#x5927;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x5206;&#x5272;&#x4F20;&#x9012;&#xFF0C;&#x5DE8;&#x70E6;&#x3002;2.&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x662F;iframe&#x672C;&#x8EAB;&#x5E26;&#x6765;&#x7684;&#xFF0C;&#x6BCD;&#x9875;&#x9762;&#x548C;iframe&#x672C;&#x8EAB;&#x7684;&#x4EA4;&#x4E92;&#x672C;&#x8EAB;&#x5C31;&#x6709;&#x5B89;&#x5168;&#x6027;&#x9650;&#x5236;&#x3002;<br>script<br>&#x4F18;&#x70B9;&#xFF1A;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;json&#x683C;&#x5F0F;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x65B9;&#x4FBF;&#x5904;&#x7406;<br>&#x7F3A;&#x70B9;&#xFF1A;&#x53EA;&#x63A5;&#x53D7;GET&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;<br>&#x56FE;&#x7247;ping<br>&#x4F18;&#x70B9;&#xFF1A;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x4EFB;&#x4F55;url&#xFF0C;&#x4E00;&#x822C;&#x7528;&#x6765;&#x8FDB;&#x884C;&#x70B9;&#x51FB;&#x8FFD;&#x8E2A;&#xFF0C;&#x505A;&#x9875;&#x9762;&#x5206;&#x6790;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;<br>&#x7F3A;&#x70B9;&#xFF1A;&#x4E0D;&#x80FD;&#x8BBF;&#x95EE;&#x54CD;&#x5E94;&#x6587;&#x672C;&#xFF0C;&#x53EA;&#x80FD;&#x76D1;&#x542C;&#x662F;&#x5426;&#x54CD;&#x5E94;<br>&#x5EF6;&#x4F38;2&#xFF1A;&#x914D;&#x5408; webpack &#x8FDB;&#x884C;&#x53CD;&#x5411;&#x4EE3;&#x7406;&#xFF1F;<br>webpack &#x5728; devServer &#x9009;&#x9879;&#x91CC;&#x9762;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A; proxy &#x7684;&#x53C2;&#x6570;&#x4F9B;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x8FDB;&#x884C;&#x53CD;&#x5411;&#x4EE3;&#x7406;</p>
+<p>&#x2018;/api&#x2019;: {<br>target: &#x2018;<a href="http://www.example.com&apos;" target="_blank" rel="noopener">http://www.example.com&apos;</a>, // your target host<br>            changeOrigin: true, // needed for virtual hosted sites<br>            pathRewrite: {<br>                &#x2018;^/api&#x2019;: &#x2018;&#x2019;  // rewrite path<br>            }<br>},<br>    &#x7136;&#x540E;&#x518D;&#x914D;&#x5408; http-proxy-middleware &#x63D2;&#x4EF6;&#x5BF9; api &#x8BF7;&#x6C42;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x4EE3;&#x7406;</p>
 <pre><code>const express = require(&apos;express&apos;);
 const proxy = require(&apos;http-proxy-middleware&apos;);
 // proxy api requests
-const exampleProxy = proxy(options); // 这里的 options 就是 webpack 里面的 proxy 选项对应的每个选项
+const exampleProxy = proxy(options); // &#x8FD9;&#x91CC;&#x7684; options &#x5C31;&#x662F; webpack &#x91CC;&#x9762;&#x7684; proxy &#x9009;&#x9879;&#x5BF9;&#x5E94;&#x7684;&#x6BCF;&#x4E2A;&#x9009;&#x9879;
 
 // mount `exampleProxy` in web server
 const app = express();
 app.use(&apos;/api&apos;, exampleProxy);
 app.listen(3000);
-然后再用 nginx 把允许跨域的源地址添加到报头里面即可
+&#x7136;&#x540E;&#x518D;&#x7528; nginx &#x628A;&#x5141;&#x8BB8;&#x8DE8;&#x57DF;&#x7684;&#x6E90;&#x5730;&#x5740;&#x6DFB;&#x52A0;&#x5230;&#x62A5;&#x5934;&#x91CC;&#x9762;&#x5373;&#x53EF;
 
-说到 nginx ，可以再谈谈 CORS 配置，大致如下
+&#x8BF4;&#x5230; nginx &#xFF0C;&#x53EF;&#x4EE5;&#x518D;&#x8C08;&#x8C08; CORS &#x914D;&#x7F6E;&#xFF0C;&#x5927;&#x81F4;&#x5982;&#x4E0B;
 
 location / {
     if ($request_method = &apos;OPTIONS&apos;) {
@@ -407,710 +182,148 @@ location / {
         add_header &apos;Content-Length&apos; 0;  
         return 200;  
     }
-}</code></pre><p>2、http 无状态无连接</p>
-<p>http 协议对于事务处理没有记忆能力<br>对同一个url请求没有上下文关系<br>每次的请求都是独立的，它的执行情况和结果与前面的请求和之后的请求是无直接关系的，它不会受前面的请求应答情况直接影响，也不会直接影响后面的请求应答情况<br>服务器中没有保存客户端的状态，客户端必须每次带上自己的状态去请求服务器<br>人生若只如初见，请求过的资源下一次会继续进行请求<br>http协议无状态中的 状态 到底指的是什么？！</p>
-<p>【状态】的含义就是：客户端和服务器在某次会话中产生的数据</p>
-<p>那么对应的【无状态】就意味着：这些数据不会被保留</p>
+}</code></pre><p>2&#x3001;http &#x65E0;&#x72B6;&#x6001;&#x65E0;&#x8FDE;&#x63A5;</p>
+<p>http &#x534F;&#x8BAE;&#x5BF9;&#x4E8E;&#x4E8B;&#x52A1;&#x5904;&#x7406;&#x6CA1;&#x6709;&#x8BB0;&#x5FC6;&#x80FD;&#x529B;<br>&#x5BF9;&#x540C;&#x4E00;&#x4E2A;url&#x8BF7;&#x6C42;&#x6CA1;&#x6709;&#x4E0A;&#x4E0B;&#x6587;&#x5173;&#x7CFB;<br>&#x6BCF;&#x6B21;&#x7684;&#x8BF7;&#x6C42;&#x90FD;&#x662F;&#x72EC;&#x7ACB;&#x7684;&#xFF0C;&#x5B83;&#x7684;&#x6267;&#x884C;&#x60C5;&#x51B5;&#x548C;&#x7ED3;&#x679C;&#x4E0E;&#x524D;&#x9762;&#x7684;&#x8BF7;&#x6C42;&#x548C;&#x4E4B;&#x540E;&#x7684;&#x8BF7;&#x6C42;&#x662F;&#x65E0;&#x76F4;&#x63A5;&#x5173;&#x7CFB;&#x7684;&#xFF0C;&#x5B83;&#x4E0D;&#x4F1A;&#x53D7;&#x524D;&#x9762;&#x7684;&#x8BF7;&#x6C42;&#x5E94;&#x7B54;&#x60C5;&#x51B5;&#x76F4;&#x63A5;&#x5F71;&#x54CD;&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x76F4;&#x63A5;&#x5F71;&#x54CD;&#x540E;&#x9762;&#x7684;&#x8BF7;&#x6C42;&#x5E94;&#x7B54;&#x60C5;&#x51B5;<br>&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x6CA1;&#x6709;&#x4FDD;&#x5B58;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x5FC5;&#x987B;&#x6BCF;&#x6B21;&#x5E26;&#x4E0A;&#x81EA;&#x5DF1;&#x7684;&#x72B6;&#x6001;&#x53BB;&#x8BF7;&#x6C42;&#x670D;&#x52A1;&#x5668;<br>&#x4EBA;&#x751F;&#x82E5;&#x53EA;&#x5982;&#x521D;&#x89C1;&#xFF0C;&#x8BF7;&#x6C42;&#x8FC7;&#x7684;&#x8D44;&#x6E90;&#x4E0B;&#x4E00;&#x6B21;&#x4F1A;&#x7EE7;&#x7EED;&#x8FDB;&#x884C;&#x8BF7;&#x6C42;<br>http&#x534F;&#x8BAE;&#x65E0;&#x72B6;&#x6001;&#x4E2D;&#x7684; &#x72B6;&#x6001; &#x5230;&#x5E95;&#x6307;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#xFF01;</p>
+<p>&#x3010;&#x72B6;&#x6001;&#x3011;&#x7684;&#x542B;&#x4E49;&#x5C31;&#x662F;&#xFF1A;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x5728;&#x67D0;&#x6B21;&#x4F1A;&#x8BDD;&#x4E2D;&#x4EA7;&#x751F;&#x7684;&#x6570;&#x636E;</p>
+<p>&#x90A3;&#x4E48;&#x5BF9;&#x5E94;&#x7684;&#x3010;&#x65E0;&#x72B6;&#x6001;&#x3011;&#x5C31;&#x610F;&#x5473;&#x7740;&#xFF1A;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x4E0D;&#x4F1A;&#x88AB;&#x4FDD;&#x7559;</p>
 <p>but</p>
-<p>通过增加cookie和session机制，现在的网络请求其实是有状态的<br>在没有状态的http协议下，服务器也一定会保留你每次网络请求对数据的修改，但这跟保留每次访问的数据是不一样的，保留的只是会话产生的结果，而没有保留会话<br>详细参考 HTTP是一个无状态的协议。这句话里的无状态是什么意思？</p>
-<p>3、http-cache：就是 http 缓存咯</p>
-<p>首先得明确 http 缓存的好处</p>
-<p>减少了冗余的数据传输，减少网费<br>减少服务器端的压力<br>Web 缓存能够减少延迟与网络阻塞，进而减少显示某个资源所用的时间<br>加快客户端加载网页的速度<br>常见 http 缓存的类型</p>
-<p>私有缓存（一般为本地浏览器缓存）<br>代理缓存<br>然后谈谈本地缓存</p>
-<p>本地缓存是指浏览器请求资源时命中了浏览器本地的缓存资源，浏览器并不会发送真正的请求给服务器了。它的执行过程是：</p>
-<p>第一次浏览器发送请求给服务器时，此时浏览器还没有本地缓存副本，服务器返回资源给浏览器，响应码是200 OK，浏览器收到资源后，把资源和对应的响应头一起缓存下来。<br>第二次浏览器准备发送请求给服务器时候，浏览器会先检查上一次服务端返回的响应头信息中的Cache-Control，它的值是一个相对值，单位为秒，表示资源在客户端缓存的最大有效期，过期时间为第一次请求的时间减去Cache-Control的值，过期时间跟当前的请求时间比较，如果本地缓存资源没过期，那么命中缓存，不再请求服务器。<br>如果没有命中，浏览器就会把请求发送给服务器，进入缓存协商阶段。<br>与本地缓存相关的头有：Cache-Control、Expires，Cache-Control有多个可选值代表不同的意义，而Expires就是一个日期格式的绝对值。</p>
+<p>&#x901A;&#x8FC7;&#x589E;&#x52A0;cookie&#x548C;session&#x673A;&#x5236;&#xFF0C;&#x73B0;&#x5728;&#x7684;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x5176;&#x5B9E;&#x662F;&#x6709;&#x72B6;&#x6001;&#x7684;<br>&#x5728;&#x6CA1;&#x6709;&#x72B6;&#x6001;&#x7684;http&#x534F;&#x8BAE;&#x4E0B;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x4E5F;&#x4E00;&#x5B9A;&#x4F1A;&#x4FDD;&#x7559;&#x4F60;&#x6BCF;&#x6B21;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x5BF9;&#x6570;&#x636E;&#x7684;&#x4FEE;&#x6539;&#xFF0C;&#x4F46;&#x8FD9;&#x8DDF;&#x4FDD;&#x7559;&#x6BCF;&#x6B21;&#x8BBF;&#x95EE;&#x7684;&#x6570;&#x636E;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x4FDD;&#x7559;&#x7684;&#x53EA;&#x662F;&#x4F1A;&#x8BDD;&#x4EA7;&#x751F;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x800C;&#x6CA1;&#x6709;&#x4FDD;&#x7559;&#x4F1A;&#x8BDD;<br>&#x8BE6;&#x7EC6;&#x53C2;&#x8003; HTTP&#x662F;&#x4E00;&#x4E2A;&#x65E0;&#x72B6;&#x6001;&#x7684;&#x534F;&#x8BAE;&#x3002;&#x8FD9;&#x53E5;&#x8BDD;&#x91CC;&#x7684;&#x65E0;&#x72B6;&#x6001;&#x662F;&#x4EC0;&#x4E48;&#x610F;&#x601D;&#xFF1F;</p>
+<p>3&#x3001;http-cache&#xFF1A;&#x5C31;&#x662F; http &#x7F13;&#x5B58;&#x54AF;</p>
+<p>&#x9996;&#x5148;&#x5F97;&#x660E;&#x786E; http &#x7F13;&#x5B58;&#x7684;&#x597D;&#x5904;</p>
+<p>&#x51CF;&#x5C11;&#x4E86;&#x5197;&#x4F59;&#x7684;&#x6570;&#x636E;&#x4F20;&#x8F93;&#xFF0C;&#x51CF;&#x5C11;&#x7F51;&#x8D39;<br>&#x51CF;&#x5C11;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x538B;&#x529B;<br>Web &#x7F13;&#x5B58;&#x80FD;&#x591F;&#x51CF;&#x5C11;&#x5EF6;&#x8FDF;&#x4E0E;&#x7F51;&#x7EDC;&#x963B;&#x585E;&#xFF0C;&#x8FDB;&#x800C;&#x51CF;&#x5C11;&#x663E;&#x793A;&#x67D0;&#x4E2A;&#x8D44;&#x6E90;&#x6240;&#x7528;&#x7684;&#x65F6;&#x95F4;<br>&#x52A0;&#x5FEB;&#x5BA2;&#x6237;&#x7AEF;&#x52A0;&#x8F7D;&#x7F51;&#x9875;&#x7684;&#x901F;&#x5EA6;<br>&#x5E38;&#x89C1; http &#x7F13;&#x5B58;&#x7684;&#x7C7B;&#x578B;</p>
+<p>&#x79C1;&#x6709;&#x7F13;&#x5B58;&#xFF08;&#x4E00;&#x822C;&#x4E3A;&#x672C;&#x5730;&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;&#xFF09;<br>&#x4EE3;&#x7406;&#x7F13;&#x5B58;<br>&#x7136;&#x540E;&#x8C08;&#x8C08;&#x672C;&#x5730;&#x7F13;&#x5B58;</p>
+<p>&#x672C;&#x5730;&#x7F13;&#x5B58;&#x662F;&#x6307;&#x6D4F;&#x89C8;&#x5668;&#x8BF7;&#x6C42;&#x8D44;&#x6E90;&#x65F6;&#x547D;&#x4E2D;&#x4E86;&#x6D4F;&#x89C8;&#x5668;&#x672C;&#x5730;&#x7684;&#x7F13;&#x5B58;&#x8D44;&#x6E90;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x5E76;&#x4E0D;&#x4F1A;&#x53D1;&#x9001;&#x771F;&#x6B63;&#x7684;&#x8BF7;&#x6C42;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x4E86;&#x3002;&#x5B83;&#x7684;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x662F;&#xFF1A;</p>
+<p>&#x7B2C;&#x4E00;&#x6B21;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x65F6;&#xFF0C;&#x6B64;&#x65F6;&#x6D4F;&#x89C8;&#x5668;&#x8FD8;&#x6CA1;&#x6709;&#x672C;&#x5730;&#x7F13;&#x5B58;&#x526F;&#x672C;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x8D44;&#x6E90;&#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x54CD;&#x5E94;&#x7801;&#x662F;200 OK&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x6536;&#x5230;&#x8D44;&#x6E90;&#x540E;&#xFF0C;&#x628A;&#x8D44;&#x6E90;&#x548C;&#x5BF9;&#x5E94;&#x7684;&#x54CD;&#x5E94;&#x5934;&#x4E00;&#x8D77;&#x7F13;&#x5B58;&#x4E0B;&#x6765;&#x3002;<br>&#x7B2C;&#x4E8C;&#x6B21;&#x6D4F;&#x89C8;&#x5668;&#x51C6;&#x5907;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x65F6;&#x5019;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x5148;&#x68C0;&#x67E5;&#x4E0A;&#x4E00;&#x6B21;&#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE;&#x7684;&#x54CD;&#x5E94;&#x5934;&#x4FE1;&#x606F;&#x4E2D;&#x7684;Cache-Control&#xFF0C;&#x5B83;&#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x503C;&#xFF0C;&#x5355;&#x4F4D;&#x4E3A;&#x79D2;&#xFF0C;&#x8868;&#x793A;&#x8D44;&#x6E90;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x7F13;&#x5B58;&#x7684;&#x6700;&#x5927;&#x6709;&#x6548;&#x671F;&#xFF0C;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x4E3A;&#x7B2C;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x7684;&#x65F6;&#x95F4;&#x51CF;&#x53BB;Cache-Control&#x7684;&#x503C;&#xFF0C;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x8DDF;&#x5F53;&#x524D;&#x7684;&#x8BF7;&#x6C42;&#x65F6;&#x95F4;&#x6BD4;&#x8F83;&#xFF0C;&#x5982;&#x679C;&#x672C;&#x5730;&#x7F13;&#x5B58;&#x8D44;&#x6E90;&#x6CA1;&#x8FC7;&#x671F;&#xFF0C;&#x90A3;&#x4E48;&#x547D;&#x4E2D;&#x7F13;&#x5B58;&#xFF0C;&#x4E0D;&#x518D;&#x8BF7;&#x6C42;&#x670D;&#x52A1;&#x5668;&#x3002;<br>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x547D;&#x4E2D;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x5C31;&#x4F1A;&#x628A;&#x8BF7;&#x6C42;&#x53D1;&#x9001;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x8FDB;&#x5165;&#x7F13;&#x5B58;&#x534F;&#x5546;&#x9636;&#x6BB5;&#x3002;<br>&#x4E0E;&#x672C;&#x5730;&#x7F13;&#x5B58;&#x76F8;&#x5173;&#x7684;&#x5934;&#x6709;&#xFF1A;Cache-Control&#x3001;Expires&#xFF0C;Cache-Control&#x6709;&#x591A;&#x4E2A;&#x53EF;&#x9009;&#x503C;&#x4EE3;&#x8868;&#x4E0D;&#x540C;&#x7684;&#x610F;&#x4E49;&#xFF0C;&#x800C;Expires&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x65E5;&#x671F;&#x683C;&#x5F0F;&#x7684;&#x7EDD;&#x5BF9;&#x503C;&#x3002;</p>
 <p>Cache-Control</p>
-<p>Cache-Control是HTPP缓存策略中最重要的头，它是HTTP/1.1中出现的，它由如下几个值</p>
-<p>no-cache：不使用本地缓存。需要使用缓存协商，先与服务器确认返回的响应是否被更改，如果之前的响应中存在ETag，那么请求的时候会与服务端验证，如果资源未被更改，则可以避免重新下载。<br>no-store：直接禁止游览器缓存数据，每次用户请求该资源，都会向服务器发送一个请求，每次都会下载完整的资源。<br>public：可以被所有的用户缓存，包括终端用户和CDN等中间代理服务器。<br>private：只能被终端用户的浏览器缓存，不允许CDN等中继缓存服务器对其缓存。<br>max-age：从当前请求开始，允许获取的响应被重用的最长时间（秒）。<br>例如：</p>
+<p>Cache-Control&#x662F;HTPP&#x7F13;&#x5B58;&#x7B56;&#x7565;&#x4E2D;&#x6700;&#x91CD;&#x8981;&#x7684;&#x5934;&#xFF0C;&#x5B83;&#x662F;HTTP/1.1&#x4E2D;&#x51FA;&#x73B0;&#x7684;&#xFF0C;&#x5B83;&#x7531;&#x5982;&#x4E0B;&#x51E0;&#x4E2A;&#x503C;</p>
+<p>no-cache&#xFF1A;&#x4E0D;&#x4F7F;&#x7528;&#x672C;&#x5730;&#x7F13;&#x5B58;&#x3002;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7F13;&#x5B58;&#x534F;&#x5546;&#xFF0C;&#x5148;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x786E;&#x8BA4;&#x8FD4;&#x56DE;&#x7684;&#x54CD;&#x5E94;&#x662F;&#x5426;&#x88AB;&#x66F4;&#x6539;&#xFF0C;&#x5982;&#x679C;&#x4E4B;&#x524D;&#x7684;&#x54CD;&#x5E94;&#x4E2D;&#x5B58;&#x5728;ETag&#xFF0C;&#x90A3;&#x4E48;&#x8BF7;&#x6C42;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x4E0E;&#x670D;&#x52A1;&#x7AEF;&#x9A8C;&#x8BC1;&#xFF0C;&#x5982;&#x679C;&#x8D44;&#x6E90;&#x672A;&#x88AB;&#x66F4;&#x6539;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x91CD;&#x65B0;&#x4E0B;&#x8F7D;&#x3002;<br>no-store&#xFF1A;&#x76F4;&#x63A5;&#x7981;&#x6B62;&#x6E38;&#x89C8;&#x5668;&#x7F13;&#x5B58;&#x6570;&#x636E;&#xFF0C;&#x6BCF;&#x6B21;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#x8BE5;&#x8D44;&#x6E90;&#xFF0C;&#x90FD;&#x4F1A;&#x5411;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#xFF0C;&#x6BCF;&#x6B21;&#x90FD;&#x4F1A;&#x4E0B;&#x8F7D;&#x5B8C;&#x6574;&#x7684;&#x8D44;&#x6E90;&#x3002;<br>public&#xFF1A;&#x53EF;&#x4EE5;&#x88AB;&#x6240;&#x6709;&#x7684;&#x7528;&#x6237;&#x7F13;&#x5B58;&#xFF0C;&#x5305;&#x62EC;&#x7EC8;&#x7AEF;&#x7528;&#x6237;&#x548C;CDN&#x7B49;&#x4E2D;&#x95F4;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x3002;<br>private&#xFF1A;&#x53EA;&#x80FD;&#x88AB;&#x7EC8;&#x7AEF;&#x7528;&#x6237;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;CDN&#x7B49;&#x4E2D;&#x7EE7;&#x7F13;&#x5B58;&#x670D;&#x52A1;&#x5668;&#x5BF9;&#x5176;&#x7F13;&#x5B58;&#x3002;<br>max-age&#xFF1A;&#x4ECE;&#x5F53;&#x524D;&#x8BF7;&#x6C42;&#x5F00;&#x59CB;&#xFF0C;&#x5141;&#x8BB8;&#x83B7;&#x53D6;&#x7684;&#x54CD;&#x5E94;&#x88AB;&#x91CD;&#x7528;&#x7684;&#x6700;&#x957F;&#x65F6;&#x95F4;&#xFF08;&#x79D2;&#xFF09;&#x3002;<br>&#x4F8B;&#x5982;&#xFF1A;</p>
 <p>Cache-Control: public, max-age=1000 </p>
-<h1 id="表示资源可以被所有用户以及代理服务器缓存，最长时间为1000秒。"><a href="#表示资源可以被所有用户以及代理服务器缓存，最长时间为1000秒。" class="headerlink" title="表示资源可以被所有用户以及代理服务器缓存，最长时间为1000秒。"></a>表示资源可以被所有用户以及代理服务器缓存，最长时间为1000秒。</h1><p>Expires</p>
-<p>Expires是HTTP/1.0出现的头信息，同样是用于决定本地缓存策略的头，它是一个绝对时间，时间格式是如Mon, 10 Jun 2015 21:31:12 GMT，只要发送请求时间是在Expires之前，那么本地缓存始终有效，否则就会去服务器发送请求获取新的资源。如果同时出现Cache-Control：max-age和Expires，那么max-age优先级更高。他们可以这样组合使用</p>
-<p>Cache-Control: public<br>Expires: Wed, Jan 10 2018 00:27:04 GMT<br>所谓的缓存协商</p>
-<p>当第一次请求时服务器返回的响应头中存在以下情况时</p>
-<p>没有 Cache-Control 和 Expires<br>Cache-Control 和 Expires 过期了<br>Cache-Control 的属性设置为 no-cache 时<br>那么浏览器第二次请求时就会与服务器进行协商，询问浏览器中的缓存资源是不是旧版本，需不需要更新，此时，服务器就会做出判断，如果缓存和服务端资源的最新版本是一致的，那么就无需再次下载该资源，服务端直接返回304 Not Modified 状态码，如果服务器发现浏览器中的缓存已经是旧版本了，那么服务器就会把最新资源的完整内容返回给浏览器，状态码就是200 Ok，那么服务端是根据什么来判断浏览器的缓存是不是最新的呢？其实是根据HTTP的另外两组头信息，分别是：Last-Modified/If-Modified-Since 与 ETag/If-None-Match。</p>
-<p>Last-Modified 与 If-Modified-Since</p>
-<p>浏览器第一次请求资源时，服务器会把资源的最新修改时间Last-Modified:Thu, 29 Dec 2011 18:23:55 GMT放在响应头中返回给浏览器<br>第二次请求时，浏览器就会把上一次服务器返回的修改时间放在请求头If-Modified-Since:Thu, 29 Dec 2011 18:23:55发送给服务器，服务器就会拿这个时间跟服务器上的资源的最新修改时间进行对比<br>如果两者相等或者大于服务器上的最新修改时间，那么表示浏览器的缓存是有效的，此时缓存会命中，服务器就不再返回内容给浏览器了，同时Last-Modified头也不会返回，因为资源没被修改，返回了也没什么意义。如果没命中缓存则最新修改的资源连同Last-Modified头一起返回。</p>
-<p>第一次请求返回的响应头：</p>
-<p>Cache-Control:max-age=3600<br>Expires: Fri, Jan 12 2018 00:27:04 GMT<br>Last-Modified: Wed, Jan 10 2018 00:27:04 GMT<br>第二次请求的请求头信息：</p>
-<p>If-Modified-Since: Wed, Jan 10 2018 00:27:04 GMT<br>这组头信息是基于资源的修改时间来判断资源有没有更新，另一种方式就是根据资源的内容来判断，就是接下来要讨论的 ETag 与 If-None-Match</p>
-<p>ETag与If-None-Match</p>
-<p>ETag/If-None-Match与Last-Modified/If-Modified-Since的流程其实是类似的，唯一的区别是它基于资源的内容的摘要信息（比如MD5 hash）来判断</p>
-<p>浏览器发送第二次请求时，会把第一次的响应头信息ETag的值放在If-None-Match的请求头中发送到服务器，与最新的资源的摘要信息对比，如果相等，取浏览器缓存，否则内容有更新，最新的资源连同最新的摘要信息返回。用ETag的好处是如果因为某种原因到时资源的修改时间没改变，那么用ETag就能区分资源是不是有被更新。</p>
-<p>第一次请求返回的响应头：</p>
-<p>Cache-Control: public, max-age=31536000<br>ETag: “15f0fff99ed5aae4edffdd6496d7131f”<br>第二次请求的请求头信息：</p>
-<p>If-None-Match: “15f0fff99ed5aae4edffdd6496d7131f”<br>4、cookie 和 session</p>
-<p>session： 是一个抽象概念，开发者为了实现中断和继续等操作，将 user agent 和 server 之间一对一的交互，抽象为“会话”，进而衍生出“会话状态”，也就是 session 的概念<br>cookie：它是一个世纪存在的东西，http 协议中定义在 header 中的字段，可以认为是 session 的一种后端无状态实现<br>现在我们常说的 “session”，是为了绕开 cookie 的各种限制，通常借助 cookie 本身和后端存储实现的，一种更高级的会话状态实现</p>
-<p>session 的常见实现要借助cookie来发送 sessionID</p>
-<p>5、安全问题，如 XSS 和 CSRF</p>
-<p>XSS：跨站脚本攻击，是一种网站应用程序的安全漏洞攻击，是代码注入的一种。常见方式是将恶意代码注入合法代码里隐藏起来，再诱发恶意代码，从而进行各种各样的非法活动。<br>防范：记住一点 “所有用户输入都是不可信的”，所以得做输入过滤和转义</p>
-<p>详细点击 <a href="http://www.imooc.com/article/13553" target="_blank" rel="noopener">对于跨站脚本攻击（XSS攻击）的理解和总结</a></p>
-<p>CSRF：跨站请求伪造，也称 XSRF，是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法。与 XSS 相比，XSS利用的是用户对指定网站的信任，CSRF利用的是网站对用户网页浏览器的信任。<br>防范：用户操作验证（验证码），额外验证机制（token使用）等</p>
-<p>详细点击 <a href="http://www.imooc.com/article/13552" target="_blank" rel="noopener">对于跨站伪造请求（CSRF）的理解和总结</a></p>
+<h1 id="&#x8868;&#x793A;&#x8D44;&#x6E90;&#x53EF;&#x4EE5;&#x88AB;&#x6240;&#x6709;&#x7528;&#x6237;&#x4EE5;&#x53CA;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x7F13;&#x5B58;&#xFF0C;&#x6700;&#x957F;&#x65F6;&#x95F4;&#x4E3A;1000&#x79D2;&#x3002;"><a href="#&#x8868;&#x793A;&#x8D44;&#x6E90;&#x53EF;&#x4EE5;&#x88AB;&#x6240;&#x6709;&#x7528;&#x6237;&#x4EE5;&#x53CA;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x7F13;&#x5B58;&#xFF0C;&#x6700;&#x957F;&#x65F6;&#x95F4;&#x4E3A;1000&#x79D2;&#x3002;" class="headerlink" title="&#x8868;&#x793A;&#x8D44;&#x6E90;&#x53EF;&#x4EE5;&#x88AB;&#x6240;&#x6709;&#x7528;&#x6237;&#x4EE5;&#x53CA;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x7F13;&#x5B58;&#xFF0C;&#x6700;&#x957F;&#x65F6;&#x95F4;&#x4E3A;1000&#x79D2;&#x3002;"></a>&#x8868;&#x793A;&#x8D44;&#x6E90;&#x53EF;&#x4EE5;&#x88AB;&#x6240;&#x6709;&#x7528;&#x6237;&#x4EE5;&#x53CA;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x7F13;&#x5B58;&#xFF0C;&#x6700;&#x957F;&#x65F6;&#x95F4;&#x4E3A;1000&#x79D2;&#x3002;</h1><p>Expires</p>
+<p>Expires&#x662F;HTTP/1.0&#x51FA;&#x73B0;&#x7684;&#x5934;&#x4FE1;&#x606F;&#xFF0C;&#x540C;&#x6837;&#x662F;&#x7528;&#x4E8E;&#x51B3;&#x5B9A;&#x672C;&#x5730;&#x7F13;&#x5B58;&#x7B56;&#x7565;&#x7684;&#x5934;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x7EDD;&#x5BF9;&#x65F6;&#x95F4;&#xFF0C;&#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x662F;&#x5982;Mon, 10 Jun 2015 21:31:12 GMT&#xFF0C;&#x53EA;&#x8981;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x65F6;&#x95F4;&#x662F;&#x5728;Expires&#x4E4B;&#x524D;&#xFF0C;&#x90A3;&#x4E48;&#x672C;&#x5730;&#x7F13;&#x5B58;&#x59CB;&#x7EC8;&#x6709;&#x6548;&#xFF0C;&#x5426;&#x5219;&#x5C31;&#x4F1A;&#x53BB;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x83B7;&#x53D6;&#x65B0;&#x7684;&#x8D44;&#x6E90;&#x3002;&#x5982;&#x679C;&#x540C;&#x65F6;&#x51FA;&#x73B0;Cache-Control&#xFF1A;max-age&#x548C;Expires&#xFF0C;&#x90A3;&#x4E48;max-age&#x4F18;&#x5148;&#x7EA7;&#x66F4;&#x9AD8;&#x3002;&#x4ED6;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x7EC4;&#x5408;&#x4F7F;&#x7528;</p>
+<p>Cache-Control: public<br>Expires: Wed, Jan 10 2018 00:27:04 GMT<br>&#x6240;&#x8C13;&#x7684;&#x7F13;&#x5B58;&#x534F;&#x5546;</p>
+<p>&#x5F53;&#x7B2C;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x65F6;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x54CD;&#x5E94;&#x5934;&#x4E2D;&#x5B58;&#x5728;&#x4EE5;&#x4E0B;&#x60C5;&#x51B5;&#x65F6;</p>
+<p>&#x6CA1;&#x6709; Cache-Control &#x548C; Expires<br>Cache-Control &#x548C; Expires &#x8FC7;&#x671F;&#x4E86;<br>Cache-Control &#x7684;&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E3A; no-cache &#x65F6;<br>&#x90A3;&#x4E48;&#x6D4F;&#x89C8;&#x5668;&#x7B2C;&#x4E8C;&#x6B21;&#x8BF7;&#x6C42;&#x65F6;&#x5C31;&#x4F1A;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x534F;&#x5546;&#xFF0C;&#x8BE2;&#x95EE;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684;&#x7F13;&#x5B58;&#x8D44;&#x6E90;&#x662F;&#x4E0D;&#x662F;&#x65E7;&#x7248;&#x672C;&#xFF0C;&#x9700;&#x4E0D;&#x9700;&#x8981;&#x66F4;&#x65B0;&#xFF0C;&#x6B64;&#x65F6;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x5C31;&#x4F1A;&#x505A;&#x51FA;&#x5224;&#x65AD;&#xFF0C;&#x5982;&#x679C;&#x7F13;&#x5B58;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x8D44;&#x6E90;&#x7684;&#x6700;&#x65B0;&#x7248;&#x672C;&#x662F;&#x4E00;&#x81F4;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x65E0;&#x9700;&#x518D;&#x6B21;&#x4E0B;&#x8F7D;&#x8BE5;&#x8D44;&#x6E90;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;304 Not Modified &#x72B6;&#x6001;&#x7801;&#xFF0C;&#x5982;&#x679C;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x73B0;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684;&#x7F13;&#x5B58;&#x5DF2;&#x7ECF;&#x662F;&#x65E7;&#x7248;&#x672C;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x670D;&#x52A1;&#x5668;&#x5C31;&#x4F1A;&#x628A;&#x6700;&#x65B0;&#x8D44;&#x6E90;&#x7684;&#x5B8C;&#x6574;&#x5185;&#x5BB9;&#x8FD4;&#x56DE;&#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x72B6;&#x6001;&#x7801;&#x5C31;&#x662F;200 Ok&#xFF0C;&#x90A3;&#x4E48;&#x670D;&#x52A1;&#x7AEF;&#x662F;&#x6839;&#x636E;&#x4EC0;&#x4E48;&#x6765;&#x5224;&#x65AD;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x7F13;&#x5B58;&#x662F;&#x4E0D;&#x662F;&#x6700;&#x65B0;&#x7684;&#x5462;&#xFF1F;&#x5176;&#x5B9E;&#x662F;&#x6839;&#x636E;HTTP&#x7684;&#x53E6;&#x5916;&#x4E24;&#x7EC4;&#x5934;&#x4FE1;&#x606F;&#xFF0C;&#x5206;&#x522B;&#x662F;&#xFF1A;Last-Modified/If-Modified-Since &#x4E0E; ETag/If-None-Match&#x3002;</p>
+<p>Last-Modified &#x4E0E; If-Modified-Since</p>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x7B2C;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x8D44;&#x6E90;&#x65F6;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x4F1A;&#x628A;&#x8D44;&#x6E90;&#x7684;&#x6700;&#x65B0;&#x4FEE;&#x6539;&#x65F6;&#x95F4;Last-Modified:Thu, 29 Dec 2011 18:23:55 GMT&#x653E;&#x5728;&#x54CD;&#x5E94;&#x5934;&#x4E2D;&#x8FD4;&#x56DE;&#x7ED9;&#x6D4F;&#x89C8;&#x5668;<br>&#x7B2C;&#x4E8C;&#x6B21;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x5C31;&#x4F1A;&#x628A;&#x4E0A;&#x4E00;&#x6B21;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#x653E;&#x5728;&#x8BF7;&#x6C42;&#x5934;If-Modified-Since:Thu, 29 Dec 2011 18:23:55&#x53D1;&#x9001;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x5C31;&#x4F1A;&#x62FF;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x8DDF;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x8D44;&#x6E90;&#x7684;&#x6700;&#x65B0;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#x8FDB;&#x884C;&#x5BF9;&#x6BD4;<br>&#x5982;&#x679C;&#x4E24;&#x8005;&#x76F8;&#x7B49;&#x6216;&#x8005;&#x5927;&#x4E8E;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x6700;&#x65B0;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF0C;&#x90A3;&#x4E48;&#x8868;&#x793A;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x7F13;&#x5B58;&#x662F;&#x6709;&#x6548;&#x7684;&#xFF0C;&#x6B64;&#x65F6;&#x7F13;&#x5B58;&#x4F1A;&#x547D;&#x4E2D;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x5C31;&#x4E0D;&#x518D;&#x8FD4;&#x56DE;&#x5185;&#x5BB9;&#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#x4E86;&#xFF0C;&#x540C;&#x65F6;Last-Modified&#x5934;&#x4E5F;&#x4E0D;&#x4F1A;&#x8FD4;&#x56DE;&#xFF0C;&#x56E0;&#x4E3A;&#x8D44;&#x6E90;&#x6CA1;&#x88AB;&#x4FEE;&#x6539;&#xFF0C;&#x8FD4;&#x56DE;&#x4E86;&#x4E5F;&#x6CA1;&#x4EC0;&#x4E48;&#x610F;&#x4E49;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x547D;&#x4E2D;&#x7F13;&#x5B58;&#x5219;&#x6700;&#x65B0;&#x4FEE;&#x6539;&#x7684;&#x8D44;&#x6E90;&#x8FDE;&#x540C;Last-Modified&#x5934;&#x4E00;&#x8D77;&#x8FD4;&#x56DE;&#x3002;</p>
+<p>&#x7B2C;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x8FD4;&#x56DE;&#x7684;&#x54CD;&#x5E94;&#x5934;&#xFF1A;</p>
+<p>Cache-Control:max-age=3600<br>Expires: Fri, Jan 12 2018 00:27:04 GMT<br>Last-Modified: Wed, Jan 10 2018 00:27:04 GMT<br>&#x7B2C;&#x4E8C;&#x6B21;&#x8BF7;&#x6C42;&#x7684;&#x8BF7;&#x6C42;&#x5934;&#x4FE1;&#x606F;&#xFF1A;</p>
+<p>If-Modified-Since: Wed, Jan 10 2018 00:27:04 GMT<br>&#x8FD9;&#x7EC4;&#x5934;&#x4FE1;&#x606F;&#x662F;&#x57FA;&#x4E8E;&#x8D44;&#x6E90;&#x7684;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#x6765;&#x5224;&#x65AD;&#x8D44;&#x6E90;&#x6709;&#x6CA1;&#x6709;&#x66F4;&#x65B0;&#xFF0C;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x5C31;&#x662F;&#x6839;&#x636E;&#x8D44;&#x6E90;&#x7684;&#x5185;&#x5BB9;&#x6765;&#x5224;&#x65AD;&#xFF0C;&#x5C31;&#x662F;&#x63A5;&#x4E0B;&#x6765;&#x8981;&#x8BA8;&#x8BBA;&#x7684; ETag &#x4E0E; If-None-Match</p>
+<p>ETag&#x4E0E;If-None-Match</p>
+<p>ETag/If-None-Match&#x4E0E;Last-Modified/If-Modified-Since&#x7684;&#x6D41;&#x7A0B;&#x5176;&#x5B9E;&#x662F;&#x7C7B;&#x4F3C;&#x7684;&#xFF0C;&#x552F;&#x4E00;&#x7684;&#x533A;&#x522B;&#x662F;&#x5B83;&#x57FA;&#x4E8E;&#x8D44;&#x6E90;&#x7684;&#x5185;&#x5BB9;&#x7684;&#x6458;&#x8981;&#x4FE1;&#x606F;&#xFF08;&#x6BD4;&#x5982;MD5 hash&#xFF09;&#x6765;&#x5224;&#x65AD;</p>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x9001;&#x7B2C;&#x4E8C;&#x6B21;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x4F1A;&#x628A;&#x7B2C;&#x4E00;&#x6B21;&#x7684;&#x54CD;&#x5E94;&#x5934;&#x4FE1;&#x606F;ETag&#x7684;&#x503C;&#x653E;&#x5728;If-None-Match&#x7684;&#x8BF7;&#x6C42;&#x5934;&#x4E2D;&#x53D1;&#x9001;&#x5230;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4E0E;&#x6700;&#x65B0;&#x7684;&#x8D44;&#x6E90;&#x7684;&#x6458;&#x8981;&#x4FE1;&#x606F;&#x5BF9;&#x6BD4;&#xFF0C;&#x5982;&#x679C;&#x76F8;&#x7B49;&#xFF0C;&#x53D6;&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;&#xFF0C;&#x5426;&#x5219;&#x5185;&#x5BB9;&#x6709;&#x66F4;&#x65B0;&#xFF0C;&#x6700;&#x65B0;&#x7684;&#x8D44;&#x6E90;&#x8FDE;&#x540C;&#x6700;&#x65B0;&#x7684;&#x6458;&#x8981;&#x4FE1;&#x606F;&#x8FD4;&#x56DE;&#x3002;&#x7528;ETag&#x7684;&#x597D;&#x5904;&#x662F;&#x5982;&#x679C;&#x56E0;&#x4E3A;&#x67D0;&#x79CD;&#x539F;&#x56E0;&#x5230;&#x65F6;&#x8D44;&#x6E90;&#x7684;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#x6CA1;&#x6539;&#x53D8;&#xFF0C;&#x90A3;&#x4E48;&#x7528;ETag&#x5C31;&#x80FD;&#x533A;&#x5206;&#x8D44;&#x6E90;&#x662F;&#x4E0D;&#x662F;&#x6709;&#x88AB;&#x66F4;&#x65B0;&#x3002;</p>
+<p>&#x7B2C;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x8FD4;&#x56DE;&#x7684;&#x54CD;&#x5E94;&#x5934;&#xFF1A;</p>
+<p>Cache-Control: public, max-age=31536000<br>ETag: &#x201C;15f0fff99ed5aae4edffdd6496d7131f&#x201D;<br>&#x7B2C;&#x4E8C;&#x6B21;&#x8BF7;&#x6C42;&#x7684;&#x8BF7;&#x6C42;&#x5934;&#x4FE1;&#x606F;&#xFF1A;</p>
+<p>If-None-Match: &#x201C;15f0fff99ed5aae4edffdd6496d7131f&#x201D;<br>4&#x3001;cookie &#x548C; session</p>
+<p>session&#xFF1A; &#x662F;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x6982;&#x5FF5;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x4E2D;&#x65AD;&#x548C;&#x7EE7;&#x7EED;&#x7B49;&#x64CD;&#x4F5C;&#xFF0C;&#x5C06; user agent &#x548C; server &#x4E4B;&#x95F4;&#x4E00;&#x5BF9;&#x4E00;&#x7684;&#x4EA4;&#x4E92;&#xFF0C;&#x62BD;&#x8C61;&#x4E3A;&#x201C;&#x4F1A;&#x8BDD;&#x201D;&#xFF0C;&#x8FDB;&#x800C;&#x884D;&#x751F;&#x51FA;&#x201C;&#x4F1A;&#x8BDD;&#x72B6;&#x6001;&#x201D;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; session &#x7684;&#x6982;&#x5FF5;<br>cookie&#xFF1A;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x4E16;&#x7EAA;&#x5B58;&#x5728;&#x7684;&#x4E1C;&#x897F;&#xFF0C;http &#x534F;&#x8BAE;&#x4E2D;&#x5B9A;&#x4E49;&#x5728; header &#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F; session &#x7684;&#x4E00;&#x79CD;&#x540E;&#x7AEF;&#x65E0;&#x72B6;&#x6001;&#x5B9E;&#x73B0;<br>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5E38;&#x8BF4;&#x7684; &#x201C;session&#x201D;&#xFF0C;&#x662F;&#x4E3A;&#x4E86;&#x7ED5;&#x5F00; cookie &#x7684;&#x5404;&#x79CD;&#x9650;&#x5236;&#xFF0C;&#x901A;&#x5E38;&#x501F;&#x52A9; cookie &#x672C;&#x8EAB;&#x548C;&#x540E;&#x7AEF;&#x5B58;&#x50A8;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x4E00;&#x79CD;&#x66F4;&#x9AD8;&#x7EA7;&#x7684;&#x4F1A;&#x8BDD;&#x72B6;&#x6001;&#x5B9E;&#x73B0;</p>
+<p>session &#x7684;&#x5E38;&#x89C1;&#x5B9E;&#x73B0;&#x8981;&#x501F;&#x52A9;cookie&#x6765;&#x53D1;&#x9001; sessionID</p>
+<p>5&#x3001;&#x5B89;&#x5168;&#x95EE;&#x9898;&#xFF0C;&#x5982; XSS &#x548C; CSRF</p>
+<p>XSS&#xFF1A;&#x8DE8;&#x7AD9;&#x811A;&#x672C;&#x653B;&#x51FB;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x7F51;&#x7AD9;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5B89;&#x5168;&#x6F0F;&#x6D1E;&#x653B;&#x51FB;&#xFF0C;&#x662F;&#x4EE3;&#x7801;&#x6CE8;&#x5165;&#x7684;&#x4E00;&#x79CD;&#x3002;&#x5E38;&#x89C1;&#x65B9;&#x5F0F;&#x662F;&#x5C06;&#x6076;&#x610F;&#x4EE3;&#x7801;&#x6CE8;&#x5165;&#x5408;&#x6CD5;&#x4EE3;&#x7801;&#x91CC;&#x9690;&#x85CF;&#x8D77;&#x6765;&#xFF0C;&#x518D;&#x8BF1;&#x53D1;&#x6076;&#x610F;&#x4EE3;&#x7801;&#xFF0C;&#x4ECE;&#x800C;&#x8FDB;&#x884C;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x975E;&#x6CD5;&#x6D3B;&#x52A8;&#x3002;<br>&#x9632;&#x8303;&#xFF1A;&#x8BB0;&#x4F4F;&#x4E00;&#x70B9; &#x201C;&#x6240;&#x6709;&#x7528;&#x6237;&#x8F93;&#x5165;&#x90FD;&#x662F;&#x4E0D;&#x53EF;&#x4FE1;&#x7684;&#x201D;&#xFF0C;&#x6240;&#x4EE5;&#x5F97;&#x505A;&#x8F93;&#x5165;&#x8FC7;&#x6EE4;&#x548C;&#x8F6C;&#x4E49;</p>
+<p>&#x8BE6;&#x7EC6;&#x70B9;&#x51FB; <a href="http://www.imooc.com/article/13553" target="_blank" rel="noopener">&#x5BF9;&#x4E8E;&#x8DE8;&#x7AD9;&#x811A;&#x672C;&#x653B;&#x51FB;&#xFF08;XSS&#x653B;&#x51FB;&#xFF09;&#x7684;&#x7406;&#x89E3;&#x548C;&#x603B;&#x7ED3;</a></p>
+<p>CSRF&#xFF1A;&#x8DE8;&#x7AD9;&#x8BF7;&#x6C42;&#x4F2A;&#x9020;&#xFF0C;&#x4E5F;&#x79F0; XSRF&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x631F;&#x5236;&#x7528;&#x6237;&#x5728;&#x5F53;&#x524D;&#x5DF2;&#x767B;&#x5F55;&#x7684;Web&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0A;&#x6267;&#x884C;&#x975E;&#x672C;&#x610F;&#x7684;&#x64CD;&#x4F5C;&#x7684;&#x653B;&#x51FB;&#x65B9;&#x6CD5;&#x3002;&#x4E0E; XSS &#x76F8;&#x6BD4;&#xFF0C;XSS&#x5229;&#x7528;&#x7684;&#x662F;&#x7528;&#x6237;&#x5BF9;&#x6307;&#x5B9A;&#x7F51;&#x7AD9;&#x7684;&#x4FE1;&#x4EFB;&#xFF0C;CSRF&#x5229;&#x7528;&#x7684;&#x662F;&#x7F51;&#x7AD9;&#x5BF9;&#x7528;&#x6237;&#x7F51;&#x9875;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x4FE1;&#x4EFB;&#x3002;<br>&#x9632;&#x8303;&#xFF1A;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x9A8C;&#x8BC1;&#xFF08;&#x9A8C;&#x8BC1;&#x7801;&#xFF09;&#xFF0C;&#x989D;&#x5916;&#x9A8C;&#x8BC1;&#x673A;&#x5236;&#xFF08;token&#x4F7F;&#x7528;&#xFF09;&#x7B49;</p>
+<p>&#x8BE6;&#x7EC6;&#x70B9;&#x51FB; <a href="http://www.imooc.com/article/13552" target="_blank" rel="noopener">&#x5BF9;&#x4E8E;&#x8DE8;&#x7AD9;&#x4F2A;&#x9020;&#x8BF7;&#x6C42;&#xFF08;CSRF&#xFF09;&#x7684;&#x7406;&#x89E3;&#x548C;&#x603B;&#x7ED3;</a></p>
 
-        </div>
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2018-01-15T10:06:00.000Z" itemprop="datePublished">2018-01-15</time>
+
+    </span>
+    <span class="post-description-item">
         
-          
-
-
-  <section class='meta' id="footer-meta">
-    <hr>
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-03T11:52:29+08:00">
-  <a class='notlink'>
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 3, 2019</p>
-  </a>
+    </span>
 </div>
 
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://generaltune.github.io/blog/2018/01/15/hello-world/&title=前端流行框架和缓存运用 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://generaltune.github.io/blog/2018/01/15/hello-world/&title=前端流行框架和缓存运用 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://generaltune.github.io/blog/2018/01/15/hello-world/&title=前端流行框架和缓存运用 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </section>
-
-
-        
-        
-            <div class="prev-next">
+                </div>
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
-                            <h4>
-                                <a href="/blog/2018/01/19/react-source-tips/" rel="prev" title="react源码分析">
-                                  
-                                      react源码分析
-                                  
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
                 
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/blog/2018/01/13/shell-command/" rel="prev" title="shell编程笔记">
-                                    
-                                        shell编程笔记
-                                    
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+
+                <a href="/blog/2018/01/19/react-source-tips/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    react源码分析
+                    
+
+                </a>
+
                 
             </div>
-        
-      </section>
-    </article>
-  
+            <div class="column nav-right">
+                
 
-  
-    <!-- 显示推荐文章和评论 -->
-
-
-
-  
-
-
-  
-
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: '前端流行框架和缓存运用',
-      tools: true
-    }
-  </script>
-
+                <a href="/blog/2018/01/13/shell-command/" class="ui tiny button">
+                    
+                    shell编程笔记
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
 
 </div>
-<aside class='l_side'>
-  
-    
-    
-      
-        
-          
-          
-            <section class='widget author'>
-  <div class='content pure'>
-    
-      <div class='avatar'>
-        <img class='avatar' src='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png'/>
-      </div>
-    
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/blog/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:generaltune@126.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/generaltune"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
+                
+            </div>
 
-          
-        
-      
-        
-          
-          
             
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
-  
-    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
-  
-</header>
+            <div class="three wide computer three wide tablet column">
 
-    <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#框架相关"><span class="toc-text">框架相关</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#表示资源可以被所有用户以及代理服务器缓存，最长时间为1000秒。"><span class="toc-text">表示资源可以被所有用户以及代理服务器缓存，最长时间为1000秒。</span></a>
-    </div>
-  </section>
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#框架相关"><span>框架相关</span></a></li></ol><li><a href="#表示资源可以被所有用户以及代理服务器缓存，最长时间为1000秒。"><span>表示资源可以被所有用户以及代理服务器缓存，最长时间为1000秒。</span></a>
+                </li></div>
 
-
-          
-        
-      
-        
-          
-          
-            <section class='widget grid'>
-  
-<header class='pure'>
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="grid navgation">
-      
-        <li><a class="flat-box" title="/blog/" href="/blog/"
-          
-          
-          id="blog">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          近期文章
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/blog/archives/" href="/blog/blog/archives/"
-          
-            rel="nofollow"
-          
-          
-          id="blogblogarchives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/projects/" href="/blog/projects/"
-          
-          
-          id="blogprojects">
-          
-            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
-          
-          开源项目
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/friends/" href="/blog/friends/"
-          
-            rel="nofollow"
-          
-          
-          id="blogfriends">
-          
-            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
-          
-          我的友链
-        </a></li>
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
-          
-            rel="nofollow"
-          
-          
-          id="https:xaoxuu.comwikimaterial-x">
-          
-            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
-          
-          主题文档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/about/" href="/blog/about/"
-          
-            rel="nofollow"
-          
-          
-          id="blogabout">
-          
-            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
-          
-          关于小站
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-          
-        
-      
-        
-          
-          
+            </div>
             
 
-          
-        
-      
-        
-          
-          
-            
-  <section class='widget tagcloud'>
-    
-<header class='pure'>
-  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/blog/blog/tags/"
-    title="blog/tags/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      <a href="/blog/tags/日志-感悟-生活/" style="font-size: 14px; color: #999">日志  感悟 生活</a>
+        </div>
     </div>
-  </section>
-
-
-          
-        
-      
-        
-          
-          
-            
-
-
-  <section class='widget music'>
-    
-<header class='pure'>
-  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
-  
-    <a class="rightBtn"
-    
-      rel="external nofollow noopener noreferrer"
-    
-    
-      target="_blank"
-    
-    href="https://music.163.com/#/user/home?id=63035382"
-    title="https://music.163.com/#/user/home?id=63035382">
-    <i class="far fa-heart fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
-  <div class="aplayer"
-    data-theme="#1BCDFC"
-    
-    
-    data-mode="circulation"
-    data-server="netease"
-    data-type="playlist"
-    data-id="2615636388"
-    data-volume="0.7">
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
-
-
-    </div>
-  </section>
-
-
-          
-        
-      
-    
-
-  
-</aside>
-
-<footer id="footer" class="clearfix">
-  
-  
-    <div class="social-wrapper">
-      
-        
-          <a href="/blog/atom.xml"
-            class="social fas fa-rss flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="mailto:generaltune@126.com"
-            class="social fas fa-envelope flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://github.com/generaltune"
-            class="social fab fa-github flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://music.163.com/#/user/home?id=63035382"
-            class="social fas fa-headphones-alt flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-    </div>
-  
-  <br>
-  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
-  <div>
-    Use
-    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
-    
-      , 
-      total visits
-      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      times
-    
-    . 
-  </div>
-</footer>
-<script>setLoadingBarProgress(80);</script>
 
 
-      <script>setLoadingBarProgress(60);</script>
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2019 <a href="/">GENERALTUNE</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a href="http://hexo.io/" target="_blank">Hexo</a>.
     </div>
-    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+</div>
 
-  <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
-    var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/blog/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
-  </script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      Waves.attach('.flat-btn', ['waves-button']);
-      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-      Waves.attach('.flat-box', ['waves-block']);
-      Waves.attach('.float-box', ['waves-block', 'waves-float']);
-      Waves.attach('.waves-image');
-      Waves.init();
-    });
-  </script>
-
-
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+    </div>
 
 
 
 
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/blog/js/semantic-ui-algolia.js"></script>
+
+<script src="/blog/js/aloha-events.js"></script>
 
 
 
-
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
-
-
-
-
-<!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  let COPY_SUCCESS = "Copied";
-  let COPY_FAILURE = "Copy failed";
-  /*页面载入完成后，创建复制按钮*/
-  !function (e, t, a) {
-    /* code */
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-
-      clipboard.on('success', function(e) {
-        //您可以加入成功提示
-        console.info('Action:', e.action);
-        console.info('Text:', e.text);
-        console.info('Trigger:', e.trigger);
-        success_prompt(COPY_SUCCESS);
-        e.clearSelection();
-      });
-      clipboard.on('error', function(e) {
-        //您可以加入失败提示
-        console.error('Action:', e.action);
-        console.error('Trigger:', e.trigger);
-        fail_prompt(COPY_FAILURE);
-      });
-    }
-    initCopyCode();
-
-  }(window, document);
-
-  /**
-   * 弹出式提示框，默认1.5秒自动消失
-   * @param message 提示信息
-   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
-   * @param time 消失时间
-   */
-  var prompt = function (message, style, time)
-  {
-      style = (style === undefined) ? 'alert-success' : style;
-      time = (time === undefined) ? 1500 : time*1000;
-      $('<div>')
-          .appendTo('body')
-          .addClass('alert ' + style)
-          .html(message)
-          .show()
-          .delay(time)
-          .fadeOut();
-  };
-
-  // 成功提示
-  var success_prompt = function(message, time)
-  {
-      prompt(message, 'alert-success', time);
-  };
-
-  // 失败提示
-  var fail_prompt = function(message, time)
-  {
-      prompt(message, 'alert-danger', time);
-  };
-
-  // 提醒
-  var warning_prompt = function(message, time)
-  {
-      prompt(message, 'alert-warning', time);
-  };
-
-  // 信息提示
-  var info_prompt = function(message, time)
-  {
-      prompt(message, 'alert-info', time);
-  };
-
-</script>
-
-
-<!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
-      $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
-  });
-</script>
-
-
-
-
-
-  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>

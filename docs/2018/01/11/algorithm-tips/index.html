@@ -1,1064 +1,277 @@
+
+
 <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <title>算法笔记 | generaltune&#39;s blog</title>
-  
-  
+<html lang>
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content>
+    <title>算法笔记 | generaltune&#39;s blog</title>
 
-  
+    <!-- Open Graph -->
+    <meta name="description" content="&amp;#x6982;&amp;#x8FF0;&amp;#xFF1A;R-B Tree&amp;#xFF0C;&amp;#x53C8;&amp;#x79F0;&amp;#x4E3A;&amp;#x201C;&amp;#x7EA2;&amp;#x9ED1;&amp;#x6811;&amp;#x201D;&amp;#x7EA2;&amp;#x9ED1;&amp;#x6811;&amp;#x7684;&amp;#x7279;&amp;#x6027;:&amp;#xFF08;1&amp;#xFF09;&amp;#x6BCF;&amp;#x4E2A;&amp;#x8282;&amp;#x70B">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法笔记">
+<meta property="og:url" content="https://generaltune.github.io/blog/2018/01/11/algorithm-tips/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="&amp;#x6982;&amp;#x8FF0;&amp;#xFF1A;R-B Tree&amp;#xFF0C;&amp;#x53C8;&amp;#x79F0;&amp;#x4E3A;&amp;#x201C;&amp;#x7EA2;&amp;#x9ED1;&amp;#x6811;&amp;#x201D;&amp;#x7EA2;&amp;#x9ED1;&amp;#x6811;&amp;#x7684;&amp;#x7279;&amp;#x6027;:&amp;#xFF08;1&amp;#xFF09;&amp;#x6BCF;&amp;#x4E2A;&amp;#x8282;&amp;#x70B">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T03:52:29.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法笔记">
+<meta name="twitter:description" content="&amp;#x6982;&amp;#x8FF0;&amp;#xFF1A;R-B Tree&amp;#xFF0C;&amp;#x53C8;&amp;#x79F0;&amp;#x4E3A;&amp;#x201C;&amp;#x7EA2;&amp;#x9ED1;&amp;#x6811;&amp;#x201D;&amp;#x7EA2;&amp;#x9ED1;&amp;#x6811;&amp;#x7684;&amp;#x7279;&amp;#x6027;:&amp;#xFF08;1&amp;#xFF09;&amp;#x6BCF;&amp;#x4E2A;&amp;#x8282;&amp;#x70B">
 
-  <meta name="HandheldFriendly" content="True">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
-  
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "GENERALTUNE",
+  "url": "https://generaltune.github.io/blog"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
 
-  <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
-  
+    
 
-  
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/blog/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
-  
-
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width=num+"%";
-    }
-  </script>
-
-  
-  
 </head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
 
-<body>
-  
-  
-  <div class="cover-wrapper">
-    <cover class='cover post half'>
-      
-        
-  <h1 class='title'>Material X</h1>
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>generaltune&#39;s blog</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/blog/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">GENERALTUNE</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class='menu navgation'>
-  <ul class='h-list'>
-    
-      
-        <li>
-          <a class="nav home" href="/blog/"
-            
-            
-            id="blog">
-            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/projects/"
-            
-            
-            id="blogprojects">
-            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/friends/"
-            
-              rel="nofollow"
-            
-            
-            id="blogfriends">
-            <i class='fas fa-link fa-fw'></i>&nbsp;友链
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/about/"
-            
-              rel="nofollow"
-            
-            
-            id="blogabout">
-            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
-          </a>
-        </li>
-      
-    
-  </ul>
 </div>
 
-      
-    </cover>
-    <header class="l_header pure">
-  <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
-  </div>
-
-	<div class='wrapper'>
-		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href='/blog/' >
-        
-          generaltune's blog
-        
-      </a>
-			<div class='menu navgation'>
-				<ul class='h-list'>
-          
-  					
-  						<li>
-								<a class="nav flat-box" href="/blog/"
-                  
-                  
-                  id="blog">
-									<i class='fas fa-grin fa-fw'></i>&nbsp;示例
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/categories/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogcategories">
-									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/tags/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogtags">
-									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/archives/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogarchives">
-									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
-								</a>
-							</li>
-      			
-      		
-				</ul>
-			</div>
-
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="Search" />
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
-			<ul class='switcher h-list'>
-				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
-				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
-			</ul>
-		</div>
-
-		<div class='nav-sub container container--flex'>
-			<a class="logo flat-box"></a>
-			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
-        
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
-        
-			</ul>
-		</div>
-	</div>
-</header>
-	<aside class="menu-phone">
-    <header>
-		<nav class="menu navgation">
-      <ul>
-        
-          
-            <li>
-							<a class="nav flat-box" href="/blog/"
-                
-                
-                id="blog">
-								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/blog/archives/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogblogarchives">
-								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/projects/"
-                
-                
-                id="blogprojects">
-								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/friends/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogfriends">
-								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
-                
-                  rel="nofollow"
-                
-                
-                id="https:xaoxuu.comwikimaterial-x">
-								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/about/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogabout">
-								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
-							</a>
-            </li>
-          
-       
-      </ul>
-		</nav>
-    </header>
-	</aside>
-<script>setLoadingBarProgress(40);</script>
-
-  </div>
-
-
-  <div class="l_body">
-    <div class='body-wrapper'>
-      <div class='l_main'>
-  
-
-  
-    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-      
-
-
-  <section class='meta'>
     
     
-    <div class="meta" id="header-meta">
-      
-        
-  
-    <h1 class="title">
-      <a href="/blog/2018/01/11/algorithm-tips/">
-        算法笔记
-      </a>
-    </h1>
-  
 
+    
 
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://generaltune.github.io/blog" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>GENERALTUNE</p>
+    
+    <a href="/index.html" class="item">
+        <i class="home icon"></i>
+        HOME
     </a>
-  </div>
 
+    
 
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2018-01-11</p>
-  </a>
+    
 </div>
 
-          
-        
-          
-            
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-algorithm-tips" class="ui main container article-type-post">
 
-          
-        
-          
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
+    
 
+    <div class="ui divided grid">
 
-          
-        
-          
-            
+        <div class="two column row" id="article-content">
 
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    算法笔记
+</h1>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          <h2 id="概述：R-B-Tree，又称为“红黑树”"><a href="#概述：R-B-Tree，又称为“红黑树”" class="headerlink" title="概述：R-B Tree，又称为“红黑树”"></a>概述：R-B Tree，又称为“红黑树”</h2><p>红黑树的特性:<br>（1）每个节点或者是黑色，或者是红色。<br>（2）根节点是黑色。<br>（3）每个叶子节点（NIL）是黑色。 [注意：这里叶子节点，是指为空(NIL或NULL)的叶子节点！]<br>（4）如果一个节点是红色的，则它的子节点必须是黑色的。<br>（5）从一个节点到该节点的子孙节点的所有路径上包含相同数目的黑节点。</p>
-<p>红黑树的操作：　左旋、右旋、添加、删除</p>
-<p>红黑树的应用比较广泛，主要是用它来存储有序的数据，它的时间复杂度是O(lgn)，效率非常之高。<br>例如，Java集合中的TreeSet和TreeMap，C++ STL中的set、map，以及Linux虚拟内存的管理，都是通过红黑树去实现的。</p>
-<p>红黑树的时间复杂度为: O(lgn)<br>下面通过“数学归纳法”对红黑树的时间复杂度进行证明。</p>
-<p><a href="http://blog.csdn.net/carson_ho/article/details/79373134" target="_blank" rel="noopener">java 中hashmap的实现</a></p>
-<h2 id="加密算法-DES-AES-RSA-MD5-SHA1-Base64-比较和项目应用"><a href="#加密算法-DES-AES-RSA-MD5-SHA1-Base64-比较和项目应用" class="headerlink" title="加密算法(DES,AES,RSA,MD5,SHA1,Base64)比较和项目应用"></a>加密算法(DES,AES,RSA,MD5,SHA1,Base64)比较和项目应用</h2><p>加密技术通常分为两大类:”对称式”和”非对称式”。</p>
-<h3 id="对称性加密算法：对称式加密就是加密和解密使用同一个密钥。信息接收双方都需事先知道密匙和加解密算法且其密匙是相同的，之后便是对数据进行加解密了。对称加密算法用来对敏感数据等信息进行加密。"><a href="#对称性加密算法：对称式加密就是加密和解密使用同一个密钥。信息接收双方都需事先知道密匙和加解密算法且其密匙是相同的，之后便是对数据进行加解密了。对称加密算法用来对敏感数据等信息进行加密。" class="headerlink" title="对称性加密算法：对称式加密就是加密和解密使用同一个密钥。信息接收双方都需事先知道密匙和加解密算法且其密匙是相同的，之后便是对数据进行加解密了。对称加密算法用来对敏感数据等信息进行加密。"></a>对称性加密算法：对称式加密就是加密和解密使用同一个密钥。信息接收双方都需事先知道密匙和加解密算法且其密匙是相同的，之后便是对数据进行加解密了。对称加密算法用来对敏感数据等信息进行加密。</h3><h3 id="非对称算法：非对称式加密就是加密和解密所使用的不是同一个密钥，通常有两个密钥，称为”公钥”和”私钥”，它们两个必需配对使用，否则不能打开加密文件。发送双方A-B事先均生成一堆密匙，然后A将自己的公有密匙发送给B，B将自己的公有密匙发送给A，如果A要给B发送消-息，则先需要用B的公有密匙进行消息加密，然后发送给B端，此时B端再用自己的私有密匙进行消息解密，B向A发送消息时为同样的道理。"><a href="#非对称算法：非对称式加密就是加密和解密所使用的不是同一个密钥，通常有两个密钥，称为”公钥”和”私钥”，它们两个必需配对使用，否则不能打开加密文件。发送双方A-B事先均生成一堆密匙，然后A将自己的公有密匙发送给B，B将自己的公有密匙发送给A，如果A要给B发送消-息，则先需要用B的公有密匙进行消息加密，然后发送给B端，此时B端再用自己的私有密匙进行消息解密，B向A发送消息时为同样的道理。" class="headerlink" title="非对称算法：非对称式加密就是加密和解密所使用的不是同一个密钥，通常有两个密钥，称为”公钥”和”私钥”，它们两个必需配对使用，否则不能打开加密文件。发送双方A,B事先均生成一堆密匙，然后A将自己的公有密匙发送给B，B将自己的公有密匙发送给A，如果A要给B发送消 息，则先需要用B的公有密匙进行消息加密，然后发送给B端，此时B端再用自己的私有密匙进行消息解密，B向A发送消息时为同样的道理。"></a>非对称算法：非对称式加密就是加密和解密所使用的不是同一个密钥，通常有两个密钥，称为”公钥”和”私钥”，它们两个必需配对使用，否则不能打开加密文件。发送双方A,B事先均生成一堆密匙，然后A将自己的公有密匙发送给B，B将自己的公有密匙发送给A，如果A要给B发送消 息，则先需要用B的公有密匙进行消息加密，然后发送给B端，此时B端再用自己的私有密匙进行消息解密，B向A发送消息时为同样的道理。</h3><h3 id="散列算法：散列算法，又称哈希函数，是一种单向加密算法。在信息安全技术中，经常需要验证消息的完整性，散列-Hash-函数提供了这一服务，它对不同长度的输入消息，产生固定长度的输出。这个固定长度的输出称为原输入消息的”散列”或”消息摘要”-Message-digest-。散列算法不算加密算法，因为其结果是不可逆的，既然是不可逆的，那么当然不是用来加密的，而是签名。"><a href="#散列算法：散列算法，又称哈希函数，是一种单向加密算法。在信息安全技术中，经常需要验证消息的完整性，散列-Hash-函数提供了这一服务，它对不同长度的输入消息，产生固定长度的输出。这个固定长度的输出称为原输入消息的”散列”或”消息摘要”-Message-digest-。散列算法不算加密算法，因为其结果是不可逆的，既然是不可逆的，那么当然不是用来加密的，而是签名。" class="headerlink" title="散列算法：散列算法，又称哈希函数，是一种单向加密算法。在信息安全技术中，经常需要验证消息的完整性，散列(Hash)函数提供了这一服务，它对不同长度的输入消息，产生固定长度的输出。这个固定长度的输出称为原输入消息的”散列”或”消息摘要”(Message digest)。散列算法不算加密算法，因为其结果是不可逆的，既然是不可逆的，那么当然不是用来加密的，而是签名。"></a>散列算法：散列算法，又称哈希函数，是一种单向加密算法。在信息安全技术中，经常需要验证消息的完整性，散列(Hash)函数提供了这一服务，它对不同长度的输入消息，产生固定长度的输出。这个固定长度的输出称为原输入消息的”散列”或”消息摘要”(Message digest)。散列算法不算加密算法，因为其结果是不可逆的，既然是不可逆的，那么当然不是用来加密的，而是签名。</h3><h3 id="对称性加密算法有：AES、DES、3DES"><a href="#对称性加密算法有：AES、DES、3DES" class="headerlink" title="对称性加密算法有：AES、DES、3DES"></a>对称性加密算法有：AES、DES、3DES</h3><p>用途：对称加密算法用来对敏感数据等信息进行加密</p>
-<p>DES（Data Encryption Standard）：数据加密标准，速度较快，适用于加密大量数据的场合。</p>
-<p>3DES（Triple DES）：是基于DES，对一块数据用三个不同的密钥进行三次加密，强度更高。</p>
-<p>AES（Advanced Encryption Standard）：高级加密标准，是下一代的加密算法标准，速度快，安全级别高；AES是一个使用128为分组块的分组加密算法，分组块和128、192或256位的密钥一起作为输入，对4×4的字节数组上进行操作。众所周之AES是种十分高效的算法，尤其在8位架构中，这源于它面向字节的设计。AES 适用于8位的小型单片机或者普通的32位微处理器,并且适合用专门的硬件实现，硬件实现能够使其吞吐量（每秒可以到达的加密/解密bit数）达到十亿量级。同样，其也适用于RFID系统。</p>
-<h3 id="非对称性算法有：RSA、DSA、ECC"><a href="#非对称性算法有：RSA、DSA、ECC" class="headerlink" title="非对称性算法有：RSA、DSA、ECC"></a>非对称性算法有：RSA、DSA、ECC</h3><p>RSA：由 RSA 公司发明，是一个支持变长密钥的公共密钥算法，需要加密的文件块的长度也是可变的。RSA在国外早已进入实用阶段，已研制出多种高速的RSA的专用芯片。</p>
-<p>DSA（Digital Signature Algorithm）：数字签名算法，是一种标准的 DSS（数字签名标准），严格来说不算加密算法。</p>
-<p>ECC（Elliptic Curves Cryptography）：椭圆曲线密码编码学。ECC和RSA相比，具有多方面的绝对优势，主要有：抗攻击性强。相同的密钥长度，其抗攻击性要强很多倍。计算量小，处理速度快。ECC总的速度比RSA、DSA要快得多。存储空间占用小。ECC的密钥尺寸和系统参数与RSA、DSA相比要小得多，意味着它所占的存贮空间要小得多。这对于加密算法在IC卡上的应用具有特别重要的意义。带宽要求低。当对长消息进行加解密时，三类密码系统有相同的带宽要求，但应用于短消息时ECC带宽要求却低得多。带宽要求低使ECC在无线网络领域具有广泛的应用前景。</p>
-<p>散列算法（签名算法）有：MD5、SHA1、HMAC<br>用途：主要用于验证，防止信息被修。具体用途如：文件校验、数字签名、鉴权协议</p>
-<p>MD5：MD5是一种不可逆的加密算法，目前是最牢靠的加密算法之一，尚没有能够逆运算的程序被开发出来，它对应任何字符串都可以加密成一段唯一的固定长度的代码。</p>
-<p>SHA1：是由NISTNSA设计为同DSA一起使用的，它对长度小于264的输入，产生长度为160bit的散列值，因此抗穷举(brute-force)性更好。SHA-1设计时基于和MD4相同原理,并且模仿了该算法。SHA-1是由美国标准技术局（NIST）颁布的国家标准，是一种应用最为广泛的Hash函数算法，也是目前最先进的加密技术，被政府部门和私营业主用来处理敏感的信息。而SHA-1基于MD5，MD5又基于MD4。</p>
-<p>HMAC：是密钥相关的哈希运算消息认证码（Hash-based Message Authentication Code）,HMAC运算利用哈希算法，以一个密钥和一个消息为输入，生成一个消息摘要作为输出。也就是说HMAC是需要一个密钥的。所以，HMAC_SHA1也是需要一个密钥的，而SHA1不需要。</p>
-<h3 id="其他常用算法："><a href="#其他常用算法：" class="headerlink" title="其他常用算法："></a>其他常用算法：</h3><p>Base64：其实不是安全领域下的加密解密算法，只能算是一个编码算法，通常用于把二进制数据编码为可写的字符形式的数据，对数据内容进行编码来适合传输(可以对img图像编码用于传输)。这是一种可逆的编码方式。编码后的数据是一个字符串，其中包含的字符为：A-Z、a-z、0-9、+、/，共64个字符(26 + 26 + 10 + 1 + 1 = 64，其实是65个字符，“=”是填充字符。Base64要求把每三个8Bit的字节转换为四个6Bit的字节(3<em>8 = 4</em>6 = 24)，然后把6Bit再添两位高位0，组成四个8Bit的字节，也就是说，转换后的字符串理论上将要比原来的长1/3。原文的字节最后不够3个的地方用0来补足，转换时Base64编码用=号来代替。这就是为什么有些Base64编码会以一个或两个等号结束的原因，中间是不可能出现等号的，但等号最多只有两个。其实不用”=”也不耽误解码，之所以用”=”，可能是考虑到多段编码后的Base64字符串拼起来也不会引起混淆。)<br>Base64编码是从二进制到字符的过程，像一些中文字符用不同的编码转为二进制时，产生的二进制是不一样的，所以最终产生的Base64字符也不一样。例如”上网”对应utf-8格式的Base64编码是”5LiK572R”， 对应GB2312格式的Base64编码是”yc/N+A==”。<br>标准的Base64并不适合直接放在URL里传输，因为URL编码器会把标准Base64中的“/”和“+”字符变为形如“%XX”的形式，而这些“%”号在存入数据库时还需要再进行转换，因为ANSI SQL中已将“%”号用作通配符。<br>为解决此问题，可采用一种用于URL的改进Base64编码，它不在末尾填充’=’号，并将标准Base64中的“+”和“/”分别改成了“-”和“<em>”，这样就免去了在URL编解码和数据库存储时所要作的转换，避免了编码信息长度在此过程中的增加，并统一了数据库、表单等处对象标识符的格式。<br>另有一种用于正则表达式的改进Base64变种，它将“+”和“/”改成了“!”和“-”，因为“+”，“*”以及前面在IRCu中用到的“[”和“]”在正则表达式中都可能具有特殊含义。<br>此外还有一些变种，它们将“+/”改为“</em>-”或“.<em>”（用作编程语言中的标识符名称）或“.-”（用于XML中的Nmtoken）甚至“</em>:”（用于XML中的Name）。</p>
-<p>​HTTPS（全称：Hypertext Transfer Protocol over Secure Socket Layer），是以安全为目标的HTTP通道，简单讲是HTTP的安全版。即HTTP下加入SSL层，HTTPS的安全基础是SSL(SSL使用40 位关键字作为RC4流加密算法，这对于商业信息的加密是合适的。)，因此加密的详细内容就需要SSL。https:URL表明它使用了HTTP，但HTTPS存在不同于HTTP的默认端口及一个加密/身份验证层（在HTTP与TCP之间），提供了身份验证与加密通讯方法，现在它被广泛用于万维网上安全敏感的通讯，例如交易支付方面。它的主要作用可以分为两种：一种是建立一个信息安全通道，来保证数据传输的安全；另一种就是确认网站的真实性。</p>
-<h2 id="项目应用总结："><a href="#项目应用总结：" class="headerlink" title="项目应用总结："></a>项目应用总结：</h2><ol>
-<li>加密算法是可逆的，用来对敏感数据进行保护。散列算法(签名算法、哈希算法)是不可逆的，主要用于身份验证。</li>
-<li>对称加密算法使用同一个密匙加密和解密，速度快，适合给大量数据加密。对称加密客户端和服务端使用同一个密匙，存在被抓包破解的风险。</li>
-<li>非对称加密算法使用公钥加密，私钥解密，私钥签名，公钥验签。安全性比对称加密高，但速度较慢。非对称加密使用两个密匙，服务端和客户端密匙不一样，私钥放在服务端，黑客一般是拿不到的，安全性高。</li>
-<li>Base64不是安全领域下的加解密算法，只是一个编码算法，通常用于把二进制数据编码为可写的字符形式的数据，特别适合在http，mime协议下的网络快速传输数据。UTF-8和GBK中文的Base64编码结果是不同的。采用Base64编码不仅比较简短，同时也具有不可读性，即所编码的数据不会被人用肉眼所直接看到，但这种方式很初级，很简单。Base64可以对图片文件进行编码传输。</li>
-<li>https协议广泛用于万维网上安全敏感的通讯，例如交易支付方面。它的主要作用可以分为两种：一种是建立一个信息安全通道，来保证数据传输的安全；另一种就是确认网站的真实性。</li>
-<li>大量数据加密建议采用对称加密算法，提高加解密速度；小量的机密数据，可以采用非对称加密算法。在实际的操作过程中，我们通常采用的方式是：采用非对称加密算法管理对称算法的密钥，然后用对称加密算法加密数据，这样我们就集成了两类加密算法的优点，既实现了加密速度快的优点，又实现了安全方便管理密钥的优点。</li>
-<li>MD5标准密钥长度128位（128位是指二进制位。二进制太长，所以一般都改写成16进制，每一位16进制数可以代替4位二进制数，所以128位二进制数写成16进制就变成了128/4=32位。16位加密就是从32位MD5散列中把中间16位提取出来）；sha1标准密钥长度160位(比MD5摘要长32位)，Base64转换后的字符串理论上将要比原来的长1/3。</li>
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h2 id="&#x6982;&#x8FF0;&#xFF1A;R-B-Tree&#xFF0C;&#x53C8;&#x79F0;&#x4E3A;&#x201C;&#x7EA2;&#x9ED1;&#x6811;&#x201D;"><a href="#&#x6982;&#x8FF0;&#xFF1A;R-B-Tree&#xFF0C;&#x53C8;&#x79F0;&#x4E3A;&#x201C;&#x7EA2;&#x9ED1;&#x6811;&#x201D;" class="headerlink" title="&#x6982;&#x8FF0;&#xFF1A;R-B Tree&#xFF0C;&#x53C8;&#x79F0;&#x4E3A;&#x201C;&#x7EA2;&#x9ED1;&#x6811;&#x201D;"></a>&#x6982;&#x8FF0;&#xFF1A;R-B Tree&#xFF0C;&#x53C8;&#x79F0;&#x4E3A;&#x201C;&#x7EA2;&#x9ED1;&#x6811;&#x201D;</h2><p>&#x7EA2;&#x9ED1;&#x6811;&#x7684;&#x7279;&#x6027;:<br>&#xFF08;1&#xFF09;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x6216;&#x8005;&#x662F;&#x9ED1;&#x8272;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x7EA2;&#x8272;&#x3002;<br>&#xFF08;2&#xFF09;&#x6839;&#x8282;&#x70B9;&#x662F;&#x9ED1;&#x8272;&#x3002;<br>&#xFF08;3&#xFF09;&#x6BCF;&#x4E2A;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#xFF08;NIL&#xFF09;&#x662F;&#x9ED1;&#x8272;&#x3002; [&#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x91CC;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x662F;&#x6307;&#x4E3A;&#x7A7A;(NIL&#x6216;NULL)&#x7684;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#xFF01;]<br>&#xFF08;4&#xFF09;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x662F;&#x7EA2;&#x8272;&#x7684;&#xFF0C;&#x5219;&#x5B83;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x5FC5;&#x987B;&#x662F;&#x9ED1;&#x8272;&#x7684;&#x3002;<br>&#xFF08;5&#xFF09;&#x4ECE;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5230;&#x8BE5;&#x8282;&#x70B9;&#x7684;&#x5B50;&#x5B59;&#x8282;&#x70B9;&#x7684;&#x6240;&#x6709;&#x8DEF;&#x5F84;&#x4E0A;&#x5305;&#x542B;&#x76F8;&#x540C;&#x6570;&#x76EE;&#x7684;&#x9ED1;&#x8282;&#x70B9;&#x3002;</p>
+<p>&#x7EA2;&#x9ED1;&#x6811;&#x7684;&#x64CD;&#x4F5C;&#xFF1A;&#x3000;&#x5DE6;&#x65CB;&#x3001;&#x53F3;&#x65CB;&#x3001;&#x6DFB;&#x52A0;&#x3001;&#x5220;&#x9664;</p>
+<p>&#x7EA2;&#x9ED1;&#x6811;&#x7684;&#x5E94;&#x7528;&#x6BD4;&#x8F83;&#x5E7F;&#x6CDB;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x7528;&#x5B83;&#x6765;&#x5B58;&#x50A8;&#x6709;&#x5E8F;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5B83;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F;O(lgn)&#xFF0C;&#x6548;&#x7387;&#x975E;&#x5E38;&#x4E4B;&#x9AD8;&#x3002;<br>&#x4F8B;&#x5982;&#xFF0C;Java&#x96C6;&#x5408;&#x4E2D;&#x7684;TreeSet&#x548C;TreeMap&#xFF0C;C++ STL&#x4E2D;&#x7684;set&#x3001;map&#xFF0C;&#x4EE5;&#x53CA;Linux&#x865A;&#x62DF;&#x5185;&#x5B58;&#x7684;&#x7BA1;&#x7406;&#xFF0C;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x7EA2;&#x9ED1;&#x6811;&#x53BB;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<p>&#x7EA2;&#x9ED1;&#x6811;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;: O(lgn)<br>&#x4E0B;&#x9762;&#x901A;&#x8FC7;&#x201C;&#x6570;&#x5B66;&#x5F52;&#x7EB3;&#x6CD5;&#x201D;&#x5BF9;&#x7EA2;&#x9ED1;&#x6811;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x8FDB;&#x884C;&#x8BC1;&#x660E;&#x3002;</p>
+<p><a href="http://blog.csdn.net/carson_ho/article/details/79373134" target="_blank" rel="noopener">java &#x4E2D;hashmap&#x7684;&#x5B9E;&#x73B0;</a></p>
+<h2 id="&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;-DES-AES-RSA-MD5-SHA1-Base64-&#x6BD4;&#x8F83;&#x548C;&#x9879;&#x76EE;&#x5E94;&#x7528;"><a href="#&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;-DES-AES-RSA-MD5-SHA1-Base64-&#x6BD4;&#x8F83;&#x548C;&#x9879;&#x76EE;&#x5E94;&#x7528;" class="headerlink" title="&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;(DES,AES,RSA,MD5,SHA1,Base64)&#x6BD4;&#x8F83;&#x548C;&#x9879;&#x76EE;&#x5E94;&#x7528;"></a>&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;(DES,AES,RSA,MD5,SHA1,Base64)&#x6BD4;&#x8F83;&#x548C;&#x9879;&#x76EE;&#x5E94;&#x7528;</h2><p>&#x52A0;&#x5BC6;&#x6280;&#x672F;&#x901A;&#x5E38;&#x5206;&#x4E3A;&#x4E24;&#x5927;&#x7C7B;:&#x201D;&#x5BF9;&#x79F0;&#x5F0F;&#x201D;&#x548C;&#x201D;&#x975E;&#x5BF9;&#x79F0;&#x5F0F;&#x201D;&#x3002;</p>
+<h3 id="&#x5BF9;&#x79F0;&#x6027;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#xFF1A;&#x5BF9;&#x79F0;&#x5F0F;&#x52A0;&#x5BC6;&#x5C31;&#x662F;&#x52A0;&#x5BC6;&#x548C;&#x89E3;&#x5BC6;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x5BC6;&#x94A5;&#x3002;&#x4FE1;&#x606F;&#x63A5;&#x6536;&#x53CC;&#x65B9;&#x90FD;&#x9700;&#x4E8B;&#x5148;&#x77E5;&#x9053;&#x5BC6;&#x5319;&#x548C;&#x52A0;&#x89E3;&#x5BC6;&#x7B97;&#x6CD5;&#x4E14;&#x5176;&#x5BC6;&#x5319;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF0C;&#x4E4B;&#x540E;&#x4FBF;&#x662F;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x52A0;&#x89E3;&#x5BC6;&#x4E86;&#x3002;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x7528;&#x6765;&#x5BF9;&#x654F;&#x611F;&#x6570;&#x636E;&#x7B49;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x3002;"><a href="#&#x5BF9;&#x79F0;&#x6027;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#xFF1A;&#x5BF9;&#x79F0;&#x5F0F;&#x52A0;&#x5BC6;&#x5C31;&#x662F;&#x52A0;&#x5BC6;&#x548C;&#x89E3;&#x5BC6;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x5BC6;&#x94A5;&#x3002;&#x4FE1;&#x606F;&#x63A5;&#x6536;&#x53CC;&#x65B9;&#x90FD;&#x9700;&#x4E8B;&#x5148;&#x77E5;&#x9053;&#x5BC6;&#x5319;&#x548C;&#x52A0;&#x89E3;&#x5BC6;&#x7B97;&#x6CD5;&#x4E14;&#x5176;&#x5BC6;&#x5319;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF0C;&#x4E4B;&#x540E;&#x4FBF;&#x662F;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x52A0;&#x89E3;&#x5BC6;&#x4E86;&#x3002;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x7528;&#x6765;&#x5BF9;&#x654F;&#x611F;&#x6570;&#x636E;&#x7B49;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x3002;" class="headerlink" title="&#x5BF9;&#x79F0;&#x6027;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#xFF1A;&#x5BF9;&#x79F0;&#x5F0F;&#x52A0;&#x5BC6;&#x5C31;&#x662F;&#x52A0;&#x5BC6;&#x548C;&#x89E3;&#x5BC6;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x5BC6;&#x94A5;&#x3002;&#x4FE1;&#x606F;&#x63A5;&#x6536;&#x53CC;&#x65B9;&#x90FD;&#x9700;&#x4E8B;&#x5148;&#x77E5;&#x9053;&#x5BC6;&#x5319;&#x548C;&#x52A0;&#x89E3;&#x5BC6;&#x7B97;&#x6CD5;&#x4E14;&#x5176;&#x5BC6;&#x5319;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF0C;&#x4E4B;&#x540E;&#x4FBF;&#x662F;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x52A0;&#x89E3;&#x5BC6;&#x4E86;&#x3002;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x7528;&#x6765;&#x5BF9;&#x654F;&#x611F;&#x6570;&#x636E;&#x7B49;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x3002;"></a>&#x5BF9;&#x79F0;&#x6027;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#xFF1A;&#x5BF9;&#x79F0;&#x5F0F;&#x52A0;&#x5BC6;&#x5C31;&#x662F;&#x52A0;&#x5BC6;&#x548C;&#x89E3;&#x5BC6;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x5BC6;&#x94A5;&#x3002;&#x4FE1;&#x606F;&#x63A5;&#x6536;&#x53CC;&#x65B9;&#x90FD;&#x9700;&#x4E8B;&#x5148;&#x77E5;&#x9053;&#x5BC6;&#x5319;&#x548C;&#x52A0;&#x89E3;&#x5BC6;&#x7B97;&#x6CD5;&#x4E14;&#x5176;&#x5BC6;&#x5319;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF0C;&#x4E4B;&#x540E;&#x4FBF;&#x662F;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x52A0;&#x89E3;&#x5BC6;&#x4E86;&#x3002;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x7528;&#x6765;&#x5BF9;&#x654F;&#x611F;&#x6570;&#x636E;&#x7B49;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x3002;</h3><h3 id="&#x975E;&#x5BF9;&#x79F0;&#x7B97;&#x6CD5;&#xFF1A;&#x975E;&#x5BF9;&#x79F0;&#x5F0F;&#x52A0;&#x5BC6;&#x5C31;&#x662F;&#x52A0;&#x5BC6;&#x548C;&#x89E3;&#x5BC6;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x4E0D;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x5BC6;&#x94A5;&#xFF0C;&#x901A;&#x5E38;&#x6709;&#x4E24;&#x4E2A;&#x5BC6;&#x94A5;&#xFF0C;&#x79F0;&#x4E3A;&#x201D;&#x516C;&#x94A5;&#x201D;&#x548C;&#x201D;&#x79C1;&#x94A5;&#x201D;&#xFF0C;&#x5B83;&#x4EEC;&#x4E24;&#x4E2A;&#x5FC5;&#x9700;&#x914D;&#x5BF9;&#x4F7F;&#x7528;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x80FD;&#x6253;&#x5F00;&#x52A0;&#x5BC6;&#x6587;&#x4EF6;&#x3002;&#x53D1;&#x9001;&#x53CC;&#x65B9;A-B&#x4E8B;&#x5148;&#x5747;&#x751F;&#x6210;&#x4E00;&#x5806;&#x5BC6;&#x5319;&#xFF0C;&#x7136;&#x540E;A&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x516C;&#x6709;&#x5BC6;&#x5319;&#x53D1;&#x9001;&#x7ED9;B&#xFF0C;B&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x516C;&#x6709;&#x5BC6;&#x5319;&#x53D1;&#x9001;&#x7ED9;A&#xFF0C;&#x5982;&#x679C;A&#x8981;&#x7ED9;B&#x53D1;&#x9001;&#x6D88;-&#x606F;&#xFF0C;&#x5219;&#x5148;&#x9700;&#x8981;&#x7528;B&#x7684;&#x516C;&#x6709;&#x5BC6;&#x5319;&#x8FDB;&#x884C;&#x6D88;&#x606F;&#x52A0;&#x5BC6;&#xFF0C;&#x7136;&#x540E;&#x53D1;&#x9001;&#x7ED9;B&#x7AEF;&#xFF0C;&#x6B64;&#x65F6;B&#x7AEF;&#x518D;&#x7528;&#x81EA;&#x5DF1;&#x7684;&#x79C1;&#x6709;&#x5BC6;&#x5319;&#x8FDB;&#x884C;&#x6D88;&#x606F;&#x89E3;&#x5BC6;&#xFF0C;B&#x5411;A&#x53D1;&#x9001;&#x6D88;&#x606F;&#x65F6;&#x4E3A;&#x540C;&#x6837;&#x7684;&#x9053;&#x7406;&#x3002;"><a href="#&#x975E;&#x5BF9;&#x79F0;&#x7B97;&#x6CD5;&#xFF1A;&#x975E;&#x5BF9;&#x79F0;&#x5F0F;&#x52A0;&#x5BC6;&#x5C31;&#x662F;&#x52A0;&#x5BC6;&#x548C;&#x89E3;&#x5BC6;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x4E0D;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x5BC6;&#x94A5;&#xFF0C;&#x901A;&#x5E38;&#x6709;&#x4E24;&#x4E2A;&#x5BC6;&#x94A5;&#xFF0C;&#x79F0;&#x4E3A;&#x201D;&#x516C;&#x94A5;&#x201D;&#x548C;&#x201D;&#x79C1;&#x94A5;&#x201D;&#xFF0C;&#x5B83;&#x4EEC;&#x4E24;&#x4E2A;&#x5FC5;&#x9700;&#x914D;&#x5BF9;&#x4F7F;&#x7528;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x80FD;&#x6253;&#x5F00;&#x52A0;&#x5BC6;&#x6587;&#x4EF6;&#x3002;&#x53D1;&#x9001;&#x53CC;&#x65B9;A-B&#x4E8B;&#x5148;&#x5747;&#x751F;&#x6210;&#x4E00;&#x5806;&#x5BC6;&#x5319;&#xFF0C;&#x7136;&#x540E;A&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x516C;&#x6709;&#x5BC6;&#x5319;&#x53D1;&#x9001;&#x7ED9;B&#xFF0C;B&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x516C;&#x6709;&#x5BC6;&#x5319;&#x53D1;&#x9001;&#x7ED9;A&#xFF0C;&#x5982;&#x679C;A&#x8981;&#x7ED9;B&#x53D1;&#x9001;&#x6D88;-&#x606F;&#xFF0C;&#x5219;&#x5148;&#x9700;&#x8981;&#x7528;B&#x7684;&#x516C;&#x6709;&#x5BC6;&#x5319;&#x8FDB;&#x884C;&#x6D88;&#x606F;&#x52A0;&#x5BC6;&#xFF0C;&#x7136;&#x540E;&#x53D1;&#x9001;&#x7ED9;B&#x7AEF;&#xFF0C;&#x6B64;&#x65F6;B&#x7AEF;&#x518D;&#x7528;&#x81EA;&#x5DF1;&#x7684;&#x79C1;&#x6709;&#x5BC6;&#x5319;&#x8FDB;&#x884C;&#x6D88;&#x606F;&#x89E3;&#x5BC6;&#xFF0C;B&#x5411;A&#x53D1;&#x9001;&#x6D88;&#x606F;&#x65F6;&#x4E3A;&#x540C;&#x6837;&#x7684;&#x9053;&#x7406;&#x3002;" class="headerlink" title="&#x975E;&#x5BF9;&#x79F0;&#x7B97;&#x6CD5;&#xFF1A;&#x975E;&#x5BF9;&#x79F0;&#x5F0F;&#x52A0;&#x5BC6;&#x5C31;&#x662F;&#x52A0;&#x5BC6;&#x548C;&#x89E3;&#x5BC6;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x4E0D;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x5BC6;&#x94A5;&#xFF0C;&#x901A;&#x5E38;&#x6709;&#x4E24;&#x4E2A;&#x5BC6;&#x94A5;&#xFF0C;&#x79F0;&#x4E3A;&#x201D;&#x516C;&#x94A5;&#x201D;&#x548C;&#x201D;&#x79C1;&#x94A5;&#x201D;&#xFF0C;&#x5B83;&#x4EEC;&#x4E24;&#x4E2A;&#x5FC5;&#x9700;&#x914D;&#x5BF9;&#x4F7F;&#x7528;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x80FD;&#x6253;&#x5F00;&#x52A0;&#x5BC6;&#x6587;&#x4EF6;&#x3002;&#x53D1;&#x9001;&#x53CC;&#x65B9;A,B&#x4E8B;&#x5148;&#x5747;&#x751F;&#x6210;&#x4E00;&#x5806;&#x5BC6;&#x5319;&#xFF0C;&#x7136;&#x540E;A&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x516C;&#x6709;&#x5BC6;&#x5319;&#x53D1;&#x9001;&#x7ED9;B&#xFF0C;B&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x516C;&#x6709;&#x5BC6;&#x5319;&#x53D1;&#x9001;&#x7ED9;A&#xFF0C;&#x5982;&#x679C;A&#x8981;&#x7ED9;B&#x53D1;&#x9001;&#x6D88; &#x606F;&#xFF0C;&#x5219;&#x5148;&#x9700;&#x8981;&#x7528;B&#x7684;&#x516C;&#x6709;&#x5BC6;&#x5319;&#x8FDB;&#x884C;&#x6D88;&#x606F;&#x52A0;&#x5BC6;&#xFF0C;&#x7136;&#x540E;&#x53D1;&#x9001;&#x7ED9;B&#x7AEF;&#xFF0C;&#x6B64;&#x65F6;B&#x7AEF;&#x518D;&#x7528;&#x81EA;&#x5DF1;&#x7684;&#x79C1;&#x6709;&#x5BC6;&#x5319;&#x8FDB;&#x884C;&#x6D88;&#x606F;&#x89E3;&#x5BC6;&#xFF0C;B&#x5411;A&#x53D1;&#x9001;&#x6D88;&#x606F;&#x65F6;&#x4E3A;&#x540C;&#x6837;&#x7684;&#x9053;&#x7406;&#x3002;"></a>&#x975E;&#x5BF9;&#x79F0;&#x7B97;&#x6CD5;&#xFF1A;&#x975E;&#x5BF9;&#x79F0;&#x5F0F;&#x52A0;&#x5BC6;&#x5C31;&#x662F;&#x52A0;&#x5BC6;&#x548C;&#x89E3;&#x5BC6;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x4E0D;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x5BC6;&#x94A5;&#xFF0C;&#x901A;&#x5E38;&#x6709;&#x4E24;&#x4E2A;&#x5BC6;&#x94A5;&#xFF0C;&#x79F0;&#x4E3A;&#x201D;&#x516C;&#x94A5;&#x201D;&#x548C;&#x201D;&#x79C1;&#x94A5;&#x201D;&#xFF0C;&#x5B83;&#x4EEC;&#x4E24;&#x4E2A;&#x5FC5;&#x9700;&#x914D;&#x5BF9;&#x4F7F;&#x7528;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x80FD;&#x6253;&#x5F00;&#x52A0;&#x5BC6;&#x6587;&#x4EF6;&#x3002;&#x53D1;&#x9001;&#x53CC;&#x65B9;A,B&#x4E8B;&#x5148;&#x5747;&#x751F;&#x6210;&#x4E00;&#x5806;&#x5BC6;&#x5319;&#xFF0C;&#x7136;&#x540E;A&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x516C;&#x6709;&#x5BC6;&#x5319;&#x53D1;&#x9001;&#x7ED9;B&#xFF0C;B&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x516C;&#x6709;&#x5BC6;&#x5319;&#x53D1;&#x9001;&#x7ED9;A&#xFF0C;&#x5982;&#x679C;A&#x8981;&#x7ED9;B&#x53D1;&#x9001;&#x6D88; &#x606F;&#xFF0C;&#x5219;&#x5148;&#x9700;&#x8981;&#x7528;B&#x7684;&#x516C;&#x6709;&#x5BC6;&#x5319;&#x8FDB;&#x884C;&#x6D88;&#x606F;&#x52A0;&#x5BC6;&#xFF0C;&#x7136;&#x540E;&#x53D1;&#x9001;&#x7ED9;B&#x7AEF;&#xFF0C;&#x6B64;&#x65F6;B&#x7AEF;&#x518D;&#x7528;&#x81EA;&#x5DF1;&#x7684;&#x79C1;&#x6709;&#x5BC6;&#x5319;&#x8FDB;&#x884C;&#x6D88;&#x606F;&#x89E3;&#x5BC6;&#xFF0C;B&#x5411;A&#x53D1;&#x9001;&#x6D88;&#x606F;&#x65F6;&#x4E3A;&#x540C;&#x6837;&#x7684;&#x9053;&#x7406;&#x3002;</h3><h3 id="&#x6563;&#x5217;&#x7B97;&#x6CD5;&#xFF1A;&#x6563;&#x5217;&#x7B97;&#x6CD5;&#xFF0C;&#x53C8;&#x79F0;&#x54C8;&#x5E0C;&#x51FD;&#x6570;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x5355;&#x5411;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x3002;&#x5728;&#x4FE1;&#x606F;&#x5B89;&#x5168;&#x6280;&#x672F;&#x4E2D;&#xFF0C;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x9A8C;&#x8BC1;&#x6D88;&#x606F;&#x7684;&#x5B8C;&#x6574;&#x6027;&#xFF0C;&#x6563;&#x5217;-Hash-&#x51FD;&#x6570;&#x63D0;&#x4F9B;&#x4E86;&#x8FD9;&#x4E00;&#x670D;&#x52A1;&#xFF0C;&#x5B83;&#x5BF9;&#x4E0D;&#x540C;&#x957F;&#x5EA6;&#x7684;&#x8F93;&#x5165;&#x6D88;&#x606F;&#xFF0C;&#x4EA7;&#x751F;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x8F93;&#x51FA;&#x3002;&#x8FD9;&#x4E2A;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x8F93;&#x51FA;&#x79F0;&#x4E3A;&#x539F;&#x8F93;&#x5165;&#x6D88;&#x606F;&#x7684;&#x201D;&#x6563;&#x5217;&#x201D;&#x6216;&#x201D;&#x6D88;&#x606F;&#x6458;&#x8981;&#x201D;-Message-digest-&#x3002;&#x6563;&#x5217;&#x7B97;&#x6CD5;&#x4E0D;&#x7B97;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x5176;&#x7ED3;&#x679C;&#x662F;&#x4E0D;&#x53EF;&#x9006;&#x7684;&#xFF0C;&#x65E2;&#x7136;&#x662F;&#x4E0D;&#x53EF;&#x9006;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x5F53;&#x7136;&#x4E0D;&#x662F;&#x7528;&#x6765;&#x52A0;&#x5BC6;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x7B7E;&#x540D;&#x3002;"><a href="#&#x6563;&#x5217;&#x7B97;&#x6CD5;&#xFF1A;&#x6563;&#x5217;&#x7B97;&#x6CD5;&#xFF0C;&#x53C8;&#x79F0;&#x54C8;&#x5E0C;&#x51FD;&#x6570;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x5355;&#x5411;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x3002;&#x5728;&#x4FE1;&#x606F;&#x5B89;&#x5168;&#x6280;&#x672F;&#x4E2D;&#xFF0C;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x9A8C;&#x8BC1;&#x6D88;&#x606F;&#x7684;&#x5B8C;&#x6574;&#x6027;&#xFF0C;&#x6563;&#x5217;-Hash-&#x51FD;&#x6570;&#x63D0;&#x4F9B;&#x4E86;&#x8FD9;&#x4E00;&#x670D;&#x52A1;&#xFF0C;&#x5B83;&#x5BF9;&#x4E0D;&#x540C;&#x957F;&#x5EA6;&#x7684;&#x8F93;&#x5165;&#x6D88;&#x606F;&#xFF0C;&#x4EA7;&#x751F;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x8F93;&#x51FA;&#x3002;&#x8FD9;&#x4E2A;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x8F93;&#x51FA;&#x79F0;&#x4E3A;&#x539F;&#x8F93;&#x5165;&#x6D88;&#x606F;&#x7684;&#x201D;&#x6563;&#x5217;&#x201D;&#x6216;&#x201D;&#x6D88;&#x606F;&#x6458;&#x8981;&#x201D;-Message-digest-&#x3002;&#x6563;&#x5217;&#x7B97;&#x6CD5;&#x4E0D;&#x7B97;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x5176;&#x7ED3;&#x679C;&#x662F;&#x4E0D;&#x53EF;&#x9006;&#x7684;&#xFF0C;&#x65E2;&#x7136;&#x662F;&#x4E0D;&#x53EF;&#x9006;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x5F53;&#x7136;&#x4E0D;&#x662F;&#x7528;&#x6765;&#x52A0;&#x5BC6;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x7B7E;&#x540D;&#x3002;" class="headerlink" title="&#x6563;&#x5217;&#x7B97;&#x6CD5;&#xFF1A;&#x6563;&#x5217;&#x7B97;&#x6CD5;&#xFF0C;&#x53C8;&#x79F0;&#x54C8;&#x5E0C;&#x51FD;&#x6570;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x5355;&#x5411;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x3002;&#x5728;&#x4FE1;&#x606F;&#x5B89;&#x5168;&#x6280;&#x672F;&#x4E2D;&#xFF0C;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x9A8C;&#x8BC1;&#x6D88;&#x606F;&#x7684;&#x5B8C;&#x6574;&#x6027;&#xFF0C;&#x6563;&#x5217;(Hash)&#x51FD;&#x6570;&#x63D0;&#x4F9B;&#x4E86;&#x8FD9;&#x4E00;&#x670D;&#x52A1;&#xFF0C;&#x5B83;&#x5BF9;&#x4E0D;&#x540C;&#x957F;&#x5EA6;&#x7684;&#x8F93;&#x5165;&#x6D88;&#x606F;&#xFF0C;&#x4EA7;&#x751F;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x8F93;&#x51FA;&#x3002;&#x8FD9;&#x4E2A;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x8F93;&#x51FA;&#x79F0;&#x4E3A;&#x539F;&#x8F93;&#x5165;&#x6D88;&#x606F;&#x7684;&#x201D;&#x6563;&#x5217;&#x201D;&#x6216;&#x201D;&#x6D88;&#x606F;&#x6458;&#x8981;&#x201D;(Message digest)&#x3002;&#x6563;&#x5217;&#x7B97;&#x6CD5;&#x4E0D;&#x7B97;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x5176;&#x7ED3;&#x679C;&#x662F;&#x4E0D;&#x53EF;&#x9006;&#x7684;&#xFF0C;&#x65E2;&#x7136;&#x662F;&#x4E0D;&#x53EF;&#x9006;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x5F53;&#x7136;&#x4E0D;&#x662F;&#x7528;&#x6765;&#x52A0;&#x5BC6;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x7B7E;&#x540D;&#x3002;"></a>&#x6563;&#x5217;&#x7B97;&#x6CD5;&#xFF1A;&#x6563;&#x5217;&#x7B97;&#x6CD5;&#xFF0C;&#x53C8;&#x79F0;&#x54C8;&#x5E0C;&#x51FD;&#x6570;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x5355;&#x5411;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x3002;&#x5728;&#x4FE1;&#x606F;&#x5B89;&#x5168;&#x6280;&#x672F;&#x4E2D;&#xFF0C;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x9A8C;&#x8BC1;&#x6D88;&#x606F;&#x7684;&#x5B8C;&#x6574;&#x6027;&#xFF0C;&#x6563;&#x5217;(Hash)&#x51FD;&#x6570;&#x63D0;&#x4F9B;&#x4E86;&#x8FD9;&#x4E00;&#x670D;&#x52A1;&#xFF0C;&#x5B83;&#x5BF9;&#x4E0D;&#x540C;&#x957F;&#x5EA6;&#x7684;&#x8F93;&#x5165;&#x6D88;&#x606F;&#xFF0C;&#x4EA7;&#x751F;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x8F93;&#x51FA;&#x3002;&#x8FD9;&#x4E2A;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x8F93;&#x51FA;&#x79F0;&#x4E3A;&#x539F;&#x8F93;&#x5165;&#x6D88;&#x606F;&#x7684;&#x201D;&#x6563;&#x5217;&#x201D;&#x6216;&#x201D;&#x6D88;&#x606F;&#x6458;&#x8981;&#x201D;(Message digest)&#x3002;&#x6563;&#x5217;&#x7B97;&#x6CD5;&#x4E0D;&#x7B97;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x5176;&#x7ED3;&#x679C;&#x662F;&#x4E0D;&#x53EF;&#x9006;&#x7684;&#xFF0C;&#x65E2;&#x7136;&#x662F;&#x4E0D;&#x53EF;&#x9006;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x5F53;&#x7136;&#x4E0D;&#x662F;&#x7528;&#x6765;&#x52A0;&#x5BC6;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x7B7E;&#x540D;&#x3002;</h3><h3 id="&#x5BF9;&#x79F0;&#x6027;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x6709;&#xFF1A;AES&#x3001;DES&#x3001;3DES"><a href="#&#x5BF9;&#x79F0;&#x6027;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x6709;&#xFF1A;AES&#x3001;DES&#x3001;3DES" class="headerlink" title="&#x5BF9;&#x79F0;&#x6027;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x6709;&#xFF1A;AES&#x3001;DES&#x3001;3DES"></a>&#x5BF9;&#x79F0;&#x6027;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x6709;&#xFF1A;AES&#x3001;DES&#x3001;3DES</h3><p>&#x7528;&#x9014;&#xFF1A;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x7528;&#x6765;&#x5BF9;&#x654F;&#x611F;&#x6570;&#x636E;&#x7B49;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;</p>
+<p>DES&#xFF08;Data Encryption Standard&#xFF09;&#xFF1A;&#x6570;&#x636E;&#x52A0;&#x5BC6;&#x6807;&#x51C6;&#xFF0C;&#x901F;&#x5EA6;&#x8F83;&#x5FEB;&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x52A0;&#x5BC6;&#x5927;&#x91CF;&#x6570;&#x636E;&#x7684;&#x573A;&#x5408;&#x3002;</p>
+<p>3DES&#xFF08;Triple DES&#xFF09;&#xFF1A;&#x662F;&#x57FA;&#x4E8E;DES&#xFF0C;&#x5BF9;&#x4E00;&#x5757;&#x6570;&#x636E;&#x7528;&#x4E09;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x5BC6;&#x94A5;&#x8FDB;&#x884C;&#x4E09;&#x6B21;&#x52A0;&#x5BC6;&#xFF0C;&#x5F3A;&#x5EA6;&#x66F4;&#x9AD8;&#x3002;</p>
+<p>AES&#xFF08;Advanced Encryption Standard&#xFF09;&#xFF1A;&#x9AD8;&#x7EA7;&#x52A0;&#x5BC6;&#x6807;&#x51C6;&#xFF0C;&#x662F;&#x4E0B;&#x4E00;&#x4EE3;&#x7684;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x6807;&#x51C6;&#xFF0C;&#x901F;&#x5EA6;&#x5FEB;&#xFF0C;&#x5B89;&#x5168;&#x7EA7;&#x522B;&#x9AD8;&#xFF1B;AES&#x662F;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;128&#x4E3A;&#x5206;&#x7EC4;&#x5757;&#x7684;&#x5206;&#x7EC4;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#xFF0C;&#x5206;&#x7EC4;&#x5757;&#x548C;128&#x3001;192&#x6216;256&#x4F4D;&#x7684;&#x5BC6;&#x94A5;&#x4E00;&#x8D77;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x5BF9;4&#xD7;4&#x7684;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x4E0A;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;&#x4F17;&#x6240;&#x5468;&#x4E4B;AES&#x662F;&#x79CD;&#x5341;&#x5206;&#x9AD8;&#x6548;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x5C24;&#x5176;&#x5728;8&#x4F4D;&#x67B6;&#x6784;&#x4E2D;&#xFF0C;&#x8FD9;&#x6E90;&#x4E8E;&#x5B83;&#x9762;&#x5411;&#x5B57;&#x8282;&#x7684;&#x8BBE;&#x8BA1;&#x3002;AES &#x9002;&#x7528;&#x4E8E;8&#x4F4D;&#x7684;&#x5C0F;&#x578B;&#x5355;&#x7247;&#x673A;&#x6216;&#x8005;&#x666E;&#x901A;&#x7684;32&#x4F4D;&#x5FAE;&#x5904;&#x7406;&#x5668;,&#x5E76;&#x4E14;&#x9002;&#x5408;&#x7528;&#x4E13;&#x95E8;&#x7684;&#x786C;&#x4EF6;&#x5B9E;&#x73B0;&#xFF0C;&#x786C;&#x4EF6;&#x5B9E;&#x73B0;&#x80FD;&#x591F;&#x4F7F;&#x5176;&#x541E;&#x5410;&#x91CF;&#xFF08;&#x6BCF;&#x79D2;&#x53EF;&#x4EE5;&#x5230;&#x8FBE;&#x7684;&#x52A0;&#x5BC6;/&#x89E3;&#x5BC6;bit&#x6570;&#xFF09;&#x8FBE;&#x5230;&#x5341;&#x4EBF;&#x91CF;&#x7EA7;&#x3002;&#x540C;&#x6837;&#xFF0C;&#x5176;&#x4E5F;&#x9002;&#x7528;&#x4E8E;RFID&#x7CFB;&#x7EDF;&#x3002;</p>
+<h3 id="&#x975E;&#x5BF9;&#x79F0;&#x6027;&#x7B97;&#x6CD5;&#x6709;&#xFF1A;RSA&#x3001;DSA&#x3001;ECC"><a href="#&#x975E;&#x5BF9;&#x79F0;&#x6027;&#x7B97;&#x6CD5;&#x6709;&#xFF1A;RSA&#x3001;DSA&#x3001;ECC" class="headerlink" title="&#x975E;&#x5BF9;&#x79F0;&#x6027;&#x7B97;&#x6CD5;&#x6709;&#xFF1A;RSA&#x3001;DSA&#x3001;ECC"></a>&#x975E;&#x5BF9;&#x79F0;&#x6027;&#x7B97;&#x6CD5;&#x6709;&#xFF1A;RSA&#x3001;DSA&#x3001;ECC</h3><p>RSA&#xFF1A;&#x7531; RSA &#x516C;&#x53F8;&#x53D1;&#x660E;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x652F;&#x6301;&#x53D8;&#x957F;&#x5BC6;&#x94A5;&#x7684;&#x516C;&#x5171;&#x5BC6;&#x94A5;&#x7B97;&#x6CD5;&#xFF0C;&#x9700;&#x8981;&#x52A0;&#x5BC6;&#x7684;&#x6587;&#x4EF6;&#x5757;&#x7684;&#x957F;&#x5EA6;&#x4E5F;&#x662F;&#x53EF;&#x53D8;&#x7684;&#x3002;RSA&#x5728;&#x56FD;&#x5916;&#x65E9;&#x5DF2;&#x8FDB;&#x5165;&#x5B9E;&#x7528;&#x9636;&#x6BB5;&#xFF0C;&#x5DF2;&#x7814;&#x5236;&#x51FA;&#x591A;&#x79CD;&#x9AD8;&#x901F;&#x7684;RSA&#x7684;&#x4E13;&#x7528;&#x82AF;&#x7247;&#x3002;</p>
+<p>DSA&#xFF08;Digital Signature Algorithm&#xFF09;&#xFF1A;&#x6570;&#x5B57;&#x7B7E;&#x540D;&#x7B97;&#x6CD5;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x6807;&#x51C6;&#x7684; DSS&#xFF08;&#x6570;&#x5B57;&#x7B7E;&#x540D;&#x6807;&#x51C6;&#xFF09;&#xFF0C;&#x4E25;&#x683C;&#x6765;&#x8BF4;&#x4E0D;&#x7B97;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x3002;</p>
+<p>ECC&#xFF08;Elliptic Curves Cryptography&#xFF09;&#xFF1A;&#x692D;&#x5706;&#x66F2;&#x7EBF;&#x5BC6;&#x7801;&#x7F16;&#x7801;&#x5B66;&#x3002;ECC&#x548C;RSA&#x76F8;&#x6BD4;&#xFF0C;&#x5177;&#x6709;&#x591A;&#x65B9;&#x9762;&#x7684;&#x7EDD;&#x5BF9;&#x4F18;&#x52BF;&#xFF0C;&#x4E3B;&#x8981;&#x6709;&#xFF1A;&#x6297;&#x653B;&#x51FB;&#x6027;&#x5F3A;&#x3002;&#x76F8;&#x540C;&#x7684;&#x5BC6;&#x94A5;&#x957F;&#x5EA6;&#xFF0C;&#x5176;&#x6297;&#x653B;&#x51FB;&#x6027;&#x8981;&#x5F3A;&#x5F88;&#x591A;&#x500D;&#x3002;&#x8BA1;&#x7B97;&#x91CF;&#x5C0F;&#xFF0C;&#x5904;&#x7406;&#x901F;&#x5EA6;&#x5FEB;&#x3002;ECC&#x603B;&#x7684;&#x901F;&#x5EA6;&#x6BD4;RSA&#x3001;DSA&#x8981;&#x5FEB;&#x5F97;&#x591A;&#x3002;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x5360;&#x7528;&#x5C0F;&#x3002;ECC&#x7684;&#x5BC6;&#x94A5;&#x5C3A;&#x5BF8;&#x548C;&#x7CFB;&#x7EDF;&#x53C2;&#x6570;&#x4E0E;RSA&#x3001;DSA&#x76F8;&#x6BD4;&#x8981;&#x5C0F;&#x5F97;&#x591A;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x5B83;&#x6240;&#x5360;&#x7684;&#x5B58;&#x8D2E;&#x7A7A;&#x95F4;&#x8981;&#x5C0F;&#x5F97;&#x591A;&#x3002;&#x8FD9;&#x5BF9;&#x4E8E;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x5728;IC&#x5361;&#x4E0A;&#x7684;&#x5E94;&#x7528;&#x5177;&#x6709;&#x7279;&#x522B;&#x91CD;&#x8981;&#x7684;&#x610F;&#x4E49;&#x3002;&#x5E26;&#x5BBD;&#x8981;&#x6C42;&#x4F4E;&#x3002;&#x5F53;&#x5BF9;&#x957F;&#x6D88;&#x606F;&#x8FDB;&#x884C;&#x52A0;&#x89E3;&#x5BC6;&#x65F6;&#xFF0C;&#x4E09;&#x7C7B;&#x5BC6;&#x7801;&#x7CFB;&#x7EDF;&#x6709;&#x76F8;&#x540C;&#x7684;&#x5E26;&#x5BBD;&#x8981;&#x6C42;&#xFF0C;&#x4F46;&#x5E94;&#x7528;&#x4E8E;&#x77ED;&#x6D88;&#x606F;&#x65F6;ECC&#x5E26;&#x5BBD;&#x8981;&#x6C42;&#x5374;&#x4F4E;&#x5F97;&#x591A;&#x3002;&#x5E26;&#x5BBD;&#x8981;&#x6C42;&#x4F4E;&#x4F7F;ECC&#x5728;&#x65E0;&#x7EBF;&#x7F51;&#x7EDC;&#x9886;&#x57DF;&#x5177;&#x6709;&#x5E7F;&#x6CDB;&#x7684;&#x5E94;&#x7528;&#x524D;&#x666F;&#x3002;</p>
+<p>&#x6563;&#x5217;&#x7B97;&#x6CD5;&#xFF08;&#x7B7E;&#x540D;&#x7B97;&#x6CD5;&#xFF09;&#x6709;&#xFF1A;MD5&#x3001;SHA1&#x3001;HMAC<br>&#x7528;&#x9014;&#xFF1A;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x9A8C;&#x8BC1;&#xFF0C;&#x9632;&#x6B62;&#x4FE1;&#x606F;&#x88AB;&#x4FEE;&#x3002;&#x5177;&#x4F53;&#x7528;&#x9014;&#x5982;&#xFF1A;&#x6587;&#x4EF6;&#x6821;&#x9A8C;&#x3001;&#x6570;&#x5B57;&#x7B7E;&#x540D;&#x3001;&#x9274;&#x6743;&#x534F;&#x8BAE;</p>
+<p>MD5&#xFF1A;MD5&#x662F;&#x4E00;&#x79CD;&#x4E0D;&#x53EF;&#x9006;&#x7684;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#xFF0C;&#x76EE;&#x524D;&#x662F;&#x6700;&#x7262;&#x9760;&#x7684;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x4E4B;&#x4E00;&#xFF0C;&#x5C1A;&#x6CA1;&#x6709;&#x80FD;&#x591F;&#x9006;&#x8FD0;&#x7B97;&#x7684;&#x7A0B;&#x5E8F;&#x88AB;&#x5F00;&#x53D1;&#x51FA;&#x6765;&#xFF0C;&#x5B83;&#x5BF9;&#x5E94;&#x4EFB;&#x4F55;&#x5B57;&#x7B26;&#x4E32;&#x90FD;&#x53EF;&#x4EE5;&#x52A0;&#x5BC6;&#x6210;&#x4E00;&#x6BB5;&#x552F;&#x4E00;&#x7684;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p>SHA1&#xFF1A;&#x662F;&#x7531;NISTNSA&#x8BBE;&#x8BA1;&#x4E3A;&#x540C;DSA&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x7684;&#xFF0C;&#x5B83;&#x5BF9;&#x957F;&#x5EA6;&#x5C0F;&#x4E8E;264&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x4EA7;&#x751F;&#x957F;&#x5EA6;&#x4E3A;160bit&#x7684;&#x6563;&#x5217;&#x503C;&#xFF0C;&#x56E0;&#x6B64;&#x6297;&#x7A77;&#x4E3E;(brute-force)&#x6027;&#x66F4;&#x597D;&#x3002;SHA-1&#x8BBE;&#x8BA1;&#x65F6;&#x57FA;&#x4E8E;&#x548C;MD4&#x76F8;&#x540C;&#x539F;&#x7406;,&#x5E76;&#x4E14;&#x6A21;&#x4EFF;&#x4E86;&#x8BE5;&#x7B97;&#x6CD5;&#x3002;SHA-1&#x662F;&#x7531;&#x7F8E;&#x56FD;&#x6807;&#x51C6;&#x6280;&#x672F;&#x5C40;&#xFF08;NIST&#xFF09;&#x9881;&#x5E03;&#x7684;&#x56FD;&#x5BB6;&#x6807;&#x51C6;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x5E94;&#x7528;&#x6700;&#x4E3A;&#x5E7F;&#x6CDB;&#x7684;Hash&#x51FD;&#x6570;&#x7B97;&#x6CD5;&#xFF0C;&#x4E5F;&#x662F;&#x76EE;&#x524D;&#x6700;&#x5148;&#x8FDB;&#x7684;&#x52A0;&#x5BC6;&#x6280;&#x672F;&#xFF0C;&#x88AB;&#x653F;&#x5E9C;&#x90E8;&#x95E8;&#x548C;&#x79C1;&#x8425;&#x4E1A;&#x4E3B;&#x7528;&#x6765;&#x5904;&#x7406;&#x654F;&#x611F;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x800C;SHA-1&#x57FA;&#x4E8E;MD5&#xFF0C;MD5&#x53C8;&#x57FA;&#x4E8E;MD4&#x3002;</p>
+<p>HMAC&#xFF1A;&#x662F;&#x5BC6;&#x94A5;&#x76F8;&#x5173;&#x7684;&#x54C8;&#x5E0C;&#x8FD0;&#x7B97;&#x6D88;&#x606F;&#x8BA4;&#x8BC1;&#x7801;&#xFF08;Hash-based Message Authentication Code&#xFF09;,HMAC&#x8FD0;&#x7B97;&#x5229;&#x7528;&#x54C8;&#x5E0C;&#x7B97;&#x6CD5;&#xFF0C;&#x4EE5;&#x4E00;&#x4E2A;&#x5BC6;&#x94A5;&#x548C;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x6458;&#x8981;&#x4F5C;&#x4E3A;&#x8F93;&#x51FA;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;HMAC&#x662F;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x5BC6;&#x94A5;&#x7684;&#x3002;&#x6240;&#x4EE5;&#xFF0C;HMAC_SHA1&#x4E5F;&#x662F;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x5BC6;&#x94A5;&#x7684;&#xFF0C;&#x800C;SHA1&#x4E0D;&#x9700;&#x8981;&#x3002;</p>
+<h3 id="&#x5176;&#x4ED6;&#x5E38;&#x7528;&#x7B97;&#x6CD5;&#xFF1A;"><a href="#&#x5176;&#x4ED6;&#x5E38;&#x7528;&#x7B97;&#x6CD5;&#xFF1A;" class="headerlink" title="&#x5176;&#x4ED6;&#x5E38;&#x7528;&#x7B97;&#x6CD5;&#xFF1A;"></a>&#x5176;&#x4ED6;&#x5E38;&#x7528;&#x7B97;&#x6CD5;&#xFF1A;</h3><p>Base64&#xFF1A;&#x5176;&#x5B9E;&#x4E0D;&#x662F;&#x5B89;&#x5168;&#x9886;&#x57DF;&#x4E0B;&#x7684;&#x52A0;&#x5BC6;&#x89E3;&#x5BC6;&#x7B97;&#x6CD5;&#xFF0C;&#x53EA;&#x80FD;&#x7B97;&#x662F;&#x4E00;&#x4E2A;&#x7F16;&#x7801;&#x7B97;&#x6CD5;&#xFF0C;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x628A;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7F16;&#x7801;&#x4E3A;&#x53EF;&#x5199;&#x7684;&#x5B57;&#x7B26;&#x5F62;&#x5F0F;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5BF9;&#x6570;&#x636E;&#x5185;&#x5BB9;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x6765;&#x9002;&#x5408;&#x4F20;&#x8F93;(&#x53EF;&#x4EE5;&#x5BF9;img&#x56FE;&#x50CF;&#x7F16;&#x7801;&#x7528;&#x4E8E;&#x4F20;&#x8F93;)&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x53EF;&#x9006;&#x7684;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#x3002;&#x7F16;&#x7801;&#x540E;&#x7684;&#x6570;&#x636E;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x5B57;&#x7B26;&#x4E3A;&#xFF1A;A-Z&#x3001;a-z&#x3001;0-9&#x3001;+&#x3001;/&#xFF0C;&#x5171;64&#x4E2A;&#x5B57;&#x7B26;(26 + 26 + 10 + 1 + 1 = 64&#xFF0C;&#x5176;&#x5B9E;&#x662F;65&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x201C;=&#x201D;&#x662F;&#x586B;&#x5145;&#x5B57;&#x7B26;&#x3002;Base64&#x8981;&#x6C42;&#x628A;&#x6BCF;&#x4E09;&#x4E2A;8Bit&#x7684;&#x5B57;&#x8282;&#x8F6C;&#x6362;&#x4E3A;&#x56DB;&#x4E2A;6Bit&#x7684;&#x5B57;&#x8282;(3<em>8 = 4</em>6 = 24)&#xFF0C;&#x7136;&#x540E;&#x628A;6Bit&#x518D;&#x6DFB;&#x4E24;&#x4F4D;&#x9AD8;&#x4F4D;0&#xFF0C;&#x7EC4;&#x6210;&#x56DB;&#x4E2A;8Bit&#x7684;&#x5B57;&#x8282;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7406;&#x8BBA;&#x4E0A;&#x5C06;&#x8981;&#x6BD4;&#x539F;&#x6765;&#x7684;&#x957F;1/3&#x3002;&#x539F;&#x6587;&#x7684;&#x5B57;&#x8282;&#x6700;&#x540E;&#x4E0D;&#x591F;3&#x4E2A;&#x7684;&#x5730;&#x65B9;&#x7528;0&#x6765;&#x8865;&#x8DB3;&#xFF0C;&#x8F6C;&#x6362;&#x65F6;Base64&#x7F16;&#x7801;&#x7528;=&#x53F7;&#x6765;&#x4EE3;&#x66FF;&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x6709;&#x4E9B;Base64&#x7F16;&#x7801;&#x4F1A;&#x4EE5;&#x4E00;&#x4E2A;&#x6216;&#x4E24;&#x4E2A;&#x7B49;&#x53F7;&#x7ED3;&#x675F;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x4E2D;&#x95F4;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7B49;&#x53F7;&#x7684;&#xFF0C;&#x4F46;&#x7B49;&#x53F7;&#x6700;&#x591A;&#x53EA;&#x6709;&#x4E24;&#x4E2A;&#x3002;&#x5176;&#x5B9E;&#x4E0D;&#x7528;&#x201D;=&#x201D;&#x4E5F;&#x4E0D;&#x803D;&#x8BEF;&#x89E3;&#x7801;&#xFF0C;&#x4E4B;&#x6240;&#x4EE5;&#x7528;&#x201D;=&#x201D;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x8003;&#x8651;&#x5230;&#x591A;&#x6BB5;&#x7F16;&#x7801;&#x540E;&#x7684;Base64&#x5B57;&#x7B26;&#x4E32;&#x62FC;&#x8D77;&#x6765;&#x4E5F;&#x4E0D;&#x4F1A;&#x5F15;&#x8D77;&#x6DF7;&#x6DC6;&#x3002;)<br>Base64&#x7F16;&#x7801;&#x662F;&#x4ECE;&#x4E8C;&#x8FDB;&#x5236;&#x5230;&#x5B57;&#x7B26;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x50CF;&#x4E00;&#x4E9B;&#x4E2D;&#x6587;&#x5B57;&#x7B26;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x7F16;&#x7801;&#x8F6C;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;&#x65F6;&#xFF0C;&#x4EA7;&#x751F;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6700;&#x7EC8;&#x4EA7;&#x751F;&#x7684;Base64&#x5B57;&#x7B26;&#x4E5F;&#x4E0D;&#x4E00;&#x6837;&#x3002;&#x4F8B;&#x5982;&#x201D;&#x4E0A;&#x7F51;&#x201D;&#x5BF9;&#x5E94;utf-8&#x683C;&#x5F0F;&#x7684;Base64&#x7F16;&#x7801;&#x662F;&#x201D;5LiK572R&#x201D;&#xFF0C; &#x5BF9;&#x5E94;GB2312&#x683C;&#x5F0F;&#x7684;Base64&#x7F16;&#x7801;&#x662F;&#x201D;yc/N+A==&#x201D;&#x3002;<br>&#x6807;&#x51C6;&#x7684;Base64&#x5E76;&#x4E0D;&#x9002;&#x5408;&#x76F4;&#x63A5;&#x653E;&#x5728;URL&#x91CC;&#x4F20;&#x8F93;&#xFF0C;&#x56E0;&#x4E3A;URL&#x7F16;&#x7801;&#x5668;&#x4F1A;&#x628A;&#x6807;&#x51C6;Base64&#x4E2D;&#x7684;&#x201C;/&#x201D;&#x548C;&#x201C;+&#x201D;&#x5B57;&#x7B26;&#x53D8;&#x4E3A;&#x5F62;&#x5982;&#x201C;%XX&#x201D;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x800C;&#x8FD9;&#x4E9B;&#x201C;%&#x201D;&#x53F7;&#x5728;&#x5B58;&#x5165;&#x6570;&#x636E;&#x5E93;&#x65F6;&#x8FD8;&#x9700;&#x8981;&#x518D;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#xFF0C;&#x56E0;&#x4E3A;ANSI SQL&#x4E2D;&#x5DF2;&#x5C06;&#x201C;%&#x201D;&#x53F7;&#x7528;&#x4F5C;&#x901A;&#x914D;&#x7B26;&#x3002;<br>&#x4E3A;&#x89E3;&#x51B3;&#x6B64;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x91C7;&#x7528;&#x4E00;&#x79CD;&#x7528;&#x4E8E;URL&#x7684;&#x6539;&#x8FDB;Base64&#x7F16;&#x7801;&#xFF0C;&#x5B83;&#x4E0D;&#x5728;&#x672B;&#x5C3E;&#x586B;&#x5145;&#x2019;=&#x2019;&#x53F7;&#xFF0C;&#x5E76;&#x5C06;&#x6807;&#x51C6;Base64&#x4E2D;&#x7684;&#x201C;+&#x201D;&#x548C;&#x201C;/&#x201D;&#x5206;&#x522B;&#x6539;&#x6210;&#x4E86;&#x201C;-&#x201D;&#x548C;&#x201C;<em>&#x201D;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x514D;&#x53BB;&#x4E86;&#x5728;URL&#x7F16;&#x89E3;&#x7801;&#x548C;&#x6570;&#x636E;&#x5E93;&#x5B58;&#x50A8;&#x65F6;&#x6240;&#x8981;&#x4F5C;&#x7684;&#x8F6C;&#x6362;&#xFF0C;&#x907F;&#x514D;&#x4E86;&#x7F16;&#x7801;&#x4FE1;&#x606F;&#x957F;&#x5EA6;&#x5728;&#x6B64;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x589E;&#x52A0;&#xFF0C;&#x5E76;&#x7EDF;&#x4E00;&#x4E86;&#x6570;&#x636E;&#x5E93;&#x3001;&#x8868;&#x5355;&#x7B49;&#x5904;&#x5BF9;&#x8C61;&#x6807;&#x8BC6;&#x7B26;&#x7684;&#x683C;&#x5F0F;&#x3002;<br>&#x53E6;&#x6709;&#x4E00;&#x79CD;&#x7528;&#x4E8E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x6539;&#x8FDB;Base64&#x53D8;&#x79CD;&#xFF0C;&#x5B83;&#x5C06;&#x201C;+&#x201D;&#x548C;&#x201C;/&#x201D;&#x6539;&#x6210;&#x4E86;&#x201C;!&#x201D;&#x548C;&#x201C;-&#x201D;&#xFF0C;&#x56E0;&#x4E3A;&#x201C;+&#x201D;&#xFF0C;&#x201C;*&#x201D;&#x4EE5;&#x53CA;&#x524D;&#x9762;&#x5728;IRCu&#x4E2D;&#x7528;&#x5230;&#x7684;&#x201C;[&#x201D;&#x548C;&#x201C;]&#x201D;&#x5728;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x90FD;&#x53EF;&#x80FD;&#x5177;&#x6709;&#x7279;&#x6B8A;&#x542B;&#x4E49;&#x3002;<br>&#x6B64;&#x5916;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x53D8;&#x79CD;&#xFF0C;&#x5B83;&#x4EEC;&#x5C06;&#x201C;+/&#x201D;&#x6539;&#x4E3A;&#x201C;</em>-&#x201D;&#x6216;&#x201C;.<em>&#x201D;&#xFF08;&#x7528;&#x4F5C;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#x540D;&#x79F0;&#xFF09;&#x6216;&#x201C;.-&#x201D;&#xFF08;&#x7528;&#x4E8E;XML&#x4E2D;&#x7684;Nmtoken&#xFF09;&#x751A;&#x81F3;&#x201C;</em>:&#x201D;&#xFF08;&#x7528;&#x4E8E;XML&#x4E2D;&#x7684;Name&#xFF09;&#x3002;</p>
+<p>&#x200B;HTTPS&#xFF08;&#x5168;&#x79F0;&#xFF1A;Hypertext Transfer Protocol over Secure Socket Layer&#xFF09;&#xFF0C;&#x662F;&#x4EE5;&#x5B89;&#x5168;&#x4E3A;&#x76EE;&#x6807;&#x7684;HTTP&#x901A;&#x9053;&#xFF0C;&#x7B80;&#x5355;&#x8BB2;&#x662F;HTTP&#x7684;&#x5B89;&#x5168;&#x7248;&#x3002;&#x5373;HTTP&#x4E0B;&#x52A0;&#x5165;SSL&#x5C42;&#xFF0C;HTTPS&#x7684;&#x5B89;&#x5168;&#x57FA;&#x7840;&#x662F;SSL(SSL&#x4F7F;&#x7528;40 &#x4F4D;&#x5173;&#x952E;&#x5B57;&#x4F5C;&#x4E3A;RC4&#x6D41;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#xFF0C;&#x8FD9;&#x5BF9;&#x4E8E;&#x5546;&#x4E1A;&#x4FE1;&#x606F;&#x7684;&#x52A0;&#x5BC6;&#x662F;&#x5408;&#x9002;&#x7684;&#x3002;)&#xFF0C;&#x56E0;&#x6B64;&#x52A0;&#x5BC6;&#x7684;&#x8BE6;&#x7EC6;&#x5185;&#x5BB9;&#x5C31;&#x9700;&#x8981;SSL&#x3002;https:URL&#x8868;&#x660E;&#x5B83;&#x4F7F;&#x7528;&#x4E86;HTTP&#xFF0C;&#x4F46;HTTPS&#x5B58;&#x5728;&#x4E0D;&#x540C;&#x4E8E;HTTP&#x7684;&#x9ED8;&#x8BA4;&#x7AEF;&#x53E3;&#x53CA;&#x4E00;&#x4E2A;&#x52A0;&#x5BC6;/&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x5C42;&#xFF08;&#x5728;HTTP&#x4E0E;TCP&#x4E4B;&#x95F4;&#xFF09;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x4E0E;&#x52A0;&#x5BC6;&#x901A;&#x8BAF;&#x65B9;&#x6CD5;&#xFF0C;&#x73B0;&#x5728;&#x5B83;&#x88AB;&#x5E7F;&#x6CDB;&#x7528;&#x4E8E;&#x4E07;&#x7EF4;&#x7F51;&#x4E0A;&#x5B89;&#x5168;&#x654F;&#x611F;&#x7684;&#x901A;&#x8BAF;&#xFF0C;&#x4F8B;&#x5982;&#x4EA4;&#x6613;&#x652F;&#x4ED8;&#x65B9;&#x9762;&#x3002;&#x5B83;&#x7684;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#xFF1A;&#x4E00;&#x79CD;&#x662F;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x4FE1;&#x606F;&#x5B89;&#x5168;&#x901A;&#x9053;&#xFF0C;&#x6765;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7684;&#x5B89;&#x5168;&#xFF1B;&#x53E6;&#x4E00;&#x79CD;&#x5C31;&#x662F;&#x786E;&#x8BA4;&#x7F51;&#x7AD9;&#x7684;&#x771F;&#x5B9E;&#x6027;&#x3002;</p>
+<h2 id="&#x9879;&#x76EE;&#x5E94;&#x7528;&#x603B;&#x7ED3;&#xFF1A;"><a href="#&#x9879;&#x76EE;&#x5E94;&#x7528;&#x603B;&#x7ED3;&#xFF1A;" class="headerlink" title="&#x9879;&#x76EE;&#x5E94;&#x7528;&#x603B;&#x7ED3;&#xFF1A;"></a>&#x9879;&#x76EE;&#x5E94;&#x7528;&#x603B;&#x7ED3;&#xFF1A;</h2><ol class="ui list">
+<li>&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x662F;&#x53EF;&#x9006;&#x7684;&#xFF0C;&#x7528;&#x6765;&#x5BF9;&#x654F;&#x611F;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x4FDD;&#x62A4;&#x3002;&#x6563;&#x5217;&#x7B97;&#x6CD5;(&#x7B7E;&#x540D;&#x7B97;&#x6CD5;&#x3001;&#x54C8;&#x5E0C;&#x7B97;&#x6CD5;)&#x662F;&#x4E0D;&#x53EF;&#x9006;&#x7684;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x3002;</li>
+<li>&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x5BC6;&#x5319;&#x52A0;&#x5BC6;&#x548C;&#x89E3;&#x5BC6;&#xFF0C;&#x901F;&#x5EA6;&#x5FEB;&#xFF0C;&#x9002;&#x5408;&#x7ED9;&#x5927;&#x91CF;&#x6570;&#x636E;&#x52A0;&#x5BC6;&#x3002;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x5BC6;&#x5319;&#xFF0C;&#x5B58;&#x5728;&#x88AB;&#x6293;&#x5305;&#x7834;&#x89E3;&#x7684;&#x98CE;&#x9669;&#x3002;</li>
+<li>&#x975E;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x4F7F;&#x7528;&#x516C;&#x94A5;&#x52A0;&#x5BC6;&#xFF0C;&#x79C1;&#x94A5;&#x89E3;&#x5BC6;&#xFF0C;&#x79C1;&#x94A5;&#x7B7E;&#x540D;&#xFF0C;&#x516C;&#x94A5;&#x9A8C;&#x7B7E;&#x3002;&#x5B89;&#x5168;&#x6027;&#x6BD4;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x9AD8;&#xFF0C;&#x4F46;&#x901F;&#x5EA6;&#x8F83;&#x6162;&#x3002;&#x975E;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x5BC6;&#x5319;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x5BC6;&#x5319;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x79C1;&#x94A5;&#x653E;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#xFF0C;&#x9ED1;&#x5BA2;&#x4E00;&#x822C;&#x662F;&#x62FF;&#x4E0D;&#x5230;&#x7684;&#xFF0C;&#x5B89;&#x5168;&#x6027;&#x9AD8;&#x3002;</li>
+<li>Base64&#x4E0D;&#x662F;&#x5B89;&#x5168;&#x9886;&#x57DF;&#x4E0B;&#x7684;&#x52A0;&#x89E3;&#x5BC6;&#x7B97;&#x6CD5;&#xFF0C;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x7F16;&#x7801;&#x7B97;&#x6CD5;&#xFF0C;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x628A;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7F16;&#x7801;&#x4E3A;&#x53EF;&#x5199;&#x7684;&#x5B57;&#x7B26;&#x5F62;&#x5F0F;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x7279;&#x522B;&#x9002;&#x5408;&#x5728;http&#xFF0C;mime&#x534F;&#x8BAE;&#x4E0B;&#x7684;&#x7F51;&#x7EDC;&#x5FEB;&#x901F;&#x4F20;&#x8F93;&#x6570;&#x636E;&#x3002;UTF-8&#x548C;GBK&#x4E2D;&#x6587;&#x7684;Base64&#x7F16;&#x7801;&#x7ED3;&#x679C;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x3002;&#x91C7;&#x7528;Base64&#x7F16;&#x7801;&#x4E0D;&#x4EC5;&#x6BD4;&#x8F83;&#x7B80;&#x77ED;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x5177;&#x6709;&#x4E0D;&#x53EF;&#x8BFB;&#x6027;&#xFF0C;&#x5373;&#x6240;&#x7F16;&#x7801;&#x7684;&#x6570;&#x636E;&#x4E0D;&#x4F1A;&#x88AB;&#x4EBA;&#x7528;&#x8089;&#x773C;&#x6240;&#x76F4;&#x63A5;&#x770B;&#x5230;&#xFF0C;&#x4F46;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5F88;&#x521D;&#x7EA7;&#xFF0C;&#x5F88;&#x7B80;&#x5355;&#x3002;Base64&#x53EF;&#x4EE5;&#x5BF9;&#x56FE;&#x7247;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x4F20;&#x8F93;&#x3002;</li>
+<li>https&#x534F;&#x8BAE;&#x5E7F;&#x6CDB;&#x7528;&#x4E8E;&#x4E07;&#x7EF4;&#x7F51;&#x4E0A;&#x5B89;&#x5168;&#x654F;&#x611F;&#x7684;&#x901A;&#x8BAF;&#xFF0C;&#x4F8B;&#x5982;&#x4EA4;&#x6613;&#x652F;&#x4ED8;&#x65B9;&#x9762;&#x3002;&#x5B83;&#x7684;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#xFF1A;&#x4E00;&#x79CD;&#x662F;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x4FE1;&#x606F;&#x5B89;&#x5168;&#x901A;&#x9053;&#xFF0C;&#x6765;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7684;&#x5B89;&#x5168;&#xFF1B;&#x53E6;&#x4E00;&#x79CD;&#x5C31;&#x662F;&#x786E;&#x8BA4;&#x7F51;&#x7AD9;&#x7684;&#x771F;&#x5B9E;&#x6027;&#x3002;</li>
+<li>&#x5927;&#x91CF;&#x6570;&#x636E;&#x52A0;&#x5BC6;&#x5EFA;&#x8BAE;&#x91C7;&#x7528;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#xFF0C;&#x63D0;&#x9AD8;&#x52A0;&#x89E3;&#x5BC6;&#x901F;&#x5EA6;&#xFF1B;&#x5C0F;&#x91CF;&#x7684;&#x673A;&#x5BC6;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x975E;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x3002;&#x5728;&#x5B9E;&#x9645;&#x7684;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x91C7;&#x7528;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#xFF1A;&#x91C7;&#x7528;&#x975E;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x7BA1;&#x7406;&#x5BF9;&#x79F0;&#x7B97;&#x6CD5;&#x7684;&#x5BC6;&#x94A5;&#xFF0C;&#x7136;&#x540E;&#x7528;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x52A0;&#x5BC6;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x96C6;&#x6210;&#x4E86;&#x4E24;&#x7C7B;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x7684;&#x4F18;&#x70B9;&#xFF0C;&#x65E2;&#x5B9E;&#x73B0;&#x4E86;&#x52A0;&#x5BC6;&#x901F;&#x5EA6;&#x5FEB;&#x7684;&#x4F18;&#x70B9;&#xFF0C;&#x53C8;&#x5B9E;&#x73B0;&#x4E86;&#x5B89;&#x5168;&#x65B9;&#x4FBF;&#x7BA1;&#x7406;&#x5BC6;&#x94A5;&#x7684;&#x4F18;&#x70B9;&#x3002;</li>
+<li>MD5&#x6807;&#x51C6;&#x5BC6;&#x94A5;&#x957F;&#x5EA6;128&#x4F4D;&#xFF08;128&#x4F4D;&#x662F;&#x6307;&#x4E8C;&#x8FDB;&#x5236;&#x4F4D;&#x3002;&#x4E8C;&#x8FDB;&#x5236;&#x592A;&#x957F;&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x822C;&#x90FD;&#x6539;&#x5199;&#x6210;16&#x8FDB;&#x5236;&#xFF0C;&#x6BCF;&#x4E00;&#x4F4D;16&#x8FDB;&#x5236;&#x6570;&#x53EF;&#x4EE5;&#x4EE3;&#x66FF;4&#x4F4D;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#xFF0C;&#x6240;&#x4EE5;128&#x4F4D;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x5199;&#x6210;16&#x8FDB;&#x5236;&#x5C31;&#x53D8;&#x6210;&#x4E86;128/4=32&#x4F4D;&#x3002;16&#x4F4D;&#x52A0;&#x5BC6;&#x5C31;&#x662F;&#x4ECE;32&#x4F4D;MD5&#x6563;&#x5217;&#x4E2D;&#x628A;&#x4E2D;&#x95F4;16&#x4F4D;&#x63D0;&#x53D6;&#x51FA;&#x6765;&#xFF09;&#xFF1B;sha1&#x6807;&#x51C6;&#x5BC6;&#x94A5;&#x957F;&#x5EA6;160&#x4F4D;(&#x6BD4;MD5&#x6458;&#x8981;&#x957F;32&#x4F4D;)&#xFF0C;Base64&#x8F6C;&#x6362;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7406;&#x8BBA;&#x4E0A;&#x5C06;&#x8981;&#x6BD4;&#x539F;&#x6765;&#x7684;&#x957F;1/3&#x3002;</li>
 </ol>
 
-        </div>
-        
-          
+                        
+                    </div>
 
+                    
+                    
+                    
 
-  <section class='meta' id="footer-meta">
-    <hr>
-    <div class='new-meta-box'>
-      
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2018-01-11T05:36:32.000Z" itemprop="datePublished">2018-01-11</time>
+
+    </span>
+    <span class="post-description-item">
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-03T11:52:29+08:00">
-  <a class='notlink'>
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 3, 2019</p>
-  </a>
+    </span>
 </div>
 
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://generaltune.github.io/blog/2018/01/11/algorithm-tips/&title=算法笔记 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://generaltune.github.io/blog/2018/01/11/algorithm-tips/&title=算法笔记 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://generaltune.github.io/blog/2018/01/11/algorithm-tips/&title=算法笔记 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </section>
-
-
-        
-        
-            <div class="prev-next">
+                </div>
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
-                            <h4>
-                                <a href="/blog/2018/01/13/shell-command/" rel="prev" title="shell编程笔记">
-                                  
-                                      shell编程笔记
-                                  
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
                 
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/blog/2018/01/11/w3c-tips/" rel="prev" title="w3c标准学习">
-                                    
-                                        w3c标准学习
-                                    
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+
+                <a href="/blog/2018/01/13/shell-command/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    shell编程笔记
+                    
+
+                </a>
+
                 
             </div>
-        
-      </section>
-    </article>
-  
+            <div class="column nav-right">
+                
 
-  
-    <!-- 显示推荐文章和评论 -->
-
-
-
-  
-
-
-  
-
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: '算法笔记',
-      tools: true
-    }
-  </script>
-
+                <a href="/blog/2018/01/11/w3c-tips/" class="ui tiny button">
+                    
+                    w3c标准学习
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
 
 </div>
-<aside class='l_side'>
-  
-    
-    
-      
-        
-          
-          
-            <section class='widget author'>
-  <div class='content pure'>
-    
-      <div class='avatar'>
-        <img class='avatar' src='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png'/>
-      </div>
-    
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/blog/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:generaltune@126.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/generaltune"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
+                
+            </div>
 
-          
-        
-      
-        
-          
-          
             
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
-  
-    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
-  
-</header>
+            <div class="three wide computer three wide tablet column">
 
-    <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述：R-B-Tree，又称为“红黑树”"><span class="toc-text">概述：R-B Tree，又称为“红黑树”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#加密算法-DES-AES-RSA-MD5-SHA1-Base64-比较和项目应用"><span class="toc-text">加密算法(DES,AES,RSA,MD5,SHA1,Base64)比较和项目应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对称性加密算法：对称式加密就是加密和解密使用同一个密钥。信息接收双方都需事先知道密匙和加解密算法且其密匙是相同的，之后便是对数据进行加解密了。对称加密算法用来对敏感数据等信息进行加密。"><span class="toc-text">对称性加密算法：对称式加密就是加密和解密使用同一个密钥。信息接收双方都需事先知道密匙和加解密算法且其密匙是相同的，之后便是对数据进行加解密了。对称加密算法用来对敏感数据等信息进行加密。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非对称算法：非对称式加密就是加密和解密所使用的不是同一个密钥，通常有两个密钥，称为”公钥”和”私钥”，它们两个必需配对使用，否则不能打开加密文件。发送双方A-B事先均生成一堆密匙，然后A将自己的公有密匙发送给B，B将自己的公有密匙发送给A，如果A要给B发送消-息，则先需要用B的公有密匙进行消息加密，然后发送给B端，此时B端再用自己的私有密匙进行消息解密，B向A发送消息时为同样的道理。"><span class="toc-text">非对称算法：非对称式加密就是加密和解密所使用的不是同一个密钥，通常有两个密钥，称为”公钥”和”私钥”，它们两个必需配对使用，否则不能打开加密文件。发送双方A,B事先均生成一堆密匙，然后A将自己的公有密匙发送给B，B将自己的公有密匙发送给A，如果A要给B发送消 息，则先需要用B的公有密匙进行消息加密，然后发送给B端，此时B端再用自己的私有密匙进行消息解密，B向A发送消息时为同样的道理。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#散列算法：散列算法，又称哈希函数，是一种单向加密算法。在信息安全技术中，经常需要验证消息的完整性，散列-Hash-函数提供了这一服务，它对不同长度的输入消息，产生固定长度的输出。这个固定长度的输出称为原输入消息的”散列”或”消息摘要”-Message-digest-。散列算法不算加密算法，因为其结果是不可逆的，既然是不可逆的，那么当然不是用来加密的，而是签名。"><span class="toc-text">散列算法：散列算法，又称哈希函数，是一种单向加密算法。在信息安全技术中，经常需要验证消息的完整性，散列(Hash)函数提供了这一服务，它对不同长度的输入消息，产生固定长度的输出。这个固定长度的输出称为原输入消息的”散列”或”消息摘要”(Message digest)。散列算法不算加密算法，因为其结果是不可逆的，既然是不可逆的，那么当然不是用来加密的，而是签名。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对称性加密算法有：AES、DES、3DES"><span class="toc-text">对称性加密算法有：AES、DES、3DES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非对称性算法有：RSA、DSA、ECC"><span class="toc-text">非对称性算法有：RSA、DSA、ECC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他常用算法："><span class="toc-text">其他常用算法：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目应用总结："><span class="toc-text">项目应用总结：</span></a></li></ol>
-    </div>
-  </section>
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#概述：R-B-Tree，又称为“红黑树”"><span>概述：R-B Tree，又称为“红黑树”</span></a></li><li><a href="#加密算法-DES-AES-RSA-MD5-SHA1-Base64-比较和项目应用"><span>加密算法(DES,AES,RSA,MD5,SHA1,Base64)比较和项目应用</span></a><ol><li><a href="#对称性加密算法：对称式加密就是加密和解密使用同一个密钥。信息接收双方都需事先知道密匙和加解密算法且其密匙是相同的，之后便是对数据进行加解密了。对称加密算法用来对敏感数据等信息进行加密。"><span>对称性加密算法：对称式加密就是加密和解密使用同一个密钥。信息接收双方都需事先知道密匙和加解密算法且其密匙是相同的，之后便是对数据进行加解密了。对称加密算法用来对敏感数据等信息进行加密。</span></a></li><li><a href="#非对称算法：非对称式加密就是加密和解密所使用的不是同一个密钥，通常有两个密钥，称为”公钥”和”私钥”，它们两个必需配对使用，否则不能打开加密文件。发送双方A-B事先均生成一堆密匙，然后A将自己的公有密匙发送给B，B将自己的公有密匙发送给A，如果A要给B发送消-息，则先需要用B的公有密匙进行消息加密，然后发送给B端，此时B端再用自己的私有密匙进行消息解密，B向A发送消息时为同样的道理。"><span>非对称算法：非对称式加密就是加密和解密所使用的不是同一个密钥，通常有两个密钥，称为”公钥”和”私钥”，它们两个必需配对使用，否则不能打开加密文件。发送双方A,B事先均生成一堆密匙，然后A将自己的公有密匙发送给B，B将自己的公有密匙发送给A，如果A要给B发送消 息，则先需要用B的公有密匙进行消息加密，然后发送给B端，此时B端再用自己的私有密匙进行消息解密，B向A发送消息时为同样的道理。</span></a></li><li><a href="#散列算法：散列算法，又称哈希函数，是一种单向加密算法。在信息安全技术中，经常需要验证消息的完整性，散列-Hash-函数提供了这一服务，它对不同长度的输入消息，产生固定长度的输出。这个固定长度的输出称为原输入消息的”散列”或”消息摘要”-Message-digest-。散列算法不算加密算法，因为其结果是不可逆的，既然是不可逆的，那么当然不是用来加密的，而是签名。"><span>散列算法：散列算法，又称哈希函数，是一种单向加密算法。在信息安全技术中，经常需要验证消息的完整性，散列(Hash)函数提供了这一服务，它对不同长度的输入消息，产生固定长度的输出。这个固定长度的输出称为原输入消息的”散列”或”消息摘要”(Message digest)。散列算法不算加密算法，因为其结果是不可逆的，既然是不可逆的，那么当然不是用来加密的，而是签名。</span></a></li><li><a href="#对称性加密算法有：AES、DES、3DES"><span>对称性加密算法有：AES、DES、3DES</span></a></li><li><a href="#非对称性算法有：RSA、DSA、ECC"><span>非对称性算法有：RSA、DSA、ECC</span></a></li><li><a href="#其他常用算法："><span>其他常用算法：</span></a></li></ol></li><li><a href="#项目应用总结："><span>项目应用总结：</span></a></li></ol>
+                </div>
 
-
-          
-        
-      
-        
-          
-          
-            <section class='widget grid'>
-  
-<header class='pure'>
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="grid navgation">
-      
-        <li><a class="flat-box" title="/blog/" href="/blog/"
-          
-          
-          id="blog">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          近期文章
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/blog/archives/" href="/blog/blog/archives/"
-          
-            rel="nofollow"
-          
-          
-          id="blogblogarchives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/projects/" href="/blog/projects/"
-          
-          
-          id="blogprojects">
-          
-            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
-          
-          开源项目
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/friends/" href="/blog/friends/"
-          
-            rel="nofollow"
-          
-          
-          id="blogfriends">
-          
-            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
-          
-          我的友链
-        </a></li>
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
-          
-            rel="nofollow"
-          
-          
-          id="https:xaoxuu.comwikimaterial-x">
-          
-            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
-          
-          主题文档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/about/" href="/blog/about/"
-          
-            rel="nofollow"
-          
-          
-          id="blogabout">
-          
-            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
-          
-          关于小站
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-          
-        
-      
-        
-          
-          
+            </div>
             
 
-          
-        
-      
-        
-          
-          
-            
-  <section class='widget tagcloud'>
-    
-<header class='pure'>
-  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/blog/blog/tags/"
-    title="blog/tags/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      <a href="/blog/tags/日志-感悟-生活/" style="font-size: 14px; color: #999">日志  感悟 生活</a>
+        </div>
     </div>
-  </section>
-
-
-          
-        
-      
-        
-          
-          
-            
-
-
-  <section class='widget music'>
-    
-<header class='pure'>
-  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
-  
-    <a class="rightBtn"
-    
-      rel="external nofollow noopener noreferrer"
-    
-    
-      target="_blank"
-    
-    href="https://music.163.com/#/user/home?id=63035382"
-    title="https://music.163.com/#/user/home?id=63035382">
-    <i class="far fa-heart fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
-  <div class="aplayer"
-    data-theme="#1BCDFC"
-    
-    
-    data-mode="circulation"
-    data-server="netease"
-    data-type="playlist"
-    data-id="2615636388"
-    data-volume="0.7">
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
-
-
-    </div>
-  </section>
-
-
-          
-        
-      
-    
-
-  
-</aside>
-
-<footer id="footer" class="clearfix">
-  
-  
-    <div class="social-wrapper">
-      
-        
-          <a href="/blog/atom.xml"
-            class="social fas fa-rss flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="mailto:generaltune@126.com"
-            class="social fas fa-envelope flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://github.com/generaltune"
-            class="social fab fa-github flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://music.163.com/#/user/home?id=63035382"
-            class="social fas fa-headphones-alt flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-    </div>
-  
-  <br>
-  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
-  <div>
-    Use
-    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
-    
-      , 
-      total visits
-      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      times
-    
-    . 
-  </div>
-</footer>
-<script>setLoadingBarProgress(80);</script>
 
 
-      <script>setLoadingBarProgress(60);</script>
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2019 <a href="/">GENERALTUNE</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a href="http://hexo.io/" target="_blank">Hexo</a>.
     </div>
-    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+</div>
 
-  <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
-    var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/blog/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
-  </script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      Waves.attach('.flat-btn', ['waves-button']);
-      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-      Waves.attach('.flat-box', ['waves-block']);
-      Waves.attach('.float-box', ['waves-block', 'waves-float']);
-      Waves.attach('.waves-image');
-      Waves.init();
-    });
-  </script>
-
-
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+    </div>
 
 
 
 
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/blog/js/semantic-ui-algolia.js"></script>
+
+<script src="/blog/js/aloha-events.js"></script>
 
 
 
-
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
-
-
-
-
-<!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  let COPY_SUCCESS = "Copied";
-  let COPY_FAILURE = "Copy failed";
-  /*页面载入完成后，创建复制按钮*/
-  !function (e, t, a) {
-    /* code */
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-
-      clipboard.on('success', function(e) {
-        //您可以加入成功提示
-        console.info('Action:', e.action);
-        console.info('Text:', e.text);
-        console.info('Trigger:', e.trigger);
-        success_prompt(COPY_SUCCESS);
-        e.clearSelection();
-      });
-      clipboard.on('error', function(e) {
-        //您可以加入失败提示
-        console.error('Action:', e.action);
-        console.error('Trigger:', e.trigger);
-        fail_prompt(COPY_FAILURE);
-      });
-    }
-    initCopyCode();
-
-  }(window, document);
-
-  /**
-   * 弹出式提示框，默认1.5秒自动消失
-   * @param message 提示信息
-   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
-   * @param time 消失时间
-   */
-  var prompt = function (message, style, time)
-  {
-      style = (style === undefined) ? 'alert-success' : style;
-      time = (time === undefined) ? 1500 : time*1000;
-      $('<div>')
-          .appendTo('body')
-          .addClass('alert ' + style)
-          .html(message)
-          .show()
-          .delay(time)
-          .fadeOut();
-  };
-
-  // 成功提示
-  var success_prompt = function(message, time)
-  {
-      prompt(message, 'alert-success', time);
-  };
-
-  // 失败提示
-  var fail_prompt = function(message, time)
-  {
-      prompt(message, 'alert-danger', time);
-  };
-
-  // 提醒
-  var warning_prompt = function(message, time)
-  {
-      prompt(message, 'alert-warning', time);
-  };
-
-  // 信息提示
-  var info_prompt = function(message, time)
-  {
-      prompt(message, 'alert-info', time);
-  };
-
-</script>
-
-
-<!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
-      $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
-  });
-</script>
-
-
-
-
-
-  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>

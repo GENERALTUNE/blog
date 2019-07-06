@@ -1,1101 +1,328 @@
+
+
 <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <title>人工智能 | generaltune&#39;s blog</title>
-  
-  
+<html lang>
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content>
+    <title>人工智能 | generaltune&#39;s blog</title>
 
-  
+    <!-- Open Graph -->
+    <meta name="description" content="&amp;#x8003;&amp;#x8651;&amp;#x5230;&amp;#x4EBA;&amp;#x5DE5;&amp;#x667A;&amp;#x80FD;&amp;#x5982;&amp;#x6B64;&amp;#x53D7;&amp;#x5173;&amp;#x6CE8;&amp;#xFF0C;&amp;#x65AF;&amp;#x5766;&amp;#x798F;&amp;#x5927;&amp;#x5B66;&amp;#x7684;&amp;#x4E13;&amp;#x5BB6;&amp;#x6700;&amp;#x8FD1;&amp;#x64B0;&amp;#x5199;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人工智能">
+<meta property="og:url" content="https://generaltune.github.io/blog/2017/01/17/20170117/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="&amp;#x8003;&amp;#x8651;&amp;#x5230;&amp;#x4EBA;&amp;#x5DE5;&amp;#x667A;&amp;#x80FD;&amp;#x5982;&amp;#x6B64;&amp;#x53D7;&amp;#x5173;&amp;#x6CE8;&amp;#xFF0C;&amp;#x65AF;&amp;#x5766;&amp;#x798F;&amp;#x5927;&amp;#x5B66;&amp;#x7684;&amp;#x4E13;&amp;#x5BB6;&amp;#x6700;&amp;#x8FD1;&amp;#x64B0;&amp;#x5199;">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T03:52:29.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="人工智能">
+<meta name="twitter:description" content="&amp;#x8003;&amp;#x8651;&amp;#x5230;&amp;#x4EBA;&amp;#x5DE5;&amp;#x667A;&amp;#x80FD;&amp;#x5982;&amp;#x6B64;&amp;#x53D7;&amp;#x5173;&amp;#x6CE8;&amp;#xFF0C;&amp;#x65AF;&amp;#x5766;&amp;#x798F;&amp;#x5927;&amp;#x5B66;&amp;#x7684;&amp;#x4E13;&amp;#x5BB6;&amp;#x6700;&amp;#x8FD1;&amp;#x64B0;&amp;#x5199;">
 
-  <meta name="HandheldFriendly" content="True">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
-  
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "GENERALTUNE",
+  "url": "https://generaltune.github.io/blog"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
 
-  <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
-  
+    
 
-  
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/blog/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
-  
-
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width=num+"%";
-    }
-  </script>
-
-  
-  
 </head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
 
-<body>
-  
-  
-  <div class="cover-wrapper">
-    <cover class='cover post half'>
-      
-        
-  <h1 class='title'>Material X</h1>
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>generaltune&#39;s blog</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/blog/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">GENERALTUNE</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class='menu navgation'>
-  <ul class='h-list'>
-    
-      
-        <li>
-          <a class="nav home" href="/blog/"
-            
-            
-            id="blog">
-            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/projects/"
-            
-            
-            id="blogprojects">
-            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/friends/"
-            
-              rel="nofollow"
-            
-            
-            id="blogfriends">
-            <i class='fas fa-link fa-fw'></i>&nbsp;友链
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/about/"
-            
-              rel="nofollow"
-            
-            
-            id="blogabout">
-            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
-          </a>
-        </li>
-      
-    
-  </ul>
 </div>
 
-      
-    </cover>
-    <header class="l_header pure">
-  <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
-  </div>
-
-	<div class='wrapper'>
-		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href='/blog/' >
-        
-          generaltune's blog
-        
-      </a>
-			<div class='menu navgation'>
-				<ul class='h-list'>
-          
-  					
-  						<li>
-								<a class="nav flat-box" href="/blog/"
-                  
-                  
-                  id="blog">
-									<i class='fas fa-grin fa-fw'></i>&nbsp;示例
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/categories/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogcategories">
-									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/tags/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogtags">
-									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/archives/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogarchives">
-									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
-								</a>
-							</li>
-      			
-      		
-				</ul>
-			</div>
-
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="Search" />
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
-			<ul class='switcher h-list'>
-				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
-				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
-			</ul>
-		</div>
-
-		<div class='nav-sub container container--flex'>
-			<a class="logo flat-box"></a>
-			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
-        
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
-        
-			</ul>
-		</div>
-	</div>
-</header>
-	<aside class="menu-phone">
-    <header>
-		<nav class="menu navgation">
-      <ul>
-        
-          
-            <li>
-							<a class="nav flat-box" href="/blog/"
-                
-                
-                id="blog">
-								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/blog/archives/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogblogarchives">
-								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/projects/"
-                
-                
-                id="blogprojects">
-								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/friends/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogfriends">
-								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
-                
-                  rel="nofollow"
-                
-                
-                id="https:xaoxuu.comwikimaterial-x">
-								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/about/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogabout">
-								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
-							</a>
-            </li>
-          
-       
-      </ul>
-		</nav>
-    </header>
-	</aside>
-<script>setLoadingBarProgress(40);</script>
-
-  </div>
-
-
-  <div class="l_body">
-    <div class='body-wrapper'>
-      <div class='l_main'>
-  
-
-  
-    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-      
-
-
-  <section class='meta'>
     
     
-    <div class="meta" id="header-meta">
-      
-        
-  
-    <h1 class="title">
-      <a href="/blog/2017/01/17/20170117/">
-        人工智能
-      </a>
-    </h1>
-  
 
+    
 
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://generaltune.github.io/blog" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>GENERALTUNE</p>
+    
+    <a href="/index.html" class="item">
+        <i class="home icon"></i>
+        HOME
     </a>
-  </div>
 
+    
 
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2017-01-17</p>
-  </a>
+    
 </div>
 
-          
-        
-          
-            
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-20170117" class="ui main container article-type-post">
 
-          
-        
-          
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
+    
 
+    <div class="ui divided grid">
 
-          
-        
-          
-            
+        <div class="two column row" id="article-content">
 
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    人工智能
+</h1>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          <p>考虑到人工智能如此受关注，斯坦福大学的专家最近撰写的一份智能研究报告得出结论：“现在到2030年人工智能可能会出现越来越有用的应用，有可能给我们的社会和经济带来深远的积极影响，”也就不足为奇了。此文着重介绍15个知名度最大的开源人工智能项目。</p>
-<ol>
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <p>&#x8003;&#x8651;&#x5230;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x5982;&#x6B64;&#x53D7;&#x5173;&#x6CE8;&#xFF0C;&#x65AF;&#x5766;&#x798F;&#x5927;&#x5B66;&#x7684;&#x4E13;&#x5BB6;&#x6700;&#x8FD1;&#x64B0;&#x5199;&#x7684;&#x4E00;&#x4EFD;&#x667A;&#x80FD;&#x7814;&#x7A76;&#x62A5;&#x544A;&#x5F97;&#x51FA;&#x7ED3;&#x8BBA;&#xFF1A;&#x201C;&#x73B0;&#x5728;&#x5230;2030&#x5E74;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x8D8A;&#x6765;&#x8D8A;&#x6709;&#x7528;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x6709;&#x53EF;&#x80FD;&#x7ED9;&#x6211;&#x4EEC;&#x7684;&#x793E;&#x4F1A;&#x548C;&#x7ECF;&#x6D4E;&#x5E26;&#x6765;&#x6DF1;&#x8FDC;&#x7684;&#x79EF;&#x6781;&#x5F71;&#x54CD;&#xFF0C;&#x201D;&#x4E5F;&#x5C31;&#x4E0D;&#x8DB3;&#x4E3A;&#x5947;&#x4E86;&#x3002;&#x6B64;&#x6587;&#x7740;&#x91CD;&#x4ECB;&#x7ECD;15&#x4E2A;&#x77E5;&#x540D;&#x5EA6;&#x6700;&#x5927;&#x7684;&#x5F00;&#x6E90;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x9879;&#x76EE;&#x3002;</p>
+<ol class="ui list">
 <li>Caffe</li>
 </ol>
-<p>Caffe是加州大学伯克利分校攻读博士学位者的杰作，这是一种深度学习框架，基于表达式架构和可扩展代码。速度快是它赖以成名的特点，因而在研究人员和企业用户当中都备受欢迎。据官方网站声称，仅仅使用一个英伟达K40 GPU，它在短短一天内就能够处理6000多万个图像。它由伯克利视觉和学习中心(BVLC)管理，英伟达和亚马逊等公司提供了拨款，支持它的发展。</p>
-<p>相关链接：<a href="http://caffe.berkeleyvision.org" target="_blank" rel="noopener">http://caffe.berkeleyvision.org</a></p>
-<ol start="2">
+<p>Caffe&#x662F;&#x52A0;&#x5DDE;&#x5927;&#x5B66;&#x4F2F;&#x514B;&#x5229;&#x5206;&#x6821;&#x653B;&#x8BFB;&#x535A;&#x58EB;&#x5B66;&#x4F4D;&#x8005;&#x7684;&#x6770;&#x4F5C;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6846;&#x67B6;&#xFF0C;&#x57FA;&#x4E8E;&#x8868;&#x8FBE;&#x5F0F;&#x67B6;&#x6784;&#x548C;&#x53EF;&#x6269;&#x5C55;&#x4EE3;&#x7801;&#x3002;&#x901F;&#x5EA6;&#x5FEB;&#x662F;&#x5B83;&#x8D56;&#x4EE5;&#x6210;&#x540D;&#x7684;&#x7279;&#x70B9;&#xFF0C;&#x56E0;&#x800C;&#x5728;&#x7814;&#x7A76;&#x4EBA;&#x5458;&#x548C;&#x4F01;&#x4E1A;&#x7528;&#x6237;&#x5F53;&#x4E2D;&#x90FD;&#x5907;&#x53D7;&#x6B22;&#x8FCE;&#x3002;&#x636E;&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#x58F0;&#x79F0;&#xFF0C;&#x4EC5;&#x4EC5;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x82F1;&#x4F1F;&#x8FBE;K40 GPU&#xFF0C;&#x5B83;&#x5728;&#x77ED;&#x77ED;&#x4E00;&#x5929;&#x5185;&#x5C31;&#x80FD;&#x591F;&#x5904;&#x7406;6000&#x591A;&#x4E07;&#x4E2A;&#x56FE;&#x50CF;&#x3002;&#x5B83;&#x7531;&#x4F2F;&#x514B;&#x5229;&#x89C6;&#x89C9;&#x548C;&#x5B66;&#x4E60;&#x4E2D;&#x5FC3;(BVLC)&#x7BA1;&#x7406;&#xFF0C;&#x82F1;&#x4F1F;&#x8FBE;&#x548C;&#x4E9A;&#x9A6C;&#x900A;&#x7B49;&#x516C;&#x53F8;&#x63D0;&#x4F9B;&#x4E86;&#x62E8;&#x6B3E;&#xFF0C;&#x652F;&#x6301;&#x5B83;&#x7684;&#x53D1;&#x5C55;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x94FE;&#x63A5;&#xFF1A;<a href="http://caffe.berkeleyvision.org" target="_blank" rel="noopener">http://caffe.berkeleyvision.org</a></p>
+<ol start="2" class="ui list">
 <li>CNTK</li>
 </ol>
-<p>CNTK的全称是计算网络工具包，它是微软的开源人工智能工具之一。它声称拥有出众的性能，无论在只有一个CPU的系统上运行，还是在拥有多个GPU的多台机器上运行，都是如此。微软主要用它来研究语音识别，但是它同样适用于其他应用领域，比如机器翻译、图像识别、图像字幕、文本处理、语言理解和语言建模。</p>
-<p>相关链接：<a href="https://www.cntk.ai" target="_blank" rel="noopener">https://www.cntk.ai</a></p>
-<ol start="3">
+<p>CNTK&#x7684;&#x5168;&#x79F0;&#x662F;&#x8BA1;&#x7B97;&#x7F51;&#x7EDC;&#x5DE5;&#x5177;&#x5305;&#xFF0C;&#x5B83;&#x662F;&#x5FAE;&#x8F6F;&#x7684;&#x5F00;&#x6E90;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x5DE5;&#x5177;&#x4E4B;&#x4E00;&#x3002;&#x5B83;&#x58F0;&#x79F0;&#x62E5;&#x6709;&#x51FA;&#x4F17;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x65E0;&#x8BBA;&#x5728;&#x53EA;&#x6709;&#x4E00;&#x4E2A;CPU&#x7684;&#x7CFB;&#x7EDF;&#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x8FD8;&#x662F;&#x5728;&#x62E5;&#x6709;&#x591A;&#x4E2A;GPU&#x7684;&#x591A;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x90FD;&#x662F;&#x5982;&#x6B64;&#x3002;&#x5FAE;&#x8F6F;&#x4E3B;&#x8981;&#x7528;&#x5B83;&#x6765;&#x7814;&#x7A76;&#x8BED;&#x97F3;&#x8BC6;&#x522B;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x540C;&#x6837;&#x9002;&#x7528;&#x4E8E;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#x9886;&#x57DF;&#xFF0C;&#x6BD4;&#x5982;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#x3001;&#x56FE;&#x50CF;&#x8BC6;&#x522B;&#x3001;&#x56FE;&#x50CF;&#x5B57;&#x5E55;&#x3001;&#x6587;&#x672C;&#x5904;&#x7406;&#x3001;&#x8BED;&#x8A00;&#x7406;&#x89E3;&#x548C;&#x8BED;&#x8A00;&#x5EFA;&#x6A21;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x94FE;&#x63A5;&#xFF1A;<a href="https://www.cntk.ai" target="_blank" rel="noopener">https://www.cntk.ai</a></p>
+<ol start="3" class="ui list">
 <li>Deeplearning4j</li>
 </ol>
-<p>Deeplearning4j是一种面向Java虚拟机(JVM)的开源深度学习库。它在分布式环境中运行，可与Hadoop和Apache Spark整合起来。它让用户可以配置深度神经网络，与Java、Scala及其他JVM语言兼容。</p>
-<p>该项目由一家名为Skymind的商业公司管理，该公司提供收费的支持、培训和Deeplearning4j的企业发行版。</p>
-<p>相关链接：<a href="http://deeplearning4j.org" target="_blank" rel="noopener">http://deeplearning4j.org</a></p>
-<ol start="4">
-<li>分布式机器学习工具包</li>
+<p>Deeplearning4j&#x662F;&#x4E00;&#x79CD;&#x9762;&#x5411;Java&#x865A;&#x62DF;&#x673A;(JVM)&#x7684;&#x5F00;&#x6E90;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x5E93;&#x3002;&#x5B83;&#x5728;&#x5206;&#x5E03;&#x5F0F;&#x73AF;&#x5883;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;&#x53EF;&#x4E0E;Hadoop&#x548C;Apache Spark&#x6574;&#x5408;&#x8D77;&#x6765;&#x3002;&#x5B83;&#x8BA9;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x6DF1;&#x5EA6;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x4E0E;Java&#x3001;Scala&#x53CA;&#x5176;&#x4ED6;JVM&#x8BED;&#x8A00;&#x517C;&#x5BB9;&#x3002;</p>
+<p>&#x8BE5;&#x9879;&#x76EE;&#x7531;&#x4E00;&#x5BB6;&#x540D;&#x4E3A;Skymind&#x7684;&#x5546;&#x4E1A;&#x516C;&#x53F8;&#x7BA1;&#x7406;&#xFF0C;&#x8BE5;&#x516C;&#x53F8;&#x63D0;&#x4F9B;&#x6536;&#x8D39;&#x7684;&#x652F;&#x6301;&#x3001;&#x57F9;&#x8BAD;&#x548C;Deeplearning4j&#x7684;&#x4F01;&#x4E1A;&#x53D1;&#x884C;&#x7248;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x94FE;&#x63A5;&#xFF1A;<a href="http://deeplearning4j.org" target="_blank" rel="noopener">http://deeplearning4j.org</a></p>
+<ol start="4" class="ui list">
+<li>&#x5206;&#x5E03;&#x5F0F;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5DE5;&#x5177;&#x5305;</li>
 </ol>
-<p>与CNTK一样，分布式机器学习工具包(DMTK)是微软的开源人工智能工具之一。它是为大数据应用领域设计，旨在更快地训练人工智能系统。它包括三大部分：DMTK框架、LightLDA主题模型算法以及分布式(Multisense)单词嵌入算法。微软声称，在8个集群机器上，它能够“针对拥有1000多亿个权标的文档集合，训练拥有100万个主题和1000万个单词词汇表(共有10万亿个参数)的主题模型，”这个成绩是其他工具无法比拟的，这也证明了DMTK的速度有多快。</p>
-<p>相关链接：<a href="http://www.dmtk.io" target="_blank" rel="noopener">http://www.dmtk.io</a></p>
-<ol start="5">
+<p>&#x4E0E;CNTK&#x4E00;&#x6837;&#xFF0C;&#x5206;&#x5E03;&#x5F0F;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5DE5;&#x5177;&#x5305;(DMTK)&#x662F;&#x5FAE;&#x8F6F;&#x7684;&#x5F00;&#x6E90;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x5DE5;&#x5177;&#x4E4B;&#x4E00;&#x3002;&#x5B83;&#x662F;&#x4E3A;&#x5927;&#x6570;&#x636E;&#x5E94;&#x7528;&#x9886;&#x57DF;&#x8BBE;&#x8BA1;&#xFF0C;&#x65E8;&#x5728;&#x66F4;&#x5FEB;&#x5730;&#x8BAD;&#x7EC3;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x7CFB;&#x7EDF;&#x3002;&#x5B83;&#x5305;&#x62EC;&#x4E09;&#x5927;&#x90E8;&#x5206;&#xFF1A;DMTK&#x6846;&#x67B6;&#x3001;LightLDA&#x4E3B;&#x9898;&#x6A21;&#x578B;&#x7B97;&#x6CD5;&#x4EE5;&#x53CA;&#x5206;&#x5E03;&#x5F0F;(Multisense)&#x5355;&#x8BCD;&#x5D4C;&#x5165;&#x7B97;&#x6CD5;&#x3002;&#x5FAE;&#x8F6F;&#x58F0;&#x79F0;&#xFF0C;&#x5728;8&#x4E2A;&#x96C6;&#x7FA4;&#x673A;&#x5668;&#x4E0A;&#xFF0C;&#x5B83;&#x80FD;&#x591F;&#x201C;&#x9488;&#x5BF9;&#x62E5;&#x6709;1000&#x591A;&#x4EBF;&#x4E2A;&#x6743;&#x6807;&#x7684;&#x6587;&#x6863;&#x96C6;&#x5408;&#xFF0C;&#x8BAD;&#x7EC3;&#x62E5;&#x6709;100&#x4E07;&#x4E2A;&#x4E3B;&#x9898;&#x548C;1000&#x4E07;&#x4E2A;&#x5355;&#x8BCD;&#x8BCD;&#x6C47;&#x8868;(&#x5171;&#x6709;10&#x4E07;&#x4EBF;&#x4E2A;&#x53C2;&#x6570;)&#x7684;&#x4E3B;&#x9898;&#x6A21;&#x578B;&#xFF0C;&#x201D;&#x8FD9;&#x4E2A;&#x6210;&#x7EE9;&#x662F;&#x5176;&#x4ED6;&#x5DE5;&#x5177;&#x65E0;&#x6CD5;&#x6BD4;&#x62DF;&#x7684;&#xFF0C;&#x8FD9;&#x4E5F;&#x8BC1;&#x660E;&#x4E86;DMTK&#x7684;&#x901F;&#x5EA6;&#x6709;&#x591A;&#x5FEB;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x94FE;&#x63A5;&#xFF1A;<a href="http://www.dmtk.io" target="_blank" rel="noopener">http://www.dmtk.io</a></p>
+<ol start="5" class="ui list">
 <li>H2O</li>
 </ol>
-<p>H2O更加专注于人工智能在企业领域的应用，而不是在研究领域的应用，它的用户包括诸多大公司：第一资本、思科、尼尔森Catalina、贝宝及Transamerica。它声称让任何人都可以使用机器学习和预测分析的强大功能，解决业务问题。它可用于预测建模、风险及欺诈分析、保险分析、广告技术、医疗保健和客户情报。</p>
-<p>它有两种开源版本：标准的H2O和Sparkling Water，后者与Apache Spark集成起来。它还提供收费的企业支持。</p>
-<p>相关链接：<a href="http://www.h2o.ai" target="_blank" rel="noopener">http://www.h2o.ai</a></p>
-<ol start="6">
+<p>H2O&#x66F4;&#x52A0;&#x4E13;&#x6CE8;&#x4E8E;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x5728;&#x4F01;&#x4E1A;&#x9886;&#x57DF;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x7814;&#x7A76;&#x9886;&#x57DF;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x5B83;&#x7684;&#x7528;&#x6237;&#x5305;&#x62EC;&#x8BF8;&#x591A;&#x5927;&#x516C;&#x53F8;&#xFF1A;&#x7B2C;&#x4E00;&#x8D44;&#x672C;&#x3001;&#x601D;&#x79D1;&#x3001;&#x5C3C;&#x5C14;&#x68EE;Catalina&#x3001;&#x8D1D;&#x5B9D;&#x53CA;Transamerica&#x3002;&#x5B83;&#x58F0;&#x79F0;&#x8BA9;&#x4EFB;&#x4F55;&#x4EBA;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x548C;&#x9884;&#x6D4B;&#x5206;&#x6790;&#x7684;&#x5F3A;&#x5927;&#x529F;&#x80FD;&#xFF0C;&#x89E3;&#x51B3;&#x4E1A;&#x52A1;&#x95EE;&#x9898;&#x3002;&#x5B83;&#x53EF;&#x7528;&#x4E8E;&#x9884;&#x6D4B;&#x5EFA;&#x6A21;&#x3001;&#x98CE;&#x9669;&#x53CA;&#x6B3A;&#x8BC8;&#x5206;&#x6790;&#x3001;&#x4FDD;&#x9669;&#x5206;&#x6790;&#x3001;&#x5E7F;&#x544A;&#x6280;&#x672F;&#x3001;&#x533B;&#x7597;&#x4FDD;&#x5065;&#x548C;&#x5BA2;&#x6237;&#x60C5;&#x62A5;&#x3002;</p>
+<p>&#x5B83;&#x6709;&#x4E24;&#x79CD;&#x5F00;&#x6E90;&#x7248;&#x672C;&#xFF1A;&#x6807;&#x51C6;&#x7684;H2O&#x548C;Sparkling Water&#xFF0C;&#x540E;&#x8005;&#x4E0E;Apache Spark&#x96C6;&#x6210;&#x8D77;&#x6765;&#x3002;&#x5B83;&#x8FD8;&#x63D0;&#x4F9B;&#x6536;&#x8D39;&#x7684;&#x4F01;&#x4E1A;&#x652F;&#x6301;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x94FE;&#x63A5;&#xFF1A;<a href="http://www.h2o.ai" target="_blank" rel="noopener">http://www.h2o.ai</a></p>
+<ol start="6" class="ui list">
 <li>Mahout</li>
 </ol>
-<p>Mahout是Apache基金会下面的一个项目，是一种开源机器学习框架。据官方网站声称，它提供三种主要的特性：用于构建可扩展算法的编程环境、面向Spark和H2O等工具的预制算法，以及名为Samsara的向量数学试验环境。使用Mahout的公司包括：Adobe、埃森哲、Foursquare、英特尔、领英、推特、雅虎及其他许多公司。可通过官方网站上所列的第三方获得专业支持。</p>
-<p>相关链接：<a href="http://mahout.apache.org" target="_blank" rel="noopener">http://mahout.apache.org</a></p>
-<ol start="7">
+<p>Mahout&#x662F;Apache&#x57FA;&#x91D1;&#x4F1A;&#x4E0B;&#x9762;&#x7684;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x5F00;&#x6E90;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6846;&#x67B6;&#x3002;&#x636E;&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#x58F0;&#x79F0;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E09;&#x79CD;&#x4E3B;&#x8981;&#x7684;&#x7279;&#x6027;&#xFF1A;&#x7528;&#x4E8E;&#x6784;&#x5EFA;&#x53EF;&#x6269;&#x5C55;&#x7B97;&#x6CD5;&#x7684;&#x7F16;&#x7A0B;&#x73AF;&#x5883;&#x3001;&#x9762;&#x5411;Spark&#x548C;H2O&#x7B49;&#x5DE5;&#x5177;&#x7684;&#x9884;&#x5236;&#x7B97;&#x6CD5;&#xFF0C;&#x4EE5;&#x53CA;&#x540D;&#x4E3A;Samsara&#x7684;&#x5411;&#x91CF;&#x6570;&#x5B66;&#x8BD5;&#x9A8C;&#x73AF;&#x5883;&#x3002;&#x4F7F;&#x7528;Mahout&#x7684;&#x516C;&#x53F8;&#x5305;&#x62EC;&#xFF1A;Adobe&#x3001;&#x57C3;&#x68EE;&#x54F2;&#x3001;Foursquare&#x3001;&#x82F1;&#x7279;&#x5C14;&#x3001;&#x9886;&#x82F1;&#x3001;&#x63A8;&#x7279;&#x3001;&#x96C5;&#x864E;&#x53CA;&#x5176;&#x4ED6;&#x8BB8;&#x591A;&#x516C;&#x53F8;&#x3002;&#x53EF;&#x901A;&#x8FC7;&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#x4E0A;&#x6240;&#x5217;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x83B7;&#x5F97;&#x4E13;&#x4E1A;&#x652F;&#x6301;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x94FE;&#x63A5;&#xFF1A;<a href="http://mahout.apache.org" target="_blank" rel="noopener">http://mahout.apache.org</a></p>
+<ol start="7" class="ui list">
 <li>MLlib</li>
 </ol>
-<p>Apache Spark以速度快著称，它已成为最流行的大数据处理工具之一。MLlib是Spark的可扩展机器学习库。它与Hadoop整合起来，可与NumPy和R协同操作。它包括一大批机器学习算法，可用于分类、回归、决策树、推荐、聚类、主题建模、特性转换、模型评估、机器学习管道构建、机器学习持久性、生存分析、频繁项集、顺序模式挖掘、分布式线性代数和统计。</p>
-<p>相关链接：<a href="https://spark.apache.org/mllib/" target="_blank" rel="noopener">https://spark.apache.org/mllib/</a></p>
-<ol start="8">
+<p>Apache Spark&#x4EE5;&#x901F;&#x5EA6;&#x5FEB;&#x8457;&#x79F0;&#xFF0C;&#x5B83;&#x5DF2;&#x6210;&#x4E3A;&#x6700;&#x6D41;&#x884C;&#x7684;&#x5927;&#x6570;&#x636E;&#x5904;&#x7406;&#x5DE5;&#x5177;&#x4E4B;&#x4E00;&#x3002;MLlib&#x662F;Spark&#x7684;&#x53EF;&#x6269;&#x5C55;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5E93;&#x3002;&#x5B83;&#x4E0E;Hadoop&#x6574;&#x5408;&#x8D77;&#x6765;&#xFF0C;&#x53EF;&#x4E0E;NumPy&#x548C;R&#x534F;&#x540C;&#x64CD;&#x4F5C;&#x3002;&#x5B83;&#x5305;&#x62EC;&#x4E00;&#x5927;&#x6279;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7B97;&#x6CD5;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x5206;&#x7C7B;&#x3001;&#x56DE;&#x5F52;&#x3001;&#x51B3;&#x7B56;&#x6811;&#x3001;&#x63A8;&#x8350;&#x3001;&#x805A;&#x7C7B;&#x3001;&#x4E3B;&#x9898;&#x5EFA;&#x6A21;&#x3001;&#x7279;&#x6027;&#x8F6C;&#x6362;&#x3001;&#x6A21;&#x578B;&#x8BC4;&#x4F30;&#x3001;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7BA1;&#x9053;&#x6784;&#x5EFA;&#x3001;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6301;&#x4E45;&#x6027;&#x3001;&#x751F;&#x5B58;&#x5206;&#x6790;&#x3001;&#x9891;&#x7E41;&#x9879;&#x96C6;&#x3001;&#x987A;&#x5E8F;&#x6A21;&#x5F0F;&#x6316;&#x6398;&#x3001;&#x5206;&#x5E03;&#x5F0F;&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x548C;&#x7EDF;&#x8BA1;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x94FE;&#x63A5;&#xFF1A;<a href="https://spark.apache.org/mllib/" target="_blank" rel="noopener">https://spark.apache.org/mllib/</a></p>
+<ol start="8" class="ui list">
 <li>NuPIC</li>
 </ol>
-<p>NuPIC由一家名为Numenta的公司管理，这是一种开源人工智能项目，基于一种名为分层式即时记忆(即HTM)的理论。实际上，HTM试图建立一种模仿人类大脑新皮层而建的计算机系统。目的在于制造“处理许多认知任务时接近或胜过人类表现”的机器。</p>
-<p>除了开源许可证外，Numenta还提供采用商业许可证的NuPic，它还提供作为它技术底层的专利方面的许可证。</p>
-<p>相关链接：<a href="http://numenta.org" target="_blank" rel="noopener">http://numenta.org</a></p>
-<ol start="9">
+<p>NuPIC&#x7531;&#x4E00;&#x5BB6;&#x540D;&#x4E3A;Numenta&#x7684;&#x516C;&#x53F8;&#x7BA1;&#x7406;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x5F00;&#x6E90;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x9879;&#x76EE;&#xFF0C;&#x57FA;&#x4E8E;&#x4E00;&#x79CD;&#x540D;&#x4E3A;&#x5206;&#x5C42;&#x5F0F;&#x5373;&#x65F6;&#x8BB0;&#x5FC6;(&#x5373;HTM)&#x7684;&#x7406;&#x8BBA;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;HTM&#x8BD5;&#x56FE;&#x5EFA;&#x7ACB;&#x4E00;&#x79CD;&#x6A21;&#x4EFF;&#x4EBA;&#x7C7B;&#x5927;&#x8111;&#x65B0;&#x76AE;&#x5C42;&#x800C;&#x5EFA;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x7CFB;&#x7EDF;&#x3002;&#x76EE;&#x7684;&#x5728;&#x4E8E;&#x5236;&#x9020;&#x201C;&#x5904;&#x7406;&#x8BB8;&#x591A;&#x8BA4;&#x77E5;&#x4EFB;&#x52A1;&#x65F6;&#x63A5;&#x8FD1;&#x6216;&#x80DC;&#x8FC7;&#x4EBA;&#x7C7B;&#x8868;&#x73B0;&#x201D;&#x7684;&#x673A;&#x5668;&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x5F00;&#x6E90;&#x8BB8;&#x53EF;&#x8BC1;&#x5916;&#xFF0C;Numenta&#x8FD8;&#x63D0;&#x4F9B;&#x91C7;&#x7528;&#x5546;&#x4E1A;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;NuPic&#xFF0C;&#x5B83;&#x8FD8;&#x63D0;&#x4F9B;&#x4F5C;&#x4E3A;&#x5B83;&#x6280;&#x672F;&#x5E95;&#x5C42;&#x7684;&#x4E13;&#x5229;&#x65B9;&#x9762;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x94FE;&#x63A5;&#xFF1A;<a href="http://numenta.org" target="_blank" rel="noopener">http://numenta.org</a></p>
+<ol start="9" class="ui list">
 <li>OpenNN</li>
 </ol>
-<p>OpenNN为深入了解人工智能的研究人员和开发人员而设计，这是一种用于实现神经网络的C++编程库。主要特性包括：深度架构和卓越性能。官方网站上有全面的说明文档，包括解释神经网络基础知识的入门教程。可通过Artelnics获得OpenNN的收费支持，总部位于西班牙的这家公司主攻预测分析。</p>
-<p>相关链接：<a href="http://www.opennn.net" target="_blank" rel="noopener">http://www.opennn.net</a></p>
-<ol start="10">
+<p>OpenNN&#x4E3A;&#x6DF1;&#x5165;&#x4E86;&#x89E3;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x7684;&#x7814;&#x7A76;&#x4EBA;&#x5458;&#x548C;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x800C;&#x8BBE;&#x8BA1;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;C++&#x7F16;&#x7A0B;&#x5E93;&#x3002;&#x4E3B;&#x8981;&#x7279;&#x6027;&#x5305;&#x62EC;&#xFF1A;&#x6DF1;&#x5EA6;&#x67B6;&#x6784;&#x548C;&#x5353;&#x8D8A;&#x6027;&#x80FD;&#x3002;&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#x4E0A;&#x6709;&#x5168;&#x9762;&#x7684;&#x8BF4;&#x660E;&#x6587;&#x6863;&#xFF0C;&#x5305;&#x62EC;&#x89E3;&#x91CA;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x7684;&#x5165;&#x95E8;&#x6559;&#x7A0B;&#x3002;&#x53EF;&#x901A;&#x8FC7;Artelnics&#x83B7;&#x5F97;OpenNN&#x7684;&#x6536;&#x8D39;&#x652F;&#x6301;&#xFF0C;&#x603B;&#x90E8;&#x4F4D;&#x4E8E;&#x897F;&#x73ED;&#x7259;&#x7684;&#x8FD9;&#x5BB6;&#x516C;&#x53F8;&#x4E3B;&#x653B;&#x9884;&#x6D4B;&#x5206;&#x6790;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x94FE;&#x63A5;&#xFF1A;<a href="http://www.opennn.net" target="_blank" rel="noopener">http://www.opennn.net</a></p>
+<ol start="10" class="ui list">
 <li>OpenCyc</li>
 </ol>
-<p>OpenCyc由一家名为Cycorp的公司开发，它让用户可以访问Cyc知识库和常识推理引擎。它包括239000多个术语、约2093000个三元组以及大约69000个owl:sameAs链接(指向外部语义数据命名空间)。它用于丰富域名建模、语义数据整合、文本理解、特定领域专家系统和游戏人工智能。这家公司还提供Cyc的另外两个版本：一个是非开源免费版本，面向研究人员;另一个面向企业用户，需要收费。</p>
-<p>相关链接：<a href="http://www.cyc.com/platform/opencyc/" target="_blank" rel="noopener">http://www.cyc.com/platform/opencyc/</a></p>
-<ol start="11">
+<p>OpenCyc&#x7531;&#x4E00;&#x5BB6;&#x540D;&#x4E3A;Cycorp&#x7684;&#x516C;&#x53F8;&#x5F00;&#x53D1;&#xFF0C;&#x5B83;&#x8BA9;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;Cyc&#x77E5;&#x8BC6;&#x5E93;&#x548C;&#x5E38;&#x8BC6;&#x63A8;&#x7406;&#x5F15;&#x64CE;&#x3002;&#x5B83;&#x5305;&#x62EC;239000&#x591A;&#x4E2A;&#x672F;&#x8BED;&#x3001;&#x7EA6;2093000&#x4E2A;&#x4E09;&#x5143;&#x7EC4;&#x4EE5;&#x53CA;&#x5927;&#x7EA6;69000&#x4E2A;owl:sameAs&#x94FE;&#x63A5;(&#x6307;&#x5411;&#x5916;&#x90E8;&#x8BED;&#x4E49;&#x6570;&#x636E;&#x547D;&#x540D;&#x7A7A;&#x95F4;)&#x3002;&#x5B83;&#x7528;&#x4E8E;&#x4E30;&#x5BCC;&#x57DF;&#x540D;&#x5EFA;&#x6A21;&#x3001;&#x8BED;&#x4E49;&#x6570;&#x636E;&#x6574;&#x5408;&#x3001;&#x6587;&#x672C;&#x7406;&#x89E3;&#x3001;&#x7279;&#x5B9A;&#x9886;&#x57DF;&#x4E13;&#x5BB6;&#x7CFB;&#x7EDF;&#x548C;&#x6E38;&#x620F;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x3002;&#x8FD9;&#x5BB6;&#x516C;&#x53F8;&#x8FD8;&#x63D0;&#x4F9B;Cyc&#x7684;&#x53E6;&#x5916;&#x4E24;&#x4E2A;&#x7248;&#x672C;&#xFF1A;&#x4E00;&#x4E2A;&#x662F;&#x975E;&#x5F00;&#x6E90;&#x514D;&#x8D39;&#x7248;&#x672C;&#xFF0C;&#x9762;&#x5411;&#x7814;&#x7A76;&#x4EBA;&#x5458;;&#x53E6;&#x4E00;&#x4E2A;&#x9762;&#x5411;&#x4F01;&#x4E1A;&#x7528;&#x6237;&#xFF0C;&#x9700;&#x8981;&#x6536;&#x8D39;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x94FE;&#x63A5;&#xFF1A;<a href="http://www.cyc.com/platform/opencyc/" target="_blank" rel="noopener">http://www.cyc.com/platform/opencyc/</a></p>
+<ol start="11" class="ui list">
 <li>Oryx 2</li>
 </ol>
-<p>Oryx 2建立在Apache Spark和Kafka上，这是一种专门的应用开发框架，面向大规模的机器学习。它使用了一种独特的lambda架构，有三个层次。开发人员可使用Oryx 2来构建新的应用程序，它还包括一些预制应用程序，处理常见的大数据任务，比如协作过滤、分类、回归和聚类。大数据工具厂商Cloudera建立了最初的Oryx 1项目，一直大力参与持续开发工作。</p>
-<p>相关链接：<a href="http://oryx.io" target="_blank" rel="noopener">http://oryx.io</a></p>
-<ol start="12">
+<p>Oryx 2&#x5EFA;&#x7ACB;&#x5728;Apache Spark&#x548C;Kafka&#x4E0A;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x4E13;&#x95E8;&#x7684;&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x6846;&#x67B6;&#xFF0C;&#x9762;&#x5411;&#x5927;&#x89C4;&#x6A21;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x3002;&#x5B83;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x79CD;&#x72EC;&#x7279;&#x7684;lambda&#x67B6;&#x6784;&#xFF0C;&#x6709;&#x4E09;&#x4E2A;&#x5C42;&#x6B21;&#x3002;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x53EF;&#x4F7F;&#x7528;Oryx 2&#x6765;&#x6784;&#x5EFA;&#x65B0;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B83;&#x8FD8;&#x5305;&#x62EC;&#x4E00;&#x4E9B;&#x9884;&#x5236;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x5904;&#x7406;&#x5E38;&#x89C1;&#x7684;&#x5927;&#x6570;&#x636E;&#x4EFB;&#x52A1;&#xFF0C;&#x6BD4;&#x5982;&#x534F;&#x4F5C;&#x8FC7;&#x6EE4;&#x3001;&#x5206;&#x7C7B;&#x3001;&#x56DE;&#x5F52;&#x548C;&#x805A;&#x7C7B;&#x3002;&#x5927;&#x6570;&#x636E;&#x5DE5;&#x5177;&#x5382;&#x5546;Cloudera&#x5EFA;&#x7ACB;&#x4E86;&#x6700;&#x521D;&#x7684;Oryx 1&#x9879;&#x76EE;&#xFF0C;&#x4E00;&#x76F4;&#x5927;&#x529B;&#x53C2;&#x4E0E;&#x6301;&#x7EED;&#x5F00;&#x53D1;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x94FE;&#x63A5;&#xFF1A;<a href="http://oryx.io" target="_blank" rel="noopener">http://oryx.io</a></p>
+<ol start="12" class="ui list">
 <li>PredictionIO</li>
 </ol>
-<p>今年2月份，Salesforce收购了PredictionIO，后来在7月份， 它把该平台连同商标一起捐献给了Apache基金会，该基金会将它列为孵化器项目。所以，虽然Salesforce使用PredictionIO技术来完善自己的机器学习功能，但是开源版本方面的工作也会继续下去。它可以帮助用户构建拥有机器学习功能的预测引擎，这些功能可用来部署实时响应动态查询的Web服务。</p>
-<p>相关链接：<a href="https://prediction.io" target="_blank" rel="noopener">https://prediction.io</a></p>
-<ol start="13">
+<p>&#x4ECA;&#x5E74;2&#x6708;&#x4EFD;&#xFF0C;Salesforce&#x6536;&#x8D2D;&#x4E86;PredictionIO&#xFF0C;&#x540E;&#x6765;&#x5728;7&#x6708;&#x4EFD;&#xFF0C; &#x5B83;&#x628A;&#x8BE5;&#x5E73;&#x53F0;&#x8FDE;&#x540C;&#x5546;&#x6807;&#x4E00;&#x8D77;&#x6350;&#x732E;&#x7ED9;&#x4E86;Apache&#x57FA;&#x91D1;&#x4F1A;&#xFF0C;&#x8BE5;&#x57FA;&#x91D1;&#x4F1A;&#x5C06;&#x5B83;&#x5217;&#x4E3A;&#x5B75;&#x5316;&#x5668;&#x9879;&#x76EE;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x867D;&#x7136;Salesforce&#x4F7F;&#x7528;PredictionIO&#x6280;&#x672F;&#x6765;&#x5B8C;&#x5584;&#x81EA;&#x5DF1;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x529F;&#x80FD;&#xFF0C;&#x4F46;&#x662F;&#x5F00;&#x6E90;&#x7248;&#x672C;&#x65B9;&#x9762;&#x7684;&#x5DE5;&#x4F5C;&#x4E5F;&#x4F1A;&#x7EE7;&#x7EED;&#x4E0B;&#x53BB;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x7528;&#x6237;&#x6784;&#x5EFA;&#x62E5;&#x6709;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x529F;&#x80FD;&#x7684;&#x9884;&#x6D4B;&#x5F15;&#x64CE;&#xFF0C;&#x8FD9;&#x4E9B;&#x529F;&#x80FD;&#x53EF;&#x7528;&#x6765;&#x90E8;&#x7F72;&#x5B9E;&#x65F6;&#x54CD;&#x5E94;&#x52A8;&#x6001;&#x67E5;&#x8BE2;&#x7684;Web&#x670D;&#x52A1;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x94FE;&#x63A5;&#xFF1A;<a href="https://prediction.io" target="_blank" rel="noopener">https://prediction.io</a></p>
+<ol start="13" class="ui list">
 <li>SystemML</li>
 </ol>
-<p>SystemML最初由IBM开发，现在它是Apache旗下的一个大数据项目。它提供了一种高度可扩展的平台，可以实施用R或类似Python的语法编写的高级运算和算法。企业已经在用它来跟踪汽车维修方面的客户服务，引导机场客流量，或者将社交媒体数据与银行客户联系起来。它可以在Spark或Hadoop上运行。</p>
-<p>相关链接：<a href="http://systemml.apache.org" target="_blank" rel="noopener">http://systemml.apache.org</a></p>
-<ol start="14">
+<p>SystemML&#x6700;&#x521D;&#x7531;IBM&#x5F00;&#x53D1;&#xFF0C;&#x73B0;&#x5728;&#x5B83;&#x662F;Apache&#x65D7;&#x4E0B;&#x7684;&#x4E00;&#x4E2A;&#x5927;&#x6570;&#x636E;&#x9879;&#x76EE;&#x3002;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x9AD8;&#x5EA6;&#x53EF;&#x6269;&#x5C55;&#x7684;&#x5E73;&#x53F0;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x65BD;&#x7528;R&#x6216;&#x7C7B;&#x4F3C;Python&#x7684;&#x8BED;&#x6CD5;&#x7F16;&#x5199;&#x7684;&#x9AD8;&#x7EA7;&#x8FD0;&#x7B97;&#x548C;&#x7B97;&#x6CD5;&#x3002;&#x4F01;&#x4E1A;&#x5DF2;&#x7ECF;&#x5728;&#x7528;&#x5B83;&#x6765;&#x8DDF;&#x8E2A;&#x6C7D;&#x8F66;&#x7EF4;&#x4FEE;&#x65B9;&#x9762;&#x7684;&#x5BA2;&#x6237;&#x670D;&#x52A1;&#xFF0C;&#x5F15;&#x5BFC;&#x673A;&#x573A;&#x5BA2;&#x6D41;&#x91CF;&#xFF0C;&#x6216;&#x8005;&#x5C06;&#x793E;&#x4EA4;&#x5A92;&#x4F53;&#x6570;&#x636E;&#x4E0E;&#x94F6;&#x884C;&#x5BA2;&#x6237;&#x8054;&#x7CFB;&#x8D77;&#x6765;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x5728;Spark&#x6216;Hadoop&#x4E0A;&#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x94FE;&#x63A5;&#xFF1A;<a href="http://systemml.apache.org" target="_blank" rel="noopener">http://systemml.apache.org</a></p>
+<ol start="14" class="ui list">
 <li>TensorFlow</li>
 </ol>
-<p>TensorFlow是谷歌的开源人工智能工具之一。它提供了用于数字计算的库，使用数据流图。它可以在众多不同的搭载单一或多个CPU和GPU的系统上运行，甚至可以在移动设备上运行。它拥有深度灵活性、真正的可移植性、自动差分功能，并支持Python和C++。官方网站上列有非常丰富的教程和实用文章，可供有兴趣使用或扩展其功能的开发人员或研究人员使用。</p>
-<p>相关链接：<a href="https://www.tensorflow.org" target="_blank" rel="noopener">https://www.tensorflow.org</a></p>
-<ol start="15">
+<p>TensorFlow&#x662F;&#x8C37;&#x6B4C;&#x7684;&#x5F00;&#x6E90;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x5DE5;&#x5177;&#x4E4B;&#x4E00;&#x3002;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x7528;&#x4E8E;&#x6570;&#x5B57;&#x8BA1;&#x7B97;&#x7684;&#x5E93;&#xFF0C;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x6D41;&#x56FE;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x5728;&#x4F17;&#x591A;&#x4E0D;&#x540C;&#x7684;&#x642D;&#x8F7D;&#x5355;&#x4E00;&#x6216;&#x591A;&#x4E2A;CPU&#x548C;GPU&#x7684;&#x7CFB;&#x7EDF;&#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x5728;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E0A;&#x8FD0;&#x884C;&#x3002;&#x5B83;&#x62E5;&#x6709;&#x6DF1;&#x5EA6;&#x7075;&#x6D3B;&#x6027;&#x3001;&#x771F;&#x6B63;&#x7684;&#x53EF;&#x79FB;&#x690D;&#x6027;&#x3001;&#x81EA;&#x52A8;&#x5DEE;&#x5206;&#x529F;&#x80FD;&#xFF0C;&#x5E76;&#x652F;&#x6301;Python&#x548C;C++&#x3002;&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#x4E0A;&#x5217;&#x6709;&#x975E;&#x5E38;&#x4E30;&#x5BCC;&#x7684;&#x6559;&#x7A0B;&#x548C;&#x5B9E;&#x7528;&#x6587;&#x7AE0;&#xFF0C;&#x53EF;&#x4F9B;&#x6709;&#x5174;&#x8DA3;&#x4F7F;&#x7528;&#x6216;&#x6269;&#x5C55;&#x5176;&#x529F;&#x80FD;&#x7684;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x6216;&#x7814;&#x7A76;&#x4EBA;&#x5458;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x94FE;&#x63A5;&#xFF1A;<a href="https://www.tensorflow.org" target="_blank" rel="noopener">https://www.tensorflow.org</a></p>
+<ol start="15" class="ui list">
 <li>Torch</li>
 </ol>
-<p>Torch自称是“一种科学计算框架，广泛支持把GPU放在首位的机器学习算法。”这里的重点在于灵活性和速度。此外，很容易与众多方面的软件包结合使用：机器学习、计算机视觉、信号处理、并行处理、图像、视频、音频和网络。它依赖一种名为LuaJIT的脚本语言，这种语言基于Lua。</p>
-<p>相关链接：<a href="http://torch.ch" target="_blank" rel="noopener">http://torch.ch</a></p>
+<p>Torch&#x81EA;&#x79F0;&#x662F;&#x201C;&#x4E00;&#x79CD;&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x6846;&#x67B6;&#xFF0C;&#x5E7F;&#x6CDB;&#x652F;&#x6301;&#x628A;GPU&#x653E;&#x5728;&#x9996;&#x4F4D;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7B97;&#x6CD5;&#x3002;&#x201D;&#x8FD9;&#x91CC;&#x7684;&#x91CD;&#x70B9;&#x5728;&#x4E8E;&#x7075;&#x6D3B;&#x6027;&#x548C;&#x901F;&#x5EA6;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x5F88;&#x5BB9;&#x6613;&#x4E0E;&#x4F17;&#x591A;&#x65B9;&#x9762;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x7ED3;&#x5408;&#x4F7F;&#x7528;&#xFF1A;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x3001;&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x3001;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x3001;&#x5E76;&#x884C;&#x5904;&#x7406;&#x3001;&#x56FE;&#x50CF;&#x3001;&#x89C6;&#x9891;&#x3001;&#x97F3;&#x9891;&#x548C;&#x7F51;&#x7EDC;&#x3002;&#x5B83;&#x4F9D;&#x8D56;&#x4E00;&#x79CD;&#x540D;&#x4E3A;LuaJIT&#x7684;&#x811A;&#x672C;&#x8BED;&#x8A00;&#xFF0C;&#x8FD9;&#x79CD;&#x8BED;&#x8A00;&#x57FA;&#x4E8E;Lua&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x94FE;&#x63A5;&#xFF1A;<a href="http://torch.ch" target="_blank" rel="noopener">http://torch.ch</a></p>
 
-        </div>
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-01-17T09:26:11.000Z" itemprop="datePublished">2017-01-17</time>
+
+    </span>
+    <span class="post-description-item">
         
-          
-
-
-  <section class='meta' id="footer-meta">
-    <hr>
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-03T11:52:29+08:00">
-  <a class='notlink'>
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 3, 2019</p>
-  </a>
+    </span>
 </div>
 
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://generaltune.github.io/blog/2017/01/17/20170117/&title=人工智能 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://generaltune.github.io/blog/2017/01/17/20170117/&title=人工智能 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://generaltune.github.io/blog/2017/01/17/20170117/&title=人工智能 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </section>
-
-
-        
-        
-            <div class="prev-next">
+                </div>
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
-                            <h4>
-                                <a href="/blog/2017/01/19/20170119/" rel="prev" title="互联网名人汇">
-                                  
-                                      互联网名人汇
-                                  
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
                 
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/blog/2017/01/16/20170116/" rel="prev" title="未雪">
-                                    
-                                        未雪
-                                    
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+
+                <a href="/blog/2017/01/19/20170119/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    互联网名人汇
+                    
+
+                </a>
+
                 
             </div>
-        
-      </section>
-    </article>
-  
+            <div class="column nav-right">
+                
 
-  
-    <!-- 显示推荐文章和评论 -->
-
-
-
-  
-
-
-  
-
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: '人工智能',
-      tools: true
-    }
-  </script>
-
+                <a href="/blog/2017/01/16/20170116/" class="ui tiny button">
+                    
+                    未雪
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
 
 </div>
-<aside class='l_side'>
-  
-    
-    
-      
-        
-          
-          
-            <section class='widget author'>
-  <div class='content pure'>
-    
-      <div class='avatar'>
-        <img class='avatar' src='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png'/>
-      </div>
-    
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/blog/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:generaltune@126.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/generaltune"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
+                
+            </div>
 
-          
-        
-      
-        
-          
-          
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    
+                </div>
+
+            </div>
             
 
-          
-        
-      
-        
-          
-          
-            <section class='widget grid'>
-  
-<header class='pure'>
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="grid navgation">
-      
-        <li><a class="flat-box" title="/blog/" href="/blog/"
-          
-          
-          id="blog">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          近期文章
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/blog/archives/" href="/blog/blog/archives/"
-          
-            rel="nofollow"
-          
-          
-          id="blogblogarchives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/projects/" href="/blog/projects/"
-          
-          
-          id="blogprojects">
-          
-            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
-          
-          开源项目
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/friends/" href="/blog/friends/"
-          
-            rel="nofollow"
-          
-          
-          id="blogfriends">
-          
-            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
-          
-          我的友链
-        </a></li>
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
-          
-            rel="nofollow"
-          
-          
-          id="https:xaoxuu.comwikimaterial-x">
-          
-            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
-          
-          主题文档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/about/" href="/blog/about/"
-          
-            rel="nofollow"
-          
-          
-          id="blogabout">
-          
-            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
-          
-          关于小站
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-          
-        
-      
-        
-          
-          
-            
-
-          
-        
-      
-        
-          
-          
-            
-  <section class='widget tagcloud'>
-    
-<header class='pure'>
-  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/blog/blog/tags/"
-    title="blog/tags/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      <a href="/blog/tags/日志-感悟-生活/" style="font-size: 14px; color: #999">日志  感悟 生活</a>
+        </div>
     </div>
-  </section>
-
-
-          
-        
-      
-        
-          
-          
-            
-
-
-  <section class='widget music'>
-    
-<header class='pure'>
-  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
-  
-    <a class="rightBtn"
-    
-      rel="external nofollow noopener noreferrer"
-    
-    
-      target="_blank"
-    
-    href="https://music.163.com/#/user/home?id=63035382"
-    title="https://music.163.com/#/user/home?id=63035382">
-    <i class="far fa-heart fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
-  <div class="aplayer"
-    data-theme="#1BCDFC"
-    
-    
-    data-mode="circulation"
-    data-server="netease"
-    data-type="playlist"
-    data-id="2615636388"
-    data-volume="0.7">
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
-
-
-    </div>
-  </section>
-
-
-          
-        
-      
-    
-
-  
-</aside>
-
-<footer id="footer" class="clearfix">
-  
-  
-    <div class="social-wrapper">
-      
-        
-          <a href="/blog/atom.xml"
-            class="social fas fa-rss flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="mailto:generaltune@126.com"
-            class="social fas fa-envelope flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://github.com/generaltune"
-            class="social fab fa-github flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://music.163.com/#/user/home?id=63035382"
-            class="social fas fa-headphones-alt flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-    </div>
-  
-  <br>
-  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
-  <div>
-    Use
-    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
-    
-      , 
-      total visits
-      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      times
-    
-    . 
-  </div>
-</footer>
-<script>setLoadingBarProgress(80);</script>
 
 
-      <script>setLoadingBarProgress(60);</script>
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2019 <a href="/">GENERALTUNE</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a href="http://hexo.io/" target="_blank">Hexo</a>.
     </div>
-    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+</div>
 
-  <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
-    var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/blog/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
-  </script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      Waves.attach('.flat-btn', ['waves-button']);
-      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-      Waves.attach('.flat-box', ['waves-block']);
-      Waves.attach('.float-box', ['waves-block', 'waves-float']);
-      Waves.attach('.waves-image');
-      Waves.init();
-    });
-  </script>
-
-
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+    </div>
 
 
 
 
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/blog/js/semantic-ui-algolia.js"></script>
+
+<script src="/blog/js/aloha-events.js"></script>
 
 
 
-
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
-
-
-
-
-<!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  let COPY_SUCCESS = "Copied";
-  let COPY_FAILURE = "Copy failed";
-  /*页面载入完成后，创建复制按钮*/
-  !function (e, t, a) {
-    /* code */
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-
-      clipboard.on('success', function(e) {
-        //您可以加入成功提示
-        console.info('Action:', e.action);
-        console.info('Text:', e.text);
-        console.info('Trigger:', e.trigger);
-        success_prompt(COPY_SUCCESS);
-        e.clearSelection();
-      });
-      clipboard.on('error', function(e) {
-        //您可以加入失败提示
-        console.error('Action:', e.action);
-        console.error('Trigger:', e.trigger);
-        fail_prompt(COPY_FAILURE);
-      });
-    }
-    initCopyCode();
-
-  }(window, document);
-
-  /**
-   * 弹出式提示框，默认1.5秒自动消失
-   * @param message 提示信息
-   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
-   * @param time 消失时间
-   */
-  var prompt = function (message, style, time)
-  {
-      style = (style === undefined) ? 'alert-success' : style;
-      time = (time === undefined) ? 1500 : time*1000;
-      $('<div>')
-          .appendTo('body')
-          .addClass('alert ' + style)
-          .html(message)
-          .show()
-          .delay(time)
-          .fadeOut();
-  };
-
-  // 成功提示
-  var success_prompt = function(message, time)
-  {
-      prompt(message, 'alert-success', time);
-  };
-
-  // 失败提示
-  var fail_prompt = function(message, time)
-  {
-      prompt(message, 'alert-danger', time);
-  };
-
-  // 提醒
-  var warning_prompt = function(message, time)
-  {
-      prompt(message, 'alert-warning', time);
-  };
-
-  // 信息提示
-  var info_prompt = function(message, time)
-  {
-      prompt(message, 'alert-info', time);
-  };
-
-</script>
-
-
-<!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
-      $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
-  });
-</script>
-
-
-
-
-
-  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>

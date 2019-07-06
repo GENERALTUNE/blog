@@ -1,1286 +1,499 @@
+
+
 <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <title>linux下的压缩命令 | generaltune&#39;s blog</title>
-  
-  
+<html lang>
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content>
+    <title>linux下的压缩命令 | generaltune&#39;s blog</title>
 
-  
+    <!-- Open Graph -->
+    <meta name="description" content="Linux&amp;#x4E0B;&amp;#x7684;&amp;#x538B;&amp;#x7F29;zip,&amp;#x89E3;&amp;#x538B;&amp;#x7F29;unzip&amp;#x547D;&amp;#x4EE4;&amp;#x8BE6;&amp;#x89E3;&amp;#x53CA;&amp;#x5B9E;&amp;#x4F8B;Linux&amp;#x4E0B;&amp;#x7684;&amp;#x538B;&amp;#x7F29;&amp;#x89E3;&amp;#x538B;&amp;#x7F29;&amp;#x547D;&amp;#x4E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux下的压缩命令">
+<meta property="og:url" content="https://generaltune.github.io/blog/2017/11/21/linux-help-compress/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="Linux&amp;#x4E0B;&amp;#x7684;&amp;#x538B;&amp;#x7F29;zip,&amp;#x89E3;&amp;#x538B;&amp;#x7F29;unzip&amp;#x547D;&amp;#x4EE4;&amp;#x8BE6;&amp;#x89E3;&amp;#x53CA;&amp;#x5B9E;&amp;#x4F8B;Linux&amp;#x4E0B;&amp;#x7684;&amp;#x538B;&amp;#x7F29;&amp;#x89E3;&amp;#x538B;&amp;#x7F29;&amp;#x547D;&amp;#x4E">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T03:52:29.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux下的压缩命令">
+<meta name="twitter:description" content="Linux&amp;#x4E0B;&amp;#x7684;&amp;#x538B;&amp;#x7F29;zip,&amp;#x89E3;&amp;#x538B;&amp;#x7F29;unzip&amp;#x547D;&amp;#x4EE4;&amp;#x8BE6;&amp;#x89E3;&amp;#x53CA;&amp;#x5B9E;&amp;#x4F8B;Linux&amp;#x4E0B;&amp;#x7684;&amp;#x538B;&amp;#x7F29;&amp;#x89E3;&amp;#x538B;&amp;#x7F29;&amp;#x547D;&amp;#x4E">
 
-  <meta name="HandheldFriendly" content="True">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
-  
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "GENERALTUNE",
+  "url": "https://generaltune.github.io/blog"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
 
-  <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
-  
+    
 
-  
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/blog/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
-  
-
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width=num+"%";
-    }
-  </script>
-
-  
-  
 </head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
 
-<body>
-  
-  
-  <div class="cover-wrapper">
-    <cover class='cover post half'>
-      
-        
-  <h1 class='title'>Material X</h1>
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>generaltune&#39;s blog</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/blog/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">GENERALTUNE</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class='menu navgation'>
-  <ul class='h-list'>
-    
-      
-        <li>
-          <a class="nav home" href="/blog/"
-            
-            
-            id="blog">
-            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/projects/"
-            
-            
-            id="blogprojects">
-            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/friends/"
-            
-              rel="nofollow"
-            
-            
-            id="blogfriends">
-            <i class='fas fa-link fa-fw'></i>&nbsp;友链
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/about/"
-            
-              rel="nofollow"
-            
-            
-            id="blogabout">
-            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
-          </a>
-        </li>
-      
-    
-  </ul>
 </div>
 
-      
-    </cover>
-    <header class="l_header pure">
-  <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
-  </div>
-
-	<div class='wrapper'>
-		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href='/blog/' >
-        
-          generaltune's blog
-        
-      </a>
-			<div class='menu navgation'>
-				<ul class='h-list'>
-          
-  					
-  						<li>
-								<a class="nav flat-box" href="/blog/"
-                  
-                  
-                  id="blog">
-									<i class='fas fa-grin fa-fw'></i>&nbsp;示例
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/categories/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogcategories">
-									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/tags/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogtags">
-									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/archives/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogarchives">
-									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
-								</a>
-							</li>
-      			
-      		
-				</ul>
-			</div>
-
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="Search" />
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
-			<ul class='switcher h-list'>
-				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
-				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
-			</ul>
-		</div>
-
-		<div class='nav-sub container container--flex'>
-			<a class="logo flat-box"></a>
-			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
-        
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
-        
-			</ul>
-		</div>
-	</div>
-</header>
-	<aside class="menu-phone">
-    <header>
-		<nav class="menu navgation">
-      <ul>
-        
-          
-            <li>
-							<a class="nav flat-box" href="/blog/"
-                
-                
-                id="blog">
-								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/blog/archives/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogblogarchives">
-								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/projects/"
-                
-                
-                id="blogprojects">
-								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/friends/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogfriends">
-								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
-                
-                  rel="nofollow"
-                
-                
-                id="https:xaoxuu.comwikimaterial-x">
-								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/about/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogabout">
-								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
-							</a>
-            </li>
-          
-       
-      </ul>
-		</nav>
-    </header>
-	</aside>
-<script>setLoadingBarProgress(40);</script>
-
-  </div>
-
-
-  <div class="l_body">
-    <div class='body-wrapper'>
-      <div class='l_main'>
-  
-
-  
-    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-      
-
-
-  <section class='meta'>
     
     
-    <div class="meta" id="header-meta">
-      
-        
-  
-    <h1 class="title">
-      <a href="/blog/2017/11/21/linux-help-compress/">
-        linux下的压缩命令
-      </a>
-    </h1>
-  
 
+    
 
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://generaltune.github.io/blog" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>GENERALTUNE</p>
+    
+    <a href="/index.html" class="item">
+        <i class="home icon"></i>
+        HOME
     </a>
-  </div>
 
+    
 
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2017-11-21</p>
-  </a>
+    
 </div>
 
-          
-        
-          
-            
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-linux-help-compress" class="ui main container article-type-post">
 
-          
-        
-          
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
+    
 
+    <div class="ui divided grid">
 
-          
-        
-          
-            
+        <div class="two column row" id="article-content">
 
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    linux下的压缩命令
+</h1>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          <h2 id="Linux下的压缩zip-解压缩unzip命令详解及实例"><a href="#Linux下的压缩zip-解压缩unzip命令详解及实例" class="headerlink" title="Linux下的压缩zip,解压缩unzip命令详解及实例"></a>Linux下的压缩zip,解压缩unzip命令详解及实例</h2><p>Linux下的压缩解压缩命令详解及实例</p>
-<p>实例：压缩服务器上当前目录的内容为xxx.zip文件</p>
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h2 id="Linux&#x4E0B;&#x7684;&#x538B;&#x7F29;zip-&#x89E3;&#x538B;&#x7F29;unzip&#x547D;&#x4EE4;&#x8BE6;&#x89E3;&#x53CA;&#x5B9E;&#x4F8B;"><a href="#Linux&#x4E0B;&#x7684;&#x538B;&#x7F29;zip-&#x89E3;&#x538B;&#x7F29;unzip&#x547D;&#x4EE4;&#x8BE6;&#x89E3;&#x53CA;&#x5B9E;&#x4F8B;" class="headerlink" title="Linux&#x4E0B;&#x7684;&#x538B;&#x7F29;zip,&#x89E3;&#x538B;&#x7F29;unzip&#x547D;&#x4EE4;&#x8BE6;&#x89E3;&#x53CA;&#x5B9E;&#x4F8B;"></a>Linux&#x4E0B;&#x7684;&#x538B;&#x7F29;zip,&#x89E3;&#x538B;&#x7F29;unzip&#x547D;&#x4EE4;&#x8BE6;&#x89E3;&#x53CA;&#x5B9E;&#x4F8B;</h2><p>Linux&#x4E0B;&#x7684;&#x538B;&#x7F29;&#x89E3;&#x538B;&#x7F29;&#x547D;&#x4EE4;&#x8BE6;&#x89E3;&#x53CA;&#x5B9E;&#x4F8B;</p>
+<p>&#x5B9E;&#x4F8B;&#xFF1A;&#x538B;&#x7F29;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x7684;&#x5185;&#x5BB9;&#x4E3A;xxx.zip&#x6587;&#x4EF6;</p>
 <p>zip -r xxx.zip ./*</p>
-<h3 id="解压zip文件到当前目录"><a href="#解压zip文件到当前目录" class="headerlink" title="解压zip文件到当前目录"></a>解压zip文件到当前目录</h3><p>unzip filename.zip</p>
+<h3 id="&#x89E3;&#x538B;zip&#x6587;&#x4EF6;&#x5230;&#x5F53;&#x524D;&#x76EE;&#x5F55;"><a href="#&#x89E3;&#x538B;zip&#x6587;&#x4EF6;&#x5230;&#x5F53;&#x524D;&#x76EE;&#x5F55;" class="headerlink" title="&#x89E3;&#x538B;zip&#x6587;&#x4EF6;&#x5230;&#x5F53;&#x524D;&#x76EE;&#x5F55;"></a>&#x89E3;&#x538B;zip&#x6587;&#x4EF6;&#x5230;&#x5F53;&#x524D;&#x76EE;&#x5F55;</h3><p>unzip filename.zip</p>
 <p>============================</p>
-<p>另：有些服务器没有安装zip包执行不了zip命令，但基本上都可以用tar命令的，实例如下：</p>
+<p>&#x53E6;&#xFF1A;&#x6709;&#x4E9B;&#x670D;&#x52A1;&#x5668;&#x6CA1;&#x6709;&#x5B89;&#x88C5;zip&#x5305;&#x6267;&#x884C;&#x4E0D;&#x4E86;zip&#x547D;&#x4EE4;&#xFF0C;&#x4F46;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x53EF;&#x4EE5;&#x7528;tar&#x547D;&#x4EE4;&#x7684;&#xFF0C;&#x5B9E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
 <p>tar -zcvf /home/zdzlibs.tar.gz /home/zdz/java/zdzlibs/</p>
 <p>============================</p>
-<p>linux zip命令</p>
-<p>zip -r myfile.zip ./*<br>将当前目录下的所有文件和文件夹全部压缩成myfile.zip文件,－r表示递归压缩子目录下所有文件.</p>
-<p>2.unzip<br>unzip -o -d /home/sunny myfile.zip<br>把myfile.zip文件解压到 /home/sunny/<br>-o:不提示的情况下覆盖文件；<br>-d:-d /home/sunny 指明将文件解压缩到/home/sunny目录下；</p>
-<p>3.其他<br>zip -d myfile.zip smart.txt<br>删除压缩文件中smart.txt文件<br>zip -m myfile.zip ./rpm_info.txt</p>
-<h2 id="向压缩文件中myfile-zip中添加rpm-info-txt文件"><a href="#向压缩文件中myfile-zip中添加rpm-info-txt文件" class="headerlink" title="向压缩文件中myfile.zip中添加rpm_info.txt文件"></a>向压缩文件中myfile.zip中添加rpm_info.txt文件</h2><p>要使用 zip 来压缩文件，在 shell 提示下键入下面的命令：</p>
+<p>linux zip&#x547D;&#x4EE4;</p>
+<p>zip -r myfile.zip ./*<br>&#x5C06;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x548C;&#x6587;&#x4EF6;&#x5939;&#x5168;&#x90E8;&#x538B;&#x7F29;&#x6210;myfile.zip&#x6587;&#x4EF6;,&#xFF0D;r&#x8868;&#x793A;&#x9012;&#x5F52;&#x538B;&#x7F29;&#x5B50;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;.</p>
+<p>2.unzip<br>unzip -o -d /home/sunny myfile.zip<br>&#x628A;myfile.zip&#x6587;&#x4EF6;&#x89E3;&#x538B;&#x5230; /home/sunny/<br>-o:&#x4E0D;&#x63D0;&#x793A;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x8986;&#x76D6;&#x6587;&#x4EF6;&#xFF1B;<br>-d:-d /home/sunny &#x6307;&#x660E;&#x5C06;&#x6587;&#x4EF6;&#x89E3;&#x538B;&#x7F29;&#x5230;/home/sunny&#x76EE;&#x5F55;&#x4E0B;&#xFF1B;</p>
+<p>3.&#x5176;&#x4ED6;<br>zip -d myfile.zip smart.txt<br>&#x5220;&#x9664;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x4E2D;smart.txt&#x6587;&#x4EF6;<br>zip -m myfile.zip ./rpm_info.txt</p>
+<h2 id="&#x5411;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x4E2D;myfile-zip&#x4E2D;&#x6DFB;&#x52A0;rpm-info-txt&#x6587;&#x4EF6;"><a href="#&#x5411;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x4E2D;myfile-zip&#x4E2D;&#x6DFB;&#x52A0;rpm-info-txt&#x6587;&#x4EF6;" class="headerlink" title="&#x5411;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x4E2D;myfile.zip&#x4E2D;&#x6DFB;&#x52A0;rpm_info.txt&#x6587;&#x4EF6;"></a>&#x5411;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x4E2D;myfile.zip&#x4E2D;&#x6DFB;&#x52A0;rpm_info.txt&#x6587;&#x4EF6;</h2><p>&#x8981;&#x4F7F;&#x7528; zip &#x6765;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#xFF0C;&#x5728; shell &#x63D0;&#x793A;&#x4E0B;&#x952E;&#x5165;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#xFF1A;</p>
 <p>zip -r filename.zip filesdir</p>
-<p>在这个例子里，filename.zip 代表你创建的文件，filesdir 代表你想放置新 zip 文件的目录。-r 选项指定你想递归地（recursively）包括所有包括在 filesdir 目录中的文件。</p>
-<p>要抽取 zip 文件的内容，键入以下命令：</p>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x91CC;&#xFF0C;filename.zip &#x4EE3;&#x8868;&#x4F60;&#x521B;&#x5EFA;&#x7684;&#x6587;&#x4EF6;&#xFF0C;filesdir &#x4EE3;&#x8868;&#x4F60;&#x60F3;&#x653E;&#x7F6E;&#x65B0; zip &#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x3002;-r &#x9009;&#x9879;&#x6307;&#x5B9A;&#x4F60;&#x60F3;&#x9012;&#x5F52;&#x5730;&#xFF08;recursively&#xFF09;&#x5305;&#x62EC;&#x6240;&#x6709;&#x5305;&#x62EC;&#x5728; filesdir &#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x8981;&#x62BD;&#x53D6; zip &#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x952E;&#x5165;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;</p>
 <p>unzip filename.zip</p>
-<p>你可以使用 zip 命令同时处理多个文件和目录，方法是将它们逐一列出，并用空格间隔：</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; zip &#x547D;&#x4EE4;&#x540C;&#x65F6;&#x5904;&#x7406;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#xFF0C;&#x65B9;&#x6CD5;&#x662F;&#x5C06;&#x5B83;&#x4EEC;&#x9010;&#x4E00;&#x5217;&#x51FA;&#xFF0C;&#x5E76;&#x7528;&#x7A7A;&#x683C;&#x95F4;&#x9694;&#xFF1A;</p>
 <p>zip -r filename.zip file1 file2 file3 /usr/work/school</p>
-<p>上面的命令把 file1、file2、 file3、以及 /usr/work/school 目录的内容（假设这个目录存在）压缩起来，然后放入 filename.zip 文件中。</p>
-<p>tar 命令详解</p>
-<p>　　-c: 建立压缩档案</p>
-<p>　　-x：解压</p>
-<p>　　-t：查看内容</p>
-<p>　　-r：向压缩归档文件末尾追加文件</p>
-<p>　　-u：更新原压缩包中的文件</p>
-<p>　　这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。</p>
-<p>　　-c: 建立压缩档案</p>
-<p>　　-x：解压</p>
-<p>　　-t：查看内容</p>
-<p>　　-r：向压缩归档文件末尾追加文件</p>
-<p>　　-u：更新原压缩包中的文件</p>
-<p>　　下面的参数-f是必须的</p>
-<p>　　-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。</p>
-<p>　　# tar -cf all.tar *.jpg</p>
-<p>　　这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。</p>
-<p>　　# tar -rf all.tar *.gif</p>
-<p>　　这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。</p>
-<p>　　# tar -uf all.tar logo.gif</p>
-<p>　　这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。</p>
-<p>　　# tar -tf all.tar</p>
-<p>　　这条命令是列出all.tar包中所有文件，-t是列出文件的意思</p>
-<p>　　# tar -xf all.tar</p>
-<p>　　这条命令是解出all.tar包中所有文件，-t是解开的意思</p>
-<p>　　压缩</p>
-<p>　　tar –cvf jpg.tar *.jpg //将目录里所有jpg文件打包成tar.jpg</p>
-<p>　　tar –czf jpg.tar.gz *.jpg //将目录里所有jpg文件打包成jpg.tar后，并且将其用gzip压缩，生成一个gzip压缩过的包，命名为jpg.tar.gz</p>
-<p>　　tar –cjf jpg.tar.bz2 *.jpg //将目录里所有jpg文件打包成jpg.tar后，并且将其用bzip2压缩，生成一个bzip2压缩过的包，命名为jpg.tar.bz2</p>
-<p>　　tar –cZf jpg.tar.Z *.jpg //将目录里所有jpg文件打包成jpg.tar后，并且将其用compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z</p>
-<p>　　rar a jpg.rar *.jpg //rar格式的压缩，需要先下载rar for linux</p>
-<p>　　zip jpg.zip *.jpg //zip格式的压缩，需要先下载zip for linux</p>
-<p>　　解压</p>
-<p>　　tar –xvf file.tar //解压 tar包</p>
-<p>　　tar -xzvf file.tar.gz //解压tar.gz</p>
-<p>　　tar -xjvf file.tar.bz2 //解压 tar.bz2</p>
-<p>　　tar –xZvf file.tar.Z //解压tar.Z</p>
-<p>　　unrar e file.rar //解压rar</p>
-<p>　　unzip file.zip //解压zip</p>
-<p>　　总结</p>
-<p>　　1、*.tar 用 tar –xvf 解压</p>
-<p>　　2、*.gz 用 gzip -d或者gunzip 解压</p>
-<p>　　3、<em>.tar.gz和</em>.tgz 用 tar –xzf 解压</p>
-<p>　　4、*.bz2 用 bzip2 -d或者用bunzip2 解压</p>
-<p>　　5、*.tar.bz2用tar –xjf 解压</p>
-<p>　　6、*.Z 用 uncompress 解压</p>
-<p>　　7、*.tar.Z 用tar –xZf 解压</p>
-<p>　　8、*.rar 用 unrar e解压</p>
-<p>　　9、*.zip 用 unzip 解压</p>
-<p>　　Linux中tar命令详解(转载的资料)</p>
-<p> 　2008年04月17日 星期四 15:37</p>
-<pre><code>　　tar命令
+<p>&#x4E0A;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x628A; file1&#x3001;file2&#x3001; file3&#x3001;&#x4EE5;&#x53CA; /usr/work/school &#x76EE;&#x5F55;&#x7684;&#x5185;&#x5BB9;&#xFF08;&#x5047;&#x8BBE;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x5B58;&#x5728;&#xFF09;&#x538B;&#x7F29;&#x8D77;&#x6765;&#xFF0C;&#x7136;&#x540E;&#x653E;&#x5165; filename.zip &#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+<p>tar &#x547D;&#x4EE4;&#x8BE6;&#x89E3;</p>
+<p>&#x3000;&#x3000;-c: &#x5EFA;&#x7ACB;&#x538B;&#x7F29;&#x6863;&#x6848;</p>
+<p>&#x3000;&#x3000;-x&#xFF1A;&#x89E3;&#x538B;</p>
+<p>&#x3000;&#x3000;-t&#xFF1A;&#x67E5;&#x770B;&#x5185;&#x5BB9;</p>
+<p>&#x3000;&#x3000;-r&#xFF1A;&#x5411;&#x538B;&#x7F29;&#x5F52;&#x6863;&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x8FFD;&#x52A0;&#x6587;&#x4EF6;</p>
+<p>&#x3000;&#x3000;-u&#xFF1A;&#x66F4;&#x65B0;&#x539F;&#x538B;&#x7F29;&#x5305;&#x4E2D;&#x7684;&#x6587;&#x4EF6;</p>
+<p>&#x3000;&#x3000;&#x8FD9;&#x4E94;&#x4E2A;&#x662F;&#x72EC;&#x7ACB;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x538B;&#x7F29;&#x89E3;&#x538B;&#x90FD;&#x8981;&#x7528;&#x5230;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#xFF0C;&#x53EF;&#x4EE5;&#x548C;&#x522B;&#x7684;&#x547D;&#x4EE4;&#x8FDE;&#x7528;&#x4F46;&#x53EA;&#x80FD;&#x7528;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x53C2;&#x6570;&#x662F;&#x6839;&#x636E;&#x9700;&#x8981;&#x5728;&#x538B;&#x7F29;&#x6216;&#x89E3;&#x538B;&#x6863;&#x6848;&#x65F6;&#x53EF;&#x9009;&#x7684;&#x3002;</p>
+<p>&#x3000;&#x3000;-c: &#x5EFA;&#x7ACB;&#x538B;&#x7F29;&#x6863;&#x6848;</p>
+<p>&#x3000;&#x3000;-x&#xFF1A;&#x89E3;&#x538B;</p>
+<p>&#x3000;&#x3000;-t&#xFF1A;&#x67E5;&#x770B;&#x5185;&#x5BB9;</p>
+<p>&#x3000;&#x3000;-r&#xFF1A;&#x5411;&#x538B;&#x7F29;&#x5F52;&#x6863;&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x8FFD;&#x52A0;&#x6587;&#x4EF6;</p>
+<p>&#x3000;&#x3000;-u&#xFF1A;&#x66F4;&#x65B0;&#x539F;&#x538B;&#x7F29;&#x5305;&#x4E2D;&#x7684;&#x6587;&#x4EF6;</p>
+<p>&#x3000;&#x3000;&#x4E0B;&#x9762;&#x7684;&#x53C2;&#x6570;-f&#x662F;&#x5FC5;&#x987B;&#x7684;</p>
+<p>&#x3000;&#x3000;-f: &#x4F7F;&#x7528;&#x6863;&#x6848;&#x540D;&#x5B57;&#xFF0C;&#x5207;&#x8BB0;&#xFF0C;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x540E;&#x9762;&#x53EA;&#x80FD;&#x63A5;&#x6863;&#x6848;&#x540D;&#x3002;</p>
+<p>&#x3000;&#x3000;# tar -cf all.tar *.jpg</p>
+<p>&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5C06;&#x6240;&#x6709;.jpg&#x7684;&#x6587;&#x4EF6;&#x6253;&#x6210;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;all.tar&#x7684;&#x5305;&#x3002;-c&#x662F;&#x8868;&#x793A;&#x4EA7;&#x751F;&#x65B0;&#x7684;&#x5305;&#xFF0C;-f&#x6307;&#x5B9A;&#x5305;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x3002;</p>
+<p>&#x3000;&#x3000;# tar -rf all.tar *.gif</p>
+<p>&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5C06;&#x6240;&#x6709;.gif&#x7684;&#x6587;&#x4EF6;&#x589E;&#x52A0;&#x5230;all.tar&#x7684;&#x5305;&#x91CC;&#x9762;&#x53BB;&#x3002;-r&#x662F;&#x8868;&#x793A;&#x589E;&#x52A0;&#x6587;&#x4EF6;&#x7684;&#x610F;&#x601D;&#x3002;</p>
+<p>&#x3000;&#x3000;# tar -uf all.tar logo.gif</p>
+<p>&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x66F4;&#x65B0;&#x539F;&#x6765;tar&#x5305;all.tar&#x4E2D;logo.gif&#x6587;&#x4EF6;&#xFF0C;-u&#x662F;&#x8868;&#x793A;&#x66F4;&#x65B0;&#x6587;&#x4EF6;&#x7684;&#x610F;&#x601D;&#x3002;</p>
+<p>&#x3000;&#x3000;# tar -tf all.tar</p>
+<p>&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5217;&#x51FA;all.tar&#x5305;&#x4E2D;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF0C;-t&#x662F;&#x5217;&#x51FA;&#x6587;&#x4EF6;&#x7684;&#x610F;&#x601D;</p>
+<p>&#x3000;&#x3000;# tar -xf all.tar</p>
+<p>&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x89E3;&#x51FA;all.tar&#x5305;&#x4E2D;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF0C;-t&#x662F;&#x89E3;&#x5F00;&#x7684;&#x610F;&#x601D;</p>
+<p>&#x3000;&#x3000;&#x538B;&#x7F29;</p>
+<p>&#x3000;&#x3000;tar &#x2013;cvf jpg.tar *.jpg //&#x5C06;&#x76EE;&#x5F55;&#x91CC;&#x6240;&#x6709;jpg&#x6587;&#x4EF6;&#x6253;&#x5305;&#x6210;tar.jpg</p>
+<p>&#x3000;&#x3000;tar &#x2013;czf jpg.tar.gz *.jpg //&#x5C06;&#x76EE;&#x5F55;&#x91CC;&#x6240;&#x6709;jpg&#x6587;&#x4EF6;&#x6253;&#x5305;&#x6210;jpg.tar&#x540E;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x5176;&#x7528;gzip&#x538B;&#x7F29;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;gzip&#x538B;&#x7F29;&#x8FC7;&#x7684;&#x5305;&#xFF0C;&#x547D;&#x540D;&#x4E3A;jpg.tar.gz</p>
+<p>&#x3000;&#x3000;tar &#x2013;cjf jpg.tar.bz2 *.jpg //&#x5C06;&#x76EE;&#x5F55;&#x91CC;&#x6240;&#x6709;jpg&#x6587;&#x4EF6;&#x6253;&#x5305;&#x6210;jpg.tar&#x540E;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x5176;&#x7528;bzip2&#x538B;&#x7F29;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;bzip2&#x538B;&#x7F29;&#x8FC7;&#x7684;&#x5305;&#xFF0C;&#x547D;&#x540D;&#x4E3A;jpg.tar.bz2</p>
+<p>&#x3000;&#x3000;tar &#x2013;cZf jpg.tar.Z *.jpg //&#x5C06;&#x76EE;&#x5F55;&#x91CC;&#x6240;&#x6709;jpg&#x6587;&#x4EF6;&#x6253;&#x5305;&#x6210;jpg.tar&#x540E;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x5176;&#x7528;compress&#x538B;&#x7F29;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;umcompress&#x538B;&#x7F29;&#x8FC7;&#x7684;&#x5305;&#xFF0C;&#x547D;&#x540D;&#x4E3A;jpg.tar.Z</p>
+<p>&#x3000;&#x3000;rar a jpg.rar *.jpg //rar&#x683C;&#x5F0F;&#x7684;&#x538B;&#x7F29;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x4E0B;&#x8F7D;rar for linux</p>
+<p>&#x3000;&#x3000;zip jpg.zip *.jpg //zip&#x683C;&#x5F0F;&#x7684;&#x538B;&#x7F29;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x4E0B;&#x8F7D;zip for linux</p>
+<p>&#x3000;&#x3000;&#x89E3;&#x538B;</p>
+<p>&#x3000;&#x3000;tar &#x2013;xvf file.tar //&#x89E3;&#x538B; tar&#x5305;</p>
+<p>&#x3000;&#x3000;tar -xzvf file.tar.gz //&#x89E3;&#x538B;tar.gz</p>
+<p>&#x3000;&#x3000;tar -xjvf file.tar.bz2 //&#x89E3;&#x538B; tar.bz2</p>
+<p>&#x3000;&#x3000;tar &#x2013;xZvf file.tar.Z //&#x89E3;&#x538B;tar.Z</p>
+<p>&#x3000;&#x3000;unrar e file.rar //&#x89E3;&#x538B;rar</p>
+<p>&#x3000;&#x3000;unzip file.zip //&#x89E3;&#x538B;zip</p>
+<p>&#x3000;&#x3000;&#x603B;&#x7ED3;</p>
+<p>&#x3000;&#x3000;1&#x3001;*.tar &#x7528; tar &#x2013;xvf &#x89E3;&#x538B;</p>
+<p>&#x3000;&#x3000;2&#x3001;*.gz &#x7528; gzip -d&#x6216;&#x8005;gunzip &#x89E3;&#x538B;</p>
+<p>&#x3000;&#x3000;3&#x3001;<em>.tar.gz&#x548C;</em>.tgz &#x7528; tar &#x2013;xzf &#x89E3;&#x538B;</p>
+<p>&#x3000;&#x3000;4&#x3001;*.bz2 &#x7528; bzip2 -d&#x6216;&#x8005;&#x7528;bunzip2 &#x89E3;&#x538B;</p>
+<p>&#x3000;&#x3000;5&#x3001;*.tar.bz2&#x7528;tar &#x2013;xjf &#x89E3;&#x538B;</p>
+<p>&#x3000;&#x3000;6&#x3001;*.Z &#x7528; uncompress &#x89E3;&#x538B;</p>
+<p>&#x3000;&#x3000;7&#x3001;*.tar.Z &#x7528;tar &#x2013;xZf &#x89E3;&#x538B;</p>
+<p>&#x3000;&#x3000;8&#x3001;*.rar &#x7528; unrar e&#x89E3;&#x538B;</p>
+<p>&#x3000;&#x3000;9&#x3001;*.zip &#x7528; unzip &#x89E3;&#x538B;</p>
+<p>&#x3000;&#x3000;Linux&#x4E2D;tar&#x547D;&#x4EE4;&#x8BE6;&#x89E3;(&#x8F6C;&#x8F7D;&#x7684;&#x8D44;&#x6599;)</p>
+<p> &#x3000;2008&#x5E74;04&#x6708;17&#x65E5; &#x661F;&#x671F;&#x56DB; 15:37</p>
+<pre><code>&#x3000;&#x3000;tar&#x547D;&#x4EE4;
 
-　　tar 可以为文件和目录创建档案。利用tar，用户可以为某一特定文件创建档案(备份文件)，也可以在档案中改变文件，或者向档案中加入新的文件。tar最初被 用来在磁带上创建档案，现在，用户可以在任何设备上创建档案，如软盘。利用tar命令，可以把一大堆的文件和目录全部打包成一个文件，这对于备份文件或将 几个文件组合成为一个文件以便于网络传输是非常有用的。Linux上的tar是GNU版本的。
+&#x3000;&#x3000;tar &#x53EF;&#x4EE5;&#x4E3A;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x521B;&#x5EFA;&#x6863;&#x6848;&#x3002;&#x5229;&#x7528;tar&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4E3A;&#x67D0;&#x4E00;&#x7279;&#x5B9A;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x6863;&#x6848;(&#x5907;&#x4EFD;&#x6587;&#x4EF6;)&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x6863;&#x6848;&#x4E2D;&#x6539;&#x53D8;&#x6587;&#x4EF6;&#xFF0C;&#x6216;&#x8005;&#x5411;&#x6863;&#x6848;&#x4E2D;&#x52A0;&#x5165;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x3002;tar&#x6700;&#x521D;&#x88AB; &#x7528;&#x6765;&#x5728;&#x78C1;&#x5E26;&#x4E0A;&#x521B;&#x5EFA;&#x6863;&#x6848;&#xFF0C;&#x73B0;&#x5728;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x4F55;&#x8BBE;&#x5907;&#x4E0A;&#x521B;&#x5EFA;&#x6863;&#x6848;&#xFF0C;&#x5982;&#x8F6F;&#x76D8;&#x3002;&#x5229;&#x7528;tar&#x547D;&#x4EE4;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x5927;&#x5806;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x5168;&#x90E8;&#x6253;&#x5305;&#x6210;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x5BF9;&#x4E8E;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#x6216;&#x5C06; &#x51E0;&#x4E2A;&#x6587;&#x4EF6;&#x7EC4;&#x5408;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4EE5;&#x4FBF;&#x4E8E;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x662F;&#x975E;&#x5E38;&#x6709;&#x7528;&#x7684;&#x3002;Linux&#x4E0A;&#x7684;tar&#x662F;GNU&#x7248;&#x672C;&#x7684;&#x3002;
 
-　　语法：tar [主选项+辅选项] 文件或者目录
+&#x3000;&#x3000;&#x8BED;&#x6CD5;&#xFF1A;tar [&#x4E3B;&#x9009;&#x9879;+&#x8F85;&#x9009;&#x9879;] &#x6587;&#x4EF6;&#x6216;&#x8005;&#x76EE;&#x5F55;
 
-　　使用该命令时，主选项是必须要有的，它告诉tar要做什么事情，辅选项是辅助使用的，可以选用。
+&#x3000;&#x3000;&#x4F7F;&#x7528;&#x8BE5;&#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x4E3B;&#x9009;&#x9879;&#x662F;&#x5FC5;&#x987B;&#x8981;&#x6709;&#x7684;&#xFF0C;&#x5B83;&#x544A;&#x8BC9;tar&#x8981;&#x505A;&#x4EC0;&#x4E48;&#x4E8B;&#x60C5;&#xFF0C;&#x8F85;&#x9009;&#x9879;&#x662F;&#x8F85;&#x52A9;&#x4F7F;&#x7528;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x7528;&#x3002;
 
-　　主选项：
+&#x3000;&#x3000;&#x4E3B;&#x9009;&#x9879;&#xFF1A;
 
-　　c 创建新的档案文件。如果用户想备份一个目录或是一些文件，就要选择这个选项。
+&#x3000;&#x3000;c &#x521B;&#x5EFA;&#x65B0;&#x7684;&#x6863;&#x6848;&#x6587;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x7528;&#x6237;&#x60F3;&#x5907;&#x4EFD;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#x6216;&#x662F;&#x4E00;&#x4E9B;&#x6587;&#x4EF6;&#xFF0C;&#x5C31;&#x8981;&#x9009;&#x62E9;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x3002;
 
-　　r 把要存档的文件追加到档案文件的未尾。例如用户已经作好备份文件，又发现还有一个目录或是一些文件忘记备份了，这时可以使用该选项，将忘记的目录或文件追加到备份文件中。
+&#x3000;&#x3000;r &#x628A;&#x8981;&#x5B58;&#x6863;&#x7684;&#x6587;&#x4EF6;&#x8FFD;&#x52A0;&#x5230;&#x6863;&#x6848;&#x6587;&#x4EF6;&#x7684;&#x672A;&#x5C3E;&#x3002;&#x4F8B;&#x5982;&#x7528;&#x6237;&#x5DF2;&#x7ECF;&#x4F5C;&#x597D;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#xFF0C;&#x53C8;&#x53D1;&#x73B0;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#x6216;&#x662F;&#x4E00;&#x4E9B;&#x6587;&#x4EF6;&#x5FD8;&#x8BB0;&#x5907;&#x4EFD;&#x4E86;&#xFF0C;&#x8FD9;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8BE5;&#x9009;&#x9879;&#xFF0C;&#x5C06;&#x5FD8;&#x8BB0;&#x7684;&#x76EE;&#x5F55;&#x6216;&#x6587;&#x4EF6;&#x8FFD;&#x52A0;&#x5230;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#x4E2D;&#x3002;
 
-　　t 列出档案文件的内容，查看已经备份了哪些文件。
+&#x3000;&#x3000;t &#x5217;&#x51FA;&#x6863;&#x6848;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x67E5;&#x770B;&#x5DF2;&#x7ECF;&#x5907;&#x4EFD;&#x4E86;&#x54EA;&#x4E9B;&#x6587;&#x4EF6;&#x3002;
 
-　　u 更新文件。就是说，用新增的文件取代原备份文件，如果在备份文件中找不到要更新的文件，则把它追加到备份文件的最后。
+&#x3000;&#x3000;u &#x66F4;&#x65B0;&#x6587;&#x4EF6;&#x3002;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x7528;&#x65B0;&#x589E;&#x7684;&#x6587;&#x4EF6;&#x53D6;&#x4EE3;&#x539F;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#x4E2D;&#x627E;&#x4E0D;&#x5230;&#x8981;&#x66F4;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x628A;&#x5B83;&#x8FFD;&#x52A0;&#x5230;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#x7684;&#x6700;&#x540E;&#x3002;
 
-　　x 从档案文件中释放文件。
+&#x3000;&#x3000;x &#x4ECE;&#x6863;&#x6848;&#x6587;&#x4EF6;&#x4E2D;&#x91CA;&#x653E;&#x6587;&#x4EF6;&#x3002;
 
-　　辅助选项：
+&#x3000;&#x3000;&#x8F85;&#x52A9;&#x9009;&#x9879;&#xFF1A;
 
-　　b 该选项是为磁带机设定的。其后跟一数字，用来说明区块的大小，系统预设值为20(20*512 bytes)。
+&#x3000;&#x3000;b &#x8BE5;&#x9009;&#x9879;&#x662F;&#x4E3A;&#x78C1;&#x5E26;&#x673A;&#x8BBE;&#x5B9A;&#x7684;&#x3002;&#x5176;&#x540E;&#x8DDF;&#x4E00;&#x6570;&#x5B57;&#xFF0C;&#x7528;&#x6765;&#x8BF4;&#x660E;&#x533A;&#x5757;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x7CFB;&#x7EDF;&#x9884;&#x8BBE;&#x503C;&#x4E3A;20(20*512 bytes)&#x3002;
 
-　　f 使用档案文件或设备，这个选项通常是必选的。
+&#x3000;&#x3000;f &#x4F7F;&#x7528;&#x6863;&#x6848;&#x6587;&#x4EF6;&#x6216;&#x8BBE;&#x5907;&#xFF0C;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x901A;&#x5E38;&#x662F;&#x5FC5;&#x9009;&#x7684;&#x3002;
 
-　　k 保存已经存在的文件。例如我们把某个文件还原，在还原的过程中，遇到相同的文件，不会进行覆盖。
+&#x3000;&#x3000;k &#x4FDD;&#x5B58;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x628A;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x8FD8;&#x539F;&#xFF0C;&#x5728;&#x8FD8;&#x539F;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x9047;&#x5230;&#x76F8;&#x540C;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x4F1A;&#x8FDB;&#x884C;&#x8986;&#x76D6;&#x3002;
 
-　　m 在还原文件时，把所有文件的修改时间设定为现在。
+&#x3000;&#x3000;m &#x5728;&#x8FD8;&#x539F;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x628A;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x7684;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#x8BBE;&#x5B9A;&#x4E3A;&#x73B0;&#x5728;&#x3002;
 
-　　M 创建多卷的档案文件，以便在几个磁盘中存放。
+&#x3000;&#x3000;M &#x521B;&#x5EFA;&#x591A;&#x5377;&#x7684;&#x6863;&#x6848;&#x6587;&#x4EF6;&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x51E0;&#x4E2A;&#x78C1;&#x76D8;&#x4E2D;&#x5B58;&#x653E;&#x3002;
 
-　　v 详细报告tar处理的文件信息。如无此选项，tar不报告文件信息。
+&#x3000;&#x3000;v &#x8BE6;&#x7EC6;&#x62A5;&#x544A;tar&#x5904;&#x7406;&#x7684;&#x6587;&#x4EF6;&#x4FE1;&#x606F;&#x3002;&#x5982;&#x65E0;&#x6B64;&#x9009;&#x9879;&#xFF0C;tar&#x4E0D;&#x62A5;&#x544A;&#x6587;&#x4EF6;&#x4FE1;&#x606F;&#x3002;
 
-　　w 每一步都要求确认。
+&#x3000;&#x3000;w &#x6BCF;&#x4E00;&#x6B65;&#x90FD;&#x8981;&#x6C42;&#x786E;&#x8BA4;&#x3002;
 
-　　z 用gzip来压缩/解压缩文件，加上该选项后可以将档案文件进行压缩，但还原时也一定要使用该选项进行解压缩。
+&#x3000;&#x3000;z &#x7528;gzip&#x6765;&#x538B;&#x7F29;/&#x89E3;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#xFF0C;&#x52A0;&#x4E0A;&#x8BE5;&#x9009;&#x9879;&#x540E;&#x53EF;&#x4EE5;&#x5C06;&#x6863;&#x6848;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#xFF0C;&#x4F46;&#x8FD8;&#x539F;&#x65F6;&#x4E5F;&#x4E00;&#x5B9A;&#x8981;&#x4F7F;&#x7528;&#x8BE5;&#x9009;&#x9879;&#x8FDB;&#x884C;&#x89E3;&#x538B;&#x7F29;&#x3002;
 
-　　Linux下的压缩文件剖析
+&#x3000;&#x3000;Linux&#x4E0B;&#x7684;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x5256;&#x6790;
 
-　　对于刚刚接触Linux的人来说，一定会给Linux下一大堆各式各样的文件名给搞晕。别个不说，单单就压缩文件为例，我们知道在Windows下最常见 的压缩文件就只有两种，一是,zip，另一个是.rap。可是Linux就不同了，它有.gz、.tar.gz、tgz、bz2、.Z、.tar等众多的 压缩文件名，此外windows下的.zip和.rar也可以在Linux下使用，不过在Linux使用.zip和.rar的人就太少了。本文就来对这些 常见的压缩文件进行一番小结，希望你下次遇到这些文件时不至于被搞晕。
+&#x3000;&#x3000;&#x5BF9;&#x4E8E;&#x521A;&#x521A;&#x63A5;&#x89E6;Linux&#x7684;&#x4EBA;&#x6765;&#x8BF4;&#xFF0C;&#x4E00;&#x5B9A;&#x4F1A;&#x7ED9;Linux&#x4E0B;&#x4E00;&#x5927;&#x5806;&#x5404;&#x5F0F;&#x5404;&#x6837;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x7ED9;&#x641E;&#x6655;&#x3002;&#x522B;&#x4E2A;&#x4E0D;&#x8BF4;&#xFF0C;&#x5355;&#x5355;&#x5C31;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x4E3A;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x5728;Windows&#x4E0B;&#x6700;&#x5E38;&#x89C1; &#x7684;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x5C31;&#x53EA;&#x6709;&#x4E24;&#x79CD;&#xFF0C;&#x4E00;&#x662F;,zip&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x662F;.rap&#x3002;&#x53EF;&#x662F;Linux&#x5C31;&#x4E0D;&#x540C;&#x4E86;&#xFF0C;&#x5B83;&#x6709;.gz&#x3001;.tar.gz&#x3001;tgz&#x3001;bz2&#x3001;.Z&#x3001;.tar&#x7B49;&#x4F17;&#x591A;&#x7684; &#x538B;&#x7F29;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x6B64;&#x5916;windows&#x4E0B;&#x7684;.zip&#x548C;.rar&#x4E5F;&#x53EF;&#x4EE5;&#x5728;Linux&#x4E0B;&#x4F7F;&#x7528;&#xFF0C;&#x4E0D;&#x8FC7;&#x5728;Linux&#x4F7F;&#x7528;.zip&#x548C;.rar&#x7684;&#x4EBA;&#x5C31;&#x592A;&#x5C11;&#x4E86;&#x3002;&#x672C;&#x6587;&#x5C31;&#x6765;&#x5BF9;&#x8FD9;&#x4E9B; &#x5E38;&#x89C1;&#x7684;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x4E00;&#x756A;&#x5C0F;&#x7ED3;&#xFF0C;&#x5E0C;&#x671B;&#x4F60;&#x4E0B;&#x6B21;&#x9047;&#x5230;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x65F6;&#x4E0D;&#x81F3;&#x4E8E;&#x88AB;&#x641E;&#x6655;&#x3002;
 
-　　在具体总结各类压缩文件之前呢，首先要弄清两个概念：打包和压缩。打包是指将一大堆文件或目录什么的变成一个总的文件，压缩则是将一个大的文件通过一些压 缩算法变成一个小文件。为什么要区分这两个概念呢?其实这源于Linux中的很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你就 得先借助另它的工具将这一大堆文件先打成一个包，然后再就原来的压缩程序进行压缩。
+&#x3000;&#x3000;&#x5728;&#x5177;&#x4F53;&#x603B;&#x7ED3;&#x5404;&#x7C7B;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x4E4B;&#x524D;&#x5462;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x5F04;&#x6E05;&#x4E24;&#x4E2A;&#x6982;&#x5FF5;&#xFF1A;&#x6253;&#x5305;&#x548C;&#x538B;&#x7F29;&#x3002;&#x6253;&#x5305;&#x662F;&#x6307;&#x5C06;&#x4E00;&#x5927;&#x5806;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x4EC0;&#x4E48;&#x7684;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x603B;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x538B;&#x7F29;&#x5219;&#x662F;&#x5C06;&#x4E00;&#x4E2A;&#x5927;&#x7684;&#x6587;&#x4EF6;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x538B; &#x7F29;&#x7B97;&#x6CD5;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x5C0F;&#x6587;&#x4EF6;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x533A;&#x5206;&#x8FD9;&#x4E24;&#x4E2A;&#x6982;&#x5FF5;&#x5462;?&#x5176;&#x5B9E;&#x8FD9;&#x6E90;&#x4E8E;Linux&#x4E2D;&#x7684;&#x5F88;&#x591A;&#x538B;&#x7F29;&#x7A0B;&#x5E8F;&#x53EA;&#x80FD;&#x9488;&#x5BF9;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#xFF0C;&#x8FD9;&#x6837;&#x5F53;&#x4F60;&#x60F3;&#x8981;&#x538B;&#x7F29;&#x4E00;&#x5927;&#x5806;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x4F60;&#x5C31; &#x5F97;&#x5148;&#x501F;&#x52A9;&#x53E6;&#x5B83;&#x7684;&#x5DE5;&#x5177;&#x5C06;&#x8FD9;&#x4E00;&#x5927;&#x5806;&#x6587;&#x4EF6;&#x5148;&#x6253;&#x6210;&#x4E00;&#x4E2A;&#x5305;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5C31;&#x539F;&#x6765;&#x7684;&#x538B;&#x7F29;&#x7A0B;&#x5E8F;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#x3002;
 
-Linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩了，所以首先就来讲讲tar命令的基本用法：
+Linux&#x4E0B;&#x6700;&#x5E38;&#x7528;&#x7684;&#x6253;&#x5305;&#x7A0B;&#x5E8F;&#x5C31;&#x662F;tar&#x4E86;&#xFF0C;&#x4F7F;&#x7528;tar&#x7A0B;&#x5E8F;&#x6253;&#x51FA;&#x6765;&#x7684;&#x5305;&#x6211;&#x4EEC;&#x5E38;&#x79F0;&#x4E3A;tar&#x5305;&#xFF0C;tar&#x5305;&#x6587;&#x4EF6;&#x7684;&#x547D;&#x4EE4;&#x901A;&#x5E38;&#x90FD;&#x662F;&#x4EE5;.tar&#x7ED3;&#x5C3E;&#x7684;&#x3002;&#x751F;&#x6210;tar&#x5305;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x5176;&#x5B83;&#x7684;&#x7A0B;&#x5E8F;&#x6765;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x9996;&#x5148;&#x5C31;&#x6765;&#x8BB2;&#x8BB2;tar&#x547D;&#x4EE4;&#x7684;&#x57FA;&#x672C;&#x7528;&#x6CD5;&#xFF1A;
 
-　　tar命令的选项有很多(用man tar可以查看到)，但常用的就那么几个选项，下面来举例说明一下：
+&#x3000;&#x3000;tar&#x547D;&#x4EE4;&#x7684;&#x9009;&#x9879;&#x6709;&#x5F88;&#x591A;(&#x7528;man tar&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5230;)&#xFF0C;&#x4F46;&#x5E38;&#x7528;&#x7684;&#x5C31;&#x90A3;&#x4E48;&#x51E0;&#x4E2A;&#x9009;&#x9879;&#xFF0C;&#x4E0B;&#x9762;&#x6765;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E;&#x4E00;&#x4E0B;&#xFF1A;
 
-　　# tar -cf all.tar *.jpg
+&#x3000;&#x3000;# tar -cf all.tar *.jpg
 
-　　这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。
+&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5C06;&#x6240;&#x6709;.jpg&#x7684;&#x6587;&#x4EF6;&#x6253;&#x6210;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;all.tar&#x7684;&#x5305;&#x3002;-c&#x662F;&#x8868;&#x793A;&#x4EA7;&#x751F;&#x65B0;&#x7684;&#x5305;&#xFF0C;-f&#x6307;&#x5B9A;&#x5305;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x3002;
 
-　　# tar -rf all.tar *.gif
+&#x3000;&#x3000;# tar -rf all.tar *.gif
 
-　　这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。
+&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5C06;&#x6240;&#x6709;.gif&#x7684;&#x6587;&#x4EF6;&#x589E;&#x52A0;&#x5230;all.tar&#x7684;&#x5305;&#x91CC;&#x9762;&#x53BB;&#x3002;-r&#x662F;&#x8868;&#x793A;&#x589E;&#x52A0;&#x6587;&#x4EF6;&#x7684;&#x610F;&#x601D;&#x3002;
 
-　　# tar -uf all.tar logo.gif
+&#x3000;&#x3000;# tar -uf all.tar logo.gif
 
-　　这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。
+&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x66F4;&#x65B0;&#x539F;&#x6765;tar&#x5305;all.tar&#x4E2D;logo.gif&#x6587;&#x4EF6;&#xFF0C;-u&#x662F;&#x8868;&#x793A;&#x66F4;&#x65B0;&#x6587;&#x4EF6;&#x7684;&#x610F;&#x601D;&#x3002;
 
-　　# tar -tf all.tar
+&#x3000;&#x3000;# tar -tf all.tar
 
-　　这条命令是列出all.tar包中所有文件，-t是列出文件的意思
+&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5217;&#x51FA;all.tar&#x5305;&#x4E2D;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF0C;-t&#x662F;&#x5217;&#x51FA;&#x6587;&#x4EF6;&#x7684;&#x610F;&#x601D;
 
-　　# tar -xf all.tar
+&#x3000;&#x3000;# tar -xf all.tar
 
-　　这条命令是解出all.tar包中所有文件，-t是解开的意思
+&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x89E3;&#x51FA;all.tar&#x5305;&#x4E2D;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF0C;-t&#x662F;&#x89E3;&#x5F00;&#x7684;&#x610F;&#x601D;
 
-　　以上就是tar的最基本的用法。为了方便用户在打包解包的同时可以压缩或解压文件，tar提供了一种特殊的功能。这就是tar可以在打包或解包的同时调用其它的压缩程序，比如调用gzip、bzip2等。
+&#x3000;&#x3000;&#x4EE5;&#x4E0A;&#x5C31;&#x662F;tar&#x7684;&#x6700;&#x57FA;&#x672C;&#x7684;&#x7528;&#x6CD5;&#x3002;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x7528;&#x6237;&#x5728;&#x6253;&#x5305;&#x89E3;&#x5305;&#x7684;&#x540C;&#x65F6;&#x53EF;&#x4EE5;&#x538B;&#x7F29;&#x6216;&#x89E3;&#x538B;&#x6587;&#x4EF6;&#xFF0C;tar&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x529F;&#x80FD;&#x3002;&#x8FD9;&#x5C31;&#x662F;tar&#x53EF;&#x4EE5;&#x5728;&#x6253;&#x5305;&#x6216;&#x89E3;&#x5305;&#x7684;&#x540C;&#x65F6;&#x8C03;&#x7528;&#x5176;&#x5B83;&#x7684;&#x538B;&#x7F29;&#x7A0B;&#x5E8F;&#xFF0C;&#x6BD4;&#x5982;&#x8C03;&#x7528;gzip&#x3001;bzip2&#x7B49;&#x3002;
 
-　　1) tar调用gzip
+&#x3000;&#x3000;1) tar&#x8C03;&#x7528;gzip
 
-　　gzip是GNU组织开发的一个压缩程序，.gz结尾的文件就是gzip压缩的结果。与gzip相对的解压程序是gunzip。tar中使用-z这个参数来调用gzip。下面来举例说明一下：
+&#x3000;&#x3000;gzip&#x662F;GNU&#x7EC4;&#x7EC7;&#x5F00;&#x53D1;&#x7684;&#x4E00;&#x4E2A;&#x538B;&#x7F29;&#x7A0B;&#x5E8F;&#xFF0C;.gz&#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;&#x5C31;&#x662F;gzip&#x538B;&#x7F29;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x4E0E;gzip&#x76F8;&#x5BF9;&#x7684;&#x89E3;&#x538B;&#x7A0B;&#x5E8F;&#x662F;gunzip&#x3002;tar&#x4E2D;&#x4F7F;&#x7528;-z&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x6765;&#x8C03;&#x7528;gzip&#x3002;&#x4E0B;&#x9762;&#x6765;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E;&#x4E00;&#x4E0B;&#xFF1A;
 
-　　# tar -czf all.tar.gz *.jpg
+&#x3000;&#x3000;# tar -czf all.tar.gz *.jpg
 
-　　这条命令是将所有.jpg的文件打成一个tar包，并且将其用gzip压缩，生成一个gzip压缩过的包，包名为all.tar.gz
+&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5C06;&#x6240;&#x6709;.jpg&#x7684;&#x6587;&#x4EF6;&#x6253;&#x6210;&#x4E00;&#x4E2A;tar&#x5305;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x5176;&#x7528;gzip&#x538B;&#x7F29;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;gzip&#x538B;&#x7F29;&#x8FC7;&#x7684;&#x5305;&#xFF0C;&#x5305;&#x540D;&#x4E3A;all.tar.gz
 
-　　# tar -xzf all.tar.gz
+&#x3000;&#x3000;# tar -xzf all.tar.gz
 
-　　这条命令是将上面产生的包解开。
+&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5C06;&#x4E0A;&#x9762;&#x4EA7;&#x751F;&#x7684;&#x5305;&#x89E3;&#x5F00;&#x3002;
 
-　　2) tar调用bzip2
+&#x3000;&#x3000;2) tar&#x8C03;&#x7528;bzip2
 
-　　bzip2是一个压缩能力更强的压缩程序，.bz2结尾的文件就是bzip2压缩的结果。与bzip2相对的解压程序是bunzip2。tar中使用-j这个参数来调用gzip。下面来举例说明一下：
+&#x3000;&#x3000;bzip2&#x662F;&#x4E00;&#x4E2A;&#x538B;&#x7F29;&#x80FD;&#x529B;&#x66F4;&#x5F3A;&#x7684;&#x538B;&#x7F29;&#x7A0B;&#x5E8F;&#xFF0C;.bz2&#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;&#x5C31;&#x662F;bzip2&#x538B;&#x7F29;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x4E0E;bzip2&#x76F8;&#x5BF9;&#x7684;&#x89E3;&#x538B;&#x7A0B;&#x5E8F;&#x662F;bunzip2&#x3002;tar&#x4E2D;&#x4F7F;&#x7528;-j&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x6765;&#x8C03;&#x7528;gzip&#x3002;&#x4E0B;&#x9762;&#x6765;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E;&#x4E00;&#x4E0B;&#xFF1A;
 
-　　# tar -cjf all.tar.bz2 *.jpg
+&#x3000;&#x3000;# tar -cjf all.tar.bz2 *.jpg
 
-　　这条命令是将所有.jpg的文件打成一个tar包，并且将其用bzip2压缩，生成一个bzip2压缩过的包，包名为all.tar.bz2
+&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5C06;&#x6240;&#x6709;.jpg&#x7684;&#x6587;&#x4EF6;&#x6253;&#x6210;&#x4E00;&#x4E2A;tar&#x5305;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x5176;&#x7528;bzip2&#x538B;&#x7F29;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;bzip2&#x538B;&#x7F29;&#x8FC7;&#x7684;&#x5305;&#xFF0C;&#x5305;&#x540D;&#x4E3A;all.tar.bz2
 
-　　# tar -xjf all.tar.bz2
+&#x3000;&#x3000;# tar -xjf all.tar.bz2
 
-　　这条命令是将上面产生的包解开。
+&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5C06;&#x4E0A;&#x9762;&#x4EA7;&#x751F;&#x7684;&#x5305;&#x89E3;&#x5F00;&#x3002;
 
-　　3)tar调用compress
+&#x3000;&#x3000;3)tar&#x8C03;&#x7528;compress
 
-　　compress也是一个压缩程序，但是好象使用compress的人不如gzip和bzip2的人多。.Z结尾的文件就是bzip2压缩的结果。与 compress相对的解压程序是uncompress。tar中使用-Z这个参数来调用gzip。下面来举例说明一下：
+&#x3000;&#x3000;compress&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x538B;&#x7F29;&#x7A0B;&#x5E8F;&#xFF0C;&#x4F46;&#x662F;&#x597D;&#x8C61;&#x4F7F;&#x7528;compress&#x7684;&#x4EBA;&#x4E0D;&#x5982;gzip&#x548C;bzip2&#x7684;&#x4EBA;&#x591A;&#x3002;.Z&#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;&#x5C31;&#x662F;bzip2&#x538B;&#x7F29;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x4E0E; compress&#x76F8;&#x5BF9;&#x7684;&#x89E3;&#x538B;&#x7A0B;&#x5E8F;&#x662F;uncompress&#x3002;tar&#x4E2D;&#x4F7F;&#x7528;-Z&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x6765;&#x8C03;&#x7528;gzip&#x3002;&#x4E0B;&#x9762;&#x6765;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E;&#x4E00;&#x4E0B;&#xFF1A;
 
-　　# tar -cZf all.tar.Z *.jpg
+&#x3000;&#x3000;# tar -cZf all.tar.Z *.jpg
 
-　　这条命令是将所有.jpg的文件打成一个tar包，并且将其用compress压缩，生成一个uncompress压缩过的包，包名为all.tar.Z
+&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5C06;&#x6240;&#x6709;.jpg&#x7684;&#x6587;&#x4EF6;&#x6253;&#x6210;&#x4E00;&#x4E2A;tar&#x5305;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x5176;&#x7528;compress&#x538B;&#x7F29;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;uncompress&#x538B;&#x7F29;&#x8FC7;&#x7684;&#x5305;&#xFF0C;&#x5305;&#x540D;&#x4E3A;all.tar.Z
 
-　　# tar -xZf all.tar.Z
+&#x3000;&#x3000;# tar -xZf all.tar.Z
 
-　　这条命令是将上面产生的包解开
+&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5C06;&#x4E0A;&#x9762;&#x4EA7;&#x751F;&#x7684;&#x5305;&#x89E3;&#x5F00;
 
-　　有了上面的知识，你应该可以解开多种压缩文件了，下面对于tar系列的压缩文件作一个小结：
+&#x3000;&#x3000;&#x6709;&#x4E86;&#x4E0A;&#x9762;&#x7684;&#x77E5;&#x8BC6;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x53EF;&#x4EE5;&#x89E3;&#x5F00;&#x591A;&#x79CD;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x4E86;&#xFF0C;&#x4E0B;&#x9762;&#x5BF9;&#x4E8E;tar&#x7CFB;&#x5217;&#x7684;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x4F5C;&#x4E00;&#x4E2A;&#x5C0F;&#x7ED3;&#xFF1A;
 
-　　1)对于.tar结尾的文件
+&#x3000;&#x3000;1)&#x5BF9;&#x4E8E;.tar&#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;
 
-　　tar -xf all.tar
+&#x3000;&#x3000;tar -xf all.tar
 
-　　2)对于.gz结尾的文件
+&#x3000;&#x3000;2)&#x5BF9;&#x4E8E;.gz&#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;
 
-　　gzip -d all.gz
+&#x3000;&#x3000;gzip -d all.gz
 
-　　gunzip all.gz
+&#x3000;&#x3000;gunzip all.gz
 
-　　3)对于.tgz或.tar.gz结尾的文件
+&#x3000;&#x3000;3)&#x5BF9;&#x4E8E;.tgz&#x6216;.tar.gz&#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;
 
-　　tar -xzf all.tar.gz
+&#x3000;&#x3000;tar -xzf all.tar.gz
 
-　　tar -xzf all.tgz
+&#x3000;&#x3000;tar -xzf all.tgz
 
-　　4)对于.bz2结尾的文件
+&#x3000;&#x3000;4)&#x5BF9;&#x4E8E;.bz2&#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;
 
-　　bzip2 -d all.bz2
+&#x3000;&#x3000;bzip2 -d all.bz2
 
-　　bunzip2 all.bz2
+&#x3000;&#x3000;bunzip2 all.bz2
 
-　　5)对于tar.bz2结尾的文件
+&#x3000;&#x3000;5)&#x5BF9;&#x4E8E;tar.bz2&#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;
 
-　　tar -xjf all.tar.bz2
+&#x3000;&#x3000;tar -xjf all.tar.bz2
 
-　　6)对于.Z结尾的文件
+&#x3000;&#x3000;6)&#x5BF9;&#x4E8E;.Z&#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;
 
-　　uncompress all.Z
+&#x3000;&#x3000;uncompress all.Z
 
-　　7)对于.tar.Z结尾的文件
+&#x3000;&#x3000;7)&#x5BF9;&#x4E8E;.tar.Z&#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;
 
-　　tar -xZf all.tar.z
+&#x3000;&#x3000;tar -xZf all.tar.z
 
-　　另外对于Window下的常见压缩文件.zip和.rar，Linux也有相应的方法来解压它们：
+&#x3000;&#x3000;&#x53E6;&#x5916;&#x5BF9;&#x4E8E;Window&#x4E0B;&#x7684;&#x5E38;&#x89C1;&#x538B;&#x7F29;&#x6587;&#x4EF6;.zip&#x548C;.rar&#xFF0C;Linux&#x4E5F;&#x6709;&#x76F8;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x89E3;&#x538B;&#x5B83;&#x4EEC;&#xFF1A;
 
-　　1)对于.zip
+&#x3000;&#x3000;1)&#x5BF9;&#x4E8E;.zip
 
-　　linux下提供了zip和unzip程序，zip是压缩程序，unzip是解压程序。它们的参数选项很多，这里只做简单介绍，依旧举例说明一下其用法：
+&#x3000;&#x3000;linux&#x4E0B;&#x63D0;&#x4F9B;&#x4E86;zip&#x548C;unzip&#x7A0B;&#x5E8F;&#xFF0C;zip&#x662F;&#x538B;&#x7F29;&#x7A0B;&#x5E8F;&#xFF0C;unzip&#x662F;&#x89E3;&#x538B;&#x7A0B;&#x5E8F;&#x3002;&#x5B83;&#x4EEC;&#x7684;&#x53C2;&#x6570;&#x9009;&#x9879;&#x5F88;&#x591A;&#xFF0C;&#x8FD9;&#x91CC;&#x53EA;&#x505A;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#xFF0C;&#x4F9D;&#x65E7;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E;&#x4E00;&#x4E0B;&#x5176;&#x7528;&#x6CD5;&#xFF1A;
 
-　　# zip all.zip *.jpg
+&#x3000;&#x3000;# zip all.zip *.jpg
 
-　　这条命令是将所有.jpg的文件压缩成一个zip包
+&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5C06;&#x6240;&#x6709;.jpg&#x7684;&#x6587;&#x4EF6;&#x538B;&#x7F29;&#x6210;&#x4E00;&#x4E2A;zip&#x5305;
 
-　　# unzip all.zip
+&#x3000;&#x3000;# unzip all.zip
 
-　　这条命令是将all.zip中的所有文件解压出来
+&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5C06;all.zip&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x89E3;&#x538B;&#x51FA;&#x6765;
 
-　　2)对于.rar
+&#x3000;&#x3000;2)&#x5BF9;&#x4E8E;.rar
 
-　　要在linux下处理.rar文件，需要安装RAR for Linux，可以从网上下载，但要记住，RAR for Linux
+&#x3000;&#x3000;&#x8981;&#x5728;linux&#x4E0B;&#x5904;&#x7406;.rar&#x6587;&#x4EF6;&#xFF0C;&#x9700;&#x8981;&#x5B89;&#x88C5;RAR for Linux&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x7F51;&#x4E0A;&#x4E0B;&#x8F7D;&#xFF0C;&#x4F46;&#x8981;&#x8BB0;&#x4F4F;&#xFF0C;RAR for Linux
 
-　　不是免费的;然后安装：
+&#x3000;&#x3000;&#x4E0D;&#x662F;&#x514D;&#x8D39;&#x7684;;&#x7136;&#x540E;&#x5B89;&#x88C5;&#xFF1A;
 
-　　# tar -xzpvf rarlinux-3.2.0.tar.gz
+&#x3000;&#x3000;# tar -xzpvf rarlinux-3.2.0.tar.gz
 
-　　# cd rar
+&#x3000;&#x3000;# cd rar
 
-　　# make
+&#x3000;&#x3000;# make
 
-　　这样就安装好了，安装后就有了rar和unrar这两个程序，rar是压缩程序，unrar是解压程序。它们的参数选项很多，这里只做简单介绍，依旧举例说明一下其用法：
+&#x3000;&#x3000;&#x8FD9;&#x6837;&#x5C31;&#x5B89;&#x88C5;&#x597D;&#x4E86;&#xFF0C;&#x5B89;&#x88C5;&#x540E;&#x5C31;&#x6709;&#x4E86;rar&#x548C;unrar&#x8FD9;&#x4E24;&#x4E2A;&#x7A0B;&#x5E8F;&#xFF0C;rar&#x662F;&#x538B;&#x7F29;&#x7A0B;&#x5E8F;&#xFF0C;unrar&#x662F;&#x89E3;&#x538B;&#x7A0B;&#x5E8F;&#x3002;&#x5B83;&#x4EEC;&#x7684;&#x53C2;&#x6570;&#x9009;&#x9879;&#x5F88;&#x591A;&#xFF0C;&#x8FD9;&#x91CC;&#x53EA;&#x505A;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#xFF0C;&#x4F9D;&#x65E7;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E;&#x4E00;&#x4E0B;&#x5176;&#x7528;&#x6CD5;&#xFF1A;
 
-　　# rar a all *.jpg
+&#x3000;&#x3000;# rar a all *.jpg
 
-　　这条命令是将所有.jpg的文件压缩成一个rar包，名为all.rar，该程序会将.rar 扩展名将自动附加到包名后。
+&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5C06;&#x6240;&#x6709;.jpg&#x7684;&#x6587;&#x4EF6;&#x538B;&#x7F29;&#x6210;&#x4E00;&#x4E2A;rar&#x5305;&#xFF0C;&#x540D;&#x4E3A;all.rar&#xFF0C;&#x8BE5;&#x7A0B;&#x5E8F;&#x4F1A;&#x5C06;.rar &#x6269;&#x5C55;&#x540D;&#x5C06;&#x81EA;&#x52A8;&#x9644;&#x52A0;&#x5230;&#x5305;&#x540D;&#x540E;&#x3002;
 
-　　# unrar e all.rar
+&#x3000;&#x3000;# unrar e all.rar
 
-　　这条命令是将all.rar中的所有文件解压出来
+&#x3000;&#x3000;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5C06;all.rar&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x89E3;&#x538B;&#x51FA;&#x6765;
 
-　到此为至，我们已经介绍过linux下的tar、gzip、gunzip、bzip2、bunzip2、compress、uncompress、 zip、unzip、rar、unrar等程式，你应该已经能够使用它们对.tar、.gz、.tar.gz、.tgz、.bz2、.tar.bz2、. Z、.tar.Z、.zip、.rar这10种压缩文件进行解压了，以后应该不需要为下载了一个软件而不知道如何在Linux下解开而烦恼了。而且以上方 法对于Unix也基本有效。
+&#x3000;&#x5230;&#x6B64;&#x4E3A;&#x81F3;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x4ECB;&#x7ECD;&#x8FC7;linux&#x4E0B;&#x7684;tar&#x3001;gzip&#x3001;gunzip&#x3001;bzip2&#x3001;bunzip2&#x3001;compress&#x3001;uncompress&#x3001; zip&#x3001;unzip&#x3001;rar&#x3001;unrar&#x7B49;&#x7A0B;&#x5F0F;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x5DF2;&#x7ECF;&#x80FD;&#x591F;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x5BF9;.tar&#x3001;.gz&#x3001;.tar.gz&#x3001;.tgz&#x3001;.bz2&#x3001;.tar.bz2&#x3001;. Z&#x3001;.tar.Z&#x3001;.zip&#x3001;.rar&#x8FD9;10&#x79CD;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x89E3;&#x538B;&#x4E86;&#xFF0C;&#x4EE5;&#x540E;&#x5E94;&#x8BE5;&#x4E0D;&#x9700;&#x8981;&#x4E3A;&#x4E0B;&#x8F7D;&#x4E86;&#x4E00;&#x4E2A;&#x8F6F;&#x4EF6;&#x800C;&#x4E0D;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x5728;Linux&#x4E0B;&#x89E3;&#x5F00;&#x800C;&#x70E6;&#x607C;&#x4E86;&#x3002;&#x800C;&#x4E14;&#x4EE5;&#x4E0A;&#x65B9; &#x6CD5;&#x5BF9;&#x4E8E;Unix&#x4E5F;&#x57FA;&#x672C;&#x6709;&#x6548;&#x3002;
 
-本文介绍了linux下的压缩程式tar、gzip、gunzip、bzip2、bunzip2、 compress、uncompress、zip、unzip、rar、unrar等程式，以及如何使用它们对.tar、.gz、.tar.gz、. tgz、.bz2、.tar.bz2、.Z、.tar.Z、.zip、.rar这10种压缩文件进行操作</code></pre>
-        </div>
+&#x672C;&#x6587;&#x4ECB;&#x7ECD;&#x4E86;linux&#x4E0B;&#x7684;&#x538B;&#x7F29;&#x7A0B;&#x5F0F;tar&#x3001;gzip&#x3001;gunzip&#x3001;bzip2&#x3001;bunzip2&#x3001; compress&#x3001;uncompress&#x3001;zip&#x3001;unzip&#x3001;rar&#x3001;unrar&#x7B49;&#x7A0B;&#x5F0F;&#xFF0C;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x5BF9;.tar&#x3001;.gz&#x3001;.tar.gz&#x3001;. tgz&#x3001;.bz2&#x3001;.tar.bz2&#x3001;.Z&#x3001;.tar.Z&#x3001;.zip&#x3001;.rar&#x8FD9;10&#x79CD;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;</code></pre>
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-11-21T10:06:00.000Z" itemprop="datePublished">2017-11-21</time>
+
+    </span>
+    <span class="post-description-item">
         
-          
-
-
-  <section class='meta' id="footer-meta">
-    <hr>
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-03T11:52:29+08:00">
-  <a class='notlink'>
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 3, 2019</p>
-  </a>
+    </span>
 </div>
 
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://generaltune.github.io/blog/2017/11/21/linux-help-compress/&title=linux下的压缩命令 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://generaltune.github.io/blog/2017/11/21/linux-help-compress/&title=linux下的压缩命令 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://generaltune.github.io/blog/2017/11/21/linux-help-compress/&title=linux下的压缩命令 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </section>
-
-
-        
-        
-            <div class="prev-next">
+                </div>
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
-                            <h4>
-                                <a href="/blog/2017/11/23/nc-note/" rel="prev" title="nc_note">
-                                  
-                                      nc_note
-                                  
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
                 
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/blog/2017/11/20/recommendationsystemengineer/" rel="prev" title="推荐工程师成长攻略">
-                                    
-                                        推荐工程师成长攻略
-                                    
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+
+                <a href="/blog/2017/11/23/nc-note/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    nc_note
+                    
+
+                </a>
+
                 
             </div>
-        
-      </section>
-    </article>
-  
+            <div class="column nav-right">
+                
 
-  
-    <!-- 显示推荐文章和评论 -->
-
-
-
-  
-
-
-  
-
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: 'linux下的压缩命令',
-      tools: true
-    }
-  </script>
-
+                <a href="/blog/2017/11/20/recommendationsystemengineer/" class="ui tiny button">
+                    
+                    推荐工程师成长攻略
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
 
 </div>
-<aside class='l_side'>
-  
-    
-    
-      
-        
-          
-          
-            <section class='widget author'>
-  <div class='content pure'>
-    
-      <div class='avatar'>
-        <img class='avatar' src='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png'/>
-      </div>
-    
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/blog/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:generaltune@126.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/generaltune"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
+                
+            </div>
 
-          
-        
-      
-        
-          
-          
             
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
-  
-    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
-  
-</header>
+            <div class="three wide computer three wide tablet column">
 
-    <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux下的压缩zip-解压缩unzip命令详解及实例"><span class="toc-text">Linux下的压缩zip,解压缩unzip命令详解及实例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解压zip文件到当前目录"><span class="toc-text">解压zip文件到当前目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#向压缩文件中myfile-zip中添加rpm-info-txt文件"><span class="toc-text">向压缩文件中myfile.zip中添加rpm_info.txt文件</span></a></li></ol>
-    </div>
-  </section>
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#Linux下的压缩zip-解压缩unzip命令详解及实例"><span>Linux下的压缩zip,解压缩unzip命令详解及实例</span></a><ol><li><a href="#解压zip文件到当前目录"><span>解压zip文件到当前目录</span></a></li></ol></li><li><a href="#向压缩文件中myfile-zip中添加rpm-info-txt文件"><span>向压缩文件中myfile.zip中添加rpm_info.txt文件</span></a></li></ol>
+                </div>
 
-
-          
-        
-      
-        
-          
-          
-            <section class='widget grid'>
-  
-<header class='pure'>
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="grid navgation">
-      
-        <li><a class="flat-box" title="/blog/" href="/blog/"
-          
-          
-          id="blog">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          近期文章
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/blog/archives/" href="/blog/blog/archives/"
-          
-            rel="nofollow"
-          
-          
-          id="blogblogarchives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/projects/" href="/blog/projects/"
-          
-          
-          id="blogprojects">
-          
-            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
-          
-          开源项目
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/friends/" href="/blog/friends/"
-          
-            rel="nofollow"
-          
-          
-          id="blogfriends">
-          
-            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
-          
-          我的友链
-        </a></li>
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
-          
-            rel="nofollow"
-          
-          
-          id="https:xaoxuu.comwikimaterial-x">
-          
-            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
-          
-          主题文档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/about/" href="/blog/about/"
-          
-            rel="nofollow"
-          
-          
-          id="blogabout">
-          
-            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
-          
-          关于小站
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-          
-        
-      
-        
-          
-          
+            </div>
             
 
-          
-        
-      
-        
-          
-          
-            
-  <section class='widget tagcloud'>
-    
-<header class='pure'>
-  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/blog/blog/tags/"
-    title="blog/tags/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      <a href="/blog/tags/日志-感悟-生活/" style="font-size: 14px; color: #999">日志  感悟 生活</a>
+        </div>
     </div>
-  </section>
-
-
-          
-        
-      
-        
-          
-          
-            
-
-
-  <section class='widget music'>
-    
-<header class='pure'>
-  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
-  
-    <a class="rightBtn"
-    
-      rel="external nofollow noopener noreferrer"
-    
-    
-      target="_blank"
-    
-    href="https://music.163.com/#/user/home?id=63035382"
-    title="https://music.163.com/#/user/home?id=63035382">
-    <i class="far fa-heart fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
-  <div class="aplayer"
-    data-theme="#1BCDFC"
-    
-    
-    data-mode="circulation"
-    data-server="netease"
-    data-type="playlist"
-    data-id="2615636388"
-    data-volume="0.7">
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
-
-
-    </div>
-  </section>
-
-
-          
-        
-      
-    
-
-  
-</aside>
-
-<footer id="footer" class="clearfix">
-  
-  
-    <div class="social-wrapper">
-      
-        
-          <a href="/blog/atom.xml"
-            class="social fas fa-rss flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="mailto:generaltune@126.com"
-            class="social fas fa-envelope flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://github.com/generaltune"
-            class="social fab fa-github flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://music.163.com/#/user/home?id=63035382"
-            class="social fas fa-headphones-alt flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-    </div>
-  
-  <br>
-  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
-  <div>
-    Use
-    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
-    
-      , 
-      total visits
-      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      times
-    
-    . 
-  </div>
-</footer>
-<script>setLoadingBarProgress(80);</script>
 
 
-      <script>setLoadingBarProgress(60);</script>
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2019 <a href="/">GENERALTUNE</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a href="http://hexo.io/" target="_blank">Hexo</a>.
     </div>
-    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+</div>
 
-  <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
-    var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/blog/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
-  </script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      Waves.attach('.flat-btn', ['waves-button']);
-      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-      Waves.attach('.flat-box', ['waves-block']);
-      Waves.attach('.float-box', ['waves-block', 'waves-float']);
-      Waves.attach('.waves-image');
-      Waves.init();
-    });
-  </script>
-
-
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+    </div>
 
 
 
 
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/blog/js/semantic-ui-algolia.js"></script>
+
+<script src="/blog/js/aloha-events.js"></script>
 
 
 
-
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
-
-
-
-
-<!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  let COPY_SUCCESS = "Copied";
-  let COPY_FAILURE = "Copy failed";
-  /*页面载入完成后，创建复制按钮*/
-  !function (e, t, a) {
-    /* code */
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-
-      clipboard.on('success', function(e) {
-        //您可以加入成功提示
-        console.info('Action:', e.action);
-        console.info('Text:', e.text);
-        console.info('Trigger:', e.trigger);
-        success_prompt(COPY_SUCCESS);
-        e.clearSelection();
-      });
-      clipboard.on('error', function(e) {
-        //您可以加入失败提示
-        console.error('Action:', e.action);
-        console.error('Trigger:', e.trigger);
-        fail_prompt(COPY_FAILURE);
-      });
-    }
-    initCopyCode();
-
-  }(window, document);
-
-  /**
-   * 弹出式提示框，默认1.5秒自动消失
-   * @param message 提示信息
-   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
-   * @param time 消失时间
-   */
-  var prompt = function (message, style, time)
-  {
-      style = (style === undefined) ? 'alert-success' : style;
-      time = (time === undefined) ? 1500 : time*1000;
-      $('<div>')
-          .appendTo('body')
-          .addClass('alert ' + style)
-          .html(message)
-          .show()
-          .delay(time)
-          .fadeOut();
-  };
-
-  // 成功提示
-  var success_prompt = function(message, time)
-  {
-      prompt(message, 'alert-success', time);
-  };
-
-  // 失败提示
-  var fail_prompt = function(message, time)
-  {
-      prompt(message, 'alert-danger', time);
-  };
-
-  // 提醒
-  var warning_prompt = function(message, time)
-  {
-      prompt(message, 'alert-warning', time);
-  };
-
-  // 信息提示
-  var info_prompt = function(message, time)
-  {
-      prompt(message, 'alert-info', time);
-  };
-
-</script>
-
-
-<!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
-      $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
-  });
-</script>
-
-
-
-
-
-  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>

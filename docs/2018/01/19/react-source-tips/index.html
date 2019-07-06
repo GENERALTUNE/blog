@@ -1,1045 +1,258 @@
+
+
 <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <title>react源码分析 | generaltune&#39;s blog</title>
-  
-  
+<html lang>
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content>
+    <title>react源码分析 | generaltune&#39;s blog</title>
 
-  
+    <!-- Open Graph -->
+    <meta name="description" content="&amp;#x76F8;&amp;#x5173;&amp;#x6587;&amp;#x6863;&amp;#x8D44;&amp;#x6E90;react IRC https://webchat.freenode.net/?channels=reactjsreact git &amp;#x5730;&amp;#x5740;&amp;#x3000;https://github.com/facebook/react.git&amp;#x4F7F;&amp;#x7528;flow&amp;#x8F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react源码分析">
+<meta property="og:url" content="https://generaltune.github.io/blog/2018/01/19/react-source-tips/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="&amp;#x76F8;&amp;#x5173;&amp;#x6587;&amp;#x6863;&amp;#x8D44;&amp;#x6E90;react IRC https://webchat.freenode.net/?channels=reactjsreact git &amp;#x5730;&amp;#x5740;&amp;#x3000;https://github.com/facebook/react.git&amp;#x4F7F;&amp;#x7528;flow&amp;#x8F">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T03:52:29.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react源码分析">
+<meta name="twitter:description" content="&amp;#x76F8;&amp;#x5173;&amp;#x6587;&amp;#x6863;&amp;#x8D44;&amp;#x6E90;react IRC https://webchat.freenode.net/?channels=reactjsreact git &amp;#x5730;&amp;#x5740;&amp;#x3000;https://github.com/facebook/react.git&amp;#x4F7F;&amp;#x7528;flow&amp;#x8F">
 
-  <meta name="HandheldFriendly" content="True">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
-  
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "GENERALTUNE",
+  "url": "https://generaltune.github.io/blog"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
 
-  <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
-  
+    
 
-  
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/blog/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
-  
-
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width=num+"%";
-    }
-  </script>
-
-  
-  
 </head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
 
-<body>
-  
-  
-  <div class="cover-wrapper">
-    <cover class='cover post half'>
-      
-        
-  <h1 class='title'>Material X</h1>
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>generaltune&#39;s blog</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/blog/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">GENERALTUNE</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class='menu navgation'>
-  <ul class='h-list'>
-    
-      
-        <li>
-          <a class="nav home" href="/blog/"
-            
-            
-            id="blog">
-            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/projects/"
-            
-            
-            id="blogprojects">
-            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/friends/"
-            
-              rel="nofollow"
-            
-            
-            id="blogfriends">
-            <i class='fas fa-link fa-fw'></i>&nbsp;友链
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/about/"
-            
-              rel="nofollow"
-            
-            
-            id="blogabout">
-            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
-          </a>
-        </li>
-      
-    
-  </ul>
 </div>
 
-      
-    </cover>
-    <header class="l_header pure">
-  <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
-  </div>
-
-	<div class='wrapper'>
-		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href='/blog/' >
-        
-          generaltune's blog
-        
-      </a>
-			<div class='menu navgation'>
-				<ul class='h-list'>
-          
-  					
-  						<li>
-								<a class="nav flat-box" href="/blog/"
-                  
-                  
-                  id="blog">
-									<i class='fas fa-grin fa-fw'></i>&nbsp;示例
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/categories/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogcategories">
-									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/tags/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogtags">
-									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/archives/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogarchives">
-									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
-								</a>
-							</li>
-      			
-      		
-				</ul>
-			</div>
-
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="Search" />
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
-			<ul class='switcher h-list'>
-				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
-				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
-			</ul>
-		</div>
-
-		<div class='nav-sub container container--flex'>
-			<a class="logo flat-box"></a>
-			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
-        
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
-        
-			</ul>
-		</div>
-	</div>
-</header>
-	<aside class="menu-phone">
-    <header>
-		<nav class="menu navgation">
-      <ul>
-        
-          
-            <li>
-							<a class="nav flat-box" href="/blog/"
-                
-                
-                id="blog">
-								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/blog/archives/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogblogarchives">
-								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/projects/"
-                
-                
-                id="blogprojects">
-								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/friends/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogfriends">
-								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
-                
-                  rel="nofollow"
-                
-                
-                id="https:xaoxuu.comwikimaterial-x">
-								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/about/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogabout">
-								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
-							</a>
-            </li>
-          
-       
-      </ul>
-		</nav>
-    </header>
-	</aside>
-<script>setLoadingBarProgress(40);</script>
-
-  </div>
-
-
-  <div class="l_body">
-    <div class='body-wrapper'>
-      <div class='l_main'>
-  
-
-  
-    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-      
-
-
-  <section class='meta'>
     
     
-    <div class="meta" id="header-meta">
-      
-        
-  
-    <h1 class="title">
-      <a href="/blog/2018/01/19/react-source-tips/">
-        react源码分析
-      </a>
-    </h1>
-  
 
+    
 
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://generaltune.github.io/blog" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>GENERALTUNE</p>
+    
+    <a href="/index.html" class="item">
+        <i class="home icon"></i>
+        HOME
     </a>
-  </div>
 
+    
 
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2018-01-19</p>
-  </a>
+    
 </div>
 
-          
-        
-          
-            
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-react-source-tips" class="ui main container article-type-post">
 
-          
-        
-          
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
+    
 
+    <div class="ui divided grid">
 
-          
-        
-          
-            
+        <div class="two column row" id="article-content">
 
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    react源码分析
+</h1>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          <h2 id="相关文档资源"><a href="#相关文档资源" class="headerlink" title="相关文档资源"></a>相关文档资源</h2><p>react IRC <a href="https://webchat.freenode.net/?channels=reactjs" target="_blank" rel="noopener">https://webchat.freenode.net/?channels=reactjs</a><br>react git 地址　<a href="https://github.com/facebook/react.git" target="_blank" rel="noopener">https://github.com/facebook/react.git</a><br>使用flow进行数据校验　 地址：<a href="https://flow.org/en/docs/install/" target="_blank" rel="noopener">https://flow.org/en/docs/install/</a></p>
-<h2 id="好的源码分析文章"><a href="#好的源码分析文章" class="headerlink" title="好的源码分析文章"></a>好的源码分析文章</h2><p>官网说明文档：　 <a href="https://github.com/facebook/react/issues/10294" target="_blank" rel="noopener">https://github.com/facebook/react/issues/10294</a><br>16.x 源码解析：　<a href="http://zxc0328.github.io/2017/09/28/react-16-source/" target="_blank" rel="noopener">http://zxc0328.github.io/2017/09/28/react-16-source/</a><br>                 <a href="http://blog.codingplayboy.com/2017/12/02/react_fiber/" target="_blank" rel="noopener">http://blog.codingplayboy.com/2017/12/02/react_fiber/</a><br>                 <a href="https://zhuanlan.zhihu.com/p/28697362" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/28697362</a><br>                 <a href="https://juejin.im/post/5a2276d5518825619a027f57" target="_blank" rel="noopener">https://juejin.im/post/5a2276d5518825619a027f57</a><br>15.x 源码解析：　<a href="https://www.cnblogs.com/JhoneLee/p/5886759.html" target="_blank" rel="noopener">https://www.cnblogs.com/JhoneLee/p/5886759.html</a><br>15.x 源码解析：　<a href="https://zhuanlan.zhihu.com/p/28697362" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/28697362</a><br>                 <a href="https://zhuanlan.zhihu.com/p/33833594" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/33833594</a><br>15.x 源码解析：　<a href="http://blog.csdn.net/p77ll9l53x/article/details/72675590" target="_blank" rel="noopener">http://blog.csdn.net/p77ll9l53x/article/details/72675590</a><br>15.x react diff算法解析　<a href="http://blog.csdn.net/yczz/article/details/49886061" target="_blank" rel="noopener">http://blog.csdn.net/yczz/article/details/49886061</a><br><a href="https://segmentfault.com/a/1190000011235844" target="_blank" rel="noopener">https://segmentfault.com/a/1190000011235844</a> 司徒正美谈　react diff 算法<br>重新实现一个react 的难点与思路　<a href="https://www.cnblogs.com/sven36/p/6486860.html" target="_blank" rel="noopener">https://www.cnblogs.com/sven36/p/6486860.html</a></p>
-<p>对比es6 extends写法<br>说了一堆，其实 createClass 主要就做了这么几件事。</p>
-<p>生成并返回一个Constructor构造函数，该函数有props，context，refs，updater和state5个属性。<br>绑定了作用域。<br>将属性或方法添加到 Constructor.prototype 上。<br>调用 getDefaultProps 初始化 Constructor.defaultProps 属性。<br>以上3点通过 class xxx extends React.Component 写法都能办到。</p>
-<h2 id="源码分析笔记"><a href="#源码分析笔记" class="headerlink" title="源码分析笔记"></a>源码分析笔记</h2><p>分析入口：　ReactDOM.render   Component.prototype.setState  这两个函数是react应用开发中经常用到的触发页面渲染函数.</p>
-<h3 id="ReactDOM-render"><a href="#ReactDOM-render" class="headerlink" title="ReactDOM.render"></a>ReactDOM.render</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ReactDOM.render --&gt; legacyRenderSubtreeIntoContainer --&gt; legacyCreateRootFromDOMContainer --&gt; legacyCreateRootFromDOMContainer --&gt; new ReactRoot /</span><br><span class="line">--&gt; DOMRenderer.createContainer(container, isAsync, hydrate) --&gt; DOMRenderer.updateContainer</span><br><span class="line">                                                     --&gt; DOMRenderer.unbatchedUpdates  </span><br><span class="line">                                                     --&gt; root.legacy_renderSubtreeIntoContainer</span><br><span class="line">                                                     --&gt; root.render</span><br><span class="line">                                                     --&gt; DOMRenderer.getPublicRootInstance(root._internalRoot)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const root = &#123;</span><br><span class="line">      current: uninitializedFiber,</span><br><span class="line">      containerInfo: containerInfo,</span><br><span class="line">      pendingChildren: null,</span><br><span class="line">      remainingExpirationTime: NoWork,</span><br><span class="line">      isReadyForCommit: false,</span><br><span class="line">      finishedWork: null,</span><br><span class="line">      context: null,</span><br><span class="line">      pendingContext: null,</span><br><span class="line">      hydrate,</span><br><span class="line">      firstBatch: null,</span><br><span class="line">      nextScheduledRoot: null,</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h2 id="&#x76F8;&#x5173;&#x6587;&#x6863;&#x8D44;&#x6E90;"><a href="#&#x76F8;&#x5173;&#x6587;&#x6863;&#x8D44;&#x6E90;" class="headerlink" title="&#x76F8;&#x5173;&#x6587;&#x6863;&#x8D44;&#x6E90;"></a>&#x76F8;&#x5173;&#x6587;&#x6863;&#x8D44;&#x6E90;</h2><p>react IRC <a href="https://webchat.freenode.net/?channels=reactjs" target="_blank" rel="noopener">https://webchat.freenode.net/?channels=reactjs</a><br>react git &#x5730;&#x5740;&#x3000;<a href="https://github.com/facebook/react.git" target="_blank" rel="noopener">https://github.com/facebook/react.git</a><br>&#x4F7F;&#x7528;flow&#x8FDB;&#x884C;&#x6570;&#x636E;&#x6821;&#x9A8C;&#x3000; &#x5730;&#x5740;&#xFF1A;<a href="https://flow.org/en/docs/install/" target="_blank" rel="noopener">https://flow.org/en/docs/install/</a></p>
+<h2 id="&#x597D;&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;&#x6587;&#x7AE0;"><a href="#&#x597D;&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;&#x6587;&#x7AE0;" class="headerlink" title="&#x597D;&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;&#x6587;&#x7AE0;"></a>&#x597D;&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;&#x6587;&#x7AE0;</h2><p>&#x5B98;&#x7F51;&#x8BF4;&#x660E;&#x6587;&#x6863;&#xFF1A;&#x3000; <a href="https://github.com/facebook/react/issues/10294" target="_blank" rel="noopener">https://github.com/facebook/react/issues/10294</a><br>16.x &#x6E90;&#x7801;&#x89E3;&#x6790;&#xFF1A;&#x3000;<a href="http://zxc0328.github.io/2017/09/28/react-16-source/" target="_blank" rel="noopener">http://zxc0328.github.io/2017/09/28/react-16-source/</a><br>                 <a href="http://blog.codingplayboy.com/2017/12/02/react_fiber/" target="_blank" rel="noopener">http://blog.codingplayboy.com/2017/12/02/react_fiber/</a><br>                 <a href="https://zhuanlan.zhihu.com/p/28697362" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/28697362</a><br>                 <a href="https://juejin.im/post/5a2276d5518825619a027f57" target="_blank" rel="noopener">https://juejin.im/post/5a2276d5518825619a027f57</a><br>15.x &#x6E90;&#x7801;&#x89E3;&#x6790;&#xFF1A;&#x3000;<a href="https://www.cnblogs.com/JhoneLee/p/5886759.html" target="_blank" rel="noopener">https://www.cnblogs.com/JhoneLee/p/5886759.html</a><br>15.x &#x6E90;&#x7801;&#x89E3;&#x6790;&#xFF1A;&#x3000;<a href="https://zhuanlan.zhihu.com/p/28697362" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/28697362</a><br>                 <a href="https://zhuanlan.zhihu.com/p/33833594" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/33833594</a><br>15.x &#x6E90;&#x7801;&#x89E3;&#x6790;&#xFF1A;&#x3000;<a href="http://blog.csdn.net/p77ll9l53x/article/details/72675590" target="_blank" rel="noopener">http://blog.csdn.net/p77ll9l53x/article/details/72675590</a><br>15.x react diff&#x7B97;&#x6CD5;&#x89E3;&#x6790;&#x3000;<a href="http://blog.csdn.net/yczz/article/details/49886061" target="_blank" rel="noopener">http://blog.csdn.net/yczz/article/details/49886061</a><br><a href="https://segmentfault.com/a/1190000011235844" target="_blank" rel="noopener">https://segmentfault.com/a/1190000011235844</a> &#x53F8;&#x5F92;&#x6B63;&#x7F8E;&#x8C08;&#x3000;react diff &#x7B97;&#x6CD5;<br>&#x91CD;&#x65B0;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;react &#x7684;&#x96BE;&#x70B9;&#x4E0E;&#x601D;&#x8DEF;&#x3000;<a href="https://www.cnblogs.com/sven36/p/6486860.html" target="_blank" rel="noopener">https://www.cnblogs.com/sven36/p/6486860.html</a></p>
+<p>&#x5BF9;&#x6BD4;es6 extends&#x5199;&#x6CD5;<br>&#x8BF4;&#x4E86;&#x4E00;&#x5806;&#xFF0C;&#x5176;&#x5B9E; createClass &#x4E3B;&#x8981;&#x5C31;&#x505A;&#x4E86;&#x8FD9;&#x4E48;&#x51E0;&#x4EF6;&#x4E8B;&#x3002;</p>
+<p>&#x751F;&#x6210;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Constructor&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x6709;props&#xFF0C;context&#xFF0C;refs&#xFF0C;updater&#x548C;state5&#x4E2A;&#x5C5E;&#x6027;&#x3002;<br>&#x7ED1;&#x5B9A;&#x4E86;&#x4F5C;&#x7528;&#x57DF;&#x3002;<br>&#x5C06;&#x5C5E;&#x6027;&#x6216;&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;&#x5230; Constructor.prototype &#x4E0A;&#x3002;<br>&#x8C03;&#x7528; getDefaultProps &#x521D;&#x59CB;&#x5316; Constructor.defaultProps &#x5C5E;&#x6027;&#x3002;<br>&#x4EE5;&#x4E0A;3&#x70B9;&#x901A;&#x8FC7; class xxx extends React.Component &#x5199;&#x6CD5;&#x90FD;&#x80FD;&#x529E;&#x5230;&#x3002;</p>
+<h2 id="&#x6E90;&#x7801;&#x5206;&#x6790;&#x7B14;&#x8BB0;"><a href="#&#x6E90;&#x7801;&#x5206;&#x6790;&#x7B14;&#x8BB0;" class="headerlink" title="&#x6E90;&#x7801;&#x5206;&#x6790;&#x7B14;&#x8BB0;"></a>&#x6E90;&#x7801;&#x5206;&#x6790;&#x7B14;&#x8BB0;</h2><p>&#x5206;&#x6790;&#x5165;&#x53E3;&#xFF1A;&#x3000;ReactDOM.render   Component.prototype.setState  &#x8FD9;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x662F;react&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x4E2D;&#x7ECF;&#x5E38;&#x7528;&#x5230;&#x7684;&#x89E6;&#x53D1;&#x9875;&#x9762;&#x6E32;&#x67D3;&#x51FD;&#x6570;.</p>
+<h3 id="ReactDOM-render"><a href="#ReactDOM-render" class="headerlink" title="ReactDOM.render"></a>ReactDOM.render</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ReactDOM.render --&gt; legacyRenderSubtreeIntoContainer --&gt; legacyCreateRootFromDOMContainer --&gt; legacyCreateRootFromDOMContainer --&gt; new ReactRoot /</span><br><span class="line">--&gt; DOMRenderer.createContainer(container, isAsync, hydrate) --&gt; DOMRenderer.updateContainer</span><br><span class="line">                                                     --&gt; DOMRenderer.unbatchedUpdates  </span><br><span class="line">                                                     --&gt; root.legacy_renderSubtreeIntoContainer</span><br><span class="line">                                                     --&gt; root.render</span><br><span class="line">                                                     --&gt; DOMRenderer.getPublicRootInstance(root._internalRoot)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const root = {</span><br><span class="line">      current: uninitializedFiber,</span><br><span class="line">      containerInfo: containerInfo,</span><br><span class="line">      pendingChildren: null,</span><br><span class="line">      remainingExpirationTime: NoWork,</span><br><span class="line">      isReadyForCommit: false,</span><br><span class="line">      finishedWork: null,</span><br><span class="line">      context: null,</span><br><span class="line">      pendingContext: null,</span><br><span class="line">      hydrate,</span><br><span class="line">      firstBatch: null,</span><br><span class="line">      nextScheduledRoot: null,</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
 
 <p>function call stack </p>
 <p>scheduleWork<br>scheduleWorkImpl<br>requestWork<br>performWork<br>performWorkOnRoot<br>renderRoot<br>workLoop<br>performUnitOfWork<br>beginWork<br>updateHostRoot</p>
 
-        </div>
-        
-          
+                        
+                    </div>
 
+                    
+                    
+                    
 
-  <section class='meta' id="footer-meta">
-    <hr>
-    <div class='new-meta-box'>
-      
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2018-01-19T11:41:55.000Z" itemprop="datePublished">2018-01-19</time>
+
+    </span>
+    <span class="post-description-item">
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-03T11:52:29+08:00">
-  <a class='notlink'>
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 3, 2019</p>
-  </a>
+    </span>
 </div>
 
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://generaltune.github.io/blog/2018/01/19/react-source-tips/&title=react源码分析 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://generaltune.github.io/blog/2018/01/19/react-source-tips/&title=react源码分析 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://generaltune.github.io/blog/2018/01/19/react-source-tips/&title=react源码分析 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </section>
-
-
-        
-        
-            <div class="prev-next">
+                </div>
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
-                            <h4>
-                                <a href="/blog/2018/02/07/interview-tips/" rel="prev" title="面试合集">
-                                  
-                                      面试合集
-                                  
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
                 
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/blog/2018/01/15/hello-world/" rel="prev" title="前端流行框架和缓存运用">
-                                    
-                                        前端流行框架和缓存运用
-                                    
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+
+                <a href="/blog/2018/02/07/interview-tips/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    面试合集
+                    
+
+                </a>
+
                 
             </div>
-        
-      </section>
-    </article>
-  
+            <div class="column nav-right">
+                
 
-  
-    <!-- 显示推荐文章和评论 -->
-
-
-
-  
-
-
-  
-
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: 'react源码分析',
-      tools: true
-    }
-  </script>
-
+                <a href="/blog/2018/01/15/hello-world/" class="ui tiny button">
+                    
+                    前端流行框架和缓存运用
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
 
 </div>
-<aside class='l_side'>
-  
-    
-    
-      
-        
-          
-          
-            <section class='widget author'>
-  <div class='content pure'>
-    
-      <div class='avatar'>
-        <img class='avatar' src='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png'/>
-      </div>
-    
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/blog/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:generaltune@126.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/generaltune"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
+                
+            </div>
 
-          
-        
-      
-        
-          
-          
             
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
-  
-    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
-  
-</header>
+            <div class="three wide computer three wide tablet column">
 
-    <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#相关文档资源"><span class="toc-text">相关文档资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#好的源码分析文章"><span class="toc-text">好的源码分析文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码分析笔记"><span class="toc-text">源码分析笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ReactDOM-render"><span class="toc-text">ReactDOM.render</span></a></li></ol></li></ol>
-    </div>
-  </section>
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#相关文档资源"><span>相关文档资源</span></a></li><li><a href="#好的源码分析文章"><span>好的源码分析文章</span></a></li><li><a href="#源码分析笔记"><span>源码分析笔记</span></a><ol><li><a href="#ReactDOM-render"><span>ReactDOM.render</span></a></li></ol></li></ol>
+                </div>
 
-
-          
-        
-      
-        
-          
-          
-            <section class='widget grid'>
-  
-<header class='pure'>
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="grid navgation">
-      
-        <li><a class="flat-box" title="/blog/" href="/blog/"
-          
-          
-          id="blog">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          近期文章
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/blog/archives/" href="/blog/blog/archives/"
-          
-            rel="nofollow"
-          
-          
-          id="blogblogarchives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/projects/" href="/blog/projects/"
-          
-          
-          id="blogprojects">
-          
-            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
-          
-          开源项目
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/friends/" href="/blog/friends/"
-          
-            rel="nofollow"
-          
-          
-          id="blogfriends">
-          
-            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
-          
-          我的友链
-        </a></li>
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
-          
-            rel="nofollow"
-          
-          
-          id="https:xaoxuu.comwikimaterial-x">
-          
-            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
-          
-          主题文档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/about/" href="/blog/about/"
-          
-            rel="nofollow"
-          
-          
-          id="blogabout">
-          
-            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
-          
-          关于小站
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-          
-        
-      
-        
-          
-          
+            </div>
             
 
-          
-        
-      
-        
-          
-          
-            
-  <section class='widget tagcloud'>
-    
-<header class='pure'>
-  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/blog/blog/tags/"
-    title="blog/tags/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      <a href="/blog/tags/日志-感悟-生活/" style="font-size: 14px; color: #999">日志  感悟 生活</a>
+        </div>
     </div>
-  </section>
-
-
-          
-        
-      
-        
-          
-          
-            
-
-
-  <section class='widget music'>
-    
-<header class='pure'>
-  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
-  
-    <a class="rightBtn"
-    
-      rel="external nofollow noopener noreferrer"
-    
-    
-      target="_blank"
-    
-    href="https://music.163.com/#/user/home?id=63035382"
-    title="https://music.163.com/#/user/home?id=63035382">
-    <i class="far fa-heart fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
-  <div class="aplayer"
-    data-theme="#1BCDFC"
-    
-    
-    data-mode="circulation"
-    data-server="netease"
-    data-type="playlist"
-    data-id="2615636388"
-    data-volume="0.7">
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
-
-
-    </div>
-  </section>
-
-
-          
-        
-      
-    
-
-  
-</aside>
-
-<footer id="footer" class="clearfix">
-  
-  
-    <div class="social-wrapper">
-      
-        
-          <a href="/blog/atom.xml"
-            class="social fas fa-rss flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="mailto:generaltune@126.com"
-            class="social fas fa-envelope flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://github.com/generaltune"
-            class="social fab fa-github flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://music.163.com/#/user/home?id=63035382"
-            class="social fas fa-headphones-alt flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-    </div>
-  
-  <br>
-  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
-  <div>
-    Use
-    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
-    
-      , 
-      total visits
-      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      times
-    
-    . 
-  </div>
-</footer>
-<script>setLoadingBarProgress(80);</script>
 
 
-      <script>setLoadingBarProgress(60);</script>
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2019 <a href="/">GENERALTUNE</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a href="http://hexo.io/" target="_blank">Hexo</a>.
     </div>
-    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+</div>
 
-  <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
-    var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/blog/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
-  </script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      Waves.attach('.flat-btn', ['waves-button']);
-      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-      Waves.attach('.flat-box', ['waves-block']);
-      Waves.attach('.float-box', ['waves-block', 'waves-float']);
-      Waves.attach('.waves-image');
-      Waves.init();
-    });
-  </script>
-
-
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+    </div>
 
 
 
 
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/blog/js/semantic-ui-algolia.js"></script>
+
+<script src="/blog/js/aloha-events.js"></script>
 
 
 
-
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
-
-
-
-
-<!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  let COPY_SUCCESS = "Copied";
-  let COPY_FAILURE = "Copy failed";
-  /*页面载入完成后，创建复制按钮*/
-  !function (e, t, a) {
-    /* code */
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-
-      clipboard.on('success', function(e) {
-        //您可以加入成功提示
-        console.info('Action:', e.action);
-        console.info('Text:', e.text);
-        console.info('Trigger:', e.trigger);
-        success_prompt(COPY_SUCCESS);
-        e.clearSelection();
-      });
-      clipboard.on('error', function(e) {
-        //您可以加入失败提示
-        console.error('Action:', e.action);
-        console.error('Trigger:', e.trigger);
-        fail_prompt(COPY_FAILURE);
-      });
-    }
-    initCopyCode();
-
-  }(window, document);
-
-  /**
-   * 弹出式提示框，默认1.5秒自动消失
-   * @param message 提示信息
-   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
-   * @param time 消失时间
-   */
-  var prompt = function (message, style, time)
-  {
-      style = (style === undefined) ? 'alert-success' : style;
-      time = (time === undefined) ? 1500 : time*1000;
-      $('<div>')
-          .appendTo('body')
-          .addClass('alert ' + style)
-          .html(message)
-          .show()
-          .delay(time)
-          .fadeOut();
-  };
-
-  // 成功提示
-  var success_prompt = function(message, time)
-  {
-      prompt(message, 'alert-success', time);
-  };
-
-  // 失败提示
-  var fail_prompt = function(message, time)
-  {
-      prompt(message, 'alert-danger', time);
-  };
-
-  // 提醒
-  var warning_prompt = function(message, time)
-  {
-      prompt(message, 'alert-warning', time);
-  };
-
-  // 信息提示
-  var info_prompt = function(message, time)
-  {
-      prompt(message, 'alert-info', time);
-  };
-
-</script>
-
-
-<!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
-      $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
-  });
-</script>
-
-
-
-
-
-  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>

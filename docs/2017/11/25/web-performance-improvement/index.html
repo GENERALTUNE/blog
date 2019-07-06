@@ -1,1075 +1,288 @@
+
+
 <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <title>网站性能提升 | generaltune&#39;s blog</title>
-  
-  
+<html lang>
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content>
+    <title>网站性能提升 | generaltune&#39;s blog</title>
 
-  
+    <!-- Open Graph -->
+    <meta name="description" content="&amp;#x524D;&amp;#x8A00;&amp;#x4E00;&amp;#x4E2A;&amp;#x6210;&amp;#x719F;&amp;#x7684;&amp;#x5927;&amp;#x578B;&amp;#x7F51;&amp;#x7AD9;&amp;#xFF08;&amp;#x5982;&amp;#x6DD8;&amp;#x5B9D;&amp;#x3001;&amp;#x5929;&amp;#x732B;&amp;#x3001;&amp;#x817E;&amp;#x8BAF;&amp;#x7B49;&amp;#xFF09;&amp;#x7684;&amp;#x7CFB;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网站性能提升">
+<meta property="og:url" content="https://generaltune.github.io/blog/2017/11/25/web-performance-improvement/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="&amp;#x524D;&amp;#x8A00;&amp;#x4E00;&amp;#x4E2A;&amp;#x6210;&amp;#x719F;&amp;#x7684;&amp;#x5927;&amp;#x578B;&amp;#x7F51;&amp;#x7AD9;&amp;#xFF08;&amp;#x5982;&amp;#x6DD8;&amp;#x5B9D;&amp;#x3001;&amp;#x5929;&amp;#x732B;&amp;#x3001;&amp;#x817E;&amp;#x8BAF;&amp;#x7B49;&amp;#xFF09;&amp;#x7684;&amp;#x7CFB;">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T03:52:29.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网站性能提升">
+<meta name="twitter:description" content="&amp;#x524D;&amp;#x8A00;&amp;#x4E00;&amp;#x4E2A;&amp;#x6210;&amp;#x719F;&amp;#x7684;&amp;#x5927;&amp;#x578B;&amp;#x7F51;&amp;#x7AD9;&amp;#xFF08;&amp;#x5982;&amp;#x6DD8;&amp;#x5B9D;&amp;#x3001;&amp;#x5929;&amp;#x732B;&amp;#x3001;&amp;#x817E;&amp;#x8BAF;&amp;#x7B49;&amp;#xFF09;&amp;#x7684;&amp;#x7CFB;">
 
-  <meta name="HandheldFriendly" content="True">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
-  
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "GENERALTUNE",
+  "url": "https://generaltune.github.io/blog"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
 
-  <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
-  
+    
 
-  
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/blog/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
-  
-
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width=num+"%";
-    }
-  </script>
-
-  
-  
 </head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
 
-<body>
-  
-  
-  <div class="cover-wrapper">
-    <cover class='cover post half'>
-      
-        
-  <h1 class='title'>Material X</h1>
-
-
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class='menu navgation'>
-  <ul class='h-list'>
-    
-      
-        <li>
-          <a class="nav home" href="/blog/"
-            
-            
-            id="blog">
-            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/projects/"
-            
-            
-            id="blogprojects">
-            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/friends/"
-            
-              rel="nofollow"
-            
-            
-            id="blogfriends">
-            <i class='fas fa-link fa-fw'></i>&nbsp;友链
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/about/"
-            
-              rel="nofollow"
-            
-            
-            id="blogabout">
-            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
-          </a>
-        </li>
-      
-    
-  </ul>
-</div>
-
-      
-    </cover>
-    <header class="l_header pure">
-  <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
-  </div>
-
-	<div class='wrapper'>
-		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href='/blog/' >
-        
-          generaltune's blog
-        
-      </a>
-			<div class='menu navgation'>
-				<ul class='h-list'>
-          
-  					
-  						<li>
-								<a class="nav flat-box" href="/blog/"
-                  
-                  
-                  id="blog">
-									<i class='fas fa-grin fa-fw'></i>&nbsp;示例
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/categories/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogcategories">
-									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/tags/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogtags">
-									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/archives/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogarchives">
-									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
-								</a>
-							</li>
-      			
-      		
-				</ul>
-			</div>
-
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="Search" />
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
-			<ul class='switcher h-list'>
-				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
-				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
-			</ul>
-		</div>
-
-		<div class='nav-sub container container--flex'>
-			<a class="logo flat-box"></a>
-			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
-        
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
-        
-			</ul>
-		</div>
-	</div>
-</header>
-	<aside class="menu-phone">
-    <header>
-		<nav class="menu navgation">
-      <ul>
-        
-          
-            <li>
-							<a class="nav flat-box" href="/blog/"
-                
-                
-                id="blog">
-								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/blog/archives/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogblogarchives">
-								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/projects/"
-                
-                
-                id="blogprojects">
-								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/friends/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogfriends">
-								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
-                
-                  rel="nofollow"
-                
-                
-                id="https:xaoxuu.comwikimaterial-x">
-								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/about/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogabout">
-								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
-							</a>
-            </li>
-          
-       
-      </ul>
-		</nav>
-    </header>
-	</aside>
-<script>setLoadingBarProgress(40);</script>
-
-  </div>
-
-
-  <div class="l_body">
-    <div class='body-wrapper'>
-      <div class='l_main'>
-  
-
-  
-    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-      
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  
-    <h1 class="title">
-      <a href="/blog/2017/11/25/web-performance-improvement/">
-        网站性能提升
-      </a>
-    </h1>
-  
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://generaltune.github.io/blog" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>GENERALTUNE</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2017-11-25</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
     </div>
-  
 
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
 
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          <p>前言<br>一个成熟的大型网站（如淘宝、天猫、腾讯等）的系统架构并不是一开始设计时就具备完整的高性能、高可用、高伸缩等特性的，它是随着用户量的增加，业务功能的扩展逐渐演变完善的，在这个过程中，开发模式、技术架构、设计思想也发生了很大的变化，就连技术人员也从几个人发展到一个部门甚至一条产品线。所以成熟的系统架构是随着业务的扩展而逐步完善的，并不是一蹴而就；不同业务特征的系统，会有各自的侧重点，例如：淘宝，要解决海量的商品信息的搜索、下单、支付，例如腾讯，要解决数亿用户的实时消息传输，百度它要处理海量的搜索请求，他们都有各自的业务特性，系统架构也有所不同。尽管如此我们也可以从这些不同的网站背景下，找出其中共用优化的技术，这些优化技术和手段广泛运用在大型网站系统的架构中，下面让我们来认识这些优化性能的技术和手段。</p>
-<h3 id="数据应用文件分离"><a href="#数据应用文件分离" class="headerlink" title="数据应用文件分离"></a>数据应用文件分离</h3><pre><code>最开始的网站架构
-最初业务量不大，访问量小，此时的架构，应用程序、数据库、文件都部署在一台服务器上，有些甚至仅仅是租用主机空间 
-将应用程序、数据库、文件各自部署在独立的服务器上，并且根据服务器的用途配置不同的硬件，达到最佳的性能效果。</code></pre><h3 id="使用缓存技术"><a href="#使用缓存技术" class="headerlink" title="使用缓存技术"></a>使用缓存技术</h3><pre><code>本地缓存
-2.1 本地缓存
-本地缓存，顾名思义是将数据缓存在应用服务器本地，可以存在内存中，也可以存在文件，组件。本地缓存的特点是速度快，但因为本地空间有限所以缓存数据量也有限。OSCache就是常用的本地缓存。 
-分布式缓存
-分布式缓存的特点是，可以缓存海量的数据，并且扩展非常容易，在门户类网站中常常被使用，速度按理没有本地缓存快，常用的分布式缓存是Memcached、Redis。 
-反向代理
-部署在网站的机房，当用户请求达到时首先访问反向代理服务器，反向代理服务器将缓存的数据返回给用户，如果没有缓存数据才会继续访问应用服务器获取，这样做减少了获取数据的成本。反向代理有Squid，Nginx。 
-CDN
-假设我们的服务器都部署在杭州的机房，对于浙江的用户来说访问是较快的，而对于北京的用户访问是较慢的，这是由于浙江和北京分别属于电信和联通的不同发达地区，北京用户访问需要通过互联路由器经过较长的路径才能访问到杭州的服务器，返回路径也一样，所以数据传输时间比较长。对于这种情况，常常使用CDN解决，CDN将数据内容缓存到运营商的机房，用户访问时先从最近的运营商获取数据，这样大大减少了网络访问的路径。比较专业的CDN运营商有蓝汛、网宿。</code></pre><h3 id="服务器集群＋-负载均衡"><a href="#服务器集群＋-负载均衡" class="headerlink" title="服务器集群＋　负载均衡"></a>服务器集群＋　负载均衡</h3><pre><code>应用服务器作为网站的入口，会承担大量的请求，我们往往通过应用服务器集群来分担请求数。
-应用服务器前面部署负载均衡服务器调度用户请求，根据分发策略将请求分发到多个应用服务器节点。 
-常用的负载均衡技术硬件的有F5，价格比较贵一般都在15W以上。
-    软件的有LVS、Nginx、HAProxy。LVS是四层（传输层）负载均衡，根据目标地址和端口选择内部服务器，Nginx和HAProxy是七层（应用层）负载均衡，可以根据报文内容选择内部服务器，因此LVS分发路径优于Nginx 和HAProxy，性能要高些，而Nginx和HAProxy则更具配置性，如可以用来做动静分离（根据请求报文特征，选择静态资源服务器还是应用服务器）。</code></pre><h3 id="数据库优化"><a href="#数据库优化" class="headerlink" title="数据库优化"></a>数据库优化</h3><pre><code>数据库读写分离和分库分表
-4.1 读写分离和分库分表
-随着用户量的增加，数据库成为最大的瓶颈，改善数据库性能常用的手段是进行读写分离以及分库分表，读写分离顾名思义就是将数据库分为读库和写库，通过主备功能实现数据同步。分库分表则分为水平切分和垂直切分，水平切分则是对一个数据库特大的表进行拆分，例如用户表。垂直切分则是根据业务的不同来切分，如用户业务、商品业务相关的表放在不同的数据库中。 
-使用NoSQL和搜索引擎
-4.2 使用NoSql数据库和搜索引擎
-对于海量数据的查询和分析，我们使用nosql数据库加上搜索引擎可以达到更好的性能。并不是所有的数据都要放在关系型数据中。常用的NOSQL有mongodb、hbase、redis，搜索引擎有lucene、solr、elasticsearch。 </code></pre><h3 id="业务拆分-微服务…"><a href="#业务拆分-微服务…" class="headerlink" title="业务拆分　微服务…"></a>业务拆分　微服务…</h3><pre><code>随着业务的扩展，应用程序变得非常臃肿，这时我们需要将应用程序进行业务拆分，如百度分为新闻、网页、图片等业务。每个业务应用负责相对独立的业务运作。业务之间通过消息进行通信或者共享数据库来实现。 </code></pre><h3 id="分布式系统"><a href="#分布式系统" class="headerlink" title="分布式系统"></a>分布式系统</h3><pre><code>分布式文件系统
-6.1 分布式文件系统
-用户一天天增加，业务量越来越大，产生的文件越来越多，单台的文件服务器已经不能满足需求，这时就需要分布式文件系统的支撑。常用的分布式文件系统有GFS、HDFS、TFS。
-GFS（Google File System）可以给大量的用户提供总体性能较高的服务
-• 适合部署在廉价的普通硬件上
-• 提供容错功能
-
-HDFS（Hadoop Distributed File System）能提供高吞吐量的数据访问，非常适合大规模数据集上的应用
-• 运行在通用硬件(commodityhardware)
-• 高度容错
-• 适合部署在廉价的机器上
-
-TFS（Taobao Flies System）主要针对海量的非结构化数据，提供高可靠和高并发的存储访问
-• 高可扩展、高可用、高性能
-• 面向互联网服务
-• 适合海量小文件存储
-
-分布式服务
-6.2 分布式服务
-各个业务应用都会使用到一些基本的业务服务，例如用户服务、订单服务、支付服务、安全服务，这些服务是支撑各业务应用的基本要素。我们将这些服务抽取出来利用分部式服务框架搭建分布式服务。阿里的Dubbo是一个不错的选择。</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><pre><code>大型网站的架构是根据业务需求不断完善的，根据不同的业务特征会做特定的设计和考虑，本文只是讲述一个常规大型网站会涉及的一些优化技术和手段。</code></pre><p><a href="http://geek.csdn.net/news/detail/245449" target="_blank" rel="noopener">转载原文链接</a><br><a href="http://www.cnblogs.com/leefreeman/p/3993449.html" target="_blank" rel="noopener">转载原文链接</a></p>
-
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>generaltune&#39;s blog</h3>
         </div>
-        
-          
-
-
-  <section class='meta' id="footer-meta">
-    <hr>
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-03T11:52:29+08:00">
-  <a class='notlink'>
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 3, 2019</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://generaltune.github.io/blog/2017/11/25/web-performance-improvement/&title=网站性能提升 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://generaltune.github.io/blog/2017/11/25/web-performance-improvement/&title=网站性能提升 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://generaltune.github.io/blog/2017/11/25/web-performance-improvement/&title=网站性能提升 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
     </div>
-  </section>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/blog/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">GENERALTUNE</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item">
+        <i class="home icon"></i>
+        HOME
+    </a>
+
+    
+
+    
+</div>
+
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-web-performance-improvement" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    网站性能提升
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <p>&#x524D;&#x8A00;<br>&#x4E00;&#x4E2A;&#x6210;&#x719F;&#x7684;&#x5927;&#x578B;&#x7F51;&#x7AD9;&#xFF08;&#x5982;&#x6DD8;&#x5B9D;&#x3001;&#x5929;&#x732B;&#x3001;&#x817E;&#x8BAF;&#x7B49;&#xFF09;&#x7684;&#x7CFB;&#x7EDF;&#x67B6;&#x6784;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x5F00;&#x59CB;&#x8BBE;&#x8BA1;&#x65F6;&#x5C31;&#x5177;&#x5907;&#x5B8C;&#x6574;&#x7684;&#x9AD8;&#x6027;&#x80FD;&#x3001;&#x9AD8;&#x53EF;&#x7528;&#x3001;&#x9AD8;&#x4F38;&#x7F29;&#x7B49;&#x7279;&#x6027;&#x7684;&#xFF0C;&#x5B83;&#x662F;&#x968F;&#x7740;&#x7528;&#x6237;&#x91CF;&#x7684;&#x589E;&#x52A0;&#xFF0C;&#x4E1A;&#x52A1;&#x529F;&#x80FD;&#x7684;&#x6269;&#x5C55;&#x9010;&#x6E10;&#x6F14;&#x53D8;&#x5B8C;&#x5584;&#x7684;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5F00;&#x53D1;&#x6A21;&#x5F0F;&#x3001;&#x6280;&#x672F;&#x67B6;&#x6784;&#x3001;&#x8BBE;&#x8BA1;&#x601D;&#x60F3;&#x4E5F;&#x53D1;&#x751F;&#x4E86;&#x5F88;&#x5927;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x5C31;&#x8FDE;&#x6280;&#x672F;&#x4EBA;&#x5458;&#x4E5F;&#x4ECE;&#x51E0;&#x4E2A;&#x4EBA;&#x53D1;&#x5C55;&#x5230;&#x4E00;&#x4E2A;&#x90E8;&#x95E8;&#x751A;&#x81F3;&#x4E00;&#x6761;&#x4EA7;&#x54C1;&#x7EBF;&#x3002;&#x6240;&#x4EE5;&#x6210;&#x719F;&#x7684;&#x7CFB;&#x7EDF;&#x67B6;&#x6784;&#x662F;&#x968F;&#x7740;&#x4E1A;&#x52A1;&#x7684;&#x6269;&#x5C55;&#x800C;&#x9010;&#x6B65;&#x5B8C;&#x5584;&#x7684;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x8E74;&#x800C;&#x5C31;&#xFF1B;&#x4E0D;&#x540C;&#x4E1A;&#x52A1;&#x7279;&#x5F81;&#x7684;&#x7CFB;&#x7EDF;&#xFF0C;&#x4F1A;&#x6709;&#x5404;&#x81EA;&#x7684;&#x4FA7;&#x91CD;&#x70B9;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;&#x6DD8;&#x5B9D;&#xFF0C;&#x8981;&#x89E3;&#x51B3;&#x6D77;&#x91CF;&#x7684;&#x5546;&#x54C1;&#x4FE1;&#x606F;&#x7684;&#x641C;&#x7D22;&#x3001;&#x4E0B;&#x5355;&#x3001;&#x652F;&#x4ED8;&#xFF0C;&#x4F8B;&#x5982;&#x817E;&#x8BAF;&#xFF0C;&#x8981;&#x89E3;&#x51B3;&#x6570;&#x4EBF;&#x7528;&#x6237;&#x7684;&#x5B9E;&#x65F6;&#x6D88;&#x606F;&#x4F20;&#x8F93;&#xFF0C;&#x767E;&#x5EA6;&#x5B83;&#x8981;&#x5904;&#x7406;&#x6D77;&#x91CF;&#x7684;&#x641C;&#x7D22;&#x8BF7;&#x6C42;&#xFF0C;&#x4ED6;&#x4EEC;&#x90FD;&#x6709;&#x5404;&#x81EA;&#x7684;&#x4E1A;&#x52A1;&#x7279;&#x6027;&#xFF0C;&#x7CFB;&#x7EDF;&#x67B6;&#x6784;&#x4E5F;&#x6709;&#x6240;&#x4E0D;&#x540C;&#x3002;&#x5C3D;&#x7BA1;&#x5982;&#x6B64;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x4ECE;&#x8FD9;&#x4E9B;&#x4E0D;&#x540C;&#x7684;&#x7F51;&#x7AD9;&#x80CC;&#x666F;&#x4E0B;&#xFF0C;&#x627E;&#x51FA;&#x5176;&#x4E2D;&#x5171;&#x7528;&#x4F18;&#x5316;&#x7684;&#x6280;&#x672F;&#xFF0C;&#x8FD9;&#x4E9B;&#x4F18;&#x5316;&#x6280;&#x672F;&#x548C;&#x624B;&#x6BB5;&#x5E7F;&#x6CDB;&#x8FD0;&#x7528;&#x5728;&#x5927;&#x578B;&#x7F51;&#x7AD9;&#x7CFB;&#x7EDF;&#x7684;&#x67B6;&#x6784;&#x4E2D;&#xFF0C;&#x4E0B;&#x9762;&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x8BA4;&#x8BC6;&#x8FD9;&#x4E9B;&#x4F18;&#x5316;&#x6027;&#x80FD;&#x7684;&#x6280;&#x672F;&#x548C;&#x624B;&#x6BB5;&#x3002;</p>
+<h3 id="&#x6570;&#x636E;&#x5E94;&#x7528;&#x6587;&#x4EF6;&#x5206;&#x79BB;"><a href="#&#x6570;&#x636E;&#x5E94;&#x7528;&#x6587;&#x4EF6;&#x5206;&#x79BB;" class="headerlink" title="&#x6570;&#x636E;&#x5E94;&#x7528;&#x6587;&#x4EF6;&#x5206;&#x79BB;"></a>&#x6570;&#x636E;&#x5E94;&#x7528;&#x6587;&#x4EF6;&#x5206;&#x79BB;</h3><pre><code>&#x6700;&#x5F00;&#x59CB;&#x7684;&#x7F51;&#x7AD9;&#x67B6;&#x6784;
+&#x6700;&#x521D;&#x4E1A;&#x52A1;&#x91CF;&#x4E0D;&#x5927;&#xFF0C;&#x8BBF;&#x95EE;&#x91CF;&#x5C0F;&#xFF0C;&#x6B64;&#x65F6;&#x7684;&#x67B6;&#x6784;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3001;&#x6570;&#x636E;&#x5E93;&#x3001;&#x6587;&#x4EF6;&#x90FD;&#x90E8;&#x7F72;&#x5728;&#x4E00;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x6709;&#x4E9B;&#x751A;&#x81F3;&#x4EC5;&#x4EC5;&#x662F;&#x79DF;&#x7528;&#x4E3B;&#x673A;&#x7A7A;&#x95F4; 
+&#x5C06;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3001;&#x6570;&#x636E;&#x5E93;&#x3001;&#x6587;&#x4EF6;&#x5404;&#x81EA;&#x90E8;&#x7F72;&#x5728;&#x72EC;&#x7ACB;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x5E76;&#x4E14;&#x6839;&#x636E;&#x670D;&#x52A1;&#x5668;&#x7684;&#x7528;&#x9014;&#x914D;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x786C;&#x4EF6;&#xFF0C;&#x8FBE;&#x5230;&#x6700;&#x4F73;&#x7684;&#x6027;&#x80FD;&#x6548;&#x679C;&#x3002;</code></pre><h3 id="&#x4F7F;&#x7528;&#x7F13;&#x5B58;&#x6280;&#x672F;"><a href="#&#x4F7F;&#x7528;&#x7F13;&#x5B58;&#x6280;&#x672F;" class="headerlink" title="&#x4F7F;&#x7528;&#x7F13;&#x5B58;&#x6280;&#x672F;"></a>&#x4F7F;&#x7528;&#x7F13;&#x5B58;&#x6280;&#x672F;</h3><pre><code>&#x672C;&#x5730;&#x7F13;&#x5B58;
+2.1 &#x672C;&#x5730;&#x7F13;&#x5B58;
+&#x672C;&#x5730;&#x7F13;&#x5B58;&#xFF0C;&#x987E;&#x540D;&#x601D;&#x4E49;&#x662F;&#x5C06;&#x6570;&#x636E;&#x7F13;&#x5B58;&#x5728;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5668;&#x672C;&#x5730;&#xFF0C;&#x53EF;&#x4EE5;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5B58;&#x5728;&#x6587;&#x4EF6;&#xFF0C;&#x7EC4;&#x4EF6;&#x3002;&#x672C;&#x5730;&#x7F13;&#x5B58;&#x7684;&#x7279;&#x70B9;&#x662F;&#x901F;&#x5EA6;&#x5FEB;&#xFF0C;&#x4F46;&#x56E0;&#x4E3A;&#x672C;&#x5730;&#x7A7A;&#x95F4;&#x6709;&#x9650;&#x6240;&#x4EE5;&#x7F13;&#x5B58;&#x6570;&#x636E;&#x91CF;&#x4E5F;&#x6709;&#x9650;&#x3002;OSCache&#x5C31;&#x662F;&#x5E38;&#x7528;&#x7684;&#x672C;&#x5730;&#x7F13;&#x5B58;&#x3002; 
+&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;
+&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;&#x7684;&#x7279;&#x70B9;&#x662F;&#xFF0C;&#x53EF;&#x4EE5;&#x7F13;&#x5B58;&#x6D77;&#x91CF;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4E14;&#x6269;&#x5C55;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#xFF0C;&#x5728;&#x95E8;&#x6237;&#x7C7B;&#x7F51;&#x7AD9;&#x4E2D;&#x5E38;&#x5E38;&#x88AB;&#x4F7F;&#x7528;&#xFF0C;&#x901F;&#x5EA6;&#x6309;&#x7406;&#x6CA1;&#x6709;&#x672C;&#x5730;&#x7F13;&#x5B58;&#x5FEB;&#xFF0C;&#x5E38;&#x7528;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x7F13;&#x5B58;&#x662F;Memcached&#x3001;Redis&#x3002; 
+&#x53CD;&#x5411;&#x4EE3;&#x7406;
+&#x90E8;&#x7F72;&#x5728;&#x7F51;&#x7AD9;&#x7684;&#x673A;&#x623F;&#xFF0C;&#x5F53;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#x8FBE;&#x5230;&#x65F6;&#x9996;&#x5148;&#x8BBF;&#x95EE;&#x53CD;&#x5411;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x53CD;&#x5411;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x5C06;&#x7F13;&#x5B58;&#x7684;&#x6570;&#x636E;&#x8FD4;&#x56DE;&#x7ED9;&#x7528;&#x6237;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7F13;&#x5B58;&#x6570;&#x636E;&#x624D;&#x4F1A;&#x7EE7;&#x7EED;&#x8BBF;&#x95EE;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5668;&#x83B7;&#x53D6;&#xFF0C;&#x8FD9;&#x6837;&#x505A;&#x51CF;&#x5C11;&#x4E86;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x7684;&#x6210;&#x672C;&#x3002;&#x53CD;&#x5411;&#x4EE3;&#x7406;&#x6709;Squid&#xFF0C;Nginx&#x3002; 
+CDN
+&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x7684;&#x670D;&#x52A1;&#x5668;&#x90FD;&#x90E8;&#x7F72;&#x5728;&#x676D;&#x5DDE;&#x7684;&#x673A;&#x623F;&#xFF0C;&#x5BF9;&#x4E8E;&#x6D59;&#x6C5F;&#x7684;&#x7528;&#x6237;&#x6765;&#x8BF4;&#x8BBF;&#x95EE;&#x662F;&#x8F83;&#x5FEB;&#x7684;&#xFF0C;&#x800C;&#x5BF9;&#x4E8E;&#x5317;&#x4EAC;&#x7684;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x662F;&#x8F83;&#x6162;&#x7684;&#xFF0C;&#x8FD9;&#x662F;&#x7531;&#x4E8E;&#x6D59;&#x6C5F;&#x548C;&#x5317;&#x4EAC;&#x5206;&#x522B;&#x5C5E;&#x4E8E;&#x7535;&#x4FE1;&#x548C;&#x8054;&#x901A;&#x7684;&#x4E0D;&#x540C;&#x53D1;&#x8FBE;&#x5730;&#x533A;&#xFF0C;&#x5317;&#x4EAC;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x4E92;&#x8054;&#x8DEF;&#x7531;&#x5668;&#x7ECF;&#x8FC7;&#x8F83;&#x957F;&#x7684;&#x8DEF;&#x5F84;&#x624D;&#x80FD;&#x8BBF;&#x95EE;&#x5230;&#x676D;&#x5DDE;&#x7684;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x8FD4;&#x56DE;&#x8DEF;&#x5F84;&#x4E5F;&#x4E00;&#x6837;&#xFF0C;&#x6240;&#x4EE5;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x65F6;&#x95F4;&#x6BD4;&#x8F83;&#x957F;&#x3002;&#x5BF9;&#x4E8E;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x5E38;&#x5E38;&#x4F7F;&#x7528;CDN&#x89E3;&#x51B3;&#xFF0C;CDN&#x5C06;&#x6570;&#x636E;&#x5185;&#x5BB9;&#x7F13;&#x5B58;&#x5230;&#x8FD0;&#x8425;&#x5546;&#x7684;&#x673A;&#x623F;&#xFF0C;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x65F6;&#x5148;&#x4ECE;&#x6700;&#x8FD1;&#x7684;&#x8FD0;&#x8425;&#x5546;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x6837;&#x5927;&#x5927;&#x51CF;&#x5C11;&#x4E86;&#x7F51;&#x7EDC;&#x8BBF;&#x95EE;&#x7684;&#x8DEF;&#x5F84;&#x3002;&#x6BD4;&#x8F83;&#x4E13;&#x4E1A;&#x7684;CDN&#x8FD0;&#x8425;&#x5546;&#x6709;&#x84DD;&#x6C5B;&#x3001;&#x7F51;&#x5BBF;&#x3002;</code></pre><h3 id="&#x670D;&#x52A1;&#x5668;&#x96C6;&#x7FA4;&#xFF0B;-&#x8D1F;&#x8F7D;&#x5747;&#x8861;"><a href="#&#x670D;&#x52A1;&#x5668;&#x96C6;&#x7FA4;&#xFF0B;-&#x8D1F;&#x8F7D;&#x5747;&#x8861;" class="headerlink" title="&#x670D;&#x52A1;&#x5668;&#x96C6;&#x7FA4;&#xFF0B;&#x3000;&#x8D1F;&#x8F7D;&#x5747;&#x8861;"></a>&#x670D;&#x52A1;&#x5668;&#x96C6;&#x7FA4;&#xFF0B;&#x3000;&#x8D1F;&#x8F7D;&#x5747;&#x8861;</h3><pre><code>&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5668;&#x4F5C;&#x4E3A;&#x7F51;&#x7AD9;&#x7684;&#x5165;&#x53E3;&#xFF0C;&#x4F1A;&#x627F;&#x62C5;&#x5927;&#x91CF;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x6211;&#x4EEC;&#x5F80;&#x5F80;&#x901A;&#x8FC7;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5668;&#x96C6;&#x7FA4;&#x6765;&#x5206;&#x62C5;&#x8BF7;&#x6C42;&#x6570;&#x3002;
+&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5668;&#x524D;&#x9762;&#x90E8;&#x7F72;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x670D;&#x52A1;&#x5668;&#x8C03;&#x5EA6;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#xFF0C;&#x6839;&#x636E;&#x5206;&#x53D1;&#x7B56;&#x7565;&#x5C06;&#x8BF7;&#x6C42;&#x5206;&#x53D1;&#x5230;&#x591A;&#x4E2A;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5668;&#x8282;&#x70B9;&#x3002; 
+&#x5E38;&#x7528;&#x7684;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x6280;&#x672F;&#x786C;&#x4EF6;&#x7684;&#x6709;F5&#xFF0C;&#x4EF7;&#x683C;&#x6BD4;&#x8F83;&#x8D35;&#x4E00;&#x822C;&#x90FD;&#x5728;15W&#x4EE5;&#x4E0A;&#x3002;
+    &#x8F6F;&#x4EF6;&#x7684;&#x6709;LVS&#x3001;Nginx&#x3001;HAProxy&#x3002;LVS&#x662F;&#x56DB;&#x5C42;&#xFF08;&#x4F20;&#x8F93;&#x5C42;&#xFF09;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#xFF0C;&#x6839;&#x636E;&#x76EE;&#x6807;&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#x9009;&#x62E9;&#x5185;&#x90E8;&#x670D;&#x52A1;&#x5668;&#xFF0C;Nginx&#x548C;HAProxy&#x662F;&#x4E03;&#x5C42;&#xFF08;&#x5E94;&#x7528;&#x5C42;&#xFF09;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x62A5;&#x6587;&#x5185;&#x5BB9;&#x9009;&#x62E9;&#x5185;&#x90E8;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x56E0;&#x6B64;LVS&#x5206;&#x53D1;&#x8DEF;&#x5F84;&#x4F18;&#x4E8E;Nginx &#x548C;HAProxy&#xFF0C;&#x6027;&#x80FD;&#x8981;&#x9AD8;&#x4E9B;&#xFF0C;&#x800C;Nginx&#x548C;HAProxy&#x5219;&#x66F4;&#x5177;&#x914D;&#x7F6E;&#x6027;&#xFF0C;&#x5982;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x505A;&#x52A8;&#x9759;&#x5206;&#x79BB;&#xFF08;&#x6839;&#x636E;&#x8BF7;&#x6C42;&#x62A5;&#x6587;&#x7279;&#x5F81;&#xFF0C;&#x9009;&#x62E9;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x670D;&#x52A1;&#x5668;&#x8FD8;&#x662F;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5668;&#xFF09;&#x3002;</code></pre><h3 id="&#x6570;&#x636E;&#x5E93;&#x4F18;&#x5316;"><a href="#&#x6570;&#x636E;&#x5E93;&#x4F18;&#x5316;" class="headerlink" title="&#x6570;&#x636E;&#x5E93;&#x4F18;&#x5316;"></a>&#x6570;&#x636E;&#x5E93;&#x4F18;&#x5316;</h3><pre><code>&#x6570;&#x636E;&#x5E93;&#x8BFB;&#x5199;&#x5206;&#x79BB;&#x548C;&#x5206;&#x5E93;&#x5206;&#x8868;
+4.1 &#x8BFB;&#x5199;&#x5206;&#x79BB;&#x548C;&#x5206;&#x5E93;&#x5206;&#x8868;
+&#x968F;&#x7740;&#x7528;&#x6237;&#x91CF;&#x7684;&#x589E;&#x52A0;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x6210;&#x4E3A;&#x6700;&#x5927;&#x7684;&#x74F6;&#x9888;&#xFF0C;&#x6539;&#x5584;&#x6570;&#x636E;&#x5E93;&#x6027;&#x80FD;&#x5E38;&#x7528;&#x7684;&#x624B;&#x6BB5;&#x662F;&#x8FDB;&#x884C;&#x8BFB;&#x5199;&#x5206;&#x79BB;&#x4EE5;&#x53CA;&#x5206;&#x5E93;&#x5206;&#x8868;&#xFF0C;&#x8BFB;&#x5199;&#x5206;&#x79BB;&#x987E;&#x540D;&#x601D;&#x4E49;&#x5C31;&#x662F;&#x5C06;&#x6570;&#x636E;&#x5E93;&#x5206;&#x4E3A;&#x8BFB;&#x5E93;&#x548C;&#x5199;&#x5E93;&#xFF0C;&#x901A;&#x8FC7;&#x4E3B;&#x5907;&#x529F;&#x80FD;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x540C;&#x6B65;&#x3002;&#x5206;&#x5E93;&#x5206;&#x8868;&#x5219;&#x5206;&#x4E3A;&#x6C34;&#x5E73;&#x5207;&#x5206;&#x548C;&#x5782;&#x76F4;&#x5207;&#x5206;&#xFF0C;&#x6C34;&#x5E73;&#x5207;&#x5206;&#x5219;&#x662F;&#x5BF9;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x7279;&#x5927;&#x7684;&#x8868;&#x8FDB;&#x884C;&#x62C6;&#x5206;&#xFF0C;&#x4F8B;&#x5982;&#x7528;&#x6237;&#x8868;&#x3002;&#x5782;&#x76F4;&#x5207;&#x5206;&#x5219;&#x662F;&#x6839;&#x636E;&#x4E1A;&#x52A1;&#x7684;&#x4E0D;&#x540C;&#x6765;&#x5207;&#x5206;&#xFF0C;&#x5982;&#x7528;&#x6237;&#x4E1A;&#x52A1;&#x3001;&#x5546;&#x54C1;&#x4E1A;&#x52A1;&#x76F8;&#x5173;&#x7684;&#x8868;&#x653E;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x3002; 
+&#x4F7F;&#x7528;NoSQL&#x548C;&#x641C;&#x7D22;&#x5F15;&#x64CE;
+4.2 &#x4F7F;&#x7528;NoSql&#x6570;&#x636E;&#x5E93;&#x548C;&#x641C;&#x7D22;&#x5F15;&#x64CE;
+&#x5BF9;&#x4E8E;&#x6D77;&#x91CF;&#x6570;&#x636E;&#x7684;&#x67E5;&#x8BE2;&#x548C;&#x5206;&#x6790;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;nosql&#x6570;&#x636E;&#x5E93;&#x52A0;&#x4E0A;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#x3002;&#x5E76;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x90FD;&#x8981;&#x653E;&#x5728;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x4E2D;&#x3002;&#x5E38;&#x7528;&#x7684;NOSQL&#x6709;mongodb&#x3001;hbase&#x3001;redis&#xFF0C;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x6709;lucene&#x3001;solr&#x3001;elasticsearch&#x3002; </code></pre><h3 id="&#x4E1A;&#x52A1;&#x62C6;&#x5206;-&#x5FAE;&#x670D;&#x52A1;&#x2026;"><a href="#&#x4E1A;&#x52A1;&#x62C6;&#x5206;-&#x5FAE;&#x670D;&#x52A1;&#x2026;" class="headerlink" title="&#x4E1A;&#x52A1;&#x62C6;&#x5206;&#x3000;&#x5FAE;&#x670D;&#x52A1;&#x2026;"></a>&#x4E1A;&#x52A1;&#x62C6;&#x5206;&#x3000;&#x5FAE;&#x670D;&#x52A1;&#x2026;</h3><pre><code>&#x968F;&#x7740;&#x4E1A;&#x52A1;&#x7684;&#x6269;&#x5C55;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x81C3;&#x80BF;&#xFF0C;&#x8FD9;&#x65F6;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C06;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FDB;&#x884C;&#x4E1A;&#x52A1;&#x62C6;&#x5206;&#xFF0C;&#x5982;&#x767E;&#x5EA6;&#x5206;&#x4E3A;&#x65B0;&#x95FB;&#x3001;&#x7F51;&#x9875;&#x3001;&#x56FE;&#x7247;&#x7B49;&#x4E1A;&#x52A1;&#x3002;&#x6BCF;&#x4E2A;&#x4E1A;&#x52A1;&#x5E94;&#x7528;&#x8D1F;&#x8D23;&#x76F8;&#x5BF9;&#x72EC;&#x7ACB;&#x7684;&#x4E1A;&#x52A1;&#x8FD0;&#x4F5C;&#x3002;&#x4E1A;&#x52A1;&#x4E4B;&#x95F4;&#x901A;&#x8FC7;&#x6D88;&#x606F;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x6216;&#x8005;&#x5171;&#x4EAB;&#x6570;&#x636E;&#x5E93;&#x6765;&#x5B9E;&#x73B0;&#x3002; </code></pre><h3 id="&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;"><a href="#&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;" class="headerlink" title="&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;"></a>&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;</h3><pre><code>&#x5206;&#x5E03;&#x5F0F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;
+6.1 &#x5206;&#x5E03;&#x5F0F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;
+&#x7528;&#x6237;&#x4E00;&#x5929;&#x5929;&#x589E;&#x52A0;&#xFF0C;&#x4E1A;&#x52A1;&#x91CF;&#x8D8A;&#x6765;&#x8D8A;&#x5927;&#xFF0C;&#x4EA7;&#x751F;&#x7684;&#x6587;&#x4EF6;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#xFF0C;&#x5355;&#x53F0;&#x7684;&#x6587;&#x4EF6;&#x670D;&#x52A1;&#x5668;&#x5DF2;&#x7ECF;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;&#x9700;&#x6C42;&#xFF0C;&#x8FD9;&#x65F6;&#x5C31;&#x9700;&#x8981;&#x5206;&#x5E03;&#x5F0F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x652F;&#x6491;&#x3002;&#x5E38;&#x7528;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6709;GFS&#x3001;HDFS&#x3001;TFS&#x3002;
+GFS&#xFF08;Google File System&#xFF09;&#x53EF;&#x4EE5;&#x7ED9;&#x5927;&#x91CF;&#x7684;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x603B;&#x4F53;&#x6027;&#x80FD;&#x8F83;&#x9AD8;&#x7684;&#x670D;&#x52A1;
+&#x2022; &#x9002;&#x5408;&#x90E8;&#x7F72;&#x5728;&#x5EC9;&#x4EF7;&#x7684;&#x666E;&#x901A;&#x786C;&#x4EF6;&#x4E0A;
+&#x2022; &#x63D0;&#x4F9B;&#x5BB9;&#x9519;&#x529F;&#x80FD;
+
+HDFS&#xFF08;Hadoop Distributed File System&#xFF09;&#x80FD;&#x63D0;&#x4F9B;&#x9AD8;&#x541E;&#x5410;&#x91CF;&#x7684;&#x6570;&#x636E;&#x8BBF;&#x95EE;&#xFF0C;&#x975E;&#x5E38;&#x9002;&#x5408;&#x5927;&#x89C4;&#x6A21;&#x6570;&#x636E;&#x96C6;&#x4E0A;&#x7684;&#x5E94;&#x7528;
+&#x2022; &#x8FD0;&#x884C;&#x5728;&#x901A;&#x7528;&#x786C;&#x4EF6;(commodityhardware)
+&#x2022; &#x9AD8;&#x5EA6;&#x5BB9;&#x9519;
+&#x2022; &#x9002;&#x5408;&#x90E8;&#x7F72;&#x5728;&#x5EC9;&#x4EF7;&#x7684;&#x673A;&#x5668;&#x4E0A;
+
+TFS&#xFF08;Taobao Flies System&#xFF09;&#x4E3B;&#x8981;&#x9488;&#x5BF9;&#x6D77;&#x91CF;&#x7684;&#x975E;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#xFF0C;&#x63D0;&#x4F9B;&#x9AD8;&#x53EF;&#x9760;&#x548C;&#x9AD8;&#x5E76;&#x53D1;&#x7684;&#x5B58;&#x50A8;&#x8BBF;&#x95EE;
+&#x2022; &#x9AD8;&#x53EF;&#x6269;&#x5C55;&#x3001;&#x9AD8;&#x53EF;&#x7528;&#x3001;&#x9AD8;&#x6027;&#x80FD;
+&#x2022; &#x9762;&#x5411;&#x4E92;&#x8054;&#x7F51;&#x670D;&#x52A1;
+&#x2022; &#x9002;&#x5408;&#x6D77;&#x91CF;&#x5C0F;&#x6587;&#x4EF6;&#x5B58;&#x50A8;
+
+&#x5206;&#x5E03;&#x5F0F;&#x670D;&#x52A1;
+6.2 &#x5206;&#x5E03;&#x5F0F;&#x670D;&#x52A1;
+&#x5404;&#x4E2A;&#x4E1A;&#x52A1;&#x5E94;&#x7528;&#x90FD;&#x4F1A;&#x4F7F;&#x7528;&#x5230;&#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x7684;&#x4E1A;&#x52A1;&#x670D;&#x52A1;&#xFF0C;&#x4F8B;&#x5982;&#x7528;&#x6237;&#x670D;&#x52A1;&#x3001;&#x8BA2;&#x5355;&#x670D;&#x52A1;&#x3001;&#x652F;&#x4ED8;&#x670D;&#x52A1;&#x3001;&#x5B89;&#x5168;&#x670D;&#x52A1;&#xFF0C;&#x8FD9;&#x4E9B;&#x670D;&#x52A1;&#x662F;&#x652F;&#x6491;&#x5404;&#x4E1A;&#x52A1;&#x5E94;&#x7528;&#x7684;&#x57FA;&#x672C;&#x8981;&#x7D20;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x8FD9;&#x4E9B;&#x670D;&#x52A1;&#x62BD;&#x53D6;&#x51FA;&#x6765;&#x5229;&#x7528;&#x5206;&#x90E8;&#x5F0F;&#x670D;&#x52A1;&#x6846;&#x67B6;&#x642D;&#x5EFA;&#x5206;&#x5E03;&#x5F0F;&#x670D;&#x52A1;&#x3002;&#x963F;&#x91CC;&#x7684;Dubbo&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x9519;&#x7684;&#x9009;&#x62E9;&#x3002;</code></pre><h2 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h2><pre><code>&#x5927;&#x578B;&#x7F51;&#x7AD9;&#x7684;&#x67B6;&#x6784;&#x662F;&#x6839;&#x636E;&#x4E1A;&#x52A1;&#x9700;&#x6C42;&#x4E0D;&#x65AD;&#x5B8C;&#x5584;&#x7684;&#xFF0C;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x4E1A;&#x52A1;&#x7279;&#x5F81;&#x4F1A;&#x505A;&#x7279;&#x5B9A;&#x7684;&#x8BBE;&#x8BA1;&#x548C;&#x8003;&#x8651;&#xFF0C;&#x672C;&#x6587;&#x53EA;&#x662F;&#x8BB2;&#x8FF0;&#x4E00;&#x4E2A;&#x5E38;&#x89C4;&#x5927;&#x578B;&#x7F51;&#x7AD9;&#x4F1A;&#x6D89;&#x53CA;&#x7684;&#x4E00;&#x4E9B;&#x4F18;&#x5316;&#x6280;&#x672F;&#x548C;&#x624B;&#x6BB5;&#x3002;</code></pre><p><a href="http://geek.csdn.net/news/detail/245449" target="_blank" rel="noopener">&#x8F6C;&#x8F7D;&#x539F;&#x6587;&#x94FE;&#x63A5;</a><br><a href="http://www.cnblogs.com/leefreeman/p/3993449.html" target="_blank" rel="noopener">&#x8F6C;&#x8F7D;&#x539F;&#x6587;&#x94FE;&#x63A5;</a></p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-11-25T02:28:20.000Z" itemprop="datePublished">2017-11-25</time>
+
+    </span>
+    <span class="post-description-item">
         
-        
-            <div class="prev-next">
+    </span>
+</div>
+
+                </div>
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
-                            <h4>
-                                <a href="/blog/2017/12/01/nice-sites/" rel="prev" title="nice websites">
-                                  
-                                      nice websites
-                                  
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
                 
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/blog/2017/11/23/nc-note/" rel="prev" title="nc_note">
-                                    
-                                        nc_note
-                                    
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+
+                <a href="/blog/2017/12/01/nice-sites/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    nice websites
+                    
+
+                </a>
+
                 
             </div>
-        
-      </section>
-    </article>
-  
+            <div class="column nav-right">
+                
 
-  
-    <!-- 显示推荐文章和评论 -->
-
-
-
-  
-
-
-  
-
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: '网站性能提升',
-      tools: true
-    }
-  </script>
-
+                <a href="/blog/2017/11/23/nc-note/" class="ui tiny button">
+                    
+                    nc_note
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
 
 </div>
-<aside class='l_side'>
-  
-    
-    
-      
-        
-          
-          
-            <section class='widget author'>
-  <div class='content pure'>
-    
-      <div class='avatar'>
-        <img class='avatar' src='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png'/>
-      </div>
-    
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/blog/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:generaltune@126.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/generaltune"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
+                
+            </div>
 
-          
-        
-      
-        
-          
-          
             
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
-  
-    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
-  
-</header>
+            <div class="three wide computer three wide tablet column">
 
-    <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据应用文件分离"><span class="toc-text">数据应用文件分离</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用缓存技术"><span class="toc-text">使用缓存技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器集群＋-负载均衡"><span class="toc-text">服务器集群＋　负载均衡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库优化"><span class="toc-text">数据库优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#业务拆分-微服务…"><span class="toc-text">业务拆分　微服务…</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分布式系统"><span class="toc-text">分布式系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a>
-    </div>
-  </section>
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#数据应用文件分离"><span>数据应用文件分离</span></a></li><li><a href="#使用缓存技术"><span>使用缓存技术</span></a></li><li><a href="#服务器集群＋-负载均衡"><span>服务器集群＋　负载均衡</span></a></li><li><a href="#数据库优化"><span>数据库优化</span></a></li><li><a href="#业务拆分-微服务…"><span>业务拆分　微服务…</span></a></li><li><a href="#分布式系统"><span>分布式系统</span></a></li></ol><li><a href="#总结"><span>总结</span></a>
+                </li></div>
 
-
-          
-        
-      
-        
-          
-          
-            <section class='widget grid'>
-  
-<header class='pure'>
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="grid navgation">
-      
-        <li><a class="flat-box" title="/blog/" href="/blog/"
-          
-          
-          id="blog">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          近期文章
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/blog/archives/" href="/blog/blog/archives/"
-          
-            rel="nofollow"
-          
-          
-          id="blogblogarchives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/projects/" href="/blog/projects/"
-          
-          
-          id="blogprojects">
-          
-            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
-          
-          开源项目
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/friends/" href="/blog/friends/"
-          
-            rel="nofollow"
-          
-          
-          id="blogfriends">
-          
-            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
-          
-          我的友链
-        </a></li>
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
-          
-            rel="nofollow"
-          
-          
-          id="https:xaoxuu.comwikimaterial-x">
-          
-            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
-          
-          主题文档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/about/" href="/blog/about/"
-          
-            rel="nofollow"
-          
-          
-          id="blogabout">
-          
-            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
-          
-          关于小站
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-          
-        
-      
-        
-          
-          
+            </div>
             
 
-          
-        
-      
-        
-          
-          
-            
-  <section class='widget tagcloud'>
-    
-<header class='pure'>
-  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/blog/blog/tags/"
-    title="blog/tags/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      <a href="/blog/tags/日志-感悟-生活/" style="font-size: 14px; color: #999">日志  感悟 生活</a>
+        </div>
     </div>
-  </section>
-
-
-          
-        
-      
-        
-          
-          
-            
-
-
-  <section class='widget music'>
-    
-<header class='pure'>
-  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
-  
-    <a class="rightBtn"
-    
-      rel="external nofollow noopener noreferrer"
-    
-    
-      target="_blank"
-    
-    href="https://music.163.com/#/user/home?id=63035382"
-    title="https://music.163.com/#/user/home?id=63035382">
-    <i class="far fa-heart fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
-  <div class="aplayer"
-    data-theme="#1BCDFC"
-    
-    
-    data-mode="circulation"
-    data-server="netease"
-    data-type="playlist"
-    data-id="2615636388"
-    data-volume="0.7">
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
-
-
-    </div>
-  </section>
-
-
-          
-        
-      
-    
-
-  
-</aside>
-
-<footer id="footer" class="clearfix">
-  
-  
-    <div class="social-wrapper">
-      
-        
-          <a href="/blog/atom.xml"
-            class="social fas fa-rss flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="mailto:generaltune@126.com"
-            class="social fas fa-envelope flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://github.com/generaltune"
-            class="social fab fa-github flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://music.163.com/#/user/home?id=63035382"
-            class="social fas fa-headphones-alt flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-    </div>
-  
-  <br>
-  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
-  <div>
-    Use
-    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
-    
-      , 
-      total visits
-      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      times
-    
-    . 
-  </div>
-</footer>
-<script>setLoadingBarProgress(80);</script>
 
 
-      <script>setLoadingBarProgress(60);</script>
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2019 <a href="/">GENERALTUNE</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a href="http://hexo.io/" target="_blank">Hexo</a>.
     </div>
-    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+</div>
 
-  <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
-    var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/blog/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
-  </script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      Waves.attach('.flat-btn', ['waves-button']);
-      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-      Waves.attach('.flat-box', ['waves-block']);
-      Waves.attach('.float-box', ['waves-block', 'waves-float']);
-      Waves.attach('.waves-image');
-      Waves.init();
-    });
-  </script>
-
-
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+    </div>
 
 
 
 
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/blog/js/semantic-ui-algolia.js"></script>
+
+<script src="/blog/js/aloha-events.js"></script>
 
 
 
-
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
-
-
-
-
-<!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  let COPY_SUCCESS = "Copied";
-  let COPY_FAILURE = "Copy failed";
-  /*页面载入完成后，创建复制按钮*/
-  !function (e, t, a) {
-    /* code */
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-
-      clipboard.on('success', function(e) {
-        //您可以加入成功提示
-        console.info('Action:', e.action);
-        console.info('Text:', e.text);
-        console.info('Trigger:', e.trigger);
-        success_prompt(COPY_SUCCESS);
-        e.clearSelection();
-      });
-      clipboard.on('error', function(e) {
-        //您可以加入失败提示
-        console.error('Action:', e.action);
-        console.error('Trigger:', e.trigger);
-        fail_prompt(COPY_FAILURE);
-      });
-    }
-    initCopyCode();
-
-  }(window, document);
-
-  /**
-   * 弹出式提示框，默认1.5秒自动消失
-   * @param message 提示信息
-   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
-   * @param time 消失时间
-   */
-  var prompt = function (message, style, time)
-  {
-      style = (style === undefined) ? 'alert-success' : style;
-      time = (time === undefined) ? 1500 : time*1000;
-      $('<div>')
-          .appendTo('body')
-          .addClass('alert ' + style)
-          .html(message)
-          .show()
-          .delay(time)
-          .fadeOut();
-  };
-
-  // 成功提示
-  var success_prompt = function(message, time)
-  {
-      prompt(message, 'alert-success', time);
-  };
-
-  // 失败提示
-  var fail_prompt = function(message, time)
-  {
-      prompt(message, 'alert-danger', time);
-  };
-
-  // 提醒
-  var warning_prompt = function(message, time)
-  {
-      prompt(message, 'alert-warning', time);
-  };
-
-  // 信息提示
-  var info_prompt = function(message, time)
-  {
-      prompt(message, 'alert-info', time);
-  };
-
-</script>
-
-
-<!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
-      $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
-  });
-</script>
-
-
-
-
-
-  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>

@@ -1,1078 +1,291 @@
+
+
 <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <title>ubuntu 16.04 装机攻略 | generaltune&#39;s blog</title>
-  
-  
+<html lang>
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content>
+    <title>ubuntu 16.04 装机攻略 | generaltune&#39;s blog</title>
 
-  
+    <!-- Open Graph -->
+    <meta name="description" content="&amp;#x4E0B;&amp;#x9762;&amp;#x5206;&amp;#x522B;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E00;&amp;#x4E0B;&amp;#x6240;&amp;#x7528;&amp;#x7684;&amp;#x8F6F;&amp;#x4EF6;&amp;#xFF1A; &amp;#x684C;&amp;#x9762;&amp;#x7F8E;&amp;#x5316;&amp;#x7C7B;&amp;#x81F3;&amp;#x4E8E;&amp;#x684C;&amp;#x9762;&amp;#x7F8E;&amp;#x5316">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu 16.04 装机攻略">
+<meta property="og:url" content="https://generaltune.github.io/blog/2017/11/15/ubuntu_tips20171115/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="&amp;#x4E0B;&amp;#x9762;&amp;#x5206;&amp;#x522B;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E00;&amp;#x4E0B;&amp;#x6240;&amp;#x7528;&amp;#x7684;&amp;#x8F6F;&amp;#x4EF6;&amp;#xFF1A; &amp;#x684C;&amp;#x9762;&amp;#x7F8E;&amp;#x5316;&amp;#x7C7B;&amp;#x81F3;&amp;#x4E8E;&amp;#x684C;&amp;#x9762;&amp;#x7F8E;&amp;#x5316">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T03:52:29.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ubuntu 16.04 装机攻略">
+<meta name="twitter:description" content="&amp;#x4E0B;&amp;#x9762;&amp;#x5206;&amp;#x522B;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E00;&amp;#x4E0B;&amp;#x6240;&amp;#x7528;&amp;#x7684;&amp;#x8F6F;&amp;#x4EF6;&amp;#xFF1A; &amp;#x684C;&amp;#x9762;&amp;#x7F8E;&amp;#x5316;&amp;#x7C7B;&amp;#x81F3;&amp;#x4E8E;&amp;#x684C;&amp;#x9762;&amp;#x7F8E;&amp;#x5316">
 
-  <meta name="HandheldFriendly" content="True">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
-  
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "GENERALTUNE",
+  "url": "https://generaltune.github.io/blog"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
 
-  <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
-  
+    
 
-  
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/blog/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
-  
-
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width=num+"%";
-    }
-  </script>
-
-  
-  
 </head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
 
-<body>
-  
-  
-  <div class="cover-wrapper">
-    <cover class='cover post half'>
-      
-        
-  <h1 class='title'>Material X</h1>
-
-
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class='menu navgation'>
-  <ul class='h-list'>
-    
-      
-        <li>
-          <a class="nav home" href="/blog/"
-            
-            
-            id="blog">
-            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/projects/"
-            
-            
-            id="blogprojects">
-            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/friends/"
-            
-              rel="nofollow"
-            
-            
-            id="blogfriends">
-            <i class='fas fa-link fa-fw'></i>&nbsp;友链
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/blog/about/"
-            
-              rel="nofollow"
-            
-            
-            id="blogabout">
-            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
-          </a>
-        </li>
-      
-    
-  </ul>
-</div>
-
-      
-    </cover>
-    <header class="l_header pure">
-  <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
-  </div>
-
-	<div class='wrapper'>
-		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href='/blog/' >
-        
-          generaltune's blog
-        
-      </a>
-			<div class='menu navgation'>
-				<ul class='h-list'>
-          
-  					
-  						<li>
-								<a class="nav flat-box" href="/blog/"
-                  
-                  
-                  id="blog">
-									<i class='fas fa-grin fa-fw'></i>&nbsp;示例
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/categories/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogcategories">
-									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/tags/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogtags">
-									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/blog/archives/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogblogarchives">
-									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
-								</a>
-							</li>
-      			
-      		
-				</ul>
-			</div>
-
-			
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="Search" />
-						<i class="icon fas fa-search fa-fw"></i>
-					</form>
-				</div>
-			
-			<ul class='switcher h-list'>
-				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
-				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
-			</ul>
-		</div>
-
-		<div class='nav-sub container container--flex'>
-			<a class="logo flat-box"></a>
-			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
-        
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
-        
-			</ul>
-		</div>
-	</div>
-</header>
-	<aside class="menu-phone">
-    <header>
-		<nav class="menu navgation">
-      <ul>
-        
-          
-            <li>
-							<a class="nav flat-box" href="/blog/"
-                
-                
-                id="blog">
-								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/blog/archives/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogblogarchives">
-								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/projects/"
-                
-                
-                id="blogprojects">
-								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/friends/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogfriends">
-								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
-                
-                  rel="nofollow"
-                
-                
-                id="https:xaoxuu.comwikimaterial-x">
-								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="/blog/about/"
-                
-                  rel="nofollow"
-                
-                
-                id="blogabout">
-								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
-							</a>
-            </li>
-          
-       
-      </ul>
-		</nav>
-    </header>
-	</aside>
-<script>setLoadingBarProgress(40);</script>
-
-  </div>
-
-
-  <div class="l_body">
-    <div class='body-wrapper'>
-      <div class='l_main'>
-  
-
-  
-    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-      
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  
-    <h1 class="title">
-      <a href="/blog/2017/11/15/ubuntu_tips20171115/">
-        ubuntu 16.04 装机攻略
-      </a>
-    </h1>
-  
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://generaltune.github.io/blog" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>GENERALTUNE</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2017-11-15</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
     </div>
-  
 
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
 
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          <p>下面分别介绍一下所用的软件：</p>
-<h2 id="桌面美化类"><a href="#桌面美化类" class="headerlink" title="桌面美化类"></a>桌面美化类</h2><p>至于桌面美化只是简单的做了一些处理，可以参考博客ubuntu16.04主题美化和软件推荐,这里不再赘述，毕竟Ubuntu原始桌面实在是不好看。至于Docker发现装了作用不大而且使屏幕复杂多了就不再用了。</p>
-<h3 id="BingWallpaper"><a href="#BingWallpaper" class="headerlink" title="BingWallpaper"></a>BingWallpaper</h3><p> bing壁纸使用每天可以更换壁纸而且壁纸质量比较好，不同每天看着一样的壁纸。</p>
-<h3 id="Redshift"><a href="#Redshift" class="headerlink" title="Redshift"></a>Redshift</h3><p>屏幕防蓝光工具，毕竟要天天看着电脑要保护眼睛。以前在笔记本上使用f.lux，但是在台式机上安装f.lux发现并不能调节屏幕蓝光，找到Redshift，发现还蛮好用的。</p>
-<h2 id="开发工具类"><a href="#开发工具类" class="headerlink" title="开发工具类"></a>开发工具类</h2><h3 id="eclipse"><a href="#eclipse" class="headerlink" title="eclipse"></a>eclipse</h3><p>eclipse作为Java集成开发环境中最好的的存在，当然要接着使用。</p>
-<h3 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a>Atom</h3><p>Github出品的文本编辑器，本人感觉比sublime好用多了，sublime在Ubuntu中最大的缺陷在于对中文支持实在不咋地，遂放弃sublime。Vim就不用说了，超级牛只是用不习惯。</p>
-<h3 id="Pycharm"><a href="#Pycharm" class="headerlink" title="Pycharm"></a>Pycharm</h3><p>尝试Pycharm写Python也比较爽，但是本人习惯使用Eclipse的界面风格，所以一般写Python都是使用Eclipse+PyDev的，偶尔也用一下Pycharm。</p>
-<h3 id="Code-Blocks"><a href="#Code-Blocks" class="headerlink" title="Code Blocks"></a>Code Blocks</h3><p>虽然Linux Shell已经提供了Vim+Gcc环境开发C，但是还是习惯集成的开发环境，就装了一个Code Blocks，反正C现在也一般不常用了，装着只是以备不时之需。</p>
-<h3 id="TexStudio"><a href="#TexStudio" class="headerlink" title="TexStudio"></a>TexStudio</h3><p>平常写论文少不了LeTex排版工具，本人一直觉得TexStudio+Texlive比Ctex好用多了，就一直用到现在。</p>
-<h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><p>至于数据库一直用开源的MySQL+MySQL Workbench，虽然现在已经被Oracle收购了，但是现在还能用。微软的SQLServer实在是太大了，本科学数据库的时候一直用SQLServer。</p>
-<h3 id="Gephi"><a href="#Gephi" class="headerlink" title="Gephi"></a>Gephi</h3><p>由于研究生方向是社团检测，Gephi作为复杂网络可视化中比较好用的工具就少不了它罗 。</p>
-<h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><p>以前在Windows上一直用小书匠，Ubuntu中也能使用小书匠但是感觉真的没有Typora好用。强烈推荐这一款Markdown编辑器。</p>
-<h2 id="系统工具类"><a href="#系统工具类" class="headerlink" title="系统工具类"></a>系统工具类</h2><h3 id="Google-Chrome"><a href="#Google-Chrome" class="headerlink" title="Google Chrome"></a>Google Chrome</h3><p>Google浏览器一直在用，我觉得这是最好用的浏览器，没有之一。。。。插件尤为强悍</p>
-<h3 id="Firefox"><a href="#Firefox" class="headerlink" title="Firefox"></a>Firefox</h3><p>在Google浏览器不能使用的时候偶尔用用Firefox</p>
-<h3 id="ShadowSocks-Qt5"><a href="#ShadowSocks-Qt5" class="headerlink" title="ShadowSocks-Qt5"></a>ShadowSocks-Qt5</h3><p>Ubuntu中常用的翻墙软件，当然首先是要有一个账号，并且还要在浏览器中设置代理。</p>
-<h2 id="新立得软件包管理器"><a href="#新立得软件包管理器" class="headerlink" title="新立得软件包管理器"></a>新立得软件包管理器</h2><p>平常用来删除一下不用的软件包。主要是Ubuntu的文件系统有点不熟悉，有时候命令行安装的包不知道安到哪去了。</p>
-<h3 id="Unity-Tweak-Tool-系统桌面管理工具"><a href="#Unity-Tweak-Tool-系统桌面管理工具" class="headerlink" title="Unity Tweak Tool 系统桌面管理工具"></a>Unity Tweak Tool 系统桌面管理工具</h3><p>添加包命令：sudo add-apt-repository ppa:freyja-dev/unity-tweak-tool-daily<br>更新包管理器：sudo apt-get update<br>安装命令：sudo apt-get install unity-tweak-tool<br>安装完成，但失败无法启用<br>参考：<a href="http://www.linuxidc.com/Linux/2013-02/79830.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2013-02/79830.htm</a><br>貌似后来通过软件中心安装成功，可以使用了</p>
-<h3 id="安装替换系统默认字体"><a href="#安装替换系统默认字体" class="headerlink" title="安装替换系统默认字体"></a>安装替换系统默认字体</h3><p>安装文泉字体，通过tweak替换<br>参考：<a href="http://www.linuxdiyf.com/linux/11653.html" target="_blank" rel="noopener">http://www.linuxdiyf.com/linux/11653.html</a></p>
-<h3 id="安装Adobe-flash"><a href="#安装Adobe-flash" class="headerlink" title="安装Adobe flash"></a>安装Adobe flash</h3><p>安装命令：sudo apt-get install flashplugin-installer</p>
-<h3 id="安装压缩软件RAR"><a href="#安装压缩软件RAR" class="headerlink" title="安装压缩软件RAR"></a>安装压缩软件RAR</h3><p>安装命令：sudo apt-get install rar<br>提高电池的寿命并且减少过热<br>笔记本过热是一个普遍的问题，它不仅仅存在于ubuntu中，也存在与其他的操作系统中，过热会影响电池的寿命，从 ubuntu12.10开始，tupiter就是解决过热的最好的工具。可惜的是这个项目已经停止开发了，你可以使用TLP或者CPUFREQ来代替 jupiter,安装TLP通过使用下面的命令：<br>sudo add-apt-repository ppa:linrunner/tlp<br>sudo apt-get update<br>sudo apt-get install tlp tlp-rdw<br>sudo tlp start<br>使用TPL是不需要进行配置的。<br>参考：<a href="http://www.zhihu.com/question/20509148" target="_blank" rel="noopener">http://www.zhihu.com/question/20509148</a><br>安装云盘Dropbox（需VPN）<br>sudo apt-get install nautilus-dropbox<br>sudo apt-get install libappindicator1<br>下载的是一个下载器，完成后可能需要VPN来下载Dropbox主程序。<br>启动器albert<br>sudo add-apt-repository ppa:nilarimogard/webupd8<br>sudo apt-get update<br>sudo apt-get install albert<br>安装完成后，在启动器里输入albert打开并设置热键（我这里设置的热键是`+Ctrl）<br>参考：<br><a href="http://www.zhihu.com/question/20509148" target="_blank" rel="noopener">http://www.zhihu.com/question/20509148</a><br><a href="http://www.webupd8.org/2015/01/albert-fast-lightweight-quick-launcher.html" target="_blank" rel="noopener">http://www.webupd8.org/2015/01/albert-fast-lightweight-quick-launcher.html</a></p>
-<h3 id="笔记本Zim-Desktop-Wiki"><a href="#笔记本Zim-Desktop-Wiki" class="headerlink" title="笔记本Zim Desktop Wiki"></a>笔记本Zim Desktop Wiki</h3><p>摘抄知乎：Zim的所有笔记都以文本格式存储，以文件夹方式管理；同时支持HTML、LaTeX、Markdown、rst等多种格式，可在模板中选择(虽然我没用过)；支持全文搜索、标签检索。默认是一种类似Markdown的wiki格式，支持列表、任务列表，可以插入图片、附件、LaTeX公式(需先安装latex相关软件)，插入的图片可单独指定一个附件目录，可输出为HTML、LaTeX、Markdown、rst。<br>安装命令：sudo apt-get install zim<br>参考：<a href="http://www.zhihu.com/question/20509148" target="_blank" rel="noopener">www.zhihu.com/question/20509148</a></p>
-<h3 id="思维导图-Xmind"><a href="#思维导图-Xmind" class="headerlink" title="思维导图 Xmind"></a>思维导图 Xmind</h3><p>下载安装包：<a href="http://www.xmind.net/download/linux/" target="_blank" rel="noopener">http://www.xmind.net/download/linux/</a><br>安装：sudo dpkg -i xmind-7-update1-linux_amd64.deb<br>安装失败，缺少依赖包，安装依赖包：sudo apt-get install -f<br>重新安装：sudo dpkg -i xmind-7-update1-linux_amd64.deb</p>
-<h3 id="自动调节屏幕色温Redshift"><a href="#自动调节屏幕色温Redshift" class="headerlink" title="自动调节屏幕色温Redshift"></a>自动调节屏幕色温Redshift</h3><p>根据日出日落时间(设定经纬度)自动调节电脑屏幕的亮度、色彩(色温)，保护眼睛<br>没用之前我一直觉得这种东西有必要吗，一直在后台耗费系统资源？用过了之后，我才发现真的很有必要呀！开启软件时，眼睛是一种很柔和的感觉，关闭则是对比很明显的刺眼蓝光。这才发现我的搓本屏幕颜色严重偏蓝，而之前我笔记本的亮度也因为刺眼的蓝光调的过低了。<br>安装命令：sudo apt-get install redshift<br>启动命令：redshift<br>可以加到系统启动里面：vim /etc/rc.local<br>将启动命令添加进去，保存并推出<br>参考：<a href="http://www.zhihu.com/question/20509148" target="_blank" rel="noopener">http://www.zhihu.com/question/20509148</a><br>最近，也找到一个win下的屏幕色温调节工具：flux</p>
-<h3 id="Linux下的完美帅气终端Guake"><a href="#Linux下的完美帅气终端Guake" class="headerlink" title="Linux下的完美帅气终端Guake"></a>Linux下的完美帅气终端Guake</h3><p>安装命令：sudo apt-get install guake<br>     常用快捷键<br>     调用：键盘F12<br>     新建终端选项卡：Ctrl+Shift+T<br>     关闭当前选项卡：Ctrl+Shift+W<br>     切换到当前选项卡右边：Ctrl+Page Down<br>     切换到当前选项卡左边：Ctrl+Page Up</p>
-<h3 id="浮动菜单"><a href="#浮动菜单" class="headerlink" title="浮动菜单"></a>浮动菜单</h3><p>下方的浮动图标工具栏：docky<br>安装方法：sudo apt-get install docky</p>
-<h3 id="便签Xpad"><a href="#便签Xpad" class="headerlink" title="便签Xpad"></a>便签Xpad</h3><p>不是和docky集成的便签<br>安装方法：sudo apt-get install xpad<br>参考：<a href="http://article.yeeyan.org/view/140496/124205/" target="_blank" rel="noopener">http://article.yeeyan.org/view/140496/124205/</a></p>
-<h3 id="WPS"><a href="#WPS" class="headerlink" title="WPS"></a>WPS</h3><p>首先去下载：<a href="http://linux.wps.cn/" target="_blank" rel="noopener">http://linux.wps.cn/</a><br>之后安装：sudo dpkg -i wps-office_10.1.0.5444~a20_amd64.deb</p>
-<h3 id="Pinta"><a href="#Pinta" class="headerlink" title="Pinta"></a>Pinta</h3><p>简单好用的图片编辑器，虽然Gimp非常强悍，但是操作觉得比较复杂。</p>
-<h3 id="Catfish"><a href="#Catfish" class="headerlink" title="Catfish"></a>Catfish</h3><p>文件搜索，有时文件太多而且不知道放在哪，这个工具可以帮你快速找到，系统自带的文件搜索也好用。</p>
-<h3 id="sougou-input-输入法"><a href="#sougou-input-输入法" class="headerlink" title="sougou input 输入法"></a>sougou input 输入法</h3><p>搜狗输入法，比系统自带的输入法好用多了。</p>
-<p>以后发现了什么好用的软件再更新博客。<br>之前安装的是搜狗拼音，这次安装16.04选择的是汉语各种中文，已经把拼音集成了。所以这次没有安装输入法。不过麻烦的就是去个我的文件夹，原本是cd Downloads的命令要改成cd 下载．<br>后来发现还是搜狗好用，比方说你要当前的时间，直接输入sj就会出现，但是其他的输入法比方说Ubuntu自带的就没有这个功能，好吧，装搜狗．<br>安装包下载地址：<a href="http://pinyin.sogou.com/linux/" target="_blank" rel="noopener">http://pinyin.sogou.com/linux/</a><br>执行安装命令：sudo dpkg -i sogoupinyin_2.0.0.0072_amd64.deb<br>缺少依赖包，安装失败，安装依赖包：sudo apt-get install -f<br>依赖包安装完成，重新安装：sudo dpkg -i sogoupinyin_2.0.0.0072_amd64.deb<br>安装成功<br>在启动里直接搜索Fcitx Configuration，打开后在Input Method里删除除了Sougou拼音以外的其它中文输入法（可能略有延迟，Sougou拼音没出来），确保除了Sougou拼音外，只有一个Keyboard – English(US)，若没有这一项就在下方点击加号＂＋＂添加这一项．</p>
-<h2 id="开发工具类-1"><a href="#开发工具类-1" class="headerlink" title="开发工具类"></a>开发工具类</h2><h3 id="R-RStudio"><a href="#R-RStudio" class="headerlink" title="R+RStudio"></a>R+RStudio</h3><p>R语言作为统计学习中重要的编程语言。最近装着用着试试。。。可以也不太用的到。<br>系统工具</p>
-<h3 id="Remmina远程桌面"><a href="#Remmina远程桌面" class="headerlink" title="Remmina远程桌面"></a>Remmina远程桌面</h3><p>最近老师给了一台服务器用用，感觉还是蛮爽的，服务器是Windows Server系统，因此发现了这个比较好用的Linux-&gt;Windows远程工具。</p>
-<h3 id="VirtualBox虚拟机"><a href="#VirtualBox虚拟机" class="headerlink" title="VirtualBox虚拟机"></a>VirtualBox虚拟机</h3><p>最近需要做实验需要用到Windows和Kali，于是找了一个虚拟机软件。Linux下VirtualBox和VmWare都可以使用，但是本人觉得轻量级的VirtualBox还是好用一点。但是被其中的界面全屏折腾了一下，后来解决了。</p>
-<p>注意：在Linux下Win键就是Super键</p>
-<p>启动器</p>
-<p>Win(长按) 打开启动器，显示快捷键<br>Win + Tab 通过启动器切换应用程序<br>Win + 1到9 与点击启动器上的图标效果一样<br>Win + Shift + 1到9 在应用中打开一个新窗口<br>Win + T 打开垃圾桶<br>面板</p>
-<p>Win(轻触点击) 打开dash主页<br>Win + A 打开dash应用栏目<br>Win + F 打开dash文件栏目<br>Win + M 打开dash音乐栏目<br>Win + C 打开dash图片栏目<br>Win + V 打开dash视频栏目<br>Ctrl + Tab 在栏目或者标签间切换<br>切换中</p>
-<p>Alt + Tab 切换应用程序<br>Ctrl + Alt +Tab 切换所有工作区的应用程序<br>Alt + ` 切换当前运行的应用程序窗口<br>Alt + Q 关闭选中的应用程序或窗口<br>工作区</p>
-<p>Win + S 切换工作区<br>Ctrl + Alt +方向键 切换工作区<br>Ctrl + Shift + Alt + 方向键 移动当前窗口到另一个工作区<br>窗口</p>
-<p>Win + W 展开当前工作区的所有窗口<br>Shift + Win + W 展开所有工作区的窗口<br>Ctrl + Win + W 平展当前工作区中焦点应用的所有窗口<br>Shift + Ctrl + Win + W 平展当前焦点应用在所有工作区中的窗口<br>Ctrl + Win +D 最小化所有窗口(显示桌面）也可以用 Win + D<br> Ctrl + Win + 上 最大化当前窗口<br> Ctrl + Win + 下 还原或最小化当前窗口<br> Ctrl + Win + 左或右 半最大化当前窗口<br> Alt + F4 关闭当前窗口 或者 Ctrl + Q<br> Alt + 空格 打开窗口通用访问菜单<br> Alt + 鼠标左键拖拽 移动当前窗口<br> Alt + 鼠标中键拖拽 调整当前窗口大小<br> Ctrl + L 资源管理器中显示当前目录的路径<br> Ctrl + H 资源管理器中显示所有文件和文件夹（显示隐藏的文件夹）<br> Alt + Enter 显示所选文件或者文件夹的属性信息<br> Alt + Home 直接移到你的主目录<br> 其他</p>
-<p> Ctrl + Alt + T 打开终端<br> Ctrl + Q 退出当前程序<br> Alt + F1 + Enter 搜索计算机<br> Alt + F2 搜索计算机<br> Ctrl + Alt + L 锁屏，如果你想走开一会而不想让别人看到你的屏幕，相当于 Win + L<br> Ctrl + Alt + F1 切换到首个虚拟终端<br> Ctrl + Alt + F2(F3)(F4)(F5)(F6) 选择不同的虚拟终端<br>Ctrl + Alt + F7 切换到当前登录会话</p>
-
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>generaltune&#39;s blog</h3>
         </div>
-        
-          
-
-
-  <section class='meta' id="footer-meta">
-    <hr>
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-03T11:52:29+08:00">
-  <a class='notlink'>
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 3, 2019</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://generaltune.github.io/blog/2017/11/15/ubuntu_tips20171115/&title=ubuntu 16.04 装机攻略 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://generaltune.github.io/blog/2017/11/15/ubuntu_tips20171115/&title=ubuntu 16.04 装机攻略 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://generaltune.github.io/blog/2017/11/15/ubuntu_tips20171115/&title=ubuntu 16.04 装机攻略 | generaltune's blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
     </div>
-  </section>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/blog/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">GENERALTUNE</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item">
+        <i class="home icon"></i>
+        HOME
+    </a>
+
+    
+
+    
+</div>
+
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-ubuntu_tips20171115" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    ubuntu 16.04 装机攻略
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <p>&#x4E0B;&#x9762;&#x5206;&#x522B;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#x6240;&#x7528;&#x7684;&#x8F6F;&#x4EF6;&#xFF1A;</p>
+<h2 id="&#x684C;&#x9762;&#x7F8E;&#x5316;&#x7C7B;"><a href="#&#x684C;&#x9762;&#x7F8E;&#x5316;&#x7C7B;" class="headerlink" title="&#x684C;&#x9762;&#x7F8E;&#x5316;&#x7C7B;"></a>&#x684C;&#x9762;&#x7F8E;&#x5316;&#x7C7B;</h2><p>&#x81F3;&#x4E8E;&#x684C;&#x9762;&#x7F8E;&#x5316;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x7684;&#x505A;&#x4E86;&#x4E00;&#x4E9B;&#x5904;&#x7406;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x535A;&#x5BA2;ubuntu16.04&#x4E3B;&#x9898;&#x7F8E;&#x5316;&#x548C;&#x8F6F;&#x4EF6;&#x63A8;&#x8350;,&#x8FD9;&#x91CC;&#x4E0D;&#x518D;&#x8D58;&#x8FF0;&#xFF0C;&#x6BD5;&#x7ADF;Ubuntu&#x539F;&#x59CB;&#x684C;&#x9762;&#x5B9E;&#x5728;&#x662F;&#x4E0D;&#x597D;&#x770B;&#x3002;&#x81F3;&#x4E8E;Docker&#x53D1;&#x73B0;&#x88C5;&#x4E86;&#x4F5C;&#x7528;&#x4E0D;&#x5927;&#x800C;&#x4E14;&#x4F7F;&#x5C4F;&#x5E55;&#x590D;&#x6742;&#x591A;&#x4E86;&#x5C31;&#x4E0D;&#x518D;&#x7528;&#x4E86;&#x3002;</p>
+<h3 id="BingWallpaper"><a href="#BingWallpaper" class="headerlink" title="BingWallpaper"></a>BingWallpaper</h3><p> bing&#x58C1;&#x7EB8;&#x4F7F;&#x7528;&#x6BCF;&#x5929;&#x53EF;&#x4EE5;&#x66F4;&#x6362;&#x58C1;&#x7EB8;&#x800C;&#x4E14;&#x58C1;&#x7EB8;&#x8D28;&#x91CF;&#x6BD4;&#x8F83;&#x597D;&#xFF0C;&#x4E0D;&#x540C;&#x6BCF;&#x5929;&#x770B;&#x7740;&#x4E00;&#x6837;&#x7684;&#x58C1;&#x7EB8;&#x3002;</p>
+<h3 id="Redshift"><a href="#Redshift" class="headerlink" title="Redshift"></a>Redshift</h3><p>&#x5C4F;&#x5E55;&#x9632;&#x84DD;&#x5149;&#x5DE5;&#x5177;&#xFF0C;&#x6BD5;&#x7ADF;&#x8981;&#x5929;&#x5929;&#x770B;&#x7740;&#x7535;&#x8111;&#x8981;&#x4FDD;&#x62A4;&#x773C;&#x775B;&#x3002;&#x4EE5;&#x524D;&#x5728;&#x7B14;&#x8BB0;&#x672C;&#x4E0A;&#x4F7F;&#x7528;f.lux&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x53F0;&#x5F0F;&#x673A;&#x4E0A;&#x5B89;&#x88C5;f.lux&#x53D1;&#x73B0;&#x5E76;&#x4E0D;&#x80FD;&#x8C03;&#x8282;&#x5C4F;&#x5E55;&#x84DD;&#x5149;&#xFF0C;&#x627E;&#x5230;Redshift&#xFF0C;&#x53D1;&#x73B0;&#x8FD8;&#x86EE;&#x597D;&#x7528;&#x7684;&#x3002;</p>
+<h2 id="&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x7C7B;"><a href="#&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x7C7B;" class="headerlink" title="&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x7C7B;"></a>&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x7C7B;</h2><h3 id="eclipse"><a href="#eclipse" class="headerlink" title="eclipse"></a>eclipse</h3><p>eclipse&#x4F5C;&#x4E3A;Java&#x96C6;&#x6210;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x4E2D;&#x6700;&#x597D;&#x7684;&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x5F53;&#x7136;&#x8981;&#x63A5;&#x7740;&#x4F7F;&#x7528;&#x3002;</p>
+<h3 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a>Atom</h3><p>Github&#x51FA;&#x54C1;&#x7684;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x672C;&#x4EBA;&#x611F;&#x89C9;&#x6BD4;sublime&#x597D;&#x7528;&#x591A;&#x4E86;&#xFF0C;sublime&#x5728;Ubuntu&#x4E2D;&#x6700;&#x5927;&#x7684;&#x7F3A;&#x9677;&#x5728;&#x4E8E;&#x5BF9;&#x4E2D;&#x6587;&#x652F;&#x6301;&#x5B9E;&#x5728;&#x4E0D;&#x548B;&#x5730;&#xFF0C;&#x9042;&#x653E;&#x5F03;sublime&#x3002;Vim&#x5C31;&#x4E0D;&#x7528;&#x8BF4;&#x4E86;&#xFF0C;&#x8D85;&#x7EA7;&#x725B;&#x53EA;&#x662F;&#x7528;&#x4E0D;&#x4E60;&#x60EF;&#x3002;</p>
+<h3 id="Pycharm"><a href="#Pycharm" class="headerlink" title="Pycharm"></a>Pycharm</h3><p>&#x5C1D;&#x8BD5;Pycharm&#x5199;Python&#x4E5F;&#x6BD4;&#x8F83;&#x723D;&#xFF0C;&#x4F46;&#x662F;&#x672C;&#x4EBA;&#x4E60;&#x60EF;&#x4F7F;&#x7528;Eclipse&#x7684;&#x754C;&#x9762;&#x98CE;&#x683C;&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x822C;&#x5199;Python&#x90FD;&#x662F;&#x4F7F;&#x7528;Eclipse+PyDev&#x7684;&#xFF0C;&#x5076;&#x5C14;&#x4E5F;&#x7528;&#x4E00;&#x4E0B;Pycharm&#x3002;</p>
+<h3 id="Code-Blocks"><a href="#Code-Blocks" class="headerlink" title="Code Blocks"></a>Code Blocks</h3><p>&#x867D;&#x7136;Linux Shell&#x5DF2;&#x7ECF;&#x63D0;&#x4F9B;&#x4E86;Vim+Gcc&#x73AF;&#x5883;&#x5F00;&#x53D1;C&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x662F;&#x4E60;&#x60EF;&#x96C6;&#x6210;&#x7684;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF0C;&#x5C31;&#x88C5;&#x4E86;&#x4E00;&#x4E2A;Code Blocks&#xFF0C;&#x53CD;&#x6B63;C&#x73B0;&#x5728;&#x4E5F;&#x4E00;&#x822C;&#x4E0D;&#x5E38;&#x7528;&#x4E86;&#xFF0C;&#x88C5;&#x7740;&#x53EA;&#x662F;&#x4EE5;&#x5907;&#x4E0D;&#x65F6;&#x4E4B;&#x9700;&#x3002;</p>
+<h3 id="TexStudio"><a href="#TexStudio" class="headerlink" title="TexStudio"></a>TexStudio</h3><p>&#x5E73;&#x5E38;&#x5199;&#x8BBA;&#x6587;&#x5C11;&#x4E0D;&#x4E86;LeTex&#x6392;&#x7248;&#x5DE5;&#x5177;&#xFF0C;&#x672C;&#x4EBA;&#x4E00;&#x76F4;&#x89C9;&#x5F97;TexStudio+Texlive&#x6BD4;Ctex&#x597D;&#x7528;&#x591A;&#x4E86;&#xFF0C;&#x5C31;&#x4E00;&#x76F4;&#x7528;&#x5230;&#x73B0;&#x5728;&#x3002;</p>
+<h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><p>&#x81F3;&#x4E8E;&#x6570;&#x636E;&#x5E93;&#x4E00;&#x76F4;&#x7528;&#x5F00;&#x6E90;&#x7684;MySQL+MySQL Workbench&#xFF0C;&#x867D;&#x7136;&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x88AB;Oracle&#x6536;&#x8D2D;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x73B0;&#x5728;&#x8FD8;&#x80FD;&#x7528;&#x3002;&#x5FAE;&#x8F6F;&#x7684;SQLServer&#x5B9E;&#x5728;&#x662F;&#x592A;&#x5927;&#x4E86;&#xFF0C;&#x672C;&#x79D1;&#x5B66;&#x6570;&#x636E;&#x5E93;&#x7684;&#x65F6;&#x5019;&#x4E00;&#x76F4;&#x7528;SQLServer&#x3002;</p>
+<h3 id="Gephi"><a href="#Gephi" class="headerlink" title="Gephi"></a>Gephi</h3><p>&#x7531;&#x4E8E;&#x7814;&#x7A76;&#x751F;&#x65B9;&#x5411;&#x662F;&#x793E;&#x56E2;&#x68C0;&#x6D4B;&#xFF0C;Gephi&#x4F5C;&#x4E3A;&#x590D;&#x6742;&#x7F51;&#x7EDC;&#x53EF;&#x89C6;&#x5316;&#x4E2D;&#x6BD4;&#x8F83;&#x597D;&#x7528;&#x7684;&#x5DE5;&#x5177;&#x5C31;&#x5C11;&#x4E0D;&#x4E86;&#x5B83;&#x7F57; &#x3002;</p>
+<h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><p>&#x4EE5;&#x524D;&#x5728;Windows&#x4E0A;&#x4E00;&#x76F4;&#x7528;&#x5C0F;&#x4E66;&#x5320;&#xFF0C;Ubuntu&#x4E2D;&#x4E5F;&#x80FD;&#x4F7F;&#x7528;&#x5C0F;&#x4E66;&#x5320;&#x4F46;&#x662F;&#x611F;&#x89C9;&#x771F;&#x7684;&#x6CA1;&#x6709;Typora&#x597D;&#x7528;&#x3002;&#x5F3A;&#x70C8;&#x63A8;&#x8350;&#x8FD9;&#x4E00;&#x6B3E;Markdown&#x7F16;&#x8F91;&#x5668;&#x3002;</p>
+<h2 id="&#x7CFB;&#x7EDF;&#x5DE5;&#x5177;&#x7C7B;"><a href="#&#x7CFB;&#x7EDF;&#x5DE5;&#x5177;&#x7C7B;" class="headerlink" title="&#x7CFB;&#x7EDF;&#x5DE5;&#x5177;&#x7C7B;"></a>&#x7CFB;&#x7EDF;&#x5DE5;&#x5177;&#x7C7B;</h2><h3 id="Google-Chrome"><a href="#Google-Chrome" class="headerlink" title="Google Chrome"></a>Google Chrome</h3><p>Google&#x6D4F;&#x89C8;&#x5668;&#x4E00;&#x76F4;&#x5728;&#x7528;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x8FD9;&#x662F;&#x6700;&#x597D;&#x7528;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x6CA1;&#x6709;&#x4E4B;&#x4E00;&#x3002;&#x3002;&#x3002;&#x3002;&#x63D2;&#x4EF6;&#x5C24;&#x4E3A;&#x5F3A;&#x608D;</p>
+<h3 id="Firefox"><a href="#Firefox" class="headerlink" title="Firefox"></a>Firefox</h3><p>&#x5728;Google&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x5076;&#x5C14;&#x7528;&#x7528;Firefox</p>
+<h3 id="ShadowSocks-Qt5"><a href="#ShadowSocks-Qt5" class="headerlink" title="ShadowSocks-Qt5"></a>ShadowSocks-Qt5</h3><p>Ubuntu&#x4E2D;&#x5E38;&#x7528;&#x7684;&#x7FFB;&#x5899;&#x8F6F;&#x4EF6;&#xFF0C;&#x5F53;&#x7136;&#x9996;&#x5148;&#x662F;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x8D26;&#x53F7;&#xFF0C;&#x5E76;&#x4E14;&#x8FD8;&#x8981;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8BBE;&#x7F6E;&#x4EE3;&#x7406;&#x3002;</p>
+<h2 id="&#x65B0;&#x7ACB;&#x5F97;&#x8F6F;&#x4EF6;&#x5305;&#x7BA1;&#x7406;&#x5668;"><a href="#&#x65B0;&#x7ACB;&#x5F97;&#x8F6F;&#x4EF6;&#x5305;&#x7BA1;&#x7406;&#x5668;" class="headerlink" title="&#x65B0;&#x7ACB;&#x5F97;&#x8F6F;&#x4EF6;&#x5305;&#x7BA1;&#x7406;&#x5668;"></a>&#x65B0;&#x7ACB;&#x5F97;&#x8F6F;&#x4EF6;&#x5305;&#x7BA1;&#x7406;&#x5668;</h2><p>&#x5E73;&#x5E38;&#x7528;&#x6765;&#x5220;&#x9664;&#x4E00;&#x4E0B;&#x4E0D;&#x7528;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x3002;&#x4E3B;&#x8981;&#x662F;Ubuntu&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6709;&#x70B9;&#x4E0D;&#x719F;&#x6089;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x547D;&#x4EE4;&#x884C;&#x5B89;&#x88C5;&#x7684;&#x5305;&#x4E0D;&#x77E5;&#x9053;&#x5B89;&#x5230;&#x54EA;&#x53BB;&#x4E86;&#x3002;</p>
+<h3 id="Unity-Tweak-Tool-&#x7CFB;&#x7EDF;&#x684C;&#x9762;&#x7BA1;&#x7406;&#x5DE5;&#x5177;"><a href="#Unity-Tweak-Tool-&#x7CFB;&#x7EDF;&#x684C;&#x9762;&#x7BA1;&#x7406;&#x5DE5;&#x5177;" class="headerlink" title="Unity Tweak Tool &#x7CFB;&#x7EDF;&#x684C;&#x9762;&#x7BA1;&#x7406;&#x5DE5;&#x5177;"></a>Unity Tweak Tool &#x7CFB;&#x7EDF;&#x684C;&#x9762;&#x7BA1;&#x7406;&#x5DE5;&#x5177;</h3><p>&#x6DFB;&#x52A0;&#x5305;&#x547D;&#x4EE4;&#xFF1A;sudo add-apt-repository ppa:freyja-dev/unity-tweak-tool-daily<br>&#x66F4;&#x65B0;&#x5305;&#x7BA1;&#x7406;&#x5668;&#xFF1A;sudo apt-get update<br>&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#xFF1A;sudo apt-get install unity-tweak-tool<br>&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#xFF0C;&#x4F46;&#x5931;&#x8D25;&#x65E0;&#x6CD5;&#x542F;&#x7528;<br>&#x53C2;&#x8003;&#xFF1A;<a href="http://www.linuxidc.com/Linux/2013-02/79830.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2013-02/79830.htm</a><br>&#x8C8C;&#x4F3C;&#x540E;&#x6765;&#x901A;&#x8FC7;&#x8F6F;&#x4EF6;&#x4E2D;&#x5FC3;&#x5B89;&#x88C5;&#x6210;&#x529F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E86;</p>
+<h3 id="&#x5B89;&#x88C5;&#x66FF;&#x6362;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x5B57;&#x4F53;"><a href="#&#x5B89;&#x88C5;&#x66FF;&#x6362;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x5B57;&#x4F53;" class="headerlink" title="&#x5B89;&#x88C5;&#x66FF;&#x6362;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x5B57;&#x4F53;"></a>&#x5B89;&#x88C5;&#x66FF;&#x6362;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x5B57;&#x4F53;</h3><p>&#x5B89;&#x88C5;&#x6587;&#x6CC9;&#x5B57;&#x4F53;&#xFF0C;&#x901A;&#x8FC7;tweak&#x66FF;&#x6362;<br>&#x53C2;&#x8003;&#xFF1A;<a href="http://www.linuxdiyf.com/linux/11653.html" target="_blank" rel="noopener">http://www.linuxdiyf.com/linux/11653.html</a></p>
+<h3 id="&#x5B89;&#x88C5;Adobe-flash"><a href="#&#x5B89;&#x88C5;Adobe-flash" class="headerlink" title="&#x5B89;&#x88C5;Adobe flash"></a>&#x5B89;&#x88C5;Adobe flash</h3><p>&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#xFF1A;sudo apt-get install flashplugin-installer</p>
+<h3 id="&#x5B89;&#x88C5;&#x538B;&#x7F29;&#x8F6F;&#x4EF6;RAR"><a href="#&#x5B89;&#x88C5;&#x538B;&#x7F29;&#x8F6F;&#x4EF6;RAR" class="headerlink" title="&#x5B89;&#x88C5;&#x538B;&#x7F29;&#x8F6F;&#x4EF6;RAR"></a>&#x5B89;&#x88C5;&#x538B;&#x7F29;&#x8F6F;&#x4EF6;RAR</h3><p>&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#xFF1A;sudo apt-get install rar<br>&#x63D0;&#x9AD8;&#x7535;&#x6C60;&#x7684;&#x5BFF;&#x547D;&#x5E76;&#x4E14;&#x51CF;&#x5C11;&#x8FC7;&#x70ED;<br>&#x7B14;&#x8BB0;&#x672C;&#x8FC7;&#x70ED;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x904D;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5B83;&#x4E0D;&#x4EC5;&#x4EC5;&#x5B58;&#x5728;&#x4E8E;ubuntu&#x4E2D;&#xFF0C;&#x4E5F;&#x5B58;&#x5728;&#x4E0E;&#x5176;&#x4ED6;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x8FC7;&#x70ED;&#x4F1A;&#x5F71;&#x54CD;&#x7535;&#x6C60;&#x7684;&#x5BFF;&#x547D;&#xFF0C;&#x4ECE; ubuntu12.10&#x5F00;&#x59CB;&#xFF0C;tupiter&#x5C31;&#x662F;&#x89E3;&#x51B3;&#x8FC7;&#x70ED;&#x7684;&#x6700;&#x597D;&#x7684;&#x5DE5;&#x5177;&#x3002;&#x53EF;&#x60DC;&#x7684;&#x662F;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x5DF2;&#x7ECF;&#x505C;&#x6B62;&#x5F00;&#x53D1;&#x4E86;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;TLP&#x6216;&#x8005;CPUFREQ&#x6765;&#x4EE3;&#x66FF; jupiter,&#x5B89;&#x88C5;TLP&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#xFF1A;<br>sudo add-apt-repository ppa:linrunner/tlp<br>sudo apt-get update<br>sudo apt-get install tlp tlp-rdw<br>sudo tlp start<br>&#x4F7F;&#x7528;TPL&#x662F;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x7684;&#x3002;<br>&#x53C2;&#x8003;&#xFF1A;<a href="http://www.zhihu.com/question/20509148" target="_blank" rel="noopener">http://www.zhihu.com/question/20509148</a><br>&#x5B89;&#x88C5;&#x4E91;&#x76D8;Dropbox&#xFF08;&#x9700;VPN&#xFF09;<br>sudo apt-get install nautilus-dropbox<br>sudo apt-get install libappindicator1<br>&#x4E0B;&#x8F7D;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x4E0B;&#x8F7D;&#x5668;&#xFF0C;&#x5B8C;&#x6210;&#x540E;&#x53EF;&#x80FD;&#x9700;&#x8981;VPN&#x6765;&#x4E0B;&#x8F7D;Dropbox&#x4E3B;&#x7A0B;&#x5E8F;&#x3002;<br>&#x542F;&#x52A8;&#x5668;albert<br>sudo add-apt-repository ppa:nilarimogard/webupd8<br>sudo apt-get update<br>sudo apt-get install albert<br>&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x5728;&#x542F;&#x52A8;&#x5668;&#x91CC;&#x8F93;&#x5165;albert&#x6253;&#x5F00;&#x5E76;&#x8BBE;&#x7F6E;&#x70ED;&#x952E;&#xFF08;&#x6211;&#x8FD9;&#x91CC;&#x8BBE;&#x7F6E;&#x7684;&#x70ED;&#x952E;&#x662F;`+Ctrl&#xFF09;<br>&#x53C2;&#x8003;&#xFF1A;<br><a href="http://www.zhihu.com/question/20509148" target="_blank" rel="noopener">http://www.zhihu.com/question/20509148</a><br><a href="http://www.webupd8.org/2015/01/albert-fast-lightweight-quick-launcher.html" target="_blank" rel="noopener">http://www.webupd8.org/2015/01/albert-fast-lightweight-quick-launcher.html</a></p>
+<h3 id="&#x7B14;&#x8BB0;&#x672C;Zim-Desktop-Wiki"><a href="#&#x7B14;&#x8BB0;&#x672C;Zim-Desktop-Wiki" class="headerlink" title="&#x7B14;&#x8BB0;&#x672C;Zim Desktop Wiki"></a>&#x7B14;&#x8BB0;&#x672C;Zim Desktop Wiki</h3><p>&#x6458;&#x6284;&#x77E5;&#x4E4E;&#xFF1A;Zim&#x7684;&#x6240;&#x6709;&#x7B14;&#x8BB0;&#x90FD;&#x4EE5;&#x6587;&#x672C;&#x683C;&#x5F0F;&#x5B58;&#x50A8;&#xFF0C;&#x4EE5;&#x6587;&#x4EF6;&#x5939;&#x65B9;&#x5F0F;&#x7BA1;&#x7406;&#xFF1B;&#x540C;&#x65F6;&#x652F;&#x6301;HTML&#x3001;LaTeX&#x3001;Markdown&#x3001;rst&#x7B49;&#x591A;&#x79CD;&#x683C;&#x5F0F;&#xFF0C;&#x53EF;&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x9009;&#x62E9;(&#x867D;&#x7136;&#x6211;&#x6CA1;&#x7528;&#x8FC7;)&#xFF1B;&#x652F;&#x6301;&#x5168;&#x6587;&#x641C;&#x7D22;&#x3001;&#x6807;&#x7B7E;&#x68C0;&#x7D22;&#x3002;&#x9ED8;&#x8BA4;&#x662F;&#x4E00;&#x79CD;&#x7C7B;&#x4F3C;Markdown&#x7684;wiki&#x683C;&#x5F0F;&#xFF0C;&#x652F;&#x6301;&#x5217;&#x8868;&#x3001;&#x4EFB;&#x52A1;&#x5217;&#x8868;&#xFF0C;&#x53EF;&#x4EE5;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x3001;&#x9644;&#x4EF6;&#x3001;LaTeX&#x516C;&#x5F0F;(&#x9700;&#x5148;&#x5B89;&#x88C5;latex&#x76F8;&#x5173;&#x8F6F;&#x4EF6;)&#xFF0C;&#x63D2;&#x5165;&#x7684;&#x56FE;&#x7247;&#x53EF;&#x5355;&#x72EC;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x9644;&#x4EF6;&#x76EE;&#x5F55;&#xFF0C;&#x53EF;&#x8F93;&#x51FA;&#x4E3A;HTML&#x3001;LaTeX&#x3001;Markdown&#x3001;rst&#x3002;<br>&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#xFF1A;sudo apt-get install zim<br>&#x53C2;&#x8003;&#xFF1A;<a href="http://www.zhihu.com/question/20509148" target="_blank" rel="noopener">www.zhihu.com/question/20509148</a></p>
+<h3 id="&#x601D;&#x7EF4;&#x5BFC;&#x56FE;-Xmind"><a href="#&#x601D;&#x7EF4;&#x5BFC;&#x56FE;-Xmind" class="headerlink" title="&#x601D;&#x7EF4;&#x5BFC;&#x56FE; Xmind"></a>&#x601D;&#x7EF4;&#x5BFC;&#x56FE; Xmind</h3><p>&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;&#xFF1A;<a href="http://www.xmind.net/download/linux/" target="_blank" rel="noopener">http://www.xmind.net/download/linux/</a><br>&#x5B89;&#x88C5;&#xFF1A;sudo dpkg -i xmind-7-update1-linux_amd64.deb<br>&#x5B89;&#x88C5;&#x5931;&#x8D25;&#xFF0C;&#x7F3A;&#x5C11;&#x4F9D;&#x8D56;&#x5305;&#xFF0C;&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x5305;&#xFF1A;sudo apt-get install -f<br>&#x91CD;&#x65B0;&#x5B89;&#x88C5;&#xFF1A;sudo dpkg -i xmind-7-update1-linux_amd64.deb</p>
+<h3 id="&#x81EA;&#x52A8;&#x8C03;&#x8282;&#x5C4F;&#x5E55;&#x8272;&#x6E29;Redshift"><a href="#&#x81EA;&#x52A8;&#x8C03;&#x8282;&#x5C4F;&#x5E55;&#x8272;&#x6E29;Redshift" class="headerlink" title="&#x81EA;&#x52A8;&#x8C03;&#x8282;&#x5C4F;&#x5E55;&#x8272;&#x6E29;Redshift"></a>&#x81EA;&#x52A8;&#x8C03;&#x8282;&#x5C4F;&#x5E55;&#x8272;&#x6E29;Redshift</h3><p>&#x6839;&#x636E;&#x65E5;&#x51FA;&#x65E5;&#x843D;&#x65F6;&#x95F4;(&#x8BBE;&#x5B9A;&#x7ECF;&#x7EAC;&#x5EA6;)&#x81EA;&#x52A8;&#x8C03;&#x8282;&#x7535;&#x8111;&#x5C4F;&#x5E55;&#x7684;&#x4EAE;&#x5EA6;&#x3001;&#x8272;&#x5F69;(&#x8272;&#x6E29;)&#xFF0C;&#x4FDD;&#x62A4;&#x773C;&#x775B;<br>&#x6CA1;&#x7528;&#x4E4B;&#x524D;&#x6211;&#x4E00;&#x76F4;&#x89C9;&#x5F97;&#x8FD9;&#x79CD;&#x4E1C;&#x897F;&#x6709;&#x5FC5;&#x8981;&#x5417;&#xFF0C;&#x4E00;&#x76F4;&#x5728;&#x540E;&#x53F0;&#x8017;&#x8D39;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#xFF1F;&#x7528;&#x8FC7;&#x4E86;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x624D;&#x53D1;&#x73B0;&#x771F;&#x7684;&#x5F88;&#x6709;&#x5FC5;&#x8981;&#x5440;&#xFF01;&#x5F00;&#x542F;&#x8F6F;&#x4EF6;&#x65F6;&#xFF0C;&#x773C;&#x775B;&#x662F;&#x4E00;&#x79CD;&#x5F88;&#x67D4;&#x548C;&#x7684;&#x611F;&#x89C9;&#xFF0C;&#x5173;&#x95ED;&#x5219;&#x662F;&#x5BF9;&#x6BD4;&#x5F88;&#x660E;&#x663E;&#x7684;&#x523A;&#x773C;&#x84DD;&#x5149;&#x3002;&#x8FD9;&#x624D;&#x53D1;&#x73B0;&#x6211;&#x7684;&#x6413;&#x672C;&#x5C4F;&#x5E55;&#x989C;&#x8272;&#x4E25;&#x91CD;&#x504F;&#x84DD;&#xFF0C;&#x800C;&#x4E4B;&#x524D;&#x6211;&#x7B14;&#x8BB0;&#x672C;&#x7684;&#x4EAE;&#x5EA6;&#x4E5F;&#x56E0;&#x4E3A;&#x523A;&#x773C;&#x7684;&#x84DD;&#x5149;&#x8C03;&#x7684;&#x8FC7;&#x4F4E;&#x4E86;&#x3002;<br>&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#xFF1A;sudo apt-get install redshift<br>&#x542F;&#x52A8;&#x547D;&#x4EE4;&#xFF1A;redshift<br>&#x53EF;&#x4EE5;&#x52A0;&#x5230;&#x7CFB;&#x7EDF;&#x542F;&#x52A8;&#x91CC;&#x9762;&#xFF1A;vim /etc/rc.local<br>&#x5C06;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x6DFB;&#x52A0;&#x8FDB;&#x53BB;&#xFF0C;&#x4FDD;&#x5B58;&#x5E76;&#x63A8;&#x51FA;<br>&#x53C2;&#x8003;&#xFF1A;<a href="http://www.zhihu.com/question/20509148" target="_blank" rel="noopener">http://www.zhihu.com/question/20509148</a><br>&#x6700;&#x8FD1;&#xFF0C;&#x4E5F;&#x627E;&#x5230;&#x4E00;&#x4E2A;win&#x4E0B;&#x7684;&#x5C4F;&#x5E55;&#x8272;&#x6E29;&#x8C03;&#x8282;&#x5DE5;&#x5177;&#xFF1A;flux</p>
+<h3 id="Linux&#x4E0B;&#x7684;&#x5B8C;&#x7F8E;&#x5E05;&#x6C14;&#x7EC8;&#x7AEF;Guake"><a href="#Linux&#x4E0B;&#x7684;&#x5B8C;&#x7F8E;&#x5E05;&#x6C14;&#x7EC8;&#x7AEF;Guake" class="headerlink" title="Linux&#x4E0B;&#x7684;&#x5B8C;&#x7F8E;&#x5E05;&#x6C14;&#x7EC8;&#x7AEF;Guake"></a>Linux&#x4E0B;&#x7684;&#x5B8C;&#x7F8E;&#x5E05;&#x6C14;&#x7EC8;&#x7AEF;Guake</h3><p>&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#xFF1A;sudo apt-get install guake<br>     &#x5E38;&#x7528;&#x5FEB;&#x6377;&#x952E;<br>     &#x8C03;&#x7528;&#xFF1A;&#x952E;&#x76D8;F12<br>     &#x65B0;&#x5EFA;&#x7EC8;&#x7AEF;&#x9009;&#x9879;&#x5361;&#xFF1A;Ctrl+Shift+T<br>     &#x5173;&#x95ED;&#x5F53;&#x524D;&#x9009;&#x9879;&#x5361;&#xFF1A;Ctrl+Shift+W<br>     &#x5207;&#x6362;&#x5230;&#x5F53;&#x524D;&#x9009;&#x9879;&#x5361;&#x53F3;&#x8FB9;&#xFF1A;Ctrl+Page Down<br>     &#x5207;&#x6362;&#x5230;&#x5F53;&#x524D;&#x9009;&#x9879;&#x5361;&#x5DE6;&#x8FB9;&#xFF1A;Ctrl+Page Up</p>
+<h3 id="&#x6D6E;&#x52A8;&#x83DC;&#x5355;"><a href="#&#x6D6E;&#x52A8;&#x83DC;&#x5355;" class="headerlink" title="&#x6D6E;&#x52A8;&#x83DC;&#x5355;"></a>&#x6D6E;&#x52A8;&#x83DC;&#x5355;</h3><p>&#x4E0B;&#x65B9;&#x7684;&#x6D6E;&#x52A8;&#x56FE;&#x6807;&#x5DE5;&#x5177;&#x680F;&#xFF1A;docky<br>&#x5B89;&#x88C5;&#x65B9;&#x6CD5;&#xFF1A;sudo apt-get install docky</p>
+<h3 id="&#x4FBF;&#x7B7E;Xpad"><a href="#&#x4FBF;&#x7B7E;Xpad" class="headerlink" title="&#x4FBF;&#x7B7E;Xpad"></a>&#x4FBF;&#x7B7E;Xpad</h3><p>&#x4E0D;&#x662F;&#x548C;docky&#x96C6;&#x6210;&#x7684;&#x4FBF;&#x7B7E;<br>&#x5B89;&#x88C5;&#x65B9;&#x6CD5;&#xFF1A;sudo apt-get install xpad<br>&#x53C2;&#x8003;&#xFF1A;<a href="http://article.yeeyan.org/view/140496/124205/" target="_blank" rel="noopener">http://article.yeeyan.org/view/140496/124205/</a></p>
+<h3 id="WPS"><a href="#WPS" class="headerlink" title="WPS"></a>WPS</h3><p>&#x9996;&#x5148;&#x53BB;&#x4E0B;&#x8F7D;&#xFF1A;<a href="http://linux.wps.cn/" target="_blank" rel="noopener">http://linux.wps.cn/</a><br>&#x4E4B;&#x540E;&#x5B89;&#x88C5;&#xFF1A;sudo dpkg -i wps-office_10.1.0.5444~a20_amd64.deb</p>
+<h3 id="Pinta"><a href="#Pinta" class="headerlink" title="Pinta"></a>Pinta</h3><p>&#x7B80;&#x5355;&#x597D;&#x7528;&#x7684;&#x56FE;&#x7247;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x867D;&#x7136;Gimp&#x975E;&#x5E38;&#x5F3A;&#x608D;&#xFF0C;&#x4F46;&#x662F;&#x64CD;&#x4F5C;&#x89C9;&#x5F97;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x3002;</p>
+<h3 id="Catfish"><a href="#Catfish" class="headerlink" title="Catfish"></a>Catfish</h3><p>&#x6587;&#x4EF6;&#x641C;&#x7D22;&#xFF0C;&#x6709;&#x65F6;&#x6587;&#x4EF6;&#x592A;&#x591A;&#x800C;&#x4E14;&#x4E0D;&#x77E5;&#x9053;&#x653E;&#x5728;&#x54EA;&#xFF0C;&#x8FD9;&#x4E2A;&#x5DE5;&#x5177;&#x53EF;&#x4EE5;&#x5E2E;&#x4F60;&#x5FEB;&#x901F;&#x627E;&#x5230;&#xFF0C;&#x7CFB;&#x7EDF;&#x81EA;&#x5E26;&#x7684;&#x6587;&#x4EF6;&#x641C;&#x7D22;&#x4E5F;&#x597D;&#x7528;&#x3002;</p>
+<h3 id="sougou-input-&#x8F93;&#x5165;&#x6CD5;"><a href="#sougou-input-&#x8F93;&#x5165;&#x6CD5;" class="headerlink" title="sougou input &#x8F93;&#x5165;&#x6CD5;"></a>sougou input &#x8F93;&#x5165;&#x6CD5;</h3><p>&#x641C;&#x72D7;&#x8F93;&#x5165;&#x6CD5;&#xFF0C;&#x6BD4;&#x7CFB;&#x7EDF;&#x81EA;&#x5E26;&#x7684;&#x8F93;&#x5165;&#x6CD5;&#x597D;&#x7528;&#x591A;&#x4E86;&#x3002;</p>
+<p>&#x4EE5;&#x540E;&#x53D1;&#x73B0;&#x4E86;&#x4EC0;&#x4E48;&#x597D;&#x7528;&#x7684;&#x8F6F;&#x4EF6;&#x518D;&#x66F4;&#x65B0;&#x535A;&#x5BA2;&#x3002;<br>&#x4E4B;&#x524D;&#x5B89;&#x88C5;&#x7684;&#x662F;&#x641C;&#x72D7;&#x62FC;&#x97F3;&#xFF0C;&#x8FD9;&#x6B21;&#x5B89;&#x88C5;16.04&#x9009;&#x62E9;&#x7684;&#x662F;&#x6C49;&#x8BED;&#x5404;&#x79CD;&#x4E2D;&#x6587;&#xFF0C;&#x5DF2;&#x7ECF;&#x628A;&#x62FC;&#x97F3;&#x96C6;&#x6210;&#x4E86;&#x3002;&#x6240;&#x4EE5;&#x8FD9;&#x6B21;&#x6CA1;&#x6709;&#x5B89;&#x88C5;&#x8F93;&#x5165;&#x6CD5;&#x3002;&#x4E0D;&#x8FC7;&#x9EBB;&#x70E6;&#x7684;&#x5C31;&#x662F;&#x53BB;&#x4E2A;&#x6211;&#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x539F;&#x672C;&#x662F;cd Downloads&#x7684;&#x547D;&#x4EE4;&#x8981;&#x6539;&#x6210;cd &#x4E0B;&#x8F7D;&#xFF0E;<br>&#x540E;&#x6765;&#x53D1;&#x73B0;&#x8FD8;&#x662F;&#x641C;&#x72D7;&#x597D;&#x7528;&#xFF0C;&#x6BD4;&#x65B9;&#x8BF4;&#x4F60;&#x8981;&#x5F53;&#x524D;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x76F4;&#x63A5;&#x8F93;&#x5165;sj&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x4ED6;&#x7684;&#x8F93;&#x5165;&#x6CD5;&#x6BD4;&#x65B9;&#x8BF4;Ubuntu&#x81EA;&#x5E26;&#x7684;&#x5C31;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x597D;&#x5427;&#xFF0C;&#x88C5;&#x641C;&#x72D7;&#xFF0E;<br>&#x5B89;&#x88C5;&#x5305;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A;<a href="http://pinyin.sogou.com/linux/" target="_blank" rel="noopener">http://pinyin.sogou.com/linux/</a><br>&#x6267;&#x884C;&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#xFF1A;sudo dpkg -i sogoupinyin_2.0.0.0072_amd64.deb<br>&#x7F3A;&#x5C11;&#x4F9D;&#x8D56;&#x5305;&#xFF0C;&#x5B89;&#x88C5;&#x5931;&#x8D25;&#xFF0C;&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x5305;&#xFF1A;sudo apt-get install -f<br>&#x4F9D;&#x8D56;&#x5305;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#xFF0C;&#x91CD;&#x65B0;&#x5B89;&#x88C5;&#xFF1A;sudo dpkg -i sogoupinyin_2.0.0.0072_amd64.deb<br>&#x5B89;&#x88C5;&#x6210;&#x529F;<br>&#x5728;&#x542F;&#x52A8;&#x91CC;&#x76F4;&#x63A5;&#x641C;&#x7D22;Fcitx Configuration&#xFF0C;&#x6253;&#x5F00;&#x540E;&#x5728;Input Method&#x91CC;&#x5220;&#x9664;&#x9664;&#x4E86;Sougou&#x62FC;&#x97F3;&#x4EE5;&#x5916;&#x7684;&#x5176;&#x5B83;&#x4E2D;&#x6587;&#x8F93;&#x5165;&#x6CD5;&#xFF08;&#x53EF;&#x80FD;&#x7565;&#x6709;&#x5EF6;&#x8FDF;&#xFF0C;Sougou&#x62FC;&#x97F3;&#x6CA1;&#x51FA;&#x6765;&#xFF09;&#xFF0C;&#x786E;&#x4FDD;&#x9664;&#x4E86;Sougou&#x62FC;&#x97F3;&#x5916;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x4E2A;Keyboard &#x2013; English(US)&#xFF0C;&#x82E5;&#x6CA1;&#x6709;&#x8FD9;&#x4E00;&#x9879;&#x5C31;&#x5728;&#x4E0B;&#x65B9;&#x70B9;&#x51FB;&#x52A0;&#x53F7;&#xFF02;&#xFF0B;&#xFF02;&#x6DFB;&#x52A0;&#x8FD9;&#x4E00;&#x9879;&#xFF0E;</p>
+<h2 id="&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x7C7B;-1"><a href="#&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x7C7B;-1" class="headerlink" title="&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x7C7B;"></a>&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x7C7B;</h2><h3 id="R-RStudio"><a href="#R-RStudio" class="headerlink" title="R+RStudio"></a>R+RStudio</h3><p>R&#x8BED;&#x8A00;&#x4F5C;&#x4E3A;&#x7EDF;&#x8BA1;&#x5B66;&#x4E60;&#x4E2D;&#x91CD;&#x8981;&#x7684;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x3002;&#x6700;&#x8FD1;&#x88C5;&#x7740;&#x7528;&#x7740;&#x8BD5;&#x8BD5;&#x3002;&#x3002;&#x3002;&#x53EF;&#x4EE5;&#x4E5F;&#x4E0D;&#x592A;&#x7528;&#x7684;&#x5230;&#x3002;<br>&#x7CFB;&#x7EDF;&#x5DE5;&#x5177;</p>
+<h3 id="Remmina&#x8FDC;&#x7A0B;&#x684C;&#x9762;"><a href="#Remmina&#x8FDC;&#x7A0B;&#x684C;&#x9762;" class="headerlink" title="Remmina&#x8FDC;&#x7A0B;&#x684C;&#x9762;"></a>Remmina&#x8FDC;&#x7A0B;&#x684C;&#x9762;</h3><p>&#x6700;&#x8FD1;&#x8001;&#x5E08;&#x7ED9;&#x4E86;&#x4E00;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x7528;&#x7528;&#xFF0C;&#x611F;&#x89C9;&#x8FD8;&#x662F;&#x86EE;&#x723D;&#x7684;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x662F;Windows Server&#x7CFB;&#x7EDF;&#xFF0C;&#x56E0;&#x6B64;&#x53D1;&#x73B0;&#x4E86;&#x8FD9;&#x4E2A;&#x6BD4;&#x8F83;&#x597D;&#x7528;&#x7684;Linux-&gt;Windows&#x8FDC;&#x7A0B;&#x5DE5;&#x5177;&#x3002;</p>
+<h3 id="VirtualBox&#x865A;&#x62DF;&#x673A;"><a href="#VirtualBox&#x865A;&#x62DF;&#x673A;" class="headerlink" title="VirtualBox&#x865A;&#x62DF;&#x673A;"></a>VirtualBox&#x865A;&#x62DF;&#x673A;</h3><p>&#x6700;&#x8FD1;&#x9700;&#x8981;&#x505A;&#x5B9E;&#x9A8C;&#x9700;&#x8981;&#x7528;&#x5230;Windows&#x548C;Kali&#xFF0C;&#x4E8E;&#x662F;&#x627E;&#x4E86;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x673A;&#x8F6F;&#x4EF6;&#x3002;Linux&#x4E0B;VirtualBox&#x548C;VmWare&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x672C;&#x4EBA;&#x89C9;&#x5F97;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;VirtualBox&#x8FD8;&#x662F;&#x597D;&#x7528;&#x4E00;&#x70B9;&#x3002;&#x4F46;&#x662F;&#x88AB;&#x5176;&#x4E2D;&#x7684;&#x754C;&#x9762;&#x5168;&#x5C4F;&#x6298;&#x817E;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x540E;&#x6765;&#x89E3;&#x51B3;&#x4E86;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5728;Linux&#x4E0B;Win&#x952E;&#x5C31;&#x662F;Super&#x952E;</p>
+<p>&#x542F;&#x52A8;&#x5668;</p>
+<p>Win(&#x957F;&#x6309;) &#x6253;&#x5F00;&#x542F;&#x52A8;&#x5668;&#xFF0C;&#x663E;&#x793A;&#x5FEB;&#x6377;&#x952E;<br>Win + Tab &#x901A;&#x8FC7;&#x542F;&#x52A8;&#x5668;&#x5207;&#x6362;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;<br>Win + 1&#x5230;9 &#x4E0E;&#x70B9;&#x51FB;&#x542F;&#x52A8;&#x5668;&#x4E0A;&#x7684;&#x56FE;&#x6807;&#x6548;&#x679C;&#x4E00;&#x6837;<br>Win + Shift + 1&#x5230;9 &#x5728;&#x5E94;&#x7528;&#x4E2D;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x65B0;&#x7A97;&#x53E3;<br>Win + T &#x6253;&#x5F00;&#x5783;&#x573E;&#x6876;<br>&#x9762;&#x677F;</p>
+<p>Win(&#x8F7B;&#x89E6;&#x70B9;&#x51FB;) &#x6253;&#x5F00;dash&#x4E3B;&#x9875;<br>Win + A &#x6253;&#x5F00;dash&#x5E94;&#x7528;&#x680F;&#x76EE;<br>Win + F &#x6253;&#x5F00;dash&#x6587;&#x4EF6;&#x680F;&#x76EE;<br>Win + M &#x6253;&#x5F00;dash&#x97F3;&#x4E50;&#x680F;&#x76EE;<br>Win + C &#x6253;&#x5F00;dash&#x56FE;&#x7247;&#x680F;&#x76EE;<br>Win + V &#x6253;&#x5F00;dash&#x89C6;&#x9891;&#x680F;&#x76EE;<br>Ctrl + Tab &#x5728;&#x680F;&#x76EE;&#x6216;&#x8005;&#x6807;&#x7B7E;&#x95F4;&#x5207;&#x6362;<br>&#x5207;&#x6362;&#x4E2D;</p>
+<p>Alt + Tab &#x5207;&#x6362;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;<br>Ctrl + Alt +Tab &#x5207;&#x6362;&#x6240;&#x6709;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;<br>Alt + ` &#x5207;&#x6362;&#x5F53;&#x524D;&#x8FD0;&#x884C;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7A97;&#x53E3;<br>Alt + Q &#x5173;&#x95ED;&#x9009;&#x4E2D;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6216;&#x7A97;&#x53E3;<br>&#x5DE5;&#x4F5C;&#x533A;</p>
+<p>Win + S &#x5207;&#x6362;&#x5DE5;&#x4F5C;&#x533A;<br>Ctrl + Alt +&#x65B9;&#x5411;&#x952E; &#x5207;&#x6362;&#x5DE5;&#x4F5C;&#x533A;<br>Ctrl + Shift + Alt + &#x65B9;&#x5411;&#x952E; &#x79FB;&#x52A8;&#x5F53;&#x524D;&#x7A97;&#x53E3;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x533A;<br>&#x7A97;&#x53E3;</p>
+<p>Win + W &#x5C55;&#x5F00;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x6240;&#x6709;&#x7A97;&#x53E3;<br>Shift + Win + W &#x5C55;&#x5F00;&#x6240;&#x6709;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x7A97;&#x53E3;<br>Ctrl + Win + W &#x5E73;&#x5C55;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x533A;&#x4E2D;&#x7126;&#x70B9;&#x5E94;&#x7528;&#x7684;&#x6240;&#x6709;&#x7A97;&#x53E3;<br>Shift + Ctrl + Win + W &#x5E73;&#x5C55;&#x5F53;&#x524D;&#x7126;&#x70B9;&#x5E94;&#x7528;&#x5728;&#x6240;&#x6709;&#x5DE5;&#x4F5C;&#x533A;&#x4E2D;&#x7684;&#x7A97;&#x53E3;<br>Ctrl + Win +D &#x6700;&#x5C0F;&#x5316;&#x6240;&#x6709;&#x7A97;&#x53E3;(&#x663E;&#x793A;&#x684C;&#x9762;&#xFF09;&#x4E5F;&#x53EF;&#x4EE5;&#x7528; Win + D<br> Ctrl + Win + &#x4E0A; &#x6700;&#x5927;&#x5316;&#x5F53;&#x524D;&#x7A97;&#x53E3;<br> Ctrl + Win + &#x4E0B; &#x8FD8;&#x539F;&#x6216;&#x6700;&#x5C0F;&#x5316;&#x5F53;&#x524D;&#x7A97;&#x53E3;<br> Ctrl + Win + &#x5DE6;&#x6216;&#x53F3; &#x534A;&#x6700;&#x5927;&#x5316;&#x5F53;&#x524D;&#x7A97;&#x53E3;<br> Alt + F4 &#x5173;&#x95ED;&#x5F53;&#x524D;&#x7A97;&#x53E3; &#x6216;&#x8005; Ctrl + Q<br> Alt + &#x7A7A;&#x683C; &#x6253;&#x5F00;&#x7A97;&#x53E3;&#x901A;&#x7528;&#x8BBF;&#x95EE;&#x83DC;&#x5355;<br> Alt + &#x9F20;&#x6807;&#x5DE6;&#x952E;&#x62D6;&#x62FD; &#x79FB;&#x52A8;&#x5F53;&#x524D;&#x7A97;&#x53E3;<br> Alt + &#x9F20;&#x6807;&#x4E2D;&#x952E;&#x62D6;&#x62FD; &#x8C03;&#x6574;&#x5F53;&#x524D;&#x7A97;&#x53E3;&#x5927;&#x5C0F;<br> Ctrl + L &#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;&#x4E2D;&#x663E;&#x793A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x7684;&#x8DEF;&#x5F84;<br> Ctrl + H &#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;&#x4E2D;&#x663E;&#x793A;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x548C;&#x6587;&#x4EF6;&#x5939;&#xFF08;&#x663E;&#x793A;&#x9690;&#x85CF;&#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF09;<br> Alt + Enter &#x663E;&#x793A;&#x6240;&#x9009;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x6587;&#x4EF6;&#x5939;&#x7684;&#x5C5E;&#x6027;&#x4FE1;&#x606F;<br> Alt + Home &#x76F4;&#x63A5;&#x79FB;&#x5230;&#x4F60;&#x7684;&#x4E3B;&#x76EE;&#x5F55;<br> &#x5176;&#x4ED6;</p>
+<p> Ctrl + Alt + T &#x6253;&#x5F00;&#x7EC8;&#x7AEF;<br> Ctrl + Q &#x9000;&#x51FA;&#x5F53;&#x524D;&#x7A0B;&#x5E8F;<br> Alt + F1 + Enter &#x641C;&#x7D22;&#x8BA1;&#x7B97;&#x673A;<br> Alt + F2 &#x641C;&#x7D22;&#x8BA1;&#x7B97;&#x673A;<br> Ctrl + Alt + L &#x9501;&#x5C4F;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8D70;&#x5F00;&#x4E00;&#x4F1A;&#x800C;&#x4E0D;&#x60F3;&#x8BA9;&#x522B;&#x4EBA;&#x770B;&#x5230;&#x4F60;&#x7684;&#x5C4F;&#x5E55;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E; Win + L<br> Ctrl + Alt + F1 &#x5207;&#x6362;&#x5230;&#x9996;&#x4E2A;&#x865A;&#x62DF;&#x7EC8;&#x7AEF;<br> Ctrl + Alt + F2(F3)(F4)(F5)(F6) &#x9009;&#x62E9;&#x4E0D;&#x540C;&#x7684;&#x865A;&#x62DF;&#x7EC8;&#x7AEF;<br>Ctrl + Alt + F7 &#x5207;&#x6362;&#x5230;&#x5F53;&#x524D;&#x767B;&#x5F55;&#x4F1A;&#x8BDD;</p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-11-15T11:13:35.000Z" itemprop="datePublished">2017-11-15</time>
+
+    </span>
+    <span class="post-description-item">
         
-        
-            <div class="prev-next">
+    </span>
+</div>
+
+                </div>
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
-                            <h4>
-                                <a href="/blog/2017/11/20/deeplearning/" rel="prev" title="deeplearning初学者笔记">
-                                  
-                                      deeplearning初学者笔记
-                                  
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
                 
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/blog/2017/10/30/css总结/" rel="prev" title="20171030">
-                                    
-                                        20171030
-                                    
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
+
+                <a href="/blog/2017/11/20/deeplearning/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    deeplearning初学者笔记
+                    
+
+                </a>
+
                 
             </div>
-        
-      </section>
-    </article>
-  
+            <div class="column nav-right">
+                
 
-  
-    <!-- 显示推荐文章和评论 -->
-
-
-
-  
-
-
-  
-
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: 'ubuntu 16.04 装机攻略',
-      tools: true
-    }
-  </script>
-
+                <a href="/blog/2017/10/30/css总结/" class="ui tiny button">
+                    
+                    20171030
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
 
 </div>
-<aside class='l_side'>
-  
-    
-    
-      
-        
-          
-          
-            <section class='widget author'>
-  <div class='content pure'>
-    
-      <div class='avatar'>
-        <img class='avatar' src='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png'/>
-      </div>
-    
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/blog/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:generaltune@126.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/generaltune"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
+                
+            </div>
 
-          
-        
-      
-        
-          
-          
             
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
-  
-    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
-  
-</header>
+            <div class="three wide computer three wide tablet column">
 
-    <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#桌面美化类"><span class="toc-text">桌面美化类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BingWallpaper"><span class="toc-text">BingWallpaper</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redshift"><span class="toc-text">Redshift</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发工具类"><span class="toc-text">开发工具类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#eclipse"><span class="toc-text">eclipse</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Atom"><span class="toc-text">Atom</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pycharm"><span class="toc-text">Pycharm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-Blocks"><span class="toc-text">Code Blocks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TexStudio"><span class="toc-text">TexStudio</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL"><span class="toc-text">MySQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gephi"><span class="toc-text">Gephi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typora"><span class="toc-text">Typora</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统工具类"><span class="toc-text">系统工具类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Google-Chrome"><span class="toc-text">Google Chrome</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Firefox"><span class="toc-text">Firefox</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ShadowSocks-Qt5"><span class="toc-text">ShadowSocks-Qt5</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新立得软件包管理器"><span class="toc-text">新立得软件包管理器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Unity-Tweak-Tool-系统桌面管理工具"><span class="toc-text">Unity Tweak Tool 系统桌面管理工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装替换系统默认字体"><span class="toc-text">安装替换系统默认字体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Adobe-flash"><span class="toc-text">安装Adobe flash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装压缩软件RAR"><span class="toc-text">安装压缩软件RAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#笔记本Zim-Desktop-Wiki"><span class="toc-text">笔记本Zim Desktop Wiki</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思维导图-Xmind"><span class="toc-text">思维导图 Xmind</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动调节屏幕色温Redshift"><span class="toc-text">自动调节屏幕色温Redshift</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux下的完美帅气终端Guake"><span class="toc-text">Linux下的完美帅气终端Guake</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮动菜单"><span class="toc-text">浮动菜单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#便签Xpad"><span class="toc-text">便签Xpad</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WPS"><span class="toc-text">WPS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pinta"><span class="toc-text">Pinta</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Catfish"><span class="toc-text">Catfish</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sougou-input-输入法"><span class="toc-text">sougou input 输入法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发工具类-1"><span class="toc-text">开发工具类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#R-RStudio"><span class="toc-text">R+RStudio</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Remmina远程桌面"><span class="toc-text">Remmina远程桌面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VirtualBox虚拟机"><span class="toc-text">VirtualBox虚拟机</span></a></li></ol></li></ol>
-    </div>
-  </section>
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#桌面美化类"><span>桌面美化类</span></a><ol><li><a href="#BingWallpaper"><span>BingWallpaper</span></a></li><li><a href="#Redshift"><span>Redshift</span></a></li></ol></li><li><a href="#开发工具类"><span>开发工具类</span></a><ol><li><a href="#eclipse"><span>eclipse</span></a></li><li><a href="#Atom"><span>Atom</span></a></li><li><a href="#Pycharm"><span>Pycharm</span></a></li><li><a href="#Code-Blocks"><span>Code Blocks</span></a></li><li><a href="#TexStudio"><span>TexStudio</span></a></li><li><a href="#MySQL"><span>MySQL</span></a></li><li><a href="#Gephi"><span>Gephi</span></a></li><li><a href="#Typora"><span>Typora</span></a></li></ol></li><li><a href="#系统工具类"><span>系统工具类</span></a><ol><li><a href="#Google-Chrome"><span>Google Chrome</span></a></li><li><a href="#Firefox"><span>Firefox</span></a></li><li><a href="#ShadowSocks-Qt5"><span>ShadowSocks-Qt5</span></a></li></ol></li><li><a href="#新立得软件包管理器"><span>新立得软件包管理器</span></a><ol><li><a href="#Unity-Tweak-Tool-系统桌面管理工具"><span>Unity Tweak Tool 系统桌面管理工具</span></a></li><li><a href="#安装替换系统默认字体"><span>安装替换系统默认字体</span></a></li><li><a href="#安装Adobe-flash"><span>安装Adobe flash</span></a></li><li><a href="#安装压缩软件RAR"><span>安装压缩软件RAR</span></a></li><li><a href="#笔记本Zim-Desktop-Wiki"><span>笔记本Zim Desktop Wiki</span></a></li><li><a href="#思维导图-Xmind"><span>思维导图 Xmind</span></a></li><li><a href="#自动调节屏幕色温Redshift"><span>自动调节屏幕色温Redshift</span></a></li><li><a href="#Linux下的完美帅气终端Guake"><span>Linux下的完美帅气终端Guake</span></a></li><li><a href="#浮动菜单"><span>浮动菜单</span></a></li><li><a href="#便签Xpad"><span>便签Xpad</span></a></li><li><a href="#WPS"><span>WPS</span></a></li><li><a href="#Pinta"><span>Pinta</span></a></li><li><a href="#Catfish"><span>Catfish</span></a></li><li><a href="#sougou-input-输入法"><span>sougou input 输入法</span></a></li></ol></li><li><a href="#开发工具类-1"><span>开发工具类</span></a><ol><li><a href="#R-RStudio"><span>R+RStudio</span></a></li><li><a href="#Remmina远程桌面"><span>Remmina远程桌面</span></a></li><li><a href="#VirtualBox虚拟机"><span>VirtualBox虚拟机</span></a></li></ol></li></ol>
+                </div>
 
-
-          
-        
-      
-        
-          
-          
-            <section class='widget grid'>
-  
-<header class='pure'>
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
-  
-</header>
-
-  <div class='content pure'>
-    <ul class="grid navgation">
-      
-        <li><a class="flat-box" title="/blog/" href="/blog/"
-          
-          
-          id="blog">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          近期文章
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/blog/archives/" href="/blog/blog/archives/"
-          
-            rel="nofollow"
-          
-          
-          id="blogblogarchives">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章归档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/projects/" href="/blog/projects/"
-          
-          
-          id="blogprojects">
-          
-            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
-          
-          开源项目
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/friends/" href="/blog/friends/"
-          
-            rel="nofollow"
-          
-          
-          id="blogfriends">
-          
-            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
-          
-          我的友链
-        </a></li>
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
-          
-            rel="nofollow"
-          
-          
-          id="https:xaoxuu.comwikimaterial-x">
-          
-            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
-          
-          主题文档
-        </a></li>
-      
-        <li><a class="flat-box" title="/blog/about/" href="/blog/about/"
-          
-            rel="nofollow"
-          
-          
-          id="blogabout">
-          
-            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
-          
-          关于小站
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-          
-        
-      
-        
-          
-          
+            </div>
             
 
-          
-        
-      
-        
-          
-          
-            
-  <section class='widget tagcloud'>
-    
-<header class='pure'>
-  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/blog/blog/tags/"
-    title="blog/tags/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      <a href="/blog/tags/日志-感悟-生活/" style="font-size: 14px; color: #999">日志  感悟 生活</a>
+        </div>
     </div>
-  </section>
-
-
-          
-        
-      
-        
-          
-          
-            
-
-
-  <section class='widget music'>
-    
-<header class='pure'>
-  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
-  
-    <a class="rightBtn"
-    
-      rel="external nofollow noopener noreferrer"
-    
-    
-      target="_blank"
-    
-    href="https://music.163.com/#/user/home?id=63035382"
-    title="https://music.163.com/#/user/home?id=63035382">
-    <i class="far fa-heart fa-fw"></i></a>
-  
-</header>
-
-    <div class='content pure'>
-      
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
-  <div class="aplayer"
-    data-theme="#1BCDFC"
-    
-    
-    data-mode="circulation"
-    data-server="netease"
-    data-type="playlist"
-    data-id="2615636388"
-    data-volume="0.7">
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
-
-
-    </div>
-  </section>
-
-
-          
-        
-      
-    
-
-  
-</aside>
-
-<footer id="footer" class="clearfix">
-  
-  
-    <div class="social-wrapper">
-      
-        
-          <a href="/blog/atom.xml"
-            class="social fas fa-rss flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="mailto:generaltune@126.com"
-            class="social fas fa-envelope flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://github.com/generaltune"
-            class="social fab fa-github flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://music.163.com/#/user/home?id=63035382"
-            class="social fas fa-headphones-alt flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-    </div>
-  
-  <br>
-  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
-  <div>
-    Use
-    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
-    
-      , 
-      total visits
-      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      times
-    
-    . 
-  </div>
-</footer>
-<script>setLoadingBarProgress(80);</script>
 
 
-      <script>setLoadingBarProgress(60);</script>
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2019 <a href="/">GENERALTUNE</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a href="http://hexo.io/" target="_blank">Hexo</a>.
     </div>
-    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+</div>
 
-  <script>
-    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-    var ALGOLIA_API_KEY = "";
-    var ALGOLIA_APP_ID = "";
-    var ALGOLIA_INDEX_NAME = "";
-    var AZURE_SERVICE_NAME = "";
-    var AZURE_INDEX_NAME = "";
-    var AZURE_QUERY_KEY = "";
-    var BAIDU_API_ID = "";
-    var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/blog/"||"/";
-    if(!ROOT.endsWith('/'))ROOT += '/';
-  </script>
-
-<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      const $reveal = $('.reveal');
-      if ($reveal.length === 0) return;
-      const sr = ScrollReveal({ distance: 0 });
-      sr.reveal('.reveal');
-    });
-  </script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      Waves.attach('.flat-btn', ['waves-button']);
-      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-      Waves.attach('.flat-box', ['waves-block']);
-      Waves.attach('.float-box', ['waves-block', 'waves-float']);
-      Waves.attach('.waves-image');
-      Waves.init();
-    });
-  </script>
-
-
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+    </div>
 
 
 
 
-  
-  
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        if ('.cover') {
-          $('.cover').backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
-          {
-            duration: "6000",
-            fade: "2500"
-          });
-        }
-      });
-    </script>
-  
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/blog/js/semantic-ui-algolia.js"></script>
+
+<script src="/blog/js/aloha-events.js"></script>
 
 
 
-
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
-
-
-
-
-<!-- 复制 -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  let COPY_SUCCESS = "Copied";
-  let COPY_FAILURE = "Copy failed";
-  /*页面载入完成后，创建复制按钮*/
-  !function (e, t, a) {
-    /* code */
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-
-      clipboard.on('success', function(e) {
-        //您可以加入成功提示
-        console.info('Action:', e.action);
-        console.info('Text:', e.text);
-        console.info('Trigger:', e.trigger);
-        success_prompt(COPY_SUCCESS);
-        e.clearSelection();
-      });
-      clipboard.on('error', function(e) {
-        //您可以加入失败提示
-        console.error('Action:', e.action);
-        console.error('Trigger:', e.trigger);
-        fail_prompt(COPY_FAILURE);
-      });
-    }
-    initCopyCode();
-
-  }(window, document);
-
-  /**
-   * 弹出式提示框，默认1.5秒自动消失
-   * @param message 提示信息
-   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
-   * @param time 消失时间
-   */
-  var prompt = function (message, style, time)
-  {
-      style = (style === undefined) ? 'alert-success' : style;
-      time = (time === undefined) ? 1500 : time*1000;
-      $('<div>')
-          .appendTo('body')
-          .addClass('alert ' + style)
-          .html(message)
-          .show()
-          .delay(time)
-          .fadeOut();
-  };
-
-  // 成功提示
-  var success_prompt = function(message, time)
-  {
-      prompt(message, 'alert-success', time);
-  };
-
-  // 失败提示
-  var fail_prompt = function(message, time)
-  {
-      prompt(message, 'alert-danger', time);
-  };
-
-  // 提醒
-  var warning_prompt = function(message, time)
-  {
-      prompt(message, 'alert-warning', time);
-  };
-
-  // 信息提示
-  var info_prompt = function(message, time)
-  {
-      prompt(message, 'alert-info', time);
-  };
-
-</script>
-
-
-<!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
-      $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
-  });
-</script>
-
-
-
-
-
-  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>
