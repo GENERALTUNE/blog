@@ -8,8 +8,8 @@ tags:
 ## 浏览器缓存
 
    ### 强缓存
-       1. expires   GMT 时间
-       2. Cache-Control  max-age
+     1. expires   GMT 时间
+     2. Cache-Control  max-age
 
       Cache-Control 优先级比expires 高一些
    ### 协商缓存
