@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<html lang>
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content>
+    <title>web安全总结 | generaltune&#39;s blog</title>
+
+    <!-- Open Graph -->
+    <meta name="description" content="web&amp;#x5B89;&amp;#x5168;&amp;#x603B;&amp;#x7ED3; xss csrf xss&amp;#x4E00;&amp;#xFF1A; XSS&amp;#x4ECB;&amp;#x7ECD;  XSS&amp;#x653B;&amp;#x51FB;&amp;#x5168;&amp;#x79F0;&amp;#x8DE8;&amp;#x7AD9;&amp;#x811A;&amp;#x672C;&amp;#x653B;&amp;#x51FB;&amp;#xFF0C;&amp;#x662F;&amp;#x4E3A;&amp;#x4E0D">
+<meta name="keywords" content="安全 web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web安全总结">
+<meta property="og:url" content="https://generaltune.github.io/myblog/2019/07/09/fe-security/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="web&amp;#x5B89;&amp;#x5168;&amp;#x603B;&amp;#x7ED3; xss csrf xss&amp;#x4E00;&amp;#xFF1A; XSS&amp;#x4ECB;&amp;#x7ECD;  XSS&amp;#x653B;&amp;#x51FB;&amp;#x5168;&amp;#x79F0;&amp;#x8DE8;&amp;#x7AD9;&amp;#x811A;&amp;#x672C;&amp;#x653B;&amp;#x51FB;&amp;#xFF0C;&amp;#x662F;&amp;#x4E3A;&amp;#x4E0D">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-10T02:51:09.313Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="web安全总结">
+<meta name="twitter:description" content="web&amp;#x5B89;&amp;#x5168;&amp;#x603B;&amp;#x7ED3; xss csrf xss&amp;#x4E00;&amp;#xFF1A; XSS&amp;#x4ECB;&amp;#x7ECD;  XSS&amp;#x653B;&amp;#x51FB;&amp;#x5168;&amp;#x79F0;&amp;#x8DE8;&amp;#x7AD9;&amp;#x811A;&amp;#x672C;&amp;#x653B;&amp;#x51FB;&amp;#xFF0C;&amp;#x662F;&amp;#x4E3A;&amp;#x4E0D">
+
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "GENERALTUNE",
+  "url": "https://generaltune.github.io/myblog"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
+
+    
+
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/myblog/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
+
+</head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
+
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>generaltune&#39;s blog</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/myblog/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">GENERALTUNE</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/myblog" class="item">
+        <i class="主页 icon"></i>
+        首页
+    </a>
+
+    
+
+    
+</div>
+
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-fe-security" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    web安全总结
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <p>web&#x5B89;&#x5168;&#x603B;&#x7ED3; xss csrf</p>
+<h3 id="xss"><a href="#xss" class="headerlink" title="xss"></a>xss</h3><h4 id="&#x4E00;&#xFF1A;-XSS&#x4ECB;&#x7ECD;"><a href="#&#x4E00;&#xFF1A;-XSS&#x4ECB;&#x7ECD;" class="headerlink" title="&#x4E00;&#xFF1A; XSS&#x4ECB;&#x7ECD;"></a>&#x4E00;&#xFF1A; XSS&#x4ECB;&#x7ECD;</h4><p>  XSS&#x653B;&#x51FB;&#x5168;&#x79F0;&#x8DE8;&#x7AD9;&#x811A;&#x672C;&#x653B;&#x51FB;&#xFF0C;&#x662F;&#x4E3A;&#x4E0D;&#x548C;&#x5C42;&#x53E0;&#x6837;&#x5F0F;&#x8868;(Cascading Style Sheets, CSS)&#x7684;&#x7F29;&#x5199;&#x6DF7;&#x6DC6;&#xFF0C;&#x6545;&#x5C06;&#x8DE8;&#x7AD9;&#x811A;&#x672C;&#x653B;&#x51FB;&#x7F29;&#x5199;&#x4E3A;XSS&#xFF0C;XSS&#x662F;&#x4E00;&#x79CD;&#x5728;web&#x5E94;&#x7528;&#x4E2D;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x5B89;&#x5168;&#x6F0F;&#x6D1E;&#xFF0C;&#x5B83;&#x5141;&#x8BB8;&#x6076;&#x610F;web&#x7528;&#x6237;&#x5C06;&#x4EE3;&#x7801;&#x690D;&#x5165;&#x5230;&#x63D0;&#x4F9B;&#x7ED9;&#x5176;&#x5B83;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x7684;&#x9875;&#x9762;&#x4E2D;&#x3002;<br>  XSS&#x5206;&#x7C7B;<br>XSS&#x6839;&#x636E;&#x6548;&#x679C;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x5B58;&#x50A8;&#x578B;XSS&#x3001;&#x53CD;&#x5C04;&#x578B;XSS&#xFF0C;DOM&#x578B;XSS&#x3002;</p>
+<p>&#x5B58;&#x50A8;&#x578B;<br>    &#x653B;&#x51FB;&#x4EE3;&#x7801;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;(&#x6570;&#x636E;&#x5E93;)&#xFF0C;&#x8F93;&#x51FA;&#x5728;http&#x54CD;&#x5E94;&#x4E2D;&#x3002;<br>    &#x6BD4;&#x8F83;&#x5E38;&#x89C1;&#x7684;&#x573A;&#x666F;&#x662F;&#xFF0C;&#x9ED1;&#x5BA2;&#x5199;&#x4E0B;&#x4E00;&#x7BC7;&#x5305;&#x542B;&#x6709;&#x6076;&#x610F;JavaScript&#x4EE3;&#x7801;&#x7684;&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#xFF0C;&#x6587;&#x7AE0;&#x53D1;&#x8868;&#x540E;&#xFF0C;&#x6240;&#x6709;&#x8BBF;&#x95EE;&#x8BE5;&#x535A;&#x5BA2;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x90FD;&#x4F1A;&#x5728;&#x4ED6;&#x4EEC;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x6267;&#x884C;&#x8FD9;&#x6BB5;&#x6076;&#x610F;js&#x4EE3;&#x7801;<br>&#x53CD;&#x5C04;&#x578B;<br>    &#x653B;&#x51FB;&#x4EE3;&#x7801;&#x5728;URL&#x91CC;&#xFF0C;&#x8F93;&#x51FA;&#x5728;http&#x54CD;&#x5E94;&#x4E2D;&#x3002;&#x9ED1;&#x5BA2;&#x5F80;&#x5F80;&#x9700;&#x8981;&#x8BF1;&#x4F7F;&#x7528;&#x6237;&#x201C;&#x70B9;&#x51FB;&#x201D;&#x4E00;&#x4E2A;&#x6076;&#x610F;&#x94FE;&#x63A5;&#xFF0C;&#x624D;&#x80FD;&#x653B;&#x51FB;&#x6210;&#x529F;&#x3002;</p>
+<p>DOM&#x578B;<br>    &#x4ECE;&#x6548;&#x679C;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x4E5F;&#x5C5E;&#x4E8E;&#x53CD;&#x5C04;&#x578B;XSS&#x3002;<br>    &#x653B;&#x51FB;&#x4EE3;&#x7801;&#x5728;URL&#x91CC;&#xFF0C;&#x8F93;&#x51FA;&#x5728;DOM&#x8282;&#x70B9;&#x4E2D;&#x3002;</p>
+<h4 id="&#x4E8C;&#xFF1A;&#x9632;&#x8303;"><a href="#&#x4E8C;&#xFF1A;&#x9632;&#x8303;" class="headerlink" title="&#x4E8C;&#xFF1A;&#x9632;&#x8303;"></a>&#x4E8C;&#xFF1A;&#x9632;&#x8303;</h4><p><a href="https://www.freebuf.com/articles/web/185654.html" target="_blank" rel="noopener">&#x5982;&#x4F55;&#x9632;&#x6B62;XSS&#x653B;&#x51FB;</a></p>
+<p>DVWA(Damn Vulnerable Web Application)&#x662F;&#x4E00;&#x4E2A;&#x7528;PHP&#x7F16;&#x5199;&#x7684;&#x7528;&#x6765;&#x8FDB;&#x884C;&#x5B89;&#x5168;&#x8106;&#x5F31;&#x6027;&#x9274;&#x5B9A;&#x7684;PHP/MySQL Web&#x5E94;&#x7528;&#xFF0C;&#x65E8;&#x5728;&#x4E3A;&#x5B89;&#x5168;&#x4E13;&#x4E1A;&#x4EBA;&#x5458;&#x6D4B;&#x8BD5;&#x81EA;&#x5DF1;&#x7684;&#x4E13;&#x4E1A;&#x6280;&#x80FD;&#x548C;&#x5DE5;&#x5177;&#x63D0;&#x4F9B;&#x5408;&#x6CD5;&#x7684;&#x73AF;&#x5883;&#xFF0C;&#x5E2E;&#x52A9;web&#x5F00;&#x53D1;&#x8005;&#x66F4;&#x597D;&#x7684;&#x7406;&#x89E3;web&#x5E94;&#x7528;&#x5B89;&#x5168;&#x9632;&#x8303;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>[DVWA]&#xFF08;<a href="https://blog.csdn.net/extremebingo/article/details/81176394&#xFF09;" target="_blank" rel="noopener">https://blog.csdn.net/extremebingo/article/details/81176394&#xFF09;</a><br>    DVWA&#x5171;&#x6709;&#x5341;&#x4E2A;&#x6A21;&#x5757;&#xFF0C;&#x5206;&#x522B;&#x662F;<br>    Brute Force(&#x66B4;&#x529B;&#x7834;&#x89E3;)<br>    Command Injection(&#x547D;&#x4EE4;&#x884C;&#x6CE8;&#x5165;)<br>    CSRF(&#x8DE8;&#x7AD9;&#x8BF7;&#x6C42;&#x4F2A;&#x9020;)<br>    File Inclusion(&#x6587;&#x4EF6;&#x5305;&#x542B;)<br>    File Upload(&#x6587;&#x4EF6;&#x4E0A;&#x4F20;)<br>    Insecure CAPTCHA(&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x9A8C;&#x8BC1;&#x7801;)<br>    SQL Injection(SQL&#x6CE8;&#x5165;)<br>    SQL Injection(Blind)(SQL&#x76F2;&#x6CE8;)<br>    XSS(Reflected)(&#x53CD;&#x5C04;&#x578B;&#x8DE8;&#x7AD9;&#x811A;&#x672C;)<br>    XSS(Stored)(&#x5B58;&#x50A8;&#x578B;&#x8DE8;&#x7AD9;&#x811A;&#x672C;)</p>
+<h3 id="csrf"><a href="#csrf" class="headerlink" title="csrf"></a>csrf</h3><h4 id="&#x4E00;&#x3001;CSRF&#x4ECB;&#x7ECD;"><a href="#&#x4E00;&#x3001;CSRF&#x4ECB;&#x7ECD;" class="headerlink" title="&#x4E00;&#x3001;CSRF&#x4ECB;&#x7ECD;"></a>&#x4E00;&#x3001;CSRF&#x4ECB;&#x7ECD;</h4><p>CSRF&#xFF08;Cross-site request forgery&#xFF09;</p>
+<p>&#x8DE8;&#x7AD9;&#x8BF7;&#x6C42;&#x4F2A;&#x9020;&#xFF0C;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x201C;OneClick Attack&#x201D;&#x6216;&#x8005;Session Riding&#xFF0C;&#x901A;&#x5E38;&#x7F29;&#x5199;&#x4E3A;CSRF&#x6216;&#x8005;XSRF&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x5BF9;&#x7F51;&#x7AD9;&#x7684;&#x6076;&#x610F;&#x5229;&#x7528;&#x3002;</p>
+<p>CSRF&#x653B;&#x51FB;&#x4E0E;&#x9632;&#x5FA1;&#xFF0C;web&#x5B89;&#x5168;&#x7684;&#x7B2C;&#x4E00;&#x9632;&#x7EBF;&#x3002;</p>
+<p>&#x653B;&#x51FB;&#x6D41;&#x7A0B;&#xFF1A;<br>    &#x7528;&#x6237;&#x8BBF;&#x95EE;&#x6076;&#x610F;&#x7F51;&#x7AD9;B&#xFF0C;&#x6076;&#x610F;&#x7F51;&#x7AD9;B&#x8FD4;&#x56DE;&#x7ED9;&#x7528;&#x6237;&#x7684;HTTP&#x4FE1;&#x606F;&#x4E2D;&#x8981;&#x6C42;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x7F51;&#x7AD9;A&#xFF0C;&#x800C;&#x7531;&#x4E8E;&#x7528;&#x6237;&#x548C;&#x7F51;&#x7AD9;A&#x4E4B;&#x95F4;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x6709;&#x4FE1;&#x4EFB;&#x5173;&#x7CFB;&#x5BFC;&#x81F4;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x5C31;&#x50CF;&#x7528;&#x6237;&#x771F;&#x5B9E;&#x53D1;&#x9001;&#x7684;&#x4E00;&#x6837;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x3002;</p>
+<h4 id="&#x4E8C;&#x3001;CSRF&#x653B;&#x51FB;&#x7684;&#x5371;&#x5BB3;"><a href="#&#x4E8C;&#x3001;CSRF&#x653B;&#x51FB;&#x7684;&#x5371;&#x5BB3;" class="headerlink" title="&#x4E8C;&#x3001;CSRF&#x653B;&#x51FB;&#x7684;&#x5371;&#x5BB3;"></a>&#x4E8C;&#x3001;CSRF&#x653B;&#x51FB;&#x7684;&#x5371;&#x5BB3;</h4><p>&#x653B;&#x51FB;&#x8005;&#x76D7;&#x7528;&#x4E86;&#x4F60;&#x7684;&#x8EAB;&#x4EFD;&#xFF0C;&#x4EE5;&#x4F60;&#x7684;&#x540D;&#x4E49;&#x53D1;&#x9001;&#x6076;&#x610F;&#x8BF7;&#x6C42;&#xFF0C;&#x5BF9;&#x670D;&#x52A1;&#x5668;&#x6765;&#x8BF4;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x662F;&#x5B8C;&#x5168;&#x5408;&#x6CD5;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5374;&#x5B8C;&#x6210;&#x4E86;&#x653B;&#x51FB;&#x8005;&#x6240;&#x671F;&#x671B;&#x7684;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#x4EE5;&#x4F60;&#x7684;&#x540D;&#x4E49;&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x3001;&#x53D1;&#x6D88;&#x606F;&#xFF0C;&#x76D7;&#x53D6;&#x4F60;&#x7684;&#x8D26;&#x53F7;&#xFF0C;&#x6DFB;&#x52A0;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x5458;&#xFF0C;&#x751A;&#x81F3;&#x4E8E;&#x8D2D;&#x4E70;&#x5546;&#x54C1;&#x3001;&#x865A;&#x62DF;&#x8D27;&#x5E01;&#x8F6C;&#x8D26;&#x7B49;&#x3002;</p>
+<p>&#x5982;&#x679C;CSRF&#x53D1;&#x9001;&#x7684;&#x5783;&#x573E;&#x4FE1;&#x606F;&#x8FD8;&#x5E26;&#x6709;&#x8815;&#x866B;&#x94FE;&#x63A5;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E9B;&#x63A5;&#x6536;&#x5230;&#x8FD9;&#x4E9B;&#x6709;&#x5BB3;&#x4FE1;&#x606F;&#x7684;&#x597D;&#x53CB;&#x4E07;&#x4E00;&#x6253;&#x5F00;&#x79C1;&#x4FE1;&#x4E2D;&#x7684;&#x8FDE;&#x63A5;&#x5C31;&#x4E5F;&#x6210;&#x4E3A;&#x4E86;&#x6709;&#x5BB3;&#x4FE1;&#x606F;&#x7684;&#x6563;&#x64AD;&#x7740;&#xFF0C;&#x8FD9;&#x6837;&#x6570;&#x4EE5;&#x4E07;&#x8BA1;&#x7684;&#x7528;&#x6237;&#x88AB;&#x7A83;&#x53D6;&#x4E86;&#x8D44;&#x6599;&#x79CD;&#x690D;&#x4E86;&#x6728;&#x9A6C;&#x3002;&#x6574;&#x4E2A;&#x7F51;&#x7AD9;&#x7684;&#x5E94;&#x7528;&#x5C31;&#x53EF;&#x80FD;&#x5728;&#x77AC;&#x95F4;&#x5954;&#x6E83;&#xFF0C;&#x7528;&#x6237;&#x6295;&#x8BC9;&#xFF0C;&#x7528;&#x6237;&#x6D41;&#x5931;&#xFF0C;&#x516C;&#x53F8;&#x58F0;&#x8A89;&#x4E00;&#x843D;&#x5343;&#x4E08;&#x751A;&#x81F3;&#x9762;&#x4E34;&#x5012;&#x95ED;&#x3002;&#x66FE;&#x7ECF;&#x5728;MSN&#x4E0A;&#xFF0C;&#x4E00;&#x4E2A;&#x7F8E;&#x56FD;&#x7684;19&#x5C81;&#x7684;&#x5C0F;&#x4F19;&#x5B50;Samy&#x5229;&#x7528;css&#x7684;background&#x6F0F;&#x6D1E;&#x51E0;&#x5C0F;&#x65F6;&#x5185;&#x8BA9;100&#x591A;&#x4E07;&#x7528;&#x6237;&#x6210;&#x529F;&#x7684;&#x611F;&#x67D3;&#x4E86;&#x4ED6;&#x7684;&#x8815;&#x866B;&#xFF0C;&#x867D;&#x7136;&#x8FD9;&#x4E2A;&#x8815;&#x866B;&#x5E76;&#x6CA1;&#x6709;&#x7834;&#x574F;&#x6574;&#x4E2A;&#x5E94;&#x7528;&#xFF0C;&#x53EA;&#x662F;&#x5728;&#x6BCF;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x7B7E;&#x540D;&#x540E;&#x9762;&#x90FD;&#x589E;&#x52A0;&#x4E86;&#x4E00;&#x53E5;&#x201C;Samy &#x662F;&#x6211;&#x7684;&#x5076;&#x50CF;&#x201D;&#xFF0C;&#x4F46;&#x662F;&#x4E00;&#x65E6;&#x8FD9;&#x4E9B;&#x6F0F;&#x6D1E;&#x88AB;&#x6076;&#x610F;&#x7528;&#x6237;&#x5229;&#x7528;&#xFF0C;&#x540E;&#x679C;&#x5C06;&#x4E0D;&#x582A;&#x8BBE;&#x60F3;&#xFF0C;&#x540C;&#x6837;&#x7684;&#x4E8B;&#x60C5;&#x4E5F;&#x66FE;&#x7ECF;&#x53D1;&#x751F;&#x5728;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;&#x4E0A;&#x9762;&#x3002;</p>
+<h4 id="&#x4E09;&#x3001;CSRF&#x6F0F;&#x6D1E;&#x9632;&#x5FA1;"><a href="#&#x4E09;&#x3001;CSRF&#x6F0F;&#x6D1E;&#x9632;&#x5FA1;" class="headerlink" title="&#x4E09;&#x3001;CSRF&#x6F0F;&#x6D1E;&#x9632;&#x5FA1;"></a>&#x4E09;&#x3001;CSRF&#x6F0F;&#x6D1E;&#x9632;&#x5FA1;</h4><p>&#x76EE;&#x524D;&#x9632;&#x5FA1; CSRF &#x653B;&#x51FB;&#x4E3B;&#x8981;&#x6709;&#x4E09;&#x79CD;&#x7B56;&#x7565;&#xFF1A;&#x9A8C;&#x8BC1; HTTP Referer &#x5B57;&#x6BB5;&#xFF1B;&#x5728;&#x8BF7;&#x6C42;&#x5730;&#x5740;&#x4E2D;&#x6DFB;&#x52A0; token &#x5E76;&#x9A8C;&#x8BC1;&#xFF08;&#x8868;&#x5355;&#x4EE4;&#x724C;&#x9A8C;&#x8BC1;&#xFF09;&#xFF1B;&#x5728; HTTP &#x5934;&#x4E2D;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x5E76;&#x9A8C;&#x8BC1;&#x3002;</p>
+<p>1&#x3001;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;POST&#xFF0C;&#x9650;&#x5236;GET</p>
+<p>GET&#x63A5;&#x53E3;&#x592A;&#x5BB9;&#x6613;&#x88AB;&#x62FF;&#x6765;&#x505A;CSRF&#x653B;&#x51FB;&#xFF0C;&#x770B;&#x7B2C;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x5C31;&#x77E5;&#x9053;&#xFF0C;&#x53EA;&#x8981;&#x6784;&#x9020;&#x4E00;&#x4E2A;img&#x6807;&#x7B7E;&#xFF0C;&#x800C;img&#x6807;&#x7B7E;&#x53C8;&#x662F;&#x4E0D;&#x80FD;&#x8FC7;&#x6EE4;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x63A5;&#x53E3;&#x6700;&#x597D;&#x9650;&#x5236;&#x4E3A;POST&#x4F7F;&#x7528;&#xFF0C;GET&#x5219;&#x65E0;&#x6548;&#xFF0C;&#x964D;&#x4F4E;&#x653B;&#x51FB;&#x98CE;&#x9669;&#x3002;</p>
+<p>&#x5F53;&#x7136;POST&#x5E76;&#x4E0D;&#x662F;&#x4E07;&#x65E0;&#x4E00;&#x5931;&#xFF0C;&#x653B;&#x51FB;&#x8005;&#x53EA;&#x8981;&#x6784;&#x9020;&#x4E00;&#x4E2A;form&#x5C31;&#x53EF;&#x4EE5;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x5728;&#x7B2C;&#x4E09;&#x65B9;&#x9875;&#x9762;&#x505A;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x589E;&#x52A0;&#x66B4;&#x9732;&#x7684;&#x53EF;&#x80FD;&#x6027;&#x3002;</p>
+<p>2&#x3001;&#x52A0;&#x9A8C;&#x8BC1;&#x7801;</p>
+<p>&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;&#x5F3A;&#x5236;&#x7528;&#x6237;&#x5FC5;&#x987B;&#x4E0E;&#x5E94;&#x7528;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#xFF0C;&#x624D;&#x80FD;&#x5B8C;&#x6210;&#x6700;&#x7EC8;&#x8BF7;&#x6C42;&#x3002;&#x5728;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x9A8C;&#x8BC1;&#x7801;&#x80FD;&#x5F88;&#x597D;&#x904F;&#x5236;CSRF&#x653B;&#x51FB;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x51FA;&#x4E8E;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x8003;&#x8651;&#xFF0C;&#x7F51;&#x7AD9;&#x4E0D;&#x80FD;&#x7ED9;&#x6240;&#x6709;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x52A0;&#x4E0A;&#x9A8C;&#x8BC1;&#x7801;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#x9A8C;&#x8BC1;&#x7801;&#x53EA;&#x80FD;&#x4F5C;&#x4E3A;&#x4E00;&#x79CD;&#x8F85;&#x52A9;&#x624B;&#x6BB5;&#xFF0C;&#x4E0D;&#x80FD;&#x4F5C;&#x4E3A;&#x4E3B;&#x8981;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;</p>
+<p>3&#x3001;Referer Check</p>
+<p>Referer Check&#x5728;Web&#x6700;&#x5E38;&#x89C1;&#x7684;&#x5E94;&#x7528;&#x5C31;&#x662F;&#x201C;&#x9632;&#x6B62;&#x56FE;&#x7247;&#x76D7;&#x94FE;&#x201D;&#x3002;</p>
+<p>&#x540C;&#x7406;&#xFF0C;Referer Check&#x4E5F;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x4E8E;&#x68C0;&#x67E5;&#x8BF7;&#x6C42;&#x662F;&#x5426;&#x6765;&#x81EA;&#x5408;&#x6CD5;&#x7684;&#x201C;&#x6E90;&#x201D;&#xFF08;Referer&#x503C;&#x662F;&#x5426;&#x662F;&#x6307;&#x5B9A;&#x9875;&#x9762;&#xFF0C;&#x6216;&#x8005;&#x7F51;&#x7AD9;&#x7684;&#x57DF;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x90FD;&#x4E0D;&#x662F;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x6781;&#x53EF;&#x80FD;&#x662F;CSRF&#x653B;&#x51FB;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x56E0;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x5E76;&#x4E0D;&#x662F;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x90FD;&#x80FD;&#x53D6;&#x5230;Referer&#xFF0C;&#x6240;&#x4EE5;&#x4E5F;&#x65E0;&#x6CD5;&#x4F5C;&#x4E3A;CSRF&#x9632;&#x5FA1;&#x7684;&#x4E3B;&#x8981;&#x624B;&#x6BB5;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x7528;Referer Check&#x6765;&#x76D1;&#x63A7;CSRF&#x653B;&#x51FB;&#x7684;&#x53D1;&#x751F;&#xFF0C;&#x5012;&#x662F;&#x4E00;&#x79CD;&#x53EF;&#x884C;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>4 &#x3001;Anti CSRF Token</p>
+<p>&#x73B0;&#x5728;&#x4E1A;&#x754C;&#x5BF9;CSRF&#x7684;&#x9632;&#x5FA1;&#xFF0C;&#x4E00;&#x81F4;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;Token&#xFF08;Anti CSRF Token&#xFF09;&#x3002;</p>
+<p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+<p>&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x67D0;&#x4E2A;&#x8868;&#x5355;&#x9875;&#x9762;&#x3002;</p>
+<p>&#x670D;&#x52A1;&#x7AEF;&#x751F;&#x6210;&#x4E00;&#x4E2A;Token&#xFF0C;&#x653E;&#x5728;&#x7528;&#x6237;&#x7684;Session&#x4E2D;&#xFF0C;&#x6216;&#x8005;&#x6D4F;&#x89C8;&#x5668;&#x7684;Cookie&#x4E2D;&#x3002;</p>
+<p>&#x5728;&#x9875;&#x9762;&#x8868;&#x5355;&#x9644;&#x5E26;&#x4E0A;Token&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x7528;&#x6237;&#x63D0;&#x4EA4;&#x8BF7;&#x6C42;&#x540E;&#xFF0C; &#x670D;&#x52A1;&#x7AEF;&#x9A8C;&#x8BC1;&#x8868;&#x5355;&#x4E2D;&#x7684;Token&#x662F;&#x5426;&#x4E0E;&#x7528;&#x6237;Session&#xFF08;&#x6216;Cookies&#xFF09;&#x4E2D;&#x7684;Token&#x4E00;&#x81F4;&#xFF0C;&#x4E00;&#x81F4;&#x4E3A;&#x5408;&#x6CD5;&#x8BF7;&#x6C42;&#xFF0C;&#x4E0D;&#x662F;&#x5219;&#x975E;&#x6CD5;&#x8BF7;&#x6C42;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;Token&#x7684;&#x503C;&#x5FC5;&#x987B;&#x662F;&#x968F;&#x673A;&#x7684;&#xFF0C;&#x4E0D;&#x53EF;&#x9884;&#x6D4B;&#x7684;&#x3002;&#x7531;&#x4E8E;Token&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x653B;&#x51FB;&#x8005;&#x65E0;&#x6CD5;&#x518D;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x5408;&#x6CD5;Token&#x7684;&#x8BF7;&#x6C42;&#x5B9E;&#x65BD;CSRF&#x653B;&#x51FB;&#x3002;&#x53E6;&#x5916;&#x4F7F;&#x7528;Token&#x65F6;&#x5E94;&#x6CE8;&#x610F;Token&#x7684;&#x4FDD;&#x5BC6;&#x6027;&#xFF0C;&#x5C3D;&#x91CF;&#x628A;&#x654F;&#x611F;&#x64CD;&#x4F5C;&#x7531;GET&#x6539;&#x4E3A;POST&#xFF0C;&#x4EE5;form&#x6216;AJAX&#x5F62;&#x5F0F;&#x63D0;&#x4EA4;&#xFF0C;&#x907F;&#x514D;Token&#x6CC4;&#x9732;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<p>CSRF&#x7684;Token&#x4EC5;&#x4EC5;&#x7528;&#x4E8E;&#x5BF9;&#x6297;CSRF&#x653B;&#x51FB;&#x3002;&#x5F53;&#x7F51;&#x7AD9;&#x540C;&#x65F6;&#x5B58;&#x5728;XSS&#x6F0F;&#x6D1E;&#x65F6;&#x5019;&#xFF0C;&#x90A3;&#x8FD9;&#x4E2A;&#x65B9;&#x6848;&#x4E5F;&#x662F;&#x7A7A;&#x8C08;&#x3002;</p>
+<p>&#x6240;&#x4EE5;XSS&#x5E26;&#x6765;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;XSS&#x7684;&#x9632;&#x5FA1;&#x65B9;&#x6848;&#x4E88;&#x4EE5;&#x89E3;&#x51B3;&#x3002;</p>
+<p>&#x7279;&#x522B;&#x662F;&#x5728;&#x4E00;&#x4E9B;&#x8BBA;&#x575B;&#x4E4B;&#x7C7B;&#x652F;&#x6301;&#x7528;&#x6237;&#x81EA;&#x5DF1;&#x53D1;&#x8868;&#x5185;&#x5BB9;&#x7684;&#x7F51;&#x7AD9;&#xFF0C;&#x9ED1;&#x5BA2;&#x53EF;&#x4EE5;&#x5728;&#x4E0A;&#x9762;&#x53D1;&#x5E03;&#x81EA;&#x5DF1;&#x4E2A;&#x4EBA;&#x7F51;&#x7AD9;&#x7684;&#x5730;&#x5740;&#x3002;&#x7531;&#x4E8E;&#x7CFB;&#x7EDF;&#x4E5F;&#x4F1A;&#x5728;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x540E;&#x9762;&#x52A0;&#x4E0A; token&#xFF0C;&#x9ED1;&#x5BA2;&#x53EF;&#x4EE5;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x7F51;&#x7AD9;&#x4E0A;&#x5F97;&#x5230;&#x8FD9;&#x4E2A; token&#xFF0C;&#x5E76;&#x9A6C;&#x4E0A;&#x5C31;&#x53EF;&#x4EE5;&#x53D1;&#x52A8; CSRF &#x653B;&#x51FB;&#x3002;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x7CFB;&#x7EDF;&#x53EF;&#x4EE5;&#x5728;&#x6DFB;&#x52A0; token &#x7684;&#x65F6;&#x5019;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x5224;&#x65AD;&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x94FE;&#x63A5;&#x662F;&#x94FE;&#x5230;&#x81EA;&#x5DF1;&#x672C;&#x7AD9;&#x7684;&#xFF0C;&#x5C31;&#x5728;&#x540E;&#x9762;&#x6DFB;&#x52A0; token&#xFF0C;&#x5982;&#x679C;&#x662F;&#x901A;&#x5411;&#x5916;&#x7F51;&#x5219;&#x4E0D;&#x52A0;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x5373;&#x4F7F;&#x8FD9;&#x4E2A; csrftoken &#x4E0D;&#x4EE5;&#x53C2;&#x6570;&#x7684;&#x5F62;&#x5F0F;&#x9644;&#x52A0;&#x5728;&#x8BF7;&#x6C42;&#x4E4B;&#x4E2D;&#xFF0C;&#x9ED1;&#x5BA2;&#x7684;&#x7F51;&#x7AD9;&#x4E5F;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; Referer &#x6765;&#x5F97;&#x5230;&#x8FD9;&#x4E2A; token &#x503C;&#x4EE5;&#x53D1;&#x52A8; CSRF &#x653B;&#x51FB;&#x3002;&#x8FD9;&#x4E5F;&#x662F;&#x4E00;&#x4E9B;&#x7528;&#x6237;&#x559C;&#x6B22;&#x624B;&#x52A8;&#x5173;&#x95ED;&#x6D4F;&#x89C8;&#x5668; Referer &#x529F;&#x80FD;&#x7684;&#x539F;&#x56E0;&#x3002;</p>
+<p>&#x5728; HTTP &#x5934;&#x4E2D;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x5E76;&#x9A8C;&#x8BC1;</p>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x4E5F;&#x662F;&#x4F7F;&#x7528; token &#x5E76;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x548C;&#x4E0A;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x91CC;&#x5E76;&#x4E0D;&#x662F;&#x628A; token &#x4EE5;&#x53C2;&#x6570;&#x7684;&#x5F62;&#x5F0F;&#x7F6E;&#x4E8E; HTTP &#x8BF7;&#x6C42;&#x4E4B;&#x4E2D;&#xFF0C;&#x800C;&#x662F;&#x628A;&#x5B83;&#x653E;&#x5230; HTTP &#x5934;&#x4E2D;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;&#x91CC;&#x3002;&#x901A;&#x8FC7; xmlHttpRequest &#x8FD9;&#x4E2A;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x4E00;&#x6B21;&#x6027;&#x7ED9;&#x6240;&#x6709;&#x8BE5;&#x7C7B;&#x8BF7;&#x6C42;&#x52A0;&#x4E0A; csrftoken &#x8FD9;&#x4E2A; HTTP &#x5934;&#x5C5E;&#x6027;&#xFF0C;&#x5E76;&#x628A; token &#x503C;&#x653E;&#x5165;&#x5176;&#x4E2D;&#x3002;&#x8FD9;&#x6837;&#x89E3;&#x51B3;&#x4E86;&#x4E0A;&#x79CD;&#x65B9;&#x6CD5;&#x5728;&#x8BF7;&#x6C42;&#x4E2D;&#x52A0;&#x5165; token &#x7684;&#x4E0D;&#x4FBF;&#xFF0C;&#x540C;&#x65F6;&#xFF0C;&#x901A;&#x8FC7; xmlHttpRequest &#x8BF7;&#x6C42;&#x7684;&#x5730;&#x5740;&#x4E0D;&#x4F1A;&#x88AB;&#x8BB0;&#x5F55;&#x5230;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x5730;&#x5740;&#x680F;&#xFF0C;&#x4E5F;&#x4E0D;&#x7528;&#x62C5;&#x5FC3; token &#x4F1A;&#x900F;&#x8FC7; Referer &#x6CC4;&#x9732;&#x5230;&#x5176;&#x4ED6;&#x7F51;&#x7AD9;&#x4E2D;&#x53BB;&#x3002;</p>
+<p>&#x7136;&#x800C;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x7684;&#x5C40;&#x9650;&#x6027;&#x975E;&#x5E38;&#x5927;&#x3002;xmlHttpRequest &#x8BF7;&#x6C42;&#x901A;&#x5E38;&#x7528;&#x4E8E; Ajax &#x65B9;&#x6CD5;&#x4E2D;&#x5BF9;&#x4E8E;&#x9875;&#x9762;&#x5C40;&#x90E8;&#x7684;&#x5F02;&#x6B65;&#x5237;&#x65B0;&#xFF0C;&#x5E76;&#x975E;&#x6240;&#x6709;&#x7684;&#x8BF7;&#x6C42;&#x90FD;&#x9002;&#x5408;&#x7528;&#x8FD9;&#x4E2A;&#x7C7B;&#x6765;&#x53D1;&#x8D77;&#xFF0C;&#x800C;&#x4E14;&#x901A;&#x8FC7;&#x8BE5;&#x7C7B;&#x8BF7;&#x6C42;&#x5F97;&#x5230;&#x7684;&#x9875;&#x9762;&#x4E0D;&#x80FD;&#x88AB;&#x6D4F;&#x89C8;&#x5668;&#x6240;&#x8BB0;&#x5F55;&#x4E0B;&#xFF0C;&#x4ECE;&#x800C;&#x8FDB;&#x884C;&#x524D;&#x8FDB;&#xFF0C;&#x540E;&#x9000;&#xFF0C;&#x5237;&#x65B0;&#xFF0C;&#x6536;&#x85CF;&#x7B49;&#x64CD;&#x4F5C;&#xFF0C;&#x7ED9;&#x7528;&#x6237;&#x5E26;&#x6765;&#x4E0D;&#x4FBF;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x5BF9;&#x4E8E;&#x6CA1;&#x6709;&#x8FDB;&#x884C; CSRF &#x9632;&#x62A4;&#x7684;&#x9057;&#x7559;&#x7CFB;&#x7EDF;&#x6765;&#x8BF4;&#xFF0C;&#x8981;&#x91C7;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x9632;&#x62A4;&#xFF0C;&#x8981;&#x628A;&#x6240;&#x6709;&#x8BF7;&#x6C42;&#x90FD;&#x6539;&#x4E3A; xmlHttpRequest &#x8BF7;&#x6C42;&#xFF0C;&#x8FD9;&#x6837;&#x51E0;&#x4E4E;&#x662F;&#x8981;&#x91CD;&#x5199;&#x6574;&#x4E2A;&#x7F51;&#x7AD9;&#xFF0C;&#x8FD9;&#x4EE3;&#x4EF7;&#x65E0;&#x7591;&#x662F;&#x4E0D;&#x80FD;&#x63A5;&#x53D7;&#x7684;&#x3002;</p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2019-07-09T12:33:33.000Z" itemprop="datePublished">2019-07-09</time>
+
+    </span>
+    <span class="post-description-item">
+        
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/myblog/tags/安全-web/">安全 web</a>
+    </span>
+
+    
+
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a class="ui tiny button disabled"><i class="angle left icon"></i>前一篇</a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/myblog/2019/07/09/huya-interview/" class="ui tiny button">
+                    
+                    虎牙直播前端面试总结
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#xss"><span>xss</span></a><ol><li><a href="#一：-XSS介绍"><span>一： XSS介绍</span></a></li><li><a href="#二：防范"><span>二：防范</span></a></li></ol></li><li><a href="#csrf"><span>csrf</span></a><ol><li><a href="#一、CSRF介绍"><span>一、CSRF介绍</span></a></li><li><a href="#二、CSRF攻击的危害"><span>二、CSRF攻击的危害</span></a></li><li><a href="#三、CSRF漏洞防御"><span>三、CSRF漏洞防御</span></a></li></ol></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2019 <a href="/">GENERALTUNE</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+    </div>
+
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/myblog/js/semantic-ui-algolia.js"></script>
+
+<script src="/myblog/js/aloha-events.js"></script>
+
+
+
+</body>
+</html>

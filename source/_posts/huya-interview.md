@@ -19,6 +19,8 @@ tags: 面试 前端 前端安全
     3. ajax 如何实现
     4. Promise 实现 或原理  ES6 async await 语法
     5.有没有听过csp 内容安全策略 (CSP, Content Security Policy)。
+    6.json 什么原理 如何实现跨域 跨域的方式
+    7.两个tab页签如何通信
     
 
 ### 技术三面
@@ -30,6 +32,7 @@ tags: 面试 前端 前端安全
     6.react native 如何实现跨平台
     7.虚拟Dom的作用
     8.使用的react版本 hook的作用
+    9.有没有了解过虎牙，直播有哪些改进的地方？
 
 ### 总结
     虎牙非常注重安全，如 xss 和 csrf
