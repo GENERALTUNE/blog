@@ -31,7 +31,7 @@ DOM型
 
 DVWA(Damn Vulnerable Web Application)是一个用PHP编写的用来进行安全脆弱性鉴定的PHP/MySQL Web应用，旨在为安全专业人员测试自己的专业技能和工具提供合法的环境，帮助web开发者更好的理解web应用安全防范的过程。
 
-[DVWA]（https://blog.csdn.net/extremebingo/article/details/81176394）
+[DVWA](https://blog.csdn.net/extremebingo/article/details/81176394)
 	DVWA共有十个模块，分别是
 	Brute Force(暴力破解)
 	Command Injection(命令行注入)

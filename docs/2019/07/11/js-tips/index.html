@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<html lang>
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content>
+    <title>jquery&amp;原生js问题总结 | generaltune&#39;s blog</title>
+
+    <!-- Open Graph -->
+    <meta name="description" content="&amp;#x5E38;&amp;#x89C1;&amp;#x7C7B;&amp;#x578B;&amp;#x5224;&amp;#x65AD; js&amp;#x5982;&amp;#x4F55;&amp;#x5224;&amp;#x65AD;&amp;#x6570;&amp;#x7EC4;&amp;#x662F;Array&amp;#x7C7B;&amp;#x578B;&amp;#x5728;&amp;#x8BF4;&amp;#x660E;&amp;#x5982;&amp;#x4F55;&amp;#x5224;&amp;#x65AD;&amp;#x4E00;&amp;#x4E2A;">
+<meta name="keywords" content="javascirpt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery&amp;原生js问题总结">
+<meta property="og:url" content="https://generaltune.github.io/myblog/2019/07/11/js-tips/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="&amp;#x5E38;&amp;#x89C1;&amp;#x7C7B;&amp;#x578B;&amp;#x5224;&amp;#x65AD; js&amp;#x5982;&amp;#x4F55;&amp;#x5224;&amp;#x65AD;&amp;#x6570;&amp;#x7EC4;&amp;#x662F;Array&amp;#x7C7B;&amp;#x578B;&amp;#x5728;&amp;#x8BF4;&amp;#x660E;&amp;#x5982;&amp;#x4F55;&amp;#x5224;&amp;#x65AD;&amp;#x4E00;&amp;#x4E2A;">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-11T02:21:34.917Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jquery&amp;原生js问题总结">
+<meta name="twitter:description" content="&amp;#x5E38;&amp;#x89C1;&amp;#x7C7B;&amp;#x578B;&amp;#x5224;&amp;#x65AD; js&amp;#x5982;&amp;#x4F55;&amp;#x5224;&amp;#x65AD;&amp;#x6570;&amp;#x7EC4;&amp;#x662F;Array&amp;#x7C7B;&amp;#x578B;&amp;#x5728;&amp;#x8BF4;&amp;#x660E;&amp;#x5982;&amp;#x4F55;&amp;#x5224;&amp;#x65AD;&amp;#x4E00;&amp;#x4E2A;">
+
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "GENERALTUNE",
+  "url": "https://generaltune.github.io/myblog"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
+
+    
+
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/myblog/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
+
+</head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
+
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>generaltune&#39;s blog</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/myblog/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">GENERALTUNE</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/myblog" class="item">
+        <i class="主页 icon"></i>
+        HOME
+    </a>
+
+    
+
+    
+</div>
+
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-js-tips" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    jquery&amp;原生js问题总结
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h3 id="&#x5E38;&#x89C1;&#x7C7B;&#x578B;&#x5224;&#x65AD;"><a href="#&#x5E38;&#x89C1;&#x7C7B;&#x578B;&#x5224;&#x65AD;" class="headerlink" title="&#x5E38;&#x89C1;&#x7C7B;&#x578B;&#x5224;&#x65AD;"></a>&#x5E38;&#x89C1;&#x7C7B;&#x578B;&#x5224;&#x65AD;</h3><ol class="ui list">
+<li>js&#x5982;&#x4F55;&#x5224;&#x65AD;&#x6570;&#x7EC4;&#x662F;Array&#x7C7B;&#x578B;<br>&#x5728;&#x8BF4;&#x660E;&#x5982;&#x4F55;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E3A;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x5DE9;&#x56FA;&#x4E0B;js&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;js&#x4E00;&#x5171;&#x6709;&#x516D;&#x5927;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF1A;number&#x3001;string&#x3001;object&#x3001;Boolean&#x3001;null&#x3001;undefined&#x3002;</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">     var str=&quot;string&quot;;</span><br><span class="line">     console.log(typeof str); //string</span><br><span class="line">     var num=1;</span><br><span class="line">     console.log(typeof num); //number</span><br><span class="line">     var bn=false;</span><br><span class="line">     console.log(typeof bn); //boolean</span><br><span class="line">     var a;</span><br><span class="line">     console.log(typeof a); //undfined</span><br><span class="line">     var obj = null;</span><br><span class="line">     console.log(typeof obj); //object</span><br><span class="line">     var doc = document;</span><br><span class="line">     console.log(typeof doc);//object</span><br><span class="line">     var arr = [];</span><br><span class="line">     console.log(arr); //object</span><br><span class="line">     var fn = function(){};</span><br><span class="line">     console.log(typeof fn); //function     </span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+
+<p>&#x9664;&#x4E86;&#x524D;&#x56DB;&#x4E2A;&#x7C7B;&#x578B;&#x5916;&#xFF0C;null&#x3001;&#x5BF9;&#x8C61;&#x3001;&#x6570;&#x7EC4;&#x8FD4;&#x56DE;&#x7684;&#x90FD;&#x662F;object&#x7C7B;&#x578B;&#xFF1B;&#x5BF9;&#x4E8E;&#x51FD;&#x6570;&#x7C7B;&#x578B;&#x8FD4;&#x56DE;&#x7684;&#x5219;&#x662F;function&#xFF0C;&#x518D;&#x6BD4;&#x5982;typeof(Date)&#xFF0C;typeof(eval)&#x7B49;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x8FDB;&#x5165;&#x6B63;&#x9898;&#xFF0C;js&#x5224;&#x65AD;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<h4 id="&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;-&#x4F7F;&#x7528;instanceof&#x65B9;&#x6CD5;"><a href="#&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;-&#x4F7F;&#x7528;instanceof&#x65B9;&#x6CD5;" class="headerlink" title="&#x65B9;&#x6CD5;&#x4E00;&#xFF1A; &#x4F7F;&#x7528;instanceof&#x65B9;&#x6CD5;"></a>&#x65B9;&#x6CD5;&#x4E00;&#xFF1A; &#x4F7F;&#x7528;instanceof&#x65B9;&#x6CD5;</h4><p>instanceof &#x7528;&#x4E8E;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x662F;&#x5426;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x5DE6;&#x8FB9;&#x64CD;&#x4F5C;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x53F3;&#x8FB9;&#x64CD;&#x4F5C;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x51FD;&#x6570;&#x6784;&#x9020;&#x5668;&#x3002;&#x539F;&#x7406;&#x662F;&#x901A;&#x8FC7;&#x5224;&#x65AD;&#x5DE6;&#x64CD;&#x4F5C;&#x6570;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x539F;&#x578B;&#x94FE;&#x4E0A;&#x662F;&#x5426;&#x5177;&#x6709;&#x53F3;&#x64CD;&#x4F5C;&#x6570;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;prototype&#x5C5E;&#x6027;&#x3002;<br>a instanceof b?alert(&#x201C;true&#x201D;):alert(&#x201C;false&#x201D;)  //&#x6CE8;&#x610F;b&#x503C;&#x662F;&#x4F60;&#x60F3;&#x8981;&#x5224;&#x65AD;&#x7684;&#x90A3;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6BD4;&#x5982;Array&#x3002;<br>&#x4E3E;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr=[];</span><br><span class="line">console.log(arr instanceof Array) //&#x8FD4;&#x56DE;true</span><br></pre></td></tr></table></figure>
+
+<h4 id="&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;-&#x4F7F;&#x7528;constructor&#x65B9;&#x6CD5;"><a href="#&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;-&#x4F7F;&#x7528;constructor&#x65B9;&#x6CD5;" class="headerlink" title="&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A; &#x4F7F;&#x7528;constructor&#x65B9;&#x6CD5;"></a>&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A; &#x4F7F;&#x7528;constructor&#x65B9;&#x6CD5;</h4><p>&#x5728;W3C&#x5B9A;&#x4E49;&#x4E2D;&#x7684;&#x5B9A;&#x4E49;&#xFF1A;constructor &#x5C5E;&#x6027;&#x8FD4;&#x56DE;&#x5BF9;&#x521B;&#x5EFA;&#x6B64;&#x5BF9;&#x8C61;&#x7684;&#x6570;&#x7EC4;&#x51FD;&#x6570;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x5C31;&#x662F;&#x8FD4;&#x56DE;&#x5BF9;&#x8C61;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;&#x4ECE;&#x5B9A;&#x4E49;&#x4E0A;&#x6765;&#x8BF4;&#x8DDF;instanceof&#x4E0D;&#x592A;&#x4E00;&#x81F4;&#xFF0C;&#x4F46;&#x6548;&#x679C;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;<br>&#x90A3;&#x4E48;&#x5224;&#x65AD;&#x5404;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log([].constructor == Array);  //true</span><br><span class="line">console.log({}.constructor == Object);  //true</span><br><span class="line">console.log(&quot;string&quot;.constructor == String); //true</span><br><span class="line">console.log((123).constructor == Number);  //true</span><br><span class="line">console.log(true.constructor == Boolean);  //true</span><br></pre></td></tr></table></figure>
+
+<p>&#x6CE8;&#x610F;&#xFF1A;<br>&#x4F7F;&#x7528;instaceof&#x548C;construcor,&#x88AB;&#x5224;&#x65AD;&#x7684;array&#x5FC5;&#x987B;&#x662F;&#x5728;&#x5F53;&#x524D;&#x9875;&#x9762;&#x58F0;&#x660E;&#x7684;&#xFF01;&#x6BD4;&#x5982;&#xFF0C;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#xFF08;&#x7236;&#x9875;&#x9762;&#xFF09;&#x6709;&#x4E00;&#x4E2A;&#x6846;&#x67B6;&#xFF0C;&#x6846;&#x67B6;&#x4E2D;&#x5F15;&#x7528;&#x4E86;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#xFF08;&#x5B50;&#x9875;&#x9762;&#xFF09;&#xFF0C;&#x5728;&#x5B50;&#x9875;&#x9762;&#x4E2D;&#x58F0;&#x660E;&#x4E86;&#x4E00;&#x4E2A;array&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x8D4B;&#x503C;&#x7ED9;&#x7236;&#x9875;&#x9762;&#x7684;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x8FD9;&#x65F6;&#x5224;&#x65AD;&#x8BE5;&#x53D8;&#x91CF;&#xFF0C;Array ==object.constructor;&#x4F1A;&#x8FD4;&#x56DE;false&#xFF1B;<br>&#x539F;&#x56E0;&#xFF1A;<br>1&#x3001;array&#x5C5E;&#x4E8E;&#x5F15;&#x7528;&#x578B;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x4F20;&#x9012;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4EC5;&#x4EC5;&#x662F;&#x5F15;&#x7528;&#x5730;&#x5740;&#x7684;&#x4F20;&#x9012;&#x3002;<br>2&#x3001;&#x6BCF;&#x4E2A;&#x9875;&#x9762;&#x7684;Array&#x539F;&#x751F;&#x5BF9;&#x8C61;&#x6240;&#x5F15;&#x7528;&#x7684;&#x5730;&#x5740;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x5728;&#x5B50;&#x9875;&#x9762;&#x58F0;&#x660E;&#x7684;array&#xFF0C;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x662F;&#x5B50;&#x9875;&#x9762;&#x7684;Array&#x5BF9;&#x8C61;&#xFF1B;&#x7236;&#x9875;&#x9762;&#x6765;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#xFF0C;&#x4F7F;&#x7528;&#x7684;Array&#x5E76;&#x4E0D;&#x7B49;&#x4E8E;&#x5B50;&#x9875;&#x9762;&#x7684;Array&#x3002;</p>
+<h4 id="&#x65B9;&#x6CD5;&#x4E09;&#xFF1A;-&#x4F7F;&#x7528;Object-prototype-toString-call-arr-&#x2018;-object-Array-&#x2019;&#x65B9;&#x6CD5;"><a href="#&#x65B9;&#x6CD5;&#x4E09;&#xFF1A;-&#x4F7F;&#x7528;Object-prototype-toString-call-arr-&#x2018;-object-Array-&#x2019;&#x65B9;&#x6CD5;" class="headerlink" title="&#x65B9;&#x6CD5;&#x4E09;&#xFF1A; &#x4F7F;&#x7528;Object.prototype.toString.call(arr) === &#x2018;[object Array]&#x2019;&#x65B9;&#x6CD5;"></a>&#x65B9;&#x6CD5;&#x4E09;&#xFF1A; &#x4F7F;&#x7528;Object.prototype.toString.call(arr) === &#x2018;[object Array]&#x2019;&#x65B9;&#x6CD5;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function isArray(o) {</span><br><span class="line">&#x3000;&#x3000;return Object.prototype.toString.call(o);</span><br><span class="line">}</span><br><span class="line">var arr=[2,5,6,8];</span><br><span class="line">var obj={name:&apos;zhangsan&apos;,age:25};</span><br><span class="line">var fn = function () {}</span><br><span class="line">console.log(isArray(arr)); //[object Array]</span><br><span class="line">console.log(isArray(obj)); //[object Object]</span><br><span class="line">console.log(isArray(fn));  //[object function]</span><br></pre></td></tr></table></figure>
+
+<h4 id="&#x65B9;&#x6CD5;&#x56DB;&#xFF1A;ES5&#x5B9A;&#x4E49;&#x4E86;Array-isArray"><a href="#&#x65B9;&#x6CD5;&#x56DB;&#xFF1A;ES5&#x5B9A;&#x4E49;&#x4E86;Array-isArray" class="headerlink" title="&#x65B9;&#x6CD5;&#x56DB;&#xFF1A;ES5&#x5B9A;&#x4E49;&#x4E86;Array.isArray:"></a>&#x65B9;&#x6CD5;&#x56DB;&#xFF1A;ES5&#x5B9A;&#x4E49;&#x4E86;Array.isArray:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.isArray([]) //true</span><br></pre></td></tr></table></figure>
+
+<h3 id="es5-&#x7EE7;&#x627F;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;-&#x516D;&#x79CD;"><a href="#es5-&#x7EE7;&#x627F;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;-&#x516D;&#x79CD;" class="headerlink" title="es5 &#x7EE7;&#x627F;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;(&#x516D;&#x79CD;)"></a>es5 &#x7EE7;&#x627F;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;(&#x516D;&#x79CD;)</h3><p>&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7236;&#x7C7B;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x52A8;&#x7269;&#x7C7B;</span><br><span class="line">function Animal (name) {</span><br><span class="line">  // &#x5C5E;&#x6027;</span><br><span class="line">  this.name = name || &apos;Animal&apos;;</span><br><span class="line">  // &#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;</span><br><span class="line">  this.sleep = function(){</span><br><span class="line">    console.log(this.name + &apos;&#x6B63;&#x5728;&#x7761;&#x89C9;&#xFF01;&apos;);</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line">// &#x539F;&#x578B;&#x65B9;&#x6CD5;</span><br><span class="line">Animal.prototype.eat = function(food) {</span><br><span class="line">  console.log(this.name + &apos;&#x6B63;&#x5728;&#x5403;&#xFF1A;&apos; + food);</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+
+<h4 id="&#x539F;&#x578B;&#x94FE;&#x7EE7;&#x627F;"><a href="#&#x539F;&#x578B;&#x94FE;&#x7EE7;&#x627F;" class="headerlink" title="&#x539F;&#x578B;&#x94FE;&#x7EE7;&#x627F;"></a>&#x539F;&#x578B;&#x94FE;&#x7EE7;&#x627F;</h4><h4 id="&#x6784;&#x9020;&#x7EE7;&#x627F;"><a href="#&#x6784;&#x9020;&#x7EE7;&#x627F;" class="headerlink" title="&#x6784;&#x9020;&#x7EE7;&#x627F;"></a>&#x6784;&#x9020;&#x7EE7;&#x627F;</h4><h4 id="&#x5B9E;&#x4F8B;&#x7EE7;&#x627F;"><a href="#&#x5B9E;&#x4F8B;&#x7EE7;&#x627F;" class="headerlink" title="&#x5B9E;&#x4F8B;&#x7EE7;&#x627F;"></a>&#x5B9E;&#x4F8B;&#x7EE7;&#x627F;</h4><h4 id="&#x62F7;&#x8D1D;&#x7EE7;&#x627F;"><a href="#&#x62F7;&#x8D1D;&#x7EE7;&#x627F;" class="headerlink" title="&#x62F7;&#x8D1D;&#x7EE7;&#x627F;"></a>&#x62F7;&#x8D1D;&#x7EE7;&#x627F;</h4><h4 id="&#x7EC4;&#x5408;&#x7EE7;&#x627F;"><a href="#&#x7EC4;&#x5408;&#x7EE7;&#x627F;" class="headerlink" title="&#x7EC4;&#x5408;&#x7EE7;&#x627F;"></a>&#x7EC4;&#x5408;&#x7EE7;&#x627F;</h4><h4 id="&#x5BC4;&#x751F;&#x7EC4;&#x5408;&#x7EE7;&#x627F;"><a href="#&#x5BC4;&#x751F;&#x7EC4;&#x5408;&#x7EE7;&#x627F;" class="headerlink" title="&#x5BC4;&#x751F;&#x7EC4;&#x5408;&#x7EE7;&#x627F;"></a>&#x5BC4;&#x751F;&#x7EC4;&#x5408;&#x7EE7;&#x627F;</h4><p>&#x6838;&#x5FC3;&#xFF1A;&#x901A;&#x8FC7;&#x5BC4;&#x751F;&#x65B9;&#x5F0F;&#xFF0C;&#x780D;&#x6389;&#x7236;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x6837;&#xFF0C;&#x5728;&#x8C03;&#x7528;&#x4E24;&#x6B21;&#x7236;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x521D;&#x59CB;&#x5316;&#x4E24;&#x6B21;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;/&#x5C5E;&#x6027;&#xFF0C;&#x907F;&#x514D;&#x7684;&#x7EC4;&#x5408;&#x7EE7;&#x627F;&#x7684;&#x7F3A;&#x70B9;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function Cat(name){</span><br><span class="line">  Animal.call(this);</span><br><span class="line">  this.name = name || &apos;Tom&apos;;</span><br><span class="line">}</span><br><span class="line">(function(){</span><br><span class="line">  // &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x7684;&#x7C7B;</span><br><span class="line">  var Super = function(){};</span><br><span class="line">  Super.prototype = Animal.prototype;</span><br><span class="line">  //&#x5C06;&#x5B9E;&#x4F8B;&#x4F5C;&#x4E3A;&#x5B50;&#x7C7B;&#x7684;&#x539F;&#x578B;</span><br><span class="line">  Cat.prototype = new Super();</span><br><span class="line">})();</span><br><span class="line"></span><br><span class="line">// Test Code</span><br><span class="line">var cat = new Cat();</span><br><span class="line">console.log(cat.name);</span><br><span class="line">console.log(cat.sleep());</span><br><span class="line">console.log(cat instanceof Animal); // true</span><br><span class="line">console.log(cat instanceof Cat); //true</span><br><span class="line"></span><br><span class="line">Cat.prototype.constructor = Cat; // &#x9700;&#x8981;&#x4FEE;&#x590D;&#x4E0B;&#x6784;&#x9020;&#x51FD;&#x6570;</span><br></pre></td></tr></table></figure>
+
+<p>&#x6216;&#x8005;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function Cat(name){</span><br><span class="line">  Animal.call(this);</span><br><span class="line">  this.name = name || &apos;Tom&apos;;</span><br><span class="line">}</span><br><span class="line"> </span><br><span class="line">Cat.prototype = Object.create(Animal.prototype, {</span><br><span class="line">  constructor: {</span><br><span class="line">    value: Cat,</span><br><span class="line">    enumerable: false,</span><br><span class="line">    writable: true,</span><br><span class="line">    configurable: true</span><br><span class="line">  }</span><br><span class="line">})</span><br><span class="line"> </span><br><span class="line">// Test Code</span><br><span class="line">var cat = new Cat();</span><br><span class="line">console.log(cat.name);</span><br><span class="line">console.log(cat.sleep());</span><br><span class="line">console.log(cat instanceof Animal); // true</span><br><span class="line">console.log(cat instanceof Cat); //true&lt;br&gt;&#x4EE5;&#x4E0A;&#x7EE7;&#x627F;&#x5B9E;&#x73B0;&#x7684;&#x6838;&#x5FC3;&#x5C31;&#x662F;&#x5C06;&#x7236;&#x7C7B;&#x7684;&#x539F;&#x578B;&#x8D4B;&#x503C;&#x7ED9;&#x4E86;&#x5B50;&#x7C7B;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x6784;&#x9020;&#x51FD;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;&#x5B50;&#x7C7B;&#xFF0C;&#x8FD9;&#x6837;&#x65E2;&#x89E3;&#x51B3;&#x4E86;&#x65E0;&#x7528;&#x7684;&#x7236;&#x7C7B;&#x5C5E;&#x6027;&#x95EE;&#x9898;&#xFF0C;&#x8FD8;&#x80FD;&#x6B63;&#x786E;&#x7684;&#x627E;&#x5230;&#x5B50;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;</span><br></pre></td></tr></table></figure>
+
+<p>&#x7279;&#x70B9;&#xFF1A;</p>
+<p>&#x582A;&#x79F0;&#x5B8C;&#x7F8E;<br>&#x7F3A;&#x70B9;&#xFF1A;</p>
+<p>&#x5B9E;&#x73B0;&#x8F83;&#x4E3A;&#x590D;&#x6742;</p>
+<p><a href="https://www.cnblogs.com/gwf93/p/10384352.html" target="_blank" rel="noopener">&#x53C2;&#x8003;</a></p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2019-07-11T01:57:12.000Z" itemprop="datePublished">2019-07-11</time>
+
+    </span>
+    <span class="post-description-item">
+        
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/myblog/tags/javascirpt/">javascirpt</a>
+    </span>
+
+    
+
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a class="ui tiny button disabled"><i class="angle left icon"></i>Previous</a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/myblog/2019/07/09/fe-security/" class="ui tiny button">
+                    
+                    web安全总结
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#常见类型判断"><span>常见类型判断</span></a><ol><li><a href="#方法一：-使用instanceof方法"><span>方法一： 使用instanceof方法</span></a></li><li><a href="#方法二：-使用constructor方法"><span>方法二： 使用constructor方法</span></a></li><li><a href="#方法三：-使用Object-prototype-toString-call-arr-‘-object-Array-’方法"><span>方法三： 使用Object.prototype.toString.call(arr) === ‘[object Array]’方法</span></a></li><li><a href="#方法四：ES5定义了Array-isArray"><span>方法四：ES5定义了Array.isArray:</span></a></li></ol></li><li><a href="#es5-继承实现方式-六种"><span>es5 继承实现方式(六种)</span></a><ol><li><a href="#原型链继承"><span>原型链继承</span></a></li><li><a href="#构造继承"><span>构造继承</span></a></li><li><a href="#实例继承"><span>实例继承</span></a></li><li><a href="#拷贝继承"><span>拷贝继承</span></a></li><li><a href="#组合继承"><span>组合继承</span></a></li><li><a href="#寄生组合继承"><span>寄生组合继承</span></a></li></ol></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2019 <a href="/">GENERALTUNE</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+    </div>
+
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/myblog/js/semantic-ui-algolia.js"></script>
+
+<script src="/myblog/js/aloha-events.js"></script>
+
+
+
+</body>
+</html>
