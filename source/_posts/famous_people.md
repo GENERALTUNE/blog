@@ -14,3 +14,4 @@ tags:
 5. Doug Cutting 个人名望：开发出开源全文检索引擎工具包Lucene
 6. Anders Hejlsberg 个人名望：创造了Turbo Pascal。
 7.Adam D’Angelo 个人名望：问答SNS网站Quora的创办人之一。
+8. Fabrice Bellard ffmpeg QEMU TCC 的作者 [个人网站](https://bellard.org/)

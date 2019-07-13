@@ -151,3 +151,15 @@ console.log(cat instanceof Cat); //true<br>以上继承实现的核心就是将�
 实现较为复杂
 
 [参考](https://www.cnblogs.com/gwf93/p/10384352.html)
+
+
+### 防抖 截流
+#### 防抖（debounce）
+所谓防抖，就是指触发事件后在 n 秒内函数只能执行一次，如果在 n 秒内又触发了事件，则会重新计算函数执行时间。
+
+
+#### 节流（throttle）
+所谓节流，就是指连续触发事件但是在 n 秒中只执行一次函数。节流会稀释函数的执行频率。
+
+### Promise 实现
+[参考](https://www.jianshu.com/p/b4f0425b22a1)

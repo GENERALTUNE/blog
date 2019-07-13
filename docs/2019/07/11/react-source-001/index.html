@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<html lang>
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content>
+    <title>react源码解析01 | generaltune&#39;s blog</title>
+
+    <!-- Open Graph -->
+    <meta name="description" content="react hook api &amp;#x7684;&amp;#x52A8;&amp;#x673A;&amp;#x539F;&amp;#x56E0;  &amp;#x5F88;&amp;#x96BE;&amp;#x91CD;&amp;#x7528;&amp;#x7EC4;&amp;#x4EF6;&amp;#x4E4B;&amp;#x95F4;&amp;#x7684;state&amp;#x72B6;&amp;#x6001;&amp;#x903B;&amp;#x8F91;&amp;#xFF0C;&amp;#x4F1A;&amp;#x4F7F;&amp;#x7528;&amp;#">
+<meta name="keywords" content="react  源码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react源码解析01">
+<meta property="og:url" content="https://generaltune.github.io/myblog/2019/07/11/react-source-001/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="react hook api &amp;#x7684;&amp;#x52A8;&amp;#x673A;&amp;#x539F;&amp;#x56E0;  &amp;#x5F88;&amp;#x96BE;&amp;#x91CD;&amp;#x7528;&amp;#x7EC4;&amp;#x4EF6;&amp;#x4E4B;&amp;#x95F4;&amp;#x7684;state&amp;#x72B6;&amp;#x6001;&amp;#x903B;&amp;#x8F91;&amp;#xFF0C;&amp;#x4F1A;&amp;#x4F7F;&amp;#x7528;&amp;#">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-13T05:47:29.041Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react源码解析01">
+<meta name="twitter:description" content="react hook api &amp;#x7684;&amp;#x52A8;&amp;#x673A;&amp;#x539F;&amp;#x56E0;  &amp;#x5F88;&amp;#x96BE;&amp;#x91CD;&amp;#x7528;&amp;#x7EC4;&amp;#x4EF6;&amp;#x4E4B;&amp;#x95F4;&amp;#x7684;state&amp;#x72B6;&amp;#x6001;&amp;#x903B;&amp;#x8F91;&amp;#xFF0C;&amp;#x4F1A;&amp;#x4F7F;&amp;#x7528;&amp;#">
+
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "GENERALTUNE",
+  "url": "https://generaltune.github.io/myblog"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
+
+    
+
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/myblog/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
+
+</head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
+
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>generaltune&#39;s blog</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/myblog/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">GENERALTUNE</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/myblog" class="item">
+        <i class="主页 icon"></i>
+        HOME
+    </a>
+
+    
+
+    
+</div>
+
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-react-source-001" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    react源码解析01
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h3 id="react-hook-api-&#x7684;&#x52A8;&#x673A;"><a href="#react-hook-api-&#x7684;&#x52A8;&#x673A;" class="headerlink" title="react hook api &#x7684;&#x52A8;&#x673A;"></a>react hook api &#x7684;&#x52A8;&#x673A;</h3><p>&#x539F;&#x56E0;</p>
+<ol class="ui list">
+<li>&#x5F88;&#x96BE;&#x91CD;&#x7528;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;state&#x72B6;&#x6001;&#x903B;&#x8F91;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528;&#x590D;&#x6742;&#x7684;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x5BFC;&#x81F4;&#x5F88;&#x591A;&#x7684;&#x5305;&#x88F9;&#x5C42;&#x3002;</li>
+<li>&#x590D;&#x6742;&#x7684;&#x7EC4;&#x4EF6;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x96BE;&#x7406;&#x89E3;</li>
+<li>&#x7C7B;&#x7684;&#x6982;&#x5FF5;&#x8BA9;&#x5F00;&#x53D1;&#x5F88;&#x96BE;&#x7406;&#x89E3;&#xFF0C;javascript&#x4E2D;this &#x7684;&#x6982;&#x5FF5;&#x8DDF;&#x5927;&#x591A;&#x6570;&#x8BED;&#x8A00;&#x90FD;&#x4E0D;&#x592A;&#x4E00;&#x6837;&#x3002;</li>
+</ol>
+<h3 id="react-&#x6E90;&#x7801;&#x5173;&#x952E;&#x51FD;&#x6570;"><a href="#react-&#x6E90;&#x7801;&#x5173;&#x952E;&#x51FD;&#x6570;" class="headerlink" title="react &#x6E90;&#x7801;&#x5173;&#x952E;&#x51FD;&#x6570;"></a>react &#x6E90;&#x7801;&#x5173;&#x952E;&#x51FD;&#x6570;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">updateContainer</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">updateContainerAtExpirationTime</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">scheduleRootUpdate</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">scheduleWork</span><br><span class="line"></span><br><span class="line">		renderRoot</span><br><span class="line"></span><br><span class="line">			workLoop/workLoopSync</span><br><span class="line"></span><br><span class="line">				performUnitOfWork</span><br><span class="line">				</span><br><span class="line">					beginWork</span><br><span class="line">					</span><br><span class="line">					completeUnitOfWork</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		commitRoot</span><br><span class="line"></span><br><span class="line">			commitRootImpl</span><br><span class="line">			</span><br><span class="line">				commitBeforeMutationEffects</span><br><span class="line">				</span><br><span class="line">					commitBeforeMutationEffectOnFiber</span><br><span class="line">				</span><br><span class="line">				commitMutationEffects</span><br><span class="line"></span><br><span class="line">					commitResetTextContent</span><br><span class="line"></span><br><span class="line">					commitDetachRef</span><br><span class="line">				</span><br><span class="line">				commitLayoutEffects</span><br></pre></td></tr></table></figure>
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2019-07-11T03:02:46.000Z" itemprop="datePublished">2019-07-11</time>
+
+    </span>
+    <span class="post-description-item">
+        
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/myblog/tags/react-源码/">react  源码</a>
+    </span>
+
+    
+
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a href="/myblog/2019/07/13/screen-recorder/" class="ui tiny button">
+
+                    <i class="angle left icon"></i>
+                    
+                    视频录制
+                    
+
+                </a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/myblog/2019/07/11/js-tips/" class="ui tiny button">
+                    
+                    jquery&amp;原生js问题总结
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#react-hook-api-的动机"><span>react hook api 的动机</span></a></li><li><a href="#react-源码关键函数"><span>react 源码关键函数</span></a></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2019 <a href="/">GENERALTUNE</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+    </div>
+
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/myblog/js/semantic-ui-algolia.js"></script>
+
+<script src="/myblog/js/aloha-events.js"></script>
+
+
+
+</body>
+</html>
