@@ -209,43 +209,81 @@ export default class Example extends React.Component {
 我不再一一介绍，大家自行去查阅官方文档。
 
 
-### 3. 自定义Hook
+### 3. 定义自己的Hooks
 
 为什么要自己去写一个Effect Hooks? 这样我们才能把可以复用的逻辑抽离出来，变成一个个可以随意插拔的“插销”，哪个组件要用来，我就插进哪个组件里，so easy！看一个完整的例子，你就明白了。
 
 ```
 import React, { useState, useEffect } from 'react';
 
+const friendList = [
+  { id: 1, name: 'Phoebe' },
+  { id: 2, name: 'Rachel' },
+  { id: 3, name: 'Ross' },
+];
+
 function useFriendStatus(friendID) {
+
   const [isOnline, setIsOnline] = useState(null);
 
-  useEffect(() => {
-    function handleStatusChange(status) {
+ function handleStatusChange(status) {
       setIsOnline(status.isOnline);
-    }
+ }
 
-    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange);
-    return () => {
-      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange);
-    };
+  useEffect(() => {
+    setTimeout(function() {
+        handleStatusChange({isOnline: friendID > 2 ? true : false});
+
+    }, 1000);
+
   });
 
   return isOnline;
 }
 
 
-
-
-
-
-
 function FriendListItem(props) {
-  const isOnline = useFriendStatus(props.friend.id);
+
+  const isOnline = useFriendStatus(props.friendid);
 
   return (
     <li style={{ color: isOnline ? 'green' : 'black' }}>
-      {props.friend.name}
+      FriendListItem: {props.friendid} 
     </li>
   );
 }
+
+function StudentListItem(props) {
+
+  const isOnline = useFriendStatus(props.friendid);
+
+  return (
+    <li style={{ color: isOnline ? 'green' : 'black' }}>
+      StudentListItem:{props.friendid} 
+    </li>
+  );
+}
+
+
+export default function Example() {
+
+  const [friendid, setFriendid] = useState(1);
+
+
+  return (<div>
+              <select
+                  value={friendid}
+                  onChange={e => setFriendid(Number(e.target.value))} >
+                  {friendList.map(friend => (
+                    <option key={friend.id} value={friend.id}>
+                      {friend.name}
+                    </option>
+                  ))}
+              </select>
+              <FriendListItem  friendid={friendid + 1}  />
+              <StudentListItem  friendid={friendid}  />
+    </div>);
+
+}
+
 ```

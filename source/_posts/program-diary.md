@@ -1,5 +1,5 @@
 ---
-title: 编程笔记 
+title: shell 命令记录
 date: 2017-03-13 10:28:22
 tags:
 ---

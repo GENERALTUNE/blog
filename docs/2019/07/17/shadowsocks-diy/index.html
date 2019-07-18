@@ -1,0 +1,271 @@
+
+
+<!DOCTYPE html>
+<html lang>
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content>
+    <title>自己实现一个shadowsock | generaltune&#39;s blog</title>
+
+    <!-- Open Graph -->
+    <meta name="description" content="shadowsocks&amp;#x4EC0;&amp;#x4E48;&amp;#x662F;socks5&amp;#x6216;&amp;#x8BB8;&amp;#x4F60;&amp;#x6CA1;&amp;#x542C;&amp;#x8BF4;&amp;#x8FC7;socks5&amp;#xFF0C;&amp;#x4F46;&amp;#x4F60;&amp;#x4E00;&amp;#x5B9A;&amp;#x542C;&amp;#x8BF4;&amp;#x8FC7;ShadowSocks&amp;#xFF0C;ShadowSockS&amp;#x">
+<meta name="keywords" content="diy  shadowsocks">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自己实现一个shadowsock">
+<meta property="og:url" content="https://generaltune.github.io/myblog/2019/07/17/shadowsocks-diy/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="shadowsocks&amp;#x4EC0;&amp;#x4E48;&amp;#x662F;socks5&amp;#x6216;&amp;#x8BB8;&amp;#x4F60;&amp;#x6CA1;&amp;#x542C;&amp;#x8BF4;&amp;#x8FC7;socks5&amp;#xFF0C;&amp;#x4F46;&amp;#x4F60;&amp;#x4E00;&amp;#x5B9A;&amp;#x542C;&amp;#x8BF4;&amp;#x8FC7;ShadowSocks&amp;#xFF0C;ShadowSockS&amp;#x">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://generaltune.github.io/myblog/2019/07/17/shadowsocks-diy/socks5-protocol.png">
+<meta property="og:updated_time" content="2019-07-17T13:50:55.469Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自己实现一个shadowsock">
+<meta name="twitter:description" content="shadowsocks&amp;#x4EC0;&amp;#x4E48;&amp;#x662F;socks5&amp;#x6216;&amp;#x8BB8;&amp;#x4F60;&amp;#x6CA1;&amp;#x542C;&amp;#x8BF4;&amp;#x8FC7;socks5&amp;#xFF0C;&amp;#x4F46;&amp;#x4F60;&amp;#x4E00;&amp;#x5B9A;&amp;#x542C;&amp;#x8BF4;&amp;#x8FC7;ShadowSocks&amp;#xFF0C;ShadowSockS&amp;#x">
+<meta name="twitter:image" content="https://generaltune.github.io/myblog/2019/07/17/shadowsocks-diy/socks5-protocol.png">
+
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "GENERALTUNE",
+  "url": "https://generaltune.github.io/myblog"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
+
+    
+
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/myblog/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
+
+</head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
+
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>generaltune&#39;s blog</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/myblog/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">GENERALTUNE</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/myblog" class="item">
+        <i class="主页 icon"></i>
+        HOME
+    </a>
+
+    
+
+    
+</div>
+
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-shadowsocks-diy" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    自己实现一个shadowsock
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h3 id="shadowsocks"><a href="#shadowsocks" class="headerlink" title="shadowsocks"></a>shadowsocks</h3><h3 id="&#x4EC0;&#x4E48;&#x662F;socks5"><a href="#&#x4EC0;&#x4E48;&#x662F;socks5" class="headerlink" title="&#x4EC0;&#x4E48;&#x662F;socks5"></a>&#x4EC0;&#x4E48;&#x662F;socks5</h3><p>&#x6216;&#x8BB8;&#x4F60;&#x6CA1;&#x542C;&#x8BF4;&#x8FC7;socks5&#xFF0C;&#x4F46;&#x4F60;&#x4E00;&#x5B9A;&#x542C;&#x8BF4;&#x8FC7;ShadowSocks&#xFF0C;ShadowSockS&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x6B63;&#x662F;socks5&#x534F;&#x8BAE;&#x3002;<br>socks&#x662F;&#x201D;SocketS&#x201D;&#x7684;&#x7F29;&#x5199;&#xFF0C;&#x56E0;&#x6B64;socks5&#x4E5F;&#x53EB;sockets5&#x3002;<br>RFC&#x5730;&#x5740;&#xFF1A;<br><a href="https://www.ietf.org/rfc/rfc1928.txt" target="_blank" rel="noopener">rfc1928</a><br><a href="https://www.ietf.org/rfc/rfc1929.txt" target="_blank" rel="noopener">rfc1929</a></p>
+<p>socks&#x662F;&#x4E00;&#x79CD;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#x4E0E;&#x5916;&#x7F51;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x901A;&#x8BAF;&#x7684;&#x4E2D;&#x95F4;&#x4F20;&#x9012;&#x3002;&#x6839;&#x636E;OSI&#x4E03;&#x5C42;&#x6A21;&#x578B;&#x6765;&#x5212;&#x5206;&#xFF0C;SOCKS&#x5C5E;&#x4E8E;&#x4F1A;&#x8BDD;&#x5C42;&#x534F;&#x8BAE;&#xFF0C;&#x4F4D;&#x4E8E;&#x8868;&#x793A;&#x5C42;&#x4E0E;&#x4F20;&#x8F93;&#x5C42;&#x4E4B;&#x95F4;&#x3002;</p>
+<p>&#x5F53;&#x9632;&#x706B;&#x5899;&#x540E;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x8981;&#x8BBF;&#x95EE;&#x5916;&#x90E8;&#x7684;&#x670D;&#x52A1;&#x5668;&#x65F6;&#xFF0C;&#x5C31;&#x8DDF;socks&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x3002;&#x8BE5;&#x534F;&#x8BAE;&#x8BBE;&#x8BA1;&#x4E4B;&#x521D;&#x662F;&#x4E3A;&#x4E86;&#x8BA9;&#x6709;&#x6743;&#x9650;&#x7684;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x7A7F;&#x8FC7;&#x8FC7;&#x9632;&#x706B;&#x5899;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x4F7F;&#x5F97;&#x9AD8;&#x6743;&#x9650;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5916;&#x90E8;&#x8D44;&#x6E90;&#x3002;&#x7ECF;&#x8FC7;10&#x4F59;&#x5E74;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x5927;&#x91CF;&#x7684;&#x7F51;&#x7EDC;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x90FD;&#x652F;&#x6301;socks5&#x4EE3;&#x7406;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x534F;&#x8BAE;&#x6700;&#x521D;&#x7531;David Koblas&#x5F00;&#x53D1;&#xFF0C;&#x800C;&#x540E;&#x7531;NEC&#x7684;Ying-Da Lee&#x5C06;&#x5176;&#x6269;&#x5C55;&#x5230;&#x7248;&#x672C;4&#xFF0C;&#x6700;&#x65B0;&#x534F;&#x8BAE;&#x662F;&#x7248;&#x672C;5&#xFF0C;&#x4E0E;&#x524D;&#x4E00;&#x7248;&#x672C;&#x76F8;&#x6BD4;&#xFF0C;socks5&#x505A;&#x4E86;&#x4EE5;&#x4E0B;&#x589E;&#x5F3A;&#xFF1A;</p>
+<ol class="ui list">
+<li>&#x589E;&#x52A0;&#x5BF9;UDP&#x534F;&#x8BAE;&#x7684;&#x652F;&#x6301;&#xFF1B;</li>
+<li>&#x652F;&#x6301;&#x591A;&#x79CD;&#x7528;&#x6237;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x65B9;&#x5F0F;&#x548C;&#x901A;&#x4FE1;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#xFF1B;</li>
+<li>&#x4FEE;&#x6539;&#x4E86;socks&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x57DF;&#x540D;&#x89E3;&#x6790;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x5176;&#x66F4;&#x52A0;&#x4F18;&#x96C5;&#xFF1B;</li>
+</ol>
+<p>socks&#x534F;&#x8BAE;&#x7684;&#x8BBE;&#x8BA1;&#x521D;&#x8877;&#x662F;&#x5728;&#x4FDD;&#x8BC1;&#x7F51;&#x7EDC;&#x9694;&#x79BB;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x63D0;&#x9AD8;&#x90E8;&#x5206;&#x4EBA;&#x5458;&#x7684;&#x7F51;&#x7EDC;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#xFF0C;&#x4F46;&#x662F;&#x56FD;&#x5185;&#x4F3C;&#x4E4E;&#x5F88;&#x5C11;&#x6709;&#x7EC4;&#x7EC7;&#x673A;&#x6784;&#x8FD9;&#x6837;&#x4F7F;&#x7528;&#x3002;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5927;&#x5BB6;&#x90FD;&#x4F1A;&#x4F7F;&#x7528;&#x66F4;&#x65B0;&#x7684;&#x7F51;&#x7EDC;&#x5B89;&#x5168;&#x6280;&#x672F;&#x6765;&#x8FBE;&#x5230;&#x76F8;&#x540C;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x7531;&#x4E8E;socksCap32&#x548C;PSD&#x8FD9;&#x7C7B;&#x8F6F;&#x4EF6;&#xFF0C;&#x4EBA;&#x4EEC;&#x627E;&#x5230;&#x4E86;socks&#x534F;&#x8BAE;&#x65B0;&#x7684;&#x7528;&#x9014;&#xFF1A;&#x7A81;&#x7834;&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x9650;&#x5236;&#xFF0C;&#x8FD9;&#x548C;&#x8BE5;&#x534F;&#x8BAE;&#x7684;&#x8BBE;&#x8BA1;&#x521D;&#x8877;&#x6B63;&#x597D;&#x76F8;&#x53CD;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E24;&#x4E2A;&#x5178;&#x578B;&#x7684;&#x8FD0;&#x7528;&#x573A;&#x666F;&#xFF1A;</p>
+<p>&#x7F8E;&#x56FD;&#x67D0;&#x7F51;&#x6E38;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4EC5;&#x5141;&#x8BB8;&#x672C;&#x56FD;&#x7684;IP&#x8FDB;&#x884C;&#x8FDE;&#x63A5;&#x3002;&#x975E;&#x7F8E;&#x56FD;&#x73A9;&#x5BB6;&#x4E3A;&#x4E86;&#x7A81;&#x7834;&#x8FD9;&#x79CD;&#x9650;&#x5236;&#xFF0C;&#x53EF;&#x4EE5;&#x627E;&#x4E00;&#x4E2A;&#x8BE5;&#x5730;&#x533A;&#x7684;socks5&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7136;&#x540E;&#x7528;PSD&#x63A5;&#x7BA1;&#x7F51;&#x6E38;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x901A;&#x8FC7;socks5&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x6E38;&#x620F;&#x670D;&#x52A1;&#x5668;&#x3002;&#x8FD9;&#x6837;&#x6E38;&#x620F;&#x670D;&#x52A1;&#x5668;&#x5C31;&#x4F1A;&#x8BA4;&#x4E3A;&#x8BE5;&#x73A9;&#x5BB6;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x4F4D;&#x4E8E;&#x672C;&#x5730;&#x533A;&#xFF0C;&#x4ECE;&#x800C;&#x5141;&#x8BB8;&#x8BE5;&#x73A9;&#x5BB6;&#x8FDB;&#x884C;&#x6E38;&#x620F;&#xFF08;&#x5728;&#x5929;&#x671D;&#x4E5F;&#x53EB;&#x79D1;&#x5B66;**&#xFF0C;&#x5C5E;&#x4E8E;&#x6B63;&#x5411;&#x4EE3;&#x7406;&#xFF09;&#x3002;<br><a class="magnific-img" href="socks5-protocol.png"><img src="socks5-protocol.png" alt="&#x56FE;&#x7247;sock5" class="ui centered image"></a></p>
+<h3 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h3><p><a href="https://blog.csdn.net/tianxuhong/article/details/82151020" target="_blank" rel="noopener">socks5 &#x534F;&#x8BAE;&#x7B80;&#x4ECB;</a></p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2019-07-17T08:54:31.000Z" itemprop="datePublished">2019-07-17</time>
+
+    </span>
+    <span class="post-description-item">
+        
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/myblog/tags/diy-shadowsocks/">diy  shadowsocks</a>
+    </span>
+
+    
+
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a class="ui tiny button disabled"><i class="angle left icon"></i>Previous</a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/myblog/2019/07/14/react-hooks/" class="ui tiny button">
+                    
+                    react Hooks 介绍
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#shadowsocks"><span>shadowsocks</span></a></li><li><a href="#什么是socks5"><span>什么是socks5</span></a></li><li><a href="#参考"><span>参考</span></a></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2019 <a href="/">GENERALTUNE</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+    </div>
+
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/myblog/js/semantic-ui-algolia.js"></script>
+
+<script src="/myblog/js/aloha-events.js"></script>
+
+
+
+</body>
+</html>
