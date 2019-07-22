@@ -4,6 +4,11 @@ date: 2019-07-20 12:19:40
 tags:  ubuntu react-native
 ---
 
+### 官网
+官方: https://facebook.github.io/react-native/
+中文网: https://reactnative.cn/
+react natvie UI 库: https://nativebase.io/
+
 ### 安装React Native CLI
 ```
 npm install -g react-native-cli
