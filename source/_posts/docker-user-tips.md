@@ -193,6 +193,221 @@ $ sudo usermod -aG docker $USER
 
 ```
 
+
+### docker 安装mysql
+
+#### 首先安装docker服务
+ ```
+ yum -y install docker   
+ ```
+
+#### docker中搜索可用镜像
+```
+docker search mysql
+```
+#### 拉取MySQL镜像
+```
+docker pull mysql:5.6
+```
+#### 查看MySQL镜像
+```
+ docker images
+ //或者
+ docker image ls
+ 
+```
+#### 列出正在运行的容器
+```
+docker ps
+```
+#### 运行MySQL
+```
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=123456 -d -i -p 3306:3306 --restart=always  mysql:5.6
+docker run -d -p 3306:3306 --name mymysql -e MYSQL_ROOT_PASSWORD=123456 mysql:5.7.18
+```
+以上参数的含义：
+--name mysql  将容器命名为mysql，后面可以用这个name进行容器的启动暂停等操作
+-e MYSQL_ROOT_PASSWORD=123456 设置MySQL密码为123456
+-d 此容器在后台运行,并且返回容器的ID
+-i 以交互模式运行容器
+-p 进行端口映射，格式为主机(宿主)端口:容器端口
+--restart=always 当docker重启时，该容器自动重启
+
+#### 进入MySQL容器
+```
+docker exec -ti mysql bash
+
+```
+#### 创建用户
+
+```
+CREATE USER 'usernamexxx'@'hostxxx' IDENTIFIED BY 'passwordxxx';
+
+```
+- hostxxx：指定该用户在哪个主机上可以登陆，如果是本地用户可用localhost，如果想让该用户可以从任意远程主机登陆，可以使用通配符%
+- passwordxxx：该用户的登陆密码，密码可以为空，如果为空则该用户可以不需要密码登陆服务器
+示例：
+```
+CREATE USER 'jack'@'localhost' IDENTIFIED BY '123456';
+CREATE USER 'rose'@'192.168.38.110_' IDENDIFIED BY '123456';
+CREATE USER 'rose'@'%' IDENTIFIED BY '123456';
+CREATE USER 'rose'@'%' IDENTIFIED BY '';
+CREATE USER 'rose'@'%';
+```
+
+授权
+```
+GRANT privilegesxxx ON databasenamexxx.tablenamexxx TO 'usernamexxx'@'hostxxx'
+```
+说明：
+
+- privilegesxxx：用户的操作权限，如SELECT，INSERT，UPDATE等，如果要授予所的权限则使用ALL
+- databasenamexxx：数据库名
+- tablenamexxx：表名，如果要授予该用户对所有数据库和表的相应操作权限则可用*表示，如*.*
+示例：
+```
+GRANT SELECT, INSERT ON DbXXX.user TO 'jack'@'%';
+GRANT ALL ON *.* TO 'jack'@'%';
+GRANT ALL ON DbXXX.* TO 'jack'@'%';
+```
+注意：
+
+1.  授权之后需要用户重连MySQL，才能获取相应的权限。
+
+2. 用以上命令授权的用户不能给其它用户授权，如果想让该用户可以授权，用以下命令:
+```
+GRANT privilegesxxx ON databasenamexxx.tablenamexxx TO 'usernamexxx'@'hostxxx' WITH GRANT OPTION;
+
+
+SET PASSWORD FOR 'usernamexxx'@'hostxxx' = PASSWORD('newpasswordxxx');
+```
+如果是当前登陆用户用:
+```
+SET PASSWORD = PASSWORD("newpasswordxxx");
+```
+示例：
+```
+SET PASSWORD FOR 'jack'@'%' = PASSWORD("123456");
+```
+撤销用户权限
+```
+REVOKE privilegexxx ON databasenamexxx.tablenamexxx FROM 'usernamexxx'@'hostxxx';
+```
+示例：
+```
+REVOKE SELECT ON *.* FROM 'jack'@'%';
+```
+注意：
+
+假如你在给用户'jack'@'%'授权的时候是这样的（或类似的）：
+GRANT SELECT ON test.user TO 'jack'@'%'，则在使用REVOKE SELECT ON *.* FROM 'jack'@'%';命令并不能撤销该用户对test数据库中user表的SELECT 操作。相反，如果授权使用的是GRANT SELECT ON *.* TO 'jack'@'%';则REVOKE SELECT ON test.user FROM 'jack'@'%';命令也不能撤销该用户对test数据库中user表的Select权限。
+
+
+具体信息可以用命令SHOW GRANTS FOR 'jack'@'%'; 查看。
+
+删除用户
+```
+DROP USER 'usernamexxx'@'hostxxx';
+```
+
+
+
+
+#### 开放端口
+
+使用方法如下：
+
+>关闭防火墙
+```
+systemctl stop firewalld.service             #停止firewall
+systemctl disable firewalld.service        #禁止firewall开机启动
+```
+> 开启端口
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+ 命令含义：
+--zone #作用域
+--add-port=80/tcp #添加端口，格式为：端口/通讯协议
+--permanent #永久生效，没有此参数重启后失效
+> 重启防火墙
+```
+firewall-cmd --reload
+```
+
+```
+ firewall-cmd --zone=public --add-port=3306/tcp --permanent
+
+```
+常用命令介绍
+firewall-cmd --state                           ##查看防火墙状态，是否是running
+firewall-cmd --reload                          ##重新载入配置，比如添加规则之后，需要执行此命令
+firewall-cmd --get-zones                       ##列出支持的zone
+firewall-cmd --get-services                    ##列出支持的服务，在列表中的服务是放行的
+firewall-cmd --query-service ftp               ##查看ftp服务是否支持，返回yes或者no
+firewall-cmd --add-service=ftp                 ##临时开放ftp服务
+firewall-cmd --add-service=ftp --permanent     ##永久开放ftp服务
+firewall-cmd --remove-service=ftp --permanent  ##永久移除ftp服务
+firewall-cmd --add-port=80/tcp --permanent     ##永久添加80端口 
+iptables -L -n                                 ##查看规则，这个命令是和iptables的相同的
+man firewall-cmd                               ##查看帮助
+
+更多命令，使用  firewall-cmd --help 查看帮助文件
+
+重新开启防火墙：Failed to start firewalld.service: Unit firewalld.service is masked 问题解决：
+
+https://blog.csdn.net/Joe68227597/article/details/75207859
+
+> CentOS 7.0默认使用的是firewall作为防火墙，使用iptables必须重新设置一下
+1、直接关闭防火墙
+systemctl stop firewalld.service           #停止firewall
+systemctl disable firewalld.service     #禁止firewall开机启动
+
+2、设置 iptables service
+yum -y install iptables-services
+如果要修改防火墙配置，如增加防火墙端口3306
+vi /etc/sysconfig/iptables 
+增加规则
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT
+
+保存退出后
+systemctl restart iptables.service #重启防火墙使配置生效
+systemctl enable iptables.service #设置防火墙开机启动
+最后重启系统使设置生效即可。
+
+#### 指定配置文件和存储文件
+1. 列出正在运行的容器  docker ps
+2. 进入容器 `docker exec -it e1066fe2db35 /bin/bash`
+3. 查看配置文件  `/etc/mysql/mysql.conf.d/mysqld.cnf`
+4. 配置文件内容：
+```
+[mysqld]
+pid-file    = /var/run/mysqld/mysqld.pid
+socket      = /var/run/mysqld/mysqld.sock
+datadir     = /var/lib/mysql
+#log-error  = /var/log/mysql/error.log
+# By default we only accept connections from localhost
+#bind-address   = 127.0.0.1
+# Disabling symbolic-links is recommended to prevent assorted security risks
+#symbolic-links=0
+
+```
+5. 停止并删除容器
+```
+docker stop e1066fe2db35
+docker rm e1066fe2db35
+```
+6. 重新启动容器，指定数据目录和配置文件
+```
+docker run -d -p 3306:3306 -v /soft/mysql/my.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf -v /soft/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mymysql mysql:5.7.18
+
+```
+7. 查看sql_mode
+```
+mysql> SELECT @@GLOBAL.sql_mode;
+```
+
+
+
+
 ### 参考
 
 [看完此文，妈妈还会担心你docker入不了门？](http://www.17coding.info/article/24)

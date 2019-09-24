@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="generaltune&#39;s blog">
 <meta property="og:description" content="dockerDocker&amp;#x662F;&amp;#x4EC0;&amp;#x4E48;&amp;#x5462;&amp;#xFF1F;&amp;#x767E;&amp;#x5EA6;&amp;#x767E;&amp;#x79D1;&amp;#x662F;&amp;#x8FD9;&amp;#x6837;&amp;#x8DDF;&amp;#x6211;&amp;#x8BF4;&amp;#x7684;&amp;#xFF1A;Docker &amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&amp;#x5F00;&amp;#x6E90;&amp;#x76">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-17T03:51:29.715Z">
+<meta property="og:updated_time" content="2019-09-21T10:39:57.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker学习笔记">
 <meta name="twitter:description" content="dockerDocker&amp;#x662F;&amp;#x4EC0;&amp;#x4E48;&amp;#x5462;&amp;#xFF1F;&amp;#x767E;&amp;#x5EA6;&amp;#x767E;&amp;#x79D1;&amp;#x662F;&amp;#x8FD9;&amp;#x6837;&amp;#x8DDF;&amp;#x6211;&amp;#x8BF4;&amp;#x7684;&amp;#xFF1A;Docker &amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&amp;#x5F00;&amp;#x6E90;&amp;#x76">
@@ -203,6 +203,110 @@
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo usermod -aG docker $USER</span><br></pre></td></tr></table></figure>
 
+<h3 id="docker-&#x5B89;&#x88C5;mysql"><a href="#docker-&#x5B89;&#x88C5;mysql" class="headerlink" title="docker &#x5B89;&#x88C5;mysql"></a>docker &#x5B89;&#x88C5;mysql</h3><h4 id="&#x9996;&#x5148;&#x5B89;&#x88C5;docker&#x670D;&#x52A1;"><a href="#&#x9996;&#x5148;&#x5B89;&#x88C5;docker&#x670D;&#x52A1;" class="headerlink" title="&#x9996;&#x5148;&#x5B89;&#x88C5;docker&#x670D;&#x52A1;"></a>&#x9996;&#x5148;&#x5B89;&#x88C5;docker&#x670D;&#x52A1;</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install docker</span><br></pre></td></tr></table></figure>
+
+<h4 id="docker&#x4E2D;&#x641C;&#x7D22;&#x53EF;&#x7528;&#x955C;&#x50CF;"><a href="#docker&#x4E2D;&#x641C;&#x7D22;&#x53EF;&#x7528;&#x955C;&#x50CF;" class="headerlink" title="docker&#x4E2D;&#x641C;&#x7D22;&#x53EF;&#x7528;&#x955C;&#x50CF;"></a>docker&#x4E2D;&#x641C;&#x7D22;&#x53EF;&#x7528;&#x955C;&#x50CF;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search mysql</span><br></pre></td></tr></table></figure>
+
+<h4 id="&#x62C9;&#x53D6;MySQL&#x955C;&#x50CF;"><a href="#&#x62C9;&#x53D6;MySQL&#x955C;&#x50CF;" class="headerlink" title="&#x62C9;&#x53D6;MySQL&#x955C;&#x50CF;"></a>&#x62C9;&#x53D6;MySQL&#x955C;&#x50CF;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql:5.6</span><br></pre></td></tr></table></figure>
+
+<h4 id="&#x67E5;&#x770B;MySQL&#x955C;&#x50CF;"><a href="#&#x67E5;&#x770B;MySQL&#x955C;&#x50CF;" class="headerlink" title="&#x67E5;&#x770B;MySQL&#x955C;&#x50CF;"></a>&#x67E5;&#x770B;MySQL&#x955C;&#x50CF;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br><span class="line">//&#x6216;&#x8005;</span><br><span class="line">docker image ls</span><br></pre></td></tr></table></figure>
+
+<h4 id="&#x5217;&#x51FA;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x5BB9;&#x5668;"><a href="#&#x5217;&#x51FA;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x5BB9;&#x5668;" class="headerlink" title="&#x5217;&#x51FA;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x5BB9;&#x5668;"></a>&#x5217;&#x51FA;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x5BB9;&#x5668;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+
+<h4 id="&#x8FD0;&#x884C;MySQL"><a href="#&#x8FD0;&#x884C;MySQL" class="headerlink" title="&#x8FD0;&#x884C;MySQL"></a>&#x8FD0;&#x884C;MySQL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run --name mysql -e MYSQL_ROOT_PASSWORD=123456 -d -i -p 3306:3306 --restart=always  mysql:5.6</span><br><span class="line">docker run -d -p 3306:3306 --name mymysql -e MYSQL_ROOT_PASSWORD=123456 mysql:5.7.18</span><br></pre></td></tr></table></figure>
+
+<p>&#x4EE5;&#x4E0A;&#x53C2;&#x6570;&#x7684;&#x542B;&#x4E49;&#xFF1A;<br>&#x2013;name mysql  &#x5C06;&#x5BB9;&#x5668;&#x547D;&#x540D;&#x4E3A;mysql&#xFF0C;&#x540E;&#x9762;&#x53EF;&#x4EE5;&#x7528;&#x8FD9;&#x4E2A;name&#x8FDB;&#x884C;&#x5BB9;&#x5668;&#x7684;&#x542F;&#x52A8;&#x6682;&#x505C;&#x7B49;&#x64CD;&#x4F5C;<br>-e MYSQL_ROOT_PASSWORD=123456 &#x8BBE;&#x7F6E;MySQL&#x5BC6;&#x7801;&#x4E3A;123456<br>-d &#x6B64;&#x5BB9;&#x5668;&#x5728;&#x540E;&#x53F0;&#x8FD0;&#x884C;,&#x5E76;&#x4E14;&#x8FD4;&#x56DE;&#x5BB9;&#x5668;&#x7684;ID<br>-i &#x4EE5;&#x4EA4;&#x4E92;&#x6A21;&#x5F0F;&#x8FD0;&#x884C;&#x5BB9;&#x5668;<br>-p &#x8FDB;&#x884C;&#x7AEF;&#x53E3;&#x6620;&#x5C04;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;&#x4E3B;&#x673A;(&#x5BBF;&#x4E3B;)&#x7AEF;&#x53E3;:&#x5BB9;&#x5668;&#x7AEF;&#x53E3;<br>&#x2013;restart=always &#x5F53;docker&#x91CD;&#x542F;&#x65F6;&#xFF0C;&#x8BE5;&#x5BB9;&#x5668;&#x81EA;&#x52A8;&#x91CD;&#x542F;</p>
+<h4 id="&#x8FDB;&#x5165;MySQL&#x5BB9;&#x5668;"><a href="#&#x8FDB;&#x5165;MySQL&#x5BB9;&#x5668;" class="headerlink" title="&#x8FDB;&#x5165;MySQL&#x5BB9;&#x5668;"></a>&#x8FDB;&#x5165;MySQL&#x5BB9;&#x5668;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -ti mysql bash</span><br></pre></td></tr></table></figure>
+
+<h4 id="&#x521B;&#x5EFA;&#x7528;&#x6237;"><a href="#&#x521B;&#x5EFA;&#x7528;&#x6237;" class="headerlink" title="&#x521B;&#x5EFA;&#x7528;&#x6237;"></a>&#x521B;&#x5EFA;&#x7528;&#x6237;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;usernamexxx&apos;@&apos;hostxxx&apos; IDENTIFIED BY &apos;passwordxxx&apos;;</span><br></pre></td></tr></table></figure>
+
+<ul class="ui list">
+<li>hostxxx&#xFF1A;&#x6307;&#x5B9A;&#x8BE5;&#x7528;&#x6237;&#x5728;&#x54EA;&#x4E2A;&#x4E3B;&#x673A;&#x4E0A;&#x53EF;&#x4EE5;&#x767B;&#x9646;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x672C;&#x5730;&#x7528;&#x6237;&#x53EF;&#x7528;localhost&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8BA9;&#x8BE5;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4ECE;&#x4EFB;&#x610F;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x767B;&#x9646;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;%</li>
+<li>passwordxxx&#xFF1A;&#x8BE5;&#x7528;&#x6237;&#x7684;&#x767B;&#x9646;&#x5BC6;&#x7801;&#xFF0C;&#x5BC6;&#x7801;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#xFF0C;&#x5982;&#x679C;&#x4E3A;&#x7A7A;&#x5219;&#x8BE5;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4E0D;&#x9700;&#x8981;&#x5BC6;&#x7801;&#x767B;&#x9646;&#x670D;&#x52A1;&#x5668;<br>&#x793A;&#x4F8B;&#xFF1A;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;jack&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;123456&apos;;</span><br><span class="line">CREATE USER &apos;rose&apos;@&apos;192.168.38.110_&apos; IDENDIFIED BY &apos;123456&apos;;</span><br><span class="line">CREATE USER &apos;rose&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;</span><br><span class="line">CREATE USER &apos;rose&apos;@&apos;%&apos; IDENTIFIED BY &apos;&apos;;</span><br><span class="line">CREATE USER &apos;rose&apos;@&apos;%&apos;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>&#x6388;&#x6743;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT privilegesxxx ON databasenamexxx.tablenamexxx TO &apos;usernamexxx&apos;@&apos;hostxxx&apos;</span><br></pre></td></tr></table></figure>
+
+<p>&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul class="ui list">
+<li>privilegesxxx&#xFF1A;&#x7528;&#x6237;&#x7684;&#x64CD;&#x4F5C;&#x6743;&#x9650;&#xFF0C;&#x5982;SELECT&#xFF0C;INSERT&#xFF0C;UPDATE&#x7B49;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x6388;&#x4E88;&#x6240;&#x7684;&#x6743;&#x9650;&#x5219;&#x4F7F;&#x7528;ALL</li>
+<li>databasenamexxx&#xFF1A;&#x6570;&#x636E;&#x5E93;&#x540D;</li>
+<li>tablenamexxx&#xFF1A;&#x8868;&#x540D;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x6388;&#x4E88;&#x8BE5;&#x7528;&#x6237;&#x5BF9;&#x6240;&#x6709;&#x6570;&#x636E;&#x5E93;&#x548C;&#x8868;&#x7684;&#x76F8;&#x5E94;&#x64CD;&#x4F5C;&#x6743;&#x9650;&#x5219;&#x53EF;&#x7528;<em>&#x8868;&#x793A;&#xFF0C;&#x5982;</em>.*<br>&#x793A;&#x4F8B;&#xFF1A;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GRANT SELECT, INSERT ON DbXXX.user TO &apos;jack&apos;@&apos;%&apos;;</span><br><span class="line">GRANT ALL ON *.* TO &apos;jack&apos;@&apos;%&apos;;</span><br><span class="line">GRANT ALL ON DbXXX.* TO &apos;jack&apos;@&apos;%&apos;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<ol class="ui list">
+<li><p>&#x6388;&#x6743;&#x4E4B;&#x540E;&#x9700;&#x8981;&#x7528;&#x6237;&#x91CD;&#x8FDE;MySQL&#xFF0C;&#x624D;&#x80FD;&#x83B7;&#x53D6;&#x76F8;&#x5E94;&#x7684;&#x6743;&#x9650;&#x3002;</p>
+</li>
+<li><p>&#x7528;&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#x6388;&#x6743;&#x7684;&#x7528;&#x6237;&#x4E0D;&#x80FD;&#x7ED9;&#x5176;&#x5B83;&#x7528;&#x6237;&#x6388;&#x6743;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8BA9;&#x8BE5;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x6388;&#x6743;&#xFF0C;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GRANT privilegesxxx ON databasenamexxx.tablenamexxx TO &apos;usernamexxx&apos;@&apos;hostxxx&apos; WITH GRANT OPTION;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">SET PASSWORD FOR &apos;usernamexxx&apos;@&apos;hostxxx&apos; = PASSWORD(&apos;newpasswordxxx&apos;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>&#x5982;&#x679C;&#x662F;&#x5F53;&#x524D;&#x767B;&#x9646;&#x7528;&#x6237;&#x7528;:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET PASSWORD = PASSWORD(&quot;newpasswordxxx&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET PASSWORD FOR &apos;jack&apos;@&apos;%&apos; = PASSWORD(&quot;123456&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>&#x64A4;&#x9500;&#x7528;&#x6237;&#x6743;&#x9650;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REVOKE privilegexxx ON databasenamexxx.tablenamexxx FROM &apos;usernamexxx&apos;@&apos;hostxxx&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REVOKE SELECT ON *.* FROM &apos;jack&apos;@&apos;%&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<p>&#x5047;&#x5982;&#x4F60;&#x5728;&#x7ED9;&#x7528;&#x6237;&#x2018;jack&#x2019;@&#x2019;%&#x2019;&#x6388;&#x6743;&#x7684;&#x65F6;&#x5019;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF08;&#x6216;&#x7C7B;&#x4F3C;&#x7684;&#xFF09;&#xFF1A;<br>GRANT SELECT ON test.user TO &#x2018;jack&#x2019;@&#x2019;%&#x2019;&#xFF0C;&#x5219;&#x5728;&#x4F7F;&#x7528;REVOKE SELECT ON <em>.</em> FROM &#x2018;jack&#x2019;@&#x2019;%&#x2019;;&#x547D;&#x4EE4;&#x5E76;&#x4E0D;&#x80FD;&#x64A4;&#x9500;&#x8BE5;&#x7528;&#x6237;&#x5BF9;test&#x6570;&#x636E;&#x5E93;&#x4E2D;user&#x8868;&#x7684;SELECT &#x64CD;&#x4F5C;&#x3002;&#x76F8;&#x53CD;&#xFF0C;&#x5982;&#x679C;&#x6388;&#x6743;&#x4F7F;&#x7528;&#x7684;&#x662F;GRANT SELECT ON <em>.</em> TO &#x2018;jack&#x2019;@&#x2019;%&#x2019;;&#x5219;REVOKE SELECT ON test.user FROM &#x2018;jack&#x2019;@&#x2019;%&#x2019;;&#x547D;&#x4EE4;&#x4E5F;&#x4E0D;&#x80FD;&#x64A4;&#x9500;&#x8BE5;&#x7528;&#x6237;&#x5BF9;test&#x6570;&#x636E;&#x5E93;&#x4E2D;user&#x8868;&#x7684;Select&#x6743;&#x9650;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x4FE1;&#x606F;&#x53EF;&#x4EE5;&#x7528;&#x547D;&#x4EE4;SHOW GRANTS FOR &#x2018;jack&#x2019;@&#x2019;%&#x2019;; &#x67E5;&#x770B;&#x3002;</p>
+<p>&#x5220;&#x9664;&#x7528;&#x6237;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP USER &apos;usernamexxx&apos;@&apos;hostxxx&apos;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="&#x5F00;&#x653E;&#x7AEF;&#x53E3;"><a href="#&#x5F00;&#x653E;&#x7AEF;&#x53E3;" class="headerlink" title="&#x5F00;&#x653E;&#x7AEF;&#x53E3;"></a>&#x5F00;&#x653E;&#x7AEF;&#x53E3;</h4><p>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<p>&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; #&#x505C;&#x6B62;firewall</span><br><span class="line">systemctl disable firewalld.service &#xA0; &#xA0; &#xA0; &#xA0;#&#x7981;&#x6B62;firewall&#x5F00;&#x673A;&#x542F;&#x52A8;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>&#x5F00;&#x542F;&#x7AEF;&#x53E3;<br>firewall-cmd &#x2013;zone=public &#x2013;add-port=80/tcp &#x2013;permanent<br> &#x547D;&#x4EE4;&#x542B;&#x4E49;&#xFF1A;<br>&#x2013;zone #&#x4F5C;&#x7528;&#x57DF;<br>&#x2013;add-port=80/tcp #&#x6DFB;&#x52A0;&#x7AEF;&#x53E3;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;&#x7AEF;&#x53E3;/&#x901A;&#x8BAF;&#x534F;&#x8BAE;<br>&#x2013;permanent #&#x6C38;&#x4E45;&#x751F;&#x6548;&#xFF0C;&#x6CA1;&#x6709;&#x6B64;&#x53C2;&#x6570;&#x91CD;&#x542F;&#x540E;&#x5931;&#x6548;<br>&#x91CD;&#x542F;&#x9632;&#x706B;&#x5899;</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=3306/tcp --permanent</span><br></pre></td></tr></table></figure>
+
+<p>&#x5E38;&#x7528;&#x547D;&#x4EE4;&#x4ECB;&#x7ECD;<br>firewall-cmd &#x2013;state                           ##&#x67E5;&#x770B;&#x9632;&#x706B;&#x5899;&#x72B6;&#x6001;&#xFF0C;&#x662F;&#x5426;&#x662F;running<br>firewall-cmd &#x2013;reload                          ##&#x91CD;&#x65B0;&#x8F7D;&#x5165;&#x914D;&#x7F6E;&#xFF0C;&#x6BD4;&#x5982;&#x6DFB;&#x52A0;&#x89C4;&#x5219;&#x4E4B;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x6267;&#x884C;&#x6B64;&#x547D;&#x4EE4;<br>firewall-cmd &#x2013;get-zones                       ##&#x5217;&#x51FA;&#x652F;&#x6301;&#x7684;zone<br>firewall-cmd &#x2013;get-services                    ##&#x5217;&#x51FA;&#x652F;&#x6301;&#x7684;&#x670D;&#x52A1;&#xFF0C;&#x5728;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x670D;&#x52A1;&#x662F;&#x653E;&#x884C;&#x7684;<br>firewall-cmd &#x2013;query-service ftp               ##&#x67E5;&#x770B;ftp&#x670D;&#x52A1;&#x662F;&#x5426;&#x652F;&#x6301;&#xFF0C;&#x8FD4;&#x56DE;yes&#x6216;&#x8005;no<br>firewall-cmd &#x2013;add-service=ftp                 ##&#x4E34;&#x65F6;&#x5F00;&#x653E;ftp&#x670D;&#x52A1;<br>firewall-cmd &#x2013;add-service=ftp &#x2013;permanent     ##&#x6C38;&#x4E45;&#x5F00;&#x653E;ftp&#x670D;&#x52A1;<br>firewall-cmd &#x2013;remove-service=ftp &#x2013;permanent  ##&#x6C38;&#x4E45;&#x79FB;&#x9664;ftp&#x670D;&#x52A1;<br>firewall-cmd &#x2013;add-port=80/tcp &#x2013;permanent     ##&#x6C38;&#x4E45;&#x6DFB;&#x52A0;80&#x7AEF;&#x53E3;<br>iptables -L -n                                 ##&#x67E5;&#x770B;&#x89C4;&#x5219;&#xFF0C;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x662F;&#x548C;iptables&#x7684;&#x76F8;&#x540C;&#x7684;<br>man firewall-cmd                               ##&#x67E5;&#x770B;&#x5E2E;&#x52A9;</p>
+<p>&#x66F4;&#x591A;&#x547D;&#x4EE4;&#xFF0C;&#x4F7F;&#x7528;  firewall-cmd &#x2013;help &#x67E5;&#x770B;&#x5E2E;&#x52A9;&#x6587;&#x4EF6;</p>
+<p>&#x91CD;&#x65B0;&#x5F00;&#x542F;&#x9632;&#x706B;&#x5899;&#xFF1A;Failed to start firewalld.service: Unit firewalld.service is masked &#x95EE;&#x9898;&#x89E3;&#x51B3;&#xFF1A;</p>
+<p><a href="https://blog.csdn.net/Joe68227597/article/details/75207859" target="_blank" rel="noopener">https://blog.csdn.net/Joe68227597/article/details/75207859</a></p>
+<blockquote>
+<p>CentOS 7.0&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x7684;&#x662F;firewall&#x4F5C;&#x4E3A;&#x9632;&#x706B;&#x5899;&#xFF0C;&#x4F7F;&#x7528;iptables&#x5FC5;&#x987B;&#x91CD;&#x65B0;&#x8BBE;&#x7F6E;&#x4E00;&#x4E0B;<br>1&#x3001;&#x76F4;&#x63A5;&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;<br>systemctl stop firewalld.service           #&#x505C;&#x6B62;firewall<br>systemctl disable firewalld.service     #&#x7981;&#x6B62;firewall&#x5F00;&#x673A;&#x542F;&#x52A8;</p>
+</blockquote>
+<p>2&#x3001;&#x8BBE;&#x7F6E; iptables service<br>yum -y install iptables-services<br>&#x5982;&#x679C;&#x8981;&#x4FEE;&#x6539;&#x9632;&#x706B;&#x5899;&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x589E;&#x52A0;&#x9632;&#x706B;&#x5899;&#x7AEF;&#x53E3;3306<br>vi /etc/sysconfig/iptables<br>&#x589E;&#x52A0;&#x89C4;&#x5219;<br>-A INPUT -m state &#x2013;state NEW -m tcp -p tcp &#x2013;dport 3306 -j ACCEPT</p>
+<p>&#x4FDD;&#x5B58;&#x9000;&#x51FA;&#x540E;<br>systemctl restart iptables.service #&#x91CD;&#x542F;&#x9632;&#x706B;&#x5899;&#x4F7F;&#x914D;&#x7F6E;&#x751F;&#x6548;<br>systemctl enable iptables.service #&#x8BBE;&#x7F6E;&#x9632;&#x706B;&#x5899;&#x5F00;&#x673A;&#x542F;&#x52A8;<br>&#x6700;&#x540E;&#x91CD;&#x542F;&#x7CFB;&#x7EDF;&#x4F7F;&#x8BBE;&#x7F6E;&#x751F;&#x6548;&#x5373;&#x53EF;&#x3002;</p>
+<h4 id="&#x6307;&#x5B9A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x548C;&#x5B58;&#x50A8;&#x6587;&#x4EF6;"><a href="#&#x6307;&#x5B9A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x548C;&#x5B58;&#x50A8;&#x6587;&#x4EF6;" class="headerlink" title="&#x6307;&#x5B9A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x548C;&#x5B58;&#x50A8;&#x6587;&#x4EF6;"></a>&#x6307;&#x5B9A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x548C;&#x5B58;&#x50A8;&#x6587;&#x4EF6;</h4><ol class="ui list">
+<li><p>&#x5217;&#x51FA;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x5BB9;&#x5668;  docker ps</p>
+</li>
+<li><p>&#x8FDB;&#x5165;&#x5BB9;&#x5668; <code>docker exec -it e1066fe2db35 /bin/bash</code></p>
+</li>
+<li><p>&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;  <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code></p>
+</li>
+<li><p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">pid-file    = /var/run/mysqld/mysqld.pid</span><br><span class="line">socket      = /var/run/mysqld/mysqld.sock</span><br><span class="line">datadir     = /var/lib/mysql</span><br><span class="line">#log-error  = /var/log/mysql/error.log</span><br><span class="line"># By default we only accept connections from localhost</span><br><span class="line">#bind-address   = 127.0.0.1</span><br><span class="line"># Disabling symbolic-links is recommended to prevent assorted security risks</span><br><span class="line">#symbolic-links=0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x505C;&#x6B62;&#x5E76;&#x5220;&#x9664;&#x5BB9;&#x5668;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker stop e1066fe2db35</span><br><span class="line">docker rm e1066fe2db35</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x5BB9;&#x5668;&#xFF0C;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x76EE;&#x5F55;&#x548C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 3306:3306 -v /soft/mysql/my.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf -v /soft/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mymysql mysql:5.7.18</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x67E5;&#x770B;sql_mode</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT @@GLOBAL.sql_mode;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
 <h3 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h3><p><a href="http://www.17coding.info/article/24" target="_blank" rel="noopener">&#x770B;&#x5B8C;&#x6B64;&#x6587;&#xFF0C;&#x5988;&#x5988;&#x8FD8;&#x4F1A;&#x62C5;&#x5FC3;&#x4F60;docker&#x5165;&#x4E0D;&#x4E86;&#x95E8;&#xFF1F;</a></p>
 
                         
@@ -276,7 +380,7 @@
 
                 <div class="ui sticky article-toc" id="article-toc">
                     <!-- toc -->
-                    <ol class="ui ordered list"><li><a href="#docker"><span>docker</span></a></li><li><a href="#安装"><span>安装</span></a></li><li><a href="#常用命令"><span>常用命令</span></a><ol><li><a href="#帮助命令"><span>帮助命令</span></a></li><li><a href="#镜像命令"><span>镜像命令</span></a></li><li><a href="#容器命令"><span>容器命令</span></a></li></ol></li><li><a href="#参考"><span>参考</span></a></li></ol>
+                    <ol class="ui ordered list"><li><a href="#docker"><span>docker</span></a></li><li><a href="#安装"><span>安装</span></a></li><li><a href="#常用命令"><span>常用命令</span></a><ol><li><a href="#帮助命令"><span>帮助命令</span></a></li><li><a href="#镜像命令"><span>镜像命令</span></a></li><li><a href="#容器命令"><span>容器命令</span></a></li></ol></li><li><a href="#docker-安装mysql"><span>docker 安装mysql</span></a><ol><li><a href="#首先安装docker服务"><span>首先安装docker服务</span></a></li><li><a href="#docker中搜索可用镜像"><span>docker中搜索可用镜像</span></a></li><li><a href="#拉取MySQL镜像"><span>拉取MySQL镜像</span></a></li><li><a href="#查看MySQL镜像"><span>查看MySQL镜像</span></a></li><li><a href="#列出正在运行的容器"><span>列出正在运行的容器</span></a></li><li><a href="#运行MySQL"><span>运行MySQL</span></a></li><li><a href="#进入MySQL容器"><span>进入MySQL容器</span></a></li><li><a href="#创建用户"><span>创建用户</span></a></li><li><a href="#开放端口"><span>开放端口</span></a></li><li><a href="#指定配置文件和存储文件"><span>指定配置文件和存储文件</span></a></li></ol></li><li><a href="#参考"><span>参考</span></a></li></ol>
                 </div>
 
             </div>
