@@ -6,20 +6,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <meta name="description" content>
-    <title>spring 开发基本指南 | generaltune&#39;s blog</title>
+    <title>d3和threejs | generaltune&#39;s blog</title>
 
     <!-- Open Graph -->
-    <meta name="description" content="gradle &amp;#x57FA;&amp;#x672C;&amp;#x4F7F;&amp;#x7528;&amp;#x5E38;&amp;#x7528;&amp;#x547D;&amp;#x4EE4;maven&amp;#x5E38;&amp;#x7528;&amp;#x547D;&amp;#x4EE4;">
+    <meta name="description" content="d3 &amp;#x5B98;&amp;#x7F51;&amp;#x6982;&amp;#x8FF0;d3&amp;#x7528;&amp;#x4E8E;&amp;#x6570;&amp;#x636E;&amp;#x53EF;&amp;#x89C6;&amp;#x5316; &amp;#x5B89;&amp;#x88C5;&amp;#x4E0B;&amp;#x8F7D;zip&amp;#x5305;  https://github.com/d3/d3/releases/download/v5.12.0/d3.zip&amp;#x6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="spring 开发基本指南">
-<meta property="og:url" content="https://generaltune.github.io/myblog/2019/07/23/spring-cloud-demo/index.html">
+<meta property="og:title" content="d3和threejs">
+<meta property="og:url" content="https://generaltune.github.io/myblog/2019/10/14/d3threejs/index.html">
 <meta property="og:site_name" content="generaltune&#39;s blog">
-<meta property="og:description" content="gradle &amp;#x57FA;&amp;#x672C;&amp;#x4F7F;&amp;#x7528;&amp;#x5E38;&amp;#x7528;&amp;#x547D;&amp;#x4EE4;maven&amp;#x5E38;&amp;#x7528;&amp;#x547D;&amp;#x4EE4;">
+<meta property="og:description" content="d3 &amp;#x5B98;&amp;#x7F51;&amp;#x6982;&amp;#x8FF0;d3&amp;#x7528;&amp;#x4E8E;&amp;#x6570;&amp;#x636E;&amp;#x53EF;&amp;#x89C6;&amp;#x5316; &amp;#x5B89;&amp;#x88C5;&amp;#x4E0B;&amp;#x8F7D;zip&amp;#x5305;  https://github.com/d3/d3/releases/download/v5.12.0/d3.zip&amp;#x6">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-01T13:46:51.271Z">
+<meta property="og:updated_time" content="2019-10-14T10:13:41.108Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="spring 开发基本指南">
-<meta name="twitter:description" content="gradle &amp;#x57FA;&amp;#x672C;&amp;#x4F7F;&amp;#x7528;&amp;#x5E38;&amp;#x7528;&amp;#x547D;&amp;#x4EE4;maven&amp;#x5E38;&amp;#x7528;&amp;#x547D;&amp;#x4EE4;">
+<meta name="twitter:title" content="d3和threejs">
+<meta name="twitter:description" content="d3 &amp;#x5B98;&amp;#x7F51;&amp;#x6982;&amp;#x8FF0;d3&amp;#x7528;&amp;#x4E8E;&amp;#x6570;&amp;#x636E;&amp;#x53EF;&amp;#x89C6;&amp;#x5316; &amp;#x5B89;&amp;#x88C5;&amp;#x4E0B;&amp;#x8F7D;zip&amp;#x5305;  https://github.com/d3/d3/releases/download/v5.12.0/d3.zip&amp;#x6">
 
     <script type="application/ld+json">
 {
@@ -119,7 +119,7 @@
             <!--<div class="ui one column grid">-->
                 <!--<div class="column">-->
                     <!--<div class="ui main container">-->
-                        <div id="post-spring-cloud-demo" class="ui main container article-type-post">
+                        <div id="post-d3threejs" class="ui main container article-type-post">
 
     
 
@@ -132,7 +132,7 @@
 
 <h1 class="ui header">
     
-    spring 开发基本指南
+    d3和threejs
 </h1>
 
 
@@ -141,7 +141,13 @@
 
                     <div class="article-entry" itemprop="articleBody">
                         
-                        <h2 id="gradle-&#x57FA;&#x672C;&#x4F7F;&#x7528;"><a href="#gradle-&#x57FA;&#x672C;&#x4F7F;&#x7528;" class="headerlink" title="gradle &#x57FA;&#x672C;&#x4F7F;&#x7528;"></a>gradle &#x57FA;&#x672C;&#x4F7F;&#x7528;</h2><h3 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="headerlink" title="&#x5E38;&#x7528;&#x547D;&#x4EE4;"></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h3><h2 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h2><h3 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;-1"><a href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;-1" class="headerlink" title="&#x5E38;&#x7528;&#x547D;&#x4EE4;"></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h3>
+                        <h2 id="d3-&#x5B98;&#x7F51;"><a href="#d3-&#x5B98;&#x7F51;" class="headerlink" title="d3 &#x5B98;&#x7F51;"></a><a href="https://d3js.org/" target="_blank" rel="noopener">d3 &#x5B98;&#x7F51;</a></h2><h3 id="&#x6982;&#x8FF0;"><a href="#&#x6982;&#x8FF0;" class="headerlink" title="&#x6982;&#x8FF0;"></a>&#x6982;&#x8FF0;</h3><p>d3&#x7528;&#x4E8E;&#x6570;&#x636E;&#x53EF;&#x89C6;&#x5316;</p>
+<h3 id="&#x5B89;&#x88C5;"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</h3><p>&#x4E0B;&#x8F7D;zip&#x5305;  <a href="https://github.com/d3/d3/releases/download/v5.12.0/d3.zip" target="_blank" rel="noopener">https://github.com/d3/d3/releases/download/v5.12.0/d3.zip</a><br>&#x6216;&#x8005;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For NPM, npm install d3. For Yarn, yarn add d3</span><br></pre></td></tr></table></figure>
+
+<h3 id="d3-&#x5730;&#x56FE;"><a href="#d3-&#x5730;&#x56FE;" class="headerlink" title="d3 &#x5730;&#x56FE;"></a>d3 &#x5730;&#x56FE;</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install d3-geo</span><br></pre></td></tr></table></figure>
+
+<h2 id="threejs-&#x5B98;&#x7F51;"><a href="#threejs-&#x5B98;&#x7F51;" class="headerlink" title="threejs &#x5B98;&#x7F51;"></a><a href="https://threejs.org/" target="_blank" rel="noopener">threejs &#x5B98;&#x7F51;</a></h2><h3 id="threejs-&#x7528;&#x4E8E;3D&#x573A;&#x666F;&#x6E32;&#x67D3;"><a href="#threejs-&#x7528;&#x4E8E;3D&#x573A;&#x666F;&#x6E32;&#x67D3;" class="headerlink" title="threejs &#x7528;&#x4E8E;3D&#x573A;&#x666F;&#x6E32;&#x67D3;"></a>threejs &#x7528;&#x4E8E;3D&#x573A;&#x666F;&#x6E32;&#x67D3;</h3>
                         
                     </div>
 
@@ -151,7 +157,7 @@
 
                     <div class="description post-description">
     <span class="post-description-item">
-        <time datetime="2019-07-23T06:18:53.000Z" itemprop="datePublished">2019-07-23</time>
+        <time datetime="2019-10-14T10:06:17.000Z" itemprop="datePublished">2019-10-14</time>
 
     </span>
     <span class="post-description-item">
@@ -168,23 +174,16 @@
             <div class="column nav-left">
                 
 
-                <a href="/myblog/2019/09/22/sso/" class="ui tiny button">
-
-                    <i class="angle left icon"></i>
-                    
-                    单点登录实现
-                    
-
-                </a>
+                <a class="ui tiny button disabled"><i class="angle left icon"></i>Previous</a>
 
                 
             </div>
             <div class="column nav-right">
                 
 
-                <a href="/myblog/2019/07/20/ubuntu-react-native/" class="ui tiny button">
+                <a href="/myblog/2019/09/22/nginx-docker/" class="ui tiny button">
                     
-                    ubuntu 下react-native开发环境
+                    docker 安装 nginx
                     
                     <i class="angle right icon"></i></a>
                 
@@ -201,7 +200,7 @@
 
                 <div class="ui sticky article-toc" id="article-toc">
                     <!-- toc -->
-                    <ol class="ui ordered list"><li><a href="#gradle-基本使用"><span>gradle 基本使用</span></a><ol><li><a href="#常用命令"><span>常用命令</span></a></li></ol></li><li><a href="#maven"><span>maven</span></a><ol><li><a href="#常用命令-1"><span>常用命令</span></a></li></ol></li></ol>
+                    <ol class="ui ordered list"><li><a href="#d3-官网"><span>d3 官网</span></a><ol><li><a href="#概述"><span>概述</span></a></li><li><a href="#安装"><span>安装</span></a></li><li><a href="#d3-地图"><span>d3 地图</span></a></li></ol></li><li><a href="#threejs-官网"><span>threejs 官网</span></a><ol><li><a href="#threejs-用于3D场景渲染"><span>threejs 用于3D场景渲染</span></a></li></ol></li></ol>
                 </div>
 
             </div>
