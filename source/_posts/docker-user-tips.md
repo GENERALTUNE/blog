@@ -197,10 +197,98 @@ $ sudo usermod -aG docker $USER
 ### docker 安装mysql
 
 #### 首先安装docker服务
+1、Docker 要求 CentOS 系统的内核版本高于 3.10 ，查看本页面的前提条件来验证你的CentOS 版本是否支持 Docker 。
+通过 uname -r 命令查看你当前的内核版本
  ```
- yum -y install docker   
+ uname -r  
+ ```
+ 2、使用 root 权限登录 Centos。确保 yum 包更新到最新。
+ ```shell
+ sudo yum update
+ ```
+ 3、卸载旧版本(如果安装过旧版本的话)
+ ```shell
+sudo yum remove docker  docker-common docker-selinux docker-engine
+ ```
+ 4、安装需要的软件包， yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的
+```shell
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+ ```
+5、设置yum源
+ ```shell
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+ ```
+ 6、可以查看所有仓库中所有docker版本，并选择特定版本安装
+  ```shell
+yum list docker-ce --showduplicates | sort -r
+ ```
+ 7、安装docker
+```shell
+ sudo yum install docker-ce  #由于repo中默认只开启stable仓库，故这里安装的是最新稳定版17.12.0
+ sudo yum install <FQPN>  # 例如：sudo yum install docker-ce-17.12.0.ce
+ ```
+8、启动并加入开机启动 
+```shell
+ sudo systemctl start docker  //验证docker安装成功：
+ sudo systemctl enable docker
  ```
 
+ 9、验证安装是否成功(有client和service两部分表示docker安装启动都成功了)
+ ```shell
+ docker version
+ ```
+
+
+使用Docker安装mysql，挂载外部配置和数据
+```shell
+mkdir /data
+mkdir /data/mysql
+mkdir /data/mysql/conf.d
+mkdir /data/mysql/data/
+```
+ 
+创建my.cnf配置文件
+touch /data/mysql/my.cnf
+
+my.cnf添加如下内容：
+[mysqld]
+user=mysql
+character-set-server=utf8
+default_authentication_plugin=mysql_native_password
+secure_file_priv=/var/lib/mysql
+expire_logs_days=7
+sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+max_connections=1000
+
+[client]
+default-character-set=utf8
+
+[mysql]
+default-character-set=utf8
+
+2、创建容器，并后台启动
+```shell
+docker run --restart=always --privileged=true -d -v /data/mysql/data/:/var/lib/mysql -v /data/mysql/conf.d:/etc/mysql/conf.d -v /data/mysql/my.cnf:/etc/mysql/my.cnf -p 33060:3306 --name my-mysql -e MYSQL_ROOT_PASSWORD=123456 mysql
+```
+参数说明：
+--restart=always： 当Docker 重启时，容器会自动启动。
+--privileged=true：容器内的root拥有真正root权限，否则容器内root只是外部普通用户权限
+-v /data/mysql/conf.d/my.cnf:/etc/my.cnf：映射配置文件
+-v /data/mysql/data/:/var/lib/mysql：映射数据目录
+
+进入容器，修改root用户允许远程访问，如下图所示
+
+进入容器命令：docker exec -it 7681b85e73a1 /bin/sh 修改远程权限：alter user 'root'@'%' identified with mysql_native_password by 'root';
+
+alter user 'root'@'%' identified with mysql_native_password by 'root'
+
+修改密码
+```shell
+mysql> use mysql;
+mysql> alter user 'root'@'%' identified with mysql_native_password by '123';
+mysql> flush privileges;
+mysql> select host,user,plugin,authentication_string from mysql.user;
+```
 #### docker中搜索可用镜像
 ```
 docker search mysql
