@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<html lang>
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content>
+    <title>gcc | generaltune&#39;s blog</title>
+
+    <!-- Open Graph -->
+    <meta name="description" content="&amp;#x7F16;&amp;#x8BD1;&amp;#x7F16;&amp;#x8BD1;&amp;#x8FC7;&amp;#x7A0B;&amp;#x793A;&amp;#x4F8B;&amp;#x4EE3;&amp;#x7801;&amp;#x7684;&amp;#x5185;&amp;#x5BB9; 12345#include &amp;lt;stdio.h&amp;gt;int main(){	printf(&amp;quot;hello world!\n&amp;quot;);	return 0;}  &amp;#x988">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gcc">
+<meta property="og:url" content="https://generaltune.github.io/myblog/2020/05/17/gcc/index.html">
+<meta property="og:site_name" content="generaltune&#39;s blog">
+<meta property="og:description" content="&amp;#x7F16;&amp;#x8BD1;&amp;#x7F16;&amp;#x8BD1;&amp;#x8FC7;&amp;#x7A0B;&amp;#x793A;&amp;#x4F8B;&amp;#x4EE3;&amp;#x7801;&amp;#x7684;&amp;#x5185;&amp;#x5BB9; 12345#include &amp;lt;stdio.h&amp;gt;int main(){	printf(&amp;quot;hello world!\n&amp;quot;);	return 0;}  &amp;#x988">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-05-18T03:31:40.078Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gcc">
+<meta name="twitter:description" content="&amp;#x7F16;&amp;#x8BD1;&amp;#x7F16;&amp;#x8BD1;&amp;#x8FC7;&amp;#x7A0B;&amp;#x793A;&amp;#x4F8B;&amp;#x4EE3;&amp;#x7801;&amp;#x7684;&amp;#x5185;&amp;#x5BB9; 12345#include &amp;lt;stdio.h&amp;gt;int main(){	printf(&amp;quot;hello world!\n&amp;quot;);	return 0;}  &amp;#x988">
+
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "GENERALTUNE",
+  "url": "https://generaltune.github.io/myblog"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
+
+    
+
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/myblog/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
+
+</head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
+
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>generaltune&#39;s blog</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/myblog/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">GENERALTUNE</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/myblog" class="item">
+        <i class="主页 icon"></i>
+        HOME
+    </a>
+
+    
+
+    
+</div>
+
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-gcc" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    gcc
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h1 id="&#x7F16;&#x8BD1;"><a href="#&#x7F16;&#x8BD1;" class="headerlink" title="&#x7F16;&#x8BD1;"></a>&#x7F16;&#x8BD1;</h1><h2 id="&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;"><a href="#&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;" class="headerlink" title="&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;"></a>&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;</h2><p>&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x7684;&#x5185;&#x5BB9;</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;hello world!\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h3 id="&#x9884;&#x5904;&#x7406;-Preprocessing"><a href="#&#x9884;&#x5904;&#x7406;-Preprocessing" class="headerlink" title="&#x9884;&#x5904;&#x7406;(Preprocessing)"></a>&#x9884;&#x5904;&#x7406;(Preprocessing)</h3><p>&#x5B8C;&#x6210;&#x5B8F;&#x66FF;&#x6362;&#x3001;&#x6587;&#x4EF6;&#x5F15;&#x5165;&#x3001;&#x4EE5;&#x53CA;&#x53BB;&#x9664;&#x7A7A;&#x884C;&#x3001;&#x6CE8;&#x91CA;&#x7B49;&#xFF0C;&#x4E3A;&#x4E0B;&#x4E00;&#x6B65;&#x7684;&#x7F16;&#x8BD1;&#x505A;&#x51C6;&#x5907;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x5BF9;&#x5404;&#x79CD;&#x9884;&#x5904;&#x7406;&#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x5305;&#x62EC;&#x6587;&#x4EF6;&#x7684;&#x5305;&#x542B;&#x3001;&#x5B8F;&#x5B9A;&#x4E49;&#x7684;&#x6269;&#x5C55;&#x3001;&#x6761;&#x4EF6;&#x7F16;&#x8BD1;&#x7684;&#x9009;&#x62E9;&#x7B49;&#x3002;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> gcc -E test.c -o test.i</span><br></pre></td></tr></table></figure>
+
+<p>&#x9009;&#x9879;-E&#x8BA9;gcc&#x5728;&#x9884;&#x5904;&#x7406;&#x7ED3;&#x675F;&#x540E;&#x505C;&#x6B62;&#x7F16;&#x8BD1;&#xFF0C;&#x201C;test.i&#x201D;&#x6587;&#x4EF6;&#x4E3A;&#x9884;&#x5904;&#x7406;&#x540E;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x3002;-o &#x6307;&#x5B9A;&#x8F93;&#x51FA;&#x6587;&#x4EF6;<br>&#x9884;&#x5904;&#x7406;&#x540E;&#x6587;&#x4EF6;&#x4F1A;&#x53D8;&#x5927;&#x5F88;&#x591A;&#x3002;</p>
+<h3 id="&#x7F16;&#x8BD1;-Compilation"><a href="#&#x7F16;&#x8BD1;-Compilation" class="headerlink" title="&#x7F16;&#x8BD1;(Compilation)"></a>&#x7F16;&#x8BD1;(Compilation)</h3><p>1&#x5C06;&#x9884;&#x5904;&#x7406;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x53D8;&#x6210;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#x4E2D;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x68C0;&#x67E5;&#x4EE3;&#x7801;&#x7684;&#x89C4;&#x8303;&#x6027;&#x3001;&#x662F;&#x5426;&#x6709;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#x7B49;&#xFF0C;&#x4EE5;&#x786E;&#x5B9A;&#x4EE3;&#x7801;&#x5B9E;&#x9645;&#x8981;&#x505A;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x5728;&#x68C0;&#x67E5;&#x65E0;&#x8BEF;&#x540E;&#xFF0C;&#x518D;&#x628A;&#x4EE3;&#x7801;&#x7FFB;&#x8BD1;&#x6210;&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x3002;</p>
+<ol start="2" class="ui list">
+<li>&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5148;&#x5206;&#x6790;&#xFF0C;&#x540E;&#x7EFC;&#x5408;&#x3002;&#x5206;&#x6790;&#xFF0C;&#x5C31;&#x662F;&#x6307;&#x6B64;&#x6CD5;&#x5206;&#x6790;&#x3001;&#x8BED;&#x6CD5;&#x5206;&#x6790;&#x3001;&#x8BED;&#x4E49;&#x5206;&#x6790;&#x548C;&#x4E2D;&#x95F4;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x3002;&#x7EFC;&#x5408;&#xFF0C;&#x5C31;&#x662F;&#x6307;&#x4EE3;&#x7801;&#x4F18;&#x5316;&#x548C;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x3002;</li>
+<li>&#x5927;&#x591A;&#x6570;&#x7684;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x76F4;&#x63A5;&#x4EA7;&#x751F;&#x673A;&#x5668;&#x8BED;&#x8A00;&#x7684;&#x76EE;&#x6807;&#x4EE3;&#x7801;&#xFF0C;&#x5F62;&#x6210;&#x53EF;&#x6267;&#x884C;&#x7684;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF0C;&#x4E5F;&#x6709;&#x7684;&#x662F;&#x5148;&#x4EA7;&#x751F;&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x4E00;&#x7EA7;&#x7684;&#x7B26;&#x53F7;&#x4EE3;&#x7801;&#x6587;&#x4EF6;&#xFF0C;&#x518D;&#x8C03;&#x7528;&#x6C47;&#x7F16;&#x7A0B;&#x5E8F;&#x8FDB;&#x884C;&#x7FFB;&#x8BD1;&#x548C;&#x52A0;&#x5DE5;&#x5904;&#x7406;&#xFF0C;&#x6700;&#x540E;&#x4EA7;&#x751F;&#x53EF;&#x6267;&#x884C;&#x7684;&#x673A;&#x5668;&#x8BED;&#x8A00;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x3002;</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -S test.i -o test.s</span><br></pre></td></tr></table></figure>
+
+<p>&#x9009;&#x9879;-S&#x8BA9;gcc&#x5728;&#x7F16;&#x8BD1;&#x7ED3;&#x675F;&#x540E;&#x505C;&#x6B62;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#xFF0C;&#x201C;test.s&#x201D;&#x6587;&#x4EF6;&#x4E3A;&#x7F16;&#x8BD1;&#x540E;&#x751F;&#x6210;&#x7684;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x3002;</p>
+<h3 id="&#x6C47;&#x7F16;-Assemble"><a href="#&#x6C47;&#x7F16;-Assemble" class="headerlink" title="&#x6C47;&#x7F16;(Assemble)"></a>&#x6C47;&#x7F16;(Assemble)</h3><p>&#x6C47;&#x7F16;&#x5C31;&#x662F;&#x628A;&#x7F16;&#x8BD1;&#x9636;&#x6BB5;&#x751F;&#x6210;&#x7684;&#x201C;.s&#x201D;&#x6587;&#x4EF6;&#x8F6C;&#x6210;&#x4E8C;&#x8FDB;&#x5236;&#x76EE;&#x6807;&#x4EE3;&#x7801;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x673A;&#x5668;&#x4EE3;&#x7801;(01&#x5E8F;&#x5217;)&#x3002;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -c test.s -o test.o</span><br></pre></td></tr></table></figure>
+
+<p>&#x9009;&#x9879;-c&#x8BA9;gcc&#x5728;&#x6C47;&#x7F16;&#x7ED3;&#x675F;&#x540E;&#x505C;&#x6B62;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#xFF0C;&#x201C;test.o&#x201D;&#x6587;&#x4EF6;&#x4E3A;&#x6C47;&#x7F16;&#x540E;&#x751F;&#x6210;&#x7684;&#x673A;&#x5668;&#x7801;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x3002;</p>
+<h3 id="&#x94FE;&#x63A5;-Linking"><a href="#&#x94FE;&#x63A5;-Linking" class="headerlink" title="&#x94FE;&#x63A5;(Linking)"></a>&#x94FE;&#x63A5;(Linking)</h3><p>&#x94FE;&#x63A5;&#x5C31;&#x662F;&#x5C06;&#x591A;&#x4E2A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x4EE5;&#x53CA;&#x6240;&#x9700;&#x7684;&#x5E93;&#x6587;&#x4EF6;&#x94FE;&#x63A5;&#x751F;&#x6210;&#x53EF;&#x6267;&#x884C;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> gcc test.o -o test</span><br><span class="line"><span class="meta">$</span> ./test</span><br><span class="line">hello world</span><br></pre></td></tr></table></figure>
+
+<p>-o&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x91CD;&#x547D;&#x540D;&#x9009;&#x9879;&#x3002;&#x4E0D;&#x9002;&#x7528;-o&#x9009;&#x9879;&#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x751F;&#x6210;&#x7684;&#x662F;a.out&#x6587;&#x4EF6;&#x3002;&#x8FD9;&#x91CC;&#x751F;&#x6210;&#x7684;&#x662F;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;test&#x3002;</p>
+<h2 id="&#x9759;&#x6001;&#x5E93;"><a href="#&#x9759;&#x6001;&#x5E93;" class="headerlink" title="&#x9759;&#x6001;&#x5E93;"></a>&#x9759;&#x6001;&#x5E93;</h2><p>1.&#x9759;&#x6001;&#x5E93;&#x5B9E;&#x9645;&#x5C31;&#x662F;&#x4E00;&#x4E9B;&#x76EE;&#x6807;&#x6587;&#x4EF6;(&#x4E00;&#x822C;&#x4EE5;.o&#x7ED3;&#x5C3E;)&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x9759;&#x6001;&#x5E93;&#x4E00;&#x822C;&#x4EE5;.a&#x7ED3;&#x5C3E;&#xFF0C;&#x53EA;&#x7528;&#x4E8E;&#x751F;&#x6210;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x9636;&#x6BB5;&#x3002;<br>2.&#x5728;&#x94FE;&#x63A5;&#x6B65;&#x9AA4;&#x4E2D;&#xFF0C;&#x94FE;&#x63A5;&#x5668;&#x5C06;&#x4ECE;&#x5E93;&#x6587;&#x4EF6;&#x53D6;&#x5F97;&#x6240;&#x9700;&#x4EE3;&#x7801;&#xFF0C;&#x590D;&#x5236;&#x5230;&#x751F;&#x6210;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x4E2D;&#x3002;&#x8FD9;&#x79CD;&#x5E93;&#x6210;&#x4E3A;&#x9759;&#x6001;&#x5E93;&#x3002;&#x5176;&#x7F3A;&#x70B9;&#x5C31;&#x662F;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x5E93;&#x4EE3;&#x7801;&#x7684;&#x4E00;&#x4EFD;&#x5B8C;&#x6574;&#x62F7;&#x8D1D;&#xFF0C;&#x5728;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x4E2D;&#x88AB;&#x8F7D;&#x5165;&#x7A0B;&#x5E8F;&#x4E2D;&#x3002;&#x7F3A;&#x70B9;&#x5C31;&#x662F;&#x591A;&#x6B21;&#x4F7F;&#x7528;&#x5C31;&#x4F1A;&#x6709;&#x591A;&#x4EFD;&#x5197;&#x4F59;&#x62F7;&#x8D1D;&#xFF0C;&#x5E76;&#x4E14;&#x5BF9;&#x7A0B;&#x5E8F;&#x7684;&#x66F4;&#x65B0;&#x3001;&#x90E8;&#x7F72;&#x548C;&#x53D1;&#x5E03;&#x4F1A;&#x5E26;&#x6765;&#x9EBB;&#x70E6;&#xFF0C;&#x5982;&#x679C;&#x9759;&#x6001;&#x5E93;&#x6709;&#x66F4;&#x65B0;&#xFF0C;&#x90A3;&#x4E48;&#x6240;&#x6709;&#x4F7F;&#x7528;&#x5B83;&#x7684;&#x7A0B;&#x5E8F;&#x90FD;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x3001;&#x53D1;&#x5E03;&#x3002;</p>
+<p>&#x5982;&#x4F55;&#x751F;&#x6210;&#x9759;&#x6001;&#x5E93;&#xFF1A;<br>&#x9996;&#x5148;&#x751F;&#x6210;test.o&#x76EE;&#x6807;&#x6587;&#x4EF6;:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -c test.c -o test.o</span><br></pre></td></tr></table></figure>
+
+<p>&#x4F7F;&#x7528;ar&#x547D;&#x4EE4;&#x5C06;test.o&#x6253;&#x5305;&#x6210;libtest.a&#x9759;&#x6001;&#x5E93;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ar rcs libtest.a test.o</span><br></pre></td></tr></table></figure>
+
+<p>&#x4F7F;&#x7528;ar t libtest.a &#x67E5;&#x770B;&#x9759;&#x6001;&#x5E93;&#x5185;&#x5BB9;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ar t libtest.a </span><br><span class="line">test.o</span><br></pre></td></tr></table></figure>
+
+<p>&#x5982;&#x679C;&#x751F;&#x6210;&#x7684;&#x9759;&#x6001;&#x5E93;&#x4E2D;&#x4E0D;&#x5305;&#x542B;main&#x51FD;&#x6570;&#x5219;&#x9700;&#x8981;&#x94FE;&#x63A5;&#x9759;&#x6001;&#x5E93;&#x5230;main&#x51FD;&#x6570;&#xFF1A;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -o main main.c -L. -ltest</span><br></pre></td></tr></table></figure>
+
+<p>main.c&#x4E3A;&#x4E3B;&#x51FD;&#x6570;&#xFF0C;test&#x4E3A;&#x4E0A;&#x8FF0;&#x7684;test.o &#x751F;&#x6210;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x3002;<br>-l:&#x6307;&#x5B9A;&#x8981;&#x94FE;&#x63A5;&#x7684;&#x9759;&#x6001;&#x5E93;<br>-L:&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x6309;&#x7167;-L&#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x53BB;&#x5BFB;&#x627E;&#x5E93;&#x6587;&#x4EF6;. &#x8868;&#x793A;&#x5728;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x53BB;&#x627E;</p>
+<p>&#x67E5;&#x770B;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x4F9D;&#x8D56;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ldd main</span><br></pre></td></tr></table></figure>
+
+<p>Linux&#x4E0B;&#x4F7F;&#x7528;&#x9759;&#x6001;&#x5E93;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;&#x7F16;&#x8BD1;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6307;&#x5B9A;&#x9759;&#x6001;&#x5E93;&#x7684;&#x641C;&#x7D22;&#x8DEF;&#x5F84;&#xFF08;-L&#x9009;&#x9879;&#xFF09;&#x3001;&#x6307;&#x5B9A;&#x9759;&#x6001;&#x5E93;&#x540D;&#xFF08;&#x4E0D;&#x9700;&#x8981;lib&#x524D;&#x7F00;&#x548C;.a&#x540E;&#x7F00;&#xFF0C;-l&#x9009;&#x9879;&#xFF09;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ TestStaticLibrary.cpp -L ../StaticLibrary -lstaticmath</span><br></pre></td></tr></table></figure>
+
+<h2 id="&#x52A8;&#x6001;&#x5E93;"><a href="#&#x52A8;&#x6001;&#x5E93;" class="headerlink" title="&#x52A8;&#x6001;&#x5E93;"></a>&#x52A8;&#x6001;&#x5E93;</h2><p>1.&#x52A8;&#x6001;&#x5E93;&#x5728;&#x94FE;&#x63A5;&#x9636;&#x6BB5;&#x6CA1;&#x6709;&#x88AB;&#x590D;&#x5236;&#x5230;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x800C;&#x662F;&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x7531;&#x7CFB;&#x7EDF;&#x52A8;&#x6001;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x4F9B;&#x7A0B;&#x5E8F;&#x8C03;&#x7528;&#x3002;<br>2.&#x7CFB;&#x7EDF;&#x53EA;&#x9700;&#x8981;&#x8F7D;&#x5165;&#x4E00;&#x6B21;&#x52A8;&#x6001;&#x5E93;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x76F8;&#x540C;&#x52A8;&#x6001;&#x5E93;&#x7684;&#x526F;&#x672C;&#xFF0C;&#x56E0;&#x6B64;&#x8282;&#x7701;&#x4E86;&#x5F88;&#x591A;&#x5185;&#x5B58;&#x3002;</p>
+<p>&#x5982;&#x4F55;&#x751F;&#x6210;&#x52A8;&#x6001;&#x5E93;:<br>&#x9996;&#x5148;&#x751F;&#x6210;test.o&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x3002;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -c test.c</span><br></pre></td></tr></table></figure>
+
+<p>&#x4F7F;&#x7528;-share&#x548C;-fPIC&#x53C2;&#x6570;&#x751F;&#x6210;&#x52A8;&#x6001;&#x5E93;&#x3002;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -shared -fPIC -o libtest.so test.o</span><br></pre></td></tr></table></figure>
+
+<p>&#x7F16;&#x8BD1;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x5E76;&#x94FE;&#x63A5;&#x52A8;&#x6001;&#x5E93;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -o main main.c -L. -ltest</span><br></pre></td></tr></table></figure>
+
+<p>&#x6B64;&#x65F6;&#x751F;&#x6210;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#xFF0C;&#x9700;&#x8981;&#x52A8;&#x6001;&#x8BBE;&#x7F6E;&#x52A8;&#x6001;&#x5E93;&#x5730;&#x5740;&#x3002;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LD_LIBRARY_PATH. ./main</span><br></pre></td></tr></table></figure>
+
+<p>&#x628A;&#x52A8;&#x6001;&#x5E93;&#x5730;&#x5740;&#x8BBE;&#x7F6E;&#x5230;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x9762;&#x5373;&#x53EF;&#x3002;</p>
+<h2 id="&#x9759;&#x6001;&#x5E93;&#x4E0E;&#x52A8;&#x6001;&#x5E93;&#x533A;&#x522B;"><a href="#&#x9759;&#x6001;&#x5E93;&#x4E0E;&#x52A8;&#x6001;&#x5E93;&#x533A;&#x522B;" class="headerlink" title="&#x9759;&#x6001;&#x5E93;&#x4E0E;&#x52A8;&#x6001;&#x5E93;&#x533A;&#x522B;"></a>&#x9759;&#x6001;&#x5E93;&#x4E0E;&#x52A8;&#x6001;&#x5E93;&#x533A;&#x522B;</h2><ol class="ui list">
+<li>&#x9759;&#x6001;&#x5E93;&#x5728;&#x7A0B;&#x5E8F;&#x7F16;&#x8BD1;&#x65F6;&#x4F1A;&#x94FE;&#x63A5;&#x5230;&#x76EE;&#x6807;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x4E0D;&#x9700;&#x8981;&#x9759;&#x6001;&#x5E93;&#xFF0C;&#x56E0;&#x4E3A;&#x4F53;&#x79EF;&#x6BD4;&#x8F83;&#x5927;&#x3002;&#x800C;&#x4E14;&#x6BCF;&#x6B21;&#x7F16;&#x8BD1;&#x65F6;&#x90FD;&#x9700;&#x8981;&#x8F7D;&#x5165;&#x9759;&#x6001;&#x4EE3;&#x7801;&#xFF0C;&#x56E0;&#x6B64;&#x5F00;&#x9500;&#x5927;&#x3002;Linux&#x4E0B;&#x4F7F;&#x7528;ar&#x5DE5;&#x5177;&#x3001;Windows&#x4E0B;vs&#x4F7F;&#x7528;lib.exe&#xFF0C;&#x5C06;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x538B;&#x7F29;&#x5230;&#x4E00;&#x8D77;&#xFF0C;&#x5E76;&#x4E14;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x7F16;&#x53F7;&#x548C;&#x7D22;&#x5F15;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E8E;&#x67E5;&#x627E;&#x548C;&#x68C0;&#x7D22;&#x3002;</li>
+<li>&#x52A8;&#x6001;&#x5E93;&#x5728;&#x7A0B;&#x5E8F;&#x7F16;&#x8BD1;&#x65F6;&#x4E0D;&#x4F1A;&#x88AB;&#x94FE;&#x63A5;&#x5230;&#x76EE;&#x6807;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x800C;&#x662F;&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x624D;&#x88AB;&#x8F7D;&#x5165;&#xFF0C;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x9700;&#x8981;&#x52A8;&#x6001;&#x5E93;&#x5B58;&#x5728;&#xFF0C;&#x56E0;&#x6B64;&#x4F53;&#x79EF;&#x6BD4;&#x8F83;&#x5C0F;&#x3002;&#x800C;&#x4E14;&#x7CFB;&#x7EDF;&#x53EA;&#x9700;&#x8981;&#x8F7D;&#x5165;&#x4E00;&#x6B21;&#x52A8;&#x6001;&#x5E93;&#xFF0C;&#x4E0D;&#x540C;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x7684;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x76F8;&#x540C;&#x7684;&#x52A8;&#x6001;&#x5E93;&#x526F;&#x672C;&#xFF0C;&#x56E0;&#x6B64;&#x5185;&#x5B58;&#x5F00;&#x9500;&#x5C0F;&#x3002; </li>
+<li>&#x672C;&#x8D28;&#x4E0A;&#x6765;&#x8BF4;&#x5E93;&#x662F;&#x4E00;&#x79CD;&#x53EF;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x5F62;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x88AB;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8F7D;&#x5165;&#x5185;&#x5B58;&#x6267;&#x884C;&#x3002;&#x5E93;&#x6709;&#x4E24;&#x79CD;&#xFF1A;&#x9759;&#x6001;&#x5E93;&#xFF08;.a&#x3001;.lib&#xFF09;&#x548C;&#x52A8;&#x6001;&#x5E93;&#xFF08;.so&#x3001;.dll&#xFF09;</li>
+</ol>
+<h2 id="&#x9644;&#x4EF6;&#xFF1A;Linux&#x4E0B;&#x5E93;&#x76F8;&#x5173;&#x547D;&#x4EE4;"><a href="#&#x9644;&#x4EF6;&#xFF1A;Linux&#x4E0B;&#x5E93;&#x76F8;&#x5173;&#x547D;&#x4EE4;" class="headerlink" title="&#x9644;&#x4EF6;&#xFF1A;Linux&#x4E0B;&#x5E93;&#x76F8;&#x5173;&#x547D;&#x4EE4;"></a>&#x9644;&#x4EF6;&#xFF1A;Linux&#x4E0B;&#x5E93;&#x76F8;&#x5173;&#x547D;&#x4EE4;</h2><h3 id="g-gcc-&#x7F16;&#x8BD1;&#x9009;&#x9879;"><a href="#g-gcc-&#x7F16;&#x8BD1;&#x9009;&#x9879;" class="headerlink" title="g++(gcc)&#x7F16;&#x8BD1;&#x9009;&#x9879;"></a>g++(gcc)&#x7F16;&#x8BD1;&#x9009;&#x9879;</h3><p>l  -shared &#xFF1A;&#x6307;&#x5B9A;&#x751F;&#x6210;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x5E93;&#x3002;<br>l  -static &#xFF1A;&#x6307;&#x5B9A;&#x751F;&#x6210;&#x9759;&#x6001;&#x94FE;&#x63A5;&#x5E93;&#x3002;<br>l  -fPIC &#xFF1A;&#x8868;&#x793A;&#x7F16;&#x8BD1;&#x4E3A;&#x4F4D;&#x7F6E;&#x72EC;&#x7ACB;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x7528;&#x4E8E;&#x7F16;&#x8BD1;&#x5171;&#x4EAB;&#x5E93;&#x3002;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x6210;&#x4F4D;&#x7F6E;&#x65E0;&#x5173;&#x7801;&#xFF0C; &#x5FF5;&#x4E0A;&#x5C31;&#x662F;&#x5728;&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x88C5;&#x8F7D;&#x5B83;&#x4EEC;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x653E;&#x5728;&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x7684;&#x5185;&#x5B58;&#x91CC;&#x7684;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x3002;<br>l  -L. &#xFF1A;&#x8868;&#x793A;&#x8981;&#x8FDE;&#x63A5;&#x7684;&#x5E93;&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;&#x3002;<br>l  -l&#xFF1A;&#x6307;&#x5B9A;&#x94FE;&#x63A5;&#x65F6;&#x9700;&#x8981;&#x7684;&#x52A8;&#x6001;&#x5E93;&#x3002;&#x7F16;&#x8BD1;&#x5668;&#x67E5;&#x627E;&#x52A8;&#x6001;&#x8FDE;&#x63A5;&#x5E93;&#x65F6;&#x6709;&#x9690;&#x542B;&#x7684;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF0C;&#x5373;&#x5728;&#x7ED9;&#x51FA;&#x7684;&#x540D;&#x5B57;&#x524D;&#x9762;&#x52A0;&#x4E0A;lib&#xFF0C;&#x540E;&#x9762;&#x52A0;&#x4E0A;.a/.so&#x6765;&#x786E;&#x5B9A;&#x5E93;&#x7684;&#x540D;&#x79F0;&#x3002;<br>l  -Wall &#xFF1A;&#x751F;&#x6210;&#x6240;&#x6709;&#x8B66;&#x544A;&#x4FE1;&#x606F;&#x3002;<br>l  -ggdb &#xFF1A;&#x6B64;&#x9009;&#x9879;&#x5C06;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x751F;&#x6210;gdb &#x7684;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7684;&#x8C03;&#x8BD5;&#x4FE1;&#x606F;&#x3002;<br>l  -g &#xFF1A;&#x7F16;&#x8BD1;&#x5668;&#x5728;&#x7F16;&#x8BD1;&#x7684;&#x65F6;&#x5019;&#x4EA7;&#x751F;&#x8C03;&#x8BD5;&#x4FE1;&#x606F;&#x3002;<br>l  -c &#xFF1A;&#x53EA;&#x6FC0;&#x6D3B;&#x9884;&#x5904;&#x7406;&#x3001;&#x7F16;&#x8BD1;&#x548C;&#x6C47;&#x7F16;,&#x4E5F;&#x5C31;&#x662F;&#x628A;&#x7A0B;&#x5E8F;&#x505A;&#x6210;&#x76EE;&#x6807;&#x6587;&#x4EF6;(.o&#x6587;&#x4EF6;) &#x3002;<br>l  -Wl,options &#xFF1A;&#x628A;&#x53C2;&#x6570;(options)&#x4F20;&#x9012;&#x7ED9;&#x94FE;&#x63A5;&#x5668;ld &#x3002;&#x5982;&#x679C;options &#x4E2D;&#x95F4;&#x6709;&#x9017;&#x53F7;,&#x5C31;&#x5C06;options&#x5206;&#x6210;&#x591A;&#x4E2A;&#x9009;&#x9879;,&#x7136;&#x540E;&#x4F20;&#x9012;&#x7ED9;&#x94FE;&#x63A5;&#x7A0B;&#x5E8F;&#x3002;</p>
+<h3 id="nm&#x547D;&#x4EE4;"><a href="#nm&#x547D;&#x4EE4;" class="headerlink" title="nm&#x547D;&#x4EE4;"></a>nm&#x547D;&#x4EE4;</h3><p>&#x6709;&#x65F6;&#x5019;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x67E5;&#x770B;&#x4E00;&#x4E2A;&#x5E93;&#x4E2D;&#x5230;&#x5E95;&#x6709;&#x54EA;&#x4E9B;&#x51FD;&#x6570;&#xFF0C;nm&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x6253;&#x5370;&#x51FA;&#x5E93;&#x4E2D;&#x7684;&#x6D89;&#x53CA;&#x5230;&#x7684;&#x6240;&#x6709;&#x7B26;&#x53F7;&#x3002;&#x5E93;&#x65E2;&#x53EF;&#x4EE5;&#x662F;&#x9759;&#x6001;&#x7684;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x52A8;&#x6001;&#x7684;&#x3002;nm&#x5217;&#x51FA;&#x7684;&#x7B26;&#x53F7;&#x6709;&#x5F88;&#x591A;&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x6709;&#x4E09;&#x79CD;&#xFF1A;<br>&#x4E00;&#x79CD;&#x662F;&#x5728;&#x5E93;&#x4E2D;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x4F46;&#x5E76;&#x6CA1;&#x6709;&#x5728;&#x5E93;&#x4E2D;&#x5B9A;&#x4E49;(&#x8868;&#x660E;&#x9700;&#x8981;&#x5176;&#x4ED6;&#x5E93;&#x652F;&#x6301;)&#xFF0C;&#x7528;U&#x8868;&#x793A;&#xFF1B;<br>&#x4E00;&#x79CD;&#x662F;&#x5E93;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x7528;T&#x8868;&#x793A;&#xFF0C;&#x8FD9;&#x662F;&#x6700;&#x5E38;&#x89C1;&#x7684;&#xFF1B;<br>&#x4E00;&#x79CD;&#x662F;&#x6240;&#x8C13;&#x7684;&#x5F31;&#x6001;&#x201D;&#x7B26;&#x53F7;&#xFF0C;&#x5B83;&#x4EEC;&#x867D;&#x7136;&#x5728;&#x5E93;&#x4E2D;&#x88AB;&#x5B9A;&#x4E49;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x80FD;&#x88AB;&#x5176;&#x4ED6;&#x5E93;&#x4E2D;&#x7684;&#x540C;&#x540D;&#x7B26;&#x53F7;&#x8986;&#x76D6;&#xFF0C;&#x7528;W&#x8868;&#x793A;&#x3002;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nm libhello.h</span><br></pre></td></tr></table></figure>
+
+<h3 id="ldd&#x547D;&#x4EE4;"><a href="#ldd&#x547D;&#x4EE4;" class="headerlink" title="ldd&#x547D;&#x4EE4;"></a>ldd&#x547D;&#x4EE4;</h3><p>ldd&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4E00;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x4F9D;&#x8D56;&#x7684;&#x5171;&#x4EAB;&#x5E93;&#xFF0C;&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x7F16;&#x5199;&#x7684;&#x56DB;&#x5219;&#x8FD0;&#x7B97;&#x52A8;&#x6001;&#x5E93;&#x4F9D;&#x8D56;&#x4E0B;&#x9762;&#x8FD9;&#x4E9B;&#x5E93;&#xFF1A; </p>
+<h3 id="&#x8BBE;&#x7F6E;&#x52A8;&#x6001;&#x5E93;&#x52A0;&#x8F7D;&#x8DEF;&#x5F84;"><a href="#&#x8BBE;&#x7F6E;&#x52A8;&#x6001;&#x5E93;&#x52A0;&#x8F7D;&#x8DEF;&#x5F84;" class="headerlink" title="&#x8BBE;&#x7F6E;&#x52A8;&#x6001;&#x5E93;&#x52A0;&#x8F7D;&#x8DEF;&#x5F84;"></a>&#x8BBE;&#x7F6E;&#x52A8;&#x6001;&#x5E93;&#x52A0;&#x8F7D;&#x8DEF;&#x5F84;</h3><p>&#x7A81;&#x7136;&#x60F3;&#x5230;&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x5373;<del>/.bashrc&#x6587;&#x4EF6;,</del>/.basg_profile,&#x6216;&#x8005;/etc/profile&#x6587;&#x4EF6;&#xFF0C;&#x518D;&#x6216;&#x8005; /etc/ld.so.conf&#xFF08;&#x53EF;&#x80FD;&#x9700;&#x8981;sudo&#xFF09;</p>
+<ol class="ui list">
+<li>&#x5C06; export LD_LIBRARY_PATH=&#x5E93;&#x6240;&#x5728;&#x8DEF;&#x5F84;:$LD_LIBRARY_PATH<br>export LD_LIBRARY_PATH</li>
+<li>&#x5199;&#x5165;<del>/.bashrc&#x6587;&#x4EF6;,&#x6216;&#x8005;</del>/.basg_profile,&#x6216;&#x8005;/etc/profile&#x6587;&#x4EF6;&#xFF0C;&#x4E09;&#x4E2A;&#x6539;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5373;&#x53EF;</li>
+<li>&#x6216;&#x8005;&#x5C06;.&#x5199;&#x5165; /etc/ld.so.conf&#x6587;&#x4EF6;<br>&#x7136;&#x540E;&#x5728;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4E00;&#x884C;&#x6DFB;&#x52A0;&#x672C;&#x76EE;&#x5F55;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;.&#x95EE;&#x9898;&#x89E3;&#x51B3;&#xFF0C;&#x539F;&#x6765;&#x662F;&#x6587;&#x4EF6;&#x4E2D;&#x6CA1;&#x6709;&#x914D;&#x7F6E;<br>&#x4FDD;&#x5B58;&#x540E;&#x6267;&#x884C;ldconfig </li>
+</ol>
+<h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2><p><a href="https://www.cnblogs.com/52php/p/5681711.html" target="_blank" rel="noopener">https://www.cnblogs.com/52php/p/5681711.html</a><br><a href="https://www.cnblogs.com/fnlingnzb-learner/p/7145391.html" target="_blank" rel="noopener">https://www.cnblogs.com/fnlingnzb-learner/p/7145391.html</a></p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2020-05-17T05:41:13.000Z" itemprop="datePublished">2020-05-17</time>
+
+    </span>
+    <span class="post-description-item">
+        
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a class="ui tiny button disabled"><i class="angle left icon"></i>Previous</a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/myblog/2020/05/15/ffmpeg/" class="ui tiny button">
+                    
+                    ffmpeg基本使用
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#编译"><span>编译</span></a><ol><li><a href="#编译过程"><span>编译过程</span></a><ol><li><a href="#预处理-Preprocessing"><span>预处理(Preprocessing)</span></a></li><li><a href="#编译-Compilation"><span>编译(Compilation)</span></a></li><li><a href="#汇编-Assemble"><span>汇编(Assemble)</span></a></li><li><a href="#链接-Linking"><span>链接(Linking)</span></a></li></ol></li><li><a href="#静态库"><span>静态库</span></a></li><li><a href="#动态库"><span>动态库</span></a></li><li><a href="#静态库与动态库区别"><span>静态库与动态库区别</span></a></li><li><a href="#附件：Linux下库相关命令"><span>附件：Linux下库相关命令</span></a><ol><li><a href="#g-gcc-编译选项"><span>g++(gcc)编译选项</span></a></li><li><a href="#nm命令"><span>nm命令</span></a></li><li><a href="#ldd命令"><span>ldd命令</span></a></li><li><a href="#设置动态库加载路径"><span>设置动态库加载路径</span></a></li></ol></li><li><a href="#参考"><span>参考</span></a></li></ol></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2020 <a href="/">GENERALTUNE</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+    </div>
+
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/myblog/js/semantic-ui-algolia.js"></script>
+
+<script src="/myblog/js/aloha-events.js"></script>
+
+
+
+</body>
+</html>
